@@ -1,0 +1,91 @@
+{
+  "version": "1.0",
+  "scenario_id": "wearable_ecg_alert_demo",
+  "scenario_type": "synthetic_education",
+  "title": "同一心电预警原型，理解三种专业岗位",
+  "disclaimer": "完全合成教学数据，仅展示工作流程，不用于实际临床推断",
+  "roles": [
+    {
+      "id": "ml_engineer",
+      "direction_id": "cs_ai",
+      "title": "AI算法工程师",
+      "mvp": "interactive",
+      "operations": [
+        "adjust_threshold",
+        "compare_device_validation",
+        "choose_tradeoff_and_export"
+      ],
+      "inputs": [
+        "synthetic_samples.score",
+        "synthetic_samples.true_label",
+        "synthetic_samples.device_group",
+        "threshold"
+      ],
+      "computed_outputs": [
+        "tp",
+        "fp",
+        "tn",
+        "fn",
+        "sensitivity",
+        "specificity",
+        "precision",
+        "false_alerts"
+      ],
+      "deliverable": "model_evaluation_card.json",
+      "competencies": [
+        "模型评价",
+        "泛化验证",
+        "工程取舍"
+      ],
+      "acceptance": "指标必须由同一固定数据和当前阈值实时计算；切换不同设备组输出可变；可导出成果卡。"
+    },
+    {
+      "id": "signal_engineer",
+      "direction_id": "biomed_eng",
+      "title": "医工信号工程师",
+      "mvp": "content_only_until_P3_extended",
+      "operations": [
+        "inspect_synthetic_ecg_noise",
+        "adjust_filter_parameter",
+        "compare_signal_vs_distortion"
+      ],
+      "deliverable": "device_testing_summary",
+      "competencies": [
+        "信号采集",
+        "滤波",
+        "工程测试"
+      ]
+    },
+    {
+      "id": "informatics_designer",
+      "direction_id": "med_informatics",
+      "title": "医学信息系统设计者",
+      "mvp": "content_only_until_P3_extended",
+      "operations": [
+        "choose_alert_context",
+        "deduplicate_alerts",
+        "preview_clinical_workflow"
+      ],
+      "deliverable": "event_schema_and_workflow",
+      "competencies": [
+        "医疗工作流",
+        "数据标准",
+        "数据治理"
+      ]
+    }
+  ],
+  "fixtures_requirement": {
+    "generated_at_runtime": true,
+    "synthetic_only": true,
+    "n_min": 50,
+    "fixed_random_seed": 20261020,
+    "sources": "independently generated pedagogical sample, not patient records or paper measurements"
+  },
+  "reflection": {
+    "favorite_operation": "string",
+    "least_favorite_operation": "string_or_none",
+    "willingness_for_3_hours": "integer_1_to_5",
+    "followup_question": "optional_string"
+  },
+  "report_integration": "only explicit user reflection and actual simulation result; not an aptitude score"
+}

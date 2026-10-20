@@ -1,0 +1,20 @@
+{
+  "version": "V3",
+  "status": "empty_until_verified",
+  "rule": "只有官方招生来源且有招生年份、专业代码、招生方式、科目/资格校验结果才可用于报告事实。",
+  "items": [],
+  "item_schema": {
+    "id": "string",
+    "university": "string",
+    "college": "string",
+    "year": "integer",
+    "major_code": "string",
+    "major_name": "string",
+    "research_direction": "string_or_null",
+    "admission_path": "统考/推免/其他",
+    "exam_subjects": "array_string_or_unknown",
+    "eligibility": "verified_text_or_unknown",
+    "source_official_url": "string",
+    "verified_at": "YYYY-MM-DD"
+  }
+}

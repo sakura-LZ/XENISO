@@ -1,0 +1,84 @@
+{
+  "version": "1.0",
+  "shared": {
+    "sources": [
+      "onet_mini_ip",
+      "user_profile",
+      "user_research_evidence",
+      "limen_direction_map",
+      "experience_feedback",
+      "verified_admission_items"
+    ],
+    "evidence_types": [
+      "original_response",
+      "self_reported",
+      "course_record",
+      "project_evidence",
+      "official_occupation_data",
+      "curated_direction_requirement",
+      "verified_admissions"
+    ],
+    "unverified_label": "未核实",
+    "unknown_label": "信息不足",
+    "prohibited": [
+      "无依据的录取概率",
+      "未经验证的专业天赋百分数",
+      "AI虚构学校/导师/招生要求",
+      "把问卷结果描述为临床或心理诊断"
+    ]
+  },
+  "report_1": {
+    "trigger": "基础字段及完整Mini-IP30题提交后",
+    "title": "兴趣与可迁移能力初步画像",
+    "fields": [
+      "riasec_scores_with_source",
+      "interest_type_explanation",
+      "work_activity_examples",
+      "education_and_research_summary",
+      "transferable_skills_with_evidence",
+      "exploration_candidates_max_3",
+      "why_candidates_linked_to_onet_occupations",
+      "unknowns_and_questions",
+      "recommended_next_experiences"
+    ],
+    "must_not_include": [
+      "确定的唯一最佳专业",
+      "录取概率",
+      "未经核验的研究生院校推荐",
+      "完整备考计划"
+    ]
+  },
+  "report_2": {
+    "trigger": "用户选择目标方向，完成至少1个体验反馈并提供计划条件后",
+    "title": "综合方向报告与转型行动书",
+    "fields": [
+      "selected_direction",
+      "interest_evidence",
+      "transferable_skills",
+      "experience_feedback_summary",
+      "competency_gap_known_vs_unknown",
+      "alternative_directions",
+      "required_courses_and_dependencies",
+      "technical_practice_tasks",
+      "research_project_suggestions",
+      "admissions_candidates_with_official_links_and_years",
+      "pathway_type_and_milestones",
+      "timeline_from_transition_year_and_weekly_hours",
+      "sources_and_limitations"
+    ],
+    "rules": [
+      "不把未接触过的知识认定为没有学习潜力",
+      "用户未决定方向时允许只输出下一步探索任务",
+      "院校规则没有来源时只显示待核实，不列为可报考",
+      "学习时间不足时解释取舍而不是保证结果",
+      "即使用户兴趣高也允许选择继续医学"
+    ]
+  },
+  "recommendation_algorithm": {
+    "stage_1": "调用O*NET Mini-IP原版兴趣计分与职业匹配，或使用官方方法的本地等效计分与合法数据快照；保持原始答案和返回职业编码",
+    "stage_2": "按职业编码查人工审校的一对多专业映射；候选方向保留关联证据及直接/相关/相邻级别",
+    "stage_3": "独立计算并展示能力证据重合与课程缺口（已掌握/用户声称/待验证/未接触）",
+    "stage_4": "结合情境体验后的明确主观反馈与客观现实约束，使用LLM生成可追溯说明；不增加随意合成总分"
+  },
+  "handoff_bundle": "V3"
+}

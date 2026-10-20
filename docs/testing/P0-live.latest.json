@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-10-20T16:09:09.565Z",
+  "mock": false,
+  "synthetic_probe": true,
+  "checks": [
+    {
+      "name": "onet_live",
+      "status": "FAIL",
+      "detail": "ONET_HTTP: O*NET 返回 HTTP 403，未生成结果。"
+    },
+    {
+      "name": "supabase_live",
+      "status": "BLOCKED",
+      "detail": "SUPABASE_URL / SUPABASE_ANON_KEY not configured; no users created"
+    }
+  ],
+  "onet_requests": [
+    {
+      "endpoint": "/about/",
+      "status": 403,
+      "keys": []
+    }
+  ],
+  "accepted": false
+}

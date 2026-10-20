@@ -1,0 +1,397 @@
+{
+  "version": "1.0",
+  "date": "2026-10-20",
+  "scope": "LIMEN 医学本科生跨学科方向探索的教学性映射，非官方研究生专业代码或录取预测",
+  "source": "O*NET OnLine (USDOL/ETA); https://www.onetonline.org/; 依据 CC BY 4.0 引用职业数据，中文说明和职业到学科关联由 LIMEN 编写",
+  "warning": "一个 O*NET 职业可以对应多个研究方向；不得把映射表当作 O*NET 官方专业推荐或中国报考资格。",
+  "directions": [
+    {
+      "id": "cs_ai",
+      "name": "AI / 计算机",
+      "specializations": [
+        {
+          "id": "ml_cv",
+          "name": "机器学习与计算机视觉",
+          "onet": [
+            {
+              "code": "15-2051.00",
+              "name": "Data Scientists",
+              "relationship": "direct"
+            },
+            {
+              "code": "15-1221.00",
+              "name": "Computer and Information Research Scientists",
+              "relationship": "related"
+            }
+          ],
+          "work_tasks": [
+            "清洗与探索训练数据",
+            "训练并评价模型",
+            "分析模型错误、偏差及外部泛化"
+          ],
+          "skills": [
+            "Python",
+            "概率统计",
+            "机器学习",
+            "深度学习",
+            "模型评估"
+          ],
+          "courses": [
+            "Python编程",
+            "线性代数与概率论",
+            "数据结构与算法",
+            "机器学习",
+            "深度学习"
+          ],
+          "medical_transfer": [
+            "医学影像或临床数据理解",
+            "研究设计",
+            "医学评价指标"
+          ]
+        },
+        {
+          "id": "software",
+          "name": "软件工程与系统开发",
+          "onet": [
+            {
+              "code": "15-1252.00",
+              "name": "Software Developers",
+              "relationship": "direct"
+            },
+            {
+              "code": "15-1299.08",
+              "name": "Computer Systems Engineers/Architects",
+              "relationship": "related"
+            }
+          ],
+          "work_tasks": [
+            "分析用户需求与约束",
+            "设计和实现功能",
+            "自动化测试、部署与维护"
+          ],
+          "skills": [
+            "编程",
+            "数据结构",
+            "数据库",
+            "测试",
+            "系统设计"
+          ],
+          "courses": [
+            "编程基础",
+            "数据结构",
+            "数据库",
+            "操作系统与计算机网络",
+            "软件工程"
+          ],
+          "medical_transfer": [
+            "理解医院使用场景",
+            "医疗业务需求描述"
+          ]
+        },
+        {
+          "id": "llm_agent",
+          "name": "大语言模型与AI Agent",
+          "onet": [
+            {
+              "code": "15-1221.00",
+              "name": "Computer and Information Research Scientists",
+              "relationship": "related"
+            },
+            {
+              "code": "15-1252.00",
+              "name": "Software Developers",
+              "relationship": "related"
+            }
+          ],
+          "work_tasks": [
+            "评估语言模型表现与错误类型",
+            "设计检索和工具调用工作流",
+            "为系统设置质量与安全测试"
+          ],
+          "skills": [
+            "Python",
+            "NLP",
+            "LLM应用开发",
+            "评估",
+            "软件工程"
+          ],
+          "courses": [
+            "编程基础",
+            "数据结构",
+            "机器学习",
+            "自然语言处理",
+            "大语言模型工程"
+          ],
+          "medical_transfer": [
+            "医学术语理解",
+            "医疗场景评测"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "biomed_eng",
+      "name": "生物医学工程 / 医工交叉",
+      "specializations": [
+        {
+          "id": "devices",
+          "name": "智能医疗器械",
+          "onet": [
+            {
+              "code": "17-2031.00",
+              "name": "Bioengineers and Biomedical Engineers",
+              "relationship": "direct"
+            },
+            {
+              "code": "17-2072.00",
+              "name": "Electronics Engineers, Except Computer",
+              "relationship": "related"
+            }
+          ],
+          "work_tasks": [
+            "定义临床使用需求",
+            "设计传感或检测组件",
+            "测试准确性、稳定性与限制"
+          ],
+          "skills": [
+            "电路",
+            "传感器",
+            "嵌入式基础",
+            "测量与测试",
+            "工程设计"
+          ],
+          "courses": [
+            "高等数学",
+            "大学物理",
+            "电路与电子技术",
+            "生物医学传感器",
+            "工程测试"
+          ],
+          "medical_transfer": [
+            "临床需求理解",
+            "人体生理知识",
+            "医学安全意识"
+          ]
+        },
+        {
+          "id": "signals",
+          "name": "医学信号处理",
+          "onet": [
+            {
+              "code": "17-2031.00",
+              "name": "Bioengineers and Biomedical Engineers",
+              "relationship": "direct"
+            },
+            {
+              "code": "17-2071.00",
+              "name": "Electrical Engineers",
+              "relationship": "related"
+            }
+          ],
+          "work_tasks": [
+            "采集ECG/EEG类信号",
+            "分析噪声与伪影",
+            "设计、验证信号处理方法"
+          ],
+          "skills": [
+            "信号处理",
+            "Python或MATLAB",
+            "统计",
+            "传感器",
+            "算法验证"
+          ],
+          "courses": [
+            "高等数学",
+            "线性代数",
+            "信号与系统",
+            "数字信号处理",
+            "生物医学信号分析"
+          ],
+          "medical_transfer": [
+            "生理学",
+            "心电或脑电临床背景"
+          ]
+        },
+        {
+          "id": "imaging_eng",
+          "name": "医学影像工程",
+          "onet": [
+            {
+              "code": "17-2031.00",
+              "name": "Bioengineers and Biomedical Engineers",
+              "relationship": "direct"
+            },
+            {
+              "code": "15-2051.00",
+              "name": "Data Scientists",
+              "relationship": "related"
+            }
+          ],
+          "work_tasks": [
+            "处理医学成像或重建问题",
+            "分析影像质量与误差",
+            "开发影像算法及验证方法"
+          ],
+          "skills": [
+            "成像物理",
+            "信号处理",
+            "图像算法",
+            "Python",
+            "实验验证"
+          ],
+          "courses": [
+            "大学物理",
+            "信号与系统",
+            "数字图像处理",
+            "医学成像原理",
+            "算法基础"
+          ],
+          "medical_transfer": [
+            "影像解剖知识",
+            "临床影像解读场景"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "med_informatics",
+      "name": "医学信息学",
+      "specializations": [
+        {
+          "id": "clinical_data",
+          "name": "临床数据科学",
+          "onet": [
+            {
+              "code": "15-2051.02",
+              "name": "Clinical Data Managers",
+              "relationship": "direct"
+            },
+            {
+              "code": "15-2041.01",
+              "name": "Biostatisticians",
+              "relationship": "direct"
+            }
+          ],
+          "work_tasks": [
+            "定义临床数据字典",
+            "数据质量检查与统计建模",
+            "进行可重复的数据分析"
+          ],
+          "skills": [
+            "R或Python",
+            "统计",
+            "SQL",
+            "数据质量控制",
+            "研究设计"
+          ],
+          "courses": [
+            "概率统计",
+            "数据库",
+            "R/Python数据分析",
+            "流行病学",
+            "临床研究方法"
+          ],
+          "medical_transfer": [
+            "临床术语理解",
+            "病历数据结构",
+            "临床研究经验"
+          ]
+        },
+        {
+          "id": "health_systems",
+          "name": "医疗信息系统",
+          "onet": [
+            {
+              "code": "15-1211.01",
+              "name": "Health Informatics Specialists",
+              "relationship": "direct"
+            },
+            {
+              "code": "15-1211.00",
+              "name": "Computer Systems Analysts",
+              "relationship": "related"
+            }
+          ],
+          "work_tasks": [
+            "分析医院信息流程",
+            "整理系统需求及数据标准",
+            "测试数据互操作与业务流程"
+          ],
+          "skills": [
+            "数据库",
+            "系统分析",
+            "FHIR等医学信息标准",
+            "需求沟通",
+            "数据交换"
+          ],
+          "courses": [
+            "数据库",
+            "信息系统基础",
+            "软件工程",
+            "医疗信息标准",
+            "医疗数据安全"
+          ],
+          "medical_transfer": [
+            "临床工作流",
+            "专业术语和医疗质量需求"
+          ]
+        },
+        {
+          "id": "med_nlp_kg",
+          "name": "医疗NLP与知识图谱",
+          "onet": [
+            {
+              "code": "15-2051.00",
+              "name": "Data Scientists",
+              "relationship": "related"
+            },
+            {
+              "code": "19-1029.01",
+              "name": "Bioinformatics Scientists",
+              "relationship": "adjacent"
+            }
+          ],
+          "work_tasks": [
+            "整理医疗文本语料与标注规则",
+            "抽取医学实体与关系",
+            "建立和评价检索与知识系统"
+          ],
+          "skills": [
+            "Python",
+            "自然语言处理",
+            "医学术语",
+            "数据库",
+            "模型评测"
+          ],
+          "courses": [
+            "Python编程",
+            "数据库",
+            "机器学习",
+            "自然语言处理",
+            "知识表示"
+          ],
+          "medical_transfer": [
+            "医学术语与临床语境",
+            "文献理解",
+            "医学知识结构化"
+          ]
+        }
+      ]
+    }
+  ],
+  "onet_urls": {
+    "15-2051.00": "https://www.onetonline.org/link/summary/15-2051.00",
+    "15-1221.00": "https://www.onetonline.org/link/summary/15-1221.00",
+    "15-1252.00": "https://www.onetonline.org/link/summary/15-1252.00",
+    "15-1299.08": "https://www.onetonline.org/link/summary/15-1299.08",
+    "17-2031.00": "https://www.onetonline.org/link/summary/17-2031.00",
+    "17-2072.00": "https://www.onetonline.org/link/summary/17-2072.00",
+    "17-2071.00": "https://www.onetonline.org/link/summary/17-2071.00",
+    "15-2051.02": "https://www.onetonline.org/link/summary/15-2051.02",
+    "15-2041.01": "https://www.onetonline.org/link/summary/15-2041.01",
+    "15-1211.01": "https://www.onetonline.org/link/summary/15-1211.01",
+    "15-1211.00": "https://www.onetonline.org/link/summary/15-1211.00",
+    "19-1029.01": "https://www.onetonline.org/link/summary/19-1029.01"
+  },
+  "handoff_bundle": "V3"
+}

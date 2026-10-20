@@ -1,0 +1,11 @@
+# LIMEN 项目运行地图
+
+- 定位与范围：`README_FIRST.md`、`docs/00_SCOPE_AND_ACCEPTANCE.md`；保持医学生探索与规划定位。
+- 当前阶段与恢复：先读 `docs/PROGRESS.md`、Git 状态，再按 `docs/01_BUILD_PLAN.md` 加载当前阶段。
+- 本对话是用户于 2026-10-20 指定的开发主对话；其他旧对话的 active 标记不再单独构成本轮阻塞。后续仍禁止同目录并发写入。
+- 代码：`src/app/` 为 Next.js App Router；`src/lib/server/` 仅服务端集成；`src/lib/onet/` 为量表契约。
+- 数据契约：`data/`；数据库：`supabase/migrations/`；联调脚本：`scripts/`；测试：`tests/`。
+- 运行：`npm install`、`npm run dev`；验证：`npm run lint`、`npm run build`、`npm test`、`npm run verify:p0`。
+- 密钥只放根 `.env.local`，不得读回或打印；不扫描 node_modules、.next、env 文件内容。
+- 等价设计记录：`docs/00_SCOPE_AND_ACCEPTANCE.md`、`docs/P0_IMPLEMENTATION.md`；问题记录：`docs/ISSUES.md`。
+- 所有阶段必须按真实验收结果推进；缺少凭据时不生成虚假的官方分数，不把脚本存在等同于联调通过。

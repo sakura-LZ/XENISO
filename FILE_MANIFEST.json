@@ -1,0 +1,86 @@
+{
+  "bundle": "LIMEN_Codex_V3",
+  "date": "2026-10-20",
+  "files": [
+    {
+      "path": ".env.example",
+      "bytes": 316,
+      "sha256": "8d964d5196aa38f8"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1998,
+      "sha256": "2fe6f5b9a462d197"
+    },
+    {
+      "path": "README_FIRST.md",
+      "bytes": 3754,
+      "sha256": "c83173b485f5c5f7"
+    },
+    {
+      "path": "data/admissions.sample.json",
+      "bytes": 644,
+      "sha256": "a8296798f78df317"
+    },
+    {
+      "path": "data/experience_seed.json",
+      "bytes": 2686,
+      "sha256": "8fa148e369bccd85"
+    },
+    {
+      "path": "data/occupation_direction_map.json",
+      "bytes": 11714,
+      "sha256": "7f6a5226fe537107"
+    },
+    {
+      "path": "data/profile_schema.json",
+      "bytes": 8412,
+      "sha256": "9bb265d3c8969ec5"
+    },
+    {
+      "path": "data/report_contract.json",
+      "bytes": 3091,
+      "sha256": "58f741e69d54a287"
+    },
+    {
+      "path": "docs/00_SCOPE_AND_ACCEPTANCE.md",
+      "bytes": 2851,
+      "sha256": "27a642306d987060"
+    },
+    {
+      "path": "docs/01_BUILD_PLAN.md",
+      "bytes": 2256,
+      "sha256": "21ab46d1225319a5"
+    },
+    {
+      "path": "docs/02_UI_SPEC.md",
+      "bytes": 3063,
+      "sha256": "7c1a2c950162ce55"
+    },
+    {
+      "path": "docs/03_ONET_AND_DATA.md",
+      "bytes": 3815,
+      "sha256": "c774d47f84b62c58"
+    },
+    {
+      "path": "docs/04_EXPERIENCE.md",
+      "bytes": 2558,
+      "sha256": "ca32d97ea1dd2316"
+    },
+    {
+      "path": "docs/05_REPORT_ENGINE.md",
+      "bytes": 3250,
+      "sha256": "52296ade907d9ff6"
+    },
+    {
+      "path": "docs/06_TOKEN_STRATEGY.md",
+      "bytes": 1527,
+      "sha256": "bfe2a8f3bcf5b782"
+    },
+    {
+      "path": "prompts/CODEX_PROMPTS.md",
+      "bytes": 3090,
+      "sha256": "485d5e6037cf96c8"
+    }
+  ]
+}

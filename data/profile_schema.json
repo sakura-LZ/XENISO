@@ -1,0 +1,339 @@
+{
+  "version": "1.0",
+  "privacy_principle": "最小化个人信息收集；允许字段跳过；敏感原始附件优先浏览器解析，不上传原始文件；不公开个人动机文本",
+  "completion_modes": {
+    "explore": "方向探索最低要求",
+    "plan": "生成时间表额外要求"
+  },
+  "sections": [
+    {
+      "id": "identity",
+      "name": "基本学籍",
+      "fields": [
+        {
+          "key": "nickname",
+          "label": "昵称",
+          "type": "string",
+          "required_for": [
+            "explore",
+            "plan"
+          ],
+          "max_length": 40
+        },
+        {
+          "key": "school",
+          "label": "本科院校",
+          "type": "string",
+          "required_for": [
+            "explore",
+            "plan"
+          ],
+          "allow_other": true
+        },
+        {
+          "key": "major",
+          "label": "本科专业",
+          "type": "string",
+          "required_for": [
+            "explore",
+            "plan"
+          ]
+        },
+        {
+          "key": "grade",
+          "label": "当前年级",
+          "type": "enum",
+          "options": [
+            "大一",
+            "大二",
+            "大三",
+            "大四",
+            "大五",
+            "大六及以上",
+            "已毕业",
+            "其他"
+          ],
+          "required_for": [
+            "explore",
+            "plan"
+          ]
+        },
+        {
+          "key": "degree_track",
+          "label": "学制/培养类型",
+          "type": "string",
+          "required_for": []
+        }
+      ]
+    },
+    {
+      "id": "academics",
+      "name": "学业",
+      "fields": [
+        {
+          "key": "gpa",
+          "label": "GPA",
+          "type": "number",
+          "required_for": [],
+          "depends_on": "gpa_scale",
+          "nullable": true
+        },
+        {
+          "key": "gpa_scale",
+          "label": "GPA满分",
+          "type": "number",
+          "required_for": [],
+          "nullable": true
+        },
+        {
+          "key": "rank",
+          "label": "年级排名",
+          "type": "integer",
+          "required_for": [],
+          "nullable": true
+        },
+        {
+          "key": "cohort_size",
+          "label": "年级总人数",
+          "type": "integer",
+          "required_for": [],
+          "nullable": true
+        },
+        {
+          "key": "transcript_file",
+          "label": "可选成绩表",
+          "type": "file_local_parse",
+          "accept": [
+            ".xlsx",
+            ".csv"
+          ],
+          "required_for": [],
+          "privacy": "默认只存课程名、学分、成绩、学期，不上传原件"
+        },
+        {
+          "key": "courses",
+          "label": "课程成绩",
+          "type": "array",
+          "item_fields": [
+            "course_name",
+            "credit",
+            "score",
+            "score_scale",
+            "semester"
+          ],
+          "required_for": []
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "name": "科研与成果",
+      "fields": [
+        {
+          "key": "research_fields",
+          "label": "科研专业与细分方向",
+          "type": "array_string",
+          "required_for": []
+        },
+        {
+          "key": "research_projects",
+          "label": "科研项目",
+          "type": "array",
+          "item_fields": [
+            "title",
+            "topic",
+            "responsibility",
+            "methods",
+            "outcomes",
+            "duration"
+          ],
+          "required_for": []
+        },
+        {
+          "key": "wetlab_skills",
+          "label": "实验技能与熟练度",
+          "type": "array",
+          "item_fields": [
+            "skill",
+            "level",
+            "experience_evidence"
+          ],
+          "examples": [
+            "细胞培养",
+            "Western blot",
+            "PCR",
+            "动物实验"
+          ],
+          "required_for": []
+        },
+        {
+          "key": "papers",
+          "label": "论文和会议成果",
+          "type": "array",
+          "item_fields": [
+            "title",
+            "type",
+            "venue",
+            "status",
+            "author_role",
+            "quartile_if_known",
+            "year"
+          ],
+          "required_for": []
+        },
+        {
+          "key": "competitions",
+          "label": "竞赛成果",
+          "type": "array",
+          "required_for": []
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "name": "技术与自学经历",
+      "fields": [
+        {
+          "key": "tech_skills",
+          "label": "Python/R/C/数据分析/模型等",
+          "type": "array",
+          "item_fields": [
+            "skill",
+            "self_reported_level",
+            "evidence"
+          ],
+          "required_for": []
+        },
+        {
+          "key": "self_study",
+          "label": "自学课程与独立项目",
+          "type": "array",
+          "required_for": []
+        },
+        {
+          "key": "english",
+          "label": "英语水平",
+          "type": "object_optional",
+          "required_for": []
+        }
+      ]
+    },
+    {
+      "id": "preferences",
+      "name": "职业兴趣、偏好与表达",
+      "fields": [
+        {
+          "key": "onet_mini_ip_answers",
+          "label": "O*NET Mini-IP 30题原始回答",
+          "type": "array_integer",
+          "length": 30,
+          "value_min": 1,
+          "value_max": 5,
+          "required_for": [
+            "explore",
+            "plan"
+          ],
+          "versioned": true
+        },
+        {
+          "key": "hobbies",
+          "label": "兴趣爱好",
+          "type": "array_string",
+          "required_for": []
+        },
+        {
+          "key": "work_preferences",
+          "label": "希望从事的工作内容",
+          "type": "array_string",
+          "required_for": [],
+          "allow_other": true
+        },
+        {
+          "key": "career_priorities",
+          "label": "职业价值观",
+          "type": "array_string",
+          "required_for": [],
+          "allow_other": true
+        },
+        {
+          "key": "motivation",
+          "label": "考虑转专业的原因或顾虑",
+          "type": "long_text",
+          "required_for": [],
+          "visibility": "private_optional"
+        },
+        {
+          "key": "self_evaluation",
+          "label": "不限字数的自我评价",
+          "type": "long_text",
+          "required_for": []
+        }
+      ]
+    },
+    {
+      "id": "goals",
+      "name": "方向与资源",
+      "fields": [
+        {
+          "key": "interest_directions",
+          "label": "目前想了解的方向",
+          "type": "array",
+          "options": [
+            "AI/计算机",
+            "生物医学工程/医工交叉",
+            "医学信息学",
+            "尚不确定",
+            "可能继续医学"
+          ],
+          "required_for": []
+        },
+        {
+          "key": "transition_year",
+          "label": "计划转专业年份",
+          "type": "year_or_unsure",
+          "required_for": []
+        },
+        {
+          "key": "pathway",
+          "label": "升学方式",
+          "type": "enum",
+          "options": [
+            "统考",
+            "推免",
+            "申请制",
+            "未决定"
+          ],
+          "required_for": []
+        },
+        {
+          "key": "weekly_hours",
+          "label": "每周可投入时间",
+          "type": "number_or_unsure",
+          "required_for": [
+            "plan"
+          ]
+        },
+        {
+          "key": "target_cities",
+          "label": "希望城市",
+          "type": "array_string",
+          "required_for": []
+        },
+        {
+          "key": "constraints",
+          "label": "重要现实约束",
+          "type": "long_text",
+          "required_for": []
+        }
+      ]
+    }
+  ],
+  "validation_rules": [
+    "如填写rank及cohort_size，要求1≤rank≤cohort_size；允许两者同时空缺",
+    "如填写gpa必须填写gpa_scale，且0≤gpa≤gpa_scale",
+    "兴趣题不完整则允许保存草稿但不生成正式兴趣六维结果",
+    "用户可不提交成绩表并继续完成兴趣探索",
+    "不使用GPA或论文数量推断职业兴趣"
+  ],
+  "handoff_bundle": "V3"
+}
