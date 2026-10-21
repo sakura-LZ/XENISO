@@ -11,7 +11,7 @@
 
 | 阶段 | 状态 | 验收证据 |
 | --- | --- | --- |
-| P0 技术验证 | PARTIAL / BLOCKED | O*NET 最新真实请求仍 HTTP403；Supabase 无配置；Docker 缺少两份启动 ISO，已定位真实主机根因 |
+| P0 技术验证 | PARTIAL / BLOCKED | 新Key下O*NET四端点真实200，30题/六维/职业通过；Supabase连接200但匿名登录关闭、四表API尚不可见 |
 | P1 画像与测评 | PARTIAL / BLOCKED | 多步画像、CSV/XLSX、独立中文译稿与文档演示；真实保存/官方计分未验收 |
 | P2 知识库与 R1 | PARTIAL / BLOCKED | 3/9 手册、双方向对比、证据引用规则草案；官方兴趣与 AI 未验收 |
 | P3 职业体验 | LOCAL_ACCEPTANCE_PASS | 三次真实状态变化、数值重算、反思、下载恢复、390/820/1440px 布局通过；访客云保存仍待 Supabase 联调 |
@@ -142,3 +142,13 @@
 - 修改`src/lib/assessment.ts`、`src/lib/onet/translation.ts`；首次构建发现共享Question.area仍为string，已统一为六维联合类型，没有类型断言掩盖错误。最终`npm test`38/38、0跳过，`npm run lint`退出0/0警告，`npm run build`退出0，含TypeScript与10静态页面。
 - 最终独立3002占位配置服务HTTP smoke 5/5通过，客户端密钥扫描42文件通过；3002随后停止，3001已恢复真实项目环境本机预览。没有UI变动，本轮不重跑或冒称新增截图验收。
 - 恢复任务：网络/配置实际变化后继续官方安装包安全续传（完整SHA-256验证后才可使用），或接入已落盘的开发Supabase；再顺序迁移并真实测试两身份、刷新、四表隔离和删除。真实O*NET计分、R1/R2 AI及完整主线仍未通过；不要重复实现既有P4/P5，也不要将Goal标complete。
+
+## 新凭据真实联通里程碑（2026-10-21 04:23 PDT 起，覆盖先前连接阻塞）
+
+- 用户提供Supabase项目URL与publishable key并要求按本项目命名保存。已去掉粘贴内容中重复、粘连的部分，写入被忽略的`.env.local`的SUPABASE_URL/SUPABASE_ANON_KEY；未改为NEXT_PUBLIC变量、未使用service_role。公开Auth settings真实HTTP200，证明当前配置可访问服务。
+- Supabase公开设置`external.anonymous_users=false`。四表profiles/assessments/experiences/reports请求均HTTP404/PGRST205，表示REST schema缓存不可见，尚不能验收迁移/RLS。没有创建临时身份，也没有执行SQL。通过Edge打开独立项目页成功，但页面自动控制连续返回Debugger unattached；尝试初始化浏览器会话后仍无法读取页面，未继续猜测操作或读取登录令牌。
+- 用户随后提供新O*NET Key，已替换本地旧值。新Key `/about/`真实HTTP200、JSON；不带Key仍HTTP403/nginx，不能继续沿用“新Key也403”的旧结论。连接对照保存在`testing/ONET-connectivity.latest.json`，不含凭据或响应正文。
+- `npm run verify:p0`真实执行：O*NET `/about/`、30题、计分、职业匹配四端点均200；题目30、合成答案30、六维6、当前职业页20、总数923、API 2.0.0、数据库O*NET31.0。只上传合成探针答案，不是任何用户的个人测评结果。Supabase前置表权限断言失败，整体退出1/NOT ACCEPTED；`testing/P0-live.latest.json`已由脚本实际更新。
+- 本机3001已重启读取新配置。HTTP实际检查：首页200、session200、未登录profile401、官方questions200/source=onet_live/count=30；证据见`testing/configured-preview.latest.json`。没有把合成探针计分写入用户报告。代码未变，不重复声称本轮新跑lint/build。
+- 下一恢复任务优先使用已配置云端Supabase，不再把修复Docker作为必要前置；完成匿名登录配置和三份迁移后再实测两身份与四表隔离、刷新、删除。当前浏览器控制未连接，publishable key不能用于管理Auth设置或执行SQL，不索取service_role来绕过该边界。AI仍关闭且未配置，P0整体及真实R1/R2仍未验收。
+- 配置生效后客户端密钥扫描42文件通过；`.env.local`仍被Git忽略，不提交环境文件。仅保存脱敏连接结构、状态与进度，不保存真实Key、完整官方返回或个人结果。

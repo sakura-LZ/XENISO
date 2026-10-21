@@ -1,0 +1,33 @@
+{
+  "checked_at": "2026-10-21T11:27:55.635Z",
+  "mock": false,
+  "server_environment_configured": true,
+  "key_type": "publishable",
+  "auth_settings_http_status": 200,
+  "anonymous_users_enabled": false,
+  "tables": [
+    {
+      "table": "profiles",
+      "http_status": 404,
+      "error_code": "PGRST205"
+    },
+    {
+      "table": "assessments",
+      "http_status": 404,
+      "error_code": "PGRST205"
+    },
+    {
+      "table": "experiences",
+      "http_status": 404,
+      "error_code": "PGRST205"
+    },
+    {
+      "table": "reports",
+      "http_status": 404,
+      "error_code": "PGRST205"
+    }
+  ],
+  "users_created": 0,
+  "migrations_executed_by_agent": false,
+  "accepted": false
+}

@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-21T11:27:02.928Z",
+  "mock": false,
+  "checks": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/profile",
+      "status": 401
+    },
+    {
+      "path": "/api/onet/questions",
+      "status": 200,
+      "source": "onet_live",
+      "count": 30,
+      "api_version": "2.0.0",
+      "onet_version": "O*NET 31.0"
+    }
+  ]
+}

@@ -1,24 +1,58 @@
 {
-  "checked_at": "2026-10-21T05:12:20.555Z",
+  "checked_at": "2026-10-21T11:23:28.283Z",
   "mock": false,
   "synthetic_probe": true,
   "checks": [
     {
       "name": "onet_live",
-      "status": "FAIL",
-      "detail": "ONET_HTTP: O*NET 返回 HTTP 403，未生成结果。"
+      "status": "PASS",
+      "detail": "synthetic_probe=true; questions=30; answers=30; scores=6; careers_returned=20; career_total=923; api=2.0.0; database=O*NET 31.0"
     },
     {
       "name": "supabase_live",
-      "status": "BLOCKED",
-      "detail": "SUPABASE_URL / SUPABASE_ANON_KEY not configured; no users created"
+      "status": "FAIL",
+      "detail": "Anonymous Auth / schema / RLS / deletion check failed; see setup prerequisites; raw errors suppressed"
     }
   ],
   "onet_requests": [
     {
       "endpoint": "/about/",
-      "status": 403,
-      "keys": []
+      "status": 200,
+      "keys": [
+        "taxonomy",
+        "database",
+        "api_version"
+      ]
+    },
+    {
+      "endpoint": "/mnm/interestprofiler/questions_30",
+      "status": 200,
+      "keys": [
+        "start",
+        "end",
+        "total",
+        "answer_option",
+        "question"
+      ]
+    },
+    {
+      "endpoint": "/mnm/interestprofiler/results",
+      "status": 200,
+      "keys": [
+        "careers",
+        "result"
+      ]
+    },
+    {
+      "endpoint": "/mnm/interestprofiler/careers",
+      "status": 200,
+      "keys": [
+        "start",
+        "end",
+        "total",
+        "next",
+        "career"
+      ]
     }
   ],
   "accepted": false

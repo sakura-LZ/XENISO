@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-21T11:21:51.903Z",
+  "mock": false,
+  "key_rotated_in_local_env": true,
+  "endpoint": "/about/",
+  "checks": [
+    {
+      "authenticated": true,
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "nginx_marker": false,
+      "body_sha256": "503194aed2492fdc947210049a8c807f227549f4280220ff6a7efbc3f83332eb"
+    },
+    {
+      "authenticated": false,
+      "status": 403,
+      "content_type": "text/html",
+      "nginx_marker": true,
+      "body_sha256": "75a19926926ca05320a0e01f38c5ac4e6931f6891b7fcaaa32973b73161b2020"
+    }
+  ],
+  "accepted": true
+}
