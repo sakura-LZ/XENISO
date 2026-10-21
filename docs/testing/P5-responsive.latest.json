@@ -1,8 +1,26 @@
 {
-  "checked_at": "2026-10-21T05:44:34.902Z",
-  "basis": "Actual browser CSS geometry; not a real service acceptance",
+  "checked_at": "2026-10-21T07:15:02.151Z",
+  "basis": "Actual CSS geometry after report-context and vertical-spacing fixes; not live-service acceptance",
   "checks": [
     {
+      "route": "/report/plan (simulation + 2 alternatives)",
+      "document": 375,
+      "navWidth": 375,
+      "viewport": 390
+    },
+    {
+      "route": "/report/plan (simulation + 2 alternatives)",
+      "document": 805,
+      "navWidth": 805,
+      "viewport": 820
+    },
+    {
+      "route": "/report/plan (simulation + 2 alternatives)",
+      "document": 1425,
+      "navWidth": 224,
+      "viewport": 1440
+    },
+    {
       "route": "/",
       "document": 375,
       "navWidth": 375,
@@ -21,9 +39,27 @@
       "viewport": 1440
     },
     {
+      "route": "/profile",
+      "document": 375,
+      "navWidth": 375,
+      "viewport": 390
+    },
+    {
+      "route": "/profile",
+      "document": 805,
+      "navWidth": 805,
+      "viewport": 820
+    },
+    {
+      "route": "/profile",
+      "document": 1425,
+      "navWidth": 224,
+      "viewport": 1440
+    },
+    {
       "route": "/assessment",
-      "document": 390,
-      "navWidth": 390,
+      "document": 375,
+      "navWidth": 375,
       "viewport": 390
     },
     {
@@ -107,42 +143,6 @@
     {
       "route": "/account",
       "document": 1440,
-      "navWidth": 224,
-      "viewport": 1440
-    },
-    {
-      "route": "/report/plan (simulation + 2 alternatives)",
-      "document": 375,
-      "navWidth": 375,
-      "viewport": 390
-    },
-    {
-      "route": "/report/plan (simulation + 2 alternatives)",
-      "document": 805,
-      "navWidth": 805,
-      "viewport": 820
-    },
-    {
-      "route": "/report/plan (simulation + 2 alternatives)",
-      "document": 1425,
-      "navWidth": 224,
-      "viewport": 1440
-    },
-    {
-      "route": "/profile (step 4)",
-      "document": 375,
-      "navWidth": 375,
-      "viewport": 390
-    },
-    {
-      "route": "/profile (step 4)",
-      "document": 805,
-      "navWidth": 805,
-      "viewport": 820
-    },
-    {
-      "route": "/profile (step 4)",
-      "document": 1425,
       "navWidth": 224,
       "viewport": 1440
     }

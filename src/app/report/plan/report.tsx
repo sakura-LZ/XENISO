@@ -21,7 +21,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
   const [message, setMessage] = useState("请选择目标方向，并读取画像与体验反馈。当前仅提供可追溯规则草案，正式 AI R2 尚未生成。");
   const [alternatives, setAlternatives] = useState<string[]>([]);
   const [budget, setBudget] = useState({ foundation: 0, practice: 0, review: 0 });
-  const plan = direction && findDirection(direction) ? actionPlan(profile, direction, experience, new Date(), assessment) : null;
+  const plan = direction && findDirection(direction) ? actionPlan(profile, direction, experience, new Date(), assessment, undefined, alternatives) : null;
   const budgetTotal = budget.foundation + budget.practice + budget.review;
   const budgetValid = budgetTotal > 0 && profile.weekly_hours !== null && budgetTotal <= profile.weekly_hours;
   const ready = loaded && !!experience && !!plan?.planning_ready && budgetValid;
@@ -41,7 +41,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
         const parsed = experienceSchema.safeParse(exp.experience);
         setProfile(personalProfile); setSimulation(false); setAssessment(official);
         setExperience(parsed.success ? parsed.data : null); setLoaded(true);
-        setMessage(parsed.success ? "已读取当前访客私有画像与合成工作台反馈。计划条件需通过画像页保存后才能生成正式报告。" : "已读取个人画像，尚无当前访客的私有体验记录。请在工作台完成后保存到当前访客。");
+        setMessage(parsed.success ? "已读取当前访客私有画像与合成工作台反馈。正式报告将使用本页明确填写的计划条件与预算。" : "已读取个人画像，尚无当前访客的私有体验记录。请在工作台完成后保存到当前访客。");
         return;
       } else {
         const value = JSON.parse(localStorage.getItem("limen:simulation:profile:v1") ?? "null");
@@ -75,8 +75,8 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
       <fieldset className="mt-5"><legend className="font-medium">自行分配一周的预算（不代表课程所需时长）</legend><div className="mt-3 grid gap-4 sm:grid-cols-3">{([["foundation", "基础学习"], ["practice", "小型练习"], ["review", "复盘与核验"]] as const).map(([id, label]) => <label key={id}>{label} / 小时<input className="field" type="number" step="0.5" min={0} max={168} value={budget[id]} onChange={(e) => setBudget((b) => ({ ...b, [id]: Math.max(0, Math.min(168, Number(e.target.value))) }))} /></label>)}</div></fieldset><p className="mt-4 text-sm" role="status">已分配 {budgetTotal} 小时 / 可用 {profile.weekly_hours ?? "未填写"} 小时。{budgetValid ? "预算有效；一周后用实际耗时修订。" : "请填写正数可用时间，且分配总量不得超过每周可用时间。"}</p>
       {plan.planning && <><p className="mt-4 text-sm leading-7">{plan.planning.horizon} 每个阶段以交付物验收后再推进，暂不虚构完成月份。</p><ol className="mt-5 space-y-4 border-l pl-5">{plan.planning.milestones.map((milestone) => <li key={milestone.stage}><h3 className="font-medium">{milestone.stage}</h3><p className="mt-1 text-sm leading-7">{milestone.exit_condition}</p><p className="mt-1 break-words text-xs muted">对应任务：{milestone.task_ids.join("、")}</p></li>)}</ol><p className="mt-3 text-xs leading-6 muted">升学清单为 LIMEN 编辑性准备建议，输入来自 user_profile.pathway；不代表任何项目的官方要求或已核验截止时间。</p></>}
     </section><section className="mt-9 border-t pt-6"><h2 className="text-xl font-semibold">06 · 招生核验与风险</h2><p className="mt-4 notice">已核验招生项目：0 条。没有院校可报考结论。请在官方招生页面逐条记录：年份、专业代码、招生方式、科目、跨专业资格、链接和核验日期。</p><ul className="mt-5 list-disc space-y-3 pl-5 text-sm leading-7">{plan.risks.map((risk) => <li key={risk}>{risk}</li>)}</ul></section>
-    <div className="mt-8 flex flex-wrap gap-4"><button className="button" disabled={!ready} onClick={exportDraft}>导出规则行动草案</button><Link href="/profile" className="button secondary">补充与保存画像</Link><Link href="/studio/ecg" className="button secondary">返回职业体验</Link></div><p className="mt-3 text-sm muted">导出需：读取画像、完成体验反馈、填写有效计划条件及预算。当前页修改只留在内存；通过画像页保存个人资料。</p></>}
+    <div className="mt-8 flex flex-wrap gap-4"><button className="button" disabled={!ready} onClick={exportDraft}>导出规则行动草案</button><Link href="/profile" className="button secondary">补充与保存画像</Link><Link href="/studio/ecg" className="button secondary">返回职业体验</Link></div><p className="mt-3 text-sm muted">导出需：读取画像、完成体验反馈、填写有效计划条件及预算。本页条件、预算与备选方向会随新AI报告保存；长期个人资料仍通过画像页保存。</p></>}
     <p className="mt-9 text-sm muted">本报告是探索辅助，不代表报考资格。以上为规则行动草案；正式 AI 报告的实际状态在下方独立显示。</p>
-    <AiReport key={direction} kind="R2" direction={findDirection(direction)?.id} />
+    <AiReport key={JSON.stringify([direction, alternatives, profile.transition_year, profile.weekly_hours, profile.pathway, budget, loaded, simulation])} kind="R2" direction={findDirection(direction)?.id} alternatives={alternatives} enabled={ready && !simulation && !!assessment} planning={{ transition_year: profile.transition_year, weekly_hours: profile.weekly_hours, pathway: profile.pathway, weekly_allocation: budget }} />
   </main>;
 }

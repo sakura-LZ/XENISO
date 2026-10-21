@@ -1,5 +1,7 @@
 import { z } from "zod";
 import { AppError } from "./errors";
+import { r2PlanningSchema, type R2PlanningInput } from "./planning";
+import { findDirection } from "./directions";
 
 export type Evidence = { ref: string; kind: "interest" | "transfer" | "gap" | "experience" | "direction" | "planning"; value: unknown };
 export const aiExplanationSchema = z.object({
@@ -11,7 +13,7 @@ export const aiExplanationSchema = z.object({
   unknowns: z.array(z.string().max(200)).max(8),
 }).strict();
 export type AiExplanation = z.infer<typeof aiExplanationSchema>;
-export function readSavedExplanation(input: unknown, kind: "R1" | "R2", direction?: string) {
+export function readSavedExplanation(input: unknown, kind: "R1" | "R2", direction?: string, expectedPlanning?: unknown, expectedAlternatives: string[] = []) {
   const saved = z.object({
     kind: z.enum(["R1", "R2"]), source: z.literal("llm_live"),
     rules: z.object({ direction: z.object({ id: z.string() }).passthrough().optional() }).passthrough(),
@@ -19,11 +21,21 @@ export function readSavedExplanation(input: unknown, kind: "R1" | "R2", directio
     evidence: z.array(z.object({ ref: z.string(), kind: z.enum(["interest", "transfer", "gap", "experience", "direction", "planning"]), value: z.unknown() })),
   }).passthrough().safeParse(input);
   if (!saved.success || saved.data.kind !== kind) throw new AppError("REPORT_CONTRACT", 502, "已保存的报告类型或结构无效，请重新生成。");
-  if (kind === "R2" && (!direction || saved.data.rules.direction?.id !== direction)) throw new AppError("REPORT_DIRECTION", 409, "已保存的 R2 属于其他目标方向。请为当前方向生成报告，未展示旧方向的解释。");
+  if (kind === "R2" && (!direction || !findDirection(direction) || saved.data.rules.direction?.id !== direction)) throw new AppError("REPORT_DIRECTION", 409, "已保存的 R2 属于其他目标方向。请为当前方向生成报告，未展示旧方向的解释。");
+  let planning: R2PlanningInput | undefined;
+  if (kind === "R2") {
+    const expected = r2PlanningSchema.safeParse(expectedPlanning);
+    const stored = r2PlanningSchema.safeParse(saved.data.rules.planning_input);
+    if (!expected.success || !stored.success || JSON.stringify(expected.data) !== JSON.stringify(stored.data)) throw new AppError("REPORT_PLAN", 409, "已保存的 R2 计划条件或预算与当前页面不一致，请按当前参数重新生成。");
+    const storedAlternatives = z.array(z.object({ id: z.string().max(50) }).passthrough()).max(2).safeParse(saved.data.rules.alternative_directions ?? []);
+    const ids = storedAlternatives.success ? storedAlternatives.data.map((d) => d.id) : [];
+    if (!storedAlternatives.success || new Set(ids).size !== ids.length || ids.some((id) => id === direction || !findDirection(id)) || JSON.stringify([...ids].sort()) !== JSON.stringify([...expectedAlternatives].sort())) throw new AppError("REPORT_ALTERNATIVES", 409, "已保存的 R2 备选方向与当前选择不一致，请重新生成。");
+    planning = stored.data;
+  }
   let explanation: AiExplanation;
   try { explanation = validateAiExplanation(saved.data.ai.explanation, saved.data.evidence); }
   catch { throw new AppError("REPORT_EVIDENCE", 502, "已保存的 AI 解释未通过证据校验，请重新生成。"); }
-  return { explanation, generated_at: saved.data.ai.generated_at };
+  return { explanation, generated_at: saved.data.ai.generated_at, planning, alternative_ids: kind === "R2" ? [...expectedAlternatives] : [], evidence: saved.data.evidence };
 }
 export function validateAiExplanation(input: unknown, evidence: Evidence[]): AiExplanation {
   const parsed = aiExplanationSchema.safeParse(input);

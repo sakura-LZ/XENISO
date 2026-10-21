@@ -3,17 +3,37 @@ import assert from "node:assert/strict";
 import { readSavedExplanation, redactEvidence, requestAiExplanation, validateAiExplanation, type Evidence } from "../src/lib/ai";
 const evidence: Evidence[] = [{ ref: "user_profile.tech_skills[0]", kind: "transfer", value: "simulation：自述 Python 入门" }];
 const output = { explanations: [{ kind: "transfer", evidence_refs: [evidence[0].ref], text: "仅有入门自述，具体独立实践能力尚未核验。" }], unknowns: ["尚无项目成果"] };
-const savedReport = { kind: "R2", source: "llm_live", rules: { direction: { id: "ml_cv" } }, evidence, ai: { explanation: output, generated_at: "2026-10-20T12:00:00.000Z", source: "llm_live" } };
+const reportPlanning = { transition_year: 2030, weekly_hours: 4, pathway: "统考", weekly_allocation: { foundation: 2, practice: 1, review: 1 } };
+const savedReport = { kind: "R2", source: "llm_live", rules: { direction: { id: "ml_cv" }, planning_input: reportPlanning }, evidence, ai: { explanation: output, generated_at: "2026-10-20T12:00:00.000Z", source: "llm_live" } };
+
+test("mock=true saved AI: a changed year, pathway or allocation cannot reuse the old R2", () => {
+  const planning = { transition_year: 2030, weekly_hours: 4, pathway: "统考", weekly_allocation: { foundation: 2, practice: 1, review: 1 } };
+  const saved = { ...savedReport, rules: { ...savedReport.rules, planning_input: planning } };
+  for (const changed of [{ ...planning, transition_year: 2031 }, { ...planning, weekly_hours: 5 }, { ...planning, pathway: "推免" }, { ...planning, weekly_allocation: { foundation: 1, practice: 2, review: 1 } }]) assert.throws(() => readSavedExplanation(saved, "R2", "ml_cv", changed));
+  assert.deepEqual(readSavedExplanation(saved, "R2", "ml_cv", planning).planning, planning);
+  assert.throws(() => readSavedExplanation(saved, "R2", "ml_cv", planning, ["software"]));
+  assert.throws(() => readSavedExplanation({ ...saved, rules: { direction: { id: "ml_cv" } } }, "R2", "ml_cv", planning));
+});
+test("mock=true saved AI: R1 remains readable without R2 planning", () => {
+  assert.deepEqual(readSavedExplanation({ ...savedReport, kind: "R1", rules: {} }, "R1").explanation, output);
+});
+test("mock=true saved AI: exported explanations retain the saved evidence snapshot", () => {
+  const saved = { ...savedReport, kind: "R1", rules: {}, evidence: [{ ...evidence[0], value: "mock=true：生成时保存的项目依据" }] };
+  const exported = JSON.parse(JSON.stringify(readSavedExplanation(saved, "R1")));
+  assert.equal(exported.evidence[0].value, "mock=true：生成时保存的项目依据");
+  assert.equal(exported.evidence[0].ref, "user_profile.tech_skills[0]");
+});
 
 test("mock=true saved AI: R2 never displays a different selected direction", () => {
-  assert.deepEqual(readSavedExplanation(savedReport, "R2", "ml_cv").explanation, output);
+  assert.deepEqual(readSavedExplanation(savedReport, "R2", "ml_cv", reportPlanning).explanation, output);
   assert.throws(() => readSavedExplanation(savedReport, "R2", "software_eng"), /其他目标方向/);
   assert.throws(() => readSavedExplanation(savedReport, "R2"), /其他目标方向/);
   assert.throws(() => readSavedExplanation(savedReport, "R1"), /类型或结构/);
+  assert.throws(() => readSavedExplanation({ ...savedReport, rules: { ...savedReport.rules, direction: { id: "fake" } } }, "R2", "fake", reportPlanning), /其他目标方向/);
 });
 test("mock=true saved AI: missing metadata and invented references are rejected on read", () => {
   assert.throws(() => readSavedExplanation({ ...savedReport, source: "simulation" }, "R2", "ml_cv"));
-  assert.throws(() => readSavedExplanation({ ...savedReport, evidence: [] }, "R2", "ml_cv"), /证据校验/);
+  assert.throws(() => readSavedExplanation({ ...savedReport, evidence: [] }, "R2", "ml_cv", reportPlanning), /证据校验/);
   assert.throws(() => readSavedExplanation({ ...savedReport, ai: { ...savedReport.ai, generated_at: "unknown" } }, "R2", "ml_cv"));
 });
 test("mock=true AI: valid explanation requires existing evidence and matching kind", () => {

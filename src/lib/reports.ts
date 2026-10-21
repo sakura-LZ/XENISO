@@ -2,6 +2,7 @@ import { directions, findDirection, type Direction } from "./directions";
 import { profileSchema, type Profile } from "./profile";
 import { assessmentSchema, type AssessmentResult } from "./assessment";
 import type { Experience } from "./experience";
+import { parseR2Planning } from "./planning";
 
 export function skillEvidence(profile: Profile) {
   return [
@@ -47,9 +48,13 @@ function pathwayTasks(pathway: Profile["pathway"]) {
   ];
   return [];
 }
-export function actionPlan(profile: Profile, directionId: string, experience: Experience | null, now = new Date(), assessment: AssessmentResult | null = null) {
+export function actionPlan(profile: Profile, directionId: string, experience: Experience | null, now = new Date(), assessment: AssessmentResult | null = null, planningInput?: unknown, alternativeIds: string[] = []) {
+  const submittedPlanning = planningInput === undefined ? null : parseR2Planning(planningInput, now);
+  if (submittedPlanning) profile = { ...profile, transition_year: submittedPlanning.transition_year, weekly_hours: submittedPlanning.weekly_hours, pathway: submittedPlanning.pathway };
   const direction = findDirection(directionId);
   if (!direction) throw new Error("请选择目录内的目标方向。");
+  if (alternativeIds.length > 2 || new Set(alternativeIds).size !== alternativeIds.length || alternativeIds.includes(directionId)) throw new Error("请选择最多两个不同于主目标的备选方向。");
+  const alternatives = alternativeIds.map((id) => { const alternative = findDirection(id); if (!alternative) throw new Error("备选方向不在目录内。"); return alternative; });
   const source = `limen_direction_map:${direction.id}`;
   const courses = direction.courses.map((course, i) => ({ id: `course-${i + 1}`, title: `了解与练习：${course}`, why: `对应 ${direction.name} 的编辑性课程路径，具体先修要求需核验。`, source, deliverable: `${course} 的概念笔记与一个可复现练习`, dependencies: i === 0 ? [] as string[] : [`course-${i}`], priority: "基础准备", estimated_effort_range: null, stage: `学习阶段 ${i + 1}` }));
   const tasks = [...courses,
@@ -60,7 +65,9 @@ export function actionPlan(profile: Profile, directionId: string, experience: Ex
   const currentYear = now.getUTCFullYear();
   const hasParameters = profileSchema.safeParse(profile).success && profile.weekly_hours !== null && profile.weekly_hours > 0 && profile.transition_year !== null && profile.transition_year >= currentYear && profile.pathway !== "未决定";
   const official = assessment === null ? null : assessmentSchema.parse(assessment);
-  return { version: "limen-r2-rules-v2", direction, gaps: competencyGaps(profile, direction), tasks, experience: experience?.reflection ?? null,
+  return { version: submittedPlanning ? "limen-r2-rules-v3" : "limen-r2-rules-v2", direction, gaps: competencyGaps(profile, direction), tasks, experience: experience?.reflection ?? null,
+    planning_input: submittedPlanning,
+    alternative_directions: alternatives,
     interest: official ? { source: official.source, scores: official.scores, onet_version: official.onet_version, api_version: official.api_version, returned_at: official.returned_at } : null,
     experience_relevance: direction.group_id === "cs_ai" ? "体验涉及模型评价；仅覆盖目标方向的一部分活动。" : "该体验是 AI 模型评价，不能代替此方向的专属岗位体验。",
     planning_ready: hasParameters, formal_ready: false,

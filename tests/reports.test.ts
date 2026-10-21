@@ -75,3 +75,32 @@ test("mock=true P4: R2 preserves official interest provenance and never derives 
   assert.equal(actionPlan(simulationProfile, "ml_cv", null).interest, null);
   assert.throws(() => actionPlan(simulationProfile, "ml_cv", null, new Date("2026-10-20"), { ...complete, scores: [] }));
 });
+
+test("simulation P4: explicit report planning overrides stale profile planning without changing the profile", () => {
+  const profile = { ...simulationProfile, pathway: "统考" as const };
+  const planning = { transition_year: 2030, weekly_hours: 6, pathway: "申请制", weekly_allocation: { foundation: 3, practice: 2, review: 1 } };
+  const plan = actionPlan(profile, "ml_cv", null, new Date("2026-10-20"), null, planning);
+  assert.deepEqual(plan.planning_input, planning);
+  assert.equal(plan.planning?.target_year, 2030);
+  assert.equal(plan.planning?.weekly_hours, 6);
+  assert.equal(plan.planning?.pathway, "申请制");
+  assert.ok(plan.tasks.some((task) => task.title.includes("申请制专属")));
+  assert.equal(profile.transition_year, 2028);
+  assert.equal(profile.weekly_hours, 4);
+  assert.equal(profile.pathway, "统考");
+});
+test("simulation P4: invalid report budgets and past target years are rejected before generation", () => {
+  const valid = { transition_year: 2030, weekly_hours: 4, pathway: "统考", weekly_allocation: { foundation: 2, practice: 1, review: 1 } };
+  for (const invalid of [
+    { ...valid, transition_year: 2025 }, { ...valid, weekly_hours: 0 }, { ...valid, weekly_hours: 169 }, { ...valid, pathway: "未决定" },
+    { ...valid, weekly_allocation: { foundation: 3, practice: 1, review: 1 } },
+    { ...valid, weekly_allocation: { foundation: -1, practice: 2, review: 2 } },
+    { ...valid, weekly_allocation: { foundation: 0, practice: 0, review: 0 } },
+    { ...valid, weekly_allocation: undefined }, { ...valid, unexpected: "not accepted" },
+  ]) assert.throws(() => actionPlan(simulationProfile, "ml_cv", null, new Date("2026-10-20"), null, invalid));
+});
+test("simulation P4: selected alternatives survive the report and invalid choices are rejected", () => {
+  const plan = actionPlan(simulationProfile, "ml_cv", null, new Date("2026-10-20"), null, undefined, ["software", "clinical_data"]);
+  assert.deepEqual(plan.alternative_directions?.map((direction) => direction.id), ["software", "clinical_data"]);
+  for (const invalid of [["ml_cv"], ["fake"], ["software", "software"], ["software", "clinical_data", "signals"]]) assert.throws(() => actionPlan(simulationProfile, "ml_cv", null, new Date("2026-10-20"), null, undefined, invalid));
+});

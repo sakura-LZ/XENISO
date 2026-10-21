@@ -8,6 +8,7 @@ import { requestAiExplanation, type Evidence } from "@/lib/ai";
 import { requiredEnv } from "@/lib/server/env";
 import { checkOrigin, errorResponse, json, limit, readJson } from "@/lib/server/http";
 import { requireSession } from "@/lib/server/supabase";
+import { r2PlanningSchema } from "@/lib/planning";
 
 export const dynamic = "force-dynamic";
 export async function GET(request: Request) {
@@ -24,11 +25,14 @@ export async function POST(request: Request) {
   try {
     checkOrigin(request);
     const { client, user } = await requireSession();
+    const input = z.discriminatedUnion("kind", [
+      z.object({ kind: z.literal("R1") }).strict(),
+      z.object({ kind: z.literal("R2"), direction_id: z.string().min(1).max(50), planning: r2PlanningSchema, alternative_ids: z.array(z.string().min(1).max(50)).max(2).default([]) }).strict(),
+    ]).safeParse(await readJson(request));
+    if (!input.success) throw new AppError("REPORT_INPUT", 400, "报告请求或计划预算无效，请检查本次填写的条件。");
     if (process.env.LIMEN_ENABLE_LLM !== "true") throw new AppError("AI_DISABLED", 503, "AI 解释服务未启用。当前仅可查看规则证据草案。");
     const config = { baseUrl: requiredEnv("LLM_BASE_URL"), key: requiredEnv("LLM_API_KEY"), model: requiredEnv("LLM_MODEL") };
     limit(`ai:${user.id}`, 2); limit("ai:global", 10);
-    const input = z.object({ kind: z.enum(["R1", "R2"]), direction_id: z.string().max(50).optional() }).strict().safeParse(await readJson(request));
-    if (!input.success) throw new AppError("REPORT_INPUT", 400, "报告请求无效。");
     const [p, a] = await Promise.all([
       client.from("profiles").select("payload").eq("id", user.id).maybeSingle(),
       client.from("assessments").select("payload").eq("id", user.id).maybeSingle(),
@@ -53,14 +57,16 @@ export async function POST(request: Request) {
       const experience = experienceSchema.safeParse(e.data?.payload);
       if (!experience.success || !previous.data) throw new AppError("EXPERIENCE_REQUIRED", 409, "请先生成 R1，并将已完成的工作台体验保存到当前访客。");
       let plan;
-      try { plan = actionPlan(profile.data, input.data.direction_id ?? "", experience.data, new Date(), assessment.data); } catch { throw new AppError("DIRECTION_REQUIRED", 400, "请选择目录内目标方向。"); }
-      if (!plan.planning_ready) throw new AppError("PLAN_REQUIRED", 409, "请先在画像保存有效目标年份、每周时间与升学路径。");
+      try { plan = actionPlan(profile.data, input.data.direction_id, experience.data, new Date(), assessment.data, input.data.planning, input.data.alternative_ids); }
+      catch (error) { if (error instanceof AppError) throw error; throw new AppError("DIRECTION_REQUIRED", 400, "请选择目录内目标方向。"); }
+      if (!plan.planning_ready) throw new AppError("PLAN_REQUIRED", 409, "请填写有效目标年份、每周时间、升学路径与预算。");
       rules = { ...plan, formal_ready: true };
       evidence.push(
         { ref: "experience_feedback", kind: "experience", value: experience.data.reflection },
         { ref: `limen_direction_map:${plan.direction.id}:selected`, kind: "direction", value: { name: plan.direction.name, tasks: plan.direction.work_tasks, selected_by_user: true } },
         { ref: "competency_gaps", kind: "gap", value: plan.gaps },
-        { ref: "user_profile.planning", kind: "planning", value: { transition_year: profile.data.transition_year, weekly_hours: profile.data.weekly_hours, pathway: profile.data.pathway, admissions: "未核验", effort: "未知" } },
+        { ref: "report_input.planning", kind: "planning", value: { ...input.data.planning, source: "user_explicit_report_input", admissions: "未核验", effort: "未知" } },
+        ...plan.alternative_directions.map((d) => ({ ref: `limen_direction_map:${d.id}:alternative`, kind: "direction" as const, value: { name: d.name, tasks: d.work_tasks, selected_by_user: true, role: "subjective_alternative" } })),
       );
     }
     const ai = await requestAiExplanation(config, evidence);

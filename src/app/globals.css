@@ -11,7 +11,7 @@ th, td { overflow-wrap: anywhere; }
 button { cursor: pointer; }
 button:disabled { cursor: not-allowed; opacity: .6; }
 :focus-visible { outline: 3px solid #5191d2; outline-offset: 4px; }
-.shell { max-width: 1120px; margin: auto; padding: 0 24px; }
+.shell { max-width: 1120px; margin-inline: auto; padding-inline: 24px; }
 .masthead { border-bottom: 1px solid var(--line); background: white; }
 .app-content { min-width: 0; }
 .app-navigation { display: flex; flex-wrap: wrap; gap: 4px 24px; max-width: 1120px; margin: auto; padding: 10px 24px; border-bottom: 1px solid var(--line); }
@@ -41,4 +41,4 @@ button, a { touch-action: manipulation; }
 input[type="range"] { min-height: 44px; }
 input[type="radio"], input[type="checkbox"] { min-width: 18px; min-height: 18px; accent-color: var(--blue); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
-@media (max-width: 640px) { .shell { padding: 0 18px; } h1 { overflow-wrap: anywhere; } }
+@media (max-width: 640px) { .shell { padding-inline: 18px; } h1 { overflow-wrap: anywhere; } }
