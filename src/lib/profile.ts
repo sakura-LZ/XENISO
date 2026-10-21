@@ -24,10 +24,10 @@ export const profileSchema = z.object({
   tech_skills: z.array(z.object({ skill: text, self_reported_level: text, evidence: text }).strict()).max(50),
   self_study: z.array(text).max(50), english: z.object({ description: text }).strict().nullable(),
   hobbies: z.array(text).max(30), work_preferences: z.array(text).max(30), career_priorities: z.array(text).max(30),
-  motivation: z.string(), self_evaluation: z.string(),
+  motivation: z.string().max(4000), self_evaluation: z.string().max(4000),
   interest_directions: z.array(text).max(10), transition_year: z.number().int().min(2026).max(2100).nullable(),
   pathway: z.enum(["统考", "推免", "申请制", "未决定"]), weekly_hours: z.number().finite().min(0).max(168).nullable(),
-  target_cities: z.array(text).max(20), constraints: z.string(),
+  target_cities: z.array(text).max(20), constraints: z.string().max(4000),
 }).strict().superRefine((profile, ctx) => {
   if (profile.gpa !== null && (profile.gpa_scale === null || profile.gpa > profile.gpa_scale)) ctx.addIssue({ code: "custom", path: ["gpa"], message: "填写 GPA 时请提供满分，且 GPA 不得超过满分。" });
   if (profile.rank !== null && (profile.cohort_size === null || profile.rank > profile.cohort_size)) ctx.addIssue({ code: "custom", path: ["rank"], message: "填写排名时请提供年级总人数，且排名不得超过总人数。" });

@@ -41,6 +41,10 @@ async function checkSupabase() {
     const publicClient = newClient();
     const publicRead = await publicClient.from("profiles").select("id");
     assert(publicRead.error?.code === "42501", "public table access must be denied; check migration and grants");
+    for (const table of ["assessments", "experiences", "reports"]) {
+      const denied = await publicClient.from(table).select("id");
+      assert(denied.error?.code === "42501", "all private tables must deny unauthenticated role access");
+    }
     const publicDelete = await publicClient.rpc("delete_own_account");
     assert(publicDelete.error?.code === "42501", "public RPC execution must be denied; check migration before creating users");
     for (let i = 0; i < 2; i++) {
@@ -73,6 +77,27 @@ async function checkSupabase() {
       const stillOwn = await actor.client.from("profiles").select("payload").eq("id", actor.id).single();
       assert(!stillOwn.error && stillOwn.data.payload.nickname.endsWith(":updated"), "owner data changed during cross-user attempts");
     }
+    // Synthetic payloads exercise ownership of reports/assessment/experience,
+    // never claim these are real official results or generated AI reports.
+    for (const table of ["assessments", "experiences", "reports"]) {
+      for (const actor of clients) {
+        const row = { id: actor.id, payload: { simulation: true, probe: run }, ...(table === "reports" ? { kind: "R1" } : {}) };
+        const saved = await actor.client.from(table).insert(row);
+        assert(!saved.error, "own private artifact insert failed");
+      }
+      for (const [actor, target] of [[a, b], [b, a]]) {
+        const own = await actor.client.from(table).select("id,payload");
+        assert(!own.error && own.data?.length === 1 && own.data[0].id === actor.id && own.data[0].payload.probe === run, "private artifact owner isolation failed");
+        const read = await actor.client.from(table).select("id").eq("id", target.id);
+        assert(!read.error && read.data?.length === 0, "foreign artifact read leaked");
+        const update = await actor.client.from(table).update({ payload: { simulation: true, altered: true } }).eq("id", target.id).select("id");
+        assert(!update.error && update.data?.length === 0, "foreign artifact update succeeded");
+        const deleted = await actor.client.from(table).delete().eq("id", target.id).select("id");
+        assert(!deleted.error && deleted.data?.length === 0, "foreign artifact deletion succeeded");
+        const forged = await actor.client.from(table).insert({ id: randomUUID(), payload: { simulation: true }, ...(table === "reports" ? { kind: "R2" } : {}) });
+        assert(forged.error?.code === "42501", "forged artifact owner insert succeeded");
+      }
+    }
     for (const entry of clients) {
       const savedSession = await entry.client.auth.getSession();
       const deleted = await entry.client.rpc("delete_own_account");
@@ -82,10 +107,14 @@ async function checkSupabase() {
       assert(Boolean(user.error) && !user.data.user, "deleted Auth identity remains accessible");
       const rows = await entry.client.from("profiles").select("id").eq("id", entry.id);
       assert(Boolean(rows.error) || rows.data?.length === 0, "deleted user profile still exists");
+      for (const table of ["assessments", "experiences", "reports"]) {
+        const removed = await entry.client.from(table).select("id").eq("id", entry.id);
+        assert(Boolean(removed.error) || removed.data?.length === 0, "deleted user artifact remains accessible");
+      }
       const refresh = await entry.client.auth.refreshSession({ refresh_token: savedSession.data.session!.refresh_token });
       assert(Boolean(refresh.error) && !refresh.data.session, "deleted identity can still refresh session");
     }
-    checks.push({ name: "supabase_live", status: "PASS", detail: "synthetic_probe=true; 2 anonymous identities; owner CRUD, refresh, cross-user SELECT/UPDATE/DELETE/forged INSERT, public denial, self deletion and token revocation verified" });
+    checks.push({ name: "supabase_live", status: "PASS", detail: "synthetic_probe=true; 2 anonymous identities; profiles/assessments/experiences/reports owner and cross-user RLS, public denial, refresh, self deletion, artifact cascade and token revocation verified" });
   } catch {
     // Do not print SDK error bodies: they may include URLs, auth or payload context.
     checks.push({ name: "supabase_live", status: "FAIL", detail: "Anonymous Auth / schema / RLS / deletion check failed; see setup prerequisites; raw errors suppressed" });

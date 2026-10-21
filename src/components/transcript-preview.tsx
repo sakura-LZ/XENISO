@@ -17,8 +17,8 @@ export function TranscriptPreview({ courses, onChange }: { courses: Course[]; on
       let rows: unknown[][];
       if (/\.csv$/i.test(file.name)) rows = parseCsv(await file.text());
       else if (/\.xlsx$/i.test(file.name)) {
-        const { default: readXlsx } = await import("read-excel-file/browser");
-        rows = await readXlsx(file);
+        const { readSheet } = await import("read-excel-file/browser");
+        rows = await readSheet(file, 1);
       } else throw new Error("只支持 CSV 和 XLSX 文件。");
       setPreview(coursesFromRows(rows)); setMessage("已在浏览器解析，请检查和修正后再确认。原始文件不会上传。");
     } catch (error) { setMessage(error instanceof Error ? error.message : "解析失败。"); }

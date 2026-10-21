@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
-:root { color-scheme: light; --ink: #15283c; --blue: #1e5ba4; --line: #dbe3eb; }
-body { margin: 0; background: #f5f7fa; color: var(--ink); font-family: "Segoe UI", "Microsoft YaHei", sans-serif; }
+:root { color-scheme: light; --ink: #152033; --blue: #315cf5; --line: #e2e8f0; }
+body { margin: 0; background: #f8fafc; color: var(--ink); font-family: "Segoe UI", "Microsoft YaHei", sans-serif; }
 a { color: var(--blue); text-underline-offset: 4px; }
-button, input { font: inherit; }
+button, input, select, textarea { font: inherit; }
+input, select, textarea { box-sizing: border-box; }
+select, textarea { max-width: 100%; }
+main, article, section, aside { min-width: 0; }
+th, td { overflow-wrap: anywhere; }
 button { cursor: pointer; }
-button:disabled { cursor: wait; opacity: .6; }
+button:disabled { cursor: not-allowed; opacity: .6; }
 :focus-visible { outline: 3px solid #5191d2; outline-offset: 4px; }
 .shell { max-width: 1120px; margin: auto; padding: 0 24px; }
 .masthead { border-bottom: 1px solid var(--line); background: white; }
@@ -19,4 +23,10 @@ button:disabled { cursor: wait; opacity: .6; }
 .field { width: 100%; max-width: 360px; display: block; margin-top: 8px; padding: 10px 12px; background: white; border: 1px solid #8b9cad; border-radius: 4px; }
 .notice { border-left: 3px solid #bd8b2a; background: #fffbf0; padding: 14px 18px; }
 .status { margin-top: 16px; min-height: 28px; color: #245580; }
+button, a { touch-action: manipulation; }
+.button { transition: background-color 180ms ease, border-color 180ms ease; }
+.button:hover:not(:disabled) { filter: brightness(.95); }
+input[type="range"] { min-height: 44px; }
+input[type="radio"], input[type="checkbox"] { min-width: 18px; min-height: 18px; accent-color: var(--blue); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
 @media (max-width: 640px) { .shell { padding: 0 18px; } h1 { overflow-wrap: anywhere; } }

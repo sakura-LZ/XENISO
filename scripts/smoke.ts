@@ -30,12 +30,19 @@ await check("missing credentials produce explicit 503, never a fake user or scor
   assert.equal((await questions.json()).error.code, "CONFIG_REQUIRED");
 });
 await check("unauthenticated private APIs rejected and uncached", async () => {
-  const profile = await fetch(`${origin}/api/profile`);
-  assert.equal(profile.status, 401);
-  assert.match(profile.headers.get("cache-control")!, /no-store/);
+  for (const path of ["/api/profile", "/api/assessment", "/api/experience", "/api/reports?kind=R1", "/api/reports?kind=R2"]) {
+    const response = await fetch(`${origin}${path}`);
+    assert.equal(response.status, 401);
+    assert.match(response.headers.get("cache-control")!, /no-store/);
+  }
   const result = await fetch(`${origin}/api/onet/results`, { method: "POST", headers: { origin, "Content-Type": "application/json" }, body: "[]" });
   assert.equal(result.status, 401);
   const session = await fetch(`${origin}/api/session`);
   assert.equal((await session.json()).user, null);
+});
+await check("all user-facing routes respond and keep their distinct purpose", async () => {
+  for (const [path, text] of [["/profile", "个人画像"], ["/assessment", "工作活动"], ["/explore", "细分方向"], ["/studio/ecg", "simulation"], ["/report/initial", "初步画像"], ["/report/plan", "行动草案"], ["/account", "删除"]]) {
+    const response = await fetch(`${origin}${path}`); assert.equal(response.status, 200); assert.ok((await response.text()).includes(text));
+  }
 });
 console.log(`Local HTTP smoke: ${passed} checks passed; no live service acceptance claimed.`);
