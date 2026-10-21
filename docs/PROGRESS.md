@@ -11,12 +11,12 @@
 
 | 阶段 | 状态 | 验收证据 |
 | --- | --- | --- |
-| P0 技术验证 | PARTIAL / BLOCKED | O*NET 最新真实请求仍 HTTP403；Supabase 无配置/本地 Docker engine 不可用 |
+| P0 技术验证 | PARTIAL / BLOCKED | O*NET 最新真实请求仍 HTTP403；Supabase 无配置；Docker 缺少两份启动 ISO，已定位真实主机根因 |
 | P1 画像与测评 | PARTIAL / BLOCKED | 多步画像、CSV/XLSX、独立中文译稿与文档演示；真实保存/官方计分未验收 |
 | P2 知识库与 R1 | PARTIAL / BLOCKED | 3/9 手册、双方向对比、证据引用规则草案；官方兴趣与 AI 未验收 |
 | P3 职业体验 | LOCAL_ACCEPTANCE_PASS | 三次真实状态变化、数值重算、反思、下载恢复、390/820/1440px 布局通过；访客云保存仍待 Supabase 联调 |
 | P4 R2 与规划 | PARTIAL / BLOCKED | 三种升学路径任务、四个交付阶段、预算和v2实际导出通过；官方兴趣来源契约通过，真实 AI R2 未验收 |
-| P5 集成与部署准备 | PARTIAL / BLOCKED | 36项单测/lint/build、5项HTTP、24项布局与实际截图通过，间距修正已实测；真实全链路未验收 |
+| P5 集成与部署准备 | PARTIAL / BLOCKED | 38项单测/lint/build、5项HTTP通过；24项布局与实际截图为上一里程碑证据；真实全链路未验收 |
 
 ## 初始检查（历史记录，后续已初始化 Git 与配置 O*NET）
 
@@ -130,3 +130,15 @@
 - 最终3002占位配置HTTP smoke 5/5通过，客户端密钥扫描42文件通过；该测试进程已停止，3001真实配置预览保留。最新36项单测为实际执行结果，不代表真实O*NET/数据库/LLM验收。
 - 真实服务状态复核：Supabase两项仍未配置、AI关闭，本机Docker Linux engine pipe仍不存在；没有重复请求官方接口或收费服务，完整Goal继续未完成。
 - 提交前差异检查通过，17个暂存文件密钥扫描退出0，未输出任何值；本轮提交保存参数一致性、证据快照、间距修正与实际测试证据，非完整阶段通过声明。
+
+## P0 主机诊断与 P1 测评记录校验（2026-10-21 03:51 PDT）
+
+- 恢复检查：Git起点干净、最新`3f60bba`；同目录其他对话均notLoaded，没有真实并发写入。已读根AGENTS、README_FIRST、总体计划和P0规格。普通额度工具显示可用（5小时窗口已用4%）；Goal后端当前返回`usageLimited`，未修改该状态，也未标记完成。
+- 纠正环境判断：沙箱的LOCALAPPDATA被重定向，沙箱内WSL访问拒绝不能证明主机未安装WSL。使用已知绝对路径、受审核主机命令确认WSL默认版本2、docker-desktop发行版Stopped。
+- 官方`docker desktop start --detach`退出0，但后续状态/引擎连接仍失败；直接隐藏启动现有应用后，后台约12秒退出。过滤脱敏日志定位缺少`resources/wsl/docker-wsl-cli.iso`和`resources/docker-desktop.iso`，逐路径检查证实缺失。不是已运行的Supabase，也没有执行迁移。
+- 根据[Docker官方发布页](https://docs.docker.com/desktop/release-notes/#4830)定位同版本4.83.0安装包及官方校验值，尝试恢复缺失资源。curl两次均退出35/连接重置；Node收到部分文件，后续断点续传ECONNRESET。忽略目录`work/tools/docker-repair/`保存40,361,198字节未验证片段及续传脚本；未运行安装包、未覆盖安装、未卸载/重置WSL。官方更新检查退出1，提示Docker Desktop未运行。环境证据见`testing/P0-runtime.latest.json`。
+- 仅检查配置存在性：SUPABASE_URL、SUPABASE_ANON_KEY以及三个NEXT_PUBLIC常见别名仍未配置，LLM关闭；未打印值，不重复请求未变化的O*NET接口。P0最新真实官方响应仍为05:12Z的HTTP403，不伪造新的请求记录。
+- 代码复核发现`assessmentSchema`允许未知维度、空英文、混合数据库版本及不一致职业数量。新增`tests/assessment.test.ts`两项回归，首次0/2通过，分别复现未知维度与缺失职业页错误；修复为六个合法维度各5题、逐题版本一致、原文非空但不修改原文、职业条目与总数一致。重复索引继续拒绝。原始题号与答案编码不变。
+- 修改`src/lib/assessment.ts`、`src/lib/onet/translation.ts`；首次构建发现共享Question.area仍为string，已统一为六维联合类型，没有类型断言掩盖错误。最终`npm test`38/38、0跳过，`npm run lint`退出0/0警告，`npm run build`退出0，含TypeScript与10静态页面。
+- 最终独立3002占位配置服务HTTP smoke 5/5通过，客户端密钥扫描42文件通过；3002随后停止，3001已恢复真实项目环境本机预览。没有UI变动，本轮不重跑或冒称新增截图验收。
+- 恢复任务：网络/配置实际变化后继续官方安装包安全续传（完整SHA-256验证后才可使用），或接入已落盘的开发Supabase；再顺序迁移并真实测试两身份、刷新、四表隔离和删除。真实O*NET计分、R1/R2 AI及完整主线仍未通过；不要重复实现既有P4/P5，也不要将Goal标complete。

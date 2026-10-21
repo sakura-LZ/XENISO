@@ -39,7 +39,7 @@ export const translation = {
   version: "limen-zh-draft-2026-10-20", author: "LIMEN", review_status: "pending_human_review", source_url: snapshotSource,
   items: text.map(([original_en, zh], i) => ({ index: i + 1, area: areas[i % 6], original_en, zh })),
 };
-export type Question = { index: number; area: string; original_en: string };
+export type Question = { index: number; area: (typeof areas)[number]; original_en: string };
 export type Questionnaire = { source: "onet_live" | "official_document_snapshot"; instrument: string; api_version: string; onet_version: string; questions: Question[]; answer_options: { value: number; name: string }[] };
 export const documentSnapshot: Questionnaire = {
   source: "official_document_snapshot", instrument: "Mini-IP-30", api_version: "not_available", onet_version: "2016 Appendix A (document, not API database version)",

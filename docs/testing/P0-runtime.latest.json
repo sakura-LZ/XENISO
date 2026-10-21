@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-10-21T10:51:53Z",
+  "mock": false,
+  "supabase_configured": false,
+  "public_prefix_supabase_configured": false,
+  "llm_enabled": false,
+  "wsl": { "default_version": 2, "docker_desktop_distribution": "Stopped" },
+  "docker": {
+    "installed_version": "4.83.0.234302",
+    "cli_start_exit_code": 0,
+    "cli_start_proves_engine_ready": false,
+    "direct_hidden_launch_attempted": true,
+    "engine_ready": false,
+    "backend_error": "initializing engine paths: docker-wsl-cli.iso and docker-desktop.iso do not exist",
+    "missing_resources_confirmed": ["resources/wsl/docker-wsl-cli.iso", "resources/docker-desktop.iso"],
+    "official_update_check_exit_code": 1,
+    "official_update_check_message": "Docker Desktop is not running"
+  },
+  "repair_download": {
+    "source": "https://desktop.docker.com/win/main/amd64/234302/Docker%20Desktop%20Installer.exe",
+    "checksum_source": "https://desktop.docker.com/win/main/amd64/234302/checksums.txt",
+    "curl_attempts": 2,
+    "curl_exit_code": 35,
+    "node_download_completed": false,
+    "node_resume_failure": "ECONNRESET",
+    "partial_bytes_observed": 40361198,
+    "checksum_verified": false,
+    "installer_executed": false,
+    "existing_installation_overwritten": false
+  },
+  "database_migrations_executed": false,
+  "anonymous_auth_and_rls_accepted": false,
+  "note": "Runtime diagnosis only. No database, official interest scoring or AI acceptance is claimed. Sandbox access denial was separately distinguished from the actual host startup failure."
+}
