@@ -1,8 +1,21 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { redactEvidence, requestAiExplanation, validateAiExplanation, type Evidence } from "../src/lib/ai";
+import { readSavedExplanation, redactEvidence, requestAiExplanation, validateAiExplanation, type Evidence } from "../src/lib/ai";
 const evidence: Evidence[] = [{ ref: "user_profile.tech_skills[0]", kind: "transfer", value: "simulation：自述 Python 入门" }];
 const output = { explanations: [{ kind: "transfer", evidence_refs: [evidence[0].ref], text: "仅有入门自述，具体独立实践能力尚未核验。" }], unknowns: ["尚无项目成果"] };
+const savedReport = { kind: "R2", source: "llm_live", rules: { direction: { id: "ml_cv" } }, evidence, ai: { explanation: output, generated_at: "2026-10-20T12:00:00.000Z", source: "llm_live" } };
+
+test("mock=true saved AI: R2 never displays a different selected direction", () => {
+  assert.deepEqual(readSavedExplanation(savedReport, "R2", "ml_cv").explanation, output);
+  assert.throws(() => readSavedExplanation(savedReport, "R2", "software_eng"), /其他目标方向/);
+  assert.throws(() => readSavedExplanation(savedReport, "R2"), /其他目标方向/);
+  assert.throws(() => readSavedExplanation(savedReport, "R1"), /类型或结构/);
+});
+test("mock=true saved AI: missing metadata and invented references are rejected on read", () => {
+  assert.throws(() => readSavedExplanation({ ...savedReport, source: "simulation" }, "R2", "ml_cv"));
+  assert.throws(() => readSavedExplanation({ ...savedReport, evidence: [] }, "R2", "ml_cv"), /证据校验/);
+  assert.throws(() => readSavedExplanation({ ...savedReport, ai: { ...savedReport.ai, generated_at: "unknown" } }, "R2", "ml_cv"));
+});
 test("mock=true AI: valid explanation requires existing evidence and matching kind", () => {
   assert.equal(validateAiExplanation(output, evidence).explanations.length, 1);
   assert.throws(() => validateAiExplanation({ ...output, invented: true }, evidence));

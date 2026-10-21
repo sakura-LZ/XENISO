@@ -70,6 +70,6 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
     </section><section className="mt-9 border-t pt-6"><h2 className="text-xl font-semibold">06 · 招生核验与风险</h2><p className="mt-4 notice">已核验招生项目：0 条。没有院校可报考结论。请在官方招生页面逐条记录：年份、专业代码、招生方式、科目、跨专业资格、链接和核验日期。</p><ul className="mt-5 list-disc space-y-3 pl-5 text-sm leading-7">{plan.risks.map((risk) => <li key={risk}>{risk}</li>)}</ul></section>
     <div className="mt-8 flex flex-wrap gap-4"><button className="button" disabled={!ready} onClick={exportDraft}>导出规则行动草案</button><Link href="/profile" className="button secondary">补充与保存画像</Link><Link href="/studio/ecg" className="button secondary">返回职业体验</Link></div><p className="mt-3 text-sm muted">导出需：读取画像、完成体验反馈、填写有效计划条件及预算。当前页修改只留在内存；通过画像页保存个人资料。</p></>}
     <p className="mt-9 text-sm muted">本报告是探索辅助，不代表报考资格。以上为规则行动草案；正式 AI 报告的实际状态在下方独立显示。</p>
-    <AiReport kind="R2" direction={findDirection(direction)?.id} />
+    <AiReport key={direction} kind="R2" direction={findDirection(direction)?.id} />
   </main>;
 }

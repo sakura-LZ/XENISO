@@ -11,6 +11,20 @@ export const aiExplanationSchema = z.object({
   unknowns: z.array(z.string().max(200)).max(8),
 }).strict();
 export type AiExplanation = z.infer<typeof aiExplanationSchema>;
+export function readSavedExplanation(input: unknown, kind: "R1" | "R2", direction?: string) {
+  const saved = z.object({
+    kind: z.enum(["R1", "R2"]), source: z.literal("llm_live"),
+    rules: z.object({ direction: z.object({ id: z.string() }).passthrough().optional() }).passthrough(),
+    ai: z.object({ explanation: z.unknown(), generated_at: z.iso.datetime(), source: z.literal("llm_live") }).passthrough(),
+    evidence: z.array(z.object({ ref: z.string(), kind: z.enum(["interest", "transfer", "gap", "experience", "direction", "planning"]), value: z.unknown() })),
+  }).passthrough().safeParse(input);
+  if (!saved.success || saved.data.kind !== kind) throw new AppError("REPORT_CONTRACT", 502, "已保存的报告类型或结构无效，请重新生成。");
+  if (kind === "R2" && (!direction || saved.data.rules.direction?.id !== direction)) throw new AppError("REPORT_DIRECTION", 409, "已保存的 R2 属于其他目标方向。请为当前方向生成报告，未展示旧方向的解释。");
+  let explanation: AiExplanation;
+  try { explanation = validateAiExplanation(saved.data.ai.explanation, saved.data.evidence); }
+  catch { throw new AppError("REPORT_EVIDENCE", 502, "已保存的 AI 解释未通过证据校验，请重新生成。"); }
+  return { explanation, generated_at: saved.data.ai.generated_at };
+}
 export function validateAiExplanation(input: unknown, evidence: Evidence[]): AiExplanation {
   const parsed = aiExplanationSchema.safeParse(input);
   if (!parsed.success) throw new AppError("AI_CONTRACT", 502, "AI 解释结构未通过校验，未保存报告。");

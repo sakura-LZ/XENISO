@@ -22,6 +22,6 @@ export default function Home() {
       </aside>
     </div>
     <section className="mt-12 border-t pt-8"><div className="flex flex-wrap items-baseline justify-between gap-3"><h2 className="text-2xl font-semibold">先翻一翻方向手册</h2><Link href="/explore" className="text-sm">浏览与对比九个细分方向 →</Link></div><p className="mt-3 text-sm leading-7 muted">职业活动来自所列 O*NET 来源，研究方向与职业之间的关联由 LIMEN 编辑。</p><div className="mt-6 divide-y">{groups.map((group) => <div key={group.id} className="grid gap-4 py-5 md:grid-cols-[224px_1fr]"><h3 className="font-semibold">{group.name}</h3><div className="flex flex-wrap gap-x-7 gap-y-3">{group.specializations.map((direction) => <Link key={direction.id} href={`/explore?direction=${direction.id}`} className="text-sm">{direction.name} ↗</Link>)}</div></div>)}</div></section>
-    <details className="mt-8 border-t pt-5 text-sm"><summary className="cursor-pointer">开发验证与数据来源状态</summary><p className="mt-3 leading-7">O*NET 真实接口最近一次验证返回 HTTP 403；问卷文档快照不能代替官方计分。Supabase 尚无可用连接，真实资料隔离验收未完成。<Link href="/setup">查看配置状态</Link>。</p></details>
+    <details className="mt-8 border-t pt-5 text-sm"><summary className="cursor-pointer">开发验证与数据来源状态</summary><p className="mt-3 leading-7">O*NET 真实接口尚未完成联通验收；问卷文档快照不能代替官方计分。真实资料隔离与 AI 报告仍待联调。<Link href="/setup">查看当前配置状态</Link>。</p></details>
   </main>;
 }

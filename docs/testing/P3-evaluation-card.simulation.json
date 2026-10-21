@@ -1,0 +1,40 @@
+{
+  "simulation": true,
+  "scenario_id": "wearable_ecg_alert_demo",
+  "role": "ml_engineer",
+  "seed": 20261020,
+  "threshold": 0.71,
+  "device": "B",
+  "tradeoff": "balance",
+  "operations": {
+    "threshold_changed": true,
+    "devices_compared": true,
+    "tradeoff_chosen": true
+  },
+  "reflection": {
+    "favorite_operation": "simulation：比较设备的误报差异",
+    "least_favorite_operation": "暂无",
+    "willingness_for_3_hours": 4,
+    "followup_question": ""
+  },
+  "completed_at": "2026-10-20T23:20:15.199Z",
+  "generator_version": "limen-teaching-lcg-v1",
+  "source": "independently generated pedagogical sample, not patient records or paper measurements",
+  "metrics": {
+    "n": 50,
+    "tp": 2,
+    "fp": 6,
+    "tn": 35,
+    "fn": 7,
+    "sensitivity": 0.2222222222222222,
+    "specificity": 0.8536585365853658,
+    "precision": 0.25,
+    "false_alerts": 6
+  },
+  "competencies": [
+    "模型评价",
+    "泛化验证",
+    "工程取舍"
+  ],
+  "limitation": "合成教学数据，不用于诊疗；反思是兴趣自述，不是能力得分。"
+}

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { aiExplanationSchema, type AiExplanation } from "@/lib/ai";
+import { readSavedExplanation, type AiExplanation } from "@/lib/ai";
 import { download } from "@/lib/download";
 
 export function AiReport({ kind, direction }: { kind: "R1" | "R2"; direction?: string }) {
@@ -13,8 +13,7 @@ export function AiReport({ kind, direction }: { kind: "R1" | "R2"; direction?: s
       const response = await fetch(generate ? "/api/reports" : `/api/reports?kind=${kind}`, generate ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ kind, ...(direction ? { direction_id: direction } : {}) }) } : undefined);
       const data = await response.json(); if (!response.ok) throw new Error(data.error?.message ?? "AI 解释未生成。");
       if (!data.report) throw new Error("当前访客没有保存的此类 AI 报告。");
-      const explanation = aiExplanationSchema.parse(data.report.ai?.explanation);
-      setResult({ explanation, generated_at: data.report.ai.generated_at }); setMessage("已读取服务实际生成并保存的 AI 解释。请逐项对照证据，不将解释作为报考资格结论。");
+      setResult(readSavedExplanation(data.report, kind, direction)); setMessage("已读取服务实际生成并保存的 AI 解释。请逐项对照证据，不将解释作为报考资格结论。");
     } catch (error) { setMessage(error instanceof Error ? error.message : "读取失败，未生成报告。"); }
     finally { setBusy(false); }
   }
