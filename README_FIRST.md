@@ -2,6 +2,8 @@
 
 **先读本文件，按阶段加载，严禁开始就全文扫描项目说明。**
 
+**已有代码的续建入口**：根`AGENTS.md` → 本文件 → [`docs/HANDOFF.md`](docs/HANDOFF.md) → `docs/PROGRESS.md`顶部状态与Git状态 → `docs/01_BUILD_PLAN.md`当前任务。不要先重读完整进度历史。新对话启动提示词见[`prompts/RESUME_IN_NEW_CHAT.md`](prompts/RESUME_IN_NEW_CHAT.md)。
+
 ## 产品一句话
 LIMEN「临界」面向医学生，以职业兴趣量表与自填医学经历为入口，连接职业实际任务、三类跨学科方向与升学准备路线。目标不是劝学生转行，也不是推算录取率。
 
