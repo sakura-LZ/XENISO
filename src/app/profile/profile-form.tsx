@@ -88,8 +88,8 @@ export function ProfileForm() {
       <button type="button" className="text-sm text-blue-700 underline" disabled={busy} onClick={() => restore(true)}>恢复个人草稿</button>
     </div>
     <p className={`mt-4 rounded p-3 text-sm ${simulation ? "bg-amber-50 text-amber-900" : "bg-blue-50 text-blue-900"}`}>{simulation ? "simulation · 本地合成数据演示模式" : "个人资料模式 · 需匿名登录才能保存；未保存内容仅在当前页面内存中"}</p>
-    <nav aria-label="画像填写步骤" className="sticky top-0 z-10 mt-7 flex overflow-x-auto border-y border-slate-200 bg-slate-50 py-3">
-      {steps.map((title, i) => <button type="button" className={`min-w-32 border-b-2 px-3 py-2 text-sm ${step === i ? "border-blue-600 font-semibold text-blue-800" : "border-transparent muted"}`} key={title} aria-current={step === i ? "step" : undefined} onClick={() => setStep(i)}>{i + 1}. {title}</button>)}
+    <nav aria-label="画像填写步骤" className="sticky top-0 z-10 mt-7 grid grid-cols-2 border-y border-slate-200 bg-slate-50 py-2 sm:grid-cols-4">
+      {steps.map((title, i) => <button type="button" className={`min-w-0 border-b-2 px-2 py-3 text-sm ${step === i ? "border-blue-600 font-semibold text-blue-800" : "border-transparent muted"}`} key={title} aria-current={step === i ? "step" : undefined} onClick={() => setStep(i)}>{i + 1}. {title}</button>)}
     </nav>
     <form onSubmit={(e) => { e.preventDefault(); void save(); }} className="mt-8 space-y-6" aria-label="个人画像草稿">
       <h2 className="text-xl font-semibold">{steps[step]}</h2>

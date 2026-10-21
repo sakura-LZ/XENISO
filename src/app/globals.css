@@ -13,6 +13,18 @@ button:disabled { cursor: not-allowed; opacity: .6; }
 :focus-visible { outline: 3px solid #5191d2; outline-offset: 4px; }
 .shell { max-width: 1120px; margin: auto; padding: 0 24px; }
 .masthead { border-bottom: 1px solid var(--line); background: white; }
+.app-content { min-width: 0; }
+.app-navigation { display: flex; flex-wrap: wrap; gap: 4px 24px; max-width: 1120px; margin: auto; padding: 10px 24px; border-bottom: 1px solid var(--line); }
+.app-navigation a { padding: 10px 0; font-size: 14px; line-height: 24px; text-decoration: none; }
+.app-navigation a[aria-current="page"] { color: var(--ink); font-weight: 700; text-decoration: underline; }
+@media (min-width: 1024px) {
+  .app-frame { display: grid; grid-template-columns: 224px minmax(0, 1fr); max-width: 1344px; margin: auto; }
+  .app-navigation { position: sticky; top: 20px; align-self: start; display: flex; flex-direction: column; flex-wrap: nowrap; gap: 6px; margin: 24px 0; padding: 0 20px; border: 0; }
+  .app-navigation a { padding: 10px 12px; border-left: 2px solid transparent; }
+  .app-navigation a:hover { background: #eef3f9; }
+  .app-navigation a[aria-current="page"] { border-left-color: var(--blue); background: white; text-decoration: none; }
+  .masthead .shell { max-width: 1344px; }
+}
 .brand { color: var(--ink); text-decoration: none; font-size: 24px; font-weight: 750; letter-spacing: .12em; }
 .eyebrow { font-size: 12px; letter-spacing: .14em; font-weight: 650; color: #526c86; }
 .muted { color: #52667b; }

@@ -1,0 +1,157 @@
+{
+  "checked_at": "2026-10-21T05:44:34.902Z",
+  "basis": "Actual browser CSS geometry; not a real service acceptance",
+  "checks": [
+    {
+      "route": "/",
+      "document": 375,
+      "navWidth": 375,
+      "viewport": 390
+    },
+    {
+      "route": "/",
+      "document": 805,
+      "navWidth": 805,
+      "viewport": 820
+    },
+    {
+      "route": "/",
+      "document": 1425,
+      "navWidth": 224,
+      "viewport": 1440
+    },
+    {
+      "route": "/assessment",
+      "document": 390,
+      "navWidth": 390,
+      "viewport": 390
+    },
+    {
+      "route": "/assessment",
+      "document": 820,
+      "navWidth": 820,
+      "viewport": 820
+    },
+    {
+      "route": "/assessment",
+      "document": 1440,
+      "navWidth": 224,
+      "viewport": 1440
+    },
+    {
+      "route": "/report/initial",
+      "document": 375,
+      "navWidth": 375,
+      "viewport": 390
+    },
+    {
+      "route": "/report/initial",
+      "document": 805,
+      "navWidth": 805,
+      "viewport": 820
+    },
+    {
+      "route": "/report/initial",
+      "document": 1425,
+      "navWidth": 224,
+      "viewport": 1440
+    },
+    {
+      "route": "/explore",
+      "document": 375,
+      "navWidth": 375,
+      "viewport": 390
+    },
+    {
+      "route": "/explore",
+      "document": 805,
+      "navWidth": 805,
+      "viewport": 820
+    },
+    {
+      "route": "/explore",
+      "document": 1425,
+      "navWidth": 224,
+      "viewport": 1440
+    },
+    {
+      "route": "/studio/ecg",
+      "document": 375,
+      "navWidth": 375,
+      "viewport": 390
+    },
+    {
+      "route": "/studio/ecg",
+      "document": 805,
+      "navWidth": 805,
+      "viewport": 820
+    },
+    {
+      "route": "/studio/ecg",
+      "document": 1425,
+      "navWidth": 224,
+      "viewport": 1440
+    },
+    {
+      "route": "/account",
+      "document": 390,
+      "navWidth": 390,
+      "viewport": 390
+    },
+    {
+      "route": "/account",
+      "document": 820,
+      "navWidth": 820,
+      "viewport": 820
+    },
+    {
+      "route": "/account",
+      "document": 1440,
+      "navWidth": 224,
+      "viewport": 1440
+    },
+    {
+      "route": "/report/plan (simulation + 2 alternatives)",
+      "document": 375,
+      "navWidth": 375,
+      "viewport": 390
+    },
+    {
+      "route": "/report/plan (simulation + 2 alternatives)",
+      "document": 805,
+      "navWidth": 805,
+      "viewport": 820
+    },
+    {
+      "route": "/report/plan (simulation + 2 alternatives)",
+      "document": 1425,
+      "navWidth": 224,
+      "viewport": 1440
+    },
+    {
+      "route": "/profile (step 4)",
+      "document": 375,
+      "navWidth": 375,
+      "viewport": 390
+    },
+    {
+      "route": "/profile (step 4)",
+      "document": 805,
+      "navWidth": 805,
+      "viewport": 820
+    },
+    {
+      "route": "/profile (step 4)",
+      "document": 1425,
+      "navWidth": 224,
+      "viewport": 1440
+    }
+  ],
+  "profile_stepper_phone": {
+    "buttons": 4,
+    "scroll": 339,
+    "viewport": 390,
+    "width": 339
+  },
+  "passed": 24
+}

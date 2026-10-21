@@ -1,0 +1,334 @@
+{
+  "version": "limen-r2-rules-v2",
+  "direction": {
+    "id": "ml_cv",
+    "name": "机器学习与计算机视觉",
+    "onet": [
+      {
+        "code": "15-2051.00",
+        "name": "Data Scientists",
+        "relationship": "direct"
+      },
+      {
+        "code": "15-1221.00",
+        "name": "Computer and Information Research Scientists",
+        "relationship": "related"
+      }
+    ],
+    "work_tasks": [
+      "清洗与探索训练数据",
+      "训练并评价模型",
+      "分析模型错误、偏差及外部泛化"
+    ],
+    "skills": [
+      "Python",
+      "概率统计",
+      "机器学习",
+      "深度学习",
+      "模型评估"
+    ],
+    "courses": [
+      "Python编程",
+      "线性代数与概率论",
+      "数据结构与算法",
+      "机器学习",
+      "深度学习"
+    ],
+    "medical_transfer": [
+      "医学影像或临床数据理解",
+      "研究设计",
+      "医学评价指标"
+    ],
+    "group_id": "cs_ai",
+    "group_name": "AI / 计算机"
+  },
+  "gaps": [
+    {
+      "skill": "Python",
+      "status": "已自述/待核实",
+      "evidence_refs": [
+        "user_profile.tech_skills[0]",
+        "user_profile.courses[1]"
+      ],
+      "note": "名称匹配仅用于整理证据，不代表已掌握。"
+    },
+    {
+      "skill": "概率统计",
+      "status": "信息不足/待了解",
+      "evidence_refs": [],
+      "note": "尚未获得相关证据，不推断学习潜力。"
+    },
+    {
+      "skill": "机器学习",
+      "status": "信息不足/待了解",
+      "evidence_refs": [],
+      "note": "尚未获得相关证据，不推断学习潜力。"
+    },
+    {
+      "skill": "深度学习",
+      "status": "信息不足/待了解",
+      "evidence_refs": [],
+      "note": "尚未获得相关证据，不推断学习潜力。"
+    },
+    {
+      "skill": "模型评估",
+      "status": "信息不足/待了解",
+      "evidence_refs": [],
+      "note": "尚未获得相关证据，不推断学习潜力。"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "course-1",
+      "title": "了解与练习：Python编程",
+      "why": "对应 机器学习与计算机视觉 的编辑性课程路径，具体先修要求需核验。",
+      "source": "limen_direction_map:ml_cv",
+      "deliverable": "Python编程 的概念笔记与一个可复现练习",
+      "dependencies": [],
+      "priority": "基础准备",
+      "estimated_effort_range": null,
+      "stage": "学习阶段 1"
+    },
+    {
+      "id": "course-2",
+      "title": "了解与练习：线性代数与概率论",
+      "why": "对应 机器学习与计算机视觉 的编辑性课程路径，具体先修要求需核验。",
+      "source": "limen_direction_map:ml_cv",
+      "deliverable": "线性代数与概率论 的概念笔记与一个可复现练习",
+      "dependencies": [
+        "course-1"
+      ],
+      "priority": "基础准备",
+      "estimated_effort_range": null,
+      "stage": "学习阶段 2"
+    },
+    {
+      "id": "course-3",
+      "title": "了解与练习：数据结构与算法",
+      "why": "对应 机器学习与计算机视觉 的编辑性课程路径，具体先修要求需核验。",
+      "source": "limen_direction_map:ml_cv",
+      "deliverable": "数据结构与算法 的概念笔记与一个可复现练习",
+      "dependencies": [
+        "course-2"
+      ],
+      "priority": "基础准备",
+      "estimated_effort_range": null,
+      "stage": "学习阶段 3"
+    },
+    {
+      "id": "course-4",
+      "title": "了解与练习：机器学习",
+      "why": "对应 机器学习与计算机视觉 的编辑性课程路径，具体先修要求需核验。",
+      "source": "limen_direction_map:ml_cv",
+      "deliverable": "机器学习 的概念笔记与一个可复现练习",
+      "dependencies": [
+        "course-3"
+      ],
+      "priority": "基础准备",
+      "estimated_effort_range": null,
+      "stage": "学习阶段 4"
+    },
+    {
+      "id": "course-5",
+      "title": "了解与练习：深度学习",
+      "why": "对应 机器学习与计算机视觉 的编辑性课程路径，具体先修要求需核验。",
+      "source": "limen_direction_map:ml_cv",
+      "deliverable": "深度学习 的概念笔记与一个可复现练习",
+      "dependencies": [
+        "course-4"
+      ],
+      "priority": "基础准备",
+      "estimated_effort_range": null,
+      "stage": "学习阶段 5"
+    },
+    {
+      "id": "research",
+      "title": "设计一个小型研究复现",
+      "why": "通过实际活动了解“清洗与探索训练数据”是否愿意继续做。",
+      "source": "limen_direction_map:ml_cv",
+      "deliverable": "研究问题、公开或合成数据来源、方法、局限与可复现结果",
+      "dependencies": [
+        "course-5"
+      ],
+      "priority": "实践探索",
+      "estimated_effort_range": null,
+      "stage": "项目阶段"
+    },
+    {
+      "id": "admissions",
+      "title": "核验目标年份与路径的官方招生条件",
+      "why": "当前没有已核验招生条目，不能确认报考资格或统一考试科目。",
+      "source": "verifiedAdmissions:empty",
+      "deliverable": "官方 URL、招生年份、专业代码、资格要求、考试科目与核验日期",
+      "dependencies": [],
+      "priority": "并行核验",
+      "estimated_effort_range": null,
+      "stage": "现在开始"
+    },
+    {
+      "source": "limen_pathway_checklist:v1:申请制",
+      "estimated_effort_range": null,
+      "stage": "升学准备（官方要求待核验）",
+      "id": "path-eligibility",
+      "title": "申请制专属：核验学历与语言条件",
+      "why": "不同项目规则可能不同，不据医学背景推断是否可申请。",
+      "deliverable": "目标项目学历条件、语言要求、材料要求与官方来源；不预设语言分数",
+      "dependencies": [
+        "admissions"
+      ],
+      "priority": "优先核验"
+    },
+    {
+      "source": "limen_pathway_checklist:v1:申请制",
+      "estimated_effort_range": null,
+      "stage": "升学准备（官方要求待核验）",
+      "id": "path-materials",
+      "title": "申请制专属：整理项目要求的申请材料",
+      "why": "根据已核验材料要求整理研究问题与成果；推荐或导师联系只在项目要求或本人有明确目的时安排。",
+      "deliverable": "个人陈述或研究计划等材料的项目要求对照、成果索引与待准备项；非必需材料不强加",
+      "dependencies": [
+        "path-eligibility"
+      ],
+      "priority": "按官方要求准备"
+    },
+    {
+      "source": "limen_pathway_checklist:v1:申请制",
+      "estimated_effort_range": null,
+      "stage": "升学准备（官方要求待核验）",
+      "id": "path-window",
+      "title": "申请制专属：核验申请与考核截止时间",
+      "why": "时间和时区未核实前不能制定可靠截止计划。",
+      "deliverable": "项目官方申请、材料补交与考核时间（含时区）及来源；未公布则标未知",
+      "dependencies": [
+        "admissions"
+      ],
+      "priority": "现在开始"
+    }
+  ],
+  "experience": {
+    "favorite_operation": "simulation：比较不同设备",
+    "least_favorite_operation": "暂无",
+    "willingness_for_3_hours": 4,
+    "followup_question": ""
+  },
+  "interest": null,
+  "experience_relevance": "体验涉及模型评价；仅覆盖目标方向的一部分活动。",
+  "planning_ready": true,
+  "formal_ready": false,
+  "planning": {
+    "target_year": 2028,
+    "weekly_hours": 4,
+    "pathway": "申请制",
+    "official_deadlines_verified": false,
+    "milestones": [
+      {
+        "stage": "现在开始",
+        "task_ids": [
+          "admissions",
+          "path-eligibility",
+          "path-window"
+        ],
+        "exit_condition": "记录已核实来源与未知项；若资格或窗口不满足，先调整目标或路径"
+      },
+      {
+        "stage": "基础准备",
+        "task_ids": [
+          "course-1",
+          "course-2",
+          "course-3",
+          "course-4",
+          "course-5"
+        ],
+        "exit_condition": "按依赖完成概念笔记与可复现练习，用实际耗时调整预算"
+      },
+      {
+        "stage": "实践与复盘",
+        "task_ids": [
+          "research"
+        ],
+        "exit_condition": "提交小型复现成果、方法局限与继续探索意愿"
+      },
+      {
+        "stage": "申报准备",
+        "task_ids": [
+          "path-materials"
+        ],
+        "exit_condition": "逐项对照官方材料与截止时间；未核验时不视为已具备申请资格"
+      }
+    ],
+    "weekly_budget": [
+      "将本人可用时间分成基础学习、一次可交付练习和复盘；比例由本人调整",
+      "每周记录实际耗时，再决定是否推进到下一依赖阶段"
+    ],
+    "horizon": "目标年份为 2028；当前年份为 2026。具体招生日期未核验，暂不倒排到月份。"
+  },
+  "risks": [
+    "课程缺少经验证的工作量范围，无法判断是否能在目标年份前完成；不承诺进度"
+  ],
+  "simulation": true,
+  "status": "rule_based_draft_not_formal_ai_report",
+  "selected_by": "user_explicit_choice",
+  "profile_planning": {
+    "transition_year": 2028,
+    "weekly_hours": 4,
+    "pathway": "申请制"
+  },
+  "weekly_allocation_by_user": {
+    "foundation": 2,
+    "practice": 1,
+    "review": 1
+  },
+  "alternatives": [],
+  "experience_card": {
+    "simulation": true,
+    "scenario_id": "wearable_ecg_alert_demo",
+    "role": "ml_engineer",
+    "seed": 20261020,
+    "threshold": 0.51,
+    "device": "B",
+    "tradeoff": "sensitivity",
+    "operations": {
+      "threshold_changed": true,
+      "devices_compared": true,
+      "tradeoff_chosen": true
+    },
+    "reflection": {
+      "favorite_operation": "simulation：比较不同设备",
+      "least_favorite_operation": "暂无",
+      "willingness_for_3_hours": 4,
+      "followup_question": ""
+    },
+    "completed_at": "2026-10-21T00:24:42.020Z",
+    "generator_version": "limen-teaching-lcg-v1",
+    "source": "independently generated pedagogical sample, not patient records or paper measurements",
+    "metrics": {
+      "n": 50,
+      "tp": 6,
+      "fp": 20,
+      "tn": 21,
+      "fn": 3,
+      "sensitivity": 0.6666666666666666,
+      "specificity": 0.5121951219512195,
+      "precision": 0.23076923076923078,
+      "false_alerts": 20
+    },
+    "competencies": [
+      "模型评价",
+      "泛化验证",
+      "工程取舍"
+    ],
+    "limitation": "合成教学数据，不用于诊疗；反思是兴趣自述，不是能力得分。"
+  },
+  "sources": [
+    "user_profile",
+    "limen_direction_map",
+    "experience_feedback",
+    "limen_pathway_checklist:v1:申请制"
+  ],
+  "limitations": [
+    "缺少 O*NET 官方兴趣结果，不推断兴趣",
+    "AI 未生成",
+    "招生数据为空，均需核验",
+    "升学任务为编辑性核验清单，不是官方招生要求"
+  ]
+}

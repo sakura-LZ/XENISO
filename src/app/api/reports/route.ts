@@ -53,9 +53,9 @@ export async function POST(request: Request) {
       const experience = experienceSchema.safeParse(e.data?.payload);
       if (!experience.success || !previous.data) throw new AppError("EXPERIENCE_REQUIRED", 409, "请先生成 R1，并将已完成的工作台体验保存到当前访客。");
       let plan;
-      try { plan = actionPlan(profile.data, input.data.direction_id ?? "", experience.data); } catch { throw new AppError("DIRECTION_REQUIRED", 400, "请选择目录内目标方向。"); }
+      try { plan = actionPlan(profile.data, input.data.direction_id ?? "", experience.data, new Date(), assessment.data); } catch { throw new AppError("DIRECTION_REQUIRED", 400, "请选择目录内目标方向。"); }
       if (!plan.planning_ready) throw new AppError("PLAN_REQUIRED", 409, "请先在画像保存有效目标年份、每周时间与升学路径。");
-      rules = { ...plan, formal_ready: true, interest: assessment.data.scores };
+      rules = { ...plan, formal_ready: true };
       evidence.push(
         { ref: "experience_feedback", kind: "experience", value: experience.data.reflection },
         { ref: `limen_direction_map:${plan.direction.id}:selected`, kind: "direction", value: { name: plan.direction.name, tasks: plan.direction.work_tasks, selected_by_user: true } },

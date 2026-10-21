@@ -45,3 +45,33 @@ test("simulation: evidence refs address original arrays even with blank draft en
   const p = { ...emptyProfile, tech_skills: [{ skill: "", self_reported_level: "", evidence: "" }, { skill: "Python", self_reported_level: "入门", evidence: "simulation" }] };
   assert.equal(skillEvidence(p)[0].ref, "user_profile.tech_skills[1]");
 });
+
+test("simulation P4: the chosen admission pathway changes exported verification tasks", () => {
+  const exam = actionPlan({ ...simulationProfile, pathway: "统考" }, "ml_cv", null);
+  const recommendation = actionPlan({ ...simulationProfile, pathway: "推免" }, "ml_cv", null);
+  const application = actionPlan({ ...simulationProfile, pathway: "申请制" }, "ml_cv", null);
+  assert.ok(exam.tasks.some((task) => task.deliverable.includes("考试科目")));
+  assert.ok(recommendation.tasks.some((task) => task.deliverable.includes("本校推免资格")));
+  assert.ok(application.tasks.some((task) => task.deliverable.includes("语言要求")));
+  assert.notDeepEqual(exam.tasks, recommendation.tasks);
+  assert.notDeepEqual(recommendation.tasks, application.tasks);
+  for (const plan of [exam, recommendation, application]) {
+    assert.ok(plan.tasks.every((task) => task.estimated_effort_range === null));
+    assert.ok(plan.tasks.every((task) => task.dependencies.every((id) => plan.tasks.some((t) => t.id === id))));
+    assert.equal(plan.planning?.official_deadlines_verified, false);
+  }
+  const undecided = actionPlan(simulationProfile, "ml_cv", null);
+  assert.equal(undecided.planning, null);
+  assert.ok(!undecided.tasks.some((task) => /统考专属|推免专属|申请制专属/.test(task.title)));
+});
+
+test("mock=true P4: R2 preserves official interest provenance and never derives scores from experience", () => {
+  const complete = { ...mockAssessment, answers: documentSnapshot.questions.map((q) => ({ index: q.index, answer: 4 })), question_snapshot: documentSnapshot.questions.map((q) => ({ ...q, onet_version: "mock=true database" })) };
+  const plan = actionPlan({ ...simulationProfile, pathway: "统考" }, "ml_cv", null, new Date("2026-10-20"), complete);
+  assert.equal(plan.interest?.source, "onet_live");
+  assert.equal(plan.interest?.returned_at, "2026-10-20T00:00:00Z");
+  assert.equal(plan.interest?.onet_version, "mock=true database");
+  assert.deepEqual(plan.interest?.scores, complete.scores);
+  assert.equal(actionPlan(simulationProfile, "ml_cv", null).interest, null);
+  assert.throws(() => actionPlan(simulationProfile, "ml_cv", null, new Date("2026-10-20"), { ...complete, scores: [] }));
+});
