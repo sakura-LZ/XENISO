@@ -8,5 +8,14 @@ playwright-report/
 .env*
 !.env.example
 work/
+supabase/.temp/
 *.log
 .DS_Store
+.vercel/
+
+.vercel
+
+# Local generation outputs and imported prompt archives are not source releases.
+output/
+tmp/
+提示词附件归档_*/

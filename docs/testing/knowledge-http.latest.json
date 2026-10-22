@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-22T06:47:50.393Z",
+  "origin": "http://127.0.0.1:3192",
+  "passed": true,
+  "checks": [
+    {
+      "name": "real Supabase China-only five-category result",
+      "passed": true
+    },
+    {
+      "name": "2027 admissions evidence is scoped to program and exams",
+      "passed": true
+    },
+    {
+      "name": "all nine directions have official source coverage",
+      "passed": true
+    },
+    {
+      "name": "pagination preserves full coverage beyond twenty records",
+      "passed": true
+    },
+    {
+      "name": "school and admission-year filters preserve specific program context",
+      "passed": true
+    },
+    {
+      "name": "historical admissions require opt-in and preserve hash program route",
+      "passed": true
+    },
+    {
+      "name": "hospital clinical department and medical technology evidence stay separate",
+      "passed": true
+    },
+    {
+      "name": "explicit medicine direction returns hospital career sources",
+      "passed": true
+    },
+    {
+      "name": "incompatible medical domain and interdisciplinary direction is explicit",
+      "passed": true
+    },
+    {
+      "name": "unrelated query stays empty",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: role_id=invented",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: direction_id=invented",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: category=salary",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: limit=100",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: include_historical=1",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: limit=1&limit=2",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: unexpected=x",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: domain=invented",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: offset=-1",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: offset=10001",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: admission_year=1999",
+      "passed": true
+    },
+    {
+      "name": "invalid parameter rejected: q=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "passed": true
+    }
+  ],
+  "failure": null,
+  "source": "local_production_http_to_supabase_live"
+}

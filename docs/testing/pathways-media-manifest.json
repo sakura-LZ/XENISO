@@ -1,0 +1,129 @@
+{
+  "recordedAtUtc": "2026-10-22T08:25:03.445Z",
+  "scope": "Local HTML preview; no commercial deployment",
+  "assets": [
+    {
+      "id": "05-still",
+      "title": "MotionSites Background 05",
+      "userProvidedLicenseLabel": "免费",
+      "commercialAuthorization": "Not independently verified",
+      "use": "Style reference for newly generated homepage v6; retained original asset, superseded CSS background",
+      "derivation": "Original clip frame at 0 seconds, 1920x1086 JPEG",
+      "files": [
+        {
+          "path": "public/previews/assets/bridge-background.jpg",
+          "bytes": 166252,
+          "sha256": "7b8238a4d99be04245f025c11ec5072e42f7feaeed3ae2136a4d6530558ce589"
+        }
+      ]
+    },
+    {
+      "id": "083",
+      "title": "MotionSites Background 083",
+      "userProvidedLicenseLabel": "免费",
+      "commercialAuthorization": "Not independently verified",
+      "use": "Community and about full-background video, muted autoplay loop playsinline, poster and reduced-motion pause",
+      "files": [
+        {
+          "path": "public/previews/assets/background-083.mp4",
+          "bytes": 1320540,
+          "sha256": "e7b4f92a75d2aa970d3a1def944ad590bba26acf484ee6d4eaaa44daa4af949c"
+        },
+        {
+          "path": "public/previews/assets/background-083-poster.jpg",
+          "bytes": 49548,
+          "sha256": "daa9a3ac6ed7f55f6c77b7befdbccbedeae2ca3a30e7cdf42f14f51519c516a0"
+        }
+      ],
+      "verification": "Retained byte-identical files from prior decode verification; no new decode claim"
+    },
+    {
+      "id": "profile-basics",
+      "use": "Basic-profile entry image",
+      "generation": {
+        "mode": "imagegen bundled CLI API fallback",
+        "providerBase": "https://api.zz-api.cc.cd/v1",
+        "model": "gpt-image-2",
+        "quality": "medium",
+        "originalSize": "1536x1024",
+        "siteSize": "1200x800",
+        "promptFile": "docs/design-references/profile-image-prompts.json",
+        "credentialsPersisted": false,
+        "visualInspected": true
+      },
+      "files": [
+        {
+          "path": "output/imagegen/profile-basics.png",
+          "bytes": 2265044,
+          "sha256": "d62576abcd9ba23838e9c6c3c4c1ae952ff21e798720e10b9147cadb5f9aa479"
+        },
+        {
+          "path": "public/previews/assets/profile-basics.webp",
+          "bytes": 47646,
+          "sha256": "b0a717b6a96f4acadc324edeeb20545c3798359de2d451621189e3dcc43e8e59"
+        }
+      ]
+    },
+    {
+      "id": "profile-interests",
+      "use": "Interest-questionnaire entry image",
+      "generation": {
+        "mode": "imagegen bundled CLI API fallback",
+        "providerBase": "https://api.zz-api.cc.cd/v1",
+        "model": "gpt-image-2",
+        "quality": "medium",
+        "originalSize": "1536x1024",
+        "siteSize": "1200x800",
+        "promptFile": "docs/design-references/profile-image-prompts.json",
+        "credentialsPersisted": false,
+        "visualInspected": true
+      },
+      "files": [
+        {
+          "path": "output/imagegen/profile-interests.png",
+          "bytes": 2561989,
+          "sha256": "946bd7271cbd55a957d92842b9e5f8073314550470abe247b91e5032cfdf49d6"
+        },
+        {
+          "path": "public/previews/assets/profile-interests.webp",
+          "bytes": 81598,
+          "sha256": "ccfabc861a5319a82daa9c557ae836f1a80749e0fa9992e03ba068e4bbdb1153"
+        }
+      ]
+    },
+    {
+      "id": "homepage-v6",
+      "use": "Static illustrated rock-arch homepage background",
+      "generation": {
+        "mode": "imagegen bundled CLI API fallback, edit with one style reference",
+        "model": "gpt-image-2",
+        "quality": "medium",
+        "size": "2048x1152",
+        "styleReference": "public/previews/assets/bridge-background.jpg",
+        "promptFile": "docs/design-references/media-generation-brief.md",
+        "credentialsPersisted": false,
+        "visualInspected": true
+      },
+      "files": [
+        {
+          "path": "output/imagegen/limen-bridge-stylized-v6.png",
+          "bytes": 2485912,
+          "sha256": "45b41daab24447df514ee1ae27365a274f2d361b0a1e3ac1fab9d25eaa4504da"
+        },
+        {
+          "path": "public/previews/assets/limen-bridge-stylized-v6.webp",
+          "bytes": 182798,
+          "sha256": "d178afe32927b1b9f5555f763172854da5b428d04b0839de52343e684fc76e9a"
+        }
+      ]
+    }
+  ],
+  "unused": [
+    "Background 04 paid video not used",
+    "Old Background 05 MP4 remains for other preview experiments but is not referenced by this HTML",
+    "Photorealistic limen-bridge-original-v5 rejected by user and not referenced by current HTML"
+  ],
+  "cssMotion": [
+    "LIMEN wordmark during actual preparation"
+  ]
+}

@@ -1,8 +1,11 @@
 import { AppError } from "@/lib/errors";
 import { checkOrigin, errorResponse, json, limit } from "@/lib/server/http";
 import { clearSession, currentSession, storeSession, supabase, requireSession } from "@/lib/server/supabase";
+import { avatarStore } from "@/lib/server/avatar-store";
+import { activeAvatarSession, avatarSession } from "@/lib/server/xingyun";
 
 export const dynamic = "force-dynamic";
+export const maxDuration = 120;
 
 export async function GET() {
   try {
@@ -27,6 +30,9 @@ export async function DELETE(request: Request) {
     checkOrigin(request);
     const { client, user } = await requireSession();
     limit(`delete:${user.id}`, 5);
+    const store = avatarStore(client);
+    const active = await activeAvatarSession(user.id, store);
+    if (active) await avatarSession("DELETE", user.id, { ...active, stop_reason: "account_deletion" }, store);
     const { error } = await client.rpc("delete_own_account");
     if (error) throw new AppError("DELETE_FAILED", 502, "删除未完成，访客会话仍保留，请稍后重试或联系维护者。");
     await clearSession();

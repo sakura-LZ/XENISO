@@ -1,0 +1,365 @@
+{
+  "recordedAtUtc": "2026-10-22T08:25:03.854Z",
+  "artifact": {
+    "path": "public/previews/limen-pathways.html",
+    "bytes": 633772,
+    "sha256": "4a5d94ef1231958be889da2a4ca630cd26bc17c7cda26afdd4fc37477de1d0e7"
+  },
+  "method": "LinkeDOM + Node VM, stubbed SDK/API only; no rendered browser or live digital-human session",
+  "passed": 44,
+  "checks": [
+    {
+      "name": "original nine-direction data preserved exactly",
+      "pass": true
+    },
+    {
+      "name": "all 30 source questions, RIASEC, versions and answer codes preserved",
+      "pass": true
+    },
+    {
+      "name": "unified typography and green tokens; no canvas, diagonal arrows or external font requests",
+      "pass": true
+    },
+    {
+      "name": "text palette has WCAG AA contrast on the actual flat surfaces",
+      "pass": true
+    },
+    {
+      "name": "homepage has a static bridge composer and one product overview",
+      "pass": true
+    },
+    {
+      "name": "profile starts with two independent entry panels and no premature generation",
+      "pass": true
+    },
+    {
+      "name": "basic form preserves optional sections and validates academic values before returning to hub",
+      "pass": true
+    },
+    {
+      "name": "questionnaire uses three intro blocks and five native labelled circles with preserved answer codes",
+      "pass": true
+    },
+    {
+      "name": "both inputs return independently to the hub and generation appears only when both complete",
+      "pass": true
+    },
+    {
+      "name": "generation displays LIMEN while working, then a collapsed downloadable report",
+      "pass": true
+    },
+    {
+      "name": "completed report opens its own evaluation with selectable evidence sections",
+      "pass": true
+    },
+    {
+      "name": "editing basic data invalidates old report; regeneration uses updated values",
+      "pass": true
+    },
+    {
+      "name": "editing questionnaire invalidates report until the questionnaire is confirmed again",
+      "pass": true
+    },
+    {
+      "name": "failed report preparation preserves inputs and offers retry",
+      "pass": true
+    },
+    {
+      "name": "generation cannot overwrite a reset or edited profile from an older pending frame",
+      "pass": true
+    },
+    {
+      "name": "existing 14 templates and 28 paths retain usable independent drafts and exports",
+      "pass": true
+    },
+    {
+      "name": "user text remains escaped in report presentation and preserved in downloaded Markdown",
+      "pass": true
+    },
+    {
+      "name": "routes have unique IDs and correct active stages without a universal left sidebar",
+      "pass": true
+    },
+    {
+      "name": "reduced motion retains plant poster; bridge never plays",
+      "pass": true
+    },
+    {
+      "name": "reset clears both modules, generated snapshot, draft tasks and exports state",
+      "pass": true
+    },
+    {
+      "name": "profile entry artwork is generated, local and independently labelled",
+      "pass": true
+    },
+    {
+      "name": "library exposes six chapters for all ten directions and 60 independent detail routes",
+      "pass": true
+    },
+    {
+      "name": "library searches content, recovers from empty filters and includes medicine-specific sources",
+      "pass": true
+    },
+    {
+      "name": "community starts without fabricated posts, has background video and internal navigation",
+      "pass": true
+    },
+    {
+      "name": "offline forum draft validates, preserves, escapes and exports without fake publication",
+      "pass": true
+    },
+    {
+      "name": "studio drawers expand independently and Escape restores the launching control",
+      "pass": true
+    },
+    {
+      "name": "all five interview exercises retain separate answers and appear in exports",
+      "pass": true
+    },
+    {
+      "name": "plan export uses a confirmed snapshot and flags changed or missing profiles",
+      "pass": true
+    },
+    {
+      "name": "file preview connection offers the formal platform without contacting an API",
+      "pass": true
+    },
+    {
+      "name": "same-origin avatar adapter connects only on request, routes presenter and sends no implicit profile",
+      "pass": true
+    },
+    {
+      "name": "typed text, microphone, interrupt and task-step changes preserve the actual stage mount",
+      "pass": true
+    },
+    {
+      "name": "fresh profile must be read and explicitly sent; stale profile cannot leak",
+      "pass": true
+    },
+    {
+      "name": "leaving the studio releases the session and ignores callbacks from the old session",
+      "pass": true
+    },
+    {
+      "name": "cancelled initial connection cannot attach itself after route navigation",
+      "pass": true
+    },
+    {
+      "name": "avatar API configuration failures remain visible and retryable",
+      "pass": true
+    },
+    {
+      "name": "community reads same-origin posts, filters and escapes all user content",
+      "pass": true
+    },
+    {
+      "name": "community authorization and network failure stay visible and can retry",
+      "pass": true
+    },
+    {
+      "name": "publish validates consent and keeps draft on login requirement or failure",
+      "pass": true
+    },
+    {
+      "name": "inline email login sends and verifies OTP only on explicit submission and preserves draft",
+      "pass": true
+    },
+    {
+      "name": "duplicate publication is blocked and successful response clears only the submitted draft",
+      "pass": true
+    },
+    {
+      "name": "own-post deletion requires second click; report uses allowed reason",
+      "pass": true
+    },
+    {
+      "name": "late community fetch cannot restore cleared state",
+      "pass": true
+    },
+    {
+      "name": "mobile navigation toggle and exploration active item survive routing",
+      "pass": true
+    },
+    {
+      "name": "final reset clears new drafts and shared profile summaries",
+      "pass": true
+    }
+  ],
+  "downloads": [
+    {
+      "name": "LIMEN-个人画像-simulation.md",
+      "chars": 2718
+    },
+    {
+      "name": "LIMEN-探索记录-simulation.md",
+      "chars": 2718
+    },
+    {
+      "name": "LIMEN-个人画像-simulation.md",
+      "chars": 2720
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 459
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 465
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 491
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 497
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 422
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 428
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 440
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 446
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 437
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 443
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 484
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 490
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 460
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 466
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 400
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 406
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 398
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 404
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 379
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 385
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 438
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 444
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 442
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 448
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 447
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 453
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 418
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 424
+    },
+    {
+      "name": "LIMEN-行动规划-simulation.md",
+      "chars": 15235
+    },
+    {
+      "name": "LIMEN-个人画像-simulation.md",
+      "chars": 2729
+    },
+    {
+      "name": "LIMEN-社区草稿.md",
+      "chars": 80
+    },
+    {
+      "name": "LIMEN-职业体验-simulation.md",
+      "chars": 661
+    }
+  ],
+  "visualVerification": false,
+  "liveAvatarVerified": false,
+  "liveCommunityVerified": false,
+  "lint": {
+    "command": "npm run lint",
+    "exitCode": 0,
+    "warnings": 0
+  },
+  "build": {
+    "command": "npm run build",
+    "environment": "Existing same-drive isolated copy, node_modules junction; current src and public copied, root .next untouched",
+    "exitCode": 0,
+    "buildId": "CnFmTpEfBLAQQAOQyw1LL",
+    "staticPages": 14,
+    "warning": "Next.js workspace root inferred from multiple lockfiles",
+    "changedSourceSinceCopy": [],
+    "htmlSha256Matches": true
+  },
+  "assetCheck": {
+    "referencedLocalFiles": 6,
+    "missing": []
+  },
+  "credentialScan": {
+    "textFiles": 12,
+    "matches": 0
+  },
+  "limitations": [
+    "No rendered local browser verification due earlier URL safety rejection",
+    "No live digital-human, microphone, native download or community OTP/publish verification",
+    "Local structured reports without AI or official scoring",
+    "file:// community uses in-memory drafts; same-origin hosting required for backend",
+    "No new knowledge refresh or database tests",
+    "npm test not run",
+    "No deployment"
+  ]
+}

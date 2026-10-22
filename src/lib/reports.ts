@@ -1,7 +1,7 @@
 import { directions, findDirection, type Direction } from "./directions";
 import { profileSchema, type Profile } from "./profile";
 import { assessmentSchema, type AssessmentResult } from "./assessment";
-import type { Experience } from "./experience";
+import { experiencePresentation, type Experience } from "./experience";
 import { parseR2Planning } from "./planning";
 
 export function skillEvidence(profile: Profile) {
@@ -69,7 +69,7 @@ export function actionPlan(profile: Profile, directionId: string, experience: Ex
     planning_input: submittedPlanning,
     alternative_directions: alternatives,
     interest: official ? { source: official.source, scores: official.scores, onet_version: official.onet_version, api_version: official.api_version, returned_at: official.returned_at } : null,
-    experience_relevance: direction.group_id === "cs_ai" ? "体验涉及模型评价；仅覆盖目标方向的一部分活动。" : "该体验是 AI 模型评价，不能代替此方向的专属岗位体验。",
+    experience_relevance: experience ? `本次为${experiencePresentation(experience).role}的${"mode" in experience && experience.mode === "interview" ? "模拟面试" : "项目练习"}，仅覆盖部分教学活动；不能据此判断整个方向的适配性或执业资格。` : "尚未完成职业体验。",
     planning_ready: hasParameters, formal_ready: false,
     planning: hasParameters ? { target_year: profile.transition_year, weekly_hours: profile.weekly_hours, pathway: profile.pathway, official_deadlines_verified: false,
       milestones: [

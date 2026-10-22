@@ -1,0 +1,23 @@
+[
+  {"name":"中国真实岗位与学历（试点回归）","query":{"role_id":"medical_ai_pm","category":"recruitment","q":"北京 本科","limit":3},"relevant_ids":["medical-ai-pm-bytedance-job"]},
+  {"name":"岗位需求分析任务（试点回归）","query":{"role_id":"medical_ai_pm","category":"occupation","q":"需求分析","limit":3},"relevant_ids":["medical-ai-pm-bytedance-tasks"]},
+  {"name":"2027考试科目（试点回归）","query":{"role_id":"medical_ai_pm","category":"admissions","q":"408","limit":3},"relevant_ids":["medical-ai-pm-sjtu-2027-catalog"]},
+  {"name":"同等学力限制（试点回归）","query":{"role_id":"medical_ai_pm","category":"admissions","q":"同等学力","limit":3},"relevant_ids":["medical-ai-pm-sjtu-2027-charter"]},
+  {"name":"医疗AI政策数据安全（试点回归）","query":{"role_id":"medical_ai_pm","category":"industry","q":"数据安全","limit":3},"relevant_ids":["medical-ai-pm-cn-policy"]},
+  {"name":"中国医疗器械监管（试点回归）","query":{"role_id":"medical_ai_pm","category":"industry","q":"注册审查","limit":3},"relevant_ids":["medical-ai-pm-cn-device-notice"]},
+  {"name":"知识库课程（试点回归）","query":{"role_id":"medical_ai_pm","category":"learning","q":"知识库","limit":3},"relevant_ids":["medical-ai-pm-internlm-learning"]},
+  {"name":"医疗对话项目实践（试点回归）","query":{"role_id":"medical_ai_pm","category":"learning","q":"医疗对话","limit":3},"relevant_ids":["medical-ai-pm-fudan-project"]},
+  {"name":"无关问题返回空","query":{"q":"火星采矿","limit":3},"relevant_ids":[],"expect_empty":true},
+  {"name":"试点角色不能泄漏到器械方向","query":{"role_id":"medical_ai_pm","direction_id":"devices","limit":3},"relevant_ids":[],"expect_empty":true},
+  {"name":"器械方向上海交大2027院系考试","query":{"direction_id":"devices","institution":"上海交通大学","admission_year":2027,"category":"admissions","q":"816","limit":3},"relevant_ids":["devices-sjtu-2027-admissions"]},
+  {"name":"电子科大医学影像复试","query":{"direction_id":"imaging_eng","institution":"电子科技大学","admission_year":2027,"category":"admissions","q":"014003","limit":3},"relevant_ids":["imaging-eng-uestc-2027-admissions"]},
+  {"name":"深圳大学历史招生明示年份","query":{"direction_id":"signals","institution":"深圳大学","admission_year":2026,"category":"admissions","include_historical":true,"limit":3},"relevant_ids":["signals-szu-2026-admissions"]},
+  {"name":"历史招生默认不返回","query":{"direction_id":"signals","institution":"深圳大学","admission_year":2026,"category":"admissions","limit":3},"relevant_ids":[],"expect_empty":true},
+  {"name":"迈瑞医学图像岗位技术要求","query":{"direction_id":"imaging_eng","category":"recruitment","q":"Python","limit":3},"relevant_ids":["imaging-eng-mindray-recruitment"]},
+  {"name":"医学心血管科室原文","query":{"domain":"medicine","medical_department":"心血管内科","limit":3},"relevant_ids":["medicine-pkufh-department-6"]},
+  {"name":"医学医技检验科原文","query":{"domain":"medicine","medical_department":"检验科","limit":3},"relevant_ids":["medicine-pkufh-department-46"]},
+  {"name":"口腔专业培养与课程","query":{"domain":"medicine","medical_topic":"口腔医学","category":"learning","limit":3},"relevant_ids":["shzu-medicine-program-learning"]},
+  {"name":"医学行业工资保留统计口径","query":{"domain":"medicine","category":"industry","q":"税前","limit":3},"relevant_ids":["medicine-nbs-salary-context"]},
+  {"name":"九方向与医学域条件不兼容时返回空","query":{"domain":"medicine","direction_id":"devices","limit":3},"relevant_ids":[],"expect_empty":true},
+  {"name":"不混入美国资料","query":{"jurisdiction":"US","limit":3},"relevant_ids":[],"expect_empty":true}
+]

@@ -12,6 +12,15 @@ test("simulation: numeric constraints preserve unknown vs zero", () => {
   assert.equal(profileSchema.safeParse({ ...emptyProfile, gpa: 0, gpa_scale: 4 }).success, true);
   for (const extra of [{ gpa: 4.2, gpa_scale: 4 }, { gpa: 2, gpa_scale: null }, { rank: 11, cohort_size: 10 }, { weekly_hours: 169 }]) assert.equal(profileSchema.safeParse({ ...emptyProfile, ...extra }).success, false);
 });
+test("simulation: V3 profiles restore new defaults, custom stages require their explanation", () => {
+  const oldProfile = { ...emptyProfile, english: { description: "simulation CET4" } } as Record<string, unknown>;
+  for (const key of ["education_stage", "grade_other", "degree_track_other", "help_needed"]) delete oldProfile[key];
+  const restored = profileSchema.parse(oldProfile);
+  assert.equal(restored.education_stage, ""); assert.equal(restored.help_needed, "");
+  assert.equal(restored.english?.cet4, "");
+  assert.equal(profileSchema.safeParse({ ...restored, grade: "其他" }).success, false);
+  assert.equal(profileSchema.safeParse({ ...restored, grade: "其他", grade_other: "simulation 海外预科" }).success, true);
+});
 test("simulation: CSV imports only allowlisted structured course fields", () => {
   const courses = coursesFromRows(parseCsv('\uFEFF课程名,学分,成绩,满分,学期,学号\r\n"统计,入门",2,90,100,春,simulation-id\r\n"研究""方法",1,0,100,秋,simulation-id'));
   assert.equal(courses[0].course_name, "统计,入门");

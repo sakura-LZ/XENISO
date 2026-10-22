@@ -1,2 +1,2 @@
-import { Workbench } from "./workbench";
-export default function Studio() { return <Workbench />; }
+import { redirect } from "next/navigation";
+export default function Studio() { redirect("/experience"); }

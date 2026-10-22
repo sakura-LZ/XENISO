@@ -1,0 +1,23 @@
+{
+  "version": "limen-skills-1",
+  "levels": [
+    "未接触",
+    "在指导下完成",
+    "独立完成基础任务",
+    "独立完成复杂任务",
+    "指导与评审"
+  ],
+  "importance": "1 辅助 / 2 常用 / 3 核心 / 4 关键 / 5 必备；LIMEN 编辑性权重，必须单独审核，不由招聘措辞或模型推断",
+  "skills": {
+    "python": "Python 编程",
+    "statistics": "统计分析",
+    "machine_learning": "机器学习",
+    "clinical_reasoning": "临床问题理解",
+    "research_design": "研究设计",
+    "product_requirements": "产品需求分析",
+    "communication": "沟通表达",
+    "data_management": "数据管理",
+    "model_evaluation": "模型评价"
+  },
+  "status": "editorial_not_psychometrically_validated"
+}

@@ -1,0 +1,3210 @@
+{
+  "at": "2026-10-22T06:50:12.420Z",
+  "version": "knowledge-expansion-quality-1",
+  "source": "local_collected_corpora_and_private_collection_bundles",
+  "remote_verification": "最终正文规则修正后已重导入；live32/32、HTTP22/22通过，127records/38sources，参见latest文件。",
+  "input_files": [
+    {
+      "path": "data/knowledge/pilot.collected.json",
+      "sha256": "92b8ffcb21e7b74c8813c5d8837fbffec302ba5e978c557fd1a3586602efbb3a",
+      "generated_at": "2026-10-22T03:40:43.900Z"
+    },
+    {
+      "path": "data/knowledge/expansion.collected.json",
+      "sha256": "fec61fa581a8d6c9bf0f58ba42607580fb4d5cad34e8d256f6d67fd4d5c44086",
+      "generated_at": "2026-10-22T06:44:24.070Z"
+    }
+  ],
+  "definitions": {
+    "source": "原始来源URL全库去重；同一页映射多个方向/拆分类别仍计一个来源。",
+    "record": "一次职业角色×来源×资料类别的编辑性索引；不是独立研究、独立岗位或完整专业手册。",
+    "fact_instance": "facts[]数组元素实例；同一句官方原文复用于多个方向会重复计数。",
+    "unique_quote_interval": "source_url+content_hash+start+end去重；同一版本同一区间跨角色/字段复用只计一次，重叠区间仍分别计。",
+    "unique_verbatim_quote": "quote字符串去重；相同文本跨来源亦合并，仅为复用诊断，不是独立研究计数。",
+    "direction_matrix": "expansion_guide只含各guide角色；all_mapped额外包含试点medical_ai_pm的一对多编辑关联。各方向数量不能相加作为全库去重总数。",
+    "missing_field_record_counts": "字段在多少条资料上显式标记缺失；未列missing_fields不等于字段已核实。",
+    "admission_context": "院校/学院/专业/年份索引来自context；不能把多方向映射或合并的1051/1052等文本自动拆为独立招生项目。",
+    "snapshot_version": "同一来源可保留不同内容版本；私有原文不公开。"
+  },
+  "corpora": {
+    "pilot": {
+      "records": 8,
+      "fact_instances": 23,
+      "unique_source_urls": 7,
+      "unique_source_version_quote_intervals": 23,
+      "by_category": {
+        "occupation": 1,
+        "recruitment": 1,
+        "admissions": 2,
+        "industry": 2,
+        "learning": 2
+      },
+      "missing_field_instances": 21
+    },
+    "expansion": {
+      "records": 119,
+      "fact_instances": 247,
+      "unique_source_urls": 33,
+      "unique_source_version_quote_intervals": 95,
+      "by_category": {
+        "occupation": 37,
+        "recruitment": 9,
+        "admissions": 32,
+        "industry": 21,
+        "learning": 20
+      },
+      "missing_field_instances": 303
+    },
+    "combined": {
+      "records": 127,
+      "fact_instances": 270,
+      "unique_source_urls": 38,
+      "unique_source_version_quote_intervals": 118,
+      "by_category": {
+        "occupation": 38,
+        "recruitment": 10,
+        "admissions": 34,
+        "industry": 23,
+        "learning": 22
+      },
+      "missing_field_instances": 324
+    }
+  },
+  "quality": {
+    "all_cn_primary_sources": true,
+    "known_publication_dates": 19,
+    "unknown_publication_dates": 19,
+    "all_records_quote_verified": true,
+    "private_snapshot_instances": 40,
+    "unique_source_versions": 40,
+    "raw_and_text_sha256_all_passed": true,
+    "all_fact_value_and_quote_intervals_passed": true,
+    "unique_verbatim_quotes": 115,
+    "quote_text_structure_caveats": [],
+    "distinct_missing_field_names": 53,
+    "unique_recruitment_job_title_source_pairs": 7,
+    "source_urls_are_independent_studies": false,
+    "personal_eligibility_confirmed": false
+  },
+  "direction_matrix": [
+    {
+      "direction_id": "ml_cv",
+      "name": "机器学习与计算机视觉",
+      "expansion_guide": {
+        "records": 8,
+        "fact_instances": 18,
+        "unique_source_urls": 6,
+        "unique_source_version_quote_intervals": 16,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 2,
+          "industry": 2,
+          "learning": 1
+        },
+        "missing_field_instances": 19
+      },
+      "related_pilot": {
+        "records": 8,
+        "fact_instances": 23,
+        "unique_source_urls": 7,
+        "unique_source_version_quote_intervals": 23,
+        "by_category": {
+          "occupation": 1,
+          "recruitment": 1,
+          "admissions": 2,
+          "industry": 2,
+          "learning": 2
+        },
+        "missing_field_instances": 21
+      },
+      "all_mapped": {
+        "records": 16,
+        "fact_instances": 41,
+        "unique_source_urls": 11,
+        "unique_source_version_quote_intervals": 39,
+        "by_category": {
+          "occupation": 3,
+          "recruitment": 2,
+          "admissions": 4,
+          "industry": 4,
+          "learning": 3
+        },
+        "missing_field_instances": 40
+      },
+      "missing_field_record_counts": {
+        "career_path": 1,
+        "career_promotion_path": 1,
+        "clinical_validation": 1,
+        "college_retest_rules": 1,
+        "course_enrollment": 1,
+        "cross_major_restrictions": 1,
+        "current_enrollment": 1,
+        "current_product_classification": 1,
+        "current_program_capacity": 1,
+        "deadline": 2,
+        "direction_employment_rate": 1,
+        "employment_statistics": 2,
+        "full_guideline": 1,
+        "industry_universal_requirements": 1,
+        "learning_hours": 2,
+        "major_average_salary": 1,
+        "major_employment_rate": 1,
+        "major_graduate_salary": 1,
+        "major_restrictions": 1,
+        "medical_specific_standard": 1,
+        "observed_talent_demand": 1,
+        "ordinary_bachelor_program_eligibility": 2,
+        "personal_eligibility": 3,
+        "personal_learning_hours": 1,
+        "prerequisites": 1,
+        "published_at": 1,
+        "research_vacancy": 1,
+        "role_average_salary": 1,
+        "role_specific_career_path": 1,
+        "salary": 2,
+        "salary_statistics": 1,
+        "tuition": 2
+      },
+      "institutions": [
+        "上海交通大学",
+        "西安电子科技大学"
+      ],
+      "admission_years": [
+        2027
+      ],
+      "missing_categories": []
+    },
+    {
+      "direction_id": "software",
+      "name": "软件工程与系统开发",
+      "expansion_guide": {
+        "records": 8,
+        "fact_instances": 18,
+        "unique_source_urls": 6,
+        "unique_source_version_quote_intervals": 16,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 2,
+          "industry": 2,
+          "learning": 1
+        },
+        "missing_field_instances": 19
+      },
+      "related_pilot": {
+        "records": 0,
+        "fact_instances": 0,
+        "unique_source_urls": 0,
+        "unique_source_version_quote_intervals": 0,
+        "by_category": {
+          "occupation": 0,
+          "recruitment": 0,
+          "admissions": 0,
+          "industry": 0,
+          "learning": 0
+        },
+        "missing_field_instances": 0
+      },
+      "all_mapped": {
+        "records": 8,
+        "fact_instances": 18,
+        "unique_source_urls": 6,
+        "unique_source_version_quote_intervals": 16,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 2,
+          "industry": 2,
+          "learning": 1
+        },
+        "missing_field_instances": 19
+      },
+      "missing_field_record_counts": {
+        "career_promotion_path": 1,
+        "college_retest_rules": 1,
+        "course_enrollment": 1,
+        "deadline": 1,
+        "direction_employment_rate": 1,
+        "industry_universal_requirements": 1,
+        "major_average_salary": 1,
+        "major_employment_rate": 1,
+        "major_graduate_salary": 1,
+        "medical_specific_standard": 1,
+        "ordinary_bachelor_program_eligibility": 1,
+        "personal_eligibility": 2,
+        "personal_learning_hours": 1,
+        "published_at": 1,
+        "role_average_salary": 1,
+        "role_specific_career_path": 1,
+        "salary": 1,
+        "tuition": 1
+      },
+      "institutions": [
+        "上海交通大学",
+        "西安电子科技大学"
+      ],
+      "admission_years": [
+        2027
+      ],
+      "missing_categories": []
+    },
+    {
+      "direction_id": "llm_agent",
+      "name": "大语言模型与AI Agent",
+      "expansion_guide": {
+        "records": 8,
+        "fact_instances": 18,
+        "unique_source_urls": 6,
+        "unique_source_version_quote_intervals": 16,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 2,
+          "industry": 2,
+          "learning": 1
+        },
+        "missing_field_instances": 20
+      },
+      "related_pilot": {
+        "records": 8,
+        "fact_instances": 23,
+        "unique_source_urls": 7,
+        "unique_source_version_quote_intervals": 23,
+        "by_category": {
+          "occupation": 1,
+          "recruitment": 1,
+          "admissions": 2,
+          "industry": 2,
+          "learning": 2
+        },
+        "missing_field_instances": 21
+      },
+      "all_mapped": {
+        "records": 16,
+        "fact_instances": 41,
+        "unique_source_urls": 11,
+        "unique_source_version_quote_intervals": 39,
+        "by_category": {
+          "occupation": 3,
+          "recruitment": 2,
+          "admissions": 4,
+          "industry": 4,
+          "learning": 3
+        },
+        "missing_field_instances": 41
+      },
+      "missing_field_record_counts": {
+        "application_deadline": 1,
+        "career_path": 2,
+        "clinical_validation": 1,
+        "college_retest_rules": 1,
+        "course_enrollment": 1,
+        "cross_major_restrictions": 1,
+        "current_enrollment": 1,
+        "current_product_classification": 1,
+        "current_program_capacity": 1,
+        "deadline": 1,
+        "direction_employment_rate": 1,
+        "education": 1,
+        "employment_statistics": 2,
+        "full_guideline": 1,
+        "industry_universal_requirements": 1,
+        "learning_hours": 2,
+        "major_average_salary": 1,
+        "major_employment_rate": 1,
+        "major_graduate_salary": 1,
+        "major_restrictions": 2,
+        "medical_specific_standard": 1,
+        "observed_talent_demand": 1,
+        "ordinary_bachelor_program_eligibility": 2,
+        "personal_eligibility": 3,
+        "personal_learning_hours": 1,
+        "prerequisites": 1,
+        "research_vacancy": 1,
+        "role_average_salary": 1,
+        "role_specific_career_path": 1,
+        "salary": 2,
+        "salary_statistics": 1,
+        "tuition": 2
+      },
+      "institutions": [
+        "上海交通大学",
+        "西安电子科技大学"
+      ],
+      "admission_years": [
+        2027
+      ],
+      "missing_categories": []
+    },
+    {
+      "direction_id": "devices",
+      "name": "智能医疗器械",
+      "expansion_guide": {
+        "records": 13,
+        "fact_instances": 29,
+        "unique_source_urls": 10,
+        "unique_source_version_quote_intervals": 28,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 6,
+          "industry": 2,
+          "learning": 2
+        },
+        "missing_field_instances": 30
+      },
+      "related_pilot": {
+        "records": 0,
+        "fact_instances": 0,
+        "unique_source_urls": 0,
+        "unique_source_version_quote_intervals": 0,
+        "by_category": {
+          "occupation": 0,
+          "recruitment": 0,
+          "admissions": 0,
+          "industry": 0,
+          "learning": 0
+        },
+        "missing_field_instances": 0
+      },
+      "all_mapped": {
+        "records": 13,
+        "fact_instances": 29,
+        "unique_source_urls": 10,
+        "unique_source_version_quote_intervals": 28,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 6,
+          "industry": 2,
+          "learning": 2
+        },
+        "missing_field_instances": 30
+      },
+      "missing_field_record_counts": {
+        "career_promotion_path": 1,
+        "college_retest_rules": 1,
+        "course_hours": 1,
+        "cross_major_restrictions": 2,
+        "current_course_access": 1,
+        "current_year_requirements": 2,
+        "deadline": 1,
+        "direction_employment_rate": 1,
+        "employment_rate": 1,
+        "engineering_prerequisites": 1,
+        "industry_universal_requirements": 1,
+        "major_average_salary": 1,
+        "major_employment_rate": 1,
+        "major_graduate_salary": 1,
+        "ordinary_bachelor_program_eligibility": 2,
+        "personal_eligibility": 6,
+        "personal_learning_hours": 1,
+        "published_at": 1,
+        "role_average_salary": 1,
+        "role_specific_career_path": 1,
+        "salary": 1,
+        "tuition": 1
+      },
+      "institutions": [
+        "上海交通大学",
+        "北京大学",
+        "深圳大学",
+        "电子科技大学",
+        "西安电子科技大学"
+      ],
+      "admission_years": [
+        2026,
+        2027
+      ],
+      "missing_categories": []
+    },
+    {
+      "direction_id": "signals",
+      "name": "医学信号处理",
+      "expansion_guide": {
+        "records": 13,
+        "fact_instances": 29,
+        "unique_source_urls": 10,
+        "unique_source_version_quote_intervals": 28,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 6,
+          "industry": 2,
+          "learning": 2
+        },
+        "missing_field_instances": 30
+      },
+      "related_pilot": {
+        "records": 0,
+        "fact_instances": 0,
+        "unique_source_urls": 0,
+        "unique_source_version_quote_intervals": 0,
+        "by_category": {
+          "occupation": 0,
+          "recruitment": 0,
+          "admissions": 0,
+          "industry": 0,
+          "learning": 0
+        },
+        "missing_field_instances": 0
+      },
+      "all_mapped": {
+        "records": 13,
+        "fact_instances": 29,
+        "unique_source_urls": 10,
+        "unique_source_version_quote_intervals": 28,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 6,
+          "industry": 2,
+          "learning": 2
+        },
+        "missing_field_instances": 30
+      },
+      "missing_field_record_counts": {
+        "career_promotion_path": 1,
+        "college_retest_rules": 1,
+        "course_hours": 1,
+        "cross_major_restrictions": 2,
+        "current_course_access": 1,
+        "current_year_requirements": 2,
+        "deadline": 1,
+        "direction_employment_rate": 1,
+        "employment_rate": 1,
+        "engineering_prerequisites": 1,
+        "industry_universal_requirements": 1,
+        "major_average_salary": 1,
+        "major_employment_rate": 1,
+        "major_graduate_salary": 1,
+        "ordinary_bachelor_program_eligibility": 2,
+        "personal_eligibility": 6,
+        "personal_learning_hours": 1,
+        "published_at": 1,
+        "role_average_salary": 1,
+        "role_specific_career_path": 1,
+        "salary": 1,
+        "tuition": 1
+      },
+      "institutions": [
+        "上海交通大学",
+        "北京大学",
+        "深圳大学",
+        "电子科技大学",
+        "西安电子科技大学"
+      ],
+      "admission_years": [
+        2026,
+        2027
+      ],
+      "missing_categories": []
+    },
+    {
+      "direction_id": "imaging_eng",
+      "name": "医学影像工程",
+      "expansion_guide": {
+        "records": 13,
+        "fact_instances": 29,
+        "unique_source_urls": 10,
+        "unique_source_version_quote_intervals": 28,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 6,
+          "industry": 2,
+          "learning": 2
+        },
+        "missing_field_instances": 30
+      },
+      "related_pilot": {
+        "records": 0,
+        "fact_instances": 0,
+        "unique_source_urls": 0,
+        "unique_source_version_quote_intervals": 0,
+        "by_category": {
+          "occupation": 0,
+          "recruitment": 0,
+          "admissions": 0,
+          "industry": 0,
+          "learning": 0
+        },
+        "missing_field_instances": 0
+      },
+      "all_mapped": {
+        "records": 13,
+        "fact_instances": 29,
+        "unique_source_urls": 10,
+        "unique_source_version_quote_intervals": 28,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 6,
+          "industry": 2,
+          "learning": 2
+        },
+        "missing_field_instances": 30
+      },
+      "missing_field_record_counts": {
+        "career_promotion_path": 1,
+        "college_retest_rules": 1,
+        "course_hours": 1,
+        "cross_major_restrictions": 2,
+        "current_course_access": 1,
+        "current_year_requirements": 2,
+        "deadline": 1,
+        "direction_employment_rate": 1,
+        "employment_rate": 1,
+        "engineering_prerequisites": 1,
+        "industry_universal_requirements": 1,
+        "major_average_salary": 1,
+        "major_employment_rate": 1,
+        "major_graduate_salary": 1,
+        "ordinary_bachelor_program_eligibility": 2,
+        "personal_eligibility": 6,
+        "personal_learning_hours": 1,
+        "published_at": 1,
+        "role_average_salary": 1,
+        "role_specific_career_path": 1,
+        "salary": 1,
+        "tuition": 1
+      },
+      "institutions": [
+        "上海交通大学",
+        "北京大学",
+        "深圳大学",
+        "电子科技大学",
+        "西安电子科技大学"
+      ],
+      "admission_years": [
+        2026,
+        2027
+      ],
+      "missing_categories": []
+    },
+    {
+      "direction_id": "clinical_data",
+      "name": "临床数据科学",
+      "expansion_guide": {
+        "records": 12,
+        "fact_instances": 26,
+        "unique_source_urls": 9,
+        "unique_source_version_quote_intervals": 25,
+        "by_category": {
+          "occupation": 4,
+          "recruitment": 1,
+          "admissions": 3,
+          "industry": 2,
+          "learning": 2
+        },
+        "missing_field_instances": 30
+      },
+      "related_pilot": {
+        "records": 8,
+        "fact_instances": 23,
+        "unique_source_urls": 7,
+        "unique_source_version_quote_intervals": 23,
+        "by_category": {
+          "occupation": 1,
+          "recruitment": 1,
+          "admissions": 2,
+          "industry": 2,
+          "learning": 2
+        },
+        "missing_field_instances": 21
+      },
+      "all_mapped": {
+        "records": 20,
+        "fact_instances": 49,
+        "unique_source_urls": 14,
+        "unique_source_version_quote_intervals": 48,
+        "by_category": {
+          "occupation": 5,
+          "recruitment": 2,
+          "admissions": 5,
+          "industry": 4,
+          "learning": 4
+        },
+        "missing_field_instances": 51
+      },
+      "missing_field_record_counts": {
+        "application_deadline": 1,
+        "career_path": 3,
+        "clinical_data_role_requirements": 1,
+        "clinical_validation": 1,
+        "college_retest_rules": 1,
+        "course_hours": 1,
+        "cross_major_restrictions": 2,
+        "current_course_access": 1,
+        "current_enrollment": 1,
+        "current_product_classification": 1,
+        "current_program_capacity": 1,
+        "current_year_requirements": 1,
+        "deadline": 1,
+        "department_salary": 1,
+        "department_training_path": 1,
+        "direction_employment_rate": 1,
+        "employment_rate": 1,
+        "employment_statistics": 2,
+        "engineering_prerequisites": 1,
+        "full_guideline": 1,
+        "industry_universal_requirements": 1,
+        "learning_hours": 2,
+        "license_eligibility": 1,
+        "major_average_salary": 1,
+        "major_employment_rate": 1,
+        "major_graduate_salary": 1,
+        "major_restrictions": 1,
+        "medicine_major_eligibility": 1,
+        "observed_talent_demand": 1,
+        "ordinary_bachelor_program_eligibility": 2,
+        "personal_eligibility": 4,
+        "personal_learning_hours": 1,
+        "prerequisites": 1,
+        "recruitment_eligibility": 1,
+        "research_vacancy": 1,
+        "role_average_salary": 1,
+        "role_specific_career_path": 1,
+        "salary": 2,
+        "salary_statistics": 1,
+        "tuition": 2
+      },
+      "institutions": [
+        "上海交通大学",
+        "北京大学",
+        "北京大学第一医院",
+        "深圳大学",
+        "西安电子科技大学"
+      ],
+      "admission_years": [
+        2026,
+        2027
+      ],
+      "missing_categories": []
+    },
+    {
+      "direction_id": "health_systems",
+      "name": "医疗信息系统",
+      "expansion_guide": {
+        "records": 8,
+        "fact_instances": 18,
+        "unique_source_urls": 6,
+        "unique_source_version_quote_intervals": 16,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 2,
+          "industry": 2,
+          "learning": 1
+        },
+        "missing_field_instances": 19
+      },
+      "related_pilot": {
+        "records": 8,
+        "fact_instances": 23,
+        "unique_source_urls": 7,
+        "unique_source_version_quote_intervals": 23,
+        "by_category": {
+          "occupation": 1,
+          "recruitment": 1,
+          "admissions": 2,
+          "industry": 2,
+          "learning": 2
+        },
+        "missing_field_instances": 21
+      },
+      "all_mapped": {
+        "records": 16,
+        "fact_instances": 41,
+        "unique_source_urls": 11,
+        "unique_source_version_quote_intervals": 39,
+        "by_category": {
+          "occupation": 3,
+          "recruitment": 2,
+          "admissions": 4,
+          "industry": 4,
+          "learning": 3
+        },
+        "missing_field_instances": 40
+      },
+      "missing_field_record_counts": {
+        "career_path": 1,
+        "career_promotion_path": 1,
+        "clinical_validation": 1,
+        "college_retest_rules": 1,
+        "course_enrollment": 1,
+        "cross_major_restrictions": 1,
+        "current_enrollment": 1,
+        "current_product_classification": 1,
+        "current_program_capacity": 1,
+        "deadline": 2,
+        "direction_employment_rate": 1,
+        "employment_statistics": 2,
+        "full_guideline": 1,
+        "industry_universal_requirements": 1,
+        "learning_hours": 2,
+        "major_average_salary": 1,
+        "major_employment_rate": 1,
+        "major_graduate_salary": 1,
+        "major_restrictions": 1,
+        "medical_specific_standard": 1,
+        "observed_talent_demand": 1,
+        "ordinary_bachelor_program_eligibility": 2,
+        "personal_eligibility": 3,
+        "personal_learning_hours": 1,
+        "prerequisites": 1,
+        "published_at": 1,
+        "research_vacancy": 1,
+        "role_average_salary": 1,
+        "role_specific_career_path": 1,
+        "salary": 2,
+        "salary_statistics": 1,
+        "tuition": 2
+      },
+      "institutions": [
+        "上海交通大学",
+        "西安电子科技大学"
+      ],
+      "admission_years": [
+        2027
+      ],
+      "missing_categories": []
+    },
+    {
+      "direction_id": "med_nlp_kg",
+      "name": "医疗NLP与知识图谱",
+      "expansion_guide": {
+        "records": 8,
+        "fact_instances": 19,
+        "unique_source_urls": 6,
+        "unique_source_version_quote_intervals": 17,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 2,
+          "industry": 2,
+          "learning": 1
+        },
+        "missing_field_instances": 22
+      },
+      "related_pilot": {
+        "records": 0,
+        "fact_instances": 0,
+        "unique_source_urls": 0,
+        "unique_source_version_quote_intervals": 0,
+        "by_category": {
+          "occupation": 0,
+          "recruitment": 0,
+          "admissions": 0,
+          "industry": 0,
+          "learning": 0
+        },
+        "missing_field_instances": 0
+      },
+      "all_mapped": {
+        "records": 8,
+        "fact_instances": 19,
+        "unique_source_urls": 6,
+        "unique_source_version_quote_intervals": 17,
+        "by_category": {
+          "occupation": 2,
+          "recruitment": 1,
+          "admissions": 2,
+          "industry": 2,
+          "learning": 1
+        },
+        "missing_field_instances": 22
+      },
+      "missing_field_record_counts": {
+        "application_deadline": 1,
+        "career_path": 1,
+        "college_retest_rules": 1,
+        "course_enrollment": 1,
+        "direction_employment_rate": 1,
+        "education": 1,
+        "industry_universal_requirements": 1,
+        "knowledge_graph_requirements": 2,
+        "major_average_salary": 1,
+        "major_employment_rate": 1,
+        "major_graduate_salary": 1,
+        "major_restrictions": 1,
+        "medical_specific_standard": 1,
+        "ordinary_bachelor_program_eligibility": 1,
+        "personal_eligibility": 2,
+        "personal_learning_hours": 1,
+        "role_average_salary": 1,
+        "role_specific_career_path": 1,
+        "salary": 1,
+        "tuition": 1
+      },
+      "institutions": [
+        "上海交通大学",
+        "西安电子科技大学"
+      ],
+      "admission_years": [
+        2027
+      ],
+      "missing_categories": []
+    }
+  ],
+  "medicine": {
+    "direction_id": "medicine",
+    "name": "医学专业与科室",
+    "records": 28,
+    "fact_instances": 43,
+    "unique_source_urls": 21,
+    "unique_source_version_quote_intervals": 43,
+    "by_category": {
+      "occupation": 17,
+      "recruitment": 0,
+      "admissions": 1,
+      "industry": 3,
+      "learning": 7
+    },
+    "missing_field_instances": 84,
+    "missing_field_record_counts": {
+      "average_salary": 1,
+      "course_hours": 7,
+      "current_course_access": 7,
+      "current_year_requirements": 1,
+      "department_salary": 9,
+      "department_training_path": 9,
+      "doctor_salary": 1,
+      "employment_rate": 10,
+      "graduate_salary": 9,
+      "license_eligibility": 16,
+      "medical_major_salary": 1,
+      "national_department_standard": 1,
+      "personal_eligibility": 1,
+      "recruitment_eligibility": 9,
+      "school_specific_admissions": 1,
+      "total_graduates": 1
+    },
+    "topics": [
+      "专业目录",
+      "临床医学",
+      "临床科室",
+      "健康服务与管理",
+      "医学影像学",
+      "医学检验技术",
+      "升学要求",
+      "口腔医学",
+      "就业统计",
+      "康复治疗学",
+      "护理学",
+      "预防医学"
+    ],
+    "detailed_program_contexts": [
+      "临床医学",
+      "健康服务与管理",
+      "医学影像学",
+      "医学检验技术",
+      "口腔医学",
+      "康复治疗学",
+      "护理学",
+      "预防医学"
+    ],
+    "detailed_department_profiles": [
+      "儿内科",
+      "医学影像科",
+      "心血管内科",
+      "急诊科",
+      "检验科",
+      "病案与临床数据中心",
+      "骨科",
+      "麻醉科"
+    ],
+    "department_directory": {
+      "source_url": "https://www.pkufh.com/Html/Hospitals/Departments/Overview0.html",
+      "groups": [
+        {
+          "type": "clinical",
+          "label": "临床科室",
+          "count": 39,
+          "names": [
+            "呼吸和危重症医学科",
+            "消化内科",
+            "心血管内科",
+            "内分泌内科",
+            "血液内科",
+            "肾脏内科",
+            "老年病内科",
+            "风湿免疫科",
+            "胃肠外科",
+            "肝胆胰外科",
+            "甲状腺乳腺外科",
+            "整形烧伤外科",
+            "骨科",
+            "心脏外科",
+            "胸外科",
+            "泌尿外科",
+            "麻醉科",
+            "重症医学科",
+            "介入血管外科",
+            "妇产生殖医学中心",
+            "儿内科",
+            "小儿外科",
+            "儿童癫痫外科病房",
+            "眼科",
+            "小儿眼科",
+            "耳鼻咽喉－头颈外科",
+            "皮肤性病科",
+            "神经内科",
+            "神经外科",
+            "感染疾病科",
+            "中医、中西医结合科",
+            "急诊科",
+            "放射治疗科",
+            "肿瘤内科",
+            "口腔科",
+            "临床药理研究所",
+            "健康管理中心",
+            "全科医学科",
+            "罕见病医学中心"
+          ]
+        },
+        {
+          "type": "medical_technology",
+          "label": "医技科室",
+          "count": 12,
+          "names": [
+            "医学影像科",
+            "核医学科",
+            "病理科",
+            "电镜室",
+            "康复医学科",
+            "超声医学科",
+            "内镜中心",
+            "检验科",
+            "药剂科",
+            "临床营养科",
+            "输血科",
+            "病案与临床数据中心"
+          ]
+        }
+      ],
+      "total_entries": 51,
+      "scope": "北京大学第一医院代表性院内科室目录，不是全国统一科室或执业资格分类；目录条目不等于已采集详细简介。"
+    },
+    "missing_categories": [
+      "recruitment"
+    ]
+  },
+  "admissions": {
+    "institutions": [
+      "北京大学",
+      "电子科技大学",
+      "上海交通大学",
+      "深圳大学"
+    ],
+    "school_year_matrix": [
+      {
+        "institution": "北京大学",
+        "admission_year": 2026,
+        "records": 5,
+        "fact_instances": 13,
+        "unique_source_urls": 2,
+        "unique_source_version_quote_intervals": 4,
+        "by_category": {
+          "occupation": 0,
+          "recruitment": 0,
+          "admissions": 5,
+          "industry": 0,
+          "learning": 0
+        },
+        "missing_field_instances": 14,
+        "colleges": [
+          "985医学技术研究院",
+          "医学部"
+        ],
+        "program_contexts": [
+          "105800医学技术",
+          "1051临床/1052口腔/护理/非全MPH"
+        ],
+        "role_ids": [
+          "guide_clinical_data",
+          "guide_devices",
+          "guide_signals",
+          "guide_imaging_eng",
+          "medicine_guide"
+        ],
+        "source_urls": [
+          "https://yjsy.bjmu.edu.cn/docs/2025-10/2695e1e4d00a4cbe8fd90add52c7a5fb.pdf",
+          "https://yjsy.bjmu.edu.cn/zslq/zsjzjml/a427e38b26c645eab8e6665c870e98ca.htm"
+        ],
+        "historical_valid_through": [
+          "2026-09-01"
+        ],
+        "missing_field_record_counts": {
+          "cross_major_restrictions": 4,
+          "current_year_requirements": 5,
+          "personal_eligibility": 5
+        }
+      },
+      {
+        "institution": "电子科技大学",
+        "admission_year": 2027,
+        "records": 6,
+        "fact_instances": 12,
+        "unique_source_urls": 2,
+        "unique_source_version_quote_intervals": 4,
+        "by_category": {
+          "occupation": 0,
+          "recruitment": 0,
+          "admissions": 6,
+          "industry": 0,
+          "learning": 0
+        },
+        "missing_field_instances": 12,
+        "colleges": [
+          "014生命科学与技术学院"
+        ],
+        "program_contexts": [
+          "083100生物医学工程"
+        ],
+        "role_ids": [
+          "guide_devices",
+          "guide_signals",
+          "guide_imaging_eng"
+        ],
+        "source_urls": [
+          "https://yzbm.uestc.edu.cn/zsml/sszsml/index/2027",
+          "https://yz.uestc.edu.cn/info/1081/5968.htm"
+        ],
+        "historical_valid_through": [],
+        "missing_field_record_counts": {
+          "cross_major_restrictions": 3,
+          "ordinary_bachelor_program_eligibility": 3,
+          "personal_eligibility": 6
+        }
+      },
+      {
+        "institution": "上海交通大学",
+        "admission_year": 2027,
+        "records": 18,
+        "fact_instances": 27,
+        "unique_source_urls": 2,
+        "unique_source_version_quote_intervals": 11,
+        "by_category": {
+          "occupation": 0,
+          "recruitment": 0,
+          "admissions": 18,
+          "industry": 0,
+          "learning": 0
+        },
+        "missing_field_instances": 45,
+        "colleges": [
+          "531人工智能学院",
+          "033计算机学院",
+          "082生物医学工程学院",
+          "071数学科学学院"
+        ],
+        "program_contexts": [
+          "085400电子信息 01人工智能",
+          "085400电子信息 02软件工程",
+          "081200计算机科学与技术 01计算机科学与技术方向",
+          "085400电子信息 03生物医学工程 （医疗仪器）",
+          "085400电子信息 02生物医学工程 （神经工程）",
+          "085400电子信息 01生物医学工程 （医学影像）",
+          "025200应用统计 01不区分研究方向",
+          "085400电子信息 01计算机与大数据技术",
+          "140500智能科学与技术 01不区分方向"
+        ],
+        "role_ids": [
+          "guide_ml_cv",
+          "guide_software",
+          "guide_llm_agent",
+          "guide_devices",
+          "guide_signals",
+          "guide_imaging_eng",
+          "guide_clinical_data",
+          "guide_health_systems",
+          "guide_med_nlp_kg"
+        ],
+        "source_urls": [
+          "https://yzb.sjtu.edu.cn/post/3772",
+          "https://yzb.sjtu.edu.cn/post/3784"
+        ],
+        "historical_valid_through": [],
+        "missing_field_record_counts": {
+          "college_retest_rules": 9,
+          "ordinary_bachelor_program_eligibility": 9,
+          "personal_eligibility": 18,
+          "tuition": 9
+        }
+      },
+      {
+        "institution": "深圳大学",
+        "admission_year": 2026,
+        "records": 3,
+        "fact_instances": 9,
+        "unique_source_urls": 1,
+        "unique_source_version_quote_intervals": 3,
+        "by_category": {
+          "occupation": 0,
+          "recruitment": 0,
+          "admissions": 3,
+          "industry": 0,
+          "learning": 0
+        },
+        "missing_field_instances": 6,
+        "colleges": [
+          "124医学部 / 生物医学工程学院"
+        ],
+        "program_contexts": [
+          "083100生物医学工程"
+        ],
+        "role_ids": [
+          "guide_devices",
+          "guide_signals",
+          "guide_imaging_eng"
+        ],
+        "source_urls": [
+          "https://ehall.szu.edu.cn/gsapp/sys/zsjzapp/index.do#/2026/4/124/083100"
+        ],
+        "historical_valid_through": [
+          "2026-09-01"
+        ],
+        "missing_field_record_counts": {
+          "current_year_requirements": 3,
+          "personal_eligibility": 3
+        }
+      }
+    ],
+    "pilot_context_missing_record_ids": [
+      "medical-ai-pm-sjtu-2027-catalog",
+      "medical-ai-pm-sjtu-2027-charter"
+    ],
+    "note": "试点两条交大招生资料原契约未带context，仍可按role/source/q读取；学校年份过滤依赖扩充资料context。"
+  },
+  "missing_fields": {
+    "combined_record_counts": {
+      "application_deadline": 3,
+      "average_salary": 1,
+      "career_path": 5,
+      "career_promotion_path": 6,
+      "clinical_data_role_requirements": 1,
+      "clinical_validation": 1,
+      "college_retest_rules": 9,
+      "course_enrollment": 5,
+      "course_hours": 11,
+      "cross_major_restrictions": 8,
+      "current_course_access": 11,
+      "current_enrollment": 1,
+      "current_product_classification": 1,
+      "current_program_capacity": 1,
+      "current_year_requirements": 8,
+      "deadline": 7,
+      "department_salary": 10,
+      "department_training_path": 10,
+      "direction_employment_rate": 9,
+      "doctor_salary": 1,
+      "education": 2,
+      "employment_rate": 14,
+      "employment_statistics": 2,
+      "engineering_prerequisites": 4,
+      "full_guideline": 1,
+      "graduate_salary": 9,
+      "industry_universal_requirements": 9,
+      "knowledge_graph_requirements": 2,
+      "learning_hours": 2,
+      "license_eligibility": 17,
+      "major_average_salary": 9,
+      "major_employment_rate": 9,
+      "major_graduate_salary": 9,
+      "major_restrictions": 3,
+      "medical_major_salary": 1,
+      "medical_specific_standard": 5,
+      "medicine_major_eligibility": 1,
+      "national_department_standard": 1,
+      "observed_talent_demand": 1,
+      "ordinary_bachelor_program_eligibility": 13,
+      "personal_eligibility": 33,
+      "personal_learning_hours": 9,
+      "prerequisites": 1,
+      "published_at": 6,
+      "recruitment_eligibility": 10,
+      "research_vacancy": 1,
+      "role_average_salary": 9,
+      "role_specific_career_path": 9,
+      "salary": 10,
+      "salary_statistics": 1,
+      "school_specific_admissions": 1,
+      "total_graduates": 1,
+      "tuition": 10
+    },
+    "per_record": [
+      {
+        "id": "medical-ai-pm-internlm-learning",
+        "role_id": "medical_ai_pm",
+        "category": "learning",
+        "fields": [
+          "prerequisites",
+          "learning_hours",
+          "current_enrollment"
+        ]
+      },
+      {
+        "id": "medical-ai-pm-fudan-project",
+        "role_id": "medical_ai_pm",
+        "category": "learning",
+        "fields": [
+          "research_vacancy",
+          "learning_hours",
+          "clinical_validation"
+        ]
+      },
+      {
+        "id": "medical-ai-pm-bytedance-job",
+        "role_id": "medical_ai_pm",
+        "category": "recruitment",
+        "fields": [
+          "salary",
+          "major_restrictions",
+          "deadline"
+        ]
+      },
+      {
+        "id": "medical-ai-pm-bytedance-tasks",
+        "role_id": "medical_ai_pm",
+        "category": "occupation",
+        "fields": [
+          "career_path"
+        ]
+      },
+      {
+        "id": "medical-ai-pm-cn-policy",
+        "role_id": "medical_ai_pm",
+        "category": "industry",
+        "fields": [
+          "employment_statistics",
+          "salary_statistics",
+          "observed_talent_demand"
+        ]
+      },
+      {
+        "id": "medical-ai-pm-cn-device-notice",
+        "role_id": "medical_ai_pm",
+        "category": "industry",
+        "fields": [
+          "full_guideline",
+          "current_product_classification",
+          "employment_statistics"
+        ]
+      },
+      {
+        "id": "medical-ai-pm-sjtu-2027-catalog",
+        "role_id": "medical_ai_pm",
+        "category": "admissions",
+        "fields": [
+          "cross_major_restrictions",
+          "tuition",
+          "current_program_capacity"
+        ]
+      },
+      {
+        "id": "medical-ai-pm-sjtu-2027-charter",
+        "role_id": "medical_ai_pm",
+        "category": "admissions",
+        "fields": [
+          "ordinary_bachelor_program_eligibility",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "ml-cv-sjtu-2027-admissions",
+        "role_id": "guide_ml_cv",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "tuition",
+          "college_retest_rules"
+        ]
+      },
+      {
+        "id": "ml-cv-sjtu-2027-charter",
+        "role_id": "guide_ml_cv",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "ordinary_bachelor_program_eligibility"
+        ]
+      },
+      {
+        "id": "ml-cv-national-wages-2025",
+        "role_id": "guide_ml_cv",
+        "category": "industry",
+        "fields": [
+          "major_graduate_salary",
+          "role_average_salary",
+          "major_employment_rate"
+        ]
+      },
+      {
+        "id": "software-sjtu-2027-admissions",
+        "role_id": "guide_software",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "tuition",
+          "college_retest_rules"
+        ]
+      },
+      {
+        "id": "software-sjtu-2027-charter",
+        "role_id": "guide_software",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "ordinary_bachelor_program_eligibility"
+        ]
+      },
+      {
+        "id": "software-national-wages-2025",
+        "role_id": "guide_software",
+        "category": "industry",
+        "fields": [
+          "major_graduate_salary",
+          "role_average_salary",
+          "major_employment_rate"
+        ]
+      },
+      {
+        "id": "llm-agent-sjtu-2027-admissions",
+        "role_id": "guide_llm_agent",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "tuition",
+          "college_retest_rules"
+        ]
+      },
+      {
+        "id": "llm-agent-sjtu-2027-charter",
+        "role_id": "guide_llm_agent",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "ordinary_bachelor_program_eligibility"
+        ]
+      },
+      {
+        "id": "llm-agent-national-wages-2025",
+        "role_id": "guide_llm_agent",
+        "category": "industry",
+        "fields": [
+          "major_graduate_salary",
+          "role_average_salary",
+          "major_employment_rate"
+        ]
+      },
+      {
+        "id": "devices-sjtu-2027-admissions",
+        "role_id": "guide_devices",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "tuition",
+          "college_retest_rules"
+        ]
+      },
+      {
+        "id": "devices-sjtu-2027-charter",
+        "role_id": "guide_devices",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "ordinary_bachelor_program_eligibility"
+        ]
+      },
+      {
+        "id": "devices-national-wages-2025",
+        "role_id": "guide_devices",
+        "category": "industry",
+        "fields": [
+          "major_graduate_salary",
+          "role_average_salary",
+          "major_employment_rate"
+        ]
+      },
+      {
+        "id": "signals-sjtu-2027-admissions",
+        "role_id": "guide_signals",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "tuition",
+          "college_retest_rules"
+        ]
+      },
+      {
+        "id": "signals-sjtu-2027-charter",
+        "role_id": "guide_signals",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "ordinary_bachelor_program_eligibility"
+        ]
+      },
+      {
+        "id": "signals-national-wages-2025",
+        "role_id": "guide_signals",
+        "category": "industry",
+        "fields": [
+          "major_graduate_salary",
+          "role_average_salary",
+          "major_employment_rate"
+        ]
+      },
+      {
+        "id": "imaging-eng-sjtu-2027-admissions",
+        "role_id": "guide_imaging_eng",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "tuition",
+          "college_retest_rules"
+        ]
+      },
+      {
+        "id": "imaging-eng-sjtu-2027-charter",
+        "role_id": "guide_imaging_eng",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "ordinary_bachelor_program_eligibility"
+        ]
+      },
+      {
+        "id": "imaging-eng-national-wages-2025",
+        "role_id": "guide_imaging_eng",
+        "category": "industry",
+        "fields": [
+          "major_graduate_salary",
+          "role_average_salary",
+          "major_employment_rate"
+        ]
+      },
+      {
+        "id": "clinical-data-sjtu-2027-admissions",
+        "role_id": "guide_clinical_data",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "tuition",
+          "college_retest_rules"
+        ]
+      },
+      {
+        "id": "clinical-data-sjtu-2027-charter",
+        "role_id": "guide_clinical_data",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "ordinary_bachelor_program_eligibility"
+        ]
+      },
+      {
+        "id": "clinical-data-national-wages-2025",
+        "role_id": "guide_clinical_data",
+        "category": "industry",
+        "fields": [
+          "major_graduate_salary",
+          "role_average_salary",
+          "major_employment_rate"
+        ]
+      },
+      {
+        "id": "health-systems-sjtu-2027-admissions",
+        "role_id": "guide_health_systems",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "tuition",
+          "college_retest_rules"
+        ]
+      },
+      {
+        "id": "health-systems-sjtu-2027-charter",
+        "role_id": "guide_health_systems",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "ordinary_bachelor_program_eligibility"
+        ]
+      },
+      {
+        "id": "health-systems-national-wages-2025",
+        "role_id": "guide_health_systems",
+        "category": "industry",
+        "fields": [
+          "major_graduate_salary",
+          "role_average_salary",
+          "major_employment_rate"
+        ]
+      },
+      {
+        "id": "med-nlp-kg-sjtu-2027-admissions",
+        "role_id": "guide_med_nlp_kg",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "tuition",
+          "college_retest_rules"
+        ]
+      },
+      {
+        "id": "med-nlp-kg-sjtu-2027-charter",
+        "role_id": "guide_med_nlp_kg",
+        "category": "admissions",
+        "fields": [
+          "personal_eligibility",
+          "ordinary_bachelor_program_eligibility"
+        ]
+      },
+      {
+        "id": "med-nlp-kg-national-wages-2025",
+        "role_id": "guide_med_nlp_kg",
+        "category": "industry",
+        "fields": [
+          "major_graduate_salary",
+          "role_average_salary",
+          "major_employment_rate"
+        ]
+      },
+      {
+        "id": "ml-cv-ai-standard",
+        "role_id": "guide_ml_cv",
+        "category": "occupation",
+        "fields": [
+          "role_specific_career_path",
+          "medical_specific_standard"
+        ]
+      },
+      {
+        "id": "ml-cv-ai-learning",
+        "role_id": "guide_ml_cv",
+        "category": "learning",
+        "fields": [
+          "course_enrollment",
+          "personal_learning_hours"
+        ]
+      },
+      {
+        "id": "llm-agent-ai-standard",
+        "role_id": "guide_llm_agent",
+        "category": "occupation",
+        "fields": [
+          "role_specific_career_path",
+          "medical_specific_standard"
+        ]
+      },
+      {
+        "id": "llm-agent-ai-learning",
+        "role_id": "guide_llm_agent",
+        "category": "learning",
+        "fields": [
+          "course_enrollment",
+          "personal_learning_hours"
+        ]
+      },
+      {
+        "id": "med-nlp-kg-ai-standard",
+        "role_id": "guide_med_nlp_kg",
+        "category": "occupation",
+        "fields": [
+          "role_specific_career_path",
+          "medical_specific_standard"
+        ]
+      },
+      {
+        "id": "med-nlp-kg-ai-learning",
+        "role_id": "guide_med_nlp_kg",
+        "category": "learning",
+        "fields": [
+          "course_enrollment",
+          "personal_learning_hours"
+        ]
+      },
+      {
+        "id": "software-ai-standard",
+        "role_id": "guide_software",
+        "category": "occupation",
+        "fields": [
+          "role_specific_career_path",
+          "medical_specific_standard"
+        ]
+      },
+      {
+        "id": "software-ai-learning",
+        "role_id": "guide_software",
+        "category": "learning",
+        "fields": [
+          "course_enrollment",
+          "personal_learning_hours"
+        ]
+      },
+      {
+        "id": "health-systems-ai-standard",
+        "role_id": "guide_health_systems",
+        "category": "occupation",
+        "fields": [
+          "role_specific_career_path",
+          "medical_specific_standard"
+        ]
+      },
+      {
+        "id": "health-systems-ai-learning",
+        "role_id": "guide_health_systems",
+        "category": "learning",
+        "fields": [
+          "course_enrollment",
+          "personal_learning_hours"
+        ]
+      },
+      {
+        "id": "devices-medical-foundation-learning",
+        "role_id": "guide_devices",
+        "category": "learning",
+        "fields": [
+          "engineering_prerequisites",
+          "personal_learning_hours"
+        ]
+      },
+      {
+        "id": "signals-medical-foundation-learning",
+        "role_id": "guide_signals",
+        "category": "learning",
+        "fields": [
+          "engineering_prerequisites",
+          "personal_learning_hours"
+        ]
+      },
+      {
+        "id": "imaging-eng-medical-foundation-learning",
+        "role_id": "guide_imaging_eng",
+        "category": "learning",
+        "fields": [
+          "engineering_prerequisites",
+          "personal_learning_hours"
+        ]
+      },
+      {
+        "id": "clinical-data-medical-foundation-learning",
+        "role_id": "guide_clinical_data",
+        "category": "learning",
+        "fields": [
+          "engineering_prerequisites",
+          "personal_learning_hours"
+        ]
+      },
+      {
+        "id": "devices-uestc-2027-admissions",
+        "role_id": "guide_devices",
+        "category": "admissions",
+        "fields": [
+          "cross_major_restrictions",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "devices-uestc-2027-charter",
+        "role_id": "guide_devices",
+        "category": "admissions",
+        "fields": [
+          "ordinary_bachelor_program_eligibility",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "devices-szu-2026-admissions",
+        "role_id": "guide_devices",
+        "category": "admissions",
+        "fields": [
+          "current_year_requirements",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "signals-uestc-2027-admissions",
+        "role_id": "guide_signals",
+        "category": "admissions",
+        "fields": [
+          "cross_major_restrictions",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "signals-uestc-2027-charter",
+        "role_id": "guide_signals",
+        "category": "admissions",
+        "fields": [
+          "ordinary_bachelor_program_eligibility",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "signals-szu-2026-admissions",
+        "role_id": "guide_signals",
+        "category": "admissions",
+        "fields": [
+          "current_year_requirements",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "imaging-eng-uestc-2027-admissions",
+        "role_id": "guide_imaging_eng",
+        "category": "admissions",
+        "fields": [
+          "cross_major_restrictions",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "imaging-eng-uestc-2027-charter",
+        "role_id": "guide_imaging_eng",
+        "category": "admissions",
+        "fields": [
+          "ordinary_bachelor_program_eligibility",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "imaging-eng-szu-2026-admissions",
+        "role_id": "guide_imaging_eng",
+        "category": "admissions",
+        "fields": [
+          "current_year_requirements",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "devices-mindray-recruitment",
+        "role_id": "guide_devices",
+        "category": "recruitment",
+        "fields": [
+          "salary",
+          "deadline",
+          "published_at"
+        ]
+      },
+      {
+        "id": "devices-mindray-occupation",
+        "role_id": "guide_devices",
+        "category": "occupation",
+        "fields": [
+          "career_promotion_path",
+          "industry_universal_requirements"
+        ]
+      },
+      {
+        "id": "signals-mindray-recruitment",
+        "role_id": "guide_signals",
+        "category": "recruitment",
+        "fields": [
+          "salary",
+          "deadline",
+          "published_at"
+        ]
+      },
+      {
+        "id": "signals-mindray-occupation",
+        "role_id": "guide_signals",
+        "category": "occupation",
+        "fields": [
+          "career_promotion_path",
+          "industry_universal_requirements"
+        ]
+      },
+      {
+        "id": "imaging-eng-mindray-recruitment",
+        "role_id": "guide_imaging_eng",
+        "category": "recruitment",
+        "fields": [
+          "salary",
+          "deadline",
+          "published_at"
+        ]
+      },
+      {
+        "id": "imaging-eng-mindray-occupation",
+        "role_id": "guide_imaging_eng",
+        "category": "occupation",
+        "fields": [
+          "career_promotion_path",
+          "industry_universal_requirements"
+        ]
+      },
+      {
+        "id": "ml-cv-mindray-recruitment",
+        "role_id": "guide_ml_cv",
+        "category": "recruitment",
+        "fields": [
+          "salary",
+          "deadline",
+          "published_at"
+        ]
+      },
+      {
+        "id": "ml-cv-mindray-occupation",
+        "role_id": "guide_ml_cv",
+        "category": "occupation",
+        "fields": [
+          "career_promotion_path",
+          "industry_universal_requirements"
+        ]
+      },
+      {
+        "id": "software-mindray-recruitment",
+        "role_id": "guide_software",
+        "category": "recruitment",
+        "fields": [
+          "salary",
+          "deadline",
+          "published_at"
+        ]
+      },
+      {
+        "id": "software-mindray-occupation",
+        "role_id": "guide_software",
+        "category": "occupation",
+        "fields": [
+          "career_promotion_path",
+          "industry_universal_requirements"
+        ]
+      },
+      {
+        "id": "health-systems-mindray-recruitment",
+        "role_id": "guide_health_systems",
+        "category": "recruitment",
+        "fields": [
+          "salary",
+          "deadline",
+          "published_at"
+        ]
+      },
+      {
+        "id": "health-systems-mindray-occupation",
+        "role_id": "guide_health_systems",
+        "category": "occupation",
+        "fields": [
+          "career_promotion_path",
+          "industry_universal_requirements"
+        ]
+      },
+      {
+        "id": "clinical-data-preventive-occupation",
+        "role_id": "guide_clinical_data",
+        "category": "occupation",
+        "fields": [
+          "clinical_data_role_requirements",
+          "career_path"
+        ]
+      },
+      {
+        "id": "clinical-data-pku-2026-admissions",
+        "role_id": "guide_clinical_data",
+        "category": "admissions",
+        "fields": [
+          "cross_major_restrictions",
+          "current_year_requirements",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "devices-pku-2026-admissions",
+        "role_id": "guide_devices",
+        "category": "admissions",
+        "fields": [
+          "cross_major_restrictions",
+          "current_year_requirements",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "signals-pku-2026-admissions",
+        "role_id": "guide_signals",
+        "category": "admissions",
+        "fields": [
+          "cross_major_restrictions",
+          "current_year_requirements",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "imaging-eng-pku-2026-admissions",
+        "role_id": "guide_imaging_eng",
+        "category": "admissions",
+        "fields": [
+          "cross_major_restrictions",
+          "current_year_requirements",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "ml-cv-xidian-employment-context",
+        "role_id": "guide_ml_cv",
+        "category": "industry",
+        "fields": [
+          "direction_employment_rate",
+          "major_average_salary"
+        ]
+      },
+      {
+        "id": "software-xidian-employment-context",
+        "role_id": "guide_software",
+        "category": "industry",
+        "fields": [
+          "direction_employment_rate",
+          "major_average_salary"
+        ]
+      },
+      {
+        "id": "llm-agent-xidian-employment-context",
+        "role_id": "guide_llm_agent",
+        "category": "industry",
+        "fields": [
+          "direction_employment_rate",
+          "major_average_salary"
+        ]
+      },
+      {
+        "id": "devices-xidian-employment-context",
+        "role_id": "guide_devices",
+        "category": "industry",
+        "fields": [
+          "direction_employment_rate",
+          "major_average_salary"
+        ]
+      },
+      {
+        "id": "signals-xidian-employment-context",
+        "role_id": "guide_signals",
+        "category": "industry",
+        "fields": [
+          "direction_employment_rate",
+          "major_average_salary"
+        ]
+      },
+      {
+        "id": "imaging-eng-xidian-employment-context",
+        "role_id": "guide_imaging_eng",
+        "category": "industry",
+        "fields": [
+          "direction_employment_rate",
+          "major_average_salary"
+        ]
+      },
+      {
+        "id": "clinical-data-xidian-employment-context",
+        "role_id": "guide_clinical_data",
+        "category": "industry",
+        "fields": [
+          "direction_employment_rate",
+          "major_average_salary"
+        ]
+      },
+      {
+        "id": "health-systems-xidian-employment-context",
+        "role_id": "guide_health_systems",
+        "category": "industry",
+        "fields": [
+          "direction_employment_rate",
+          "major_average_salary"
+        ]
+      },
+      {
+        "id": "med-nlp-kg-xidian-employment-context",
+        "role_id": "guide_med_nlp_kg",
+        "category": "industry",
+        "fields": [
+          "direction_employment_rate",
+          "major_average_salary"
+        ]
+      },
+      {
+        "id": "shzu-clinical-program-occupation",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "employment_rate",
+          "graduate_salary",
+          "license_eligibility"
+        ]
+      },
+      {
+        "id": "shzu-clinical-program-learning",
+        "role_id": "medicine_guide",
+        "category": "learning",
+        "fields": [
+          "course_hours",
+          "current_course_access"
+        ]
+      },
+      {
+        "id": "shzu-nursing-program-occupation",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "employment_rate",
+          "graduate_salary",
+          "license_eligibility"
+        ]
+      },
+      {
+        "id": "shzu-nursing-program-learning",
+        "role_id": "medicine_guide",
+        "category": "learning",
+        "fields": [
+          "course_hours",
+          "current_course_access"
+        ]
+      },
+      {
+        "id": "shzu-medicine-program-occupation",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "employment_rate",
+          "graduate_salary",
+          "license_eligibility"
+        ]
+      },
+      {
+        "id": "shzu-medicine-program-learning",
+        "role_id": "medicine_guide",
+        "category": "learning",
+        "fields": [
+          "course_hours",
+          "current_course_access"
+        ]
+      },
+      {
+        "id": "shzu-imaging-program-occupation",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "employment_rate",
+          "graduate_salary",
+          "license_eligibility"
+        ]
+      },
+      {
+        "id": "shzu-imaging-program-learning",
+        "role_id": "medicine_guide",
+        "category": "learning",
+        "fields": [
+          "course_hours",
+          "current_course_access"
+        ]
+      },
+      {
+        "id": "shzu-laboratory-program-occupation",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "employment_rate",
+          "graduate_salary",
+          "license_eligibility"
+        ]
+      },
+      {
+        "id": "shzu-laboratory-program-learning",
+        "role_id": "medicine_guide",
+        "category": "learning",
+        "fields": [
+          "course_hours",
+          "current_course_access"
+        ]
+      },
+      {
+        "id": "shzu-rehabilitation-program-occupation",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "employment_rate",
+          "graduate_salary",
+          "license_eligibility"
+        ]
+      },
+      {
+        "id": "shzu-rehabilitation-program-learning",
+        "role_id": "medicine_guide",
+        "category": "learning",
+        "fields": [
+          "course_hours",
+          "current_course_access"
+        ]
+      },
+      {
+        "id": "shzu-health-management-program-occupation",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "employment_rate",
+          "graduate_salary",
+          "license_eligibility"
+        ]
+      },
+      {
+        "id": "shzu-health-management-program-learning",
+        "role_id": "medicine_guide",
+        "category": "learning",
+        "fields": [
+          "course_hours",
+          "current_course_access"
+        ]
+      },
+      {
+        "id": "medicine-preventive-occupation",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "employment_rate",
+          "graduate_salary",
+          "license_eligibility"
+        ]
+      },
+      {
+        "id": "medicine-national-major-catalog",
+        "role_id": "medicine_guide",
+        "category": "industry",
+        "fields": [
+          "school_specific_admissions",
+          "employment_rate",
+          "graduate_salary"
+        ]
+      },
+      {
+        "id": "medicine-clinical-departments",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "national_department_standard",
+          "department_training_path",
+          "recruitment_eligibility"
+        ]
+      },
+      {
+        "id": "medicine-pku-2026-eligibility",
+        "role_id": "medicine_guide",
+        "category": "admissions",
+        "fields": [
+          "current_year_requirements",
+          "personal_eligibility"
+        ]
+      },
+      {
+        "id": "medicine-bbmu-observed-employment",
+        "role_id": "medicine_guide",
+        "category": "industry",
+        "fields": [
+          "total_graduates",
+          "employment_rate",
+          "average_salary"
+        ]
+      },
+      {
+        "id": "medicine-nbs-salary-context",
+        "role_id": "medicine_guide",
+        "category": "industry",
+        "fields": [
+          "medical_major_salary",
+          "doctor_salary",
+          "department_salary"
+        ]
+      },
+      {
+        "id": "devices-szu-bme-training",
+        "role_id": "guide_devices",
+        "category": "occupation",
+        "fields": [
+          "role_specific_career_path",
+          "employment_rate"
+        ]
+      },
+      {
+        "id": "devices-szu-bme-learning",
+        "role_id": "guide_devices",
+        "category": "learning",
+        "fields": [
+          "course_hours",
+          "current_course_access"
+        ]
+      },
+      {
+        "id": "signals-szu-bme-training",
+        "role_id": "guide_signals",
+        "category": "occupation",
+        "fields": [
+          "role_specific_career_path",
+          "employment_rate"
+        ]
+      },
+      {
+        "id": "signals-szu-bme-learning",
+        "role_id": "guide_signals",
+        "category": "learning",
+        "fields": [
+          "course_hours",
+          "current_course_access"
+        ]
+      },
+      {
+        "id": "imaging-eng-szu-bme-training",
+        "role_id": "guide_imaging_eng",
+        "category": "occupation",
+        "fields": [
+          "role_specific_career_path",
+          "employment_rate"
+        ]
+      },
+      {
+        "id": "imaging-eng-szu-bme-learning",
+        "role_id": "guide_imaging_eng",
+        "category": "learning",
+        "fields": [
+          "course_hours",
+          "current_course_access"
+        ]
+      },
+      {
+        "id": "clinical-data-szu-bme-training",
+        "role_id": "guide_clinical_data",
+        "category": "occupation",
+        "fields": [
+          "role_specific_career_path",
+          "employment_rate"
+        ]
+      },
+      {
+        "id": "clinical-data-szu-bme-learning",
+        "role_id": "guide_clinical_data",
+        "category": "learning",
+        "fields": [
+          "course_hours",
+          "current_course_access"
+        ]
+      },
+      {
+        "id": "medicine-pkufh-department-6",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "recruitment_eligibility",
+          "license_eligibility",
+          "department_training_path",
+          "department_salary"
+        ]
+      },
+      {
+        "id": "medicine-pkufh-department-14",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "recruitment_eligibility",
+          "license_eligibility",
+          "department_training_path",
+          "department_salary"
+        ]
+      },
+      {
+        "id": "medicine-pkufh-department-19",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "recruitment_eligibility",
+          "license_eligibility",
+          "department_training_path",
+          "department_salary"
+        ]
+      },
+      {
+        "id": "medicine-pkufh-department-22",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "recruitment_eligibility",
+          "license_eligibility",
+          "department_training_path",
+          "department_salary"
+        ]
+      },
+      {
+        "id": "medicine-pkufh-department-32",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "recruitment_eligibility",
+          "license_eligibility",
+          "department_training_path",
+          "department_salary"
+        ]
+      },
+      {
+        "id": "medicine-pkufh-department-40",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "recruitment_eligibility",
+          "license_eligibility",
+          "department_training_path",
+          "department_salary"
+        ]
+      },
+      {
+        "id": "medicine-pkufh-department-46",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "recruitment_eligibility",
+          "license_eligibility",
+          "department_training_path",
+          "department_salary"
+        ]
+      },
+      {
+        "id": "medicine-pkufh-department-48",
+        "role_id": "medicine_guide",
+        "category": "occupation",
+        "fields": [
+          "recruitment_eligibility",
+          "license_eligibility",
+          "department_training_path",
+          "department_salary"
+        ]
+      },
+      {
+        "id": "clinical-data-pkufh-work",
+        "role_id": "guide_clinical_data",
+        "category": "occupation",
+        "fields": [
+          "recruitment_eligibility",
+          "license_eligibility",
+          "department_training_path",
+          "department_salary"
+        ]
+      },
+      {
+        "id": "tigermed-clinical-agent-recruitment",
+        "role_id": "guide_llm_agent",
+        "category": "recruitment",
+        "fields": [
+          "education",
+          "major_restrictions",
+          "salary",
+          "application_deadline"
+        ]
+      },
+      {
+        "id": "tigermed-clinical-agent-occupation",
+        "role_id": "guide_llm_agent",
+        "category": "occupation",
+        "fields": [
+          "career_path",
+          "industry_universal_requirements"
+        ]
+      },
+      {
+        "id": "tigermed-clinical-statistics-recruitment",
+        "role_id": "guide_clinical_data",
+        "category": "recruitment",
+        "fields": [
+          "salary",
+          "application_deadline",
+          "medicine_major_eligibility"
+        ]
+      },
+      {
+        "id": "tigermed-clinical-statistics-occupation",
+        "role_id": "guide_clinical_data",
+        "category": "occupation",
+        "fields": [
+          "career_path",
+          "industry_universal_requirements"
+        ]
+      },
+      {
+        "id": "tigermed-ai-pharmacovigilance-recruitment",
+        "role_id": "guide_med_nlp_kg",
+        "category": "recruitment",
+        "fields": [
+          "education",
+          "major_restrictions",
+          "salary",
+          "application_deadline",
+          "knowledge_graph_requirements"
+        ]
+      },
+      {
+        "id": "tigermed-ai-pharmacovigilance-occupation",
+        "role_id": "guide_med_nlp_kg",
+        "category": "occupation",
+        "fields": [
+          "career_path",
+          "industry_universal_requirements",
+          "knowledge_graph_requirements"
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "internlm-cn-tutorial",
+      "url": "https://raw.githubusercontent.com/InternLM/Tutorial/main/README.md",
+      "organization": "上海人工智能实验室 / InternLM",
+      "title": "书生·浦语大模型实战营官方教程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "官方仓库README无日级发布日期；main会更新，以本次原文哈希和采集时间固定证据。",
+      "record_instances": 1,
+      "roles": [
+        "medical_ai_pm"
+      ]
+    },
+    {
+      "id": "fudan-disc-medllm",
+      "url": "https://raw.githubusercontent.com/FudanDISC/DISC-MedLLM/main/README.md",
+      "organization": "复旦大学数据智能与社会计算实验室 Fudan-DISC",
+      "title": "DISC-MedLLM 官方开源项目",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "仓库README未给日级发布日期；不以技术报告编号或仓库更新时间推断发布日期。",
+      "record_instances": 1,
+      "roles": [
+        "medical_ai_pm"
+      ]
+    },
+    {
+      "id": "bytedance-medical-pm-a176552",
+      "url": "https://jobs.bytedance.com/campus/position/7669685133130221877/detail",
+      "organization": "字节跳动 / 小荷健康",
+      "title": "AI产品经理（策略产品方向） - 小荷健康（A176552）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浏览器实际读取官方动态详情页；页面未列发布日期。2027届是招聘对象，不是发布日期。保留可见职位区摘录与hash；静态HTTP只返回壳页面。",
+      "record_instances": 2,
+      "roles": [
+        "medical_ai_pm"
+      ]
+    },
+    {
+      "id": "cn-nhc-ai-health-policy",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047018.htm",
+      "organization": "国家卫生健康委等五部门 / 中国政府网政策库",
+      "title": "关于促进和规范“人工智能+医疗卫生”应用发展的实施意见",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-11-04",
+      "publication_date_note": "中国政府网firstpublishedtime=2025-11-04-11:56:00；成文日期2025-10-20，国卫办规划发〔2025〕30号。NHC原站412，政府政策库完整官方发布可访问。",
+      "record_instances": 1,
+      "roles": [
+        "medical_ai_pm"
+      ]
+    },
+    {
+      "id": "cn-cmde-ai-guideline-notice",
+      "url": "https://www.ccfdie.org/cn/yjxx/ylqx/webinfo/2022/03/1648289422561065.htm",
+      "organization": "中国食品药品国际交流中心 / 国家药监局器审中心通告",
+      "title": "关于发布人工智能医疗器械注册审查指导原则的通告（2022年第8号）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2022-03-14",
+      "publication_date_note": "药监直属中心官方发布页日期2022-03-14；正文明确摘自器审中心2022-03-07。不将转载日期当原通告日期。",
+      "record_instances": 1,
+      "roles": [
+        "medical_ai_pm"
+      ]
+    },
+    {
+      "id": "sjtu-2027-bme-catalog",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生招生办公室",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "正文发布时间2026-09-21，2027招生年度；按指定学院表格行提取。",
+      "record_instances": 10,
+      "roles": [
+        "medical_ai_pm",
+        "guide_ml_cv",
+        "guide_software",
+        "guide_llm_agent",
+        "guide_devices",
+        "guide_signals",
+        "guide_imaging_eng",
+        "guide_clinical_data",
+        "guide_health_systems",
+        "guide_med_nlp_kg"
+      ]
+    },
+    {
+      "id": "sjtu-2027-master-charter",
+      "url": "https://yzb.sjtu.edu.cn/post/3784",
+      "organization": "上海交通大学研究生招生办公室",
+      "title": "上海交通大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-08",
+      "publication_date_note": "正文发布时间2026-10-08；同等学力规则不推广到普通本科生。",
+      "record_instances": 10,
+      "roles": [
+        "medical_ai_pm",
+        "guide_ml_cv",
+        "guide_software",
+        "guide_llm_agent",
+        "guide_devices",
+        "guide_signals",
+        "guide_imaging_eng",
+        "guide_clinical_data",
+        "guide_health_systems",
+        "guide_med_nlp_kg"
+      ]
+    },
+    {
+      "id": "nbs-2025-annual-wages",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202605/t20260515_1963707.html",
+      "organization": "国家统计局",
+      "title": "2025年城镇单位就业人员年平均工资情况",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-05-15",
+      "publication_date_note": "官网发布时间2026-05-15；统计期2025年，表2非私营、表5私营分别保留，不是专业毕业生薪资。",
+      "record_instances": 10,
+      "roles": [
+        "guide_ml_cv",
+        "guide_software",
+        "guide_llm_agent",
+        "guide_devices",
+        "guide_signals",
+        "guide_imaging_eng",
+        "guide_clinical_data",
+        "guide_health_systems",
+        "guide_med_nlp_kg",
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "cn-ai-engineer-standard",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/d9a82994c8bc4db2beb4a31b9d16e687.pdf",
+      "organization": "人力资源社会保障部、工业和信息化部 / 中国政府网",
+      "title": "人工智能工程技术人员国家职业技术技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文未列日级发布日期；版本/统计年份不作为发布日期。",
+      "record_instances": 10,
+      "roles": [
+        "guide_ml_cv",
+        "guide_llm_agent",
+        "guide_med_nlp_kg",
+        "guide_software",
+        "guide_health_systems"
+      ]
+    },
+    {
+      "id": "shzu-imaging-program",
+      "url": "https://yixy.shzu.edu.cn/2025/0630/c11880a221503/page.htm",
+      "organization": "石河子大学医学院",
+      "title": "医学影像学专业简介",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-06-30",
+      "publication_date_note": "官网正文发布日期2025-06-30；该校培养目标和就业方向，不代表实际就业结果或执业资格。",
+      "record_instances": 5,
+      "roles": [
+        "guide_devices",
+        "guide_signals",
+        "guide_imaging_eng",
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "gdmu-preventive-medicine",
+      "url": "https://ggwsxy.gdmu.edu.cn/info/1036/2252.htm",
+      "organization": "广东医科大学公共卫生学院",
+      "title": "预防医学专业介绍",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-05-08",
+      "publication_date_note": "正文发布时间2026-05-08，学校专业培养说明不作为实际就业率。",
+      "record_instances": 3,
+      "roles": [
+        "guide_clinical_data",
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "uestc-2027-bme-detail",
+      "url": "https://yzbm.uestc.edu.cn/zsml/sszsml/index/2027",
+      "organization": "电子科技大学研究生招生办公室",
+      "title": "2027年生命科学与技术学院083100生物医学工程目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "官方动态目录选择014学院和083100专业后，浏览器可见片段。未列发布日期；2027为招生年度。",
+      "record_instances": 3,
+      "roles": [
+        "guide_devices",
+        "guide_signals",
+        "guide_imaging_eng"
+      ]
+    },
+    {
+      "id": "uestc-2027-charter",
+      "url": "https://yz.uestc.edu.cn/info/1081/5968.htm",
+      "organization": "电子科技大学研究生招生办公室",
+      "title": "电子科技大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-08",
+      "publication_date_note": "正文发布时间2026-10-08，适用2027招生年度。",
+      "record_instances": 3,
+      "roles": [
+        "guide_devices",
+        "guide_signals",
+        "guide_imaging_eng"
+      ]
+    },
+    {
+      "id": "szu-2026-bme-detail",
+      "url": "https://ehall.szu.edu.cn/gsapp/sys/zsjzapp/index.do#/2026/4/124/083100",
+      "organization": "深圳大学研究生招生 / 医学部",
+      "title": "深圳大学2026年083100生物医学工程专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "学院官网链接到此动态招生系统；保留hash路由和可见原文；2026周期已过，仅历史参考。",
+      "record_instances": 11,
+      "roles": [
+        "guide_devices",
+        "guide_signals",
+        "guide_imaging_eng",
+        "guide_clinical_data"
+      ]
+    },
+    {
+      "id": "mindray-campus-three-jobs",
+      "url": "https://career.mindray.com/campus/jobs",
+      "organization": "深圳迈瑞生物医疗电子股份有限公司",
+      "title": "迈瑞官方校园招聘：J18975/J18977/J18980",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浏览器实际展开三职位职责和任职资格；无发布日期/薪资/截止日。列表可能更新，使用职位编号和摘录定位。",
+      "record_instances": 12,
+      "roles": [
+        "guide_devices",
+        "guide_signals",
+        "guide_imaging_eng",
+        "guide_ml_cv",
+        "guide_software",
+        "guide_health_systems"
+      ]
+    },
+    {
+      "id": "pku-2026-medical-catalog",
+      "url": "https://yjsy.bjmu.edu.cn/docs/2025-10/2695e1e4d00a4cbe8fd90add52c7a5fb.pdf",
+      "organization": "北京大学研究生院医学部分院",
+      "title": "2026年北京大学医学部硕士研究生招生专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文未列日级发布日期；版本/统计年份不作为发布日期。",
+      "record_instances": 4,
+      "roles": [
+        "guide_clinical_data",
+        "guide_devices",
+        "guide_signals",
+        "guide_imaging_eng"
+      ]
+    },
+    {
+      "id": "xidian-2025-employment-report",
+      "url": "https://job.xidian.edu.cn/attachment/xidian/ueditor/file/20260128/3325_%E8%A5%BF%E5%AE%89%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A62025%E5%B1%8A%E5%B0%B1%E4%B8%9A%E8%B4%A8%E9%87%8F%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A.pdf",
+      "organization": "西安电子科技大学就业信息网",
+      "title": "2025届毕业生就业质量年度报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "报告2025届、统计截至2025年12月；文件URL日期不视为发布日期。",
+      "record_instances": 9,
+      "roles": [
+        "guide_ml_cv",
+        "guide_software",
+        "guide_llm_agent",
+        "guide_devices",
+        "guide_signals",
+        "guide_imaging_eng",
+        "guide_clinical_data",
+        "guide_health_systems",
+        "guide_med_nlp_kg"
+      ]
+    },
+    {
+      "id": "shzu-clinical-program",
+      "url": "https://yixy.shzu.edu.cn/2025/0630/c11880a221500/page.htm",
+      "organization": "石河子大学医学院",
+      "title": "临床医学专业简介",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-06-30",
+      "publication_date_note": "官网正文发布日期2025-06-30；该校培养目标和就业方向，不代表实际就业结果或执业资格。",
+      "record_instances": 2,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "shzu-nursing-program",
+      "url": "https://yixy.shzu.edu.cn/2025/0630/c11880a221501/page.htm",
+      "organization": "石河子大学医学院",
+      "title": "护理学专业简介",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-06-30",
+      "publication_date_note": "官网正文发布日期2025-06-30；该校培养目标和就业方向，不代表实际就业结果或执业资格。",
+      "record_instances": 2,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "shzu-medicine-program",
+      "url": "https://yixy.shzu.edu.cn/2025/0630/c11880a221502/page.htm",
+      "organization": "石河子大学医学院",
+      "title": "口腔医学专业简介",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-06-30",
+      "publication_date_note": "官网正文发布日期2025-06-30；该校培养目标和就业方向，不代表实际就业结果或执业资格。",
+      "record_instances": 2,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "shzu-laboratory-program",
+      "url": "https://yixy.shzu.edu.cn/2025/0630/c11880a221504/page.htm",
+      "organization": "石河子大学医学院",
+      "title": "医学检验技术专业简介",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-06-30",
+      "publication_date_note": "官网正文发布日期2025-06-30；该校培养目标和就业方向，不代表实际就业结果或执业资格。",
+      "record_instances": 2,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "shzu-rehabilitation-program",
+      "url": "https://yixy.shzu.edu.cn/2025/0630/c11880a221505/page.htm",
+      "organization": "石河子大学医学院",
+      "title": "康复治疗学专业简介",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-06-30",
+      "publication_date_note": "官网正文发布日期2025-06-30；该校培养目标和就业方向，不代表实际就业结果或执业资格。",
+      "record_instances": 2,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "shzu-health-management-program",
+      "url": "https://yixy.shzu.edu.cn/2025/0630/c11880a221506/page.htm",
+      "organization": "石河子大学医学院",
+      "title": "健康服务与管理专业简介",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-06-30",
+      "publication_date_note": "官网正文发布日期2025-06-30；该校培养目标和就业方向，不代表实际就业结果或执业资格。",
+      "record_instances": 2,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "moe-medical-majors-2025",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202504/W020250422312780837078.pdf",
+      "organization": "教育部",
+      "title": "普通高等学校本科专业目录（2025年）医学门类",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文未列日级发布日期；版本/统计年份不作为发布日期。",
+      "record_instances": 1,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "pkufh-clinical-departments",
+      "url": "https://www.pkufh.com/Html/Departments/Main/Index_302.html",
+      "organization": "北京大学第一医院",
+      "title": "临床科室：所辖科室目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文未列日级发布日期；版本/统计年份不作为发布日期。",
+      "record_instances": 1,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "pku-2026-medical-charter",
+      "url": "https://yjsy.bjmu.edu.cn/zslq/zsjzjml/a427e38b26c645eab8e6665c870e98ca.htm",
+      "organization": "北京大学研究生院医学部分院",
+      "title": "北京大学医学部2026年硕士研究生招生简章",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-10-09",
+      "publication_date_note": "网页发布时间2025-10-09，落款2025年9月；2026招生周期已过，仅历史参考。",
+      "record_instances": 1,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "bbmu-2025-biomedical-employment",
+      "url": "https://swkxx.bbmu.edu.cn/info/1091/9264.htm",
+      "organization": "蚌埠医科大学生命科学学院",
+      "title": "25届生物医学科学毕业生就业质量报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-06-12",
+      "publication_date_note": "网页2026-06-12，正文落款2025-07-17；未给总毕业人数和总体就业率分母。",
+      "record_instances": 1,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "pkufh-department-6",
+      "url": "https://www.pkufh.com/Html/Departments/Main/Detail_6.html",
+      "organization": "北京大学第一医院",
+      "title": "心血管内科官方科室介绍",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浏览器读取科室完整介绍中的可见段落，未列日级发布日期；历史自述和科室状态只代表原网页，非全国标准。",
+      "record_instances": 1,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "pkufh-department-14",
+      "url": "https://www.pkufh.com/Html/Departments/Main/Detail_14.html",
+      "organization": "北京大学第一医院",
+      "title": "骨科官方科室介绍",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浏览器读取科室完整介绍中的可见段落，未列日级发布日期；历史自述和科室状态只代表原网页，非全国标准。",
+      "record_instances": 1,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "pkufh-department-19",
+      "url": "https://www.pkufh.com/Html/Departments/Main/Detail_19.html",
+      "organization": "北京大学第一医院",
+      "title": "麻醉科官方科室介绍",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浏览器读取科室完整介绍中的可见段落，未列日级发布日期；历史自述和科室状态只代表原网页，非全国标准。",
+      "record_instances": 1,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "pkufh-department-22",
+      "url": "https://www.pkufh.com/Html/Departments/Main/Detail_22.html",
+      "organization": "北京大学第一医院",
+      "title": "儿内科官方科室介绍",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浏览器读取科室完整介绍中的可见段落，未列日级发布日期；历史自述和科室状态只代表原网页，非全国标准。",
+      "record_instances": 1,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "pkufh-department-32",
+      "url": "https://www.pkufh.com/Html/Departments/Main/Detail_32.html",
+      "organization": "北京大学第一医院",
+      "title": "急诊科官方科室介绍",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浏览器读取科室完整介绍中的可见段落，未列日级发布日期；历史自述和科室状态只代表原网页，非全国标准。",
+      "record_instances": 1,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "pkufh-department-40",
+      "url": "https://www.pkufh.com/Html/Departments/Main/Detail_40.html",
+      "organization": "北京大学第一医院",
+      "title": "医学影像科官方科室介绍",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浏览器读取科室完整介绍中的可见段落，未列日级发布日期；历史自述和科室状态只代表原网页，非全国标准。",
+      "record_instances": 1,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "pkufh-department-46",
+      "url": "https://www.pkufh.com/Html/Departments/Main/Detail_46.html",
+      "organization": "北京大学第一医院",
+      "title": "检验科官方科室介绍",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浏览器读取科室完整介绍中的可见段落，未列日级发布日期；历史自述和科室状态只代表原网页，非全国标准。",
+      "record_instances": 1,
+      "roles": [
+        "medicine_guide"
+      ]
+    },
+    {
+      "id": "pkufh-department-48",
+      "url": "https://www.pkufh.com/Html/Departments/Main/Detail_48.html",
+      "organization": "北京大学第一医院",
+      "title": "病案与临床数据中心官方科室介绍",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浏览器读取科室完整介绍中的可见段落，未列日级发布日期；历史自述和科室状态只代表原网页，非全国标准。",
+      "record_instances": 2,
+      "roles": [
+        "medicine_guide",
+        "guide_clinical_data"
+      ]
+    },
+    {
+      "id": "tigermed-clinical-agent",
+      "url": "https://tigermed.zhiye.com/social/detail?jobAdId=4ae0e87e-e5ca-47f7-b9b0-0b4fd4c0504c",
+      "organization": "杭州泰格医药科技股份有限公司",
+      "title": "前沿部署工程师-杭州",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-10",
+      "publication_date_note": "企业官方招聘入口链接到北森招聘站；发布日期见职位正文。社会招聘，职位当前是否开放需复查。",
+      "record_instances": 2,
+      "roles": [
+        "guide_llm_agent"
+      ]
+    },
+    {
+      "id": "tigermed-clinical-statistics",
+      "url": "https://tigermed.zhiye.com/social/detail?jobAdId=8d50824d-24e6-45cd-8698-7b58a505a041",
+      "organization": "杭州泰格医药科技股份有限公司",
+      "title": "统计分析员-嘉兴/漯河",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-02",
+      "publication_date_note": "企业官方招聘入口链接到北森招聘站；发布日期见职位正文。社会招聘，职位当前是否开放需复查。",
+      "record_instances": 2,
+      "roles": [
+        "guide_clinical_data"
+      ]
+    },
+    {
+      "id": "tigermed-ai-pharmacovigilance",
+      "url": "https://tigermed.zhiye.com/social/detail?jobAdId=7ee6ba34-f2ed-4bfb-bfee-811eefc6b82d",
+      "organization": "杭州泰格医药科技股份有限公司",
+      "title": "高级产品经理（AI药物警戒）-杭州",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-05-28",
+      "publication_date_note": "企业官方招聘入口链接到北森招聘站；发布日期见职位正文。社会招聘，职位当前是否开放需复查。",
+      "record_instances": 2,
+      "roles": [
+        "guide_med_nlp_kg"
+      ]
+    }
+  ],
+  "latest_test_records_observed": {
+    "live": {
+      "at": "2026-10-22T06:46:54.846Z",
+      "passed": true,
+      "checks": 32,
+      "counts": {
+        "sources": 38,
+        "records": 127,
+        "cn_sources": 38,
+        "cn_records": 127,
+        "chinese_by_category": {
+          "occupation": 38,
+          "recruitment": 10,
+          "admissions": 34,
+          "industry": 23,
+          "learning": 22
+        }
+      }
+    },
+    "http": {
+      "at": "2026-10-22T06:47:50.393Z",
+      "passed": true,
+      "checks": 22
+    },
+    "ai": {
+      "passed": false,
+      "failure": "AI_NETWORK"
+    }
+  },
+  "known_failures": [
+    {
+      "code": "IMPORT_HTTP_413",
+      "outcome": "约7.6MB单体SQL请求被413拒绝；后改分块上传私有快照并检验数据库SHA。06:35:25全127条/38来源实库32/32通过；06:44:24电子科大正文修正后重导和最后复验另待完成。"
+    },
+    {
+      "code": "AI_NETWORK",
+      "outcome": "本轮真实模型探针网络/超时失败，未通过；第一阶段模型成功记录不替代本轮。"
+    },
+    {
+      "code": "BUILD_MEMORY_ALLOCATION",
+      "outcome": "首次隔离构建内存分配失败；设置RAYON_NUM_THREADS=2后构建成功exit0，保留首次失败。"
+    },
+    {
+      "code": "SUPABASE_ECONNRESET",
+      "outcome": "最终实库复验初始连接ECONNRESET，重试后06:35:25已保存127条/38来源32/32通过；06:44:24电子科大正文修正的新版本最终复验另待完成。"
+    }
+  ],
+  "report_context_budget": {
+    "limit_characters": 24000,
+    "measure": "JSON.stringify(evidence).length及redactEvidence结果；字符不是token或UTF-8字节数。",
+    "cases": [
+      {
+        "directions": [
+          "health_systems",
+          "devices"
+        ],
+        "evidence": 10,
+        "characters": 10361,
+        "remaining_for_other_evidence": 13639
+      },
+      {
+        "directions": [
+          "llm_agent",
+          "medicine"
+        ],
+        "evidence": 8,
+        "characters": 9604,
+        "remaining_for_other_evidence": 14396
+      },
+      {
+        "directions": [
+          "devices",
+          "ml_cv",
+          "med_nlp_kg"
+        ],
+        "evidence": 15,
+        "characters": 15930,
+        "remaining_for_other_evidence": 8070
+      }
+    ],
+    "note": "上述只读诊断基于119条扩充时的选择结果；最终医学目录拆分后该记录facts+1、选择文本可能变化，非当前上下文长度保证。本轮未改上下文预算。"
+  },
+  "resolved_quality_issues": [
+    {
+      "issue": "PDF_PAGE_MARKER_IN_QUOTE",
+      "record_id": "medicine-national-major-catalog",
+      "resolution": "将基础医学和临床医学拆为两个不跨人工页定位符的精确区间；最终重采集后facts由4条增为5条，全部原文区间/hash重新通过；所有quote无PAGE n定位符。",
+      "verified_against_expansion_generated_at": "2026-10-22T06:27:09.514Z"
+    },
+    {
+      "issue": "UESTC_NAVIGATION_FALSE_EVIDENCE",
+      "record_ids": [
+        "devices-uestc-2027-charter",
+        "signals-uestc-2027-charter",
+        "imaging-eng-uestc-2027-charter"
+      ],
+      "resolution": "浏览器验收识别原提取落在导航同等学力字样；更正为实际招生正文（3）高职专科满2年/本科结业同等学力身份条款及（6）复试加试两门本科主干课程、不得同初试、笔试方式条款。每条从1事实改为2事实，3方向共+3实例；普通本科/个人资格仍缺失，未泛化限制。",
+      "verified_against_expansion_generated_at": "2026-10-22T06:44:24.070Z"
+    }
+  ],
+  "local_verification_reported_by_integrator": {
+    "reported_at": "2026-10-22T06:50:12.424Z",
+    "unit_tests": {
+      "passed": 127,
+      "total": 127,
+      "status": "passed"
+    },
+    "lint": "passed",
+    "typescript": "passed",
+    "build": {
+      "passed": true,
+      "environment": {
+        "RAYON_NUM_THREADS": "2"
+      },
+      "initial_attempt": "memory allocation failure",
+      "scope": "isolated production build"
+    },
+    "remote_final_verification": "passed:32 DB checks;21 retrieval cases;22 HTTP checks;final UESTC clause data",
+    "medical_licensing_research_new_records": 0,
+    "browser_checks": {
+      "passed": [
+        "九方向逐项切换",
+        "医学独立入口",
+        "心血管科原文和链接",
+        "肾科缺失状态",
+        "医学主题",
+        "学校年份及考试原文",
+        "历史开关",
+        "第二页",
+        "重复筛选",
+        "Markdown实际下载并核对"
+      ],
+      "responsive": [
+        {
+          "width": 1440,
+          "height": 1000,
+          "overflow": false
+        },
+        {
+          "width": 820,
+          "height": 1100,
+          "overflow": false
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "overflow": false
+        }
+      ],
+      "screenshot": "docs/testing/knowledge-expansion.latest.jpg",
+      "not_tested": [
+        "断网错误重试UI",
+        "完整个人画像到AI报告主线"
+      ]
+    },
+    "client_secret_scan": {
+      "passed": true,
+      "files": 51
+    },
+    "smoke": {
+      "passed": true,
+      "checks": 5
+    }
+  }
+}

@@ -39,7 +39,8 @@ test("official document snapshot: 30 linked indices and independent translation 
   for (const area of areas) assert.equal(documentSnapshot.questions.filter((q) => q.area === area).length, 5);
   assert.equal(translation.review_status, "pending_human_review"); assert.ok(translatedQuestion(documentSnapshot.questions[0]));
   assert.equal(translatedQuestion({ ...documentSnapshot.questions[0], original_en: "changed" }), undefined);
-  assert.equal(directions.length, 9);
+  assert.equal(directions.length, 10);
+  assert.equal(directions.find(direction => direction.id === "medicine")?.onet.length, 0);
 });
 test("simulation: evidence refs address original arrays even with blank draft entries", () => {
   const p = { ...emptyProfile, tech_skills: [{ skill: "", self_reported_level: "", evidence: "" }, { skill: "Python", self_reported_level: "入门", evidence: "simulation" }] };

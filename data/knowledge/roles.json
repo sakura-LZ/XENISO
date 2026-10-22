@@ -1,0 +1,122 @@
+{
+  "version": "1.0",
+  "roles": [
+    {
+      "id": "medical_ai_pm",
+      "name": "医学 AI 产品经理",
+      "aliases": [
+        "医疗AI产品经理",
+        "医疗人工智能产品经理",
+        "healthcare AI product manager"
+      ],
+      "direction_ids": [
+        "health_systems",
+        "llm_agent",
+        "ml_cv",
+        "clinical_data"
+      ],
+      "mapping_basis": "LIMEN 编辑性职业到细分方向的一对多关联；不属于 O*NET 官方中国专业推荐。",
+      "scope": "医疗 AI 产品需求、临床工作流、评估与产品落地；相关职业和海外岗位仅提供任务线索，不代表中国岗位或报考条件。"
+    },
+    {
+      "id": "guide_ml_cv",
+      "name": "机器学习与计算机视觉",
+      "aliases": [],
+      "direction_ids": [
+        "ml_cv"
+      ],
+      "mapping_basis": "LIMEN 编辑性资料索引；不属于官方职业分类或报考结论。",
+      "scope": "中国官方来源的方向资料；related/context不等于该职业的统一要求。"
+    },
+    {
+      "id": "guide_software",
+      "name": "软件工程与系统开发",
+      "aliases": [],
+      "direction_ids": [
+        "software"
+      ],
+      "mapping_basis": "LIMEN 编辑性资料索引；不属于官方职业分类或报考结论。",
+      "scope": "中国官方来源的方向资料；related/context不等于该职业的统一要求。"
+    },
+    {
+      "id": "guide_llm_agent",
+      "name": "大语言模型与AI Agent",
+      "aliases": [],
+      "direction_ids": [
+        "llm_agent"
+      ],
+      "mapping_basis": "LIMEN 编辑性资料索引；不属于官方职业分类或报考结论。",
+      "scope": "中国官方来源的方向资料；related/context不等于该职业的统一要求。"
+    },
+    {
+      "id": "guide_devices",
+      "name": "智能医疗器械",
+      "aliases": [],
+      "direction_ids": [
+        "devices"
+      ],
+      "mapping_basis": "LIMEN 编辑性资料索引；不属于官方职业分类或报考结论。",
+      "scope": "中国官方来源的方向资料；related/context不等于该职业的统一要求。"
+    },
+    {
+      "id": "guide_signals",
+      "name": "医学信号处理",
+      "aliases": [],
+      "direction_ids": [
+        "signals"
+      ],
+      "mapping_basis": "LIMEN 编辑性资料索引；不属于官方职业分类或报考结论。",
+      "scope": "中国官方来源的方向资料；related/context不等于该职业的统一要求。"
+    },
+    {
+      "id": "guide_imaging_eng",
+      "name": "医学影像工程",
+      "aliases": [],
+      "direction_ids": [
+        "imaging_eng"
+      ],
+      "mapping_basis": "LIMEN 编辑性资料索引；不属于官方职业分类或报考结论。",
+      "scope": "中国官方来源的方向资料；related/context不等于该职业的统一要求。"
+    },
+    {
+      "id": "guide_clinical_data",
+      "name": "临床数据科学",
+      "aliases": [],
+      "direction_ids": [
+        "clinical_data"
+      ],
+      "mapping_basis": "LIMEN 编辑性资料索引；不属于官方职业分类或报考结论。",
+      "scope": "中国官方来源的方向资料；related/context不等于该职业的统一要求。"
+    },
+    {
+      "id": "guide_health_systems",
+      "name": "医疗信息系统",
+      "aliases": [],
+      "direction_ids": [
+        "health_systems"
+      ],
+      "mapping_basis": "LIMEN 编辑性资料索引；不属于官方职业分类或报考结论。",
+      "scope": "中国官方来源的方向资料；related/context不等于该职业的统一要求。"
+    },
+    {
+      "id": "guide_med_nlp_kg",
+      "name": "医疗NLP与知识图谱",
+      "aliases": [],
+      "direction_ids": [
+        "med_nlp_kg"
+      ],
+      "mapping_basis": "LIMEN 编辑性资料索引；不属于官方职业分类或报考结论。",
+      "scope": "中国官方来源的方向资料；related/context不等于该职业的统一要求。"
+    },
+    {
+      "id": "medicine_guide",
+      "name": "医学专业与科室",
+      "aliases": [
+        "继续医学"
+      ],
+      "direction_ids": [],
+      "mapping_basis": "医学知识手册独立分类，不参与九方向匹配评分。",
+      "scope": "医学专业、培养、科室和就业原文；不替代执业资格审核。"
+    }
+  ]
+}

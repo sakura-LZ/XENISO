@@ -1,0 +1,587 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-22T03:40:43.900Z",
+  "sources": [
+    {
+      "id": "internlm-cn-tutorial",
+      "url": "https://raw.githubusercontent.com/InternLM/Tutorial/main/README.md",
+      "organization": "上海人工智能实验室 / InternLM",
+      "title": "书生·浦语大模型实战营官方教程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "官方仓库README无日级发布日期；main会更新，以本次原文哈希和采集时间固定证据。"
+    },
+    {
+      "id": "fudan-disc-medllm",
+      "url": "https://raw.githubusercontent.com/FudanDISC/DISC-MedLLM/main/README.md",
+      "organization": "复旦大学数据智能与社会计算实验室 Fudan-DISC",
+      "title": "DISC-MedLLM 官方开源项目",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "仓库README未给日级发布日期；不以技术报告编号或仓库更新时间推断发布日期。"
+    },
+    {
+      "id": "bytedance-medical-pm-a176552",
+      "url": "https://jobs.bytedance.com/campus/position/7669685133130221877/detail",
+      "organization": "字节跳动 / 小荷健康",
+      "title": "AI产品经理（策略产品方向） - 小荷健康（A176552）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浏览器实际读取官方动态详情页；页面未列发布日期。2027届是招聘对象，不是发布日期。保留可见职位区摘录与hash；静态HTTP只返回壳页面。"
+    },
+    {
+      "id": "cn-nhc-ai-health-policy",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047018.htm",
+      "organization": "国家卫生健康委等五部门 / 中国政府网政策库",
+      "title": "关于促进和规范“人工智能+医疗卫生”应用发展的实施意见",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-11-04",
+      "publication_date_note": "中国政府网firstpublishedtime=2025-11-04-11:56:00；成文日期2025-10-20，国卫办规划发〔2025〕30号。NHC原站412，政府政策库完整官方发布可访问。"
+    },
+    {
+      "id": "cn-cmde-ai-guideline-notice",
+      "url": "https://www.ccfdie.org/cn/yjxx/ylqx/webinfo/2022/03/1648289422561065.htm",
+      "organization": "中国食品药品国际交流中心 / 国家药监局器审中心通告",
+      "title": "关于发布人工智能医疗器械注册审查指导原则的通告（2022年第8号）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2022-03-14",
+      "publication_date_note": "药监直属中心官方发布页日期2022-03-14；正文明确摘自器审中心2022-03-07。不将转载日期当原通告日期。"
+    },
+    {
+      "id": "sjtu-2027-bme-catalog",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生招生办公室",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "官网正文发布时间2026-09-21；适用2027年招生周期，不推断个人资格或报名状态。"
+    },
+    {
+      "id": "sjtu-2027-master-charter",
+      "url": "https://yzb.sjtu.edu.cn/post/3784",
+      "organization": "上海交通大学研究生招生办公室",
+      "title": "上海交通大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-08",
+      "publication_date_note": "官网正文发布时间2026-10-08；适用2027年招生周期，不推断个人资格或报名状态。"
+    }
+  ],
+  "records": [
+    {
+      "id": "medical-ai-pm-internlm-learning",
+      "source_id": "internlm-cn-tutorial",
+      "role_id": "medical_ai_pm",
+      "category": "learning",
+      "title": "国内学习资源：知识库搭建、微调部署与模型评测",
+      "summary": "上海人工智能实验室教程提供知识库应用和模型评测学习入口。只引用课程主题，不将招生宣传或营期承诺视为个人学习时长。",
+      "applicability": "国内开源教程，非学历招生；所列实战营是否仍开放、算力条件、软件版本与个人先修要求需要另查。",
+      "relation": "related",
+      "tags": [
+        "学习资源",
+        "课程",
+        "知识库",
+        "RAG",
+        "大模型",
+        "模型评测",
+        "OpenCompass"
+      ],
+      "facts": [
+        {
+          "field": "topics",
+          "value": "基于 InternLM 和 LangChain 搭建你的知识库",
+          "quote": "基于 InternLM 和 LangChain 搭建你的知识库",
+          "start": 743,
+          "end": 774
+        },
+        {
+          "field": "materials",
+          "value": "OpenCompass 大模型评测",
+          "quote": "OpenCompass 大模型评测",
+          "start": 1173,
+          "end": 1190
+        }
+      ],
+      "missing_fields": [
+        "prerequisites",
+        "learning_hours",
+        "current_enrollment"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "dd8d4cbbd8e0275ace3f3db6f3e947d4c66f4e32bdd7fdfe488f729d89e3e1bb",
+      "collected_at": "2026-10-22T03:40:41.221Z",
+      "verified_at": "2026-10-22T03:40:42.254Z",
+      "valid_through": null,
+      "freshness_days": 180
+    },
+    {
+      "id": "medical-ai-pm-fudan-project",
+      "source_id": "fudan-disc-medllm",
+      "role_id": "medical_ai_pm",
+      "category": "learning",
+      "title": "国内项目实践：复旦 DISC-MedLLM 医疗对话模型",
+      "summary": "复旦实验室开源项目可作为医疗对话需求、数据构造与评测方案的阅读实践入口。本轮不采纳其自述模型效果为临床有效性证据。",
+      "applicability": "开源研究项目，非招聘或在招科研名额；临床使用安全、数据许可、现行模型版本和个人资质需另核实。",
+      "relation": "related",
+      "tags": [
+        "学习资源",
+        "项目实践",
+        "医疗大模型",
+        "医疗对话",
+        "数据构造",
+        "科研"
+      ],
+      "facts": [
+        {
+          "field": "research_project",
+          "value": "DISC-MedLLM 是一个专门针对医疗健康对话式场景而设计的医疗领域大模型",
+          "quote": "DISC-MedLLM 是一个专门针对医疗健康对话式场景而设计的医疗领域大模型",
+          "start": 492,
+          "end": 531
+        },
+        {
+          "field": "materials",
+          "value": "该项目包含下列开源资源:",
+          "quote": "该项目包含下列开源资源:",
+          "start": 595,
+          "end": 607
+        }
+      ],
+      "missing_fields": [
+        "research_vacancy",
+        "learning_hours",
+        "clinical_validation"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "b6d346082384907d6ae9e3ba4607d5066fbe2100e1352c1a5fe6c12d315ff2d8",
+      "collected_at": "2026-10-22T03:40:42.258Z",
+      "verified_at": "2026-10-22T03:40:42.721Z",
+      "valid_through": null,
+      "freshness_days": 180
+    },
+    {
+      "id": "medical-ai-pm-bytedance-job",
+      "source_id": "bytedance-medical-pm-a176552",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "中国真实岗位：字节跳动小荷健康 AI 产品经理",
+      "summary": "官方2027届校招，北京，要求本科及以上、编程与算法/大语言模型知识，医疗背景加分。页面职责同时写有抖音产品工作，保留原文差异，不自行修正。",
+      "applicability": "中国北京，2027届校园招聘，职位ID A176552。只是一个招聘样本，不能推为全行业统一要求；页面未给薪资、硬性专业限制及截止日期，是否仍接收投递需官网复核。",
+      "relation": "direct",
+      "tags": [
+        "招聘",
+        "产品经理",
+        "医疗AI",
+        "小荷健康",
+        "北京",
+        "本科",
+        "校招",
+        "编程",
+        "大语言模型"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "AI产品经理（策略产品方向） - 小荷健康",
+          "quote": "AI产品经理（策略产品方向） - 小荷健康",
+          "start": 0,
+          "end": 21
+        },
+        {
+          "field": "city",
+          "value": "北京 正式 产品 2027届校园招聘 职位 ID：A176552",
+          "quote": "北京 正式 产品 2027届校园招聘 职位 ID：A176552",
+          "start": 22,
+          "end": 54
+        },
+        {
+          "field": "education",
+          "value": "2027届获得本科及以上学历；",
+          "quote": "2027届获得本科及以上学历；",
+          "start": 245,
+          "end": 260
+        },
+        {
+          "field": "technical_requirements",
+          "value": "有计算机相关知识，掌握编程能力，了解算法和大语言模型等方面的知识；",
+          "quote": "有计算机相关知识，掌握编程能力，了解算法和大语言模型等方面的知识；",
+          "start": 263,
+          "end": 296
+        },
+        {
+          "field": "employer",
+          "value": "小荷健康是字节跳动旗下的医疗健康品牌",
+          "quote": "小荷健康是字节跳动旗下的医疗健康品牌",
+          "start": 65,
+          "end": 83
+        },
+        {
+          "field": "preferred_background",
+          "value": "如果你有医疗背景，对医疗和健康行业有理想与热情，会更加加分。",
+          "quote": "如果你有医疗背景，对医疗和健康行业有理想与热情，会更加加分。",
+          "start": 421,
+          "end": 451
+        }
+      ],
+      "missing_fields": [
+        "salary",
+        "major_restrictions",
+        "deadline"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "213167f31b88cb9dfc7192a89afe41f0b841074612a58b85d76b19594a5337b7",
+      "collected_at": "2026-10-22T03:19:00.000Z",
+      "verified_at": "2026-10-22T03:40:42.724Z",
+      "valid_through": null,
+      "freshness_days": 30
+    },
+    {
+      "id": "medical-ai-pm-bytedance-tasks",
+      "source_id": "bytedance-medical-pm-a176552",
+      "role_id": "medical_ai_pm",
+      "category": "occupation",
+      "title": "中国企业岗位任务：需求分析、Demo 与 AI 工作流",
+      "summary": "从同一份企业岗位原文提取需求分析、产品协作与Demo工作流要求，作为任务证据，不增加独立来源数量。",
+      "applicability": "来自单个小荷健康校招岗位；原文第一条职责含抖音产品工作，不能消除其上下文差异或推为所有医学AI产品经理职责。晋升路径未公开。",
+      "relation": "direct",
+      "tags": [
+        "职业职责",
+        "需求分析",
+        "产品经理",
+        "Demo",
+        "AI工作流",
+        "医学AI",
+        "产品决策"
+      ],
+      "facts": [
+        {
+          "field": "responsibilities",
+          "value": "负责抖音产品工作，独立跟进子项目的需求分析与规划，产品需求梳理；",
+          "quote": "负责抖音产品工作，独立跟进子项目的需求分析与规划，产品需求梳理；",
+          "start": 172,
+          "end": 204
+        },
+        {
+          "field": "skills",
+          "value": "能基于明确的业务场景或需求输出产品Demo或搭建AI应用等工作流，高效推动产品落地；",
+          "quote": "能基于明确的业务场景或需求输出产品Demo或搭建AI应用等工作流，高效推动产品落地；",
+          "start": 376,
+          "end": 418
+        }
+      ],
+      "missing_fields": [
+        "career_path"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "213167f31b88cb9dfc7192a89afe41f0b841074612a58b85d76b19594a5337b7",
+      "collected_at": "2026-10-22T03:19:00.000Z",
+      "verified_at": "2026-10-22T03:40:42.729Z",
+      "valid_through": null,
+      "freshness_days": 30
+    },
+    {
+      "id": "medical-ai-pm-cn-policy",
+      "source_id": "cn-nhc-ai-health-policy",
+      "role_id": "medical_ai_pm",
+      "category": "industry",
+      "title": "中国医疗 AI 政策：复合人才、评测与数据安全",
+      "summary": "五部门实施意见明确支持卫生健康AI复合型人才培训，要求模型应用评测验证并关注医疗质量、隐私和数据安全。政策目标不等于已实现的市场需求或就业数量。",
+      "applicability": "中国医疗卫生AI应用发展政策；2025成文，2027/2030为规划目标。不能据此推算某岗位招聘人数、薪资、就业率或个人报考资格。",
+      "relation": "context",
+      "tags": [
+        "政策",
+        "医疗AI",
+        "人才需求",
+        "复合型人才",
+        "模型评测",
+        "数据安全",
+        "行业信息",
+        "产品决策"
+      ],
+      "facts": [
+        {
+          "field": "policy_requirement",
+          "value": "建立大模型应用评测验证，从医疗质量安全、个人隐私和数据安全等方面开展穿透式监管，加强动态监测和预警。",
+          "quote": "建立大模型应用评测验证，从医疗质量安全、个人隐私和数据安全等方面开展穿透式监管，加强动态监测和预警。",
+          "start": 4901,
+          "end": 4951
+        },
+        {
+          "field": "policy_goals",
+          "value": "支持建立卫生健康行业人工智能复合型人才培训基地，创新人才评定机制、科技成果转化激励机制。",
+          "quote": "支持建立卫生健康行业人工智能复合型人才培训基地，创新人才评定机制、科技成果转化激励机制。",
+          "start": 4680,
+          "end": 4724
+        }
+      ],
+      "missing_fields": [
+        "employment_statistics",
+        "salary_statistics",
+        "observed_talent_demand"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "1b651fdcd5fdae36e7e65b5f1d45604e8f3792e323c890dfa9e477027e2d0dcc",
+      "collected_at": "2026-10-22T03:40:42.729Z",
+      "verified_at": "2026-10-22T03:40:42.866Z",
+      "valid_through": null,
+      "freshness_days": 180
+    },
+    {
+      "id": "medical-ai-pm-cn-device-notice",
+      "source_id": "cn-cmde-ai-guideline-notice",
+      "role_id": "medical_ai_pm",
+      "category": "industry",
+      "title": "中国 AI 医疗器械：注册审查指导原则发布通告",
+      "summary": "官方通告可证实指导原则的发布与名称。本轮未取得附件全文，不能从通告补造具体分类、验证试验或注册路径。",
+      "applicability": "中国AI医疗器械监管资料；仅通告正文，是否适用于具体AI产品及现行版本需结合完整指南、分类和监管核实。",
+      "relation": "context",
+      "tags": [
+        "监管",
+        "医疗器械",
+        "合规",
+        "人工智能",
+        "NMPA",
+        "注册审查"
+      ],
+      "facts": [
+        {
+          "field": "policy_requirement",
+          "value": "为进一步规范人工智能医疗器械的管理，国家药监局器审中心组织制定了《人工智能医疗器械注册审查指导原则》，现予发布。",
+          "quote": "为进一步规范人工智能医疗器械的管理，国家药监局器审中心组织制定了《人工智能医疗器械注册审查指导原则》，现予发布。",
+          "start": 822,
+          "end": 878
+        },
+        {
+          "field": "scope",
+          "value": "国家药监局器审中心关于发布人工智能医疗器械注册审查指导原则的通告（2022年第8号）",
+          "quote": "国家药监局器审中心关于发布人工智能医疗器械注册审查指导原则的通告（2022年第8号）",
+          "start": 0,
+          "end": 42
+        }
+      ],
+      "missing_fields": [
+        "full_guideline",
+        "current_product_classification",
+        "employment_statistics"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "dd7bf7b1a485857e4aeead50376426ca5ab67b1c5df4549da4fcdcd64d38198b",
+      "collected_at": "2026-10-22T03:40:42.866Z",
+      "verified_at": "2026-10-22T03:40:43.096Z",
+      "valid_through": null,
+      "freshness_days": 180
+    },
+    {
+      "id": "medical-ai-pm-sjtu-2027-catalog",
+      "source_id": "sjtu-2027-bme-catalog",
+      "role_id": "medical_ai_pm",
+      "category": "admissions",
+      "title": "中国升学：交大2027生物医学工程方向与考试科目",
+      "summary": "官网目录列出083100生物医学工程及085400电子信息医学影像方向的考试科目。仅作为相关培养路径，不能据此判定医学本科可跨考。",
+      "applicability": "限上海交通大学2027年校本部目录的082生物医学工程学院指定方向；其他方向考试科目不同。应结合当年章程、院系要求与最新计划核验。医学AI产品经理并无本资料证明的统一必读学位。",
+      "relation": "related",
+      "tags": [
+        "升学",
+        "招生",
+        "2027",
+        "上海交通大学",
+        "生物医学工程",
+        "医学影像",
+        "408",
+        "考试科目"
+      ],
+      "facts": [
+        {
+          "field": "institution",
+          "value": "上海交通大学2027年硕士研究生招生专业目录（校本部）",
+          "quote": "上海交通大学2027年硕士研究生招生专业目录（校本部）",
+          "start": 0,
+          "end": 27
+        },
+        {
+          "field": "program",
+          "value": "083100生物医学工程 01生物医学工程（含医疗仪器、神经工程、医学影像等） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④408计算机学科专业基础",
+          "quote": "083100生物医学工程 01生物医学工程（含医疗仪器、神经工程、医学影像等） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④408计算机学科专业基础",
+          "start": 13431,
+          "end": 13519
+        },
+        {
+          "field": "exam_subjects",
+          "value": "085400电子信息 01生物医学工程 （医学影像） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④408计算机学科专业基础",
+          "quote": "085400电子信息 01生物医学工程 （医学影像） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④408计算机学科专业基础",
+          "start": 13598,
+          "end": 13673
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions",
+        "tuition",
+        "current_program_capacity"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "00b576192dd2a9dd6985d060d4d2f4f3508502350049ee465c77155cb7c9af50",
+      "collected_at": "2026-10-22T03:40:43.097Z",
+      "verified_at": "2026-10-22T03:40:43.640Z",
+      "valid_through": null,
+      "freshness_days": 30
+    },
+    {
+      "id": "medical-ai-pm-sjtu-2027-charter",
+      "source_id": "sjtu-2027-master-charter",
+      "role_id": "medical_ai_pm",
+      "category": "admissions",
+      "title": "中国升学：交大2027同等学力限制与跨学科复试规则",
+      "summary": "章程明确同等学力身份不得跨专业报考，并规定跨学科复试是否加试由院系与专家组确定。两条规则适用人群不同，不能把前者推广至所有本科毕业生。",
+      "applicability": "2027年校级章程，须结合报考身份、具体院系与专业目录核验；同等学力限制不等于普通本科生跨专业限制。未核实该岗位目标用户的个人资格。章程报名窗口为2026年10月15日至24日，不代表后续仍开放。",
+      "relation": "related",
+      "tags": [
+        "升学",
+        "2027",
+        "上海交通大学",
+        "报考条件",
+        "同等学力",
+        "跨学科",
+        "加试"
+      ],
+      "facts": [
+        {
+          "field": "institution",
+          "value": "上海交通大学2027年硕士研究生招生章程",
+          "quote": "上海交通大学2027年硕士研究生招生章程",
+          "start": 0,
+          "end": 20
+        },
+        {
+          "field": "admission_requirements",
+          "value": "按同等学力身份（以报考时学历为准）报考上海交通大学的考生须满足以下条件：通过大学英语四级（或 TOEFL、IELTS等相当），提供大学教务部门开具的所报考专业8门以上本科主干课程成绩证明。不得跨专业报考。报考前须经上海交通大学研招办审核通过",
+          "quote": "按同等学力身份（以报考时学历为准）报考上海交通大学的考生须满足以下条件：通过大学英语四级（或 TOEFL、IELTS等相当），提供大学教务部门开具的所报考专业8门以上本科主干课程成绩证明。不得跨专业报考。报考前须经上海交通大学研招办审核通过",
+          "start": 1706,
+          "end": 1826
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "跨学科专业复试的考生是否需要在复试中加试与报考专业相关的本科主干课程，由招 生 院系研究生 招生 工作 领导小组和 学科专家组确定。",
+          "quote": "跨学科专业复试的考生是否需要在复试中加试与报考专业相关的本科主干课程，由招 生 院系研究生 招生 工作 领导小组和 学科专家组确定。",
+          "start": 5302,
+          "end": 5368
+        },
+        {
+          "field": "registration_window",
+          "value": "网上报名时间为 2026年10月15日至10月24日（预报名时间为2026年10月9日至10月12日，具体见各省级教育招生考试机构发布的公告），每日9:00-22:00。",
+          "quote": "网上报名时间为 2026年10月15日至10月24日（预报名时间为2026年10月9日至10月12日，具体见各省级教育招生考试机构发布的公告），每日9:00-22:00。",
+          "start": 2833,
+          "end": 2918
+        }
+      ],
+      "missing_fields": [
+        "ordinary_bachelor_program_eligibility",
+        "personal_eligibility"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "4013f8e0e7eb631332bb84d77e9f9da4db34dff82b069a3222c14c41283a7d5f",
+      "collected_at": "2026-10-22T03:40:43.641Z",
+      "verified_at": "2026-10-22T03:40:43.899Z",
+      "valid_through": null,
+      "freshness_days": 30
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "internlm-cn-tutorial",
+      "url": "https://raw.githubusercontent.com/InternLM/Tutorial/main/README.md",
+      "at": "2026-10-22T03:40:41.221Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "prerequisites",
+        "learning_hours",
+        "current_enrollment"
+      ]
+    },
+    {
+      "source_id": "fudan-disc-medllm",
+      "url": "https://raw.githubusercontent.com/FudanDISC/DISC-MedLLM/main/README.md",
+      "at": "2026-10-22T03:40:42.258Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "research_vacancy",
+        "learning_hours",
+        "clinical_validation"
+      ]
+    },
+    {
+      "source_id": "bytedance-medical-pm-a176552",
+      "url": "https://jobs.bytedance.com/campus/position/7669685133130221877/detail",
+      "at": "2026-10-22T03:19:00.000Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "major_restrictions",
+        "deadline"
+      ]
+    },
+    {
+      "source_id": "bytedance-medical-pm-a176552",
+      "url": "https://jobs.bytedance.com/campus/position/7669685133130221877/detail",
+      "at": "2026-10-22T03:19:00.000Z",
+      "status": "collected",
+      "missing_fields": [
+        "career_path"
+      ]
+    },
+    {
+      "source_id": "cn-nhc-ai-health-policy",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047018.htm",
+      "at": "2026-10-22T03:40:42.729Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "employment_statistics",
+        "salary_statistics",
+        "observed_talent_demand"
+      ]
+    },
+    {
+      "source_id": "cn-cmde-ai-guideline-notice",
+      "url": "https://www.ccfdie.org/cn/yjxx/ylqx/webinfo/2022/03/1648289422561065.htm",
+      "at": "2026-10-22T03:40:42.866Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "full_guideline",
+        "current_product_classification",
+        "employment_statistics"
+      ]
+    },
+    {
+      "source_id": "sjtu-2027-bme-catalog",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "at": "2026-10-22T03:40:43.097Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "cross_major_restrictions",
+        "tuition",
+        "current_program_capacity"
+      ]
+    },
+    {
+      "source_id": "sjtu-2027-master-charter",
+      "url": "https://yzb.sjtu.edu.cn/post/3784",
+      "at": "2026-10-22T03:40:43.641Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "ordinary_bachelor_program_eligibility",
+        "personal_eligibility"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "collected_at": "2026-10-22T05:13:24Z",
+  "source_organization": "杭州泰格医药科技股份有限公司",
+  "official_link_provenance": {
+    "page": "https://www.tigermedgrp.com/zh/careers",
+    "observed_result": "404 page, official footer still links 加入泰格医药 directly to https://tigermed.zhiye.com/",
+    "verified_footer_link": "https://tigermed.zhiye.com/",
+    "limitations": "Raw homepage download not included; corporate footer verified in browser DOM."
+  },
+  "records": [
+    {
+      "id": "tigermed-clinical-agent",
+      "title": "前沿部署工程师-杭州",
+      "url": "https://tigermed.zhiye.com/social/detail?jobAdId=4ae0e87e-e5ca-47f7-b9b0-0b4fd4c0504c",
+      "publication_date": "2026-09-10",
+      "direction_ids": [
+        "llm_agent"
+      ],
+      "city": "浙江省·杭州市",
+      "expected_normalized_length": 1308,
+      "scope": "临床研究行业（CRO/药企）的 AI Agent 应用部署与交付；正式社会招聘，要求3年以上软件工程经验。",
+      "missing_fields": [
+        "education",
+        "major_restrictions",
+        "salary",
+        "application_deadline"
+      ],
+      "capture": {
+        "path": "data/knowledge/captures/tigermed-clinical-agent.txt",
+        "method": "browser DOM body.innerText read through cua_repl; final newline added",
+        "captured_at": "2026-10-22T05:13:24Z",
+        "raw_sha256": "69dcef14d1d5994d899e2402e9a921eeed69a0d769ad77735ce4c22358a4cd6c",
+        "normalized_sha256": "a186bfc47876628df4aeb386d875bc8f68dd0b1ccde3166074d90605b1e57a26",
+        "normalized_length": 1308
+      },
+      "evidence": [
+        {
+          "field": "job_identity",
+          "quote": "前沿部署工程师-杭州 社会招聘 全职 浙江省·杭州市 2026-09-10 发布",
+          "start": 24,
+          "end": 64
+        },
+        {
+          "field": "responsibilities",
+          "quote": "1. 深入客户现场调研业务流程（临床监查、医学写作、数据管理等场景），定义 AI 可解决的问题边界，产出解决方案设计； 2. 基于公司 Agent 平台快速构建 Agent 应用，包括 prompt/skill 编写、MCP 工具与数据处理管线开发、知识库搭建、多 Agent 协作拓扑设计； 3. 建立交付质量闭环：构建评测集、对齐客户验收标准、持续迭代直至达标； 4. 主导私有化部署与系统集成：在客户内网环境完成 K8s 部署、本地模型接入，以及与客户既有系统（EDC/CTMS/文档系统）的对接；",
+          "start": 234,
+          "end": 486
+        },
+        {
+          "field": "requirements",
+          "quote": "1. 3 年以上软件工程经验，Python 熟练，能独立完成数据处理、API 集成与工具开发； 2. 具备 LLM 应用的实际构建经验：完整参与过至少一个进入真实使用的 LLM 应用/Agent 项目（而非仅调用 API 或搭建 demo），理解 prompt 工程、工具调用、RAG、上下文管理的工程实践与常见失败模式； 3. 熟悉 Linux 与容器化部署，具备 K8s 基本操作能力，能在网络受限的客户内网环境独立排障；",
+          "start": 586,
+          "end": 799
+        }
+      ],
+      "downloaded_html": {
+        "path": "work/knowledge-expansion/recruitment-agent/tigermed-clinical-agent.html",
+        "sha256": "4246b5b904d6f0b6d280e977becf3ed26c88fd3f0ee90a696f7a5f64140b3901",
+        "bytes": 30205,
+        "limitation": "SPA shell only; contains no job detail and must not serve as quote evidence. Browser rendered text is the evidence."
+      }
+    },
+    {
+      "id": "tigermed-clinical-statistics",
+      "title": "统计分析员-嘉兴/漯河",
+      "url": "https://tigermed.zhiye.com/social/detail?jobAdId=8d50824d-24e6-45cd-8698-7b58a505a041",
+      "publication_date": "2026-09-02",
+      "direction_ids": [
+        "clinical_data"
+      ],
+      "city": "浙江省·嘉兴市,河南省·漯河市",
+      "expected_normalized_length": 727,
+      "scope": "临床试验统计编程、分析数据集、TFL、质量控制；统计分析员原职称，不能改称医师或临床研究负责人。",
+      "missing_fields": [
+        "salary",
+        "application_deadline",
+        "medicine_major_eligibility"
+      ],
+      "capture": {
+        "path": "data/knowledge/captures/tigermed-clinical-statistics.txt",
+        "method": "browser DOM body.innerText read through cua_repl; final newline added",
+        "captured_at": "2026-10-22T05:13:24Z",
+        "raw_sha256": "cb26a531d39a598be92074a6c9f23812cae080217d6ec473ae4a6c02d31f15dc",
+        "normalized_sha256": "868742db5d52d60fc0c65e76126e4fa0b30f4d9af8c75c1064be3df2c10abd9c",
+        "normalized_length": 727
+      },
+      "evidence": [
+        {
+          "field": "job_identity",
+          "quote": "统计分析员-嘉兴/漯河 社会招聘 全职 浙江省·嘉兴市,河南省·漯河市 2026-09-02 发布",
+          "start": 24,
+          "end": 73
+        },
+        {
+          "field": "responsibilities",
+          "quote": "1、用有效的方式撰写、修改和维护SAS程序，生成分析数据集(ADS)、表格、图标、列表(TFLs)； 2、对其他程序员制作的分析数据集(ADS)、表格、图标、列表(TFLs)进行校对和质量控制；",
+          "start": 79,
+          "end": 176
+        },
+        {
+          "field": "quality_requirements",
+          "quote": "8、学习内部和外部的SOPs、WPDs、ICH-GCP以及其它国际和国内的相关法规要求。 9、确保所有统计工作都依照内部和外部的质量标准、SOPs、WPDs、ICH-GCP以及符合其它国际和国内相关法规的要求。",
+          "start": 316,
+          "end": 421
+        },
+        {
+          "field": "requirements",
+          "quote": "1、本科及以上学历，统计学、数学、计算机或其他相关专业； 2、SAS编程基础知识，了解统计学基本知识，SAS编程相关工作经验，临床试验相关工作经验者优先； 3、良好的沟通技巧，包括英文口头和书面沟通能力 4、掌握office办公软件以及SAS统计软件的基础知识。",
+          "start": 507,
+          "end": 638
+        }
+      ],
+      "downloaded_html": {
+        "path": "work/knowledge-expansion/recruitment-agent/tigermed-clinical-statistics.html",
+        "sha256": "4246b5b904d6f0b6d280e977becf3ed26c88fd3f0ee90a696f7a5f64140b3901",
+        "bytes": 30205,
+        "limitation": "SPA shell only; contains no job detail and must not serve as quote evidence. Browser rendered text is the evidence."
+      }
+    },
+    {
+      "id": "tigermed-ai-pharmacovigilance",
+      "title": "高级产品经理（AI药物警戒）-杭州",
+      "url": "https://tigermed.zhiye.com/social/detail?jobAdId=7ee6ba34-f2ed-4bfb-bfee-811eefc6b82d",
+      "publication_date": "2026-05-28",
+      "direction_ids": [
+        "med_nlp_kg"
+      ],
+      "city": "浙江省·杭州市",
+      "expected_normalized_length": 1073,
+      "scope": "医药 NLP/LLM 应用相关产品经理，并非 NLP 算法工程师；没有知识图谱任职要求，不能声称覆盖医学知识图谱岗位。5年以上经验，非应届岗。",
+      "missing_fields": [
+        "education",
+        "major_restrictions",
+        "salary",
+        "application_deadline",
+        "knowledge_graph_requirements"
+      ],
+      "capture": {
+        "path": "data/knowledge/captures/tigermed-ai-pharmacovigilance.txt",
+        "method": "browser DOM body.innerText read through cua_repl; final newline added",
+        "captured_at": "2026-10-22T05:13:24Z",
+        "raw_sha256": "0b42479d6cb41559a104777ed33fde86c934755256a5874e4f67c81fcdce16ca",
+        "normalized_sha256": "d6ba4a383edd6a775187bfc50c0a5c580a43eeadc39fe9ae1d2f38cac03b0f94",
+        "normalized_length": 1073
+      },
+      "evidence": [
+        {
+          "field": "job_identity",
+          "quote": "高级产品经理（AI药物警戒）-杭州 社会招聘 全职 浙江省·杭州市 2026-05-28 发布",
+          "start": 24,
+          "end": 71
+        },
+        {
+          "field": "responsibilities",
+          "quote": "（1）主导ICSR智能处理、信号检测辅助、PSUR文档生成等PV AI产品的功能设计，撰写清晰的PRD与用户故事。 （2）聚焦LLM与NLP能力在药物警戒场景的应用，如：不良事件非结构化数据提取与编码、安全性文档智能审核、监管报告辅助生成等。 （3）设计和规划AI工具的任务流程、工具调用与异常处理机制，以支撑复杂的PV合规工作流。",
+          "start": 172,
+          "end": 338
+        },
+        {
+          "field": "experience",
+          "quote": "（1）5年及以上相关工作经验，具备药物警戒/PV业务背景（CRO、制药企业或PV系统服务商）与AI/数字化产品规划经验的复合背景优先。",
+          "start": 563,
+          "end": 630
+        },
+        {
+          "field": "requirements",
+          "quote": "（1）懂PV业务：熟悉ICSR处理、信号检测、PSUR/RMP等核心药物警戒流程，了解ICH E2A/B/C/E及《药物警戒质量管理规范》等法规要求。 （2）懂AI技术：对大语言模型的原理、能力边界与应用场景有深刻理解，具备Prompt Engineering、RAG等实践经验者优先。 （3）懂技术协作：能够与算法团队、开发团队进行有效的技术需求对话，具备主导模型评估与迭代的实际经验。",
+          "start": 684,
+          "end": 878
+        }
+      ],
+      "downloaded_html": {
+        "path": "work/knowledge-expansion/recruitment-agent/tigermed-ai-pharmacovigilance.html",
+        "sha256": "4246b5b904d6f0b6d280e977becf3ed26c88fd3f0ee90a696f7a5f64140b3901",
+        "bytes": 30205,
+        "limitation": "SPA shell only; contains no job detail and must not serve as quote evidence. Browser rendered text is the evidence."
+      }
+    }
+  ],
+  "quality_notes": [
+    "3 distinct job pages but only 1 employer; do not treat as 3 independent labor market studies.",
+    "All salary figures absent; no average salary or employment rate can be inferred.",
+    "Each application remains a social recruitment posting; does not establish eligibility for a specific medical major.",
+    "Only public reading performed; no application, account login or message sent.",
+    "Medicine NLP role is an application/product related role. Dedicated medical NLP algorithm and knowledge graph roles remain missing."
+  ],
+  "discarded_candidate": {
+    "url": "https://careers.tencent.com/en-us/jobdesc.html?postId=2075441482017456128",
+    "title": "光子 AI-LLM 高级研究员-游戏智能体方向",
+    "reason": "Verified official Shenzhen Agent role but game industry; excluded in favor of directly relevant clinical research Agent role."
+  }
+}

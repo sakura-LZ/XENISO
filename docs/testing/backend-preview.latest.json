@@ -1,0 +1,136 @@
+{
+  "checked_at": "2026-10-22T08:27:28.718Z",
+  "origin": "https://limen-br99jfa0q-sakura-lzs-projects.vercel.app",
+  "mock": false,
+  "checks": [
+    {
+      "name": "Preview page /profile",
+      "passed": true
+    },
+    {
+      "name": "Preview page /",
+      "passed": true
+    },
+    {
+      "name": "Preview page /assessment",
+      "passed": true
+    },
+    {
+      "name": "Preview page /explore",
+      "passed": true
+    },
+    {
+      "name": "Preview page /report/initial",
+      "passed": true
+    },
+    {
+      "name": "Preview page /experience",
+      "passed": true
+    },
+    {
+      "name": "Preview page /community",
+      "passed": true
+    },
+    {
+      "name": "Preview page /report/plan",
+      "passed": true
+    },
+    {
+      "name": "Preview page /account",
+      "passed": true
+    },
+    {
+      "name": "Preview page /match",
+      "passed": true
+    },
+    {
+      "name": "Unauthenticated /api/profile",
+      "passed": true
+    },
+    {
+      "name": "Unauthenticated /api/experience",
+      "passed": true
+    },
+    {
+      "name": "Unauthenticated /api/match",
+      "passed": true
+    },
+    {
+      "name": "Unauthenticated /api/reports?kind=R1",
+      "passed": true
+    },
+    {
+      "name": "Unauthenticated /api/avatar/session",
+      "passed": true
+    },
+    {
+      "name": "Cross-origin writes rejected",
+      "passed": true
+    },
+    {
+      "name": "Unfinished green preview excluded",
+      "passed": true
+    },
+    {
+      "name": "Live Supabase knowledge and coverage",
+      "passed": true
+    },
+    {
+      "name": "School and 2027 admissions filter",
+      "passed": true
+    },
+    {
+      "name": "Medicine knowledge filter",
+      "passed": true
+    },
+    {
+      "name": "Create isolated synthetic visitor",
+      "passed": true
+    },
+    {
+      "name": "Configured presenter medicine",
+      "passed": true
+    },
+    {
+      "name": "Configured presenter biomed_eng",
+      "passed": true
+    },
+    {
+      "name": "Configured presenter cs_ai",
+      "passed": true
+    },
+    {
+      "name": "Configured presenter med_informatics",
+      "passed": true
+    },
+    {
+      "name": "V3 medicine experience private cloud save",
+      "passed": true
+    },
+    {
+      "name": "V3 medicine experience private cloud restore",
+      "passed": true
+    },
+    {
+      "name": "Synthetic profile private cloud save",
+      "passed": true
+    },
+    {
+      "name": "Authenticated Match stays pending real standards",
+      "passed": true
+    },
+    {
+      "name": "Delete isolated synthetic account and records",
+      "passed": true
+    }
+  ],
+  "created_synthetic_account": true,
+  "deleted_synthetic_account": true,
+  "failure": null,
+  "limitations": [
+    "No real avatar provider session, microphone, ASR, audio or lip-sync",
+    "No live O*NET scoring or LLM report generation",
+    "No real user data; preview shares existing Supabase",
+    "CLI authenticated protection bypass used; public browser access not established"
+  ]
+}

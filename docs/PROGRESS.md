@@ -1,23 +1,32 @@
 # LIMEN 开发进度
 
+## 2026-10-21 · 中国职业知识库第一阶段交付
+
+已完成医学AI产品经理五类资料7中国来源/8记录/23原文事实，真实Supabase新增kb_*四表和只读RLS，重复导入幂等；独立检索API、R1/R2来源适配及现有快照显示，不改产品TSX。测试：数据库21、检索11、真实模型引用10、HTTP12全部通过；全项目77单测、lint/build、50文件密钥扫描与5组smoke通过，3001预览恢复。未部署新应用版本、未扩展其他角色/数字人。详见 `KNOWLEDGE_BASE.md` 和 `testing/knowledge-pilot.latest.md`；下方为历史记录，不覆盖本轮事实。
+
 更新时间：2026-10-21（America/Los_Angeles）
+
+> 当前状态唯一摘要见[`CURRENT_STATUS.md`](CURRENT_STATUS.md)。本文件下方保留阶段历史；历史中的配置状态可能已被后续记录覆盖。
 
 ## 恢复入口
 
 - 主开发正在移交新对话：先读`docs/HANDOFF.md`；旧对话`01a15a01-03f2-7b23-a8ff-0e7067271980`仅作历史来源，用户粘贴启动提示词的新对话接管开发。
 - 根目录已直接包含 V3 规格，无需 `LIMEN_Codex_V3/` 前缀。
-- 当前阶段：P0 真实联调受阻；按用户授权继续 P1–P5 独立任务。问卷、方向库、R1/R2 规则草案、真实交互工作台已实现；不能将本地演示等同完整核心链路验收。
+- 当前阶段：P0 合成探针验收通过；P1–P5 已有主要实现，合成访客真实UI主线已走通，AI延迟与语义仍有已记录局限。当前结论和证据以[`CURRENT_STATUS.md`](CURRENT_STATUS.md)及其链接的最新记录为准。
 - 定时任务 `limen` / LIMEN 自动续建：为对话移交已PAUSED，原周期每6小时；支持改绑后再在新对话恢复，不要创建同名重复任务。
 
 | 阶段 | 状态 | 验收证据 |
 | --- | --- | --- |
-| P0 技术验证 | PARTIAL / BLOCKED | 新Key下O*NET四端点真实200，30题/六维/职业通过；Supabase连接200但匿名登录关闭、四表API尚不可见 |
-| P1 画像与测评 | PARTIAL / BLOCKED | 多步画像、CSV/XLSX与独立中文译稿；官方合成探针计分已通过，访客个人保存/测评链路未验收 |
-| P2 知识库与 R1 | PARTIAL / BLOCKED | 3/9 手册、双方向对比、证据引用规则草案；官方兴趣与 AI 未验收 |
-| P3 职业体验 | LOCAL_ACCEPTANCE_PASS | 三次真实状态变化、数值重算、反思、下载恢复、390/820/1440px 布局通过；访客云保存仍待 Supabase 联调 |
-| P4 R2 与规划 | PARTIAL / BLOCKED | 三种升学路径任务、四个交付阶段、预算和v2实际导出通过；官方兴趣来源契约通过，真实 AI R2 未验收 |
-| P5 集成与部署准备 | PARTIAL / BLOCKED | 38项单测/lint/build、5项HTTP通过；24项布局与实际截图为上一里程碑证据；真实全链路未验收 |
+| P0 技术验证 | SYNTHETIC ACCEPTANCE PASS | 最新 `testing/P0-live.latest.json`：O*NET四端点与两匿名身份四表隔离、刷新、本人删除通过；限合成探针 |
+| P1 画像与测评 | SYNTHETIC UI PASS | 本地与私有画像保存/刷新恢复、新30题官方计分保存 |
+| P2 知识库与 R1 | SYNTHETIC UI PASS | R1读取、实际AI生成、人工复核、方向传递 |
+| P3 职业体验 | SYNTHETIC UI PASS | 三次操作、下载文件解析、刷新恢复、私有保存及R2读取 |
+| P4 R2 与规划 | PASS WITH ISSUES | 预算拦截、规则/AI导出、参数不一致拒用；AI超时与语义局限见最新记录 |
+| P5 集成与部署准备 | PARTIAL | 单条合成访客主线走通，未公开部署；不等于全部路径或真实用户验收 |
 
+## 最新验收（2026-10-21）
+
+本轮以明确合成资料通过真实匿名Auth、数据库、O*NET与AI走完主线；实际操作及文件内容核对见 [testing/UI-flow.latest.md](testing/UI-flow.latest.md)。修复AI等待上限、请求状态提示，补充“暂无”与缺失区别的提示。AI服务仍出现超时，语义不能由结构校验自动保证。问题记录见ISSUES.md；根目录问题总结.md为索引。既有历史不回写。
 ## 初始检查（历史记录，后续已初始化 Git 与配置 O*NET）
 
 - `git status --short`：失败，目录尚不是 Git 仓库。
@@ -160,3 +169,27 @@
 - 为避免旧对话与新对话竞争写入，已通过automation_update将既有`limen`设为PAUSED，工具明确返回成功；原名称、每6小时周期、提示词与旧绑定保留。新对话工具支持改绑后才恢复，不创建重复任务。
 - 旧Goal工具仍返回usageLimited，未标完成、未假称转移；没有自动创建新对话。用户启动提示词明确授权新对话在必要时创建续建Goal。
 - 本轮仅文档及调度交接，不修改业务代码；不重复执行单测/build或将旧结果当新结果。提交前检查文档入口、Git差异和暂存密钥扫描。
+
+## 外部生成服务联调（2026-10-21 PDT）
+
+- 用户指定暂用 gpt-6.1-sol 与 https://api.zz-api.cc.cd，密钥仅在.env.local。真实最小调用200/返回模型一致/28 tokens；现有报告适配器合成证据通过结构与引用校验。不是个人报告，不写数据库；证据 testing/LLM-connectivity.latest.json。
+- LIMEN_ENABLE_LLM=true已保存，但预览进程尚未确认重启。Supabase settings200/anonymous_users=false，四表404/PGRST205；迁移与RLS未验收。管理页浏览器控制超时，终端进程检查暂无返回，未修改云端；后续按 SUPABASE_SETUP.md 初始化并运行verify:p0。
+- 直接扫描客户端静态产物42文件，当前ONET/Supabase/LLM密钥原文匹配0处。无产品源码变更；本轮lint/build未完成，不冒称新通过。
+
+## 匿名开关复测与本机状态（用户告知已开启后）
+
+- 2026-10-21T12:02:41.605Z，带no-cache与唯一查询参数重读配置项目noluplmuxzhofkpxfenr：settings200、anonymous_users=false；四张业务表均404/PGRST205。不能宣称开关生效，未创建匿名账户或执行迁移。需核对后台项目与保存状态。
+- 本轮npm run lint已实际退出0、0警告；未改业务源码，未重跑build或单测，不沿用历史绿灯作为本轮通过。
+- 本轮重新启动3001预览，Next报告Ready；随后Node两次HTTP检查超时，curl无代理检查status000/退出1。预览可用性尚未确认，不能因进程Ready宣称页面访问通过。
+
+## 匿名登录已生效（2026-10-21 PDT）
+
+- 用户保存后，2026-10-21T12:06:43.575Z无缓存真实复测settings200、anonymous_users=true。此前false为历史状态。
+- 四表仍404/PGRST205，尚未执行迁移或验证RLS，没有创建测试身份。下一步按顺序运行三份现有SQL迁移。证据testing/Supabase-connectivity.latest.json。
+
+
+## 2026-10-21 · V4 核心主线验收与体验状态修复
+- 核心主线由隔离合成访客完成：画像→官方 O*NET→R1→新三阶段体验→R2，含保存、恢复、导出和报告证据核对；具体结果见 `docs/testing/V4-flow.latest.md`。
+- 体验变化后只使 R2 过期，画像变化使 R1/R2 过期；已恢复备份并复核原报告可读。体验复盘变化会清除旧成功提示。
+- `npm run lint`、45/45 单测、`npx tsc --noEmit`、`npm run build`、`npm run check:client-secrets` 均通过。七个路由三种尺寸无页面横向溢出。
+- 开放项：数字人语音链路、社区 OTP 邮件、中文译稿人工校对、招生来源核验和 AI 长期稳定性。

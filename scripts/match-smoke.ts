@@ -1,0 +1,13 @@
+import assert from "node:assert/strict";
+const origin = process.env.LIMEN_TEST_ORIGIN ?? "http://127.0.0.1:3187";
+assert.ok(["127.0.0.1", "localhost"].includes(new URL(origin).hostname));
+const page = await fetch(`${origin}/match`);
+assert.equal(page.status, 200);
+assert.ok((await page.text()).includes("使用合成演示"));
+const privateData = await fetch(`${origin}/api/match`);
+assert.equal(privateData.status, 401);
+assert.match(privateData.headers.get("cache-control")!, /private.*no-store/);
+assert.match(privateData.headers.get("vary")!, /cookie/i);
+assert.equal((await privateData.json()).error.code, "SESSION_REQUIRED");
+assert.equal((await fetch(`${origin}/api/match`, { method: "POST" })).status, 405);
+console.log("PASS Match HTTP: /match 200, private GET 401/no-store/Vary Cookie, mutation POST 405; no credentials or database writes.");

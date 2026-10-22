@@ -20,25 +20,27 @@ export function TranscriptPreview({ courses, onChange }: { courses: Course[]; on
         const { readSheet } = await import("read-excel-file/browser");
         rows = await readSheet(file, 1);
       } else throw new Error("只支持 CSV 和 XLSX 文件。");
-      setPreview(coursesFromRows(rows)); setMessage("已在浏览器解析，请检查和修正后再确认。原始文件不会上传。");
+      const parsedCourses = coursesFromRows(rows);
+      setPreview(parsedCourses); setMessage(parsedCourses.length ? "读取完成，请核对下方课程。" : "未找到课程，请检查表头或使用导入模板。");
     } catch (error) { setMessage(error instanceof Error ? error.message : "解析失败。"); }
     finally { setBusy(false); }
   }
   function edit(index: number, key: keyof Course, value: string) {
     setPreview((items) => items.map((item, i) => i !== index ? item : { ...item, [key]: ["course_name", "semester"].includes(key) ? value : value === "" ? null : Number(value) }));
   }
-  return <section className="mt-8 border-t border-slate-200 pt-6">
-    <h3 className="text-lg font-semibold">可选成绩表</h3><p className="mt-2 text-sm muted">仅在本机解析。确认后只保存课程名、学分、成绩、满分和学期；无需上传也能继续。</p>
-    <button type="button" className="mt-3 underline text-sm text-blue-700" onClick={() => download("LIMEN-成绩导入模板.csv", '\uFEFF课程名,学分,成绩,满分,学期\n', "text/csv;charset=utf-8")}>下载空白 CSV 模板</button>
-    <label className="mt-4 block font-medium" htmlFor="transcript">选择文件（最多 2 MB / 500 门课程）</label>
-    <input id="transcript" type="file" accept=".csv,.xlsx" disabled={busy} className="mt-3 max-w-full text-sm" onChange={(e) => { void parse(e.target.files?.[0]); e.target.value = ""; }} />
-    <p role="status" className="mt-3 text-sm muted">{busy ? "正在本地解析…" : message}</p>
+  return <details className="form-section">
+    <summary className="cursor-pointer font-medium">导入课程成绩 <span className="ml-2 text-xs font-normal muted">{courses.length ? `已添加 ${courses.length} 门` : "可稍后补充"}</span></summary>
+    <p className="mt-3 text-sm leading-6 muted">原始文件仅在本机读取。核对后，课程信息随画像保存。</p>
+    <div className="mt-4 rounded-lg border border-dashed border-slate-300 bg-slate-50 p-5"><label className="block font-medium" htmlFor="transcript">选择成绩单</label><p id="transcript-help" className="mt-1 text-xs muted">CSV / XLSX · 最多 2 MB、500 门课程</p>
+    <input id="transcript" type="file" accept=".csv,.xlsx" aria-describedby="transcript-help" disabled={busy} className="mt-4 max-w-full text-sm file:mr-3 file:rounded-md file:border-0 file:bg-white file:px-3 file:py-2 file:text-blue-700" onChange={(e) => { void parse(e.target.files?.[0]); e.target.value = ""; }} />
+    <button type="button" className="mt-4 block text-sm text-blue-700 underline underline-offset-4" onClick={() => download("LIMEN-成绩导入模板.csv", '\uFEFF课程名,学分,成绩,满分,学期\n', "text/csv;charset=utf-8")}>下载填写模板</button></div>
+    {(busy || message) && <p role="status" className="mt-3 text-sm muted">{busy ? "正在读取课程…" : message}</p>}
     {preview.length > 0 && <>
       <div className="mt-4 overflow-x-auto"><table className="w-full text-sm"><caption className="pb-2 text-left">预览 {preview.length} 门课程，可直接纠错</caption><thead><tr>{["课程名", "学分", "成绩", "满分", "学期", "操作"].map((head) => <th key={head} className="border-b p-2 text-left">{head}</th>)}</tr></thead><tbody>
         {preview.map((course, index) => <tr key={index}>{(["course_name", "credit", "score", "score_scale", "semester"] as const).map((key) => <td key={key} className="border-b p-1"><input aria-label={`第 ${index + 1} 行 ${key}`} className={`border border-slate-300 px-2 py-2 ${key === "course_name" ? "w-36" : "w-20"}`} type={key === "course_name" || key === "semester" ? "text" : "number"} step="any" min="0" value={course[key] ?? ""} onChange={(e) => edit(index, key, e.target.value)} /></td>)}<td><button type="button" className="text-red-700 underline" onClick={() => setPreview((items) => items.filter((_, i) => i !== index))}>移除</button></td></tr>)}
       </tbody></table></div>
-      <button type="button" className="button secondary mt-4" onClick={() => { const parsed = z.array(courseSchema).max(500).safeParse([...courses, ...preview]); if (!parsed.success) { setMessage(parsed.error.issues[0].message); return; } onChange(parsed.data); setPreview([]); setMessage("结构化课程已加入画像，原始附件未上传。请保存草稿。"); }}>确认加入画像</button>
+      <button type="button" className="button secondary mt-4" onClick={() => { const parsed = z.array(courseSchema).max(500).safeParse([...courses, ...preview]); if (!parsed.success) { setMessage(parsed.error.issues[0].message); return; } onChange(parsed.data); setPreview([]); setMessage("课程已加入，请保存画像。"); }}>确认加入画像</button>
     </>}
-    <p className="mt-4 text-sm">画像已包含 {courses.length} 门课程。{courses.length > 0 && <button type="button" className="text-red-700 underline" onClick={() => onChange([])}>移除已导入课程</button>}</p>
-  </section>;
+    {courses.length > 0 && <p className="mt-4 flex flex-wrap gap-3 text-sm"><span>已添加 {courses.length} 门课程</span><button type="button" className="text-red-700 underline" onClick={() => { onChange([]); setMessage("课程已移除，请保存画像。"); }}>移除已导入课程</button></p>}
+  </details>;
 }

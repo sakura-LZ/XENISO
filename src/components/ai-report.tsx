@@ -1,28 +1,62 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { readSavedExplanation } from "@/lib/ai";
 import { parseR2Planning } from "@/lib/planning";
 import { download } from "@/lib/download";
 
+function evidenceLabel(ref: string) {
+  if (ref.startsWith("onet_mini_ip.scores.")) return "官方兴趣测评结果";
+  if (ref.startsWith("user_profile.")) return "个人画像中的填写记录";
+  if (ref.startsWith("experience.outputs")) return "职业体验阶段成果";
+  if (ref === "experience_context") return "职业体验场景";
+  if (ref === "experience_feedback") return "职业体验复盘";
+  if (ref === "report_input.planning") return "本次计划条件";
+  if (ref.startsWith("direction.")) return "方向手册条目";
+  return "已保存的支持证据";
+}
+
 export function AiReport({ kind, direction, planning, alternatives = [], enabled = true }: { kind: "R1" | "R2"; direction?: string; planning?: unknown; alternatives?: string[]; enabled?: boolean }) {
   const [result, setResult] = useState<ReturnType<typeof readSavedExplanation> | null>(null);
-  const [message, setMessage] = useState("尚未生成或读取 AI 解释。仅在服务已配置并启用时可调用。");
+  const [message, setMessage] = useState("");
+  const [refreshR1, setRefreshR1] = useState(false);
   const [busy, setBusy] = useState(false);
+  const activeRequest = useRef<AbortController | null>(null);
+  useEffect(() => () => activeRequest.current?.abort(), []);
   async function request(generate: boolean) {
-    if (!enabled || (kind === "R2" && !direction)) return;
+    if (activeRequest.current || !enabled || (kind === "R2" && !direction)) return;
+    const controller = new AbortController();
+    activeRequest.current = controller;
+    const timeout = setTimeout(() => controller.abort(new DOMException("请求超时", "TimeoutError")), 75000);
     setBusy(true); setResult(null);
+    setRefreshR1(false);
+    setMessage(generate ? "正在生成并保存 AI 解释，请稍候…" : "正在读取已保存的 AI 报告…");
     try {
       const currentPlanning = kind === "R2" ? parseR2Planning(planning) : undefined;
       const body = kind === "R2" ? { kind, direction_id: direction, planning: currentPlanning, alternative_ids: alternatives } : { kind };
-      const response = await fetch(generate ? "/api/reports" : `/api/reports?kind=${kind}`, generate ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : undefined);
-      const data = await response.json(); if (!response.ok) throw new Error(data.error?.message ?? "AI 解释未生成。");
+      const response = await fetch(generate ? "/api/reports" : `/api/reports?kind=${kind}`, { ...(generate ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : { cache: "no-store" as const }), signal: controller.signal });
+      const data = await response.json().catch(() => { throw new Error("服务暂时没有返回报告，请稍后重试。"); });
+      if (!response.ok) {
+        if (kind === "R2" && ["R1_STALE", "EXPERIENCE_REQUIRED"].includes(data.error?.code)) {
+          setRefreshR1(true);
+          throw new Error(data.error?.code === "R1_STALE" ? "画像或兴趣测评已更新。请先刷新初步画像，再回来生成行动解读。" : "请先生成初步画像，并确认职业体验成果已保存，再回来生成行动解读。");
+        }
+        throw new Error(data.error?.message ?? "AI 解释未生成。");
+      }
       if (!data.report) throw new Error("当前访客没有保存的此类 AI 报告。");
-      setResult(readSavedExplanation(data.report, kind, direction, currentPlanning, alternatives)); setMessage("已读取服务实际生成并保存的 AI 解释。请逐项对照证据，不将解释作为报考资格结论。");
-    } catch (error) { setMessage(error instanceof Error ? error.message : "读取失败，未生成报告。"); }
-    finally { setBusy(false); }
+      setResult(readSavedExplanation(data.report, kind, direction, currentPlanning, alternatives)); setMessage("报告已就绪。");
+    } catch (error) {
+      if (controller.signal.aborted && controller.signal.reason?.name !== "TimeoutError") return;
+      setMessage(controller.signal.aborted ? "等待超时。可先查看已保存报告，或稍后重新生成。" : error instanceof Error ? error.message : "连接中断，请重试或查看已保存报告。");
+    }
+    finally {
+      clearTimeout(timeout);
+      activeRequest.current = null;
+      if (!controller.signal.aborted || controller.signal.reason?.name === "TimeoutError") setBusy(false);
+    }
   }
   const disabled = busy || !enabled || (kind === "R2" && !direction);
-  return <section className="mt-10 border-t pt-7"><h2 className="text-xl font-semibold">AI 解释 · {kind}</h2><p className="mt-3 text-sm leading-7 muted">生成时仅向配置的服务发送兴趣结果、技能/项目证据及必要体验和计划参数，不发送昵称与院校字段。自由文本可能含本人信息，请在画像中去除不必要的标识。AI 服务默认关闭。</p>{kind === "R2" && <p className="mt-3 text-sm leading-7 muted">正式解释需读取个人画像、官方测评和私有体验，并填写有效条件与预算。合成草案不调用AI。本页参数随新报告保存，不自动覆盖画像。</p>}<div className="mt-4 flex flex-wrap gap-3"><button className="button secondary" disabled={disabled} onClick={() => request(false)}>读取已保存的 AI 报告</button><button className="button" disabled={disabled} onClick={() => request(true)}>{busy ? "处理中…" : "基于当前私有证据生成 AI 解释"}</button></div><p className="status text-sm" role="status">{message}</p>
-    {result && <><p className="mt-4 text-xs muted">实际生成时间：{result.generated_at}</p>{result.planning && <p className="mt-2 text-sm leading-7">报告条件：{result.planning.transition_year}年 · {result.planning.pathway} · 每周{result.planning.weekly_hours}小时；基础/练习/复盘预算：{result.planning.weekly_allocation.foundation}/{result.planning.weekly_allocation.practice}/{result.planning.weekly_allocation.review}小时。</p>}<ul className="mt-4 space-y-5">{result.explanation.explanations.map((item, i) => <li key={i}><p className="leading-7">{item.text}</p><p className="mt-1 break-all text-xs muted">证据：{item.evidence_refs.join("；")}</p></li>)}</ul><ul className="mt-5 list-disc pl-5 text-sm leading-7">{result.explanation.unknowns.map((s) => <li key={s}>{s}</li>)}</ul><details className="mt-5 border-y py-4"><summary className="cursor-pointer font-medium">查看报告生成时的证据快照</summary><p className="mt-3 text-sm muted">以下依据属于本份已保存报告，不会被当前编辑中的画像替换。</p><ul className="mt-4 divide-y">{result.evidence.map((entry) => <li key={entry.ref} className="py-4"><code className="break-all text-xs">{entry.ref}</code><pre className="mt-2 whitespace-pre-wrap break-words text-sm leading-7">{JSON.stringify(entry.value, null, 2)}</pre></li>)}</ul></details><button className="button secondary mt-5" onClick={() => download(`limen-${kind}-ai-explanation.json`, JSON.stringify(result, null, 2))}>导出 AI 解释、条件与证据</button></>}
+  return <section className="mt-12 rounded-2xl border border-blue-100 bg-blue-50/40 p-6 sm:p-8"><div className="flex flex-wrap items-start justify-between gap-5"><div><p className="eyebrow">PERSONAL INSIGHT · {kind}</p><h2 className="mt-2 text-2xl font-semibold">把线索连成一份个人解读</h2><p className="mt-3 max-w-2xl text-sm leading-7 muted">结合你的兴趣、经历{kind === "R2" ? "与体验成果，梳理下一步的准备重点。" : "，理解值得继续探索的方向。"}</p></div><span className="rounded-full border border-blue-200 bg-white px-3 py-1 text-xs text-blue-800">AI 辅助分析</span></div><div className="mt-5 flex flex-wrap gap-3"><button className="button" disabled={disabled} onClick={() => request(true)}>{busy ? "处理中…" : "生成个人解读"}</button><button className="button secondary" disabled={disabled} onClick={() => request(false)}>查看已保存报告</button>{refreshR1 && <Link className="button secondary" href="/report/initial">前往更新 R1</Link>}</div>{message && <p className="inline-feedback mt-4 text-sm" role="status">{message}</p>}<details className="mt-4 text-xs leading-6 muted"><summary className="cursor-pointer">数据使用与报告说明</summary><p className="mt-2">生成时发送兴趣结果、技能与项目证据，以及必要的体验、计划参数；不发送昵称与院校字段。自由文本中请避免填写身份标识。AI 解读供探索参考，报考资格以官方招生要求为准。{kind === "R2" && "计划条件随报告保存，不自动覆盖个人画像。"}</p></details>
+    {result && <><p className="mt-4 text-xs muted">实际生成时间：{result.generated_at}</p>{result.planning && <p className="mt-2 text-sm leading-7">报告条件：{result.planning.transition_year}年 · {result.planning.pathway} · 每周{result.planning.weekly_hours}小时；基础/练习/复盘预算：{result.planning.weekly_allocation.foundation}/{result.planning.weekly_allocation.practice}/{result.planning.weekly_allocation.review}小时。</p>}<ul className="mt-4 space-y-5">{result.explanation.explanations.map((item, i) => <li key={i}><p className="leading-7">{item.text}</p><p className="mt-1 text-xs muted">依据：{item.evidence_refs.map(evidenceLabel).join("、")}</p></li>)}</ul><ul className="mt-5 list-disc pl-5 text-sm leading-7">{result.explanation.unknowns.map((s) => <li key={s}>{s}</li>)}</ul><details className="mt-5 border-y py-4"><summary className="cursor-pointer font-medium">查看报告生成时的证据快照</summary><p className="mt-3 text-sm muted">以下依据属于本份已保存报告，不会被当前编辑中的画像替换。</p><ul className="mt-4 divide-y">{result.evidence.map((entry) => <li key={entry.ref} className="py-4"><code className="break-all text-xs">{entry.ref}</code><pre className="mt-2 whitespace-pre-wrap break-words text-sm leading-7">{JSON.stringify(entry.value, null, 2)}</pre></li>)}</ul></details><button className="button secondary mt-5" onClick={() => download(`limen-${kind}-ai-explanation.json`, JSON.stringify(result, null, 2))}>导出 AI 解释、条件与证据</button></>}
   </section>;
 }

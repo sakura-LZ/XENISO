@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readSavedExplanation, redactEvidence, requestAiExplanation, validateAiExplanation, type Evidence } from "../src/lib/ai";
+import { fingerprint, reportInputsFresh } from "../src/lib/report-freshness";
 const evidence: Evidence[] = [{ ref: "user_profile.tech_skills[0]", kind: "transfer", value: "simulation：自述 Python 入门" }];
 const output = { explanations: [{ kind: "transfer", evidence_refs: [evidence[0].ref], text: "仅有入门自述，具体独立实践能力尚未核验。" }], unknowns: ["尚无项目成果"] };
 const reportPlanning = { transition_year: 2030, weekly_hours: 4, pathway: "统考", weekly_allocation: { foundation: 2, practice: 1, review: 1 } };
@@ -16,6 +17,16 @@ test("mock=true saved AI: a changed year, pathway or allocation cannot reuse the
 });
 test("mock=true saved AI: R1 remains readable without R2 planning", () => {
   assert.deepEqual(readSavedExplanation({ ...savedReport, kind: "R1", rules: {} }, "R1").explanation, output);
+});
+test("saved reports: profile and assessment edits invalidate both reports; experience edits invalidate R2", () => {
+  const current = { profile: { skills: ["Python"] }, assessment: { scores: [2] }, experience: { outputs: ["simulation"] } };
+  const saved = { profile: fingerprint(current.profile), assessment: fingerprint(current.assessment), experience: fingerprint(current.experience) };
+  assert.equal(reportInputsFresh({ kind: "R1", input_fingerprints: saved }, current), true);
+  assert.equal(reportInputsFresh({ kind: "R1", input_fingerprints: saved }, { ...current, profile: { skills: ["R"] } }), false);
+  assert.equal(reportInputsFresh({ kind: "R2", input_fingerprints: saved }, current), true);
+  assert.equal(reportInputsFresh({ kind: "R2", input_fingerprints: saved }, { ...current, experience: { outputs: ["changed"] } }), false);
+  assert.equal(reportInputsFresh({ kind: "R2" }, current), false);
+  assert.equal(fingerprint({ a: 1, b: [2, 3] }), fingerprint({ b: [2, 3], a: 1 }));
 });
 test("mock=true saved AI: exported explanations retain the saved evidence snapshot", () => {
   const saved = { ...savedReport, kind: "R1", rules: {}, evidence: [{ ...evidence[0], value: "mock=true：生成时保存的项目依据" }] };

@@ -37,16 +37,26 @@ export async function currentSession() {
   const refresh = jar.get(refreshCookie)?.value;
   if (!access && !refresh) return null;
   const auth = supabase();
-  if (access) {
-    const { data, error } = await auth.auth.getUser(access);
-    if (!error && data.user) return { client: supabase(access), user: data.user };
+  if (access && refresh) {
+    // The Auth SDK needs its in-memory session for updateUser, not just a global bearer header.
+    const { data, error } = await auth.auth.setSession({ access_token: access, refresh_token: refresh });
+    if (!error && data.session && data.user) {
+      if (data.session.access_token !== access || data.session.refresh_token !== refresh) await storeSession(data.session);
+      return { client: auth, user: data.user };
+    }
     if (error && (error.status ?? 500) >= 500) throw new AppError("AUTH_UNAVAILABLE", 502, "访客服务暂时不可用，请稍后重试。");
+    await clearSession();
+    return null;
+  }
+  if (access) {
+    await clearSession();
+    return null;
   }
   if (refresh) {
     const { data, error } = await auth.auth.refreshSession({ refresh_token: refresh });
     if (!error && data.session && data.user) {
       await storeSession(data.session);
-      return { client: supabase(data.session.access_token), user: data.user };
+      return { client: auth, user: data.user };
     }
     if (error && (error.status ?? 500) >= 500) throw new AppError("AUTH_UNAVAILABLE", 502, "访客服务暂时不可用，请稍后重试。");
   }

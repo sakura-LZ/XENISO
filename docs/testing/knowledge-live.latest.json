@@ -1,0 +1,394 @@
+{
+  "at": "2026-10-22T06:46:54.846Z",
+  "source": "supabase_live",
+  "simulation_identity": true,
+  "passed": true,
+  "checks": [
+    {
+      "name": "anonymous_reads_real_supabase_knowledge",
+      "passed": true
+    },
+    {
+      "name": "default_results_are_chinese_primary_sources",
+      "passed": true
+    },
+    {
+      "name": "all_five_categories_have_chinese_evidence",
+      "passed": true
+    },
+    {
+      "name": "public_records_and_sources_read_without_error",
+      "passed": true
+    },
+    {
+      "name": "persistent_records_match_both_imported_corpora_and_versions",
+      "passed": true
+    },
+    {
+      "name": "local_source_snapshots_match_raw_and_text_sha256",
+      "passed": true
+    },
+    {
+      "name": "every_imported_quote_matches_collected_snapshot",
+      "passed": true
+    },
+    {
+      "name": "no_duplicate_sources_or_record_categories",
+      "passed": true
+    },
+    {
+      "name": "raw_snapshots_not_publicly_readable",
+      "passed": true
+    },
+    {
+      "name": "anonymous_insert_denied",
+      "passed": true
+    },
+    {
+      "name": "anonymous_update_denied",
+      "passed": true
+    },
+    {
+      "name": "curated_retrieval_benchmark",
+      "passed": true
+    },
+    {
+      "name": "all_nine_editorial_directions_have_live_coverage",
+      "passed": true
+    },
+    {
+      "name": "coverage_and_total_are_not_capped_at_first_twenty",
+      "passed": true
+    },
+    {
+      "name": "live_pagination_has_no_lost_or_duplicate_records",
+      "passed": true
+    },
+    {
+      "name": "medical_department_sources_isolated_from_nine_directions",
+      "passed": true
+    },
+    {
+      "name": "explicit_medicine_direction_and_report_read_official_sources",
+      "passed": true
+    },
+    {
+      "name": "school_year_filters_retain_verified_program_context",
+      "passed": true
+    },
+    {
+      "name": "historical_year_and_hash_program_link_preserved",
+      "passed": true
+    },
+    {
+      "name": "incompatible_domain_direction_is_explicitly_uncovered",
+      "passed": true
+    },
+    {
+      "name": "R1_consumes_live_chinese_source_context",
+      "passed": true
+    },
+    {
+      "name": "R1_multi_direction_context_contains_each_selected_direction",
+      "passed": true
+    },
+    {
+      "name": "R1_source_evidence_passes_existing_report_contract",
+      "passed": true
+    },
+    {
+      "name": "R2_consumes_live_chinese_source_context",
+      "passed": true
+    },
+    {
+      "name": "R2_source_evidence_passes_existing_report_contract",
+      "passed": true
+    },
+    {
+      "name": "synthetic_identity_created",
+      "passed": true
+    },
+    {
+      "name": "authenticated_knowledge_insert_denied",
+      "passed": true
+    },
+    {
+      "name": "authenticated_verified_knowledge_read_allowed",
+      "passed": true
+    },
+    {
+      "name": "authenticated_snapshot_read_denied",
+      "passed": true
+    },
+    {
+      "name": "authenticated_delete_denied",
+      "passed": true
+    },
+    {
+      "name": "synthetic_private_report_stores_real_citation_snapshot",
+      "passed": true
+    },
+    {
+      "name": "saved_citations_restore_without_retrieval_substitution",
+      "passed": true
+    }
+  ],
+  "counts": {
+    "sources": 38,
+    "records": 127,
+    "cn_sources": 38,
+    "cn_records": 127,
+    "chinese_by_category": {
+      "occupation": 38,
+      "recruitment": 10,
+      "admissions": 34,
+      "industry": 23,
+      "learning": 22
+    }
+  },
+  "benchmark": {
+    "curated_cases": 21,
+    "cases": [
+      {
+        "name": "中国真实岗位与学历（试点回归）",
+        "hit_ids": [
+          "medical-ai-pm-bytedance-job"
+        ],
+        "relevant_ids": [
+          "medical-ai-pm-bytedance-job"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "岗位需求分析任务（试点回归）",
+        "hit_ids": [
+          "medical-ai-pm-bytedance-tasks"
+        ],
+        "relevant_ids": [
+          "medical-ai-pm-bytedance-tasks"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "2027考试科目（试点回归）",
+        "hit_ids": [
+          "medical-ai-pm-sjtu-2027-catalog"
+        ],
+        "relevant_ids": [
+          "medical-ai-pm-sjtu-2027-catalog"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "同等学力限制（试点回归）",
+        "hit_ids": [
+          "medical-ai-pm-sjtu-2027-charter"
+        ],
+        "relevant_ids": [
+          "medical-ai-pm-sjtu-2027-charter"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "医疗AI政策数据安全（试点回归）",
+        "hit_ids": [
+          "medical-ai-pm-cn-policy"
+        ],
+        "relevant_ids": [
+          "medical-ai-pm-cn-policy"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "中国医疗器械监管（试点回归）",
+        "hit_ids": [
+          "medical-ai-pm-cn-device-notice"
+        ],
+        "relevant_ids": [
+          "medical-ai-pm-cn-device-notice"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "知识库课程（试点回归）",
+        "hit_ids": [
+          "medical-ai-pm-internlm-learning"
+        ],
+        "relevant_ids": [
+          "medical-ai-pm-internlm-learning"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "医疗对话项目实践（试点回归）",
+        "hit_ids": [
+          "medical-ai-pm-fudan-project"
+        ],
+        "relevant_ids": [
+          "medical-ai-pm-fudan-project"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "无关问题返回空",
+        "hit_ids": [],
+        "relevant_ids": [],
+        "passed": true,
+        "recall_at_k": null,
+        "precision_at_k": null
+      },
+      {
+        "name": "试点角色不能泄漏到器械方向",
+        "hit_ids": [],
+        "relevant_ids": [],
+        "passed": true,
+        "recall_at_k": null,
+        "precision_at_k": null
+      },
+      {
+        "name": "器械方向上海交大2027院系考试",
+        "hit_ids": [
+          "devices-sjtu-2027-admissions"
+        ],
+        "relevant_ids": [
+          "devices-sjtu-2027-admissions"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "电子科大医学影像复试",
+        "hit_ids": [
+          "imaging-eng-uestc-2027-admissions"
+        ],
+        "relevant_ids": [
+          "imaging-eng-uestc-2027-admissions"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "深圳大学历史招生明示年份",
+        "hit_ids": [
+          "signals-szu-2026-admissions"
+        ],
+        "relevant_ids": [
+          "signals-szu-2026-admissions"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "历史招生默认不返回",
+        "hit_ids": [],
+        "relevant_ids": [],
+        "passed": true,
+        "recall_at_k": null,
+        "precision_at_k": null
+      },
+      {
+        "name": "迈瑞医学图像岗位技术要求",
+        "hit_ids": [
+          "imaging-eng-mindray-recruitment"
+        ],
+        "relevant_ids": [
+          "imaging-eng-mindray-recruitment"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "医学心血管科室原文",
+        "hit_ids": [
+          "medicine-pkufh-department-6"
+        ],
+        "relevant_ids": [
+          "medicine-pkufh-department-6"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "医学医技检验科原文",
+        "hit_ids": [
+          "medicine-pkufh-department-46"
+        ],
+        "relevant_ids": [
+          "medicine-pkufh-department-46"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "口腔专业培养与课程",
+        "hit_ids": [
+          "shzu-medicine-program-learning"
+        ],
+        "relevant_ids": [
+          "shzu-medicine-program-learning"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "医学行业工资保留统计口径",
+        "hit_ids": [
+          "medicine-nbs-salary-context"
+        ],
+        "relevant_ids": [
+          "medicine-nbs-salary-context"
+        ],
+        "passed": true,
+        "recall_at_k": 1,
+        "precision_at_k": 1
+      },
+      {
+        "name": "九方向与医学域条件不兼容时返回空",
+        "hit_ids": [],
+        "relevant_ids": [],
+        "passed": true,
+        "recall_at_k": null,
+        "precision_at_k": null
+      },
+      {
+        "name": "不混入美国资料",
+        "hit_ids": [],
+        "relevant_ids": [],
+        "passed": true,
+        "recall_at_k": null,
+        "precision_at_k": null
+      }
+    ],
+    "note": "人工指定少量相关资料的检索回归，不是广泛语义检索准确率或职业匹配准确率"
+  },
+  "failure": null,
+  "cleanupFailures": 0,
+  "limitations": [
+    "No real user data accessed",
+    "No real LLM report generation or digital-human changes in this test",
+    "quote_verified is source substring verification, not completeness or personal eligibility confirmation"
+  ]
+}

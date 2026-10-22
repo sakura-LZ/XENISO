@@ -1,0 +1,13 @@
+.env*
+!.env.example
+.git/
+.next/
+node_modules/
+work/
+coverage/
+test-results/
+playwright-report/
+docs/testing/
+supabase/.temp/
+*.log
+*.tsbuildinfo

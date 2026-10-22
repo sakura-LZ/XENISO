@@ -1,0 +1,243 @@
+[
+  {
+    "source": {
+      "id": "onet-health-informatics",
+      "url": "https://www.onetonline.org/link/summary/15-1211.01",
+      "organization": "U.S. Department of Labor / O*NET",
+      "title": "Health Informatics Specialists — 15-1211.01",
+      "jurisdiction": "US",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面标注 Updated 2026；没有可核实的日级发布日期。CC BY 4.0。"
+    },
+    "record": {
+      "id": "medical-ai-pm-onet-tasks",
+      "role_id": "medical_ai_pm",
+      "category": "occupation",
+      "title": "医学信息学相关职业：任务与数据隐私职责",
+      "summary": "O*NET 的相关职业任务原文，供理解需求转译、系统设计与隐私职责；不将其等同于医学 AI 产品经理官方职业定义。",
+      "applicability": "美国 Health Informatics Specialists，SOC 15-1211.01；LIMEN 将任务编辑性关联到医学 AI 产品经理。不能据此认定国内招聘学历、薪资或职业晋升。",
+      "relation": "related",
+      "tags": [
+        "需求分析",
+        "临床工作流",
+        "隐私",
+        "产品经理",
+        "职业职责"
+      ],
+      "valid_through": null,
+      "freshness_days": 180
+    },
+    "extracts": [
+      {
+        "field": "responsibilities",
+        "pattern": "Translate nursing practice information between nurses and systems engineers, analysts, or designers, using object-oriented models or other techniques\\."
+      },
+      {
+        "field": "privacy_requirements",
+        "pattern": "Develop or implement policies or practices to ensure the privacy, confidentiality, or security of patient information\\."
+      }
+    ],
+    "expected_fields": [
+      "responsibilities",
+      "privacy_requirements",
+      "career_path",
+      "china_degree_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "fda-ai-devices",
+      "url": "https://www.fda.gov/medical-devices/artificial-intelligence-enabled-medical-devices/list-artificial-intelligence-enabled-medical-devices",
+      "organization": "U.S. Food and Drug Administration",
+      "title": "Artificial Intelligence-Enabled Medical Devices",
+      "jurisdiction": "US",
+      "source_tier": "primary",
+      "published_at": "2026-09-22",
+      "publication_date_note": "原始HTML datePublished: Tue, 09/22/2026 - 12:31；dateModified另为2026-09-04，不混用。"
+    },
+    "publication_pattern": "datePublished[^\\n]{0,30}09/22/2026",
+    "record": {
+      "id": "medical-ai-pm-fda-regulation",
+      "role_id": "medical_ai_pm",
+      "category": "industry",
+      "title": "美国 FDA AI 医疗器械官方列表及覆盖限制",
+      "summary": "监管官方列表可作为产品合规与产业实例入口，不能用其不完整样本推断市场规模或中国人才需求。",
+      "applicability": "美国获准上市器械列表；不能替代中国 NMPA 注册要求，未抽取器械数量、就业人数或薪资。",
+      "relation": "context",
+      "tags": [
+        "监管",
+        "合规",
+        "医疗AI",
+        "产业",
+        "FDA"
+      ],
+      "valid_through": null,
+      "freshness_days": 90
+    },
+    "extracts": [
+      {
+        "field": "scope",
+        "pattern": "The AI-Enabled Medical Device List is a resource intended to identify AI-enabled medical devices that are authorized for marketing in the United States\\."
+      },
+      {
+        "field": "coverage_limit",
+        "pattern": "The list is not a comprehensive resource of AI-enabled medical devices\\."
+      }
+    ],
+    "expected_fields": [
+      "scope",
+      "coverage_limit",
+      "china_talent_demand",
+      "employment_statistics"
+    ]
+  },
+  {
+    "source": {
+      "id": "who-ai-ethics",
+      "url": "https://www.who.int/publications/i/item/9789240029200",
+      "organization": "World Health Organization",
+      "title": "Ethics and governance of artificial intelligence for health",
+      "jurisdiction": "global",
+      "source_tier": "primary",
+      "published_at": "2021-06-28",
+      "publication_date_note": "原始HTML JSON-LD datePublished: 28 June 2021。"
+    },
+    "publication_pattern": "datePublished[^\\n]{0,20}28 June 2021",
+    "record": {
+      "id": "medical-ai-pm-who-governance",
+      "role_id": "medical_ai_pm",
+      "category": "industry",
+      "title": "WHO 医疗 AI 设计、部署与使用的伦理治理",
+      "summary": "WHO 官方指南说明医疗 AI 应将伦理与人权纳入设计、部署和使用，供产品决策约束参考。",
+      "applicability": "2021 年全球伦理指导，不属于中国岗位资格或医疗器械注册批件；具体政策适用性需单独核对。",
+      "relation": "context",
+      "tags": [
+        "伦理",
+        "安全",
+        "医疗AI",
+        "产品决策",
+        "治理"
+      ],
+      "valid_through": null,
+      "freshness_days": 365
+    },
+    "extracts": [
+      {
+        "field": "design_constraints",
+        "pattern": "such technologies, according to the report, must put ethics and human rights at the heart of its design, deployment, and use\\."
+      },
+      {
+        "field": "governance_scope",
+        "pattern": "The report identifies the ethical challenges and risks with the use of artificial intelligence of health, six consensus principles to ensure AI works to the public benefit of all countries\\."
+      }
+    ],
+    "expected_fields": [
+      "design_constraints",
+      "governance_scope",
+      "china_legal_requirement",
+      "talent_demand"
+    ]
+  },
+  {
+    "source": {
+      "id": "mit-ml-healthcare",
+      "url": "https://ocw.mit.edu/courses/6-s897-machine-learning-for-healthcare-spring-2019/",
+      "organization": "Massachusetts Institute of Technology / OpenCourseWare",
+      "title": "6.S897 Machine Learning for Healthcare — Spring 2019",
+      "jurisdiction": "US",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "课程学期 Spring 2019；页面未列可核实的日级发布日期，不以学期替代发布日期。"
+    },
+    "record": {
+      "id": "medical-ai-pm-mit-course",
+      "role_id": "medical_ai_pm",
+      "category": "learning",
+      "title": "MIT 开放课程：医疗机器学习与临床工作流",
+      "summary": "MIT 研究生层次开放课程提供讲义、视频和项目，覆盖临床数据与风险分层等主题；未声称完成课程即可胜任岗位。",
+      "applicability": "2019年开放课程材料；与当前硕士招生无直接关系。课程难度、个人学习时长及先修差距需另行评估。",
+      "relation": "related",
+      "tags": [
+        "课程",
+        "机器学习",
+        "临床数据",
+        "项目实践",
+        "风险分层",
+        "学习资源"
+      ],
+      "valid_through": null,
+      "freshness_days": 365
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "This course introduces students to machine learning in healthcare, including the nature of clinical data and the use of machine learning for risk stratification, disease progression modeling, precision medicine, diagnosis, subtype discovery, and improving clinical workflows\\."
+      },
+      {
+        "field": "materials",
+        "pattern": "Learning Resource Types notes Lecture Notes theaters Lecture Videos group_work Projects"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "materials",
+      "prerequisites",
+      "learning_hours",
+      "certificate"
+    ]
+  },
+  {
+    "source": {
+      "id": "physionet-mimiciv-31",
+      "url": "https://physionet.org/content/mimiciv/3.1/",
+      "organization": "PhysioNet / MIT Laboratory for Computational Physiology",
+      "title": "MIMIC-IV v3.1",
+      "jurisdiction": "US",
+      "source_tier": "primary",
+      "published_at": "2024-10-11",
+      "publication_date_note": "原始页面 Published Oct. 11, 2024 与 time datetime=2024-10-11 对应版本3.1。"
+    },
+    "publication_pattern": "Published Oct\\. 11, 2024",
+    "record": {
+      "id": "medical-ai-pm-mimic-research",
+      "role_id": "medical_ai_pm",
+      "category": "learning",
+      "title": "MIMIC-IV 3.1 科研数据资源与访问前提",
+      "summary": "可用于了解真实临床数据研究的资源入口，必须尊重资质、培训、DUA与地区限制。本轮仅读取说明页，没有下载病人数据。",
+      "applicability": "MIMIC-IV 3.1 说明页；非公开无条件下载。当前访问地区被页面限制，不保证任何用户可以获取数据，也不代表提供科研岗位。",
+      "relation": "related",
+      "tags": [
+        "科研",
+        "临床数据",
+        "数据使用协议",
+        "培训",
+        "项目实践",
+        "学习资源"
+      ],
+      "valid_through": null,
+      "freshness_days": 180
+    },
+    "extracts": [
+      {
+        "field": "access_requirement",
+        "pattern": "Only credentialed users who sign the DUA can access the files\\."
+      },
+      {
+        "field": "training",
+        "pattern": "Required training CITI Data or Specimens Only Research"
+      },
+      {
+        "field": "regional_limit",
+        "pattern": "Data is not available in your region due to legal or policy restrictions\\."
+      }
+    ],
+    "expected_fields": [
+      "access_requirement",
+      "training",
+      "regional_limit",
+      "learning_hours",
+      "research_vacancy"
+    ]
+  }
+]

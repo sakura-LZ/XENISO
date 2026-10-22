@@ -1,123 +1,97 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
-import { emptyProfile, grades, profileMissing, profileSchema, simulationProfile, type Profile } from "@/lib/profile";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { emptyProfile, educationStages, gradeOptions, profileMissing, profileSchema, simulationProfile, type Profile } from "@/lib/profile";
 import { TranscriptPreview } from "@/components/transcript-preview";
 
-const steps = ["基本学籍", "学业记录", "科研与技能", "偏好与计划"];
+const steps = ["基本信息", "学业与英语", "科研与技能", "偏好与目标"];
 const storageKey = "limen:simulation:profile:v1";
 type StringKey = { [K in keyof Profile]: Profile[K] extends string ? K : never }[keyof Profile];
 type ListKey = "research_fields" | "competitions" | "self_study" | "hobbies" | "work_preferences" | "career_priorities" | "interest_directions" | "target_cities";
 type NumberKey = "gpa" | "gpa_scale" | "rank" | "cohort_size" | "transition_year" | "weekly_hours";
-
+const levels = ["刚接触", "在指导下完成", "可独立完成", "可指导他人"];
 export function ProfileForm() {
+  const router = useRouter();
   const [profile, setProfile] = useState<Profile>(emptyProfile);
   const [step, setStep] = useState(0);
   const [simulation, setSimulation] = useState(false);
-  const [message, setMessage] = useState("尚未保存。真实资料需连接匿名访客服务后才能保存。");
+  const [message, setMessage] = useState("");
   const [busy, setBusy] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [dirty, setDirty] = useState(false);
-  function change<K extends keyof Profile>(key: K, value: Profile[K]) { setProfile((p) => ({ ...p, [key]: value })); setDirty(true); }
-  function text(key: StringKey, label: string, long = false) {
-    return <label className="block" key={key}><span className="font-medium">{label}</span>{long ? <textarea className="field !max-w-none" rows={4} value={profile[key]} onChange={(e) => change(key, e.target.value as Profile[typeof key])} /> : <input className="field !max-w-none" value={profile[key]} onChange={(e) => change(key, e.target.value as Profile[typeof key])} />}</label>;
+  const [tools, setTools] = useState(false);
+  useEffect(() => {
+    const controller = new AbortController();
+    setTools(new URLSearchParams(window.location.search).get("tools") === "1");
+    void (async () => {
+      try {
+        const r = await fetch("/api/profile", { signal: controller.signal });
+        const data = await r.json();
+        if (r.status === 401) return;
+        if (!r.ok) throw new Error(data.error?.message ?? "资料暂时无法读取，请稍后重试。");
+        if (data.profile) setProfile(profileSchema.parse(data.profile));
+      } catch (error) { if (!controller.signal.aborted) setMessage(error instanceof Error ? error.message : "读取失败。"); }
+      finally { if (!controller.signal.aborted) setLoading(false); }
+    })();
+    return () => controller.abort();
+  }, []);
+  function change<K extends keyof Profile>(key: K, value: Profile[K]) { setProfile(p => ({ ...p, [key]: value })); setDirty(true); setMessage(""); }
+  function text(key: StringKey, label: string, placeholder = "", long = false) {
+    return <label className="form-label" key={key}><span>{label}</span>{long ? <textarea className="field" rows={3} placeholder={placeholder} value={profile[key]} onChange={e => change(key, e.target.value as Profile[typeof key])} /> : <input className="field" placeholder={placeholder} value={profile[key]} onChange={e => change(key, e.target.value as Profile[typeof key])} />}</label>;
   }
-  function number(key: NumberKey, label: string) {
-    return <label className="block" key={key}><span className="font-medium">{label}</span><input className="field !max-w-none" type="number" step={["rank", "cohort_size", "transition_year"].includes(key) ? "1" : "any"} min="0" value={profile[key] ?? ""} onChange={(e) => change(key, e.target.value === "" ? null : Number(e.target.value))} /></label>;
+  function number(key: NumberKey, label: string, placeholder = "") {
+    return <label className="form-label" key={key}><span>{label}</span><input className="field" type="number" placeholder={placeholder} step={["rank", "cohort_size", "transition_year"].includes(key) ? "1" : "any"} min="0" value={profile[key] ?? ""} onChange={e => change(key, e.target.value === "" ? null : Number(e.target.value))} /></label>;
   }
-  function list(key: ListKey, label: string) {
-    return <label className="block" key={key}><span className="font-medium">{label}</span><span className="block mt-1 text-xs muted">每行一项，可留空</span><textarea className="field !max-w-none" rows={3} value={profile[key].join("\n")} onChange={(e) => change(key, e.target.value.split("\n"))} /></label>;
+  function list(key: ListKey, label: string, placeholder: string) {
+    return <label className="form-label" key={key}><span>{label}</span><textarea className="field" rows={2} placeholder={placeholder} value={profile[key].join("\n")} onChange={e => change(key, e.target.value.split("\n"))} /></label>;
   }
-  async function connect() {
-    setBusy(true);
-    try {
-      const response = await fetch("/api/session", { method: "POST" });
-      const data = await response.json();
-      if (!response.ok) throw new Error(data.error?.message ?? "连接失败。");
-      setSimulation(false); setMessage("匿名访客已连接。草稿只保存到当前访客的私有记录中。");
-    } catch (error) { setMessage(error instanceof Error ? error.message : "连接失败。"); }
-    finally { setBusy(false); }
+  function select(label: string, value: string, options: readonly string[], onChange: (value: string) => void) {
+    const compatible = value && !options.includes(value) ? [value, ...options] : options;
+    return <label className="form-label"><span>{label}</span><select className="field" value={value} onChange={e => onChange(e.target.value)}><option value="">请选择</option>{compatible.map(o => <option key={o}>{o}</option>)}</select></label>;
   }
-  async function save() {
+  async function save(advance = false) {
     const parsed = profileSchema.safeParse(profile);
     if (!parsed.success) { setMessage(parsed.error.issues[0].message); return; }
-    setBusy(true);
+    if (advance && profileMissing(parsed.data).length) { setStep(0); setMessage(`请补充${profileMissing(parsed.data).join("、")}。`); return; }
+    setBusy(true); setMessage("");
     try {
       if (simulation) {
         localStorage.setItem(storageKey, JSON.stringify({ simulation: true, profile: parsed.data, saved_at: new Date().toISOString() }));
-        setMessage("simulation：合成草稿已保存在本浏览器，可刷新后恢复。请勿在演示模式输入真实资料。");
+        setMessage("合成示例已保存到本机。");
       } else {
+        const session = await fetch("/api/session", { method: "POST" });
+        if (!session.ok) { const data = await session.json(); throw new Error(data.error?.message ?? "连接失败，请重试。"); }
         const response = await fetch("/api/profile", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(parsed.data) });
         const data = await response.json();
-        if (!response.ok) throw new Error(data.error?.message ?? "保存失败。");
-        setMessage("个人草稿已保存到当前匿名访客的私有资料。清除会话后无法恢复此身份。");
+        if (!response.ok) throw new Error(data.error?.message ?? "保存失败，请重试。");
+        setMessage("已保存");
       }
       setDirty(false);
+      if (advance) router.push("/assessment");
     } catch (error) { setMessage(error instanceof Error ? error.message : "保存失败。"); }
     finally { setBusy(false); }
   }
-  async function restore(personal: boolean) {
-    setBusy(true);
-    try {
-      let input: unknown;
-      if (personal) {
-        const response = await fetch("/api/profile"); const data = await response.json();
-        if (!response.ok) throw new Error(data.error?.message ?? "读取失败。");
-        if (!data.profile) throw new Error("当前访客尚无保存的草稿。");
-        input = data.profile;
-      } else {
-        const raw = localStorage.getItem(storageKey);
-        if (!raw) throw new Error("本机尚无合成草稿。");
-        const stored = JSON.parse(raw);
-        if (stored.simulation !== true) throw new Error("草稿来源不匹配。");
-        input = stored.profile;
-      }
-      const parsed = profileSchema.safeParse(input);
-      if (!parsed.success) throw new Error("草稿格式不兼容，请重新填写。");
-      setProfile(parsed.data); setSimulation(!personal); setDirty(false); setMessage(personal ? "已恢复当前访客的私有草稿。" : "simulation：已恢复合成草稿。");
-    } catch (error) { setMessage(error instanceof Error ? error.message : "恢复失败。"); }
-    finally { setBusy(false); }
-  }
-  const missing = profileMissing(profile);
-  return <div className="mx-auto max-w-3xl">
-    <p className="eyebrow">探索 / 01 个人画像</p><h1 className="mt-3 text-3xl font-semibold">先整理已有的经历</h1>
-    <p className="mt-4 leading-7 muted">最低只需基本学籍。成绩、论文、科研和转型动机均可跳过；未填写的内容会保留为未知。</p>
-    <div className="mt-5 flex flex-wrap gap-3">
-      <button type="button" className="button secondary" disabled={busy} onClick={connect}>连接匿名访客</button>
-      <button type="button" className="button secondary" disabled={busy} onClick={() => { setProfile(structuredClone(simulationProfile)); setSimulation(true); setDirty(true); setStep(0); setMessage("simulation：仅供合成数据演示。不是你的测评结果，请勿填写真实个人资料。"); }}>使用合成示例</button>
-      <button type="button" className="text-sm text-blue-700 underline" disabled={busy} onClick={() => restore(false)}>恢复合成草稿</button>
-      <button type="button" className="text-sm text-blue-700 underline" disabled={busy} onClick={() => restore(true)}>恢复个人草稿</button>
-    </div>
-    <p className={`mt-4 rounded p-3 text-sm ${simulation ? "bg-amber-50 text-amber-900" : "bg-blue-50 text-blue-900"}`}>{simulation ? "simulation · 本地合成数据演示模式" : "个人资料模式 · 需匿名登录才能保存；未保存内容仅在当前页面内存中"}</p>
-    <nav aria-label="画像填写步骤" className="sticky top-0 z-10 mt-7 grid grid-cols-2 border-y border-slate-200 bg-slate-50 py-2 sm:grid-cols-4">
-      {steps.map((title, i) => <button type="button" className={`min-w-0 border-b-2 px-2 py-3 text-sm ${step === i ? "border-blue-600 font-semibold text-blue-800" : "border-transparent muted"}`} key={title} aria-current={step === i ? "step" : undefined} onClick={() => setStep(i)}>{i + 1}. {title}</button>)}
-    </nav>
-    <form onSubmit={(e) => { e.preventDefault(); void save(); }} className="mt-8 space-y-6" aria-label="个人画像草稿">
-      <h2 className="text-xl font-semibold">{steps[step]}</h2>
-      {step === 0 && <div className="grid gap-5 sm:grid-cols-2">
-        {text("nickname", "昵称 *")}{text("school", "本科院校 *")}{text("major", "本科专业 *")}
-        <label className="block"><span className="font-medium">当前年级 *</span><select className="field !max-w-none" value={profile.grade} onChange={(e) => change("grade", e.target.value as Profile["grade"])}><option value="">请选择</option>{grades.map((grade) => <option key={grade}>{grade}</option>)}</select></label>
-        {text("degree_track", "学制 / 培养类型（可选）")}
-      </div>}
-      {step === 1 && <><div className="grid gap-5 sm:grid-cols-2">{number("gpa", "GPA（可选）")}{number("gpa_scale", "GPA 满分")}{number("rank", "年级排名（可选）")}{number("cohort_size", "年级总人数")}</div><TranscriptPreview courses={profile.courses} onChange={(courses) => change("courses", courses)} /></>}
-      {step === 2 && <div className="space-y-8">
-        {list("research_fields", "科研方向（可选）")}
-        <section><h3 className="font-semibold">科研项目与个人责任</h3>{profile.research_projects.map((project, i) => <fieldset key={i} className="mt-4 grid gap-3 rounded border border-slate-200 p-4 sm:grid-cols-2"><legend className="px-2 text-sm">项目 {i + 1}</legend>{Object.entries({ title: "标题", topic: "主题", responsibility: "本人承担的工作", methods: "使用方法", outcomes: "产出 / 证据", duration: "参与时间（自述）" }).map(([key, label]) => <label key={key} className="text-sm">{label}<input className="field !max-w-none" value={project[key as keyof typeof project]} onChange={(e) => change("research_projects", profile.research_projects.map((p, j) => j === i ? { ...p, [key]: e.target.value } : p))} /></label>)}<button type="button" className="text-sm text-red-700 underline" onClick={() => change("research_projects", profile.research_projects.filter((_, j) => j !== i))}>移除此项目</button></fieldset>)}<button type="button" className="mt-3 text-blue-700 underline" onClick={() => change("research_projects", [...profile.research_projects, { title: "", topic: "", responsibility: "", methods: "", outcomes: "", duration: "" }])}>添加科研项目</button></section>
-        <section><h3 className="font-semibold">技术技能与证据</h3>{profile.tech_skills.map((skill, i) => <div key={i} className="mt-3 grid gap-3 rounded border border-slate-200 p-4 sm:grid-cols-3">{([['skill', '技能'], ['self_reported_level', '自评熟练度'], ['evidence', '课程 / 项目证据']] as const).map(([key, label]) => <label className="text-sm" key={key}>{label}<input className="field !max-w-none" value={skill[key]} onChange={(e) => change("tech_skills", profile.tech_skills.map((s, j) => j === i ? { ...s, [key]: e.target.value } : s))} /></label>)}<button type="button" className="text-left text-sm text-red-700 underline" onClick={() => change("tech_skills", profile.tech_skills.filter((_, j) => j !== i))}>移除技能</button></div>)}<button type="button" className="mt-3 text-blue-700 underline" onClick={() => change("tech_skills", [...profile.tech_skills, { skill: "", self_reported_level: "", evidence: "" }])}>添加技术技能</button></section>
-        <section><h3 className="font-semibold">实验技能（可选）</h3>{profile.wetlab_skills.map((skill, i) => <div key={i} className="mt-3 grid gap-3 sm:grid-cols-3">{([['skill', '实验技能'], ['level', '熟练度'], ['experience_evidence', '具体经历']] as const).map(([key, label]) => <label key={key} className="text-sm">{label}<input className="field" value={skill[key]} onChange={(e) => change("wetlab_skills", profile.wetlab_skills.map((s, j) => j === i ? { ...s, [key]: e.target.value } : s))} /></label>)}</div>)}<button type="button" className="mt-3 text-blue-700 underline" onClick={() => change("wetlab_skills", [...profile.wetlab_skills, { skill: "", level: "", experience_evidence: "" }])}>添加实验技能</button></section>
-        <section><h3 className="font-semibold">论文 / 会议成果（可选）</h3>{profile.papers.map((paper, i) => <fieldset key={i} className="mt-4 grid gap-3 border border-slate-200 p-4 sm:grid-cols-2"><legend className="text-sm">成果 {i + 1}</legend>{Object.entries({ title: "标题", type: "类型", venue: "期刊 / 会议", status: "当前状态", author_role: "作者角色", quartile_if_known: "分区（如确知）" }).map(([key, label]) => <label key={key} className="text-sm">{label}<input className="field !max-w-none" value={paper[key as Exclude<keyof typeof paper, "year">]} onChange={(e) => change("papers", profile.papers.map((p, j) => j === i ? { ...p, [key]: e.target.value } : p))} /></label>)}<label className="text-sm">年份<input type="number" className="field" value={paper.year ?? ""} onChange={(e) => change("papers", profile.papers.map((p, j) => j === i ? { ...p, year: e.target.value ? Number(e.target.value) : null } : p))} /></label><button type="button" className="text-red-700 underline text-sm" onClick={() => change("papers", profile.papers.filter((_, j) => j !== i))}>移除此成果</button></fieldset>)}<button type="button" className="mt-3 text-blue-700 underline" onClick={() => change("papers", [...profile.papers, { title: "", type: "", venue: "", status: "", author_role: "", quartile_if_known: "", year: null }])}>添加论文 / 会议成果</button></section>
-        {list("competitions", "竞赛成果（可选）")}{list("self_study", "自学课程或独立项目（可选）")}
-        <label className="block font-medium">英语水平（可选）<input className="field !max-w-none" value={profile.english?.description ?? ""} onChange={(e) => change("english", e.target.value ? { description: e.target.value } : null)} /></label>
-      </div>}
-      {step === 3 && <div className="space-y-6">{list("hobbies", "兴趣爱好")}{list("work_preferences", "希望从事的工作内容")}{list("career_priorities", "职业价值观")}{text("motivation", "考虑转专业的原因或顾虑（私密、可选）", true)}{text("self_evaluation", "自我评价（可选）", true)}{list("interest_directions", "目前想了解的方向（可以尚不确定 / 继续医学）")}<div className="grid gap-5 sm:grid-cols-2">{number("transition_year", "计划转专业年份（未决定可留空）")}{number("weekly_hours", "每周可投入小时（未决定可留空）")}<label className="block font-medium">升学路径<select className="field" value={profile.pathway} onChange={(e) => change("pathway", e.target.value as Profile["pathway"])}>{["统考", "推免", "申请制", "未决定"].map((path) => <option key={path}>{path}</option>)}</select></label></div>{list("target_cities", "目标城市（可选）")}{text("constraints", "重要现实约束（可选）", true)}</div>}
-      <div className="flex flex-wrap items-center gap-3 border-t border-slate-200 pt-6">
-        {step > 0 && <button type="button" className="button secondary" onClick={() => setStep(step - 1)}>上一步</button>}
-        {step < 3 && <button type="button" className="button secondary" onClick={() => setStep(step + 1)}>下一步（可跳过选填项）</button>}
-        <button className="button" disabled={busy}>{busy ? "正在保存…" : "保存草稿"}</button>
-        <span className="text-sm muted">{dirty ? "有未保存修改" : "无未保存修改"}</span>
-      </div>
-      <p role="status" className="text-sm leading-6 text-blue-900">{message}</p>
-      {step === 3 && <div className="notice text-sm leading-7">{missing.length > 0 ? `正式探索仍需填写：${missing.join("、")}。草稿仍可保存。` : "基本资料已完整。问卷须从官方接口加载；接口失败时不会生成兴趣分数。"}<div className="mt-2 flex flex-wrap gap-4"><Link href="/assessment" className="underline text-blue-800">前往兴趣测评</Link><Link href="/explore" className="underline text-blue-800">先浏览公开方向知识库</Link></div></div>}
+  const stage = profile.education_stage || (profile.grade.startsWith("研") ? "硕士研究生" : profile.grade.startsWith("博") ? "博士研究生" : profile.grade.startsWith("规培") ? "规培" : profile.grade === "已毕业" ? "已毕业" : "本科");
+  const yearOptions = gradeOptions[stage] ?? gradeOptions["其他"];
+  const degreeOptions = stage === "硕士研究生" ? ["学术硕士", "专业硕士", "其他"] : stage === "博士研究生" ? ["学术博士", "专业博士", "其他"] : stage === "规培" ? ["住院医师规范化培训", "专科医师规范化培训", "其他"] : stage === "本科" ? ["五年制", "八年制", "其他"] : ["其他"];
+  const degreeValue = profile.degree_track_other ? "其他" : profile.degree_track;
+  const english = profile.english ?? { description: "", cet4: "", cet6: "", other: "" };
+  return <div className="profile-layout">
+    <aside className="profile-intro"><p className="eyebrow">LIMEN · 个人画像</p><h1>认识现在的你</h1><p className="muted leading-7">从医学经历出发，找到值得亲自尝试的方向。</p><ol className="profile-steps" aria-label="画像填写步骤">{steps.map((title, i) => <li key={title}><button type="button" disabled={busy || loading} aria-current={step === i ? "step" : undefined} onClick={() => setStep(i)}><span>{String(i + 1).padStart(2, "0")}</span><strong>{title}</strong></button></li>)}</ol><p className="text-xs leading-6 muted">资料仅自己可见。暂时没有的项目可以跳过。</p></aside>
+    <div className="profile-sheet"><div className="section-topline"><span className="eyebrow">个人画像 / {String(step + 1).padStart(2, "0")}</span><span className="text-xs muted" role="status">{loading ? "正在读取…" : dirty ? "有未保存的修改" : ""}</span></div>
+    <form onSubmit={e => { e.preventDefault(); void save(); }} aria-label="个人画像" className="space-y-7"><fieldset disabled={busy || loading} className="space-y-7 min-w-0"><legend className="form-title">{steps[step]}</legend>
+      {step === 0 && <><div className="form-grid">{text("nickname", "昵称", "希望我们怎么称呼你")}{text("school", "院校", "例如：就读或毕业院校")}{text("major", "专业", "例如：临床医学、护理学")}{select("培养阶段", stage, educationStages, value => { setProfile(p => ({ ...p, education_stage: value as Profile["education_stage"], grade: value === "已毕业" ? "已毕业" : value === "其他" ? "其他" : "", grade_other: "", degree_track: "", degree_track_other: "" })); setDirty(true); })}{stage !== "已毕业" && <>{select(stage === "规培" ? "规培年级" : "当前年级", profile.grade, yearOptions, value => change("grade", value as Profile["grade"]))}{profile.grade === "其他" && text("grade_other", "补充学习阶段 / 年级", "例如：研六、在职进修")}</>}{stage !== "已毕业" && stage !== "其他" && <>{select("培养类型", degreeValue, degreeOptions, value => { change("degree_track", value); if (value !== "其他") change("degree_track_other", ""); })}{degreeValue === "其他" && text("degree_track_other", "补充培养类型", "例如：八年制临床医学、专博")}</>}</div></>}
+      {step === 1 && <><section><h3 className="form-section-title">学业表现</h3><div className="form-grid">{number("gpa", "GPA", "例如：3.4")}{number("gpa_scale", "GPA 满分", "例如：4.0")}{number("rank", "年级排名", "例如：25")}{number("cohort_size", "年级总人数", "例如：180")}</div><p className="form-hint">填写你成绩单采用的计分方式；排名与年级人数可一起填写。</p></section><section><h3 className="form-section-title">英语水平</h3><div className="form-grid">{select("大学英语四级", english.cet4, ["未参加", "备考中", "未通过", "已通过", "不确定"], value => change("english", { ...english, cet4: value }))}{select("大学英语六级", english.cet6, ["未参加", "备考中", "未通过", "已通过", "不确定"], value => change("english", { ...english, cet6: value }))}<label className="form-label"><span>考试成绩</span><input className="field" placeholder="例如：CET-6 520；雅思 6.5" value={english.description} onChange={e => change("english", { ...english, description: e.target.value })} /></label><label className="form-label"><span>语言使用经历</span><input className="field" placeholder="例如：阅读英文论文、英文会议发言" value={english.other} onChange={e => change("english", { ...english, other: e.target.value })} /></label></div></section><TranscriptPreview courses={profile.courses} onChange={courses => change("courses", courses)} /></>}
+      {step === 2 && <><section>{list("research_fields", "研究方向", "例如：肿瘤免疫、医学影像、临床预测模型")}</section><section className="form-section"><h3 className="form-section-title">科研项目与成果</h3><p className="form-hint">写清研究问题、你做了什么，以及留下了什么成果。</p>{profile.research_projects.map((project, i) => <fieldset className="repeat-item" key={i}><legend>项目 {i + 1}</legend><div className="form-grid">{Object.entries({ title: ["项目名称", "例如：肺结节辅助诊断研究"], topic: ["研究问题", "希望解决什么问题"], responsibility: ["你承担的工作", "例如：病例整理、实验设计、数据分析"], methods: ["方法与工具", "例如：回归分析、细胞培养、Python"], outcomes: ["阶段成果", "例如：数据集、论文初稿、汇报"], duration: ["参与时间", "例如：2025.09—2026.06"] }).map(([key, [label, placeholder]]) => <label className="form-label" key={key}><span>{label}</span><input className="field" placeholder={placeholder} value={project[key as keyof typeof project]} onChange={e => change("research_projects", profile.research_projects.map((p, j) => j === i ? { ...p, [key]: e.target.value } : p))} /></label>)}</div><button type="button" className="remove-link" onClick={() => change("research_projects", profile.research_projects.filter((_, j) => j !== i))}>移除项目</button></fieldset>)}<button type="button" className="add-row" onClick={() => change("research_projects", [...profile.research_projects, { title: "", topic: "", responsibility: "", methods: "", outcomes: "", duration: "" }])}>＋ 添加科研项目</button>
+        {profile.papers.map((paper, i) => <fieldset className="repeat-item" key={i}><legend>成果 {i + 1}</legend><div className="form-grid">{select("成果类型", paper.type, ["期刊论文", "会议壁报", "会议口头报告", "会议摘要", "其他"], value => change("papers", profile.papers.map((p, j) => j === i ? { ...p, type: value } : p)))}{select("当前状态", paper.status, paper.type.startsWith("会议") ? ["准备中", "已投稿", "已接收", "已展示 / 发言"] : ["撰写中", "投稿中", "返修中", "已接收", "已见刊"], value => change("papers", profile.papers.map((p, j) => j === i ? { ...p, status: value } : p)))}{Object.entries({ title: ["题目", "论文或报告题目"], venue: ["期刊 / 会议", "填写期刊或会议名称"], author_role: ["作者身份", "例如：共同一作、第三作者"], quartile_if_known: ["分区", "知道时填写即可"] }).map(([key, [label, placeholder]]) => <label className="form-label" key={key}><span>{label}</span><input className="field" placeholder={placeholder} value={paper[key as Exclude<keyof typeof paper, "year">]} onChange={e => change("papers", profile.papers.map((p, j) => j === i ? { ...p, [key]: e.target.value } : p))} /></label>)}<label className="form-label"><span>年份</span><input className="field" type="number" placeholder="例如：2026" value={paper.year ?? ""} onChange={e => change("papers", profile.papers.map((p, j) => j === i ? { ...p, year: e.target.value ? Number(e.target.value) : null } : p))} /></label></div><button type="button" className="remove-link" onClick={() => change("papers", profile.papers.filter((_, j) => j !== i))}>移除成果</button></fieldset>)}<button type="button" className="add-row" onClick={() => change("papers", [...profile.papers, { title: "", type: "期刊论文", venue: "", status: "撰写中", author_role: "", quartile_if_known: "", year: null }])}>＋ 添加论文或会议成果</button></section>
+      <section className="form-section"><h3 className="form-section-title">实验技能</h3><p className="form-hint">例如：Western blot、细胞培养、组织取材、PCR。先选你做过的，再补充独立程度。</p><div className="choice-row">{["Western blot", "细胞培养", "PCR", "组织取材"].map(name => <button type="button" className="choice" key={name} disabled={profile.wetlab_skills.some(s => s.skill === name)} onClick={() => change("wetlab_skills", [...profile.wetlab_skills, { skill: name, level: "", experience_evidence: "" }])}>＋ {name}</button>)}</div>{profile.wetlab_skills.map((skill, i) => <div className="repeat-item" key={i}><div className="form-grid"><label className="form-label"><span>实验名称</span><input className="field" value={skill.skill} placeholder="例如：Western blot" onChange={e => change("wetlab_skills", profile.wetlab_skills.map((s, j) => j === i ? { ...s, skill: e.target.value } : s))} /></label>{select("完成程度", skill.level, levels, value => change("wetlab_skills", profile.wetlab_skills.map((s, j) => j === i ? { ...s, level: value } : s)))}<label className="form-label sm:col-span-2"><span>相关经历</span><input className="field" placeholder="例如：在导师指导下完成两轮蛋白检测" value={skill.experience_evidence} onChange={e => change("wetlab_skills", profile.wetlab_skills.map((s, j) => j === i ? { ...s, experience_evidence: e.target.value } : s))} /></label></div><button type="button" className="remove-link" onClick={() => change("wetlab_skills", profile.wetlab_skills.filter((_, j) => j !== i))}>移除技能</button></div>)}<button type="button" className="add-row" onClick={() => change("wetlab_skills", [...profile.wetlab_skills, { skill: "", level: "", experience_evidence: "" }])}>＋ 其他实验技能</button></section>
+      <section className="form-section"><h3 className="form-section-title">数据与工具技能</h3><p className="form-hint">例如：Excel、SPSS、R、Python、文献检索；写一件实际做过的事。</p>{profile.tech_skills.map((skill, i) => <div className="repeat-item" key={i}><div className="form-grid">{([['skill', '工具或方法', '例如：SPSS'], ['evidence', '实际使用经历', '例如：为课题完成描述统计']] as const).map(([key, label, placeholder]) => <label className="form-label" key={key}><span>{label}</span><input className="field" placeholder={placeholder} value={skill[key]} onChange={e => change("tech_skills", profile.tech_skills.map((s, j) => j === i ? { ...s, [key]: e.target.value } : s))} /></label>)}{select("使用程度", skill.self_reported_level, levels, value => change("tech_skills", profile.tech_skills.map((s, j) => j === i ? { ...s, self_reported_level: value } : s)))}</div><button type="button" className="remove-link" onClick={() => change("tech_skills", profile.tech_skills.filter((_, j) => j !== i))}>移除技能</button></div>)}<button type="button" className="add-row" onClick={() => change("tech_skills", [...profile.tech_skills, { skill: "", self_reported_level: "", evidence: "" }])}>＋ 添加工具技能</button></section><div className="form-grid">{list("competitions", "竞赛经历", "例如：大学生创新训练项目、数学建模竞赛")}{list("self_study", "课程与独立练习", "例如：学过Python入门，做过一个数据可视化练习")}</div></>}
+      {step === 3 && <><div className="form-grid">{list("hobbies", "日常兴趣", "例如：写作、编程、科普、组织活动")}{list("work_preferences", "喜欢的工作内容", "例如：分析数据、与人交流、动手实验")}</div>{list("career_priorities", "你看重什么", "例如：稳定性、工作自主性、社会价值、收入、生活平衡")}{text("motivation", "为什么想探索其他方向", "例如：更喜欢研究问题，希望了解医学与技术结合的工作。", true)}{text("self_evaluation", "如何评价自己", "例如：善于整理信息，愿意尝试新工具；公开表达还需要练习。", true)}{text("help_needed", "希望得到哪些帮助", "例如：了解真实岗位、找到入门项目、厘清升学路径。", true)}{list("interest_directions", "目前想了解的方向", "例如：医疗AI、生物医学工程；还没想好或继续医学也可以")}
+      <details className="form-section"><summary className="cursor-pointer font-medium">已有计划？补充时间与现实条件</summary><div className="form-grid mt-5">{number("transition_year", "目标年份", "例如：2028")}{number("weekly_hours", "每周可投入时间 / 小时", "例如：6")}{select("升学路径", profile.pathway, ["统考", "推免", "申请制", "未决定"], value => change("pathway", value as Profile["pathway"]))}{list("target_cities", "目标城市", "例如：上海、杭州")}</div><div className="mt-5">{text("constraints", "需要兼顾的现实条件", "例如：实习排班、时间安排、经济预算。", true)}</div></details></>}
+      </fieldset><div className="form-actions"><div className="flex gap-3">{step > 0 && <button type="button" className="button secondary" disabled={busy || loading} onClick={() => setStep(step - 1)}>上一步</button>}<button type="submit" className="button secondary" disabled={busy || loading}>{busy ? "保存中…" : "保存"}</button></div>{step < 3 ? <button type="button" className="button" disabled={busy || loading} onClick={() => setStep(step + 1)}>下一步 →</button> : <button type="button" className="button" disabled={busy || loading} onClick={() => void save(true)}>保存并开始兴趣测评 →</button>}</div>{message && <p role="status" className="inline-feedback">{message}</p>}
     </form>
-    <details className="mt-8 border-t border-slate-200 pt-5"><summary className="cursor-pointer text-sm text-red-800">清除演示草稿或删除个人访客</summary><div className="mt-4 flex flex-wrap gap-3"><button className="button secondary" onClick={() => { localStorage.removeItem(storageKey); setProfile(emptyProfile); setSimulation(false); setDirty(false); setMessage("本地合成草稿已清除。个人访客未删除。"); }}>清除本机合成草稿</button><Link className="button danger" href="/account">管理并删除当前访客</Link></div></details>
+    {tools && <details className="mt-8 text-sm"><summary>开发演示工具</summary><p className="mt-3">simulation：仅使用合成资料。真实个人资料通过上方私有保存。</p><button type="button" className="button secondary mt-3" onClick={() => { setProfile(structuredClone(simulationProfile)); setSimulation(true); setDirty(true); }}>载入合成示例</button></details>}
+    <p className="mt-6 text-xs muted"><Link href="/account">隐私与资料管理</Link></p></div>
   </div>;
 }

@@ -1,62 +1,50 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { documentSnapshot, snapshotSource, translatedQuestion, translation, type Questionnaire } from "@/lib/onet/translation";
-import { answerSchema } from "@/lib/onet/contracts";
+import { documentSnapshot, snapshotSource, translatedQuestion, type Questionnaire } from "@/lib/onet/translation";
 
 export function Assessment() {
   const [questionnaire, setQuestionnaire] = useState<Questionnaire | null>(null);
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [page, setPage] = useState(0);
   const [busy, setBusy] = useState(false);
-  const [message, setMessage] = useState("请先尝试加载官方题目。接口错误会如实显示。");
+  const [message, setMessage] = useState("");
   const [saved, setSaved] = useState(false);
+  const answeredCount = Object.keys(answers).length;
+  const currentQuestions = questionnaire?.questions.slice(page * 6, page * 6 + 6) ?? [];
+  const pageComplete = currentQuestions.length > 0 && currentQuestions.every(question => answers[question.index] !== undefined);
   async function load() {
-    setBusy(true); setSaved(false);
+    setBusy(true); setSaved(false); setMessage("");
     try {
       const response = await fetch("/api/onet/questions"); const data = await response.json();
       if (!response.ok) throw new Error(data.error?.message ?? "官方题目加载失败。");
-      setQuestionnaire(data); setAnswers({}); setPage(0); setMessage("已加载 O*NET 真实题目。中文译文为 LIMEN 待人工复核稿；未匹配原文的题目仅显示英文。");
-    } catch (error) { setMessage(error instanceof Error ? error.message : "网络请求失败。没有生成题目或分数。"); }
+      setQuestionnaire(data); setAnswers({}); setPage(0); setMessage("");
+    } catch (error) { setMessage(error instanceof Error ? error.message : "题目加载失败，请重新尝试。"); }
     finally { setBusy(false); }
-  }
-  function offline() { setQuestionnaire(documentSnapshot); setAnswers({}); setPage(0); setSaved(false); setMessage("已打开 2016 官方文档题目快照。答案仅作本机 simulation 交互演示，不提交计分，不生成官方结果。"); }
-  function saveDraft() {
-    if (!questionnaire) return;
-    if (questionnaire.source !== "official_document_snapshot") { setMessage("真实问卷答案只提交到私有访客服务；为保护隐私，不存入本机演示草稿。"); return; }
-    try { localStorage.setItem("limen:simulation:answers:v1", JSON.stringify({ simulation: true, translation_version: translation.version, answers })); setMessage("simulation 文档快照答题草稿已保存，仅用于本机演示。"); } catch { setMessage("本浏览器无法保存草稿。"); }
-  }
-  function restore() {
-    try {
-      const value = JSON.parse(localStorage.getItem("limen:simulation:answers:v1") ?? "null");
-      if (value?.simulation !== true || value.translation_version !== translation.version) throw new Error();
-      const entries = Object.entries(value.answers).map(([index, answer]) => ({ index: Number(index), answer }));
-      const schema = answerSchema.element.array().max(30); const parsed = schema.parse(entries);
-      if (new Set(parsed.map((a) => a.index)).size !== parsed.length) throw new Error();
-      setQuestionnaire(documentSnapshot); setAnswers(Object.fromEntries(parsed.map((a) => [a.index, a.answer]))); setPage(0); setMessage("已恢复 simulation 文档答题草稿，未生成兴趣分数。");
-    } catch { setMessage("没有可恢复的有效演示答题草稿。"); }
   }
   async function submit() {
     if (!questionnaire || questionnaire.source !== "onet_live") { setMessage("文档快照尚未核验与当前 API 的计分等效性，因此不能生成官方结果。"); return; }
     if (Object.keys(answers).length !== 30) { setMessage("请完成全部 30 题再提交。"); return; }
-    setBusy(true);
+    setBusy(true); setMessage("");
     try {
+      const login = await fetch("/api/session", { method: "POST" });
+      if (!login.ok) throw new Error("暂时无法保存测评，请稍后重试。");
       const response = await fetch("/api/onet/results", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ answers: Object.entries(answers).map(([index, answer]) => ({ index: Number(index), answer })), onet_version: questionnaire.onet_version, api_version: questionnaire.api_version }) });
       const data = await response.json(); if (!response.ok) throw new Error(data.error?.message ?? "结果未生成。");
-      setSaved(true); setMessage("官方六维结果和职业列表已保存到当前访客的私有记录，可进入初步画像。");
+      setSaved(true); setMessage("测评完成，结果已保存。");
     } catch (error) { setMessage(error instanceof Error ? error.message : "提交失败，未生成结果。"); }
     finally { setBusy(false); }
   }
-  return <main id="main" className="shell py-10"><div className="max-w-3xl"><p className="eyebrow">MINI INTEREST PROFILER · 30 ITEMS</p><h1 className="mt-2 text-3xl font-semibold">你愿意从事哪些工作活动？</h1><p className="mt-4 leading-7 muted">按喜好回答，暂不考虑自己是否会做、薪资和所需学历。兴趣不是能力测验，也不是报考资格判断。</p>
-    <div className="mt-5 flex flex-wrap gap-3"><button className="button" disabled={busy} onClick={load}>{busy ? "请求中…" : "加载官方问卷"}</button><button className="button secondary" onClick={offline}>文档快照交互演示</button><button className="button secondary" onClick={restore}>恢复演示草稿</button></div>
-    <p role="status" className="status notice">{message}</p>
-    {questionnaire && <><p className="mt-5 text-sm muted">来源：{questionnaire.source} · {questionnaire.onet_version}<br />中文：{translation.version} · 待人工复核；未作为已验证中文版心理测量工具。</p>
-      <div className="sticky top-0 z-10 mt-5 border-y bg-slate-50 py-4"><div className="flex justify-between text-sm"><span>已回答 {Object.keys(answers).length} / 30</span><span>第 {page + 1} / 5 组</span></div><progress aria-label="答题进度" className="mt-2 w-full" max={30} value={Object.keys(answers).length} /></div>
-      <div className="divide-y">{questionnaire.questions.slice(page * 6, page * 6 + 6).map((q) => <fieldset className="py-7" key={`${questionnaire.source}:${q.index}`}><legend className="float-left w-full font-medium">{q.index}. {translatedQuestion(q) ?? q.original_en}</legend><p className="clear-both pt-2 text-sm muted" lang="en">{q.original_en}</p><div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-5">{questionnaire.answer_options.map((option) => <label key={option.value} className={`flex cursor-pointer items-center gap-2 rounded border p-3 text-sm ${answers[q.index] === option.value ? "border-blue-600 bg-blue-50" : "border-slate-200 bg-white"}`}><input type="radio" name={`q${q.index}`} value={option.value} checked={answers[q.index] === option.value} onChange={() => { setAnswers((a) => ({ ...a, [q.index]: option.value })); setSaved(false); }} />{documentSnapshot.answer_options.find((item) => item.value === option.value)?.name ?? option.name}</label>)}</div></fieldset>)}</div>
-      <div className="flex flex-wrap gap-3 border-t pt-5"><button className="button secondary" disabled={page === 0} onClick={() => setPage(page - 1)}>上一组</button>{page < 4 ? <button className="button" onClick={() => setPage(page + 1)}>下一组</button> : <button className="button" disabled={busy || questionnaire.source !== "onet_live"} onClick={submit}>提交官方计分并保存</button>}{questionnaire.source === "official_document_snapshot" && <button className="button secondary" onClick={saveDraft}>保存演示答题草稿</button>}</div>
+  return <main id="main" className="shell py-10"><div className="mx-auto max-w-3xl"><p className="eyebrow">兴趣测评 · O*NET MINI-IP</p><h1 className="mt-2 text-3xl font-semibold">发现你愿意投入的工作</h1><p className="mt-4 leading-7 muted">想象自己正在做这些活动，按喜欢程度选择。暂时放下薪资、学历与是否擅长的考虑。</p>
+    {!questionnaire && <section className="mt-8 rounded-xl border bg-white p-7"><h2 className="font-semibold text-lg">O*NET Mini Interest Profiler</h2><p className="mt-3 text-sm leading-7 muted">30 道职业活动题 · 6 类兴趣维度<br />按第一感觉选择你喜欢或不喜欢的程度。</p><button className="button mt-6" disabled={busy} onClick={load}>{busy ? "正在加载…" : "开始测评 →"}</button></section>}
+    {message && <p role="status" className="inline-feedback mt-5">{message}</p>}
+    {questionnaire && <>
+      <div className="sticky top-0 z-10 mt-5 border-y bg-slate-50 py-4"><div className="flex justify-between text-sm"><span>已回答 {answeredCount} / 30</span><span>第 {page + 1} / 5 组</span></div><progress aria-label="答题进度" className="mt-2 w-full" max={30} value={answeredCount} /></div>
+      <div className="divide-y">{currentQuestions.map((q) => <fieldset className="py-7" disabled={busy} key={`${questionnaire.source}:${q.index}`}><legend className="float-left w-full font-medium">{q.index}. {translatedQuestion(q) ?? q.original_en}</legend><p className="clear-both pt-2 text-sm muted" lang="en">{q.original_en}</p><div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-5">{questionnaire.answer_options.map((option) => <label key={option.value} className={`flex cursor-pointer items-center gap-2 rounded border p-3 text-sm transition-colors focus-within:ring-2 focus-within:ring-blue-600 ${answers[q.index] === option.value ? "border-blue-600 bg-blue-50 text-blue-900" : "border-slate-200 bg-white hover:border-blue-300"}`}><input type="radio" name={`q${q.index}`} value={option.value} checked={answers[q.index] === option.value} onChange={() => { setAnswers((a) => ({ ...a, [q.index]: option.value })); setSaved(false); setMessage(""); }} />{documentSnapshot.answer_options.find((item) => item.value === option.value)?.name ?? option.name}</label>)}</div></fieldset>)}</div>
+      <div className="form-actions"><button className="button secondary" disabled={page === 0 || busy} onClick={() => setPage(page - 1)}>上一组</button><div className="flex flex-wrap items-center gap-3">{!pageComplete && !saved && <span className="text-xs muted">完成本组 6 题后继续</span>}{page < 4 ? <button className="button" disabled={!pageComplete || busy} onClick={() => setPage(page + 1)}>下一组 →</button> : <button className="button" disabled={busy || saved || answeredCount !== 30 || questionnaire.source !== "onet_live"} onClick={submit}>{busy ? "正在生成结果…" : saved ? "已完成测评" : "完成测评 →"}</button>}</div></div>
       {saved && <Link href="/report/initial" className="button mt-5">查看初步画像 →</Link>}
-      <details className="mt-7 text-sm"><summary>题目与译文来源</summary><p className="mt-3 leading-7"><a href={snapshotSource} target="_blank" rel="noreferrer">O*NET Mini-IP 开发报告，2016，附录 A</a>。文档快照不是 API 返回；30 个题号与英文活动原样保留，中文由 LIMEN 独立翻译。真实问卷逐项校对英文与维度后才附中文。</p></details>
+      <details className="mt-7 text-sm"><summary>题目与译文来源</summary><p className="mt-3 leading-7"><a href={snapshotSource} target="_blank" rel="noreferrer">O*NET Mini-IP 开发报告，2016，附录 A</a>。采用 O*NET Mini-IP，中文为 LIMEN 独立译稿，尚待人工复核。题号、英文原文与维度保持关联。</p></details>
     </>}
-    <div className="mt-8 flex flex-wrap gap-5 text-sm"><Link href="/profile">返回个人画像</Link><Link href="/report/initial">查看结果状态</Link><Link href="/studio/ecg">先体验职业工作台</Link></div>
+    <div className="mt-8 flex flex-wrap gap-5 text-sm"><Link href="/profile">← 返回个人画像</Link></div>
   </div></main>;
 }
