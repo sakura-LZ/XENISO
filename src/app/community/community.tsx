@@ -3,6 +3,19 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { type CommunityPost, postSchema } from "@/lib/community";
 
 type PostKind = "help" | "experience";
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+async function readResponse(response: Response): Promise<any> {
+  const text = await response.text().catch(() => "");
+  if (!text) return {};
+  try {
+    const data: unknown = JSON.parse(text);
+    return data && typeof data === "object" ? data : {};
+  } catch {
+    if (!response.ok) throw new Error("服务暂时不可用，请稍后重试。");
+    throw new Error("服务返回了无法识别的内容，请稍后重试。");
+  }
+}
 type AuthMode = "link" | "login";
 
 export function Community() {
@@ -22,16 +35,17 @@ export function Community() {
   const [busy, setBusy] = useState(false);
   const [reportId, setReportId] = useState("");
   const [reason, setReason] = useState("privacy");
+  const [query, setQuery] = useState("");
 
   const load = useCallback(async () => {
     try {
       const session = await fetch("/api/session");
-      const current = await session.json();
+      const current = await readResponse(session);
       const signedIn = !!current.user && !current.user.anonymous;
       setMember(signedIn);
       if (!signedIn) return;
       const response = await fetch("/api/community");
-      const data = await response.json();
+      const data = await readResponse(response);
       if (!response.ok) throw new Error(data.error?.message ?? "社区暂时无法加载。");
       setPosts(data.posts ?? []);
     } catch (error) {
@@ -46,7 +60,7 @@ export function Community() {
     return () => clearTimeout(timer);
   }, [load]);
 
-  const visiblePosts = useMemo(() => posts.filter(post => filter === "all" || post.kind === filter), [filter, posts]);
+  const visiblePosts = useMemo(() => posts.filter(post => (filter === "all" || post.kind === filter) && `${post.title} ${post.body}`.toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())), [filter, posts, query]);
 
   async function auth(resend = false) {
     setBusy(true);
@@ -59,7 +73,7 @@ export function Community() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, mode: authMode, ...(sent && !resend ? { token } : {}) }),
       });
-      const data = await response.json();
+      const data = await readResponse(response);
       if (!response.ok) throw new Error(data.error?.message ?? "邮箱验证未完成。");
       if (data.verified) {
         setMessage("邮箱验证完成。");
@@ -84,7 +98,7 @@ export function Community() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(input),
       });
-      const data = await response.json();
+      const data = await readResponse(response);
       if (!response.ok) throw new Error(data.error?.message ?? "操作未完成，请重试。");
       await load();
       return true;
@@ -96,11 +110,11 @@ export function Community() {
     }
   }
 
-  return <main id="main" className="shell py-10">
-    <header className="mx-auto max-w-5xl">
-      <p className="eyebrow">LIMEN 社区</p>
-      <h1 className="mt-2 text-3xl font-semibold">把问题带来，也把经验留下</h1>
-      <p className="mt-3 leading-7 muted">交流跨学科探索中的真实问题与实践。</p>
+  return <main id="main" className="shell xn-community-page py-10">
+    <header className="xn-community-hero">
+      <h1>交流社区</h1>
+      <label className="xn-community-search"><span>查找话题</span><input type="search" value={query} maxLength={160} placeholder="搜索问题、方向或实践经验" onChange={event=>setQuery(event.target.value)} aria-label="搜索问题" disabled={!member} /></label>
+      {!member && !checkingSession && <p className="xn-search-note">登录后可搜索社区帖子。</p>}
     </header>
     {message && <p role="status" className="inline-feedback mx-auto mt-5 max-w-5xl">{message}</p>}
 
@@ -130,12 +144,12 @@ export function Community() {
     </section> : <div className="mx-auto mt-8 grid max-w-5xl gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(300px,0.82fr)] lg:items-start">
       <section className="min-w-0 rounded-xl border border-slate-200 bg-white p-5 md:p-7">
         <div className="flex flex-wrap items-end justify-between gap-4 border-b border-slate-200 pb-5">
-          <div><h2 className="text-xl font-semibold">社区交流</h2><p className="mt-1 text-sm muted">查看他人的问题与实践经验</p></div>
+          <h2 className="text-xl font-semibold">社区交流</h2>
           <div className="choice-row" aria-label="筛选帖子">
             {([["all", "全部"], ["help", "求助"], ["experience", "经验"]] as const).map(([value, label]) => <button className="choice" aria-pressed={filter === value} key={value} onClick={() => setFilter(value)}>{label}</button>)}
           </div>
         </div>
-        {!visiblePosts.length ? <div className="py-12 text-center"><p className="font-medium">{posts.length ? "这个分类还没有内容" : "社区还没有帖子"}</p><p className="mt-2 text-sm muted">发布你的问题或探索经历，开启交流。</p></div> : <div className="divide-y divide-slate-200">
+        {!visiblePosts.length ? <div className="py-12 text-center"><p className="font-medium">{posts.length ? "这个分类还没有内容" : "社区还没有帖子"}</p></div> : <div className="divide-y divide-slate-200">
           {visiblePosts.map(post => <article className="py-6 first:pt-5" key={post.id}>
             <div className="flex flex-wrap items-center gap-2 text-xs muted"><span className="rounded-full bg-slate-100 px-2.5 py-1 font-medium text-slate-700">{post.kind === "help" ? "求助" : "经验分享"}</span><span>匿名探索者</span><span aria-hidden="true">·</span><time dateTime={post.created_at}>{new Date(post.created_at).toLocaleDateString("zh-CN")}</time>{post.mine && <span className="text-blue-700">· 我的帖子</span>}</div>
             <h3 className="mt-3 text-lg font-semibold leading-7">{post.title}</h3>
@@ -152,7 +166,7 @@ export function Community() {
       </section>
 
       <section className="min-w-0 rounded-xl border border-slate-200 bg-white p-5 md:p-7 lg:sticky lg:top-6">
-        <div className="border-b border-slate-200 pb-5"><p className="eyebrow">分享与求助</p><h2 className="mt-1 text-xl font-semibold">发起交流</h2></div>
+        <div className="border-b border-slate-200 pb-5"><h2 className="text-xl font-semibold">发起交流</h2></div>
         <div className="mt-5 grid gap-4">
           <label className="form-label">交流类型
             <select className="field" value={kind} onChange={e => setKind(e.target.value as PostKind)}><option value="help">我需要帮助</option><option value="experience">我想分享经验</option></select>

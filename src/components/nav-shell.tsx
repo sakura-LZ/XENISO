@@ -1,29 +1,29 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
-const journey = [["/profile", "个人画像"], ["/assessment", "兴趣测评"], ["/report/initial", "初步画像"], ["/experience", "职业体验"], ["/report/plan", "行动规划"]] as const;
-const resources = [["/explore", "方向手册"], ["/community", "交流社区"]] as const;
+const journey = [["/profile", "个人画像"], ["/report/initial", "初步评价"], ["/experience", "职业体验"], ["/report/plan", "行动规划"]] as const;
+const destinations = [["/", "首页"], ["/profile", "异域探索"], ["/explore", "信息文库"], ["/community", "交流社区"]] as const;
+function Menu({ pathname, exploring }: { pathname: string; exploring: boolean }) {
+  const [open, setOpen] = useState(false);
+  const button = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    const escape = (event: KeyboardEvent) => { if (event.key === "Escape") { setOpen(false); button.current?.focus(); } };
+    document.addEventListener("keydown", escape);
+    return () => document.removeEventListener("keydown", escape);
+  }, [open]);
+  return <header className="xn-header"><div className="xn-header-inner">
+    <Link href="/" className="xn-brand" aria-label="XENISO 异域同构首页"><Image src="/brand/xeniso-logo.webp" alt="XENISO 异域同构" width={1210} height={340} priority className="xn-logo-img" sizes="(max-width: 760px) 190px, 240px" /></Link>
+    <nav id="primary-navigation" className={`xn-primary-nav ${open ? "is-open" : ""}`} aria-label="主导航">{destinations.map(([href, title]) => <Link href={href} key={href} onClick={() => setOpen(false)} aria-current={(href === "/profile" ? exploring : href === "/" ? pathname === "/" : pathname.startsWith(href)) ? "page" : undefined}>{title}</Link>)}</nav>
+    <div className="xn-header-tools"><Link href="/account">我的资料</Link><button ref={button} type="button" className="xn-menu-button" aria-expanded={open} aria-controls="primary-navigation" aria-label={open ? "收起导航" : "展开导航"} onClick={() => setOpen(!open)}><span /><span /></button></div>
+  </div></header>;
+}
 export function NavShell() {
   const pathname = usePathname();
-  const navigation = useRef<HTMLElement>(null);
-  useEffect(() => {
-    const mobile = window.matchMedia("(max-width: 760px)");
-    const revealCurrentPage = () => {
-      const nav = navigation.current;
-      const selected = nav?.querySelector<HTMLElement>('[aria-current="page"]');
-      if (!mobile.matches || !nav || !selected) return;
-      const item = selected.getBoundingClientRect();
-      nav.scrollLeft += item.left - nav.getBoundingClientRect().left - (nav.clientWidth - item.width) / 2;
-    };
-    revealCurrentPage();
-    mobile.addEventListener("change", revealCurrentPage);
-    return () => mobile.removeEventListener("change", revealCurrentPage);
-  }, [pathname]);
-  return <nav ref={navigation} aria-label="主要导航" className="app-navigation">
-    <div className="nav-section"><p className="nav-label">我的探索</p>{journey.map(([href, title], index) => <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined}><span className="nav-number" aria-hidden="true">0{index + 1}</span><span>{title}</span><span className="nav-marker" aria-hidden="true">›</span></Link>)}</div>
-    <div className="nav-section"><p className="nav-label">探索资源</p>{resources.map(([href, title]) => <Link key={href} href={href} aria-current={pathname === href ? "page" : undefined}><span>{title}</span><span className="nav-marker" aria-hidden="true">↗</span></Link>)}</div>
-    <Link href="/account" className="nav-account" aria-current={pathname === "/account" ? "page" : undefined}>隐私与资料管理</Link>
-  </nav>;
+  const current = pathname.startsWith("/profile") || pathname === "/assessment" ? "/profile" : pathname.startsWith("/experience") ? "/experience" : pathname;
+  const exploring = journey.some(([href]) => href === current);
+  return <><Menu key={pathname} pathname={pathname} exploring={exploring} />{exploring && <nav className="xn-journey" aria-label="探索进度"><ol>{journey.map(([href, title], index) => <li key={href}><Link href={href} aria-current={current === href ? "step" : undefined}><span aria-hidden="true">0{index + 1}</span>{title}</Link></li>)}</ol></nav>}</>;
 }

@@ -9,7 +9,7 @@ async function check(name: string, fn: () => Promise<void>) { await fn(); passed
 await check("home and setup pages", async () => {
   const home = await fetch(origin);
   assert.equal(home.status, 200);
-  assert.match(await home.text(), /LIMEN/);
+  assert.match(await home.text(), /XENISO/);
   const setup = await fetch(`${origin}/setup`);
   assert.equal(setup.status, 200);
   const setupText = await setup.text();
@@ -47,7 +47,7 @@ await check("unauthenticated private APIs rejected and uncached", async () => {
   assert.equal((await session.json()).user, null);
 });
 await check("all user-facing routes respond and keep their distinct purpose", async () => {
-  for (const [path, text] of [["/profile", "认识现在的你"], ["/assessment", "发现你愿意投入的工作"], ["/explore", "方向手册"], ["/experience", "做一次具体工作"], ["/report/initial", "你的探索起点"], ["/report/plan", "让探索落到下一步行动"], ["/community", "把问题带来"], ["/account", "删除"]]) {
+  for (const [path, text] of [["/profile", "个人画像"], ["/profile/basics", "基本情况"], ["/assessment", "职业兴趣问卷"], ["/explore", "信息文库"], ["/experience", "职业体验"], ["/report/initial", "初步评价"], ["/report/plan", "行动规划"], ["/community", "交流社区"], ["/account", "删除"]]) {
     const response = await fetch(`${origin}${path}`); assert.equal(response.status, 200); assert.ok((await response.text()).includes(text));
   }
   const legacy = await fetch(`${origin}/studio/ecg`, { redirect: "manual" });

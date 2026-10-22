@@ -8,8 +8,8 @@ const missingLabels: Record<string, string> = { personal_eligibility: "个人资
 Object.assign(missingLabels, { application_deadline: "招聘截止日", education: "学历要求", knowledge_graph_requirements: "知识图谱岗位要求", medicine_major_eligibility: "医学专业是否适用" });
 type Result = { hits: KnowledgeHit[]; total: number; has_more: boolean; facets: { institutions: string[]; admission_years: number[] }; coverage: { records: number; sources: number; by_category: Record<string, number> }; missing_categories: string[] };
 
-export function OfficialDossier({ directionId, medicalTopic, medicalDepartment }: { directionId?: string; medicalTopic?: string; medicalDepartment?: string }) {
-  const [category, setCategory] = useState("");
+export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, initialCategory = "" }: { directionId?: string; medicalTopic?: string; medicalDepartment?: string; initialCategory?: string }) {
+  const [category, setCategory] = useState(initialCategory);
   const [school, setSchool] = useState("");
   const [year, setYear] = useState("");
   const [draft, setDraft] = useState("");
@@ -38,12 +38,12 @@ export function OfficialDossier({ directionId, medicalTopic, medicalDepartment }
   function exportResult() {
     if (!result) return;
     const text = result.hits.map(hit => `## ${hit.title}\n\n${hit.facts.map(fact => `> ${fact.quote}`).join("\n\n")}\n\n适用范围：${hit.applicability}\n${hit.context?.statistic_scope ?? ""}\n来源：${hit.source.organization} ${hit.source.url}\n发布：${hit.source.published_at ?? "未公开"}；采集：${hit.collected_at}\n缺失：${hit.missing_fields.map(field => missingLabels[field] ?? "其他待核实信息").join("、")}`).join("\n\n");
-    const url = URL.createObjectURL(new Blob([`# LIMEN 官方资料摘录（当前结果页）\n\n${text}`], { type: "text/markdown;charset=utf-8" }));
-    const link = document.createElement("a"); link.href = url; link.download = "LIMEN-官方资料摘录.md"; link.click(); URL.revokeObjectURL(url);
+    const url = URL.createObjectURL(new Blob([`# LIMEN 来源资料摘录（当前结果页）\n\n${text}`], { type: "text/markdown;charset=utf-8" }));
+    const link = document.createElement("a"); link.href = url; link.download = "LIMEN-来源资料摘录.md"; link.click(); URL.revokeObjectURL(url);
   }
   return <section className="mt-7 border-y border-slate-200 py-6" aria-labelledby="official-dossier">
-    <div className="flex flex-wrap items-center justify-between gap-3"><h3 id="official-dossier" className="text-xl font-semibold">中国官方资料</h3><button className="button secondary text-sm" onClick={exportResult} disabled={!result?.hits.length}>导出当前资料页</button></div>
-    <p className="mt-2 text-sm leading-7 muted">正文引文取自官方来源。院校、年份和统计对象分别核对；标题与方向关联由 LIMEN 编辑。</p>
+    <div className="flex flex-wrap items-center justify-between gap-3"><h3 id="official-dossier" className="text-xl font-semibold">来源资料</h3><button className="button secondary text-sm" onClick={exportResult} disabled={!result?.hits.length}>导出当前资料页</button></div>
+    <details className="mt-3 text-xs muted"><summary>资料来源与适用范围</summary><p className="mt-2 leading-7">引文摘自所列来源原文；院校、年份、统计对象分别核对。标题与方向关联为编辑索引，非来源原文。</p></details>
     <div className="mt-4 flex flex-wrap gap-2" aria-label="资料分类">{[["", "全部资料"], ...Object.entries(labels)].map(([value, label]) => <button key={value} aria-pressed={category === value} className={`rounded-md border px-3 py-2 text-sm ${category === value ? "border-blue-600 bg-blue-50 text-blue-900" : "border-slate-200"}`} onClick={() => change(() => setCategory(value))}>{label}{value && result?.coverage ? ` ${result.coverage.by_category[value] ?? 0}` : ""}</button>)}</div>
     <form className="mt-4 grid gap-3 sm:grid-cols-2" onSubmit={event => { event.preventDefault(); change(() => setQuery(draft)); }}>
       <label className="text-sm">检索原文<input className="mt-1 w-full rounded border border-slate-300 px-3 py-2" value={draft} maxLength={160} placeholder="如 408、硕士、Python" onChange={event => setDraft(event.target.value)} /></label>
@@ -52,15 +52,15 @@ export function OfficialDossier({ directionId, medicalTopic, medicalDepartment }
       <div className="flex items-end gap-3"><button className="button" type="submit">检索</button><button type="button" className="button secondary" onClick={() => change(() => { setDraft(""); setQuery(""); setSchool(""); setYear(""); setCategory(""); })}>清除筛选</button></div>
     </form>
     <label className="mt-4 flex items-center gap-2 text-sm"><input type="checkbox" checked={historical} onChange={event => change(() => setHistorical(event.target.checked))} />包含往年 / 待复查资料（仅作参考）</label>
-    <div role="status" className="mt-4 text-sm muted">{status === "loading" ? "正在读取官方资料…" : status === "error" ? "资料暂时读取失败，请重试。" : `筛选命中 ${result?.total ?? 0} 条；本主题收录 ${result?.coverage?.records ?? 0} 条资料、${result?.coverage?.sources ?? 0} 个独立来源。共享来源只计一次。`}</div>
+    <div role="status" className="mt-4 text-sm muted">{status === "loading" ? "正在读取来源资料…" : status === "error" ? "资料暂时读取失败，请重试。" : `命中 ${result?.total ?? 0} 条；本主题共 ${result?.coverage?.records ?? 0} 条资料、${result?.coverage?.sources ?? 0} 个独立来源。`}</div>
     {status === "error" && <button className="button secondary mt-3" onClick={() => { setStatus("loading"); setRetry(retry + 1); }}>重新读取</button>}
     {status === "ready" && result?.missing_categories.length ? <p className="mt-3 text-sm leading-7 text-amber-800">尚缺：{result.missing_categories.map(value => labels[value]).join("、")}。未用生成内容补齐。</p> : null}
-    {status === "ready" && !result?.hits.length && <p className="mt-4 rounded border border-slate-200 p-4 text-sm leading-7">当前条件没有核验资料。可以清除筛选，或查看往年参考；没有命中不代表没有该专业或岗位。</p>}
+    {status === "ready" && !result?.hits.length && <p className="mt-4 rounded border border-slate-200 p-4 text-sm leading-7">当前条件无核验资料；未命中不代表不存在该专业或岗位。</p>}
     <div className="mt-5 divide-y divide-slate-200">{result?.hits.map(hit => <details key={hit.citation} className="py-4" open={category !== "" || query !== ""}>
       <summary className="cursor-pointer leading-7"><span className="mr-2 text-xs muted">{labels[hit.category]}</span><span className="font-medium">{hit.title}</span>{hit.historical && <span className="ml-2 text-xs text-amber-800">往年 / 待复查</span>}<p className="mt-1 text-xs muted">{[hit.context?.institution, hit.context?.college, hit.context?.program, hit.context?.admission_year ? `${hit.context.admission_year}年招生` : ""].filter(Boolean).join(" · ") || hit.source.organization}</p></summary>
       <div className="mt-4 space-y-4 text-sm leading-7">
         {hit.context?.statistic_scope && <p className="rounded border border-amber-200 bg-amber-50 p-3">统计口径：{hit.context.statistic_scope}</p>}
-        {hit.facts.map((fact, index) => <div key={`${fact.field}-${index}`}><p className="font-medium">{fields[fact.field] ?? "官方引文"}</p><blockquote className="mt-1 whitespace-pre-wrap border-l-2 border-blue-200 pl-4 text-slate-700">{fact.quote}</blockquote></div>)}
+        {hit.facts.map((fact, index) => <div key={`${fact.field}-${index}`}><p className="font-medium">{fields[fact.field] ?? "来源引文"}</p><blockquote className="mt-1 whitespace-pre-wrap border-l-2 border-blue-200 pl-4 text-slate-700">{fact.quote}</blockquote></div>)}
         <p className="muted">适用范围：{hit.applicability}</p>
         {hit.missing_fields.length > 0 && <p className="text-amber-800">未取得：{hit.missing_fields.map(field => missingLabels[field] ?? "其他待核实信息").join("、")}</p>}
         <div className="border-t border-slate-100 pt-3"><a className="font-medium underline break-words" href={hit.source.url} target="_blank" rel="noreferrer">{hit.source.organization} · 查看原始资料 ↗</a><p className="mt-1 text-xs muted">发布：{hit.source.published_at ?? "未公开"} · 采集：{hit.collected_at.slice(0, 10)} · 核实：{hit.verified_at.slice(0, 10)}（原文片段匹配）</p><p className="text-xs muted">{hit.source.publication_date_note} {hit.context?.evidence_locator}</p></div>

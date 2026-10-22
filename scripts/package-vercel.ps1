@@ -22,11 +22,21 @@ $files = @(
     'docs/SUPABASE_SETUP.md', 'docs/LOCAL_SETUP.md', 'docs/ISSUES.md',
     'docs/V4_PRODUCT_DESIGN.md', 'docs/DEMO.md', 'CLAUDE_COORDINATION.md'
 )
-foreach ($directory in @('src', 'data', 'scripts', 'tests', 'supabase/migrations')) {
+foreach ($directory in @('src', 'data', 'scripts', 'tests', 'supabase/migrations', 'public/brand')) {
     $directoryPath = Join-Path $projectRoot $directory
     foreach ($file in Get-ChildItem -LiteralPath $directoryPath -Recurse -File) {
         $files += $file.FullName.Substring($projectRoot.Length + 1).Replace('\', '/')
     }
+}
+# The migrated pages retain these independent illustrations at their existing URLs.
+# Reference HTML and generation artifacts are not part of the running application.
+foreach ($asset in @(
+    'xeniso-opus-profile.webp', 'xeniso-opus-evaluation.webp',
+    'xeniso-opus-experience.webp', 'xeniso-opus-planning.webp',
+    'xeniso-direct-basics.webp', 'xeniso-direct-interests.webp',
+    'xeniso-direct-work.webp', 'xeniso-direct-interview.webp'
+)) {
+    $files += "public/previews/assets/$asset"
 }
 if (Test-Path -LiteralPath (Join-Path $projectRoot 'docs/testing/VERCEL-package.latest.md')) {
     $files += 'docs/testing/VERCEL-package.latest.md'
