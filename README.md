@@ -6,8 +6,8 @@ Different Fields. Shared Potential.
 
 ## 在线体验
 
-- [可运行 DEMO](https://xeniso-platform.vercel.app)：当前公开生产版本，新版品牌界面仍在逐页整合。
-- [新版功能测试站](https://limen-br99jfa0q-sakura-lzs-projects.vercel.app)：包含后续功能，需要 Vercel 项目访问权限。
+- [可运行 DEMO](https://xeniso-platform.vercel.app)：已发布新版 XENISO Next.js 页面，包含画像、问卷、信息文库、职业体验、报告与社区入口。
+- [此前功能测试站](https://limen-br99jfa0q-sakura-lzs-projects.vercel.app)：旧功能预览，需要 Vercel 项目访问权限；当前体验请使用正式 DEMO。
 - `public/previews/`：持续设计中的独立界面原型，与正式 Next.js 页面分开。原型存在不代表其中全部业务已完成真实接口验收。
 
 仓库会继续更新；正式网址与工作区可能处于不同发布阶段。最新边界见 [当前状态](docs/CURRENT_STATUS.md)。

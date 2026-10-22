@@ -1,0 +1,342 @@
+{
+  "records": [
+    {
+      "width": 1440,
+      "route": "/",
+      "overflow": false,
+      "h1": "下一站，是你。",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 764,
+      "route": "/profile",
+      "overflow": false,
+      "h1": "个人画像",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 1440,
+      "route": "/profile/basics",
+      "overflow": false,
+      "h1": "基本情况",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 1440,
+      "route": "/assessment",
+      "overflow": false,
+      "h1": "职业兴趣问卷",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 1440,
+      "route": "/report/initial",
+      "overflow": false,
+      "h1": "初步评价",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 1440,
+      "route": "/experience",
+      "overflow": false,
+      "h1": "职业体验",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 1440,
+      "route": "/report/plan",
+      "overflow": false,
+      "h1": "行动规划",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 1440,
+      "route": "/explore",
+      "overflow": false,
+      "h1": "信息文库",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 6
+    },
+    {
+      "width": 1440,
+      "route": "/community",
+      "overflow": false,
+      "h1": "交流社区",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 1440,
+      "route": "/account",
+      "overflow": false,
+      "h1": "管理当前访客",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 820,
+      "route": "/",
+      "overflow": false,
+      "h1": "下一站，是你。",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 820,
+      "route": "/profile",
+      "overflow": false,
+      "h1": "个人画像",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 820,
+      "route": "/profile/basics",
+      "overflow": false,
+      "h1": "基本情况",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 820,
+      "route": "/assessment",
+      "overflow": false,
+      "h1": "职业兴趣问卷",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 820,
+      "route": "/report/initial",
+      "overflow": false,
+      "h1": "初步评价",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 820,
+      "route": "/experience",
+      "overflow": false,
+      "h1": "职业体验",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 820,
+      "route": "/report/plan",
+      "overflow": false,
+      "h1": "行动规划",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 820,
+      "route": "/explore",
+      "overflow": false,
+      "h1": "信息文库",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 6
+    },
+    {
+      "width": 820,
+      "route": "/community",
+      "overflow": false,
+      "h1": "交流社区",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 820,
+      "route": "/account",
+      "overflow": false,
+      "h1": "管理当前访客",
+      "body": 18,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "overflow": false,
+      "h1": "下一站，是你。",
+      "body": 17,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 390,
+      "route": "/profile",
+      "overflow": false,
+      "h1": "个人画像",
+      "body": 17,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 390,
+      "route": "/profile/basics",
+      "overflow": false,
+      "h1": "基本情况",
+      "body": 17,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 390,
+      "route": "/assessment",
+      "overflow": false,
+      "h1": "职业兴趣问卷",
+      "body": 17,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 390,
+      "route": "/report/initial",
+      "overflow": false,
+      "h1": "初步评价",
+      "body": 17,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 390,
+      "route": "/experience",
+      "overflow": false,
+      "h1": "职业体验",
+      "body": 17,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 390,
+      "route": "/report/plan",
+      "overflow": false,
+      "h1": "行动规划",
+      "body": 17,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 390,
+      "route": "/explore",
+      "overflow": false,
+      "h1": "信息文库",
+      "body": 17,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 6
+    },
+    {
+      "width": 390,
+      "route": "/community",
+      "overflow": false,
+      "h1": "交流社区",
+      "body": 17,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    },
+    {
+      "width": 390,
+      "route": "/account",
+      "overflow": false,
+      "h1": "管理当前访客",
+      "body": 17,
+      "broken": [],
+      "logo": true,
+      "background": "rgb(247, 249, 251)",
+      "chapters": 0
+    }
+  ],
+  "errors": [],
+  "interactions": {
+    "chapter": true,
+    "medicine": true,
+    "carousel": true,
+    "work": true,
+    "reduced": true
+  }
+}

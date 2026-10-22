@@ -1,0 +1,185 @@
+{
+  "checked_at": "2026-10-22T11:26:46.701Z",
+  "origin": "https://xeniso-platform.vercel.app",
+  "authentication": "public requests without cookies or Vercel bypass",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/profile",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/profile/basics",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/assessment",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/explore",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/experience",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/report/initial",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/report/plan",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/community",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/account",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/brand/xeniso-logo.webp",
+      "status": 200,
+      "type": "image/webp",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/brand/limen-bridge-stylized-v6.webp",
+      "status": 200,
+      "type": "image/webp",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/previews/assets/xeniso-opus-profile.webp",
+      "status": 200,
+      "type": "image/webp",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/previews/assets/xeniso-opus-evaluation.webp",
+      "status": 200,
+      "type": "image/webp",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/previews/assets/xeniso-opus-experience.webp",
+      "status": 200,
+      "type": "image/webp",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/previews/assets/xeniso-opus-planning.webp",
+      "status": 200,
+      "type": "image/webp",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/previews/assets/xeniso-direct-basics.webp",
+      "status": 200,
+      "type": "image/webp",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/previews/assets/xeniso-direct-interests.webp",
+      "status": 200,
+      "type": "image/webp",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/previews/assets/xeniso-direct-work.webp",
+      "status": 200,
+      "type": "image/webp",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/previews/assets/xeniso-direct-interview.webp",
+      "status": 200,
+      "type": "image/webp",
+      "brand": true,
+      "passed": true
+    },
+    {
+      "path": "/api/profile",
+      "status": 401,
+      "passed": true
+    },
+    {
+      "path": "/api/reports?kind=R1",
+      "status": 401,
+      "passed": true
+    },
+    {
+      "path": "/api/community",
+      "status": 401,
+      "passed": true
+    },
+    {
+      "path": "/previews/xeniso-pathways.html",
+      "status": 404,
+      "passed": true
+    },
+    {
+      "path": "/api/knowledge?limit=5",
+      "status": 200,
+      "source": "supabase_live",
+      "count": 5,
+      "passed": true
+    },
+    {
+      "path": "/api/onet/questions",
+      "status": 200,
+      "source": "onet_live",
+      "count": 30,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "limitations": [
+    "No new live personal reports, avatar audio/ASR or community OTP verification in these public checks"
+  ]
+}

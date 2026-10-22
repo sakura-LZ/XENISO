@@ -1,5 +1,9 @@
 # LIMEN 续建交接（2026-10-21，优先于旧进度历史）
 
+## 新版正式发布覆盖（2026-10-22）
+
+GitHub `main` 应用提交 `49910b7`；Vercel `xeniso` 部署 `dpl_9VpCUquLMayc2to4JERQjkyhybPm` 已 promote，https://xeniso-platform.vercel.app 已切换并核验 READY。Production 四组人物配置已同步。下文旧“仅Preview/未部署/正式域名旧版”均为历史。测试、原网络失败与合成账号清理见 [发布记录](testing/xeniso-release-20261022.md)。未重迁移数据库，音视频/OTP仍未验收。
+
 ## 最新部署交接（2026-10-22）
 
 功能已发独立Preview：https://limen-br99jfa0q-sakura-lzs-projects.vercel.app ，READY；四组数字人配置只补Preview，原正式域名/Production配置保持原版。知识库/E1/Match不再仅本机，尚未推广Production。绿色HTML未发布或整合；UI后续在同项目接已有API。共享Supabase，无新迁移/导入。lint、130单测、云端build、30项线上检查通过，合成访客已删除；未重测LLM/O*NET真实生成、供应商音视频或OTP。见[验收](testing/backend-preview.latest.md)与[后续接入](BACKEND_PREVIEW_HANDOFF.md)。

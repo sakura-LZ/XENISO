@@ -1,3 +1,25 @@
+## 2026-10-22 · 新版 Next.js 正式部署完成
+
+GitHub `main` 应用提交 `49910b7` 已推送；Vercel `sakura-lzs-projects/xeniso` 部署 `dpl_9VpCUquLMayc2to4JERQjkyhybPm` 已成功 promote，https://xeniso-platform.vercel.app 已指向新版，READY。Production 四组数字人配置已同步，未改数据库结构。独立 HTML 原型仍不是正式入口。
+
+续接本轮 lint、136/136 单测、隔离 build、本机5/5 smoke、客户端扫描54文件通过，保留多lockfile警告。正式域名26项无cookie/无Vercel绕过公开请求通过，包含真实知识库与O*NET题目。发布前真实API链业务检查全部通过，最后一个合成访客删除请求网络中断；已核实空测试账号并精确补清理，数据库复查测试窗口遗留0。原失败JSON保留，不冒称该轮全量通过。线上巡检及证据见 [发布记录](testing/xeniso-release-20261022.md)。音视频/ASR、口型、社区OTP与真实发帖未验收。
+
+## 2026-10-22 · Opus 字号、规划生成与用户视频
+
+同一 `public/previews/xeniso-opus-new.html` 已由 claude-opus-5-5 直接修改：正文桌面18px/手机17px，临床工作名称，本站规则生成行动规划并独立导出，条件改变后重新生成，可见页面/滚动/选择动效。社区使用用户8秒视频，实测循环播放、暂停、减少动态封面可用；空接口错误中文化。lint/隔离build/45模拟检查/36导出/三尺寸15页/额外动态检查通过，保留多lockfile警告。未部署；静态社区接口未开放，规划标记simulation。见[本轮验收](testing/xeniso-opus-motion.latest.md)。
+
+## 2026-10-22 · 用户纠正：Opus直接改源码
+
+当前同一入口`public/previews/xeniso-opus-new.html`已由claude-opus-5-5直接输出66项源码修改及CSS；执行者精确写入，六编辑源与响应重放一致。低价值小字从markup删除；4首页图+4新内页图各用一次。lint/隔离build/44模拟检查/三尺寸15页通过，未部署。上一轮“评审后Codex实施”被用户否定，本轮优先。见[直接实施与验收](testing/xeniso-opus-direct.latest.md)。
+
+## 2026-10-22 · Opus 独立新设计
+
+新增 `public/previews/xeniso-opus-new.html`，从原始预览分出，保留原HTML及之前XENISO稿。用户API三角色Opus评审、新生成4张场景图、居中桥景首页、横滑入口、精简内页及社区粒子。lint、最终隔离build、44模拟检查/35导出、15浏览器尺寸页面通过；保留构建警告及前两次并行源不完整失败。原生子智能体通道失败，实际评审为同API并行角色。未部署/改数据库/本任务未改TSX。见 [设计与指导](XENISO_OPUS_NEW.md)、[验收](testing/xeniso-opus-new.latest.md)。
+
+## 2026-10-22 · XENISO 独立 HTML（最新设计交付）
+
+用户改为由 Codex 直接修改并另存新文件，不调用 Claude。新入口 `public/previews/xeniso-pathways.html`，品牌 XENISO 异域同构，标语 Different Fields. Shared Potential.。首屏居中、桥景轻微上移、四张新生成图横向滑动、内页文案精简、文库资料说明折叠、社区改原生粒子。原 limen HTML 哈希未变，正式 TSX/数据库/部署未改。5 张图片实际生成成功（含视频参考图），48 项 DOM/模拟接口与滑动检查、35 次模拟导出、lint、隔离 build 通过；多 lockfile 警告保留。浏览器策略拒绝 file://，网页视觉验收未完成。见 [设计](XENISO_PREVIEW_DESIGN.md)、[验收](testing/xeniso-preview.latest.md)、[视频参考图与提示词](design-references/xeniso-community-video.md)。
+
 ## 2026-10-22 · 功能Preview已发布（最新部署状态）
 
 用户要求外观继续设计时先上传其他部分，已发布 https://limen-br99jfa0q-sakura-lzs-projects.vercel.app ，部署`dpl_Cd6tcPJ3JXCrLXkrgK2PE4nph4ZA`为READY。知识库API/报告适配、多方向E1、四组数字人及Match首切片已进入测试版，沿用既有TSX界面，未包含或整合绿色HTML。正式域名仍指向原`dpl_FX6JWvRxbKyAEEd2RzxTLGd4ksYH`，Production变量未改。下方历史“仅本机未部署”现更新为“已部署Preview，尚未推广Production”。

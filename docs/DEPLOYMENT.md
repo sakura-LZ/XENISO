@@ -1,5 +1,9 @@
 # Vercel 部署与源码包
 
+## 新版 XENISO 正式发布完成（2026-10-22）
+
+https://xeniso-platform.vercel.app 已指向新版 Next.js 部署 `dpl_9VpCUquLMayc2to4JERQjkyhybPm`，项目 `sakura-lzs-projects/xeniso`，READY。GitHub 应用提交 `49910b7` 已在 `main`；已执行 `vercel promote`，四组数字人 Production 配置已同步。实际检查见 [发布记录](testing/xeniso-release-20261022.md)。以下旧项目名和待发布说明保留为历史。
+
 ## 最新：功能Preview已发布，UI继续设计（2026-10-22）
 
 https://limen-br99jfa0q-sakura-lzs-projects.vercel.app 已READY，包含知识库/体验/报告适配/四组数字人/Match，使用已有TSX页面。正式域名仍是旧Production部署；四组新增变量只补Preview，正式发布需另同步Production。本节优先于下方历史“仅本机配置”。

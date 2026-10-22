@@ -1,0 +1,284 @@
+{
+  "checked_at": "2026-10-22T11:17:56.168Z",
+  "origin": "https://xeniso-dg3kh5k4x-sakura-lzs-projects.vercel.app",
+  "mock": false,
+  "inputs": "Explicit synthetic profiles and answers; all business results obtained from actual APIs",
+  "checks": [
+    {
+      "name": "Page /profile",
+      "passed": true,
+      "duration_ms": 4738
+    },
+    {
+      "name": "Page /assessment",
+      "passed": true,
+      "duration_ms": 5412
+    },
+    {
+      "name": "Page /profile/basics",
+      "passed": true,
+      "duration_ms": 5451
+    },
+    {
+      "name": "Page /",
+      "passed": true,
+      "duration_ms": 4749
+    },
+    {
+      "name": "Page /experience",
+      "passed": true,
+      "duration_ms": 5677
+    },
+    {
+      "name": "Page /explore",
+      "passed": true,
+      "duration_ms": 5833
+    },
+    {
+      "name": "Page /community",
+      "passed": true,
+      "duration_ms": 4891
+    },
+    {
+      "name": "Page /report/plan",
+      "passed": true,
+      "duration_ms": 4977
+    },
+    {
+      "name": "Page /report/initial",
+      "passed": true,
+      "duration_ms": 5158
+    },
+    {
+      "name": "Page /account",
+      "passed": true,
+      "duration_ms": 5135
+    },
+    {
+      "name": "Asset /brand/xeniso-logo.webp",
+      "passed": true,
+      "duration_ms": 4518
+    },
+    {
+      "name": "Asset /brand/limen-bridge-stylized-v6.webp",
+      "passed": true,
+      "duration_ms": 4439
+    },
+    {
+      "name": "Asset /brand/xeniso-mark.svg",
+      "passed": true,
+      "duration_ms": 3958
+    },
+    {
+      "name": "Asset /previews/assets/xeniso-opus-profile.webp",
+      "passed": true,
+      "duration_ms": 4560
+    },
+    {
+      "name": "Asset /previews/assets/xeniso-opus-evaluation.webp",
+      "passed": true,
+      "duration_ms": 4216
+    },
+    {
+      "name": "Asset /previews/assets/xeniso-opus-experience.webp",
+      "passed": true,
+      "duration_ms": 4437
+    },
+    {
+      "name": "Asset /previews/assets/xeniso-opus-planning.webp",
+      "passed": true,
+      "duration_ms": 5920
+    },
+    {
+      "name": "Asset /previews/assets/xeniso-direct-basics.webp",
+      "passed": true,
+      "duration_ms": 4661
+    },
+    {
+      "name": "Asset /previews/assets/xeniso-direct-interests.webp",
+      "passed": true,
+      "duration_ms": 4891
+    },
+    {
+      "name": "Asset /previews/assets/xeniso-direct-work.webp",
+      "passed": true,
+      "duration_ms": 4725
+    },
+    {
+      "name": "Asset /previews/assets/xeniso-direct-interview.webp",
+      "passed": true,
+      "duration_ms": 4843
+    },
+    {
+      "name": "Anonymous protection /api/profile",
+      "passed": true,
+      "duration_ms": 4992
+    },
+    {
+      "name": "Anonymous protection /api/assessment",
+      "passed": true,
+      "duration_ms": 4266
+    },
+    {
+      "name": "Anonymous protection /api/reports?kind=R1",
+      "passed": true,
+      "duration_ms": 4531
+    },
+    {
+      "name": "Cross-origin mutation blocked",
+      "passed": true,
+      "duration_ms": 4015
+    },
+    {
+      "name": "Reference HTML excluded from Preview",
+      "passed": true,
+      "duration_ms": 4157
+    },
+    {
+      "name": "Real knowledge retrieval retained",
+      "passed": true,
+      "duration_ms": 5362,
+      "source": "supabase_live"
+    },
+    {
+      "name": "Community keeps login requirement",
+      "passed": true,
+      "duration_ms": 4130
+    },
+    {
+      "name": "Create isolated synthetic visitor",
+      "passed": true,
+      "duration_ms": 4370
+    },
+    {
+      "name": "Anonymous visitor cannot read member community posts",
+      "passed": true,
+      "duration_ms": 4454
+    },
+    {
+      "name": "Empty hub cannot generate a report",
+      "passed": true,
+      "duration_ms": 5398
+    },
+    {
+      "name": "Avatar configuration medicine",
+      "passed": true,
+      "duration_ms": 4995
+    },
+    {
+      "name": "Avatar configuration biomed_eng",
+      "passed": true,
+      "duration_ms": 6245
+    },
+    {
+      "name": "Avatar configuration cs_ai",
+      "passed": true,
+      "duration_ms": 4492
+    },
+    {
+      "name": "Avatar configuration med_informatics",
+      "passed": true,
+      "duration_ms": 4286
+    },
+    {
+      "name": "Profile saved by existing API",
+      "passed": true,
+      "duration_ms": 5007
+    },
+    {
+      "name": "Profile restored and validated; interest incomplete",
+      "passed": true,
+      "duration_ms": 4690
+    },
+    {
+      "name": "Second visitor cannot read first visitor records",
+      "passed": true,
+      "duration_ms": 18900
+    },
+    {
+      "name": "Official O*NET 30 questions",
+      "passed": true,
+      "duration_ms": 4916,
+      "source": "onet_live",
+      "version": "O*NET 31.0",
+      "api_version": "2.0.0"
+    },
+    {
+      "name": "Real O*NET scores saved for synthetic answers",
+      "passed": true,
+      "duration_ms": 5065,
+      "source": "onet_live",
+      "questions": 30,
+      "dimensions": 6
+    },
+    {
+      "name": "Hub enables report only after real saved inputs",
+      "passed": true,
+      "duration_ms": 4942
+    },
+    {
+      "name": "Three-stage teaching experience privately saved",
+      "passed": true,
+      "duration_ms": 4488
+    },
+    {
+      "name": "Three-stage experience restored from server",
+      "passed": true,
+      "duration_ms": 4387
+    },
+    {
+      "name": "Real R1 generation and private save",
+      "passed": true,
+      "duration_ms": 18294,
+      "source": "llm_live",
+      "explanation_count": 3,
+      "evidence_count": 8
+    },
+    {
+      "name": "R1 restored with valid evidence and exportable data",
+      "passed": true,
+      "duration_ms": 4565
+    },
+    {
+      "name": "Real R2 generation preserves selected clinical direction and budget",
+      "passed": true,
+      "duration_ms": 28837,
+      "source": "llm_live",
+      "explanation_count": 8
+    },
+    {
+      "name": "R2 server restoration retains evidence and planning",
+      "passed": true,
+      "duration_ms": 4791
+    },
+    {
+      "name": "Changed profile invalidates prior R1",
+      "passed": true,
+      "duration_ms": 11152
+    },
+    {
+      "name": "Delete synthetic visitor 1 and all own records",
+      "passed": true,
+      "duration_ms": 4725
+    },
+    {
+      "name": "Deleted visitor 1 cannot read private records",
+      "passed": true,
+      "duration_ms": 4144
+    },
+    {
+      "name": "Delete synthetic visitor 2 and all own records",
+      "passed": false,
+      "duration_ms": 3598,
+      "error": "Transport failure: /api/session; raw output suppressed"
+    }
+  ],
+  "synthetic_accounts_created": 2,
+  "synthetic_accounts_deleted": 1,
+  "failure": "Transport failure: /api/session; raw output suppressed",
+  "limitations": [
+    "No avatar media session or community writes performed",
+    "Uses existing Supabase; no database migrations",
+    "Official CLI authenticated access used for HTTP checks"
+  ]
+}
