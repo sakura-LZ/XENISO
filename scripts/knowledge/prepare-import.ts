@@ -90,8 +90,14 @@ for (const snapshot of bundle.snapshots) {
   // kb_sources 按 url upsert 后，清单里的 source id 可能并没有真正落库
   // （同 URL 已存在、但库里存的是另一个 id）。快照的 source_id 同样必须
   // 通过 url 解析成库里真实的 id，否则会撞 kb_snapshots_source_id_fkey。
-  const snapshotLiteral = JSON.stringify([{ ...snapshot, raw_base64: "", source_url: urlById.get(snapshot.source_id) ?? null }]).replace(/'/g, "''");
-  part(`insert into public.kb_snapshots (content_hash,source_id,raw_hash,raw_base64,text_body,content_type,fetched_at) select x.content_hash, coalesce(s.id, x.source_id), x.raw_hash, x.raw_base64, x.text_body, x.content_type, x.fetched_at from jsonb_to_recordset('${snapshotLiteral}'::jsonb) as x(content_hash text,source_id text,source_url text,raw_hash text,raw_base64 text,text_body text,content_type text,fetched_at timestamptz) left join public.kb_sources s on s.url = x.source_url on conflict (content_hash) do nothing;`);
+  // text_body 同样可能极大（单个 PDF 页面文本可达 900KB，超过管理 API
+  // 单请求 750KB 上限），所以正文也空置后分块写入，避免整批导入被拒。
+  const emptyBody = JSON.stringify([{ ...snapshot, raw_base64: "", text_body: "", source_url: urlById.get(snapshot.source_id) ?? null }]).replace(/'/g, "''");
+  part(`insert into public.kb_snapshots (content_hash,source_id,raw_hash,raw_base64,text_body,content_type,fetched_at) select x.content_hash, coalesce(s.id, x.source_id), x.raw_hash, x.raw_base64, x.text_body, x.content_type, x.fetched_at from jsonb_to_recordset('${emptyBody}'::jsonb) as x(content_hash text,source_id text,source_url text,raw_hash text,raw_base64 text,text_body text,content_type text,fetched_at timestamptz) left join public.kb_sources s on s.url = x.source_url on conflict (content_hash) do nothing;`);
+  for (let offset = 0; offset < snapshot.text_body.length; offset += 200000) {
+    const chunk = snapshot.text_body.slice(offset, offset + 200000);
+    part(`do $kb$ begin if exists (select 1 from public.kb_snapshots where content_hash='${snapshot.content_hash}' and length(text_body)<${offset}) then raise exception 'Missing prior text chunk'; end if; end $kb$;\nupdate public.kb_snapshots set text_body=overlay(text_body placing $kb_txt$${chunk}$kb_txt$ from ${offset + 1} for ${chunk.length}) where content_hash='${snapshot.content_hash}';`);
+  }
   for (let offset = 0; offset < snapshot.raw_base64.length; offset += 300000) {
     const chunk = snapshot.raw_base64.slice(offset, offset + 300000);
     part(`do $kb$ begin if exists (select 1 from public.kb_snapshots where content_hash='${snapshot.content_hash}' and raw_hash='${snapshot.raw_hash}' and length(raw_base64)<${offset}) then raise exception 'Missing prior snapshot chunk'; end if; end $kb$;\nupdate public.kb_snapshots set raw_base64=overlay(raw_base64 placing '${chunk}' from ${offset + 1} for ${chunk.length}) where content_hash='${snapshot.content_hash}' and raw_hash='${snapshot.raw_hash}';`);

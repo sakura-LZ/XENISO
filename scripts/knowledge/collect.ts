@@ -11,7 +11,7 @@ const manifestSchema = z.array(z.object({
   extracts: z.array(z.object({ field: z.string(), pattern: z.string().min(10).max(2000) })).min(1),
   expected_fields: z.array(z.string()), publication_pattern: z.string().min(8).optional(),
   browser_capture: z.object({ path: z.string().startsWith("data/knowledge/captures/"), captured_at: z.iso.datetime(), sha256: z.string().regex(/^[a-f0-9]{64}$/), method: z.literal("browser_visible_excerpt") }).optional(),
-  artifact_capture: z.object({ path: z.string().startsWith("work/knowledge-"), sha256: z.string().regex(/^[a-f0-9]{64}$/), captured_at: z.iso.datetime(), content_type: z.enum(["text/html", "application/pdf", "text/plain"]), extracted_path: z.string().startsWith("work/knowledge-").optional(), extracted_sha256: z.string().regex(/^[a-f0-9]{64}$/).optional(), method: z.enum(["downloaded_html", "pypdf_page_text", "downloaded_text"]) }).optional(),
+  artifact_capture: z.object({ path: z.string().startsWith("work/knowledge-"), sha256: z.string().regex(/^[a-f0-9]{64}$/), captured_at: z.iso.datetime(), content_type: z.enum(["text/html", "application/pdf", "text/plain", "application/json", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]), extracted_path: z.string().startsWith("work/knowledge-").optional(), extracted_sha256: z.string().regex(/^[a-f0-9]{64}$/).optional(), method: z.enum(["downloaded_html", "pypdf_page_text", "docx_text", "xlsx_text", "downloaded_text"]) }).optional(),
 }).refine(item => item.source.published_at === null || Boolean(item.publication_pattern), "Known publication date requires raw metadata evidence"));
 const name = process.argv[2] ?? "pilot";
 if (!/^[a-z0-9-]{2,40}$/.test(name)) throw new Error("Invalid collection manifest name");
@@ -44,15 +44,43 @@ for (const item of manifest) {
     httpStatus = capture || cachedSnapshot ? undefined : response.status;
     if (!response.ok) throw new Error(`http_${response.status}`);
     const contentType = response.headers.get("content-type") ?? "";
-    if (!/text\/(html|plain)|application\/xhtml\+xml/i.test(contentType) && !(artifact?.method === "pypdf_page_text" && contentType === "application/pdf")) throw new Error("unsupported_content_type");
+    // 需要外部抽取器的格式：PDF 与 DOCX（政府站常直接发布 Word 版报告）。
+    // 两者都要求同时给出抽取文本及其 sha256，原始字节另有签名校验。
+    const docxType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+    const xlsxType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+    const isPdf = artifact?.method === "pypdf_page_text" && contentType === "application/pdf";
+    const isDocx = artifact?.method === "docx_text" && contentType === docxType;
+    const isXlsx = artifact?.method === "xlsx_text" && contentType === xlsxType;
+    // application/json 也是公开官方接口的合法证据载体（如大厂职位检索 API），
+    // 按纯文本处理并做空白折叠。
+    if (!/text\/(html|plain)|application\/(xhtml\+xml|json)/i.test(contentType) && !isPdf && !isDocx && !isXlsx) throw new Error("unsupported_content_type");
     const reader = response.body!.getReader(), chunks: Buffer[] = []; let size = 0;
-    for (;;) { const { value, done } = await reader.read(); if (done) break; size += value.byteLength; if (size > 5000000) { await reader.cancel(); throw new Error("response_too_large"); } chunks.push(Buffer.from(value)); }
+    // 上限 20MB：高校就业质量报告 PDF 常达 5–20MB（含图表），
+    // 5MB 会把合法官方原件误判为超大响应。
+    for (;;) { const { value, done } = await reader.read(); if (done) break; size += value.byteLength; if (size > 20000000) { await reader.cancel(); throw new Error("response_too_large"); } chunks.push(Buffer.from(value)); }
     const raw = Buffer.concat(chunks), rawHash = hash(raw);
     const head = raw.subarray(0, 4000).toString("ascii");
     const charset = /charset\s*=\s*["']?([\w-]+)/i.exec(contentType)?.[1] ?? /charset\s*=\s*["']?([\w-]+)/i.exec(head)?.[1] ?? "utf-8";
-    const extracted = artifact?.method === "pypdf_page_text" && artifact.extracted_path ? readFileSync(artifact.extracted_path) : undefined;
-    if (artifact?.method === "pypdf_page_text" && (!extracted || hash(extracted) !== artifact.extracted_sha256 || !raw.subarray(0, 5).equals(Buffer.from("%PDF-")))) throw new Error("pdf_extraction_hash_mismatch");
-    const decoded = extracted ? extracted.toString("utf8") : new TextDecoder(charset).decode(raw);
+    const needsExtraction = isPdf || isDocx || isXlsx;
+    const extracted = needsExtraction && artifact?.extracted_path ? readFileSync(artifact.extracted_path) : undefined;
+    // 原件签名校验：PDF 以 %PDF- 开头，docx/xlsx 都是 zip 容器（PK\x03\x04）。
+    if (needsExtraction && (!extracted || hash(extracted) !== artifact?.extracted_sha256 || !(isPdf ? raw.subarray(0, 5).equals(Buffer.from("%PDF-")) : raw.subarray(0, 4).equals(Buffer.from([0x50, 0x4b, 0x03, 0x04]))))) throw new Error("pdf_extraction_hash_mismatch");
+    // 编码回退：中文政府/高校站点大量使用 gb2312/gbk，但常不声明 charset。
+    // 按 UTF-8 硬读会产生整篇乱码，literal 自然全部失配，最终被误报成
+    // 「证据不存在」而不是「编码不匹配」（实测中南大学 2027 目录即如此）。
+    // 因此：先用声明的编码解码，若替换字符占比过高则回退 gbk 重试。
+    let decoded = extracted ? extracted.toString("utf8") : new TextDecoder(charset).decode(raw);
+    const replacementRatio = (text: string) => {
+      if (!text.length) return 0;
+      let bad = 0;
+      for (const char of text) if (char === "\uFFFD") bad++;
+      return bad / text.length;
+    };
+    if (!extracted && replacementRatio(decoded) > 0.001) {
+      const gbk = new TextDecoder("gbk").decode(raw);
+      if (replacementRatio(gbk) < replacementRatio(decoded)) decoded = gbk;
+    }
+    if (replacementRatio(decoded) > 0.05) throw new Error("text_encoding_mismatch");
     if (item.publication_pattern && !new RegExp(item.publication_pattern, "iu").test(decoded)) throw new Error("publication_date_unverified");
     // 控制字符清洗：部分 PDF 抽取器会产出 \u0000 等控制字节（UTF-16 误读），
     // Postgres 的 text 类型无法存储 NUL，会导致整批导入失败。
@@ -74,7 +102,18 @@ for (const item of manifest) {
       if (!match || match[0].length < 10 || match[0].length > 1600) return [];
       return [{ field: extract.field, value: match[0], quote: match[0], start: match.index, end: match.index + match[0].length }];
     });
-    if (!facts.length) throw new Error("no_evidence_matched");
+    if (!facts.length) {
+      // 区分「证据真的不存在」与「literal 与 htmlText 的空白不一致」。
+      // htmlText 会把每个标签替换成一个空格（<td>1993</td><td>年</td> → "1993 年"），
+      // 用渲染文本写 literal 的人会撞在这里。给出可执行的诊断而不是笼统失败。
+      const squeeze = (value: string) => value.replace(/[\s\u00a0]+/g, "");
+      const squeezedText = squeeze(text);
+      const whitespaceOnly = item.extracts.some(extract => {
+        const probe = new RegExp(extract.pattern, "iu").exec(text.replace(/[\s\u00a0]+/g, " "));
+        return !probe && squeezedText.includes(squeeze(extract.pattern.replace(/\\(.)/g, "$1").slice(0, 40)));
+      });
+      throw new Error(whitespaceOnly ? "no_evidence_matched_whitespace" : "no_evidence_matched");
+    }
     if (classifyFacts(facts) !== item.record.category) throw new Error("classification_review_required");
     const missingFields = item.expected_fields.filter(field => !facts.some(fact => fact.field === field));
     const record = recordSchema.parse({ ...item.record, source_id: item.source.id, facts, missing_fields: missingFields, verification: "quote_verified", content_hash: contentHash, collected_at: at, verified_at: new Date().toISOString() });
@@ -94,7 +133,7 @@ for (const item of manifest) {
     }
     attempts.push({ source_id: item.source.id, url, at, status: "collected", http_status: httpStatus, missing_fields: missingFields });
   } catch (error) {
-    const safeReasons = ["unsupported_content_type", "response_too_large", "no_evidence_matched", "evidence_offsets_mismatch", "publication_date_unverified", "classification_review_required", "capture_hash_mismatch", "pdf_extraction_hash_mismatch", "source_id_conflict"];
+    const safeReasons = ["unsupported_content_type", "response_too_large", "no_evidence_matched", "no_evidence_matched_whitespace", "evidence_offsets_mismatch", "publication_date_unverified", "classification_review_required", "text_encoding_mismatch", "capture_hash_mismatch", "pdf_extraction_hash_mismatch", "source_id_conflict"];
     const message = error instanceof Error ? error.message : "";
     attempts.push({ source_id: item.source.id, url, at, status: "failed", http_status: httpStatus, reason: safeReasons.includes(message) || /^http_\d+$/.test(message) ? message : "network_redirect_or_contract_error" });
   }

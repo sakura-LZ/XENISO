@@ -1,63 +1,194 @@
 {
-  "at": "2026-10-23T11:03:42.931Z",
-  "sources": 3,
-  "records": 6,
+  "at": "2026-10-23T13:40:36.825Z",
+  "sources": 5,
+  "records": 21,
   "by_category": {
     "occupation": 0,
     "recruitment": 0,
-    "admissions": 0,
-    "industry": 6,
+    "admissions": 21,
+    "industry": 0,
     "learning": 0
   },
   "attempts": [
     {
-      "source_id": "cq-wage-2025-yigong-xilei",
-      "url": "https://cqstl.gov.cn/bm/qrlsbj_71106/zwgk_70831/fdzdgknr_70834/qtgknr/qtxx/202609/W020260918592816626257.pdf",
-      "at": "2026-10-23T09:00:08.164Z",
+      "source_id": "lzu-2027-catalog",
+      "url": "https://yz.lzu.edu.cn/yz/upload/files/20261010/33bb3f777f1e4b98abde477a7722439d.pdf",
+      "at": "2026-10-23T11:59:23.399Z",
       "status": "collected",
       "missing_fields": [
-        "salary_statistics（企业口径，不含公立医院/事业单位）"
+        "该专业拟招生人数（兰大目录未列人数）"
       ]
     },
     {
-      "source_id": "cq-wage-2025-yigong-xilei",
-      "url": "https://cqstl.gov.cn/bm/qrlsbj_71106/zwgk_70831/fdzdgknr_70834/qtgknr/qtxx/202609/W020260918592816626257.pdf",
-      "at": "2026-10-23T09:00:08.164Z",
+      "source_id": "lzu-2027-catalog",
+      "url": "https://yz.lzu.edu.cn/yz/upload/files/20261010/33bb3f777f1e4b98abde477a7722439d.pdf",
+      "at": "2026-10-23T11:59:23.399Z",
       "status": "collected",
       "missing_fields": [
-        "salary_statistics（企业口径，不含公立医院）"
+        "拟招生人数（未列）"
       ]
     },
     {
-      "source_id": "cq-wage-2025-yigong-xilei",
-      "url": "https://cqstl.gov.cn/bm/qrlsbj_71106/zwgk_70831/fdzdgknr_70834/qtgknr/qtxx/202609/W020260918592816626257.pdf",
-      "at": "2026-10-23T09:00:08.164Z",
+      "source_id": "lzu-2027-catalog",
+      "url": "https://yz.lzu.edu.cn/yz/upload/files/20261010/33bb3f777f1e4b98abde477a7722439d.pdf",
+      "at": "2026-10-23T11:59:23.399Z",
+      "status": "collected",
+      "missing_fields": [
+        "拟招生人数（未列）"
+      ]
+    },
+    {
+      "source_id": "lzu-2027-catalog",
+      "url": "https://yz.lzu.edu.cn/yz/upload/files/20261010/33bb3f777f1e4b98abde477a7722439d.pdf",
+      "at": "2026-10-23T11:59:23.399Z",
+      "status": "collected",
+      "missing_fields": [
+        "拟招生人数（未列）"
+      ]
+    },
+    {
+      "source_id": "csu-2027-catalog",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "at": "2026-10-23T12:08:18.919Z",
+      "status": "collected",
+      "missing_fields": [
+        "各方向分方向人数（只给学院合计）"
+      ]
+    },
+    {
+      "source_id": "csu-2027-catalog",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "at": "2026-10-23T12:08:18.919Z",
       "status": "collected",
       "missing_fields": []
     },
     {
-      "source_id": "hn-tjj-2025-feisiying",
-      "url": "http://tjj.hunan.gov.cn/hntj/tjfx/hntjsj/202607/34018561/files/50897fb9423a4d669495cad774210d7b.pdf",
-      "at": "2026-10-23T08:57:33.277Z",
-      "status": "collected",
-      "missing_fields": [
-        "salary_statistics（为行业门类「卫生和社会工作」，非医师单岗；含基层/公卫/社会工作）"
-      ]
-    },
-    {
-      "source_id": "hn-tjj-2025-feisiying",
-      "url": "http://tjj.hunan.gov.cn/hntj/tjfx/hntjsj/202607/34018561/files/50897fb9423a4d669495cad774210d7b.pdf",
-      "at": "2026-10-23T08:57:33.277Z",
+      "source_id": "csu-2027-catalog",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "at": "2026-10-23T12:08:18.919Z",
       "status": "collected",
       "missing_fields": []
     },
     {
-      "source_id": "sh-jineng-2025",
-      "url": "https://rsj.sh.gov.cn/t01_17887/20261019/t0035_1444243.html",
-      "at": "2026-10-23T08:58:30.383Z",
+      "source_id": "csu-2027-catalog",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "at": "2026-10-23T12:08:18.919Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "csu-2027-catalog",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "at": "2026-10-23T12:08:18.919Z",
       "status": "collected",
       "missing_fields": [
-        "salary_statistics（企业口径技能人才，非医院技师职称序列）"
+        "是否限制本科专业（备注仅限制专项计划，未设专业白名单）"
+      ]
+    },
+    {
+      "source_id": "hnu-2027-catalog",
+      "url": "https://gra.hnu.edu.cn/system/_content/download.jsp?owner=1327586600&urltype=news.DownloadAttachUrl&wbfileid=18166055",
+      "at": "2026-10-23T12:33:58.997Z",
+      "status": "collected",
+      "missing_fields": [
+        "各方向分方向人数"
+      ]
+    },
+    {
+      "source_id": "hnu-2027-catalog",
+      "url": "https://gra.hnu.edu.cn/system/_content/download.jsp?owner=1327586600&urltype=news.DownloadAttachUrl&wbfileid=18166055",
+      "at": "2026-10-23T12:33:58.997Z",
+      "status": "collected",
+      "missing_fields": [
+        "705 生物医学综合考试范围（本目录未列）"
+      ]
+    },
+    {
+      "source_id": "hnu-2027-catalog",
+      "url": "https://gra.hnu.edu.cn/system/_content/download.jsp?owner=1327586600&urltype=news.DownloadAttachUrl&wbfileid=18166055",
+      "at": "2026-10-23T12:33:58.997Z",
+      "status": "collected",
+      "missing_fields": [
+        "是否限本科专业（目录未列）"
+      ]
+    },
+    {
+      "source_id": "hnu-2027-catalog",
+      "url": "https://gra.hnu.edu.cn/system/_content/download.jsp?owner=1327586600&urltype=news.DownloadAttachUrl&wbfileid=18166055",
+      "at": "2026-10-23T12:33:58.997Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "xmu-catalog",
+      "url": "https://zs.xmu.edu.cn/system/_content/download.jsp?owner=1929267571&urltype=news.DownloadAttachUrl&wbfileid=FA5842C071DB881DD31A4171254E38AC",
+      "at": "2026-10-23T12:38:37.237Z",
+      "status": "collected",
+      "missing_fields": [
+        "分专业招生人数（在另一份「分专业招生计划」附件中，未并入本记录）"
+      ]
+    },
+    {
+      "source_id": "xmu-catalog",
+      "url": "https://zs.xmu.edu.cn/system/_content/download.jsp?owner=1929267571&urltype=news.DownloadAttachUrl&wbfileid=FA5842C071DB881DD31A4171254E38AC",
+      "at": "2026-10-23T12:38:37.237Z",
+      "status": "collected",
+      "missing_fields": [
+        "招生人数（见分专业招生计划附件）"
+      ]
+    },
+    {
+      "source_id": "xmu-catalog",
+      "url": "https://zs.xmu.edu.cn/system/_content/download.jsp?owner=1929267571&urltype=news.DownloadAttachUrl&wbfileid=FA5842C071DB881DD31A4171254E38AC",
+      "at": "2026-10-23T12:38:37.237Z",
+      "status": "collected",
+      "missing_fields": [
+        "招生人数（见分专业招生计划附件）"
+      ]
+    },
+    {
+      "source_id": "xmu-catalog",
+      "url": "https://zs.xmu.edu.cn/system/_content/download.jsp?owner=1929267571&urltype=news.DownloadAttachUrl&wbfileid=FA5842C071DB881DD31A4171254E38AC",
+      "at": "2026-10-23T12:38:37.237Z",
+      "status": "collected",
+      "missing_fields": [
+        "招生人数（见分专业招生计划附件）"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-catalog",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T12:46:13.131Z",
+      "status": "collected",
+      "missing_fields": [
+        "各方向分方向人数"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-catalog",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T12:46:13.131Z",
+      "status": "collected",
+      "missing_fields": [
+        "各方向分方向人数"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-catalog",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T12:46:13.131Z",
+      "status": "collected",
+      "missing_fields": [
+        "其他方向的科目（该专业按方向分列，本记录取核物理方向）"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-catalog",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T12:46:13.131Z",
+      "status": "collected",
+      "missing_fields": [
+        "统考是否完全无名额（原文即「仅招收推免生」）"
       ]
     }
   ]

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-23T10:20:20.274Z",
+  "generated_at": "2026-10-23T11:44:01.874Z",
   "sources": [
     {
       "id": "zju-2027-catalog-085400-bme",
@@ -45,7 +45,7 @@
       "verification": "quote_verified",
       "content_hash": "5dac7e632d9d3e97f76acdae1e942a0a3c93b6245e69f4d516001534ed536663",
       "collected_at": "2026-10-23T07:38:35.046Z",
-      "verified_at": "2026-10-23T10:20:20.250Z",
+      "verified_at": "2026-10-23T11:44:01.851Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -88,7 +88,7 @@
       "verification": "quote_verified",
       "content_hash": "2d70bbf133cf2dffb663ca6c12e92ae314ff9510a134db442b44da060abded48",
       "collected_at": "2026-10-23T07:36:07.061Z",
-      "verified_at": "2026-10-23T10:20:20.261Z",
+      "verified_at": "2026-10-23T11:44:01.862Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -132,7 +132,7 @@
       "verification": "quote_verified",
       "content_hash": "1a4423057e0887ec3028f115c236f19c4306d0433e3bab60769107b602e14959",
       "collected_at": "2026-10-23T07:38:51.159Z",
-      "verified_at": "2026-10-23T10:20:20.266Z",
+      "verified_at": "2026-10-23T11:44:01.866Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {

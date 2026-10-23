@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-23T10:00:02.593Z",
+  "generated_at": "2026-10-23T11:13:28.284Z",
   "sources": [
     {
       "id": "mindray-medaffair",
@@ -125,7 +125,7 @@
       "verification": "quote_verified",
       "content_hash": "5fbc51b0b8cdb9e134204cece4385fc8d2304751f6bc461c7cf037aac541638f",
       "collected_at": "2026-10-23T07:21:14.642Z",
-      "verified_at": "2026-10-23T10:00:02.572Z",
+      "verified_at": "2026-10-23T11:13:28.264Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -210,7 +210,7 @@
       "verification": "quote_verified",
       "content_hash": "14530c84b7085e3e7d4fcc8ecf4ac0e58f989681489d7defb10c8740fb2a312d",
       "collected_at": "2026-10-23T07:21:14.657Z",
-      "verified_at": "2026-10-23T10:00:02.580Z",
+      "verified_at": "2026-10-23T11:13:28.274Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -340,7 +340,7 @@
       "verification": "quote_verified",
       "content_hash": "8853c99b62ce98d6e6717d5d2d216e2cf44c5140a53af3a27bfce01d35ddab45",
       "collected_at": "2026-10-23T07:21:14.683Z",
-      "verified_at": "2026-10-23T10:00:02.584Z",
+      "verified_at": "2026-10-23T11:13:28.278Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -412,7 +412,7 @@
       "verification": "quote_verified",
       "content_hash": "761c811ae4be3873277cb5e8d74841efc2c7fbbaf8751b959b94a6333720b335",
       "collected_at": "2026-10-23T07:21:14.691Z",
-      "verified_at": "2026-10-23T10:00:02.588Z",
+      "verified_at": "2026-10-23T11:13:28.281Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -455,7 +455,7 @@
       "verification": "quote_verified",
       "content_hash": "13e181a721046d2dac838e02d6a50c2c37839fbbccc75dfd0f29068c65b4cd4d",
       "collected_at": "2026-10-23T07:21:14.721Z",
-      "verified_at": "2026-10-23T10:00:02.592Z",
+      "verified_at": "2026-10-23T11:13:28.284Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {

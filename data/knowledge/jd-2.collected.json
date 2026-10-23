@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-23T10:20:06.130Z",
+  "generated_at": "2026-10-23T11:43:34.022Z",
   "sources": [
     {
       "id": "mindray-product-ivd",
@@ -133,7 +133,7 @@
       "verification": "quote_verified",
       "content_hash": "df4f5deeaddd4efc07b03a45fd23b7e5b08159b67bffe5177f670c9cb5c5b0a3",
       "collected_at": "2026-10-23T07:05:41.701Z",
-      "verified_at": "2026-10-23T10:20:06.086Z",
+      "verified_at": "2026-10-23T11:43:33.986Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -220,7 +220,7 @@
       "verification": "quote_verified",
       "content_hash": "19bce8312d8c65a62ac51197c725160cc0223640ee92f8b6ac0f071a229590f9",
       "collected_at": "2026-10-23T07:05:41.706Z",
-      "verified_at": "2026-10-23T10:20:06.098Z",
+      "verified_at": "2026-10-23T11:43:33.997Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -280,7 +280,7 @@
       "verification": "quote_verified",
       "content_hash": "bc981fd4f388711ccb18da2a7973e1a3004f045d3f49feef4ae757b29fcacdd9",
       "collected_at": "2026-10-23T07:05:41.711Z",
-      "verified_at": "2026-10-23T10:20:06.102Z",
+      "verified_at": "2026-10-23T11:43:34.001Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -418,7 +418,7 @@
       "verification": "quote_verified",
       "content_hash": "1224cc3ce19d18818c8e0a6066aa4ec3fcc0395387f48ea084485b806bf8e6c2",
       "collected_at": "2026-10-23T07:10:15.678Z",
-      "verified_at": "2026-10-23T10:20:06.110Z",
+      "verified_at": "2026-10-23T11:43:34.008Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -479,7 +479,7 @@
       "verification": "quote_verified",
       "content_hash": "d709517d5fb0eb747609d312b59b9b7581313897ba013fac79032ad1f3410d67",
       "collected_at": "2026-10-23T07:10:15.690Z",
-      "verified_at": "2026-10-23T10:20:06.115Z",
+      "verified_at": "2026-10-23T11:43:34.014Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -531,7 +531,7 @@
       "verification": "quote_verified",
       "content_hash": "e4f86c8a5c2778946ff9a307828379737c8d63ce52da2928d04edbdf31b7ef05",
       "collected_at": "2026-10-23T07:10:15.695Z",
-      "verified_at": "2026-10-23T10:20:06.123Z",
+      "verified_at": "2026-10-23T11:43:34.018Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -580,7 +580,7 @@
       "verification": "quote_verified",
       "content_hash": "641240d8d58abe7f5f5369929bf6021732e83d8ffcfc4860db77fd8c2854613f",
       "collected_at": "2026-10-23T07:10:15.705Z",
-      "verified_at": "2026-10-23T10:20:06.128Z",
+      "verified_at": "2026-10-23T11:43:34.022Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {

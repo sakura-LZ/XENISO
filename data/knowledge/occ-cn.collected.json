@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-23T10:08:07.291Z",
+  "generated_at": "2026-10-23T11:29:21.332Z",
   "sources": [
     {
       "id": "gov-ai-engineer-std",
@@ -197,7 +197,7 @@
       "verification": "quote_verified",
       "content_hash": "bcc34b232a724b9d6b295c8fd7b9443b9da6b430d27132ec3d70f7c7f19e021f",
       "collected_at": "2026-10-23T06:58:54.210Z",
-      "verified_at": "2026-10-23T10:08:07.149Z",
+      "verified_at": "2026-10-23T11:29:21.107Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -238,7 +238,7 @@
       "verification": "quote_verified",
       "content_hash": "bcc34b232a724b9d6b295c8fd7b9443b9da6b430d27132ec3d70f7c7f19e021f",
       "collected_at": "2026-10-23T06:58:54.210Z",
-      "verified_at": "2026-10-23T10:08:07.170Z",
+      "verified_at": "2026-10-23T11:29:21.129Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -290,7 +290,7 @@
       "verification": "quote_verified",
       "content_hash": "cb4b8eb1fc2220da26070fa7bfbf4c4be12150f9af0e6e2d5e815eae1dfa2276",
       "collected_at": "2026-10-23T07:03:16.516Z",
-      "verified_at": "2026-10-23T10:08:07.176Z",
+      "verified_at": "2026-10-23T11:29:21.140Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -331,7 +331,7 @@
       "verification": "quote_verified",
       "content_hash": "cb4b8eb1fc2220da26070fa7bfbf4c4be12150f9af0e6e2d5e815eae1dfa2276",
       "collected_at": "2026-10-23T07:03:16.516Z",
-      "verified_at": "2026-10-23T10:08:07.181Z",
+      "verified_at": "2026-10-23T11:29:21.148Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -395,7 +395,7 @@
       "verification": "quote_verified",
       "content_hash": "cf40f300cffd9914d75f36f7a4753290afe899f2e007020d786fce3267caeadd",
       "collected_at": "2026-10-23T07:05:12.996Z",
-      "verified_at": "2026-10-23T10:08:07.188Z",
+      "verified_at": "2026-10-23T11:29:21.156Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -459,7 +459,7 @@
       "verification": "quote_verified",
       "content_hash": "151312592220889b8b51e1e6fd259248e6397496164cc9eb4bd5bb26dcf28103",
       "collected_at": "2026-10-23T07:02:28.529Z",
-      "verified_at": "2026-10-23T10:08:07.193Z",
+      "verified_at": "2026-10-23T11:29:21.163Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -523,7 +523,7 @@
       "verification": "quote_verified",
       "content_hash": "0bb173b040a60242f1a82ed928b867e00c85ef63abed92467e9762b336656349",
       "collected_at": "2026-10-23T07:01:49.472Z",
-      "verified_at": "2026-10-23T10:08:07.199Z",
+      "verified_at": "2026-10-23T11:29:21.171Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -587,7 +587,7 @@
       "verification": "quote_verified",
       "content_hash": "80a16d03dbc1e92a31c4f9197c50d536caf8ef5a8a700849329e47e405765bf6",
       "collected_at": "2026-10-23T07:01:54.986Z",
-      "verified_at": "2026-10-23T10:08:07.205Z",
+      "verified_at": "2026-10-23T11:29:21.179Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -651,7 +651,7 @@
       "verification": "quote_verified",
       "content_hash": "ebeaf3273703e28d0f069812755742d5e4b932ae1c39488efddf8ab189001662",
       "collected_at": "2026-10-23T07:02:01.484Z",
-      "verified_at": "2026-10-23T10:08:07.211Z",
+      "verified_at": "2026-10-23T11:29:21.188Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -715,7 +715,7 @@
       "verification": "quote_verified",
       "content_hash": "52e38fcca2c98112834f0a97b22bc51b79f25df02b0b0a83392437974c109c7e",
       "collected_at": "2026-10-23T07:02:21.279Z",
-      "verified_at": "2026-10-23T10:08:07.216Z",
+      "verified_at": "2026-10-23T11:29:21.196Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -779,7 +779,7 @@
       "verification": "quote_verified",
       "content_hash": "405306c784f512c8ff1f264f86233380552b9eeeebd088521b8fc30430a34512",
       "collected_at": "2026-10-23T07:01:40.922Z",
-      "verified_at": "2026-10-23T10:08:07.222Z",
+      "verified_at": "2026-10-23T11:29:21.204Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -843,7 +843,7 @@
       "verification": "quote_verified",
       "content_hash": "a53ef30e8752200e17764188076029b7f6e4e760e22a7ab447b4b16629fe2aeb",
       "collected_at": "2026-10-23T07:03:10.598Z",
-      "verified_at": "2026-10-23T10:08:07.229Z",
+      "verified_at": "2026-10-23T11:29:21.216Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -907,7 +907,7 @@
       "verification": "quote_verified",
       "content_hash": "b45cdada8b30df2ee86ec5bb0a257c8fa6ec6d5fdd858f4ee77bc357da2bfb39",
       "collected_at": "2026-10-23T07:03:24.593Z",
-      "verified_at": "2026-10-23T10:08:07.235Z",
+      "verified_at": "2026-10-23T11:29:21.236Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -959,7 +959,7 @@
       "verification": "quote_verified",
       "content_hash": "c177c3304613d8d8e245685957201f8842abb20855adc799159de4e53e5de7a1",
       "collected_at": "2026-10-23T07:05:19.060Z",
-      "verified_at": "2026-10-23T10:08:07.245Z",
+      "verified_at": "2026-10-23T11:29:21.249Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1000,7 +1000,7 @@
       "verification": "quote_verified",
       "content_hash": "c177c3304613d8d8e245685957201f8842abb20855adc799159de4e53e5de7a1",
       "collected_at": "2026-10-23T07:05:19.060Z",
-      "verified_at": "2026-10-23T10:08:07.255Z",
+      "verified_at": "2026-10-23T11:29:21.266Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1052,7 +1052,7 @@
       "verification": "quote_verified",
       "content_hash": "f6628a6adecd0c95c30f09aedf3e6e589eb0852fcabc13034f9ca699848cbc08",
       "collected_at": "2026-10-23T07:07:13.706Z",
-      "verified_at": "2026-10-23T10:08:07.261Z",
+      "verified_at": "2026-10-23T11:29:21.287Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1093,7 +1093,7 @@
       "verification": "quote_verified",
       "content_hash": "f6628a6adecd0c95c30f09aedf3e6e589eb0852fcabc13034f9ca699848cbc08",
       "collected_at": "2026-10-23T07:07:13.706Z",
-      "verified_at": "2026-10-23T10:08:07.267Z",
+      "verified_at": "2026-10-23T11:29:21.295Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1157,7 +1157,7 @@
       "verification": "quote_verified",
       "content_hash": "708ef934bc220fab5c897d2c7f8f1e437479b275529c7d061cbff3aab17a7dc1",
       "collected_at": "2026-10-23T07:06:05.025Z",
-      "verified_at": "2026-10-23T10:08:07.274Z",
+      "verified_at": "2026-10-23T11:29:21.306Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1209,7 +1209,7 @@
       "verification": "quote_verified",
       "content_hash": "2c73b9ecc104628d584318e53d5fd787b93643bd62deb3a7bd6ad72077ce0eef",
       "collected_at": "2026-10-23T07:10:28.093Z",
-      "verified_at": "2026-10-23T10:08:07.282Z",
+      "verified_at": "2026-10-23T11:29:21.321Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1250,7 +1250,7 @@
       "verification": "quote_verified",
       "content_hash": "2c73b9ecc104628d584318e53d5fd787b93643bd62deb3a7bd6ad72077ce0eef",
       "collected_at": "2026-10-23T07:10:28.093Z",
-      "verified_at": "2026-10-23T10:08:07.291Z",
+      "verified_at": "2026-10-23T11:29:21.332Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {

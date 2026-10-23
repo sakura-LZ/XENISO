@@ -1,0 +1,514 @@
+[
+  {
+    "source": {
+      "id": "hit-life-masters-doctoral-programs",
+      "url": "https://life.hit.edu.cn/xyjs/list.htm",
+      "organization": "哈尔滨工业大学生命科学与技术学院",
+      "title": "学院介绍（生命科学与技术学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "院系官网「学院概况-学院介绍」页面未标注发布日期；正文含 2019-2023 US News 排名与 2023 年表述，判定为近年维护版本，抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors/hit-life-about.raw",
+      "sha256": "e202f7fad324b72516044b26f0a66c424761b7e0f7e49b261d6e6555eec9a8e5",
+      "captured_at": "2026-10-23T12:04:58.359Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hit-life-masters-doctoral-programs-guide-devices-c09fc436",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "哈工大生命科学与技术学院：生物学、生物医学工程 2 个一级学科硕士点 + 2 个一级学科博士点，另有生物与医药专业学位硕士点",
+      "summary": "学院官网「学院介绍」原文：现有生物技术、生物工程、整合科学 3 个本科专业；拥有生物学、生物医学工程 2 个一级学科硕士授权点和生物与医药专业学位硕士授权点；生物学、生物医学工程 2 个一级学科博士授权点和博士后流动站。",
+      "applicability": "适用于了解哈尔滨工业大学生物医学工程/生物学学科层次与研究生培养口径的考生：该院同时具备生物医学工程一级学科硕士点与博士点，可本硕博贯通。不适用于临床医学专业学位，不含考试科目与跨专业限制。",
+      "relation": "direct",
+      "tags": [
+        "哈尔滨工业大学",
+        "生物医学工程",
+        "生物学",
+        "一级学科硕士点",
+        "一级学科博士点",
+        "生命科学与技术学院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "哈尔滨工业大学",
+        "college": "生命科学与技术学院",
+        "program": "生物医学工程（0831）/ 生物学（0710）",
+        "region": "黑龙江",
+        "evidence_locator": "「学院概况-学院介绍」第 1 段末句。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "学院现有生物技术、生物工程、整合科学 3 个本科专业；其中生物技术和生物工程双双入选黑龙江省一流本科专业；拥有生物学、生物医学工程 2 个一级学科硕士授权点和生物与医药专业学位硕士授权点；生物学、生物医学工程 2 个一级学科博士授权点和博士后流动站。"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "hit-masters-professional-degree-list",
+      "url": "https://www.hit.edu.cn/2015/0421/c11268a220717/page.htm",
+      "organization": "哈尔滨工业大学",
+      "title": "博士、硕士专业学位授予点",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-09-29",
+      "publication_date_note": "页面底部标注「源自哈尔滨工业大学，最后更新时间 2025-09-29」。"
+    },
+    "publication_pattern": "2025-09-29",
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors/hit-degree-programs.raw",
+      "sha256": "055caee5153e47b92821b3a04a1bb05597a3fa6229a39e25638df629d3a07453",
+      "captured_at": "2026-10-23T11:58:49.017Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hit-masters-professional-degree-list-guide-devices-bae294d4",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "哈工大专业学位授予点：0854 电子信息下设 085409 生物医学工程（博士专业学位领域）",
+      "summary": "学校官网「博士、硕士专业学位授予点」页面：博士专业学位授予点名单中，类别代码 0854 电子信息下设 085401 新一代电子信息技术至 085412 网络与信息安全共 11 个领域，其中 085409 为生物医学工程。",
+      "applicability": "适用于核对哈尔滨工业大学电子信息（0854）专业学位类别下是否设生物医学工程（085409）领域及专业代码。该页只列类别与领域，不含学院归属、考试科目。",
+      "relation": "direct",
+      "tags": [
+        "哈尔滨工业大学",
+        "0854 电子信息",
+        "085409 生物医学工程",
+        "专业学位",
+        "学位授予点"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "哈尔滨工业大学",
+        "program": "085409 生物医学工程",
+        "region": "黑龙江",
+        "evidence_locator": "「博士专业学位授予点名单」表 0854 电子信息 行组内第 9 个领域。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "博士专业学位授予点名单 类别代码 专业学位类别 领域代码 专业学位领域 0854 电子信息 085401 新一代电子信息技术\\(含量子技术等\\) 085402 通信工程\\(含宽带网络、移动通信等\\) 085403 集成电路工程 085404 计算机技术 085405 软件工程 085406 控制工程 085407 仪器仪表工程 085408 光电信息工程 085409 生物医学工程"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "exam_subjects",
+      "cross_major_restrictions",
+      "admission_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "buaa-bme-about-programs",
+      "url": "https://bme.buaa.edu.cn/About.aspx?catID=3",
+      "organization": "北京航空航天大学生物与医学工程学院",
+      "title": "学院简介（生物与医学工程学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "学院官网「学院概况-学院简介」页面未标注发布日期；正文提及「教育部最新一轮学科评估」，判定为近年维护版本，抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors/buaa-bme-about.raw",
+      "sha256": "dbb91b44861b59ed20a2f7bae4154a7db3194add28b32c7f9f408a0c93c58cb8",
+      "captured_at": "2026-10-23T12:03:40.606Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-buaa-bme-about-programs-guide-devices-dc5279fe",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "北航生物与医学工程学院：生物医学工程一级学科博士点+博士后流动站，基础医学、特种医学 2 个一级学科硕士点",
+      "summary": "学院简介原文：已建成完整的本科、硕士、博士和博士后人才培养体系，拥有生物医学工程一级学科博士授权点和博士后流动站、基础医学和特种医学两个一级学科硕士授权点；另有北京市重点交叉学科、北京市特色专业、国防重点学科等。",
+      "applicability": "适用于报考北航医工交叉方向的考生：生物医学工程可直博（一级学科博士点）；基础医学、特种医学仅到硕士层次——这是医学本科生跨考时的关键层次差异。不含考试科目与跨专业限制。",
+      "relation": "direct",
+      "tags": [
+        "北京航空航天大学",
+        "生物与医学工程学院",
+        "生物医学工程",
+        "基础医学",
+        "特种医学",
+        "一级学科博士点"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京航空航天大学",
+        "college": "生物与医学工程学院",
+        "program": "生物医学工程（0831）/ 基础医学（1001）/ 特种医学（1009）",
+        "region": "北京",
+        "evidence_locator": "「学院简介」第 2 段。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "建成了完整的本科、硕士、博士和博士后人才培养体系，拥有生物医学工程一级学科博士授权点和博士后流动站、基础医学和特种医学两个一级学科硕士授权点"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "seu-bme-discipline-083100",
+      "url": "https://bme.seu.edu.cn/523/list.htm",
+      "organization": "东南大学生物科学与医学工程学院",
+      "title": "学科设置（生物科学与医学工程学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "学院官网「学科建设-学科设置」页面未标注发布日期；抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors/seu-bme-discipline-setup.raw",
+      "sha256": "263bb9eedd2cf07be1ed7447636a267cac5e255ba22c610cd29aad90dc24f48c",
+      "captured_at": "2026-10-23T12:03:21.969Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-seu-bme-discipline-083100-guide-devices-040bb01b",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "东南大学生医学院：生物医学工程（083100）只设一级学科，自主设置 5 个二级学科方向",
+      "summary": "学院「学科设置」原文：根据国务院学位委员会学科评议组审核的《授予博士、硕士学位和培养研究生的学科、专业目录》，生物医学工程（083100）只设一级学科、不分设二级学科；东南大学在该一级学科下自主设置神经信息工程、生物信息技术、医学影像与医学电子学、生物医学纳米技术、生物医学材料与器件等 5 个二级学科。",
+      "applicability": "适用于确认东南大学生物医学工程的学科代码为 083100 及其 5 个自主设置二级方向，用于判断报考方向归属。页面未说明硕士/博士授权层次，也未列考试科目。",
+      "relation": "direct",
+      "tags": [
+        "东南大学",
+        "生物科学与医学工程学院",
+        "083100",
+        "生物医学工程",
+        "二级学科",
+        "学科设置"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "college": "生物科学与医学工程学院",
+        "program": "083100 生物医学工程",
+        "region": "江苏",
+        "evidence_locator": "「学科建设-学科设置」正文第 1 段。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "生物医学工程（083100）只设一级学科，不分设二级学科，但各高校可结合学科发展方向自主设置二级学科，东南大学在生物医学工程一级学科下自主设置神经信息工程、生物信息技术、医学影像与医学电子学、生物医学纳米技术、生物医学材料与器件等5个二级学科"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "xidian-life-discipline-masters-doctoral",
+      "url": "https://life.xidian.edu.cn/xkky/xkjs.htm",
+      "organization": "西安电子科技大学生命科学技术学院",
+      "title": "学科建设情况（生命科学技术学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "学院官网「学科科研-学科建设」页面未标注发布日期；抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors/xidian-life-discipline.raw",
+      "sha256": "c9957bb78cec05a2b5073880efded7680df5c2e3497aaecaee15b5cebb4052b0",
+      "captured_at": "2026-10-23T12:03:25.135Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-xidian-life-discipline-masters-doctoral-guide-devices-9335c393",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "西电生命科学技术学院：生物医学工程 1990 年建专业、全国首批试办硕士点；2011 年在信息与通信工程下设生物信息科学与技术二级博士点",
+      "summary": "学院「学科建设情况」原文：生物医学工程专业始建于 1990 年，是全国首批获准试办的硕士点之一；1996 年开始招收本科生；2011 年在「信息与通信工程」一级学科下设立「生物信息科学与技术」二级博士点，开始招收博士研究生。",
+      "applicability": "适用于报考西安电子科技大学生物医学工程方向的考生：该校 BME 有硕士点，博士培养挂在「信息与通信工程」下的自设二级博士点，跨考生若想读博需走信息与通信工程口径。不含考试科目与跨专业限制。",
+      "relation": "direct",
+      "tags": [
+        "西安电子科技大学",
+        "生命科学技术学院",
+        "生物医学工程",
+        "信息与通信工程",
+        "二级博士点"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安电子科技大学",
+        "college": "生命科学技术学院",
+        "program": "生物医学工程（0831）/ 生物信息科学与技术",
+        "region": "陕西",
+        "evidence_locator": "「学科科研-学科建设」第 1 段第 2-3 句。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "我校生物医学工程专业始建于1990年，是全国首批获准试办的硕士点之一，1996年开始招收本科生，2011年在“信息与通信工程”一级学科下设立“生物信息科学与技术”二级博士点，开始招收博士研究生。"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "tju-amt-bme-doctoral",
+      "url": "https://yx.tju.edu.cn/xtlm/yxsz/201808/t20180810_308677.htm",
+      "organization": "天津大学医学工程与转化医学研究院",
+      "title": "医学工程与转化医学研究院 学院简介（天津大学迎新网院系设置）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-08-15",
+      "publication_date_note": "页面标题旁标注「2024-08-15」。"
+    },
+    "publication_pattern": "2024-08-15",
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors/tju-amt-https.raw",
+      "sha256": "dbbf5e6c20eb6c55fbcff180588b437c714239c21e8dc3da61187afdb0d04375",
+      "captured_at": "2026-10-23T12:28:36.859Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-tju-amt-bme-doctoral-guide-devices-c55ae3ed",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "天津大学医学工程与转化医学研究院：2017 年成立，依托生物医学工程一级学科设立博士点",
+      "summary": "天津大学迎新网院系设置页（2024-08-15）原文：医学工程与转化医学研究院（简称医工院）成立于 2017 年 1 月，聘任明东教授为院长；学院拥有雄厚的学科基础和高水平师资队伍，目前依托生物医学工程一级学科设立博士点。",
+      "applicability": "适用于关注天津大学医工交叉独立建制的考生：该校设「医学工程与转化医学研究院」这一专门机构，依托生物医学工程一级学科设博士点。页面未单列硕士点、考试科目与跨专业限制。",
+      "relation": "direct",
+      "tags": [
+        "天津大学",
+        "医学工程与转化医学研究院",
+        "生物医学工程",
+        "博士点",
+        "独立建制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "天津大学",
+        "college": "医学工程与转化医学研究院",
+        "program": "生物医学工程（0831）",
+        "region": "天津",
+        "evidence_locator": "院系介绍第 2 段。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "学院拥有雄厚的学科基础和高水平的师资队伍。目前依托生物医学工程一级学科设立博士点"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-life-two-first-level-disciplines",
+      "url": "https://life.hust.edu.cn/xygk1/xyjj.htm",
+      "organization": "华中科技大学生命科学与技术学院",
+      "title": "学院简介（生命科学与技术学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "学院官网「学院概况-学院简介」页面未标注发布日期；正文引第四轮学科评估结果，判定为近年维护版本，抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors/hust-life-about.raw",
+      "sha256": "1c8d485b5c12d23a8b756445582176b310fa4ef52d9711a624a99528aa953c51",
+      "captured_at": "2026-10-23T12:03:31.929Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-life-two-first-level-disciplines-guide-devices-c09fc436",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "华中科技大学生命科学与技术学院：生物医学工程、生物学 2 个国家一级学科，下设 5 个系",
+      "summary": "学院简介原文：学院拥有生物医学工程和生物学 2 个国家一级学科，设有生物医学工程系、生物信息与系统生物学系、纳米医药与生物制药系、生物科学系、生物技术系 5 个系；第四轮学科评估生物医学工程 A+、生物学 A-。",
+      "applicability": "适用于报考华科医工交叉方向的考生：生物医学工程为国家一级学科、第四轮评估 A+，学院设 5 个系可供选择方向。页面未单列硕士/博士授权层次，也未列考试科目。",
+      "relation": "direct",
+      "tags": [
+        "华中科技大学",
+        "生命科学与技术学院",
+        "生物医学工程",
+        "生物学",
+        "A+",
+        "国家一级学科"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "生命科学与技术学院",
+        "program": "生物医学工程（0831）/ 生物学（0710）",
+        "region": "湖北",
+        "evidence_locator": "「学院简介」正文第 2 段。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "学院拥有生物医学工程和生物学2个国家一级学科，设有生物医学工程系、生物信息与系统生物学系、纳米医药与生物制药系、生物科学系、生物技术系5个系"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "xjtu-slst-two-first-level-phd",
+      "url": "https://slst.xjtu.edu.cn/xygk/xyjj.htm",
+      "organization": "西安交通大学生命科学与技术学院",
+      "title": "学院简介（生命科学与技术学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "学院官网「学院概况-学院简介」页面未标注发布日期；正文提及 2025 年博士后流动站评估，抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors/xjtu-slst-about.raw",
+      "sha256": "638ed0f9ba3f509df65fcc8fbbe3ce388c2c31489459fe4cfcdd91ec149367e2",
+      "captured_at": "2026-10-23T12:07:29.420Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-xjtu-slst-two-first-level-phd-guide-devices-c09fc436",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "西交生命科学与技术学院：生物医学工程（1978 年建、1988 年国家重点学科）与生物学两个一级学科，2011 年获生物学一级学科博士点",
+      "summary": "学院简介原文：设有生物医学工程和生物学两个一级学科；生物医学工程学科 1978 年创建、1988 年被评为国家重点学科；生物化学与分子生物学 2000 年获批二级学科博士点，生物物理学 2003 年获批二级学科博士点，2011 年获批生物学一级学科博士点；设有生物医学工程博士后流动站，2025 年获评优秀。",
+      "applicability": "适用于报考西安交大生命学院的考生：生物医学工程为国家重点学科并设有一级学科与博士后流动站；生物学自 2011 年起为一级学科博士点。页面未列考试科目与跨专业限制。",
+      "relation": "direct",
+      "tags": [
+        "西安交通大学",
+        "生命科学与技术学院",
+        "生物医学工程",
+        "生物学",
+        "国家重点学科",
+        "一级学科博士点"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安交通大学",
+        "college": "生命科学与技术学院",
+        "program": "生物医学工程（0831）/ 生物学（0710）",
+        "region": "陕西",
+        "evidence_locator": "「学院简介」第 2 段。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "学院设有生物医学工程和生物学两个一级学科。生物医学工程学科于1978年创建，是我国第一批创建的生物医学工程学科，1988被评为国家重点学科。生物化学与分子生物学学科创建于1996年，2000年获批二级学科博士点，2003年获批生物物理学二级学科博士点，2011年获批生物学一级学科博士点。设有生物医学工程博士后流动站，于2025年获评优秀。"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "bit-ls-biology-phd-biomed-eng-phd",
+      "url": "https://ls.bit.edu.cn/xygk/xyjj/index.htm",
+      "organization": "北京理工大学生命学院",
+      "title": "学院简介（生命学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "学院官网「学院概况-学院简介」页面未标注发布日期；正文提及 2023 年学科调整与 2024 年 ESI，抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors/bit-ls-about.raw",
+      "sha256": "20ece9939f198f9c4989a92425ef666473917e73cf4b3a95eef5f72e3cd8316a",
+      "captured_at": "2026-10-23T12:26:09.202Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-bit-ls-biology-phd-biomed-eng-phd-guide-devices-66bed1fe",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "北理工生命学院：2023 年学科调整后建有生物学一级学科博士点与生物医药工程博士点，设生物学博士后流动站",
+      "summary": "学院简介「一、学科专业」原文：2023 年进行学科调整后，现建有生物学一级学科博士点和生物医药工程博士点，设有生物学博士后流动站；生物化学与分子生物学获批国防重点学科，融合医工学获批工信部重点学科。",
+      "applicability": "适用于报考北京理工大学生命学院的考生：博士培养口径为生物学一级学科与生物医药工程；另有 2000 年获批的生物化工二级学科硕士点。「融合医工学」为工信部重点学科方向。页面未列生物医学工程独立硕士点与考试科目。",
+      "relation": "direct",
+      "tags": [
+        "北京理工大学",
+        "生命学院",
+        "生物学",
+        "生物医药工程",
+        "融合医工学",
+        "一级学科博士点"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京理工大学",
+        "college": "生命学院",
+        "program": "生物学（0710）/ 生物医药工程 / 生物化工",
+        "region": "北京",
+        "evidence_locator": "「一、学科专业」第 2 段。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "2023年进行学科调整后，现建有生物学一级学科博士点和生物医药工程博士点，设有生物学博士后流动站；生物化学与分子生物学获批国防重点学科，融合医工学获批工信部重点学科"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  }
+]

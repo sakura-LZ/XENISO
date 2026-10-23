@@ -1,0 +1,353 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T13:01:44.490Z",
+  "sources": [
+    {
+      "id": "cqmu-2023-employment",
+      "url": "https://xxgk.cqmu.edu.cn/system/_content/download.jsp?owner=1535914076&urltype=news.DownloadAttachUrl&wbfileid=3257F7C79DC6F19EAFCE5A1EDDEDFE59",
+      "organization": "重庆医科大学",
+      "title": "重庆医科大学2023届毕业生就业质量年度报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "信息公开网原文为 .docx（发布版）；报告数据截止 2023-12-31。"
+    },
+    {
+      "id": "ahmu-2024-employment",
+      "url": "https://jy.ahmu.edu.cn/attachment/ahmu/ueditor/file/20251017/7194_%e5%ae%89%e5%be%bd%e5%8c%bb%e7%a7%91%e5%a4%a7%e5%ad%a62024%e5%b1%8a%e6%af%95%e4%b8%9a%e7%94%9f%e5%b0%b1%e4%b8%9a%e8%b4%a8%e9%87%8f%e5%b9%b4%e5%ba%a6%e6%8a%a5%e5%91%8a-%e7%b2%be%e7%ae%80%e7%89%88.pdf",
+      "organization": "安徽医科大学",
+      "title": "安徽医科大学2024届毕业生就业质量年度报告（精简版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "学校就业网发布「精简版」；数据截至 2024-08-31（初次落实率）。"
+    },
+    {
+      "id": "xzhmu-2024-employment",
+      "url": "https://shpg.xzhmu.edu.cn/__local/9/47/35/7A1C13A34CE58F2858D461CEEAC_A330375C_470294.pdf",
+      "organization": "徐州医科大学",
+      "title": "徐州医科大学2023-2024学年本科教学质量报告（含2024届就业数据）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "文件为学校发布的本科教学质量报告，就业章节数据来源为全国/江苏省就业管理系统，统计日期 2024-12-31；非独立《就业质量年度报告》，已在标题注明。"
+    },
+    {
+      "id": "sxmu-2022-employment",
+      "url": "https://www.sxmu.edu.cn/system/resource/storage/download.jsp?mark=MDc1MjUyODQ3QzQ3Qjg2QUYyRDQyNUVCQjQ0MDc0M0QvREI1MUQ5MUIvMTJBRjc3NA%3D%3D",
+      "organization": "山西医科大学",
+      "title": "山西医科大学2022届毕业生就业质量报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "学校官网下载接口；报告为 2022 届（98 页），数据口径见原文。"
+    }
+  ],
+  "records": [
+    {
+      "id": "industry-cqmu-2023-employment-medicine-guide-5586a7a1",
+      "source_id": "cqmu-2023-employment",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "重庆医科大学2023届毕业生就业数据（total）",
+      "summary": "6426 人（本科 4114、研究生 2312；不含 80 名专科）（同一官方来源共 5 条原文事实，字段：employment_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于重庆医科大学2023届报告口径；学历范围与分母以 literal 原文为准。",
+      "relation": "direct",
+      "tags": [
+        "2023",
+        "重庆医科大学",
+        "就业质量报告",
+        "就业率"
+      ],
+      "facts": [
+        {
+          "field": "employment_statistics",
+          "value": "重庆医科大学2023届毕业生共6426人。其中，本科毕业生4114人，占毕业生总人数的64.02%；毕业研究生2312人，占毕业生总人数的35.98%。",
+          "quote": "重庆医科大学2023届毕业生共6426人。其中，本科毕业生4114人，占毕业生总人数的64.02%；毕业研究生2312人，占毕业生总人数的35.98%。",
+          "start": 2052,
+          "end": 2128
+        },
+        {
+          "field": "employment_statistics",
+          "value": "截止2023年12月31日，学校2023届毕业生的毕业去向落实率为86.27%，分学历来看，本科毕业生82.43%，毕业研究生93.12%；本科生暂不就业590人，其中暂不就业拟升学564人，占本科毕业生总人数的13.71%。",
+          "quote": "截止2023年12月31日，学校2023届毕业生的毕业去向落实率为86.27%，分学历来看，本科毕业生82.43%，毕业研究生93.12%；本科生暂不就业590人，其中暂不就业拟升学564人，占本科毕业生总人数的13.71%。",
+          "start": 2679,
+          "end": 2792
+        },
+        {
+          "field": "employment_statistics",
+          "value": "2023届毕业生国内升学人数为1956人，占毕业生总人数的30.44%。本科毕业生国内升学人数为1639人，占比39.84%，毕业研究生国内升学人数为317人，占比13.71%。",
+          "quote": "2023届毕业生国内升学人数为1956人，占毕业生总人数的30.44%。本科毕业生国内升学人数为1639人，占比39.84%，毕业研究生国内升学人数为317人，占比13.71%。",
+          "start": 4329,
+          "end": 4418
+        },
+        {
+          "field": "employment_statistics",
+          "value": "2023届毕业生行业布局主要流向了卫生和社会工作（86.30%）、教育（3.25%）及科学研究和技术服务业（2.73%）。",
+          "quote": "2023届毕业生行业布局主要流向了卫生和社会工作（86.30%）、教育（3.25%）及科学研究和技术服务业（2.73%）。",
+          "start": 3549,
+          "end": 3610
+        },
+        {
+          "field": "employment_statistics",
+          "value": "2023届毕业生就业单位流向以医疗卫生单位为主，占比为78.66%，其他企业次之，占比为12.81%。",
+          "quote": "2023届毕业生就业单位流向以医疗卫生单位为主，占比为78.66%，其他企业次之，占比为12.81%。",
+          "start": 3880,
+          "end": 3931
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "9ac9e0097f1bce768ab43dd42cf6c336cfa6c33ae4c6358591af0de0305a13c7",
+      "collected_at": "2026-10-23T12:26:15.516Z",
+      "verified_at": "2026-10-23T13:01:44.274Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "重庆医科大学",
+        "program": "重庆医科大学",
+        "statistic_scope": "2023届毕业生",
+        "evidence_locator": "报告正文；literal 为原文整行"
+      }
+    },
+    {
+      "id": "industry-ahmu-2024-employment-medicine-guide-422b84bb",
+      "source_id": "ahmu-2024-employment",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "安徽医科大学2024届毕业生就业数据（total）",
+      "summary": "2024 届毕业生 5773 人（同一官方来源共 3 条原文事实，字段：employment_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于安徽医科大学2024届报告口径；学历范围与分母以 literal 原文为准。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "安徽医科大学",
+        "就业质量报告",
+        "就业率"
+      ],
+      "facts": [
+        {
+          "field": "employment_statistics",
+          "value": "毕业去向落实率 5773 94.81",
+          "quote": "毕业去向落实率 5773 94.81",
+          "start": 3260,
+          "end": 3278
+        },
+        {
+          "field": "employment_statistics",
+          "value": "截至2024年8月31日，学校2024届毕业生初次毕业去向落实率为94.81%，详见",
+          "quote": "截至2024年8月31日，学校2024届毕业生初次毕业去向落实率为94.81%，详见",
+          "start": 2998,
+          "end": 3040
+        },
+        {
+          "field": "employment_statistics",
+          "value": "人，升学率为44.16%（包含专升本教学点），研究生升学283人，升学率为12.00%。",
+          "quote": "人，升学率为44.16%（包含专升本教学点），研究生升学283人，升学率为12.00%。",
+          "start": 4707,
+          "end": 4751
+        }
+      ],
+      "missing_fields": [
+        "主要就业行业 TOP3（精简版未披露）",
+        "医疗卫生单位就业占比（精简版未披露）",
+        "单位性质分布（精简版未披露）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "a0c04959f8ef025d66890a52f3187bab7301daf6b937428b24a7855c611ace0a",
+      "collected_at": "2026-10-23T12:55:43.075Z",
+      "verified_at": "2026-10-23T13:01:44.306Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "安徽医科大学",
+        "program": "安徽医科大学",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "报告正文；literal 为原文整行"
+      }
+    },
+    {
+      "id": "industry-xzhmu-2024-employment-medicine-guide-c026b4b3",
+      "source_id": "xzhmu-2024-employment",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "徐州医科大学2024届毕业生就业数据（rate）",
+      "summary": "2024 届本科年终落实率 95.19%（初次 83.89%）（同一官方来源共 6 条原文事实，字段：employment_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于徐州医科大学2024届报告口径；学历范围与分母以 literal 原文为准。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "徐州医科大学",
+        "就业质量报告",
+        "就业率"
+      ],
+      "facts": [
+        {
+          "field": "employment_statistics",
+          "value": "学校 2024届本科毕业生毕业去向落实率为95.19%，基本实现充分就业。从具体",
+          "quote": "学校 2024届本科毕业生毕业去向落实率为95.19%，基本实现充分就业。从具体",
+          "start": 7587,
+          "end": 7627
+        },
+        {
+          "field": "employment_statistics",
+          "value": "本科生合计 52.44%(1634/3116) 31.74%(989/3116)",
+          "quote": "本科生合计 52.44%(1634/3116) 31.74%(989/3116)",
+          "start": 11534,
+          "end": 11574
+        },
+        {
+          "field": "employment_statistics",
+          "value": "工作就业的毕业生为 820人，占比为41.60%。",
+          "quote": "工作就业的毕业生为 820人，占比为41.60%。",
+          "start": 16789,
+          "end": 16814
+        },
+        {
+          "field": "employment_statistics",
+          "value": "生物医学工程 81.25%(39/48) 56.25%(27/48) 25.00%(12/48)",
+          "quote": "生物医学工程 81.25%(39/48) 56.25%(27/48) 25.00%(12/48)",
+          "start": 9316,
+          "end": 9364
+        },
+        {
+          "field": "employment_statistics",
+          "value": "医学影像学院 81.82%(90/110) 74.55%(82/110) 7.27%(8/110)",
+          "quote": "医学影像学院 81.82%(90/110) 74.55%(82/110) 7.27%(8/110)",
+          "start": 9426,
+          "end": 9475
+        },
+        {
+          "field": "employment_statistics",
+          "value": "医学信息工程 83.33%(30/36) 61.11%(22/36) 22.22%(8/36)",
+          "quote": "医学信息工程 83.33%(30/36) 61.11%(22/36) 22.22%(8/36)",
+          "start": 10664,
+          "end": 10711
+        }
+      ],
+      "missing_fields": [
+        "全校毕业生总数（报告只给本科 3116 人）",
+        "行业门类分布（只给单位性质）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "851d149034187cc17a41f059563188166c72794c81818ca9c57e594c2826f201",
+      "collected_at": "2026-10-23T12:55:42.253Z",
+      "verified_at": "2026-10-23T13:01:44.342Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "徐州医科大学",
+        "program": "徐州医科大学",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "报告正文；literal 为原文整行"
+      }
+    },
+    {
+      "id": "industry-sxmu-2022-employment-medicine-guide-e4c6ae21",
+      "source_id": "sxmu-2022-employment",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "山西医科大学2022届毕业生就业数据（total）",
+      "summary": "7035 人（本科 5508、硕士 1471、博士 56）（同一官方来源共 5 条原文事实，字段：employment_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于山西医科大学2022届报告口径；学历范围与分母以 literal 原文为准。",
+      "relation": "direct",
+      "tags": [
+        "2022",
+        "山西医科大学",
+        "就业质量报告",
+        "就业率"
+      ],
+      "facts": [
+        {
+          "field": "employment_statistics",
+          "value": "本科生5508人，硕士生1471人，博士生56人。总体毕业去向落实率为89.79%，升学率36.87%，",
+          "quote": "本科生5508人，硕士生1471人，博士生56人。总体毕业去向落实率为89.79%，升学率36.87%，",
+          "start": 11461,
+          "end": 11513
+        },
+        {
+          "field": "employment_statistics",
+          "value": "学校2022届毕业生毕业去向落实率为89.79%。",
+          "quote": "学校2022届毕业生毕业去向落实率为89.79%。",
+          "start": 18698,
+          "end": 18723
+        },
+        {
+          "field": "employment_statistics",
+          "value": "广东省和山东省等31个省份；有49.42%的毕业生在医疗卫生单位工作，在医疗卫生单位工作",
+          "quote": "广东省和山东省等31个省份；有49.42%的毕业生在医疗卫生单位工作，在医疗卫生单位工作",
+          "start": 11810,
+          "end": 11854
+        },
+        {
+          "field": "employment_statistics",
+          "value": "的毕业生中有62.99%在三甲医院工作；毕业生就业最多的行业是卫生和社会工作（67.49%）；",
+          "quote": "的毕业生中有62.99%在三甲医院工作；毕业生就业最多的行业是卫生和社会工作（67.49%）；",
+          "start": 11855,
+          "end": 11902
+        },
+        {
+          "field": "employment_statistics",
+          "value": "医学影像技术 85 71 83.53%",
+          "quote": "医学影像技术 85 71 83.53%",
+          "start": 23818,
+          "end": 23837
+        }
+      ],
+      "missing_fields": [
+        "生物医学工程/医学信息工程：该校无此专业或不在此报告"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "46614edd07fa39cb8d42cf2403da467f80f974fd80f5fb6c078fa2aa9e21215a",
+      "collected_at": "2026-10-23T12:57:44.367Z",
+      "verified_at": "2026-10-23T13:01:44.475Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "山西医科大学",
+        "program": "山西医科大学",
+        "statistic_scope": "2022届毕业生",
+        "evidence_locator": "报告正文；literal 为原文整行"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "cqmu-2023-employment",
+      "url": "https://xxgk.cqmu.edu.cn/system/_content/download.jsp?owner=1535914076&urltype=news.DownloadAttachUrl&wbfileid=3257F7C79DC6F19EAFCE5A1EDDEDFE59",
+      "at": "2026-10-23T12:26:15.516Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "ahmu-2024-employment",
+      "url": "https://jy.ahmu.edu.cn/attachment/ahmu/ueditor/file/20251017/7194_%e5%ae%89%e5%be%bd%e5%8c%bb%e7%a7%91%e5%a4%a7%e5%ad%a62024%e5%b1%8a%e6%af%95%e4%b8%9a%e7%94%9f%e5%b0%b1%e4%b8%9a%e8%b4%a8%e9%87%8f%e5%b9%b4%e5%ba%a6%e6%8a%a5%e5%91%8a-%e7%b2%be%e7%ae%80%e7%89%88.pdf",
+      "at": "2026-10-23T12:55:43.075Z",
+      "status": "collected",
+      "missing_fields": [
+        "主要就业行业 TOP3（精简版未披露）",
+        "医疗卫生单位就业占比（精简版未披露）",
+        "单位性质分布（精简版未披露）"
+      ]
+    },
+    {
+      "source_id": "xzhmu-2024-employment",
+      "url": "https://shpg.xzhmu.edu.cn/__local/9/47/35/7A1C13A34CE58F2858D461CEEAC_A330375C_470294.pdf",
+      "at": "2026-10-23T12:55:42.253Z",
+      "status": "collected",
+      "missing_fields": [
+        "全校毕业生总数（报告只给本科 3116 人）",
+        "行业门类分布（只给单位性质）"
+      ]
+    },
+    {
+      "source_id": "sxmu-2022-employment",
+      "url": "https://www.sxmu.edu.cn/system/resource/storage/download.jsp?mark=MDc1MjUyODQ3QzQ3Qjg2QUYyRDQyNUVCQjQ0MDc0M0QvREI1MUQ5MUIvMTJBRjc3NA%3D%3D",
+      "at": "2026-10-23T12:57:44.367Z",
+      "status": "collected",
+      "missing_fields": [
+        "生物医学工程/医学信息工程：该校无此专业或不在此报告"
+      ]
+    }
+  ]
+}

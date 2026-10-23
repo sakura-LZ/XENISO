@@ -23,7 +23,9 @@ export const sourceSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]{3,80}$/), url: publicUrl, organization: z.string().min(1).max(160),
   title: z.string().min(1).max(250), jurisdiction: z.enum(["CN", "US", "global"]),
   source_tier: z.literal("primary"), published_at: z.iso.date().nullable(),
-  publication_date_note: z.string().min(1).max(300),
+  // 发布日期缺失时的披露说明：需要容纳「颁布文号 + 通知页链接 + 取得通道」
+  // 这类合规说明（实测人社部标准的披露需 306 字符），过窄会误杀合法来源。
+  publication_date_note: z.string().min(1).max(600),
 }).strict();
 export const factSchema = z.object({
   field: z.string().regex(/^[a-z][a-z0-9_]{1,59}$/), value: z.string().min(1).max(1600),

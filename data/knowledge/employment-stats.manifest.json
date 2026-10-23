@@ -1,0 +1,291 @@
+[
+  {
+    "source": {
+      "id": "xidian-2024-employment-report",
+      "url": "https://job.xidian.edu.cn/attachment/xidian/ueditor/file/20250126/3369_%E8%A5%BF%E5%AE%89%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A62024%E5%B1%8A%E6%AF%95%E4%B8%9A%E7%94%9F%E5%B0%B1%E4%B8%9A%E8%B4%A8%E9%87%8F%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A.pdf",
+      "organization": "西安电子科技大学",
+      "title": "西安电子科技大学2024届毕业生就业质量年度报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未标注发布日期；文件路径为 20250126，报告数据截至 2024 年 12 月，属 2024 届。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-employment-stats/xidian-2024.pdf",
+      "sha256": "2b2f14d5f8c918b3217d3fd36dec8fd6f01ea898cb876c331a246c878802937c",
+      "captured_at": "2026-10-23T11:58:12.630Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-employment-stats/xidian-2024.txt",
+      "extracted_sha256": "9ac2f98527a560cdffb98683a6ab5664d6ced3e4ea33d8d236be7f9f9943e575"
+    },
+    "record": {
+      "id": "industry-xidian-2024-employment-report-medicine-guide-6c67abc9",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "西安电子科技大学2024届毕业生就业数据（total）",
+      "summary": "全校毕业生 9751 人（本科 5317、硕士 4086、博士 348）（同一官方来源共 6 条原文事实，字段：employment_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于西安电子科技大学2024届毕业生就业质量报告的口径；升学率、医疗占比的分母以原报告为准（见 literal）。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "西安电子科技大学",
+        "就业质量报告",
+        "就业率"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安电子科技大学",
+        "program": "西安电子科技大学",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "PDF/文档正文；literal 取自原文该行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employment_statistics",
+        "pattern": "学校 2024 届毕业生共计 9751 人。其中，本科毕业生 5317 人，占毕业生总人数的"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "率为97\\.04%，其中本科、研究生的毕业去向落实率分别为95\\.86%、98\\.44%。"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "本科生以升学为主，研究生以单位就业为主。学校2024届本科生升学占比为54\\.79%，其"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "就业量较大的行业类分别为制造业（33\\.35%）、信息传输、软件和信息技术服务业"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "科学研究和技术服务业 8\\.06 制造业 17\\.91"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "学校2024届本科、研究生均以民营企业就业为主，比例（分别为52\\.48%、41\\.66%），其"
+      }
+    ],
+    "expected_fields": [
+      "employment_statistics",
+      "医疗卫生单位就业占比（报告按行业/单位性质披露，未单列医疗卫生单位比例）"
+    ]
+  },
+  {
+    "source": {
+      "id": "tmu-2024-employment-report",
+      "url": "https://jyw.tmu.edu.cn/Uploads/file/20241231/1735611321403795.pdf",
+      "organization": "天津医科大学",
+      "title": "天津医科大学2024年就业质量年度报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "报告封面为「2024 年就业质量年度报告」，正文落款 2024 年 12 月。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-employment-stats/tmu-official-2024.pdf",
+      "sha256": "ba58cae968415f37f427519657e31e18616c9b6e169b8bfdb47e8545956d7f23",
+      "captured_at": "2026-10-23T12:04:06.015Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-employment-stats/tmu-official-2024.txt",
+      "extracted_sha256": "4476241cdc93d1e02a2edbd28a12bf2c51b0daa7d7a887266aa5f87e7512d7d7"
+    },
+    "record": {
+      "id": "industry-tmu-2024-employment-report-medicine-guide-c7811996",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "天津医科大学2024届毕业生就业数据（total）",
+      "summary": "全校 2660 人（本科 1117、硕士 1227、博士 316）（同一官方来源共 5 条原文事实，字段：employment_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于天津医科大学2024届毕业生就业质量报告的口径；升学率、医疗占比的分母以原报告为准（见 literal）。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "天津医科大学",
+        "就业质量报告",
+        "就业率"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "天津医科大学",
+        "program": "天津医科大学",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "PDF/文档正文；literal 取自原文该行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employment_statistics",
+        "pattern": "2024 届全校共有毕业生 2660 人（其中本科生 1117 人；研究生"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "截至 9 月 1 日，全校毕业去向落实率 86\\.54%，其中本科生"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "合 计 2660 86\\.54 45\\.40 36\\.02 1\\.17 3\\.87 0\\.04 0\\.00 13\\.50"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "中在医疗单位，签约人数比例分别为 32\\.41%、74\\.68%和 82\\.43%。详"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "本科生 29\\.29 2\\.73 0\\.39 37\\.89 29\\.69"
+      }
+    ],
+    "expected_fields": [
+      "employment_statistics",
+      "主要就业行业 TOP3（报告只给单位性质/医疗单位比例，未按行业门类披露）"
+    ]
+  },
+  {
+    "source": {
+      "id": "cqmu-2023-employment-report",
+      "url": "https://xxgk.cqmu.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1535914076&wbfileid=3257F7C79DC6F19EAFCE5A1EDDEDFE59",
+      "organization": "重庆医科大学",
+      "title": "重庆医科大学2023届毕业生就业质量年度报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "信息公开网原文为 .docx（发布版）；报告数据截止 2023-12-31。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-employment-stats/cqmu-2023.docx",
+      "sha256": "5ce539c9c0a3314f4d3818c804161fc0802da95c05917166462264aae1fde46d",
+      "captured_at": "2026-10-23T12:26:15.516Z",
+      "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-cqmu-2023-employment-report-medicine-guide-5586a7a1",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "重庆医科大学2023届毕业生就业数据（total）",
+      "summary": "6426 人（本科 4114、研究生 2312；不含 80 名专科）（同一官方来源共 5 条原文事实，字段：employment_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于重庆医科大学2023届毕业生就业质量报告的口径；升学率、医疗占比的分母以原报告为准（见 literal）。",
+      "relation": "direct",
+      "tags": [
+        "2023",
+        "重庆医科大学",
+        "就业质量报告",
+        "就业率"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "重庆医科大学",
+        "program": "重庆医科大学",
+        "statistic_scope": "2023届毕业生",
+        "evidence_locator": "PDF/文档正文；literal 取自原文该行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employment_statistics",
+        "pattern": "重庆医科大学2023届毕业生共6426人。其中，本科毕业生4114人，占毕业生总人数的64\\.02%；毕业研究生2312人，占毕业生总人数的35\\.98%。"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "截止2023年12月31日，学校2023届毕业生的毕业去向落实率为86\\.27%，分学历来看，本科毕业生82\\.43%，毕业研究生93\\.12%；本科生暂不就业590人，其中暂不就业拟升学564人，占本科毕业生总人数的13\\.71%。"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "2023届毕业生国内升学人数为1956人，占毕业生总人数的30\\.44%。本科毕业生国内升学人数为1639人，占比39\\.84%，毕业研究生国内升学人数为317人，占比13\\.71%。"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "2023届毕业生行业布局主要流向了卫生和社会工作（86\\.30%）、教育（3\\.25%）及科学研究和技术服务业（2\\.73%）。"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "2023届毕业生就业单位流向以医疗卫生单位为主，占比为78\\.66%，其他企业次之，占比为12\\.81%。"
+      }
+    ],
+    "expected_fields": [
+      "employment_statistics"
+    ]
+  },
+  {
+    "source": {
+      "id": "smu-2022-employment-report",
+      "url": "https://cdn.jobsys.cn/images/ueditor/file/20230922/1695370677225695.pdf",
+      "organization": "南方医科大学",
+      "title": "南方医科大学2022届毕业生就业质量年度报告（对外发布版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "学校就业信息网「质量年报」栏目发布；PDF 为对外发布版。数据截至 2022-08-31。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-employment-stats/smu-2022.pdf",
+      "sha256": "eba14d5fd828a93c8ae1ee010f9c7200a9521a4f24002df8a11245e30e72fa32",
+      "captured_at": "2026-10-23T12:35:12.809Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-employment-stats/smu-2022.txt",
+      "extracted_sha256": "3348fcd864c74d233235409f874d5ad131ff5f7b811a2e145014af1faec11e8f"
+    },
+    "record": {
+      "id": "industry-smu-2022-employment-report-medicine-guide-d93404d5",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "南方医科大学2022届毕业生就业数据（total）",
+      "summary": "4584 人（本科 2924、硕士 1232、博士 328、本硕博连读 100）（同一官方来源共 7 条原文事实，字段：employment_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于南方医科大学2022届毕业生就业质量报告的口径；升学率、医疗占比的分母以原报告为准（见 literal）。",
+      "relation": "direct",
+      "tags": [
+        "2022",
+        "南方医科大学",
+        "就业质量报告",
+        "就业率"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南方医科大学",
+        "program": "南方医科大学",
+        "statistic_scope": "2022届毕业生",
+        "evidence_locator": "PDF/文档正文；literal 取自原文该行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employment_statistics",
+        "pattern": "我校2022届毕业生共4584人，其中本科毕业生2924人，硕士毕业生1232人，博士毕业"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "截至 2022 年 8 月 31 日，我校 2022 届毕业生的总体毕业去向落实率为 87\\.72%，其中本"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "生选择继续升学深造的主要原因。数据显示，2022 届我校本科毕业生的升学率为 50\\.24%，较"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "我校毕业生对卫生领域的服务贡献程度较高。具体来说，2022届本科毕业生主要就业于卫"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "生行业（46\\.12%）、教育行业（10\\.31%）；硕士、博士毕业生主要就业于卫生行业，占比在"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "我校毕业生主要就业于医疗卫生与医药类单位，比例在80%以上。"
+      },
+      {
+        "field": "employment_statistics",
+        "pattern": "生物医学工程学院 88\\.70"
+      }
+    ],
+    "expected_fields": [
+      "employment_statistics",
+      "分专业（生物医学工程各方向）就业率：报告只到培养单位/院系层级，未按专业方向拆分"
+    ]
+  }
+]

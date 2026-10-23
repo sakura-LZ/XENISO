@@ -1,0 +1,877 @@
+[
+  {
+    "source": {
+      "id": "moe-benke-catalog-2024",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/t20240319_1121111.html",
+      "organization": "中华人民共和国教育部",
+      "title": "普通高等学校本科专业目录（2024年）（教育部关于公布2023年度普通高等学校本科专业备案和审批结果的通知·附件2）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "教高函〔2024〕6号，落款日期 2024年2月4日，页面生成日期 2024-02-05，发布日期 2024-03-07。附件2 的 PDF 直链在 moe.gov.cn 上只提供 http 通道（https 会 302 重定向），故以 http 取得 PDF 原件，发布页 URL 本身为 https。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/moe-W020240319305498791768.pdf",
+      "sha256": "4978bb497e639e56412f8dea942ba4ae9f1aa2cd64a083171c21dc89b3a9ced7",
+      "captured_at": "2026-10-23T12:00:50.100Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-major-explain/moe-W020240319305498791768.txt",
+      "extracted_sha256": "0d4f6bf95baa0f4f97496ae4bb22f543e39e4b8c6f189fac21e3e9aa171803b6"
+    },
+    "record": {
+      "id": "admissions-moe-benke-catalog-2024-guide-devices-9181f546",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "生物医学工程（082601）本科专业目录条目",
+      "summary": "教育部《普通高等学校本科专业目录（2024年）》中「生物医学工程」的完整条目：专业代码 082601，专业类为生物医学工程类，授予理学,工学学位，修业年限五年,四年。（同一官方来源共 2 条原文事实，字段：program、degree_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于确认专业代码、所属专业类、学位授予门类与修业年限四项官方口径。专业代码后缀含义：T=特设专业，K=国家控制布点专业。不适用于录取分数、报考资格或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_catalog",
+        "undergraduate_2024"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "082601",
+        "region": "全国",
+        "evidence_locator": "附件2 专业目录 序号534 学位授予门类/修业年限列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "生物医学工程类 082601 生物医学工程 理学,工学 五年,四年"
+      },
+      {
+        "field": "degree_type",
+        "pattern": "生物医学工程类 082601 生物医学工程 理学,工学 五年,四年"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "education",
+      "具体院校学制差异"
+    ]
+  },
+  {
+    "source": {
+      "id": "moe-benke-catalog-2024",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/t20240319_1121111.html",
+      "organization": "中华人民共和国教育部",
+      "title": "普通高等学校本科专业目录（2024年）（教育部关于公布2023年度普通高等学校本科专业备案和审批结果的通知·附件2）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "教高函〔2024〕6号，落款日期 2024年2月4日，页面生成日期 2024-02-05，发布日期 2024-03-07。附件2 的 PDF 直链在 moe.gov.cn 上只提供 http 通道（https 会 302 重定向），故以 http 取得 PDF 原件，发布页 URL 本身为 https。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/moe-W020240319305498791768.pdf",
+      "sha256": "4978bb497e639e56412f8dea942ba4ae9f1aa2cd64a083171c21dc89b3a9ced7",
+      "captured_at": "2026-10-23T12:00:50.100Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-major-explain/moe-W020240319305498791768.txt",
+      "extracted_sha256": "0d4f6bf95baa0f4f97496ae4bb22f543e39e4b8c6f189fac21e3e9aa171803b6"
+    },
+    "record": {
+      "id": "admissions-moe-benke-catalog-2024-guide-clinical-data-9b7b1945",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "医学信息工程（080711T）本科专业目录条目",
+      "summary": "教育部《普通高等学校本科专业目录（2024年）》中「医学信息工程」的完整条目：专业代码 080711T，专业类为电子信息类，授予工学学位，修业年限四年。（同一官方来源共 2 条原文事实，字段：program、degree_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于确认专业代码、所属专业类、学位授予门类与修业年限四项官方口径。专业代码后缀含义：T=特设专业，K=国家控制布点专业。不适用于录取分数、报考资格或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_catalog",
+        "undergraduate_2024"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "080711T",
+        "region": "全国",
+        "evidence_locator": "附件2 专业目录 序号378 学位授予门类/修业年限列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "电子信息类 080711T 医学信息工程 工学 四年"
+      },
+      {
+        "field": "degree_type",
+        "pattern": "医学信息工程 工学 四年"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "education",
+      "培养目标",
+      "主干课程",
+      "就业方向",
+      "具体院校学制差异"
+    ]
+  },
+  {
+    "source": {
+      "id": "moe-benke-catalog-2024",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/t20240319_1121111.html",
+      "organization": "中华人民共和国教育部",
+      "title": "普通高等学校本科专业目录（2024年）（教育部关于公布2023年度普通高等学校本科专业备案和审批结果的通知·附件2）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "教高函〔2024〕6号，落款日期 2024年2月4日，页面生成日期 2024-02-05，发布日期 2024-03-07。附件2 的 PDF 直链在 moe.gov.cn 上只提供 http 通道（https 会 302 重定向），故以 http 取得 PDF 原件，发布页 URL 本身为 https。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/moe-W020240319305498791768.pdf",
+      "sha256": "4978bb497e639e56412f8dea942ba4ae9f1aa2cd64a083171c21dc89b3a9ced7",
+      "captured_at": "2026-10-23T12:00:50.100Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-major-explain/moe-W020240319305498791768.txt",
+      "extracted_sha256": "0d4f6bf95baa0f4f97496ae4bb22f543e39e4b8c6f189fac21e3e9aa171803b6"
+    },
+    "record": {
+      "id": "admissions-moe-benke-catalog-2024-guide-imaging-eng-992c45bd",
+      "role_id": "guide_imaging_eng",
+      "category": "admissions",
+      "title": "医学影像技术（101003）本科专业目录条目",
+      "summary": "教育部《普通高等学校本科专业目录（2024年）》中「医学影像技术」的完整条目：专业代码 101003，专业类为医学技术类，授予理学学位，修业年限四年。（同一官方来源共 2 条原文事实，字段：program、degree_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于确认专业代码、所属专业类、学位授予门类与修业年限四项官方口径。专业代码后缀含义：T=特设专业，K=国家控制布点专业。不适用于录取分数、报考资格或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_catalog",
+        "undergraduate_2024"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "101003",
+        "region": "全国",
+        "evidence_locator": "附件2 专业目录 序号677 学位授予门类/修业年限列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "医学技术类 101003 医学影像技术 理学 四年"
+      },
+      {
+        "field": "degree_type",
+        "pattern": "医学影像技术 理学 四年"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "education",
+      "具体院校学制差异"
+    ]
+  },
+  {
+    "source": {
+      "id": "moe-benke-catalog-2024",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/t20240319_1121111.html",
+      "organization": "中华人民共和国教育部",
+      "title": "普通高等学校本科专业目录（2024年）（教育部关于公布2023年度普通高等学校本科专业备案和审批结果的通知·附件2）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "教高函〔2024〕6号，落款日期 2024年2月4日，页面生成日期 2024-02-05，发布日期 2024-03-07。附件2 的 PDF 直链在 moe.gov.cn 上只提供 http 通道（https 会 302 重定向），故以 http 取得 PDF 原件，发布页 URL 本身为 https。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/moe-W020240319305498791768.pdf",
+      "sha256": "4978bb497e639e56412f8dea942ba4ae9f1aa2cd64a083171c21dc89b3a9ced7",
+      "captured_at": "2026-10-23T12:00:50.100Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-major-explain/moe-W020240319305498791768.txt",
+      "extracted_sha256": "0d4f6bf95baa0f4f97496ae4bb22f543e39e4b8c6f189fac21e3e9aa171803b6"
+    },
+    "record": {
+      "id": "admissions-moe-benke-catalog-2024-guide-clinical-data-4639346f",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "医学检验技术（101001）本科专业目录条目",
+      "summary": "教育部《普通高等学校本科专业目录（2024年）》中「医学检验技术」的完整条目：专业代码 101001，专业类为医学技术类，授予理学学位，修业年限四年。（同一官方来源共 2 条原文事实，字段：program、degree_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于确认专业代码、所属专业类、学位授予门类与修业年限四项官方口径。专业代码后缀含义：T=特设专业，K=国家控制布点专业。不适用于录取分数、报考资格或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_catalog",
+        "undergraduate_2024"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "101001",
+        "region": "全国",
+        "evidence_locator": "附件2 专业目录 序号675 学位授予门类/修业年限列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "医学技术类 101001 医学检验技术 理学 四年"
+      },
+      {
+        "field": "degree_type",
+        "pattern": "医学检验技术 理学 四年"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "education",
+      "培养目标",
+      "主干课程",
+      "就业方向",
+      "具体院校学制差异"
+    ]
+  },
+  {
+    "source": {
+      "id": "moe-benke-catalog-2024",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/t20240319_1121111.html",
+      "organization": "中华人民共和国教育部",
+      "title": "普通高等学校本科专业目录（2024年）（教育部关于公布2023年度普通高等学校本科专业备案和审批结果的通知·附件2）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "教高函〔2024〕6号，落款日期 2024年2月4日，页面生成日期 2024-02-05，发布日期 2024-03-07。附件2 的 PDF 直链在 moe.gov.cn 上只提供 http 通道（https 会 302 重定向），故以 http 取得 PDF 原件，发布页 URL 本身为 https。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/moe-W020240319305498791768.pdf",
+      "sha256": "4978bb497e639e56412f8dea942ba4ae9f1aa2cd64a083171c21dc89b3a9ced7",
+      "captured_at": "2026-10-23T12:00:50.100Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-major-explain/moe-W020240319305498791768.txt",
+      "extracted_sha256": "0d4f6bf95baa0f4f97496ae4bb22f543e39e4b8c6f189fac21e3e9aa171803b6"
+    },
+    "record": {
+      "id": "admissions-moe-benke-catalog-2024-medical-ai-pm-7c21a258",
+      "role_id": "medical_ai_pm",
+      "category": "admissions",
+      "title": "智能医学工程（101011T）本科专业目录条目",
+      "summary": "教育部《普通高等学校本科专业目录（2024年）》中「智能医学工程」的完整条目：专业代码 101011T，专业类为医学技术类，授予工学学位，修业年限四年，增设年度 2017。（同一官方来源共 2 条原文事实，字段：program、degree_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于确认专业代码、所属专业类、学位授予门类与修业年限四项官方口径。专业代码后缀含义：T=特设专业，K=国家控制布点专业。不适用于录取分数、报考资格或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_catalog",
+        "undergraduate_2024"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "101011T",
+        "region": "全国",
+        "evidence_locator": "附件2 专业目录 序号685 学位授予门类/修业年限列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "医学技术类 101011T 智能医学工程 工学 四年 2017"
+      },
+      {
+        "field": "degree_type",
+        "pattern": "智能医学工程 工学 四年 2017"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "education",
+      "培养目标",
+      "主干课程",
+      "就业方向",
+      "具体院校学制差异"
+    ]
+  },
+  {
+    "source": {
+      "id": "moe-benke-catalog-2024",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/t20240319_1121111.html",
+      "organization": "中华人民共和国教育部",
+      "title": "普通高等学校本科专业目录（2024年）（教育部关于公布2023年度普通高等学校本科专业备案和审批结果的通知·附件2）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "教高函〔2024〕6号，落款日期 2024年2月4日，页面生成日期 2024-02-05，发布日期 2024-03-07。附件2 的 PDF 直链在 moe.gov.cn 上只提供 http 通道（https 会 302 重定向），故以 http 取得 PDF 原件，发布页 URL 本身为 https。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/moe-W020240319305498791768.pdf",
+      "sha256": "4978bb497e639e56412f8dea942ba4ae9f1aa2cd64a083171c21dc89b3a9ced7",
+      "captured_at": "2026-10-23T12:00:50.100Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-major-explain/moe-W020240319305498791768.txt",
+      "extracted_sha256": "0d4f6bf95baa0f4f97496ae4bb22f543e39e4b8c6f189fac21e3e9aa171803b6"
+    },
+    "record": {
+      "id": "admissions-moe-benke-catalog-2024-guide-clinical-data-5d6b0d5c",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "生物信息学（071003）本科专业目录条目",
+      "summary": "教育部《普通高等学校本科专业目录（2024年）》中「生物信息学」的完整条目：专业代码 071003，专业类为生物科学类，授予工学,理学学位，修业年限四年。（同一官方来源共 2 条原文事实，字段：program、degree_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于确认专业代码、所属专业类、学位授予门类与修业年限四项官方口径。专业代码后缀含义：T=特设专业，K=国家控制布点专业。不适用于录取分数、报考资格或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_catalog",
+        "undergraduate_2024"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "071003",
+        "region": "全国",
+        "evidence_locator": "附件2 专业目录 序号293 学位授予门类/修业年限列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "生物科学类 071003 生物信息学 工学,理学 四年"
+      },
+      {
+        "field": "degree_type",
+        "pattern": "生物信息学 工学,理学 四年"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "education",
+      "培养目标",
+      "主干课程",
+      "就业方向",
+      "具体院校学制差异"
+    ]
+  },
+  {
+    "source": {
+      "id": "moe-benke-catalog-2024",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/t20240319_1121111.html",
+      "organization": "中华人民共和国教育部",
+      "title": "普通高等学校本科专业目录（2024年）（教育部关于公布2023年度普通高等学校本科专业备案和审批结果的通知·附件2）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "教高函〔2024〕6号，落款日期 2024年2月4日，页面生成日期 2024-02-05，发布日期 2024-03-07。附件2 的 PDF 直链在 moe.gov.cn 上只提供 http 通道（https 会 302 重定向），故以 http 取得 PDF 原件，发布页 URL 本身为 https。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/moe-W020240319305498791768.pdf",
+      "sha256": "4978bb497e639e56412f8dea942ba4ae9f1aa2cd64a083171c21dc89b3a9ced7",
+      "captured_at": "2026-10-23T12:00:50.100Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-major-explain/moe-W020240319305498791768.txt",
+      "extracted_sha256": "0d4f6bf95baa0f4f97496ae4bb22f543e39e4b8c6f189fac21e3e9aa171803b6"
+    },
+    "record": {
+      "id": "admissions-moe-benke-catalog-2024-guide-imaging-eng-b285614b",
+      "role_id": "guide_imaging_eng",
+      "category": "admissions",
+      "title": "智能影像工程（101013T）本科专业目录条目",
+      "summary": "教育部《普通高等学校本科专业目录（2024年）》中「智能影像工程」的完整条目：专业代码 101013T，专业类为医学技术类，授予工学学位，修业年限四年，增设年度 2020。（同一官方来源共 2 条原文事实，字段：program、degree_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于确认专业代码、所属专业类、学位授予门类与修业年限四项官方口径。专业代码后缀含义：T=特设专业，K=国家控制布点专业。不适用于录取分数、报考资格或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_catalog",
+        "undergraduate_2024"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "101013T",
+        "region": "全国",
+        "evidence_locator": "附件2 专业目录 序号687 学位授予门类/修业年限列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "医学技术类 101013T 智能影像工程 工学 四年 2020"
+      },
+      {
+        "field": "degree_type",
+        "pattern": "智能影像工程 工学 四年 2020"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "education",
+      "培养目标",
+      "主干课程",
+      "就业方向",
+      "具体院校学制差异"
+    ]
+  },
+  {
+    "source": {
+      "id": "moe-benke-catalog-2024",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/t20240319_1121111.html",
+      "organization": "中华人民共和国教育部",
+      "title": "普通高等学校本科专业目录（2024年）（教育部关于公布2023年度普通高等学校本科专业备案和审批结果的通知·附件2）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "教高函〔2024〕6号，落款日期 2024年2月4日，页面生成日期 2024-02-05，发布日期 2024-03-07。附件2 的 PDF 直链在 moe.gov.cn 上只提供 http 通道（https 会 302 重定向），故以 http 取得 PDF 原件，发布页 URL 本身为 https。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/moe-W020240319305498791768.pdf",
+      "sha256": "4978bb497e639e56412f8dea942ba4ae9f1aa2cd64a083171c21dc89b3a9ced7",
+      "captured_at": "2026-10-23T12:00:50.100Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-major-explain/moe-W020240319305498791768.txt",
+      "extracted_sha256": "0d4f6bf95baa0f4f97496ae4bb22f543e39e4b8c6f189fac21e3e9aa171803b6"
+    },
+    "record": {
+      "id": "admissions-moe-benke-catalog-2024-medicine-guide-1650f678",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "临床医学（100201K）本科专业目录条目",
+      "summary": "教育部《普通高等学校本科专业目录（2024年）》中「临床医学」的完整条目：专业代码 100201K，专业类为临床医学类，授予医学学位，修业年限五年。（同一官方来源共 2 条原文事实，字段：program、degree_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于确认专业代码、所属专业类、学位授予门类与修业年限四项官方口径。专业代码后缀含义：T=特设专业，K=国家控制布点专业。不适用于录取分数、报考资格或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_catalog",
+        "undergraduate_2024"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "100201K",
+        "region": "全国",
+        "evidence_locator": "附件2 专业目录 序号632 学位授予门类/修业年限列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "临床医学类 100201K 临床医学 医学 五年"
+      },
+      {
+        "field": "degree_type",
+        "pattern": "临床医学类 100201K 临床医学 医学 五年"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "education",
+      "培养目标",
+      "主干课程",
+      "就业方向",
+      "具体院校学制差异"
+    ]
+  },
+  {
+    "source": {
+      "id": "moe-benke-catalog-2024",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/t20240319_1121111.html",
+      "organization": "中华人民共和国教育部",
+      "title": "普通高等学校本科专业目录（2024年）（教育部关于公布2023年度普通高等学校本科专业备案和审批结果的通知·附件2）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "教高函〔2024〕6号，落款日期 2024年2月4日，页面生成日期 2024-02-05，发布日期 2024-03-07。附件2 的 PDF 直链在 moe.gov.cn 上只提供 http 通道（https 会 302 重定向），故以 http 取得 PDF 原件，发布页 URL 本身为 https。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/moe-W020240319305498791768.pdf",
+      "sha256": "4978bb497e639e56412f8dea942ba4ae9f1aa2cd64a083171c21dc89b3a9ced7",
+      "captured_at": "2026-10-23T12:00:50.100Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-major-explain/moe-W020240319305498791768.txt",
+      "extracted_sha256": "0d4f6bf95baa0f4f97496ae4bb22f543e39e4b8c6f189fac21e3e9aa171803b6"
+    },
+    "record": {
+      "id": "admissions-moe-benke-catalog-2024-guide-health-systems-5686e4ad",
+      "role_id": "guide_health_systems",
+      "category": "admissions",
+      "title": "预防医学（100401K）本科专业目录条目",
+      "summary": "教育部《普通高等学校本科专业目录（2024年）》中「预防医学」的完整条目：专业代码 100401K，专业类为公共卫生与预防医学类，授予医学学位，修业年限五年。（同一官方来源共 2 条原文事实，字段：program、degree_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于确认专业代码、所属专业类、学位授予门类与修业年限四项官方口径。专业代码后缀含义：T=特设专业，K=国家控制布点专业。不适用于录取分数、报考资格或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_catalog",
+        "undergraduate_2024"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "100401K",
+        "region": "全国",
+        "evidence_locator": "附件2 专业目录 序号640 学位授予门类/修业年限列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "公共卫生与预防医学类 100401K 预防医学 医学 五年"
+      },
+      {
+        "field": "degree_type",
+        "pattern": "预防医学类 100401K 预防医学 医学 五年"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "education",
+      "培养目标",
+      "主干课程",
+      "就业方向",
+      "具体院校学制差异"
+    ]
+  },
+  {
+    "source": {
+      "id": "moe-benke-catalog-2024",
+      "url": "https://www.moe.gov.cn/srcsite/A08/moe_1034/s4930/202403/t20240319_1121111.html",
+      "organization": "中华人民共和国教育部",
+      "title": "普通高等学校本科专业目录（2024年）（教育部关于公布2023年度普通高等学校本科专业备案和审批结果的通知·附件2）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "教高函〔2024〕6号，落款日期 2024年2月4日，页面生成日期 2024-02-05，发布日期 2024-03-07。附件2 的 PDF 直链在 moe.gov.cn 上只提供 http 通道（https 会 302 重定向），故以 http 取得 PDF 原件，发布页 URL 本身为 https。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/moe-W020240319305498791768.pdf",
+      "sha256": "4978bb497e639e56412f8dea942ba4ae9f1aa2cd64a083171c21dc89b3a9ced7",
+      "captured_at": "2026-10-23T12:00:50.100Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-major-explain/moe-W020240319305498791768.txt",
+      "extracted_sha256": "0d4f6bf95baa0f4f97496ae4bb22f543e39e4b8c6f189fac21e3e9aa171803b6"
+    },
+    "record": {
+      "id": "admissions-moe-benke-catalog-2024-guide-clinical-data-e30a792e",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "数据科学与大数据技术（080910T）本科专业目录条目",
+      "summary": "教育部《普通高等学校本科专业目录（2024年）》中「数据科学与大数据技术」的完整条目：专业代码 080910T，专业类为计算机类，授予理学,工学学位，修业年限四年，增设年度 2015。（同一官方来源共 2 条原文事实，字段：program、degree_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于确认专业代码、所属专业类、学位授予门类与修业年限四项官方口径。专业代码后缀含义：T=特设专业，K=国家控制布点专业。不适用于录取分数、报考资格或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_catalog",
+        "undergraduate_2024"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "080910T",
+        "region": "全国",
+        "evidence_locator": "附件2 专业目录 序号406 学位授予门类/修业年限列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program",
+        "pattern": "计算机类 080910T 数据科学与大数据技术 理学,工学 四年 2015"
+      },
+      {
+        "field": "degree_type",
+        "pattern": "数据科学与大数据技术 理学,工学 四年 2015"
+      }
+    ],
+    "expected_fields": [
+      "program",
+      "degree_type",
+      "education",
+      "培养目标",
+      "主干课程",
+      "就业方向",
+      "具体院校学制差异"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyk-bme",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/detail/73384344",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "生物医学工程 专业知识库（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库页面「数据统计截止日期：2025年12月31日」；页面本身无发布日，故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/chsi-bme.raw",
+      "sha256": "603dda1b69cbf368eec24b5444e77ae7074fc13ab07724201500a9bc8db04427",
+      "captured_at": "2026-10-23T12:41:15.953Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "occupation-chsi-zyk-bme-guide-devices-9181f546",
+      "role_id": "guide_devices",
+      "category": "occupation",
+      "title": "生物医学工程：专业介绍（培养目标与学科内涵）",
+      "summary": "该专业官方介绍原文（生物医学工程学科是理、工、医、生物等学科高度交叉的新兴学科,该学科致力于人的防病、治病、康复和健康，致力于为探索生命现象，提供高水平的科学方法和工程技术手段。 本专业一方面要求学生…）。回答「这个专业是什么、学什么、毕业能做什么」。（同一官方来源共 3 条原文事实，字段：program_definition、employment_directions、related_occupations；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于说明「生物医学工程」的专业介绍（培养目标与学科内涵）。来源为教育部学生服务与素质发展中心主办的阳光高考信息平台「专业知识库」全国口径页面，原文照录、未提炼；不适用于具体院校的培养方案差异、录取分数或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "082601",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 相近专业"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program_definition",
+        "pattern": "生物医学工程学科是理、工、医、生物等学科高度交叉的新兴学科,该学科致力于人的防病、治病、康复和健康，致力于为探索生命现象，提供高水平的科学方法和工程技术手段。 本专业一方面要求学生掌握医学和生物学的基本知识，另一方面要求学生要结合医学学科的特点深入扎实地学习电子、信息类的专业知识，如医学电子学、医学信号的检测和处理、医学成像与医学图像处理、医学模式识别、医疗仪器原理及设计等。毕业生可在生物医学工程领域，从事生物医学工程基础理论的科学研究，医疗仪器设备的设计、开发与维护，医学信息系统的软、硬件的研发，以及电子信息领域的科研及技术管理工作。"
+      },
+      {
+        "field": "employment_directions",
+        "pattern": "事业单位人员医疗器械维修/保养公务员\\(中央国家机关\\)公务员\\(区县级及以下机关\\)公务员\\(省级机关\\)公务员\\(地市级机关\\)医学影像/放射科医师软件工程师考研硬件工程师售前/售后技术支持工程师"
+      },
+      {
+        "field": "related_occupations",
+        "pattern": "假肢矫形工程 临床工程技术 康复工程 健康科学与技术"
+      }
+    ],
+    "expected_fields": [
+      "program_definition",
+      "具体院校培养方案",
+      "employment_directions",
+      "岗位招聘要求",
+      "薪资数值",
+      "related_occupations"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyk-imaging-tech",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/detail/433435892",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "医学影像技术 专业知识库（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库页面「数据统计截止日期：2025年12月31日」；页面本身无发布日，故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/chsi-zybk-imaging-tech.raw",
+      "sha256": "8df2739f918c4d080da3ae15412f6ba47bd2beda62082c5efafd36b184027a24",
+      "captured_at": "2026-10-23T12:41:15.957Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "occupation-chsi-zyk-imaging-tech-guide-imaging-eng-992c45bd",
+      "role_id": "guide_imaging_eng",
+      "category": "occupation",
+      "title": "医学影像技术：专业介绍（培养目标与学科内涵）",
+      "summary": "该专业官方介绍原文（本专业培养具有基础医学、临床医学和医学影像学的基本理论知识及能力，具有较深厚的电子技术基础，能胜任医学影像设备的管理、操作、维护、图像处理以及设备研发、安装、维护等工作的复合型应用…）。回答「这个专业是什么、学什么、毕业能做什么」。（同一官方来源共 4 条原文事实，字段：program_definition、employment_directions、related_occupations、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于说明「医学影像技术」的专业介绍（培养目标与学科内涵）。来源为教育部学生服务与素质发展中心主办的阳光高考信息平台「专业知识库」全国口径页面，原文照录、未提炼；不适用于具体院校的培养方案差异、录取分数或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "101003",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 统计信息"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program_definition",
+        "pattern": "本专业培养具有基础医学、临床医学和医学影像学的基本理论知识及能力，具有较深厚的电子技术基础，能胜任医学影像设备的管理、操作、维护、图像处理以及设备研发、安装、维护等工作的复合型应用人才；学生要求掌握基础医学、临床医学、医学影像技术的基本理论和技能，具有操作普通X线、CT、MRI、DSA、放射治疗及核医学成像技术等的能力，能够灵活应用各种医学影像成像技术实施个性化检查方案，精通影像设备的工作原理，开展有效的医学影像质量管理活动。"
+      },
+      {
+        "field": "employment_directions",
+        "pattern": "放射科医师事业单位人员"
+      },
+      {
+        "field": "related_occupations",
+        "pattern": "医学检验技术 医学实验技术 眼视光学 康复治疗学 口腔医学技术 卫生检验与检疫 听力与言语康复学 康复物理治疗 康复作业治疗 健康与医疗保障 老年医学与健康 核医学工程"
+      },
+      {
+        "field": "education",
+        "pattern": "12000-14000"
+      }
+    ],
+    "expected_fields": [
+      "program_definition",
+      "具体院校培养方案",
+      "employment_directions",
+      "岗位招聘要求",
+      "薪资数值",
+      "related_occupations",
+      "education",
+      "逐年数据"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyk-bme-courses",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/kskcPage/73384344",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "生物医学工程 开设课程（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库「开设课程」栏目；页面无发布日，published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/chsi-kskc-bme.raw",
+      "sha256": "fb17bbe2b4784aba4968e423ee67a7d645e806516699b44cf800f219a6c8664e",
+      "captured_at": "2026-10-23T12:41:15.959Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "learning-chsi-zyk-bme-courses-guide-devices-9181f546",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "生物医学工程：开设课程（主干课程）",
+      "summary": "阳光高考统计的高校实际开设课程名称清单（课程名称 课程难易度 课程实用性（于工作、个人成长) 生物医学信号与影像实验 - - 生物医学工程实习 - - 计算生物学导论 - - 生物材料分析方法 - - 解剖生理学 4 1…），按学生评价的课程难易度/实用性排序，是该专业主干课程的官方平台口径清单。",
+      "applicability": "用于回答「这个专业学什么课」。课程名来自各高校申报汇总，不是教育部统一规定的核心课程目录，具体院校课程设置会不同。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk",
+        "courses"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "082601",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 开设课程栏目"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "课程名称 课程难易度 课程实用性（于工作、个人成长\\) 生物医学信号与影像实验 - - 生物医学工程实习 - - 计算生物学导论 - - 生物材料分析方法 - - 解剖生理学 4 10人 3 9人 生物医学信号处理 4 2人 5 2人 生物医学图像处理 3 2人 4 2人 解剖生理学实验 4 1人 4 1人 生物系统建模、仿真与控制 - - 生物医学信号与影像 - - 连续介质力学 - - 生物医学传感器 4 3人 5 3人 生物材料 - - 组织工程与人工器官 - - 医学仪器原理 3 3人 5 2人 生物信息学 4 6人 2 3人 生理信号采集与处理系统实验 - - 数值计算与Matlab 4 2人 5 2人 模拟电路基础 4 11人 4 7人 信号检测与变换 - - 生物医学电子学 - - 生物医学传感器与检测技术 - - 波动理论 - - 物理导论 - - 工程生理学基础 - - 生物医学工程专业实验 - - 生物医学测量与仪器 - - 生物医学信号处理实验 - - 生物医学工程前沿 3 2人 1 2人 医学影像系统原理 3 2人 4 2人 PET概论 - - 生物医学测量与仪器实验 - - 微机式医学仪器设计实验 - - 生物化学与分子生物学实验 4 2人 3 2人 生物化学与分子生物学 3 2人 2 2人 生物材料综合实验 - - 医学超声基础 - - 生物传热学 - - 生物医学工程专业英语 - - DSP专题实验 3 1人 - 测量与控制系统设计 - - 医学成像 4 2人 5 2人 系统生物学概论 3 2人 2 3人 生物医学统计学 - - 磁共振成像原理及应用 - - 工程生理学实验 3 1人 - 生物医学传感器原理及应用实验 - - 生物医学电子学实验 - - 生物医学传感器原理及应用 - - 医学分析仪器原理 5 2人 5 2人 数字电路与CPLD专题实验 - - 生物医学超声 - - 高级磁共振成像技术及应用 - - 医疗器械规范与法规 - - 生物医学传感器设计实验 - - 生理生化学 - - 医学影像系统实验 - - Matlab & Mathematica 5 4人 5 3人 生物医学传感器与检测技术实验 - - 工程生理学 - - 脑影像科学导论 - - 医学信息工程 - - 医学综合实验技术 - - 数字电子技术 4 2人 5 2人 医学影像成像理论 4 2人 4 2人 模拟电子技术 5 3人 5 3人 面向对象程序设计 4 2人 5 2人 机械制图 3 2人 3 2人 无机及分析化学实验 4 1人 5 1人 无机及分析化学 3 1人 5 1人 数字信号处理 5 1人 3 1人 C语言程序设计 3 1人 5 1人 信号与系统 5 5人 4 5人"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "学分学时",
+      "教材"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyk-imaging-tech-courses",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/kskcPage/433435892",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "医学影像技术 开设课程（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库「开设课程」栏目；页面无发布日，published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/chsi-kskc-imaging-tech.raw",
+      "sha256": "90b641ba75d4f9c54d7890ee829214022348ef45808bdae83810fe98f40a4581",
+      "captured_at": "2026-10-23T12:41:15.962Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "learning-chsi-zyk-imaging-tech-courses-guide-imaging-eng-992c45bd",
+      "role_id": "guide_imaging_eng",
+      "category": "learning",
+      "title": "医学影像技术：开设课程（主干课程）",
+      "summary": "阳光高考统计的高校实际开设课程名称清单（课程名称 课程难易度 课程实用性（于工作、个人成长) 影像解剖学 3 3人 5 3人 医学影像物理学 3 2人 5 2人 系统解剖学 3 3人 5 3人 生理学 3 2人 5 2人…），按学生评价的课程难易度/实用性排序，是该专业主干课程的官方平台口径清单。",
+      "applicability": "用于回答「这个专业学什么课」。课程名来自各高校申报汇总，不是教育部统一规定的核心课程目录，具体院校课程设置会不同。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk",
+        "courses"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "101003",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 开设课程栏目"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "课程名称 课程难易度 课程实用性（于工作、个人成长\\) 影像解剖学 3 3人 5 3人 医学影像物理学 3 2人 5 2人 系统解剖学 3 3人 5 3人 生理学 3 2人 5 2人 放射物理与防护 5 1人 5 1人 医学影像诊断学 4 1人 5 1人 医学影像技术 3 1人 5 1人 医学影像检查技术学 4 10人 5 10人"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "学分学时",
+      "教材"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyjd-smart-med",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/zyjd/viewPage/50wr72mub2597s59",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "智能医学工程：让AI成为医生的「最强外脑」（专业解读）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考《专业解读》栏目专访稿，页面无发布日，published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain/chsi-zyjd-smart-med.raw",
+      "sha256": "1eed6dbd6a34d3b0e2eae5d30409338f65640861a7d4f625bc126e3167c5c77b",
+      "captured_at": "2026-10-23T12:41:15.965Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "occupation-chsi-zyjd-smart-med-medical-ai-pm-7c21a258",
+      "role_id": "medical_ai_pm",
+      "category": "occupation",
+      "title": "智能医学工程：专业内涵与来由（阳光高考专业解读）",
+      "summary": "阳光高考《专业解读》对智能医学工程的专业内涵解释（智能医学工程：让AI成为医生的“最强外脑” 阳光高考信息平台作者：刘晶晶 专业主页  开设院校  医学是人类文明最古老的学科之一，其形态从最初的经验医学，到实验医学、生物医学，…），由天津大学医学科学与工程学院院长专访，说明该专业为何设立、连接什么。",
+      "applicability": "用于回答「智能医学工程是什么、为什么会有这个专业」。属教育部平台的专业解读报道，不是专业目录条文；具体课程与学制以目录和院校方案为准。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyjd",
+        "smart_medical_engineering"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "101011T",
+        "region": "全国",
+        "evidence_locator": "专业解读 · 正文首段"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program_definition",
+        "pattern": "智能医学工程：让AI成为医生的“最强外脑” 阳光高考信息平台作者：刘晶晶 专业主页  开设院校  医学是人类文明最古老的学科之一，其形态从最初的经验医学，到实验医学、生物医学，再到工程医学，始终随科技发展而不断演变。当前，医工交叉融合持续深入，机械、电子、人工智能、大数据、云计算等工程技术已渗透至预防、诊断、治疗、康复的各个环节，催生了新型医疗装备与海量医学数据，推动医学迈向根本性变革。在此背景下，智能医学工程专业应运而生，成为连接工程语言与医学技术的桥梁。今天，让我们和天津大学医学院医学科学与工程学院院长何峰教授一同走进这个专业。 一 专业解析 智能医学工程专业是什么？ 智能医学工程专业是首个面向智能化方向的医学类本科专业，也是“新医科”与“新工科”深度融合的交叉学科。2026年本科专业目录调整后，该专业纳入国家新设的“交叉学科”门类（专业代码140007T），授予工学学士学位。 智能医学工程是以现代医学为基础，融合人工智能、大数据、云计算、机器学习等前沿技术，以患者为中心、信息为纽带，挖掘生命和疾病的本质规律，探索人机协同的智能化诊疗方法及应用的新兴交叉学科，是未来“工程医学”发展的重要方向。该专业的设立，既是我国对全球“转化医学”“精准医学”发展浪潮的主动对接，也为服务“健康中国”战略和医疗健康产业转型升级提供了新的支撑。 该专业的创建是在绘制医工结合的未来图谱，布局未来打造智能医学领域的创新高地，为未来健康医疗水平的提升保驾护航。未来，该专业将助力实现医疗终端下沉家庭、区域医疗中心以数据驱动、智慧医院全面协同的新型医疗体系，真正让“小病在家治、大病有保障”成为现实。 主要学什么？培养什么样的人才？ 智能医学工程作为新医科专业，贯彻“从以治疗为主，转向预防、治疗、康养全周期保障”的生命健康服务新理念。立足于生物、心理、社会、环境、工程五位一体的现代医学理念，以患者为中心，以大数据为驱动，推动传统医学与人工智能、大数据、智能设备等前沿技术深度融合，具有鲜明的人机结合特征。学生既要系统掌握医学专业基础知识、具备临床实践能力，又要掌握人工智能、机器学习、智能感知等技术手段，具备运用前沿工程技术破解临床及健康管理中复杂难题的能力。 专业课程涵盖医工融合课程体系、智能科学相关课程、医学基础课等。核心课程包括高等数学、概率论与数理统计、线性代数、离散数学、程序设计基础（Python）、高级程序设计（JAVA）、计算机导论、数据库原理、数据结构、网络技术与医院网络管理架构、医学统计学、时间序列分析、医学知识表示与处理、机器学习基础、深度学习与医学应用、医学自然语言处理、医学图像处理、医院信息系统，以及人体解剖学、生理学、病理学等医学基础课程。 智能医学工程是医、理、工高度融合的前沿学科，基于“健康中国2030”国家重大需求，培养具有实践能力及人文关怀意识的医工复合型领军人才和医学拔尖创新人才。 与生物医学工程、脑机科学与技术的异同 生物医学工程、智能医学工程虽然专业名称仅两字之差，但二者各有侧重。生物医学工程侧重于硬件研发、医疗设备设计与制造，如CT/MRI扫描仪、心脏起搏器、生物材料等，核心在于“硬件与机理”。可理解为医疗器械的“总工程师”。智能医学工程聚焦人工智能、大数据等技术，核心是“算法与智能”，强调通过算法实现医疗决策的智能化。可类比为医疗界的“AI架构师”。"
+      }
+    ],
+    "expected_fields": [
+      "program_definition",
+      "主干课程",
+      "统一培养目标条文"
+    ]
+  }
+]

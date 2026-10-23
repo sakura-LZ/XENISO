@@ -1,0 +1,343 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T13:23:33.916Z",
+  "sources": [
+    {
+      "id": "scu-dual-degree",
+      "url": "https://jwc.scu.edu.cn/system/_content/download.jsp?owner=1937507957&urltype=news.DownloadAttachUrl&wbfileid=16744276",
+      "organization": "四川大学 教务处",
+      "title": "四川大学医学技术与智能制造双学士学位项目选拔方案",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "docx 无发布日期；正文选拔流程标注「2025年9月1日-7日报名、9月8日-14日现场考核」，可判定为 2025 年选拔方案，但无明确年级，按非最新处理。"
+    },
+    {
+      "id": "hust-cs-plan",
+      "url": "https://cs.hust.edu.cn/system/_content/download.jsp?owner=1805679113&urltype=news.DownloadAttachUrl&wbfileid=7665843",
+      "organization": "华中科技大学 计算机科学与技术学院",
+      "title": "计算机科学与技术专业本科培养计划（2022 级）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "文档标注「华中科技大学 2022 级本科专业培养计划」，即 2022 级；相对 2026/2025 级为非最新，按非最新处理。"
+    },
+    {
+      "id": "szu-bme",
+      "url": "https://bme.szu.edu.cn/__local/A/C1/8F/F2004841B877F24CA069BDD8118_7CFD964F_3CFE5.pdf",
+      "organization": "深圳大学 医学部 生物医学工程学院",
+      "title": "2023级生物医学工程主修培养方案（深圳大学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "标题标注「2023级」，即 2023 级培养方案；相对 2026/2025 级为非最新，按非最新处理。"
+    },
+    {
+      "id": "hust-med-vol",
+      "url": "https://ugs.hust.edu.cn/system/_content/download.jsp?owner=1727907868&urltype=news.DownloadAttachUrl&wbfileid=4818278",
+      "organization": "华中科技大学 教务处",
+      "title": "华中科技大学本科专业人才培养计划·医科大类分册（2020 级，含医学检验技术专业培养计划）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "卷首标注「华中科技大学教务处 二〇二〇年六月」，正文标注「华中科技大学 2020 级本科专业培养计划」，即 2020 级，非最新。"
+    }
+  ],
+  "records": [
+    {
+      "id": "learning-scu-dual-degree-guide-imaging-eng-d350bb4a",
+      "source_id": "scu-dual-degree",
+      "role_id": "guide_imaging_eng",
+      "category": "learning",
+      "title": "四川大学华西医学技术×机械工程双学位培养目标（官方选拔方案原文）★医学技术类走医工交叉的官方路径",
+      "summary": "四川大学「医学技术与智能制造」双学士学位项目为华西临床医学院与机械工程学院合作，依托「医学技术」和「机械工程」两个博士学位授权点设立的医工融合双学士学位项目；培养面向「健康中国」战略，肩负医学技术临床服务水平提升、关键诊疗技术创新、高端医疗装备改良升级使命的医理工复合型卓越医学技术人才。（同一官方来源共 3 条原文事实，字段：training、topics、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于四川大学该双学士学位项目的培养目标表述。这是医学技术类（呼吸治疗/医学影像技术/物理治疗/医学检验技术/眼视光学）本科生在本校内部转入医工交叉方向的**正规官方项目**，不是外校跨专业报考口径。",
+      "relation": "context",
+      "tags": [
+        "四川大学",
+        "华西临床医学院",
+        "医学技术学院",
+        "机械工程学院",
+        "双学士学位",
+        "医工融合",
+        "培养目标",
+        "2+3培养模式",
+        "医学检验技术",
+        "眼视光学",
+        "物理治疗",
+        "呼吸治疗",
+        "医学影像技术",
+        "学制五年",
+        "210学分",
+        "医学技术类",
+        "招生计划"
+      ],
+      "facts": [
+        {
+          "field": "training",
+          "value": "本专业为华西临床医学院与机械工程学院合作，以国家重点医疗装备产业需求、核心诊疗技术突破为牵引，依托“医学技术”和“机械工程”两个博士学位授权点学科，秉承“高起点、高标准、高质量”原则设立的医工融合双学士学位项目。实行“2+3”通识/基础/医工启蒙教育+医学检验技术/眼视光学/物理治疗/呼吸治疗/医学影像技术专业教育的大类培养模式，毕业授予理学及工学学士学位。打造一流医工特色课程群与课赛践一体化医工实践平台，探索医工双本科生班主任制、医工企三本科生导师制的交叉管理模式，贯彻早进课题组、早进实验室、早进临床、早进科研团队的培养思路，在各培养环节贯彻医工特色“交叉”。 培养目标 本专业面向“健康中国”战略需求，德智体美劳五育并举，培养具有崇高理想信念、深厚人文底蕴、扎实专业知识、娴熟临床技能、强烈创新意识、宽广国际视野、终身学习能力，肩负起医学技术临床服务水平和质量提升、关键诊疗技术创新、高端医疗装备改良升级及创新应用使命的，保障人民全生命周期健康管理服务质效的，具备进一步接受研究生教育发展潜力的，医理工复合型卓越医学技术人才。",
+          "quote": "本专业为华西临床医学院与机械工程学院合作，以国家重点医疗装备产业需求、核心诊疗技术突破为牵引，依托“医学技术”和“机械工程”两个博士学位授权点学科，秉承“高起点、高标准、高质量”原则设立的医工融合双学士学位项目。实行“2+3”通识/基础/医工启蒙教育+医学检验技术/眼视光学/物理治疗/呼吸治疗/医学影像技术专业教育的大类培养模式，毕业授予理学及工学学士学位。打造一流医工特色课程群与课赛践一体化医工实践平台，探索医工双本科生班主任制、医工企三本科生导师制的交叉管理模式，贯彻早进课题组、早进实验室、早进临床、早进科研团队的培养思路，在各培养环节贯彻医工特色“交叉”。 培养目标 本专业面向“健康中国”战略需求，德智体美劳五育并举，培养具有崇高理想信念、深厚人文底蕴、扎实专业知识、娴熟临床技能、强烈创新意识、宽广国际视野、终身学习能力，肩负起医学技术临床服务水平和质量提升、关键诊疗技术创新、高端医疗装备改良升级及创新应用使命的，保障人民全生命周期健康管理服务质效的，具备进一步接受研究生教育发展潜力的，医理工复合型卓越医学技术人才。",
+          "start": 35,
+          "end": 503
+        },
+        {
+          "field": "topics",
+          "value": "本专业为华西临床医学院与机械工程学院合作，以国家重点医疗装备产业需求、核心诊疗技术突破为牵引，依托“医学技术”和“机械工程”两个博士学位授权点学科，秉承“高起点、高标准、高质量”原则设立的医工融合双学士学位项目。实行“2+3”通识/基础/医工启蒙教育+医学检验技术/眼视光学/物理治疗/呼吸治疗/医学影像技术专业教育的大类培养模式，毕业授予理学及工学学士学位。",
+          "quote": "本专业为华西临床医学院与机械工程学院合作，以国家重点医疗装备产业需求、核心诊疗技术突破为牵引，依托“医学技术”和“机械工程”两个博士学位授权点学科，秉承“高起点、高标准、高质量”原则设立的医工融合双学士学位项目。实行“2+3”通识/基础/医工启蒙教育+医学检验技术/眼视光学/物理治疗/呼吸治疗/医学影像技术专业教育的大类培养模式，毕业授予理学及工学学士学位。",
+          "start": 35,
+          "end": 215
+        },
+        {
+          "field": "learning_hours",
+          "value": "四、招生对象和计划 招生对象：医学技术类（含双学位）专业通过高考招收的全体学生（不含预科班、降转、港澳台学生）。 招生计划：20人。 五、学制和学分 学制：五年。 学分：210。",
+          "quote": "四、招生对象和计划 招生对象：医学技术类（含双学位）专业通过高考招收的全体学生（不含预科班、降转、港澳台学生）。 招生计划：20人。 五、学制和学分 学制：五年。 学分：210。",
+          "start": 815,
+          "end": 904
+        }
+      ],
+      "missing_fields": [
+        "prerequisites",
+        "access_requirement"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "6fd4644f54016f5f7fd9a382790389545db5a9e9f9ce03df124af1d04b4d5e59",
+      "collected_at": "2026-10-23T12:55:44.032Z",
+      "verified_at": "2026-10-23T13:23:33.850Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "college": "华西临床医学院医学技术学院 / 机械工程学院",
+        "program": "医学技术与智能制造双学士学位项目",
+        "evidence_locator": "docx 四、招生对象和计划 + 五、学制和学分"
+      }
+    },
+    {
+      "id": "learning-hust-cs-plan-guide-software-eef731e9",
+      "source_id": "hust-cs-plan",
+      "role_id": "guide_software",
+      "category": "learning",
+      "title": "华中科技大学计算机科学与技术培养目标（2022 级培养计划原文）",
+      "summary": "华科 2022 级计算机科学与技术专业本科培养计划「一、培养目标」原文：培养适应我国信息产业自主可控战略需求，具备扎实数学、自然科学、工程基础和计算机专业知识与能力，系统能力突出、具有大工程观与国际视野的人才，毕业后能从事计算机领域研究、设计、开发与管理并解决复杂工程问题。（同一官方来源共 4 条原文事实，字段：training、learning_hours、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于华中科技大学该专业 2022 级培养计划的培养目标；为 2022 级版本，非 2026/2025 级最新版。",
+      "relation": "context",
+      "tags": [
+        "华中科技大学",
+        "计算机科学与技术",
+        "培养目标",
+        "2022级",
+        "自主可控",
+        "154学分",
+        "工学学士",
+        "学制四年",
+        "学时",
+        "学分",
+        "专业核心课",
+        "2980学时",
+        "离散数学",
+        "数据结构",
+        "算法设计与分析"
+      ],
+      "facts": [
+        {
+          "field": "training",
+          "value": "本专业培养具有社会主义核心价值观、强烈社会责任感和使命感、适应社会经济和我国信息 产业自主可控战略发展需求，扎实的数学、自然科学、工程基础和计算机科学与技术专业知识与 能力，创新精神与实践能力强，系统能力突出，具有良好人文素养、大工程观、团队精神、国际 视野和可持续竞争力。毕业后能从事计算机领域相关的研究、设计、开发与管理工作，能解决计 算机领域复杂工程问题。工作五年左右，可成为单位、领域或行业的技术骨干或业界精英。",
+          "quote": "本专业培养具有社会主义核心价值观、强烈社会责任感和使命感、适应社会经济和我国信息 产业自主可控战略发展需求，扎实的数学、自然科学、工程基础和计算机科学与技术专业知识与 能力，创新精神与实践能力强，系统能力突出，具有良好人文素养、大工程观、团队精神、国际 视野和可持续竞争力。毕业后能从事计算机领域相关的研究、设计、开发与管理工作，能解决计 算机领域复杂工程问题。工作五年左右，可成为单位、领域或行业的技术骨干或业界精英。",
+          "start": 141,
+          "end": 351
+        },
+        {
+          "field": "learning_hours",
+          "value": "完成学业最低课内学分（含课程体系与集中性实践教学环节）要求：154 Minimum Credits of Curricular(Comprising course system and intensified internship practical training)：154 完成学业最低课外学分要求：8 Minimum Extracurricular Credits：8",
+          "quote": "完成学业最低课内学分（含课程体系与集中性实践教学环节）要求：154 Minimum Credits of Curricular(Comprising course system and intensified internship practical training)：154 完成学业最低课外学分要求：8 Minimum Extracurricular Credits：8",
+          "start": 6072,
+          "end": 6260
+        },
+        {
+          "field": "topics",
+          "value": "1．课程体系学时与学分 Course Credits Hours and Units 课程类别 课程性质 学时/学分 学时/学分占比（％） 素质教育通识课程 必修 588/30 19.7/19.5 选修 160/10 5.4/6.5 学科大类基础课程 必修 776/44.25 26/28.7 专业核心课 必修 640/34.25 21.5/22.2 专业选修课 选修 320/20 10.7/13 华中科技大学 2022 级本科专业培养计划 ·47· 续表 课程类别 课程性质 学时/学分 学时/学分占比（％） 集中性实践教学环节 必修 31w/15.5 16.7/10.1 实践教学合计 必修 320+31w/25.5 27.4/16.6 合计 2980/154 100/100",
+          "quote": "1．课程体系学时与学分 Course Credits Hours and Units 课程类别 课程性质 学时/学分 学时/学分占比（％） 素质教育通识课程 必修 588/30 19.7/19.5 选修 160/10 5.4/6.5 学科大类基础课程 必修 776/44.25 26/28.7 专业核心课 必修 640/34.25 21.5/22.2 专业选修课 选修 320/20 10.7/13 华中科技大学 2022 级本科专业培养计划 ·47· 续表 课程类别 课程性质 学时/学分 学时/学分占比（％） 集中性实践教学环节 必修 31w/15.5 16.7/10.1 实践教学合计 必修 320+31w/25.5 27.4/16.6 合计 2980/154 100/100",
+          "start": 6261,
+          "end": 6602
+        },
+        {
+          "field": "topics",
+          "value": "CST2171 离散数学（一） Discrete Mathematics（Ⅰ） 40 2.5 2 必修 Required CST2261 数据结构 Data Structure 48 3 2 必修 Required CST2272 数据结构实验 Data Structure Experiments 32 1 32 2 必修 Required CST2161 离散数学（二） Discrete Mathematics（Ⅱ） 40 2.5 3 必修 Required CST2261 算法设计与分析 Algorithmic Design & Analysis 32 2 3",
+          "quote": "CST2171 离散数学（一） Discrete Mathematics（Ⅰ） 40 2.5 2 必修 Required CST2261 数据结构 Data Structure 48 3 2 必修 Required CST2272 数据结构实验 Data Structure Experiments 32 1 32 2 必修 Required CST2161 离散数学（二） Discrete Mathematics（Ⅱ） 40 2.5 3 必修 Required CST2261 算法设计与分析 Algorithmic Design & Analysis 32 2 3",
+          "start": 13669,
+          "end": 13954
+        }
+      ],
+      "missing_fields": [
+        "prerequisites",
+        "access_requirement"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "54c28d9184160187b82d9a7ccbd0fcb9e806bb54034c10025c6ece8ad1c6d5d0",
+      "collected_at": "2026-10-23T12:56:50.137Z",
+      "verified_at": "2026-10-23T13:23:33.861Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "计算机科学与技术学院",
+        "program": "计算机科学与技术（2022 级本科培养计划）",
+        "evidence_locator": "PDF 专业核心课程表"
+      }
+    },
+    {
+      "id": "learning-szu-bme-guide-devices-f064a0c1",
+      "source_id": "szu-bme",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "深圳大学生物医学工程毕业学分要求（2023 级原文）★总学分 160",
+      "summary": "原文「六、毕业学分要求」：通识模块 39 学分（24.4%，含基本通识课必修 29、英语选修 4、扩展通识选修 6）、专业模块 100 学分（62.5%，含大类平台课 34.5、专业核心课 41、专业选修课 24.5）、实践模块 17 学分（10.6%）、创新创业模块 4 学分（2.5%）；通识+专业 139；**总学分要求 160**。（同一官方来源共 3 条原文事实，字段：learning_hours、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅是该 2023 级培养方案的毕业学分要求；国标专业代码 082601（工学门类）。",
+      "relation": "context",
+      "tags": [
+        "深圳大学",
+        "生物医学工程",
+        "082601",
+        "总学分160",
+        "专业核心课",
+        "创新创业模块",
+        "C语言程序设计",
+        "数据结构",
+        "面向对象程序设计",
+        "模拟电路",
+        "学时",
+        "学分",
+        "核心课程",
+        "医学数字信号处理",
+        "R语言",
+        "大数据下的智慧医疗",
+        "医工交叉"
+      ],
+      "facts": [
+        {
+          "field": "learning_hours",
+          "value": "六、毕业学分要求 课程类别 最低学分要求 比例 课程子类别 最低学分要求 备注 通识模块 39 24.4% 基本通识课（必修 ） 29 基本通识课（英语 选修） 4 扩展通识选修课 6 包括公共选修课及非本专业 开设的专业课程，涵盖人文 艺术、社会科学、自然科 学、生命科学、创新创业和 中华文化六大类。学生须自 主选修不少于6学分的扩展 通识课，其中公共艺术教育 课程选修不少于2学分，思 想政治理论选择性必修课程 不少于1门。 专业模块 100 62.5% 大类平台课 34.5 专业核心课 41 专业选修课 24.5 实践模块 17 10.6% 实践类课程 17 创新创业模块 4 2.5% 创新创业（必修） 2 创新创业（选修） 2 通识模块+专业模块 139 总学分要求 160",
+          "quote": "六、毕业学分要求 课程类别 最低学分要求 比例 课程子类别 最低学分要求 备注 通识模块 39 24.4% 基本通识课（必修 ） 29 基本通识课（英语 选修） 4 扩展通识选修课 6 包括公共选修课及非本专业 开设的专业课程，涵盖人文 艺术、社会科学、自然科 学、生命科学、创新创业和 中华文化六大类。学生须自 主选修不少于6学分的扩展 通识课，其中公共艺术教育 课程选修不少于2学分，思 想政治理论选择性必修课程 不少于1门。 专业模块 100 62.5% 大类平台课 34.5 专业核心课 41 专业选修课 24.5 实践模块 17 10.6% 实践类课程 17 创新创业模块 4 2.5% 创新创业（必修） 2 创新创业（选修） 2 通识模块+专业模块 139 总学分要求 160",
+          "start": 1128,
+          "end": 1472
+        },
+        {
+          "field": "topics",
+          "value": "专业核心课 专业代码： 序号 课程总号 课程名称 开课 单位 简写 学分 理论周学时- 实践周学时 总学 时 总学时分配 开课学期 建议 修读 学期 学 分 类 别 备注课堂 讲授 学时 课内实践环节 秋季 开课 春季 开课课程 设计 实验 实训 其他 1 1300050003 C语言程序设计与 编程实践 医学 4 3-2 90 54 0 36 0 0 √ 2 无 C Language Programming 2 2200210001 电路分析 医学 3.5 3-1 72 54 0 18 0 0 √ 2 理 科 学 分 Circuit Analysis 3 2200520001 生物化学 医学 2 2-0 36 36 0 0 0 0 √ 2 理 科 学 分Biochemistry 4 1301170002 模拟电路 医学 3.5 3-1 72 54 0 18 0 0 √ 3 理 科 学 分Analog Circuits 5 1302440003 面向对象程序设 计 医学 3 2-2 72 36 0 36 0 0 √ 3 理 科 学 分Object-Oriented Programming 6 2200110001 数字电路 医学 3.5 3-1 72 54 0 18 0 0 √ 4 理 科 学 分 Digital Electronics 7 2200310001 生物医学传感器 及应用 医学 2.5 2-1 54 36 0 18 0 0 √ 4 理 科 学 分 Biomedical Sensors and their Applications 8 2200370001 信号与系统 医学 3 3-0 54 54 0 0 0 0 √ 4 理 科 学 分 Signals and Systems 9 2201990011 医电创新基础实 验 医学 2 0-4 72 0 0 72 0 0 √ 4 理 科 学 分 Basic Experiment of Biomedical Electronic Innovation 10 2200100001 数据结构 医学 4 3-2 90",
+          "quote": "专业核心课 专业代码： 序号 课程总号 课程名称 开课 单位 简写 学分 理论周学时- 实践周学时 总学 时 总学时分配 开课学期 建议 修读 学期 学 分 类 别 备注课堂 讲授 学时 课内实践环节 秋季 开课 春季 开课课程 设计 实验 实训 其他 1 1300050003 C语言程序设计与 编程实践 医学 4 3-2 90 54 0 36 0 0 √ 2 无 C Language Programming 2 2200210001 电路分析 医学 3.5 3-1 72 54 0 18 0 0 √ 2 理 科 学 分 Circuit Analysis 3 2200520001 生物化学 医学 2 2-0 36 36 0 0 0 0 √ 2 理 科 学 分Biochemistry 4 1301170002 模拟电路 医学 3.5 3-1 72 54 0 18 0 0 √ 3 理 科 学 分Analog Circuits 5 1302440003 面向对象程序设 计 医学 3 2-2 72 36 0 36 0 0 √ 3 理 科 学 分Object-Oriented Programming 6 2200110001 数字电路 医学 3.5 3-1 72 54 0 18 0 0 √ 4 理 科 学 分 Digital Electronics 7 2200310001 生物医学传感器 及应用 医学 2.5 2-1 54 36 0 18 0 0 √ 4 理 科 学 分 Biomedical Sensors and their Applications 8 2200370001 信号与系统 医学 3 3-0 54 54 0 0 0 0 √ 4 理 科 学 分 Signals and Systems 9 2201990011 医电创新基础实 验 医学 2 0-4 72 0 0 72 0 0 √ 4 理 科 学 分 Basic Experiment of Biomedical Electronic Innovation 10 2200100001 数据结构 医学 4 3-2 90",
+          "start": 6376,
+          "end": 7274
+        },
+        {
+          "field": "topics",
+          "value": "七、核心课程 生物医学传感器及应用、模拟电路、数字电路、单片机原理与应用、C语言程序设计与编程实践、信号与系统、医学数字信号处 理、生物医学工程基础、人体结构及医用物理、生理学 八、特色课程 上级示范课程（省级在线开放课程立项）：医学数字信号处理 校级重点课程（学校立项的创新创业短课）： 1、多中心智慧医疗影像前沿研究 2、少样本条件下的图像质量评价方法及其应用前沿探讨 3、R语言在生物信息实践中的应用 4、科技信息分析的获取、管理与分析 5、纳米生物传感器 院级特色课程（医工学科交叉课程）：大数据下的智慧医疗",
+          "quote": "七、核心课程 生物医学传感器及应用、模拟电路、数字电路、单片机原理与应用、C语言程序设计与编程实践、信号与系统、医学数字信号处 理、生物医学工程基础、人体结构及医用物理、生理学 八、特色课程 上级示范课程（省级在线开放课程立项）：医学数字信号处理 校级重点课程（学校立项的创新创业短课）： 1、多中心智慧医疗影像前沿研究 2、少样本条件下的图像质量评价方法及其应用前沿探讨 3、R语言在生物信息实践中的应用 4、科技信息分析的获取、管理与分析 5、纳米生物传感器 院级特色课程（医工学科交叉课程）：大数据下的智慧医疗",
+          "start": 1499,
+          "end": 1757
+        }
+      ],
+      "missing_fields": [
+        "prerequisites",
+        "access_requirement"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "48712ae7ebec8bae24319f9421a3f3ec9fa2f37ed39afad3ed4a322b51e3d711",
+      "collected_at": "2026-10-23T12:59:57.566Z",
+      "verified_at": "2026-10-23T13:23:33.868Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳大学",
+        "college": "医学部 生物医学工程学院",
+        "program": "生物医学工程（2023 级主修培养方案）",
+        "evidence_locator": "PDF 七、核心课程 + 八、特色课程"
+      }
+    },
+    {
+      "id": "learning-hust-med-vol-guide-clinical-data-e32fe1bd",
+      "source_id": "hust-med-vol",
+      "role_id": "guide_clinical_data",
+      "category": "learning",
+      "title": "华中科技大学医学检验技术培养目标（2020 级培养计划·英文原文）",
+      "summary": "华中科技大学 2020 级本科专业培养计划「医学检验技术专业本科人才培养计划」原文（英文段）：本专业培养高素质医学检验技术人才，使其具备终身学习的基础，并能在医学检验科学领域继续深造。",
+      "applicability": "该 PDF 的中文正文使用了无法正确抽取的字体编码（抽取结果为不可读字符），因此本条**只引用可读的英文段落**，未翻译改写、未拼凑中文。适用于华科该专业 2020 级培养计划的培养目标；方案内中文课程表与学分段因编码问题不可用。",
+      "relation": "context",
+      "tags": [
+        "华中科技大学",
+        "同济医学院",
+        "医学检验技术",
+        "培养目标",
+        "2020级"
+      ],
+      "facts": [
+        {
+          "field": "training",
+          "value": "This program aims at cultivating high-quality medical laborator y technicians to guarantee that they have proper foundation to go on study through their lives and make advanced study in medical laboratory science.",
+          "quote": "This program aims at cultivating high-quality medical laborator y technicians to guarantee that they have proper foundation to go on study through their lives and make advanced study in medical laboratory science.",
+          "start": 279130,
+          "end": 279343
+        }
+      ],
+      "missing_fields": [
+        "learning_hours",
+        "prerequisites",
+        "access_requirement"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "aecb2c641678ada3b864a2678326dd6bf53fe5c37da72e5ba8741c0cd25bdd8e",
+      "collected_at": "2026-10-23T13:03:04.462Z",
+      "verified_at": "2026-10-23T13:23:33.915Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "同济医学院",
+        "program": "医学检验技术（2020 级本科培养计划）",
+        "evidence_locator": "PDF 医学检验技术专业本科人才培养计划 一、培养目标（英文段）"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "scu-dual-degree",
+      "url": "https://jwc.scu.edu.cn/system/_content/download.jsp?owner=1937507957&urltype=news.DownloadAttachUrl&wbfileid=16744276",
+      "at": "2026-10-23T12:55:44.032Z",
+      "status": "collected",
+      "missing_fields": [
+        "prerequisites",
+        "access_requirement"
+      ]
+    },
+    {
+      "source_id": "hust-cs-plan",
+      "url": "https://cs.hust.edu.cn/system/_content/download.jsp?owner=1805679113&urltype=news.DownloadAttachUrl&wbfileid=7665843",
+      "at": "2026-10-23T12:56:50.137Z",
+      "status": "collected",
+      "missing_fields": [
+        "prerequisites",
+        "access_requirement"
+      ]
+    },
+    {
+      "source_id": "szu-bme",
+      "url": "https://bme.szu.edu.cn/__local/A/C1/8F/F2004841B877F24CA069BDD8118_7CFD964F_3CFE5.pdf",
+      "at": "2026-10-23T12:59:57.566Z",
+      "status": "collected",
+      "missing_fields": [
+        "prerequisites",
+        "access_requirement"
+      ]
+    },
+    {
+      "source_id": "hust-med-vol",
+      "url": "https://ugs.hust.edu.cn/system/_content/download.jsp?owner=1727907868&urltype=news.DownloadAttachUrl&wbfileid=4818278",
+      "at": "2026-10-23T13:03:04.462Z",
+      "status": "collected",
+      "missing_fields": [
+        "learning_hours",
+        "prerequisites",
+        "access_requirement"
+      ]
+    }
+  ]
+}

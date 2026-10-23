@@ -1,0 +1,287 @@
+[
+  {
+    "source": {
+      "id": "hust-2027-catalog-life-sci",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "organization": "华中科技大学研究生院",
+      "title": "华中科技大学2027年硕士研究生招生专业目录（生命科学与技术学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "系统页未标注发布日期；「2027年硕士研究生招生专业目录」于 2026-10-08 招生简章公告中发布（公告页 gszs.hust.edu.cn/info/1093/4161.htm）。抓取方式：ego 浏览器渲染后取 HTML，抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors-3/hust-2027-catalog-life.html",
+      "sha256": "624a7a53226659cad5b980f7bc8e22fb12c09b25dab1d9582cb89f6560978770",
+      "captured_at": "2026-10-23T13:29:34.049Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-catalog-life-sci-guide-devices-040bb01b",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "华科 083100 生物医学工程（学硕）2027：招 45 人，101/201/301 数学（一）/890 普通物理，不招同等学力",
+      "summary": "华科 2027 招生专业目录「170 生命科学与技术学院」原文：083100 生物医学工程（全日制）拟招 45 人，方向 01 考试科目为 ①101|思想政治理论 ②201|英语（一）③301|数学（一）④890|普通物理，备注「01方向、03-04方向、06-09方向含武汉光电国家研究中心招生计划。不招收同等学力考生」；学院另有 02 生物制药工程、03 生物医学光子学、04 生物信息技术、05 生物材料与组织工程、06 医学成像技术与应用、07 生物医学图象处理与分析、08 脑空间信息学、09 脑网络成像与人工智能共 9 个方向。",
+      "applicability": "适用于报考华中科技大学生命科学与技术学院 083100 学硕的考生：第三门为数学（一），第四门为 890 普通物理（非信号类、非 408）；拟招 45 人；不招收同等学力考生。不适用于 085409 专硕。",
+      "relation": "direct",
+      "tags": [
+        "华中科技大学",
+        "2027",
+        "083100",
+        "数学（一）",
+        "890普通物理",
+        "拟招45人",
+        "不招同等学力"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "生命科学与技术学院",
+        "program": "083100 生物医学工程",
+        "admission_year": 2027,
+        "region": "湖北",
+        "evidence_locator": "目录「170 生命科学与技术学院」表 083100 行及其 9 个方向行。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "083100 生物医学工程（全日制） 45 01 生物医学工程 ① 101\\|思想政治理论 ② 201\\|英语（一） ③ 301\\|数学（一） ④ 890\\|普通物理"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-2027-catalog-life-sci",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "organization": "华中科技大学研究生院",
+      "title": "华中科技大学2027年硕士研究生招生专业目录（生命科学与技术学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "系统页未标注发布日期；「2027年硕士研究生招生专业目录」于 2026-10-08 招生简章公告中发布（公告页 gszs.hust.edu.cn/info/1093/4161.htm）。抓取方式：ego 浏览器渲染后取 HTML，抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors-3/hust-2027-catalog-life.html",
+      "sha256": "624a7a53226659cad5b980f7bc8e22fb12c09b25dab1d9582cb89f6560978770",
+      "captured_at": "2026-10-23T13:29:34.049Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-catalog-life-sci-guide-signals-bae294d4",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "华科 085409 生物医学工程（专硕）2027：招 40 人，考 204 英语（二）+302 数学（二）+890 普通物理",
+      "summary": "华科 2027 招生专业目录原文：085409 生物医学工程（全日制）拟招 40 人，00 不区分研究方向，考试科目为 ①101|思想政治理论 ②204|英语（二）③302|数学（二）④890|普通物理，备注「含武汉光电国家研究中心招生计划、国家卓越工程师学院“卓越项目”计划。不招收同等学力考生」。",
+      "applicability": "适用于报考华科 085409 专硕的考生：与 083100 学硕的关键差异是——专硕考英语（二）+数学（二），学硕考英语（一）+数学（一）；两者第四门同为 890 普通物理。专硕拟招 40 人。不适用于学硕。",
+      "relation": "direct",
+      "tags": [
+        "华中科技大学",
+        "2027",
+        "085409",
+        "专硕",
+        "英语（二）",
+        "数学（二）",
+        "890普通物理",
+        "拟招40人"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "生命科学与技术学院",
+        "program": "085409 生物医学工程",
+        "admission_year": 2027,
+        "region": "湖北",
+        "evidence_locator": "目录「170 生命科学与技术学院」表 085409 行。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085409 生物医学工程（全日制） 40 00 不区分研究方向 ① 101\\|思想政治理论 ② 204\\|英语（二） ③ 302\\|数学（二） ④ 890\\|普通物理"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "seu-2027-catalog-011-bme",
+      "url": "https://gsas.seu.edu.cn/ssmlcx2027/pages/index.html",
+      "organization": "东南大学研究生院",
+      "title": "东南大学2027年招收攻读硕士学位研究生专业目录（011 生物科学与医学工程学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "2027 年招生目录系统页未标注发布日期；抓取方式：ego 浏览器渲染后点击院系树「011 生物科学与医学工程学院」取 HTML，抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors-3/seu-2027-catalog-011-bme.html",
+      "sha256": "0387fb5c14c779e8607f85ada10905e9131d27287584c341a455675101b96a84",
+      "captured_at": "2026-10-23T13:32:56.347Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-seu-2027-catalog-011-bme-guide-devices-040bb01b",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "东南 011 生医学院 083100（学硕）2027：101/201/301 数学（一）+838 普通生物学（部分方向改 837 生物信号处理），院系拟招 35 人",
+      "summary": "东南大学 2027 招生专业目录「011 生物科学与医学工程学院」原文：083100（学术学位）生物医学工程，初试 ①101思想政治理论 ②201英语（一）③301数学（一）④838普通生物学；其中 02、07、10 方向第四门改为 837 生物信号处理。该院招生计划 35 人。",
+      "applicability": "适用于报考东南大学生医学院 083100 学硕的考生：第三门为数学（一）；第四门按方向区分——01/03/04/05/06/08/09/11 方向考 838 普通生物学，02/07/10 方向考 837 生物信号处理。注意第四门是生物类与信号类二选一结构，不是 408。",
+      "relation": "direct",
+      "tags": [
+        "东南大学",
+        "2027",
+        "083100",
+        "数学（一）",
+        "838普通生物学",
+        "837生物信号处理",
+        "拟招35人"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "college": "生物科学与医学工程学院",
+        "program": "083100 生物医学工程",
+        "admission_year": 2027,
+        "region": "江苏",
+        "evidence_locator": "目录「011 生物科学与医学工程学院」083100 行及方向行。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "083100（学术学位）生物医学工程 ①101思想政治理论 ②201英语（一） ③301数学（一） ④838普通生物学"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "seu-2027-catalog-011-bme",
+      "url": "https://gsas.seu.edu.cn/ssmlcx2027/pages/index.html",
+      "organization": "东南大学研究生院",
+      "title": "东南大学2027年招收攻读硕士学位研究生专业目录（011 生物科学与医学工程学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "2027 年招生目录系统页未标注发布日期；抓取方式：ego 浏览器渲染后点击院系树「011 生物科学与医学工程学院」取 HTML，抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors-3/seu-2027-catalog-011-bme.html",
+      "sha256": "0387fb5c14c779e8607f85ada10905e9131d27287584c341a455675101b96a84",
+      "captured_at": "2026-10-23T13:32:56.347Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-seu-2027-catalog-011-bme-guide-signals-bae294d4",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "东南 011 生医学院 085409（专硕）2027：101/201/301 数学（一）+837 生物信号处理，复试 559 微机在生物医学中的应用",
+      "summary": "东南大学 2027 招生专业目录原文：085409（专业学位）生物医学工程，初试 ①101思想政治理论 ②201英语（一）③301数学（一）④837生物信号处理，复试科目 ①559 微机在生物医学中的应用；下设 01 生物信息技术、02 医学图像与医学电子学、03 医学信息学及工程、04 生物传感与生物电子学、05 生物光子技术、06 神经信息工程等方向。",
+      "applicability": "适用于报考东南 085409 专硕的考生：与学硕的关键差异是——专硕第四门固定为 837 生物信号处理（不需要选 838 普通生物学），第三门同为数学（一）。复试科目为 559 微机在生物医学中的应用。",
+      "relation": "direct",
+      "tags": [
+        "东南大学",
+        "2027",
+        "085409",
+        "专硕",
+        "数学（一）",
+        "837生物信号处理",
+        "559微机在生物医学中的应用"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "college": "生物科学与医学工程学院",
+        "program": "085409 生物医学工程",
+        "admission_year": 2027,
+        "region": "江苏",
+        "evidence_locator": "目录「011 生物科学与医学工程学院」085409 行及方向行。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085409（专业学位）生物医学工程 ①101思想政治理论 ②201英语（一） ③301数学（一） ④837生物信号处理"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "seu-2027-catalog-011-bme",
+      "url": "https://gsas.seu.edu.cn/ssmlcx2027/pages/index.html",
+      "organization": "东南大学研究生院",
+      "title": "东南大学2027年招收攻读硕士学位研究生专业目录（011 生物科学与医学工程学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "2027 年招生目录系统页未标注发布日期；抓取方式：ego 浏览器渲染后点击院系树「011 生物科学与医学工程学院」取 HTML，抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-school-majors-3/seu-2027-catalog-011-bme.html",
+      "sha256": "0387fb5c14c779e8607f85ada10905e9131d27287584c341a455675101b96a84",
+      "captured_at": "2026-10-23T13:32:56.347Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-seu-2027-catalog-011-bme-medical-ai-pm-040bb01b",
+      "role_id": "medical_ai_pm",
+      "category": "admissions",
+      "title": "东南生医学院沿革：1993 年全国第一个生物电子学博士点，1997 年生物医学工程国家一级学科博士点，2017 年 A+",
+      "summary": "东南大学 2027 招生目录「011 生物科学与医学工程学院」院系介绍原文：1984年9月由韦钰院士创建生物医学工程及仪器系，2006年8月成立学院；1993年被批准建立全国第一个「生物电子学」博士点；1997年「生物医学工程」成为国家一级学科博士点；2002年成为国家重点学科；2017年入选国家「双一流」学科；1998年设博士后流动站；2007、2012 年学科评估排名第一，2017 年评估 A+。",
+      "applicability": "适用于确认东南大学生物医学工程的博士培养层次与学科地位：1997 年即为国家一级学科博士点（P1 所需的「有无 0831 一级学科博士点」直接答案），2002 年国家重点学科，2017 年 A+。不含导师与考试科目细节。",
+      "relation": "direct",
+      "tags": [
+        "东南大学",
+        "生物医学工程",
+        "一级学科博士点",
+        "国家重点学科",
+        "A+",
+        "双一流",
+        "博士后流动站"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "college": "生物科学与医学工程学院",
+        "program": "083100 生物医学工程",
+        "region": "江苏",
+        "evidence_locator": "目录 011 栏院系介绍第 1 段。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "degree_type",
+        "pattern": "1993 年被批准建立全国第一个 “ 生物电子学 ” 博士点； 1997 年 “ 生物医学工程 ” 成为国家一级学科博士点， 2002 年 “ 生物医学工程 ” 成为国家重点学科， 2017 年入选国家 “ 双一流 ” 学科。 1998 年被批准设立博士后流动站， 2005 、 2010 年连续两次被评为全国优秀博士后流动站。在 2007 、 2012 年的生物医学工程学科全国评估中排名第一， 2017 年学科评估为 A\\+ 。"
+      }
+    ],
+    "expected_fields": [
+      "degree_type",
+      "exam_subjects"
+    ]
+  }
+]

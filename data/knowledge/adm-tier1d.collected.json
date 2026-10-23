@@ -1,0 +1,1243 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T12:37:17.193Z",
+  "sources": [
+    {
+      "id": "tsinghua-2027-catalog-599-sz",
+      "url": "https://yzbm.tsinghua.edu.cn/publish/s02/s0203/detail/c0fb8664-255f-4d6f-bf40-a5893e3343ec?ksfs=&yxsdm=599",
+      "organization": "清华大学研究生招生办公室",
+      "title": "清华大学2027年硕士研究生招生专业目录_统招(含招生人数)·599 清华大学深圳国际研究生院",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该专业目录详情页正文未印发布日期，故 published_at 记 null；为 2027 年招生年度版本（页面标题「清华大学2027年硕士研究生招生专业目录_统招(含招生人数)」）。"
+    },
+    {
+      "id": "tsinghua-2027-catalog-410-software",
+      "url": "https://yzbm.tsinghua.edu.cn/publish/s02/s0203/detail/c0fb8664-255f-4d6f-bf40-a5893e3343ec?ksfs=&yxsdm=410",
+      "organization": "清华大学研究生招生办公室",
+      "title": "清华大学2027年硕士研究生招生专业目录_统招(含招生人数)·410 软件学院",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该专业目录详情页正文未印发布日期，故 published_at 记 null；为 2027 年招生年度版本（页面标题「清华大学2027年硕士研究生招生专业目录_统招(含招生人数)」）。"
+    },
+    {
+      "id": "sjtu-2027-catalog-082-bme",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·082 生物医学工程学院",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    {
+      "id": "fudan-2026-catalog-306-bme",
+      "url": "https://gsas.fudan.edu.cn/sszsml2026/index.html",
+      "organization": "复旦大学研究生院",
+      "title": "复旦大学2026年招收攻读硕士学位研究生专业目录·306 生物医学工程与技术创新学院",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该专业目录为单页应用（gsas.fudan.edu.cn），正文由左侧院系列表点击后动态渲染，页面本身未印发布日期；2026 招生年度的依据是入口页 gsao.fudan.edu.cn「招生章程、目录…」栏目中该条目标注「复旦大学2026年招收攻读硕士学位研究生专业目录 2025-09-29」，且 2027 版截至抓取时尚未发布。"
+    },
+    {
+      "id": "nju-2027-catalog-085400-multi",
+      "url": "https://yzb.nju.edu.cn/",
+      "organization": "南京大学研究生院",
+      "title": "南京大学2027年硕士研究生招生目录（含 085400 电子信息三学院条目）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该 PDF 正文未印发布日期；招生年度依据页眉「南京大学2027年硕士研究生招生目录」确定，为 2027 年最新版。"
+    },
+    {
+      "id": "zju-2027-spa-clinical-100200",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（SPA 渲染快照·医学院·临床医学 100200 学术学位）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浙大研招「2027年硕士研究生招生专业目录查询」为单页应用，正文由查询结果动态渲染，页面未印发布日，故 published_at 记 null；年度由标题「2027年」确定。artifact 为 ego 真实点击后保存的渲染后 HTML，采集器读该 artifact 并用 htmlText() 复算文本，与 literal 同源。"
+    }
+  ],
+  "records": [
+    {
+      "id": "admissions-tsinghua-2027-catalog-599-sz-guide-devices-b556d661",
+      "source_id": "tsinghua-2027-catalog-599-sz",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "清华2027深圳国际研究生院：085400 电子信息 267 人，16 个方向科目各不相同（01/02/03/04 四种第四科）",
+      "summary": "清华 2027 专业目录 599 深圳国际研究生院：085400（专业学位）电子信息总计划 267 人。01 电子与通信工程 34 人（301 数一 + 830 电子信息科学专业基础）、02 集成电路与系统 19 人（数一 + 832 半导体器件与电子电路）、03 人工智能 26 人（数一 + 408 计算机学科专业基础）、04 BIO3智能医学与生物技术 10 人（**302 数学二** + **844 BIO3生命技术专业基础综合**）。",
+      "applicability": "**这是「同校同代码、方向不同科目完全不同」的最强案例**：清华 599 的 085400 一个专业代码下有 16 个方向、至少 6 套不同第四科。医学/生命背景的考生可重点关注 **04 BIO3智能医学与生物技术**——它是该代码下唯一考 **302 数学（二）** 且第四科为生命技术类专业基础（844）的方向，避开 408 与数（一）。",
+      "relation": "direct",
+      "tags": [
+        "清华大学",
+        "深圳国际研究生院",
+        "085400",
+        "电子信息",
+        "BIO3智能医学",
+        "844",
+        "302数学二",
+        "方向差异"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085400 （专业学位） 电子信息 267 01（全日制）电子与通信工程 34 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④830 电子信息科学专业基础 830电子信息科学专业基础考试内容：含信号与系统和电磁场理论。 02（全日制）集成电路与系统 19 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④832 半导体器件与电子电路 03（全日制）人工智能 26 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础 04（全日制）BIO3智能医学与生物技术 10 ①101 思想政治理论 ②201 英语（一） ③302 数学（二） ④844 BIO3生命技术专业基础综合",
+          "quote": "085400 （专业学位） 电子信息 267 01（全日制）电子与通信工程 34 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④830 电子信息科学专业基础 830电子信息科学专业基础考试内容：含信号与系统和电磁场理论。 02（全日制）集成电路与系统 19 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④832 半导体器件与电子电路 03（全日制）人工智能 26 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础 04（全日制）BIO3智能医学与生物技术 10 ①101 思想政治理论 ②201 英语（一） ③302 数学（二） ④844 BIO3生命技术专业基础综合",
+          "start": 1269,
+          "end": 1601
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "a2a6258313db372ac1780ba8ac5003fd52fa10f56c19a391342c88599de984de",
+      "collected_at": "2026-10-23T11:54:50.868Z",
+      "verified_at": "2026-10-23T12:37:16.994Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "college": "清华大学深圳国际研究生院",
+        "program": "085400 电子信息（599 深圳国际研究生院）",
+        "admission_year": 2027,
+        "region": "广东深圳",
+        "evidence_locator": "目录 599 清华大学深圳国际研究生院 085400 第 01–04 行"
+      }
+    },
+    {
+      "id": "admissions-tsinghua-2027-catalog-599-sz-guide-devices-6006b38f",
+      "source_id": "tsinghua-2027-catalog-599-sz",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "清华2027深圳国际研究生院：085400 06 生物医学工程方向，301 数一 + 801 生物医学工程综合",
+      "summary": "同目录：085400 电子信息 06（全日制）生物医学工程方向 18 人，初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④**801 生物医学工程综合**；页面注明「801生物医学工程综合考试内容：含数字信号处理、生物医学电子学」。",
+      "applicability": "适用于医工交叉方向的考生：清华 599 的 **06 生物医学工程** 走经典的「数一 + 801 生物医学工程综合（数字信号处理 + 生物医学电子学）」，与同代码 04 BIO3（数二 + 844 生命技术）形成难度梯度——04 更偏生命、06 更偏电子信息。",
+      "relation": "direct",
+      "tags": [
+        "清华大学",
+        "深圳国际研究生院",
+        "085400",
+        "生物医学工程",
+        "801",
+        "数字信号处理",
+        "生物医学电子学"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "06（全日制）生物医学工程 18 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④801 生物医学工程综合",
+          "quote": "06（全日制）生物医学工程 18 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④801 生物医学工程综合",
+          "start": 1676,
+          "end": 1740
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "a2a6258313db372ac1780ba8ac5003fd52fa10f56c19a391342c88599de984de",
+      "collected_at": "2026-10-23T11:54:50.868Z",
+      "verified_at": "2026-10-23T12:37:17.011Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "college": "清华大学深圳国际研究生院",
+        "program": "085400 电子信息（06 生物医学工程）",
+        "admission_year": 2027,
+        "region": "广东深圳",
+        "evidence_locator": "目录 599 段 085400 第 06 行及 801 科目说明"
+      }
+    },
+    {
+      "id": "admissions-tsinghua-2027-catalog-599-sz-guide-software-51885ecd",
+      "source_id": "tsinghua-2027-catalog-599-sz",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "清华2027深圳国际研究生院：085404 计算机技术 33 人，301 数一 + 408；085411 大数据 16 人同为 408",
+      "summary": "同目录：085404（专业学位）计算机技术 33 人（01 计算机技术 33 人），初试 ①101 ②201 英语（一）③301 数学（一）④408 计算机学科专业基础；085411（专业学位）大数据技术与工程 16 人，科目相同（数一 + 408）。",
+      "applicability": "适用于报清华深圳计算机类专硕的考生：085404 计算机技术（33 人）与 085411 大数据技术与工程（16 人）都是**数一 + 408**，且都比 085400 的 03 人工智能（26 人）名额更集中。注意 085404/085411 是独立专业代码，不与 085400 共享划线。",
+      "relation": "direct",
+      "tags": [
+        "清华大学",
+        "深圳国际研究生院",
+        "085404",
+        "085411",
+        "计算机技术",
+        "大数据",
+        "408"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085404 （专业学位） 计算机技术 33 01（全日制）计算机技术 33 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础",
+          "quote": "085404 （专业学位） 计算机技术 33 01（全日制）计算机技术 33 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础",
+          "start": 2504,
+          "end": 2591
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "a2a6258313db372ac1780ba8ac5003fd52fa10f56c19a391342c88599de984de",
+      "collected_at": "2026-10-23T11:54:50.868Z",
+      "verified_at": "2026-10-23T12:37:17.019Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "college": "清华大学深圳国际研究生院",
+        "program": "085404 计算机技术 / 085411 大数据技术与工程",
+        "admission_year": 2027,
+        "region": "广东深圳",
+        "evidence_locator": "目录 599 段 085404、085411 条目"
+      }
+    },
+    {
+      "id": "admissions-tsinghua-2027-catalog-599-sz-guide-clinical-data-27c3ba7b",
+      "source_id": "tsinghua-2027-catalog-599-sz",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "清华2027深圳国际研究生院：086000 生物与医药（合成生物制造）考 302 数学二 + 841 生物医学基础综合",
+      "summary": "同目录：086000（专业学位）生物与医药 18 人，01（全日制）合成生物制造 18 人，初试 ①101 思想政治理论 ②201 英语（一）③**302 数学（二）**④**841 生物医学基础综合**，本项目为全英文授课。",
+      "applicability": "适用于生命/医学背景、想避开数（一）与 408 的考生：086000 生物与医药走 **302 数学（二）+ 841 生物医学基础综合**，是清华 599 里与医学本科知识重合度最高的组合；代价是全英文授课。",
+      "relation": "direct",
+      "tags": [
+        "清华大学",
+        "深圳国际研究生院",
+        "086000",
+        "生物与医药",
+        "841生物医学基础综合",
+        "302数学二",
+        "全英文授课"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "086000 （专业学位） 生物与医药 18 01（全日制）合成生物制造 18 ①101 思想政治理论 ②201 英语（一） ③302 数学（二） ④841 生物医学基础综合",
+          "quote": "086000 （专业学位） 生物与医药 18 01（全日制）合成生物制造 18 ①101 思想政治理论 ②201 英语（一） ③302 数学（二） ④841 生物医学基础综合",
+          "start": 3815,
+          "end": 3902
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "a2a6258313db372ac1780ba8ac5003fd52fa10f56c19a391342c88599de984de",
+      "collected_at": "2026-10-23T11:54:50.868Z",
+      "verified_at": "2026-10-23T12:37:17.027Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "college": "清华大学深圳国际研究生院",
+        "program": "086000 生物与医药（01 合成生物制造）",
+        "admission_year": 2027,
+        "region": "广东深圳",
+        "evidence_locator": "目录 599 段 086000 条目"
+      }
+    },
+    {
+      "id": "admissions-tsinghua-2027-catalog-599-sz-guide-health-systems-223dccea",
+      "source_id": "tsinghua-2027-catalog-599-sz",
+      "role_id": "guide_health_systems",
+      "category": "admissions",
+      "title": "清华2027深圳国际研究生院：120400 公共管理学 01 医院管理，685 逻辑学 + 845 医管专业基础综合",
+      "summary": "同目录：120400（学术学位）公共管理学 22 人，01（全日制）医院管理 22 人，初试 ①101 思想政治理论 ②201 英语（一）③**685 逻辑学**④**845 医管专业基础综合**；页面注明「845医管专业基础综合考试内容含医学基础理论和管理学基础」。",
+      "applicability": "适用于医学背景转向医院管理/卫生政策的考生：**120400 公共管理学（学术学位）医院管理方向**考 685 逻辑学 + 845 医管专业基础综合（含医学基础理论和管理学基础），**不考数学、不考 408**——是清华 599 里唯一完全不考数学的医学相关方向。注意是学术学位。",
+      "relation": "direct",
+      "tags": [
+        "清华大学",
+        "深圳国际研究生院",
+        "120400",
+        "公共管理学",
+        "医院管理",
+        "845医管专业基础综合",
+        "不考数学"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "120400 （学术学位） 公共管理学 22 01（全日制）医院管理 22 ①101 思想政治理论 ②201 英语（一） ③685 逻辑学 ④845 医管专业基础综合",
+          "quote": "120400 （学术学位） 公共管理学 22 01（全日制）医院管理 22 ①101 思想政治理论 ②201 英语（一） ③685 逻辑学 ④845 医管专业基础综合",
+          "start": 3914,
+          "end": 3997
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "a2a6258313db372ac1780ba8ac5003fd52fa10f56c19a391342c88599de984de",
+      "collected_at": "2026-10-23T11:54:50.868Z",
+      "verified_at": "2026-10-23T12:37:17.044Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "college": "清华大学深圳国际研究生院",
+        "program": "120400 公共管理学（01 医院管理）",
+        "admission_year": 2027,
+        "region": "广东深圳",
+        "evidence_locator": "目录 599 段 120400 条目及 845 科目内容说明"
+      }
+    },
+    {
+      "id": "admissions-tsinghua-2027-catalog-410-software-guide-software-a8875904",
+      "source_id": "tsinghua-2027-catalog-410-software",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "清华2027软件学院：085405 软件工程 8 人，101/201/301 数学（一）/408（与科软同为 085405）",
+      "summary": "清华 2027 专业目录 410 软件学院：085405（专业学位）软件工程 8 人，01（全日制）智能软件工程（专业学位）8 人，初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④408 计算机学科专业基础；另有 03（全日制）强军计划，科目与统考相同。",
+      "applicability": "适用于对比两所顶尖软件学院：**清华 410 与中科大科软同为 085405 软件工程，但清华考 201 英语（一）+ 301 数学（一），科软考 204 英语（二）+ 302 数学（二）**——科目难度差一档，且清华仅 8 人（科软未列名额）。清华 410 的页面未出现本科专业限制表述（限制在校本部章程）。",
+      "relation": "direct",
+      "tags": [
+        "清华大学",
+        "软件学院",
+        "085405",
+        "软件工程",
+        "408",
+        "数学一",
+        "与科软对比"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085405 （专业学位） 软件工程 8 01（全日制）智能软件工程（专业学位） 8 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础",
+          "quote": "085405 （专业学位） 软件工程 8 01（全日制）智能软件工程（专业学位） 8 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础",
+          "start": 669,
+          "end": 760
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "0df992364ce14c2beef9603e4e1dbdd880d41c3cf44cbf0ee42be371ddb40295",
+      "collected_at": "2026-10-23T11:54:53.087Z",
+      "verified_at": "2026-10-23T12:37:17.053Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "college": "软件学院",
+        "program": "085405 软件工程（01 智能软件工程）",
+        "admission_year": 2027,
+        "region": "北京",
+        "evidence_locator": "目录 410 软件学院 085405 第 01 行"
+      }
+    },
+    {
+      "id": "admissions-sjtu-2027-catalog-082-bme-guide-devices-013c4698",
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "上交2027：082 生医工学院 083100 生物医学工程（学硕）01 方向考 301 数学（一）+ 408",
+      "summary": "上交 2027 专业目录 082 生物医学工程学院：总招生计划 76（全日制学术学位 21、全日制专业学位 55，其中推免 39）。083100 生物医学工程（学术学位）01 生物医学工程（含医疗仪器、神经工程、医学影像等）初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④**408 计算机学科专业基础**。",
+      "applicability": "适用于想报上交生医工学硕的考生：**学硕 083100 的 01 方向第四科是 408**（不是生医专业基础课），意味着要按计算机统考准备。该方向覆盖医疗仪器、神经工程、医学影像三块；02 纳米生物材料仅从推免生选拔（第四科标注「800仅从推免生选拔」）。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "生物医学工程学院",
+        "083100",
+        "生物医学工程",
+        "408",
+        "数学一",
+        "学术学位"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "083100生物医学工程 01生物医学工程（含医疗仪器、神经工程、医学影像等） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④408计算机学科专业基础",
+          "quote": "083100生物医学工程 01生物医学工程（含医疗仪器、神经工程、医学影像等） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④408计算机学科专业基础",
+          "start": 13431,
+          "end": 13519
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "eb181a48c7568664764f51bb83dfa63d4c02630888afaed929f51ac8d2e4578f",
+      "collected_at": "2026-10-23T11:58:40.522Z",
+      "verified_at": "2026-10-23T12:37:17.061Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "college": "生物医学工程学院",
+        "program": "083100 生物医学工程（01 含医疗仪器、神经工程、医学影像）",
+        "admission_year": 2027,
+        "region": "上海",
+        "department_type": "medical_technology",
+        "evidence_locator": "目录 082 生物医学工程学院 083100 第 01 行"
+      }
+    },
+    {
+      "id": "admissions-sjtu-2027-catalog-082-bme-guide-devices-180a8d9c",
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "上交2027：085400 电子信息 01 生物医学工程（医学影像）考 301 数一 + 408",
+      "summary": "同上目录：085400 电子信息（专业学位）01 生物医学工程（医学影像）初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④408 计算机学科专业基础。",
+      "applicability": "适用于医学影像/AI 影像方向的考生：上交 **01 医学影像方向考 408**，与学硕 083100 的 01 方向科目一致，等于影像方向要过计算机统考的关。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "生物医学工程学院",
+        "085400",
+        "医学影像",
+        "408",
+        "专业学位"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085400电子信息 01生物医学工程 （医学影像） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④408计算机学科专业基础",
+          "quote": "085400电子信息 01生物医学工程 （医学影像） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④408计算机学科专业基础",
+          "start": 13598,
+          "end": 13673
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "eb181a48c7568664764f51bb83dfa63d4c02630888afaed929f51ac8d2e4578f",
+      "collected_at": "2026-10-23T11:58:40.522Z",
+      "verified_at": "2026-10-23T12:37:17.070Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "college": "生物医学工程学院",
+        "program": "085400 电子信息（01 生物医学工程·医学影像）",
+        "admission_year": 2027,
+        "region": "上海",
+        "department_type": "medical_technology",
+        "evidence_locator": "目录 082 生物医学工程学院 085400 第 01 行"
+      }
+    },
+    {
+      "id": "admissions-sjtu-2027-catalog-082-bme-guide-signals-cdfde242",
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "上交2027：085400 02 生物医学工程（神经工程）考 819 信号系统与信号处理（非 408）",
+      "summary": "同上目录：085400 电子信息 02 生物医学工程（神经工程）初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④**819 信号系统与信号处理**。",
+      "applicability": "**印证「同校同代码不同方向科目完全不同」**：上交 085400 的 01 医学影像考 408，而 02 神经工程考 **819 信号系统与信号处理**。信号背景（含医学信号处理）的考生走 02 可完全避开 408。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "生物医学工程学院",
+        "085400",
+        "神经工程",
+        "819信号系统与信号处理",
+        "方向差异"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085400电子信息 02生物医学工程 （神经工程） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④819信号系统与信号处理",
+          "quote": "085400电子信息 02生物医学工程 （神经工程） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④819信号系统与信号处理",
+          "start": 13674,
+          "end": 13749
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "eb181a48c7568664764f51bb83dfa63d4c02630888afaed929f51ac8d2e4578f",
+      "collected_at": "2026-10-23T11:58:40.522Z",
+      "verified_at": "2026-10-23T12:37:17.079Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "college": "生物医学工程学院",
+        "program": "085400 电子信息（02 生物医学工程·神经工程）",
+        "admission_year": 2027,
+        "region": "上海",
+        "department_type": "medical_technology",
+        "evidence_locator": "目录 082 生物医学工程学院 085400 第 02 行"
+      }
+    },
+    {
+      "id": "admissions-sjtu-2027-catalog-082-bme-guide-devices-1b0c3489",
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "上交2027：085400 03 生物医学工程（医疗仪器）考 816 自动控制理论（非 408）",
+      "summary": "同上目录：085400 电子信息 03 生物医学工程（医疗仪器）初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④**816 自动控制理论**；同学院 05（内蒙古研究院）、06（四川研究院）、08（微创联培基地）的医疗仪器方向同为 816。",
+      "applicability": "适用于医疗仪器/医疗器械方向的考生：上交 085400 的**医疗仪器方向统一考 816 自动控制理论**（含内蒙古、四川、微创联培等基地），是生医工里最「器械化」的一条路，避开 408 但需补自动控制理论。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "生物医学工程学院",
+        "085400",
+        "医疗仪器",
+        "816自动控制理论",
+        "联培基地"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085400电子信息 03生物医学工程 （医疗仪器） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论",
+          "quote": "085400电子信息 03生物医学工程 （医疗仪器） (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论",
+          "start": 13750,
+          "end": 13822
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "eb181a48c7568664764f51bb83dfa63d4c02630888afaed929f51ac8d2e4578f",
+      "collected_at": "2026-10-23T11:58:40.522Z",
+      "verified_at": "2026-10-23T12:37:17.088Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "college": "生物医学工程学院",
+        "program": "085400 电子信息（03 生物医学工程·医疗仪器）",
+        "admission_year": 2027,
+        "region": "上海",
+        "department_type": "medical_technology",
+        "evidence_locator": "目录 082 生物医学工程学院 085400 第 03 行（05/06/08 同科目）"
+      }
+    },
+    {
+      "id": "admissions-sjtu-2027-catalog-082-bme-guide-clinical-data-cec1940e",
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "上交2027：086000 生物与医药 02 生物医学工程（生物信息）考 338 生物化学 + 408，与 085400 完全不同的科目体系",
+      "summary": "同上目录：086000 生物与医药 02 生物医学工程（生物工程-生物信息）初试 ①101 思想政治理论 ②201 英语（一）③**338 生物化学**④**408 计算机学科专业基础**；同专业 01 肿瘤免疫仅从推免生选拔、03 纳米生物材料（808 无机与分析化学）、04 纳米诊断（827 材料科学基础）。",
+      "applicability": "适用于生命科学背景的考生：上交 **086000 生物与医药** 走「338 生物化学 + 第四科（408/808/827）」体系，**第三科不是数学而是生物化学**——这是医学/生物本科生最省力的组合（免数学）。注意 01 方向仅推免。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "生物与医药",
+        "086000",
+        "338生物化学",
+        "生物信息",
+        "不考数学"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "086000生物与医药 02生物医学工程（生物工程-生物信息） (1)全日制 ①101思想政治理论②201英语（一）③338生物化学④408计算机学科专业基础",
+          "quote": "086000生物与医药 02生物医学工程（生物工程-生物信息） (1)全日制 ①101思想政治理论②201英语（一）③338生物化学④408计算机学科专业基础",
+          "start": 14324,
+          "end": 14403
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "eb181a48c7568664764f51bb83dfa63d4c02630888afaed929f51ac8d2e4578f",
+      "collected_at": "2026-10-23T11:58:40.522Z",
+      "verified_at": "2026-10-23T12:37:17.097Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "college": "生物医学工程学院",
+        "program": "086000 生物与医药（02 生物医学工程·生物信息）",
+        "admission_year": 2027,
+        "region": "上海",
+        "department_type": "medical_technology",
+        "evidence_locator": "目录 082 生物医学工程学院 086000 第 02 行"
+      }
+    },
+    {
+      "id": "admissions-sjtu-2027-catalog-082-bme-guide-software-169157e9",
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027：目录明确设「可以跨学科报考的专业」列，工科多为「理工科相关专业」",
+      "summary": "上交 2027 专业目录在多个工科专业后附「**可以跨学科报考的专业：理工科相关专业。**」字样（例：081100 控制科学与工程 01、085400 电子信息 01–17 控制工程/智能感知工程各方向）。这是上交对跨专业报考的正式口径列。",
+      "applicability": "**这是上交目录里回答「能不能跨专业」的原始条款**：上交把跨考口径写成「可以跨学科报考的专业：理工科相关专业」——医学门类是否算「理工科」原文未列举，属**边界模糊条款**（不是明确欢迎，也不是明确禁止），需向院系确认。注意这是「可以跨」的正向表述，与「不接收跨专业」的禁止性表述性质不同。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "跨学科报考",
+        "理工科相关专业",
+        "跨专业限制",
+        "085400",
+        "081100"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "081100控制科学与工程 01不区分研究方向 (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论 可以跨学科报考的专业：理工科相关专业。",
+          "quote": "081100控制科学与工程 01不区分研究方向 (1)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论 可以跨学科报考的专业：理工科相关专业。",
+          "start": 4990,
+          "end": 5079
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "eb181a48c7568664764f51bb83dfa63d4c02630888afaed929f51ac8d2e4578f",
+      "collected_at": "2026-10-23T11:58:40.522Z",
+      "verified_at": "2026-10-23T12:37:17.105Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "college": "电子信息与电气工程学院",
+        "program": "085400 电子信息 / 081100 控制科学与工程（电院各方向）",
+        "admission_year": 2027,
+        "region": "上海",
+        "evidence_locator": "目录 081100 控制科学与工程 01 行与 085400 各方向后的「可以跨学科报考的专业」列"
+      }
+    },
+    {
+      "id": "admissions-fudan-2026-catalog-306-bme-guide-devices-60f99b9d",
+      "source_id": "fudan-2026-catalog-306-bme",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "复旦2026：306 学院 085400 电子信息 46 人，01–04 方向考 204 英（二）+ 302 数（二）+ 875 信号与信息系统",
+      "summary": "复旦 2026 专业目录 306 生物医学工程与技术创新学院：085400（专业学位）电子信息 招生计划 46 人，01、02、03、04 方向初试 ①101 思想政治理论 ②204 英语（二）③302 数学（二）④875 信号与信息系统。方向为 01 生物医学工程、02 集成电路工程、03 新一代电子信息技术（含量子技术等）、04 人工智能、05 集成电路产业专项班。",
+      "applicability": "**复旦生医工口径最实用的一条**：085400 电子信息在复旦 306 学院走 204 英语（二）+ 302 数学（二）+ 875 信号与信息系统——全套比北大软微/清华（英一 + 数一 + 408）低一个难度档，且第四科是信号类而非 408，对医学/生物医学工程背景更友好。医学本科能否报仍需看校本部章程（本条备注栏未见本科专业限制）。",
+      "relation": "direct",
+      "tags": [
+        "复旦大学",
+        "生物医学工程与技术创新学院",
+        "085400",
+        "电子信息",
+        "875信号与信息系统",
+        "302数学二",
+        "204英语二"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085400（专业学位）电子信息 电子信息领域工程士的培养，以市场需求和工程应用为导向，依托复旦大学生物医学与工程、电子科学与技术学科几十年积累的基础和优秀，吸纳国际先进经验，与工业界紧密结合，采用理论教学和实践活动相结合的方法，具有坚实宽广的理论基础和系统深入的专门知识，具备解决该领域复杂工程技术问题、进行工程技术创新以及组织规划实施工程技术研发的能力，在推动技术升级和产业进步方面做出创新性成果的人才。 46 01、02、03、04方向：①101思想政治理论②204英语（二）③302数学（二）④875信号与信息系统",
+          "quote": "085400（专业学位）电子信息 电子信息领域工程士的培养，以市场需求和工程应用为导向，依托复旦大学生物医学与工程、电子科学与技术学科几十年积累的基础和优秀，吸纳国际先进经验，与工业界紧密结合，采用理论教学和实践活动相结合的方法，具有坚实宽广的理论基础和系统深入的专门知识，具备解决该领域复杂工程技术问题、进行工程技术创新以及组织规划实施工程技术研发的能力，在推动技术升级和产业进步方面做出创新性成果的人才。 46 01、02、03、04方向：①101思想政治理论②204英语（二）③302数学（二）④875信号与信息系统",
+          "start": 1550,
+          "end": 1811
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "52d45141b5348ff80fdfc72f7436160d1c2417bb2561a062896d7585fb065a61",
+      "collected_at": "2026-10-23T12:04:02.974Z",
+      "verified_at": "2026-10-23T12:37:17.111Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "复旦大学",
+        "college": "生物医学工程与技术创新学院",
+        "program": "085400 电子信息（01 生物医学工程 / 02 集成电路工程 / 03 新一代电子信息技术 / 04 人工智能）",
+        "admission_year": 2026,
+        "region": "上海",
+        "department_type": "medical_technology",
+        "evidence_locator": "目录 306 生物医学工程与技术创新学院 085400 条目的「01、02、03、04方向」考试科目行"
+      }
+    },
+    {
+      "id": "admissions-fudan-2026-catalog-306-bme-guide-devices-7deeb0ce",
+      "source_id": "fudan-2026-catalog-306-bme",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "复旦2026：306 学院 085400 拟招 46 人中推免 15 人；01–04 实招 41（推免 10），05 方向仅推免 5 人",
+      "summary": "同条目备注原文：「1.本专业拟招收推免生15人。2.学制3年。3.01-04方向拟招收41人，其中拟招收推免生10人。在01-04方向内择优排序确定进入复试名单，根据总成绩由高到低进行拟录取（不区分方向）。4.05方向拟只招收推免生5人。」",
+      "applicability": "适用于评估复旦 306 学院 085400 的统考机会：总 46 人中推免 15，其中 01–04 方向统考名额约 31 人（41−10），05 集成电路产业专项班 5 人全部推免。且 01–04 内不区分方向录取（择优排序、按总成绩统一排序）——4 个方向共用一条分数线，报哪个方向不改变竞争池。",
+      "relation": "direct",
+      "tags": [
+        "复旦大学",
+        "生物医学工程与技术创新学院",
+        "085400",
+        "推免名额",
+        "不区分方向录取",
+        "学制3年"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "1.本专业拟招收推免生15人。 2.学制3年。 3.01-04方向拟招收41人，其中拟招收推免生10人。在01-04方向内择优排序确定进入复试名单，根据总成绩由高到低进行拟录取（不区分方向）。 4.05方向拟只招收推免生5人。",
+          "quote": "1.本专业拟招收推免生15人。 2.学制3年。 3.01-04方向拟招收41人，其中拟招收推免生10人。在01-04方向内择优排序确定进入复试名单，根据总成绩由高到低进行拟录取（不区分方向）。 4.05方向拟只招收推免生5人。",
+          "start": 1824,
+          "end": 1937
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "52d45141b5348ff80fdfc72f7436160d1c2417bb2561a062896d7585fb065a61",
+      "collected_at": "2026-10-23T12:04:02.974Z",
+      "verified_at": "2026-10-23T12:37:17.116Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "复旦大学",
+        "college": "生物医学工程与技术创新学院",
+        "program": "085400 电子信息（306 学院全部方向）",
+        "admission_year": 2026,
+        "region": "上海",
+        "evidence_locator": "目录 306 学院 085400 条目备注第 1–4 条"
+      }
+    },
+    {
+      "id": "admissions-fudan-2026-catalog-306-bme-guide-devices-53c053e3",
+      "source_id": "fudan-2026-catalog-306-bme",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "复旦2026：306 学院 083100 生物医学工程（学硕）17 人 —— 「只招收推免生」，统考不可报",
+      "summary": "同目录：083100（学术学位）生物医学工程 招生计划 17 人，备注「只招收推免生」，学制 3 年；研究方向 01 医学影像与人工智能、02 智慧医疗超声、03 泛心血管生理的智慧诊疗方法及系统、04 生物医用芯片、05 生物医用材料、06 生物光子学、07 生物力学、08 脑和人工智能、09 复杂细胞系统的结构与功能研究、10 生物医学人工智能。",
+      "applicability": "**关键否定结论：复旦 083100 生物医学工程学硕 17 个名额全部只招推免生，统考考生无路可走**。想报复旦生医工的统考生只能走 085400 电子信息（306 学院）。这是「同一学院里学硕全推免、专硕留统考」的典型结构。",
+      "relation": "direct",
+      "tags": [
+        "复旦大学",
+        "生物医学工程与技术创新学院",
+        "083100",
+        "只招收推免生",
+        "学术学位",
+        "统考不可报"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "083100（学术学位）生物医学工程 生物医学工程主要研究生物医学信号处理方法、医学成像和图像处理方法、生物材料、人工器官等。目前本学科主要研究方向有医学影像与人工智能，生物大数据、脑智研究、生物传感与芯片等。 17 只招收推免生 1.本专业只招收推免生。",
+          "quote": "083100（学术学位）生物医学工程 生物医学工程主要研究生物医学信号处理方法、医学成像和图像处理方法、生物材料、人工器官等。目前本学科主要研究方向有医学影像与人工智能，生物大数据、脑智研究、生物传感与芯片等。 17 只招收推免生 1.本专业只招收推免生。",
+          "start": 1253,
+          "end": 1381
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "52d45141b5348ff80fdfc72f7436160d1c2417bb2561a062896d7585fb065a61",
+      "collected_at": "2026-10-23T12:04:02.974Z",
+      "verified_at": "2026-10-23T12:37:17.121Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "复旦大学",
+        "college": "生物医学工程与技术创新学院",
+        "program": "083100 生物医学工程（学术学位）",
+        "admission_year": 2026,
+        "region": "上海",
+        "department_type": "medical_technology",
+        "evidence_locator": "目录 306 学院 083100 条目的备注与研究方向"
+      }
+    },
+    {
+      "id": "admissions-nju-2027-catalog-085400-multi-guide-software-ae710669",
+      "source_id": "nju-2027-catalog-085400-multi",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "南大2027：物理学院 085400 电子信息 17 人，01 光学工程/02 声学工程/03 新一代电子信息技术考 英一+数一+851 信号与系统",
+      "summary": "南大 2027 招生目录：物理学院（该段前承 070206 声学条目）085400 电子信息△（专业学位）拟招 17 人，方向 01 光学工程、02 声学工程、03 新一代电子信息技术，初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④851 信号与系统。",
+      "applicability": "适用于比较南大三个 085400 的科目差异：**物理学院这一条是「英一 + 数一 + 851 信号与系统」**，是三处 085400 里数学要求最高的一处（数一），但第四科是信号与系统而非 408。",
+      "relation": "direct",
+      "tags": [
+        "南京大学",
+        "物理学院",
+        "085400",
+        "电子信息",
+        "851信号与系统",
+        "数学一"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085400 电子信息△ 17 专业学位。 01 (全日制)光学工程 02 (全日制)声学工程 03 (全日制)新一代电子信息技术 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④851 信号与系统",
+          "quote": "085400 电子信息△ 17 专业学位。 01 (全日制)光学工程 02 (全日制)声学工程 03 (全日制)新一代电子信息技术 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④851 信号与系统",
+          "start": 21331,
+          "end": 21441
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "81baccbc6b3d80e6380bb22b2f79b2c6f72b55ff2b3a59ad92bdc09ab66d4b0a",
+      "collected_at": "2026-10-23T07:17:35.243Z",
+      "verified_at": "2026-10-23T12:37:17.133Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京大学",
+        "college": "物理学院",
+        "program": "085400 电子信息（物理学院·01 光学工程/02 声学工程/03 新一代电子信息技术）",
+        "admission_year": 2027,
+        "region": "江苏南京",
+        "evidence_locator": "目录物理学院段 085400 电子信息△ 条目行"
+      }
+    },
+    {
+      "id": "admissions-nju-2027-catalog-085400-multi-guide-software-8c374798",
+      "source_id": "nju-2027-catalog-085400-multi",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "南大2027：现代工程与应用科学学院 085400 电子信息 27 人，考 英二+数二+869 光学原理（与物理学院完全不同）",
+      "summary": "同目录紧邻段：085400 电子信息△（专业学位）拟招 27 人，方向与前一学院同名（01 量子信息与激光技术、02 微纳光学与光场调控、03 光传感与光通讯），但初试为 ①101 思想政治理论 ②204 英语（二）③302 数学（二）④869 光学原理；同段 080300 光学工程（学硕）则考 英一+数一+869。",
+      "applicability": "**同一份目录里两个学院同名同方向的 085400，科目完全不同**：这一处考 **英二 + 数二 + 869 光学原理**，比物理学院段（英一+数一+851）低一整档。选学院比选方向更影响难度。",
+      "relation": "direct",
+      "tags": [
+        "南京大学",
+        "085400",
+        "电子信息",
+        "869光学原理",
+        "302数学二",
+        "204英语二",
+        "学院差异"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085400 电子信息△ 27 专业学位。 01 (全日制)量子信息与激光技术 02 (全日制)微纳光学与光场调控 03 (全日制)光传感与光通讯 ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④869 光学原理",
+          "quote": "085400 电子信息△ 27 专业学位。 01 (全日制)量子信息与激光技术 02 (全日制)微纳光学与光场调控 03 (全日制)光传感与光通讯 ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④869 光学原理",
+          "start": 33177,
+          "end": 33294
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "81baccbc6b3d80e6380bb22b2f79b2c6f72b55ff2b3a59ad92bdc09ab66d4b0a",
+      "collected_at": "2026-10-23T07:17:35.243Z",
+      "verified_at": "2026-10-23T12:37:17.146Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京大学",
+        "college": "现代工程与应用科学学院",
+        "program": "085400 电子信息（01 量子信息与激光技术/02 微纳光学与光场调控/03 光传感与光通讯）",
+        "admission_year": 2027,
+        "region": "江苏南京",
+        "evidence_locator": "目录该段 085400 电子信息△ 条目行（27 人）"
+      }
+    },
+    {
+      "id": "admissions-nju-2027-catalog-085400-multi-guide-software-89c47011",
+      "source_id": "nju-2027-catalog-085400-multi",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "南大2027：073 集成电路学院（苏州校区）085400 电子信息 68 人，01 集成电路工程考 英二+数二+851",
+      "summary": "同目录 073 集成电路学院（苏州校区，联系电话 0512-68768039，本单位拟招总数含卓越工程师专项计划）：085400 电子信息△（专业学位）拟招 68 人，01（全日制）集成电路工程初试 ①101 思想政治理论 ②204 英语（二）③302 数学（二）④851 信号与系统；同院 140100 集成电路科学与工程（学硕）17 人考 英一+数一+864 大学物理。",
+      "applicability": "适用于想走集成电路/芯片方向的考生：南大 **073 集成电路学院 68 人**是三处 085400 里规模最大的一处（远超物理学院 17、现工院 27），科目为 英二 + 数二 + 851 信号与系统，且位于苏州校区。注意该院不接收少数民族骨干计划和退役大学生士兵专项。",
+      "relation": "direct",
+      "tags": [
+        "南京大学",
+        "集成电路学院",
+        "085400",
+        "集成电路工程",
+        "851信号与系统",
+        "苏州校区",
+        "68人"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "073 集成电路学院 （联系电话:0512-68768039 ） 17 68 0 本单位所在校区为南京大学苏州校 区。本单位不接收“少数民族高层 次骨干人才计划”考生报考；不接 收“退役大学生士兵”专项计划考 生报考。 本单位拟招收总人数包含卓越工程 师招生专项计划数。 085400 电子信息△ 68 专业学位。 01 (全日制)集成电路工程 ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④851 信号与系统",
+          "quote": "073 集成电路学院 （联系电话:0512-68768039 ） 17 68 0 本单位所在校区为南京大学苏州校 区。本单位不接收“少数民族高层 次骨干人才计划”考生报考；不接 收“退役大学生士兵”专项计划考 生报考。 本单位拟招收总人数包含卓越工程 师招生专项计划数。 085400 电子信息△ 68 专业学位。 01 (全日制)集成电路工程 ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④851 信号与系统",
+          "start": 40335,
+          "end": 40552
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "81baccbc6b3d80e6380bb22b2f79b2c6f72b55ff2b3a59ad92bdc09ab66d4b0a",
+      "collected_at": "2026-10-23T07:17:35.243Z",
+      "verified_at": "2026-10-23T12:37:17.161Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京大学",
+        "college": "集成电路学院",
+        "program": "085400 电子信息（073 集成电路学院·01 集成电路工程）",
+        "admission_year": 2027,
+        "region": "江苏苏州",
+        "evidence_locator": "目录 073 集成电路学院段 085400 电子信息△ 条目行"
+      }
+    },
+    {
+      "id": "admissions-nju-2027-catalog-085400-multi-guide-devices-1eaf8b4c",
+      "source_id": "nju-2027-catalog-085400-multi",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "南大2027：085600 材料与化工 02 生物医学材料与技术方向，考 英二+数二+849 生物医学工程概论",
+      "summary": "同目录：085600 材料与化工△（专业学位）拟招 80 人，01 先进材料（招 76 人，单独排序）与 02 生物医学材料与技术（招 4 人，单独排序）两个方向；02 方向初试 ①101 思想政治理论 ②204 英语（二）③302 数学（二）④849 生物医学工程概论。",
+      "applicability": "**南大医工交叉最直接的入口**：085600 材料与化工的 **02 生物医学材料与技术** 方向，第四科就是 **849 生物医学工程概论**（生物医学工程的核心课），且是英二 + 数二的最低数学档。代价是名额仅 4 人、单独排序。南大 2027 目录中**没有独立的 083100 生物医学工程**（0831 出现 0 次），生医相关只能走这个方向或医学院 086000。",
+      "relation": "direct",
+      "tags": [
+        "南京大学",
+        "材料与化工",
+        "085600",
+        "生物医学材料与技术",
+        "849生物医学工程概论",
+        "医工交叉"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085600 材料与化工△ 80 专业学位。 01 (全日制)先进材料 ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④817 材料科学与工程基础 本方向招收76人，单独排序。 02 (全日制)生物医学材料与技术 ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④849 生物医学工程概论",
+          "quote": "085600 材料与化工△ 80 专业学位。 01 (全日制)先进材料 ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④817 材料科学与工程基础 本方向招收76人，单独排序。 02 (全日制)生物医学材料与技术 ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④849 生物医学工程概论",
+          "start": 33295,
+          "end": 33460
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "81baccbc6b3d80e6380bb22b2f79b2c6f72b55ff2b3a59ad92bdc09ab66d4b0a",
+      "collected_at": "2026-10-23T07:17:35.243Z",
+      "verified_at": "2026-10-23T12:37:17.172Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京大学",
+        "college": "现代工程与应用科学学院",
+        "program": "085600 材料与化工（02 生物医学材料与技术）",
+        "admission_year": 2027,
+        "region": "江苏南京",
+        "department_type": "medical_technology",
+        "evidence_locator": "目录 085600 材料与化工△ 条目 01、02 行"
+      }
+    },
+    {
+      "id": "admissions-zju-2027-spa-clinical-100200-medicine-guide-41e5e507",
+      "source_id": "zju-2027-spa-clinical-100200",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "浙大2027：临床医学 100200（学术学位）按一级学科招生，初试 101/201/306 临床医学综合能力（西医），无第四科",
+      "summary": "浙大 2027 专业目录 SPA 渲染快照：医学院·临床医学(100200) 学术学位，按一级学科招生，报名时须选研究方向和二级招生单位、按二级学科录取培养；各方向（如 100201 内科学-浙一(01)）初试 ①101 思想政治理论 ②201 英语（一）③306 临床医学综合能力（西医）④.--无。",
+      "applicability": "适用于报考浙大临床医学学硕（100200）的考生：第三科为教育部统考 306，**无第四科**（④标「--无」）。学硕按一级学科招生、按二级学科录取，选方向即等于选二级学科。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "临床医学",
+        "100200",
+        "306临床医学综合能力（西医）",
+        "学术学位",
+        "按一级学科招生"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "临 床 医 学 (100200) 全日制 1 0 0 2 0 1 内 科 学 - 浙 一 (01) ①.101思想政治理论 ②.201英语（一） ③.306临床医学综合能力（西医）",
+          "quote": "临 床 医 学 (100200) 全日制 1 0 0 2 0 1 内 科 学 - 浙 一 (01) ①.101思想政治理论 ②.201英语（一） ③.306临床医学综合能力（西医）",
+          "start": 655,
+          "end": 745
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "056e7e25d50d2dfebe74aa3122a2c675a7ca4bddfc073f3bbf8d7ed4d40a00b9",
+      "collected_at": "2026-10-23T07:35:51.745Z",
+      "verified_at": "2026-10-23T12:37:17.178Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "college": "医学院",
+        "program": "100200 临床医学（学术学位）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "department_type": "clinical",
+        "evidence_locator": "查询结果表·临床医学(100200) 100201内科学-浙一(01) 行考试科目列"
+      }
+    },
+    {
+      "id": "admissions-zju-2027-spa-clinical-100200-medicine-guide-3053c2c9",
+      "source_id": "zju-2027-spa-clinical-100200",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "浙大2027：临床医学 100200 部分方向明文「欢迎生物化学与分子生物学专业考生报考」",
+      "summary": "渲染快照：临床医学(100200) 100201 内科学-浙一(01) 与 内科学-邵医(03) 等方向的备注原文「内科学含传染病、血液病、消化系病、肾病、心血管病方向。**欢迎生物化学与分子生物学专业考生报考**。」",
+      "applicability": "**学硕对非临床本科留了口子**：浙大临床医学**学术学位**的部分方向明文「欢迎生物化学与分子生物学专业考生报考」——与专硕 105100「仅招收临床医学专业（100201K）」的封闭白名单形成鲜明对照。学生化/分子生物的医学类本科可关注学硕口径（但原文只点名「生物化学与分子生物学」，未泛指全部医学门类）。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "临床医学",
+        "100200",
+        "欢迎生物化学与分子生物学专业",
+        "跨专业限制",
+        "学硕vs专硕"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "欢迎生物化学与分子生物学专业考生报考。",
+          "quote": "欢迎生物化学与分子生物学专业考生报考。",
+          "start": 855,
+          "end": 874
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "056e7e25d50d2dfebe74aa3122a2c675a7ca4bddfc073f3bbf8d7ed4d40a00b9",
+      "collected_at": "2026-10-23T07:35:51.745Z",
+      "verified_at": "2026-10-23T12:37:17.186Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "college": "医学院",
+        "program": "100200 临床医学（学术学位·内科学方向）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "department_type": "clinical",
+        "evidence_locator": "查询结果表·临床医学(100200) 100201内科学-浙一(01)、邵医(03) 行备注栏"
+      }
+    },
+    {
+      "id": "admissions-zju-2027-spa-clinical-100200-medicine-guide-af115b77",
+      "source_id": "zju-2027-spa-clinical-100200",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "浙大2027：临床医学 105100（专硕）「仅招收临床医学专业（本科专业代码100201K，不包括中西医结合临床医学）」",
+      "summary": "渲染快照：医学院·临床医学(105100) 专业学位各方向备注原文「仅招收临床医学专业（普通高等学校本科专业代码100201K，不包括中西医结合临床医学）考生。对于已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学硕士专业学位研究生。」同段注「本专业按专业学位类别招生，报名时须选择研究方向和二级招生单位……按专业领域录取和培养」，学费 3.6 万元/生·全程。",
+      "applicability": "适用于判断医学本科各专业能否报浙大临床专硕：限制精确到教育部本科专业代码 **100201K** 且明确**排除中西医结合临床医学**；护理、药学、医学技术、预防医学、中西医结合临床均不在范围内，且已获规培证者原则上不得报考。与同校 100200 学硕（部分方向欢迎生化专业）形成对照。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "临床医学专业学位",
+        "105100",
+        "100201K",
+        "中西医结合临床医学",
+        "规培合格证",
+        "跨专业限制"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "仅招收临床医学专业（普通高等学校本科专业代码100201K，不包括中西医结合临床医学）考生。对于已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学硕士专业学位研究生。",
+          "quote": "仅招收临床医学专业（普通高等学校本科专业代码100201K，不包括中西医结合临床医学）考生。对于已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学硕士专业学位研究生。",
+          "start": 851,
+          "end": 939
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "5dac7e632d9d3e97f76acdae1e942a0a3c93b6245e69f4d516001534ed536663",
+      "collected_at": "2026-10-23T07:38:35.046Z",
+      "verified_at": "2026-10-23T12:37:17.193Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "college": "医学院",
+        "program": "105100 临床医学（专业学位）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "department_type": "clinical",
+        "evidence_locator": "查询结果表·临床医学(105100) 各方向备注栏（取 105101内科学-浙一(01) 行）"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "tsinghua-2027-catalog-599-sz",
+      "url": "https://yzbm.tsinghua.edu.cn/publish/s02/s0203/detail/c0fb8664-255f-4d6f-bf40-a5893e3343ec?ksfs=&yxsdm=599",
+      "at": "2026-10-23T11:54:50.868Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "tsinghua-2027-catalog-599-sz",
+      "url": "https://yzbm.tsinghua.edu.cn/publish/s02/s0203/detail/c0fb8664-255f-4d6f-bf40-a5893e3343ec?ksfs=&yxsdm=599",
+      "at": "2026-10-23T11:54:50.868Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "tsinghua-2027-catalog-599-sz",
+      "url": "https://yzbm.tsinghua.edu.cn/publish/s02/s0203/detail/c0fb8664-255f-4d6f-bf40-a5893e3343ec?ksfs=&yxsdm=599",
+      "at": "2026-10-23T11:54:50.868Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "tsinghua-2027-catalog-599-sz",
+      "url": "https://yzbm.tsinghua.edu.cn/publish/s02/s0203/detail/c0fb8664-255f-4d6f-bf40-a5893e3343ec?ksfs=&yxsdm=599",
+      "at": "2026-10-23T11:54:50.868Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "tsinghua-2027-catalog-599-sz",
+      "url": "https://yzbm.tsinghua.edu.cn/publish/s02/s0203/detail/c0fb8664-255f-4d6f-bf40-a5893e3343ec?ksfs=&yxsdm=599",
+      "at": "2026-10-23T11:54:50.868Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "tsinghua-2027-catalog-410-software",
+      "url": "https://yzbm.tsinghua.edu.cn/publish/s02/s0203/detail/c0fb8664-255f-4d6f-bf40-a5893e3343ec?ksfs=&yxsdm=410",
+      "at": "2026-10-23T11:54:53.087Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "at": "2026-10-23T11:58:40.522Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "at": "2026-10-23T11:58:40.522Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "at": "2026-10-23T11:58:40.522Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "at": "2026-10-23T11:58:40.522Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "at": "2026-10-23T11:58:40.522Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "sjtu-2027-catalog-082-bme",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "at": "2026-10-23T11:58:40.522Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "fudan-2026-catalog-306-bme",
+      "url": "https://gsas.fudan.edu.cn/sszsml2026/index.html",
+      "at": "2026-10-23T12:04:02.974Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "fudan-2026-catalog-306-bme",
+      "url": "https://gsas.fudan.edu.cn/sszsml2026/index.html",
+      "at": "2026-10-23T12:04:02.974Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "fudan-2026-catalog-306-bme",
+      "url": "https://gsas.fudan.edu.cn/sszsml2026/index.html",
+      "at": "2026-10-23T12:04:02.974Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "nju-2027-catalog-085400-multi",
+      "url": "https://yzb.nju.edu.cn/",
+      "at": "2026-10-23T07:17:35.243Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "nju-2027-catalog-085400-multi",
+      "url": "https://yzb.nju.edu.cn/",
+      "at": "2026-10-23T07:17:35.243Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "nju-2027-catalog-085400-multi",
+      "url": "https://yzb.nju.edu.cn/",
+      "at": "2026-10-23T07:17:35.243Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "nju-2027-catalog-085400-multi",
+      "url": "https://yzb.nju.edu.cn/",
+      "at": "2026-10-23T07:17:35.243Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "zju-2027-spa-clinical-100200",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:35:51.745Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "zju-2027-spa-clinical-100200",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:35:51.745Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "zju-2027-spa-clinical-100200",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:38:35.046Z",
+      "status": "collected",
+      "missing_fields": []
+    }
+  ]
+}

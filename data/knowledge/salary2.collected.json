@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-23T10:03:46.195Z",
+  "generated_at": "2026-10-23T11:23:08.817Z",
   "sources": [
     {
       "id": "mohrss-survey-2025",
@@ -109,7 +109,7 @@
       "verification": "quote_verified",
       "content_hash": "a28ee00be0f7a0f013f8f98a61d28326e2b1eafc3bd60f1541133551a4ef2e5f",
       "collected_at": "2026-10-23T05:23:31.251Z",
-      "verified_at": "2026-10-23T10:03:46.055Z",
+      "verified_at": "2026-10-23T11:23:08.430Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -148,7 +148,7 @@
       "verification": "quote_verified",
       "content_hash": "a28ee00be0f7a0f013f8f98a61d28326e2b1eafc3bd60f1541133551a4ef2e5f",
       "collected_at": "2026-10-23T05:23:31.251Z",
-      "verified_at": "2026-10-23T10:03:46.066Z",
+      "verified_at": "2026-10-23T11:23:08.449Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -188,7 +188,7 @@
       "verification": "quote_verified",
       "content_hash": "a28ee00be0f7a0f013f8f98a61d28326e2b1eafc3bd60f1541133551a4ef2e5f",
       "collected_at": "2026-10-23T05:23:31.251Z",
-      "verified_at": "2026-10-23T10:03:46.081Z",
+      "verified_at": "2026-10-23T11:23:08.493Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -237,7 +237,7 @@
       "verification": "quote_verified",
       "content_hash": "a28ee00be0f7a0f013f8f98a61d28326e2b1eafc3bd60f1541133551a4ef2e5f",
       "collected_at": "2026-10-23T05:23:31.251Z",
-      "verified_at": "2026-10-23T10:03:46.090Z",
+      "verified_at": "2026-10-23T11:23:08.508Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -276,7 +276,7 @@
       "verification": "quote_verified",
       "content_hash": "c4fd3294199ea56e02bad270d40cbea0f5074e1482cd2d4de6b1fe1bebf9f666",
       "collected_at": "2026-10-23T05:17:46.036Z",
-      "verified_at": "2026-10-23T10:03:46.098Z",
+      "verified_at": "2026-10-23T11:23:08.534Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -314,7 +314,7 @@
       "verification": "quote_verified",
       "content_hash": "c4fd3294199ea56e02bad270d40cbea0f5074e1482cd2d4de6b1fe1bebf9f666",
       "collected_at": "2026-10-23T05:17:46.036Z",
-      "verified_at": "2026-10-23T10:03:46.109Z",
+      "verified_at": "2026-10-23T11:23:08.614Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -366,7 +366,7 @@
       "verification": "quote_verified",
       "content_hash": "c4fd3294199ea56e02bad270d40cbea0f5074e1482cd2d4de6b1fe1bebf9f666",
       "collected_at": "2026-10-23T05:17:46.036Z",
-      "verified_at": "2026-10-23T10:03:46.119Z",
+      "verified_at": "2026-10-23T11:23:08.639Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -420,7 +420,7 @@
       "verification": "quote_verified",
       "content_hash": "aa349e3b51aa9113d4daacdc2f5dcf30925b7b549ac2d888ca1d7b1fc5bc1d3f",
       "collected_at": "2026-10-23T05:17:00.566Z",
-      "verified_at": "2026-10-23T10:03:46.125Z",
+      "verified_at": "2026-10-23T11:23:08.645Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -473,7 +473,7 @@
       "verification": "quote_verified",
       "content_hash": "aa349e3b51aa9113d4daacdc2f5dcf30925b7b549ac2d888ca1d7b1fc5bc1d3f",
       "collected_at": "2026-10-23T05:17:00.566Z",
-      "verified_at": "2026-10-23T10:03:46.128Z",
+      "verified_at": "2026-10-23T11:23:08.656Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -534,7 +534,7 @@
       "verification": "quote_verified",
       "content_hash": "dc3d3a010a6a4265d182017b37af4357053697ad2e30460e321cda9e88804b4d",
       "collected_at": "2026-10-23T05:16:19.057Z",
-      "verified_at": "2026-10-23T10:03:46.131Z",
+      "verified_at": "2026-10-23T11:23:08.672Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -574,7 +574,7 @@
       "verification": "quote_verified",
       "content_hash": "dc3d3a010a6a4265d182017b37af4357053697ad2e30460e321cda9e88804b4d",
       "collected_at": "2026-10-23T05:16:19.057Z",
-      "verified_at": "2026-10-23T10:03:46.135Z",
+      "verified_at": "2026-10-23T11:23:08.686Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -614,7 +614,7 @@
       "verification": "quote_verified",
       "content_hash": "e4dad22a53427c6e7fa17a85987e45cb91e038f62aa54d1268854500cbb979bd",
       "collected_at": "2026-10-23T05:19:09.205Z",
-      "verified_at": "2026-10-23T10:03:46.143Z",
+      "verified_at": "2026-10-23T11:23:08.694Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -666,7 +666,7 @@
       "verification": "quote_verified",
       "content_hash": "e4dad22a53427c6e7fa17a85987e45cb91e038f62aa54d1268854500cbb979bd",
       "collected_at": "2026-10-23T05:19:09.205Z",
-      "verified_at": "2026-10-23T10:03:46.147Z",
+      "verified_at": "2026-10-23T11:23:08.703Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -704,7 +704,7 @@
       "verification": "quote_verified",
       "content_hash": "e4dad22a53427c6e7fa17a85987e45cb91e038f62aa54d1268854500cbb979bd",
       "collected_at": "2026-10-23T05:19:09.205Z",
-      "verified_at": "2026-10-23T10:03:46.156Z",
+      "verified_at": "2026-10-23T11:23:08.737Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -743,7 +743,7 @@
       "verification": "quote_verified",
       "content_hash": "e4dad22a53427c6e7fa17a85987e45cb91e038f62aa54d1268854500cbb979bd",
       "collected_at": "2026-10-23T05:19:09.205Z",
-      "verified_at": "2026-10-23T10:03:46.164Z",
+      "verified_at": "2026-10-23T11:23:08.766Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -795,7 +795,7 @@
       "verification": "quote_verified",
       "content_hash": "d92b3f0c43c8290e2d584f90a8fb709ca86c481e71ab4629fba2bfde5450a157",
       "collected_at": "2026-10-23T05:21:19.675Z",
-      "verified_at": "2026-10-23T10:03:46.176Z",
+      "verified_at": "2026-10-23T11:23:08.783Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -835,7 +835,7 @@
       "verification": "quote_verified",
       "content_hash": "d92b3f0c43c8290e2d584f90a8fb709ca86c481e71ab4629fba2bfde5450a157",
       "collected_at": "2026-10-23T05:21:19.675Z",
-      "verified_at": "2026-10-23T10:03:46.185Z",
+      "verified_at": "2026-10-23T11:23:08.802Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -873,7 +873,7 @@
       "verification": "quote_verified",
       "content_hash": "d92b3f0c43c8290e2d584f90a8fb709ca86c481e71ab4629fba2bfde5450a157",
       "collected_at": "2026-10-23T05:21:19.675Z",
-      "verified_at": "2026-10-23T10:03:46.195Z",
+      "verified_at": "2026-10-23T11:23:08.817Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {

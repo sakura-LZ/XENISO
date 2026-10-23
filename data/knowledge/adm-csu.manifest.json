@@ -1,0 +1,265 @@
+[
+  {
+    "source": {
+      "id": "csu-2027-catalog",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "organization": "中南大学研究生招生办公室",
+      "title": "中南大学2027年硕士研究生招生专业目录及考试科目一览表（统考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面为「中南大学2027年硕士研究生招生专业目录及考试科目一览表_统考」，列表页发布日 2026.10.08；详情页自身未印发布日，招生年度由标题「2027年」确定。原站为 gb2312 编码，本记录 artifact 的 raw 已转码为 UTF-8（文件名 csu-2027-catalog.utf8.raw），以便 htmlText() 按 UTF-8 复算文本；.txt 即 htmlText(该 UTF-8 raw) 的输出。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92c-csu/csu-2027-catalog.utf8.raw",
+      "sha256": "4772d962c234108d74987d8ff8ffb27fe7ab9d56baaad162a3965db4ae7a2095",
+      "captured_at": "2026-10-23T13:01:00.464Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-csu-2027-catalog-guide-devices-fb00e401",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "中南大学2027年085400 电子信息（物理类学院）初试科目与拟招人数",
+      "summary": "原文：085400 电子信息（专业学位）拟招 20 / 0（「/」前为全日制、后为非全日制，不含推免）；初试 ①101 思想政治理论 ②204 英语（二）③302 数学（二）④809 量子力学或 853 信号与系统；按一级学科招生，01/02/03/04/06 方向选考 853 信号与系统，05 方向选考 809 量子力学。方向：新一代电子信息技术、通信工程、集成电路工程、仪器仪表工程、光电信息工程、网络与信息安全。",
+      "applicability": "仅适用于中南大学 2027 年该学院 085400 电子信息（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "中南大学",
+        "电子信息",
+        "招生人数"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中南大学",
+        "program": "085400 电子信息",
+        "admission_year": 2027,
+        "region": "湖南",
+        "evidence_locator": "2027 统考目录 → 物理类学院 → 085400"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085400 电子信息（专业学位） 20 / 0 ① 101 思想政治理论 ② 204 英语（二） ③ 302 数学（二） ④ 809 量子力学或853 信号与系统 按一级学科招生；01、02、03、04、06方向选考853信号与系统；05方向选考809量子力学"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "各方向分方向人数（仅给学院合计）"
+    ]
+  },
+  {
+    "source": {
+      "id": "csu-2027-catalog",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "organization": "中南大学研究生招生办公室",
+      "title": "中南大学2027年硕士研究生招生专业目录及考试科目一览表（统考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面为「中南大学2027年硕士研究生招生专业目录及考试科目一览表_统考」，列表页发布日 2026.10.08；详情页自身未印发布日，招生年度由标题「2027年」确定。原站为 gb2312 编码，本记录 artifact 的 raw 已转码为 UTF-8（文件名 csu-2027-catalog.utf8.raw），以便 htmlText() 按 UTF-8 复算文本；.txt 即 htmlText(该 UTF-8 raw) 的输出。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92c-csu/csu-2027-catalog.utf8.raw",
+      "sha256": "4772d962c234108d74987d8ff8ffb27fe7ab9d56baaad162a3965db4ae7a2095",
+      "captured_at": "2026-10-23T13:01:00.464Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-csu-2027-catalog-guide-ml-cv-fb00e401",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "中南大学2027年085400 电子信息（计算机类学院）考 408",
+      "summary": "原文：085400 电子信息（专业学位）拟招 15 / 4；初试 ①101 思想政治理论 ②204 英语（二）③302 数学（二）④408 计算机学科专业基础；方向 01 计算机技术、02 人工智能、03 大数据技术与工程。",
+      "applicability": "仅适用于中南大学 2027 年该学院 085400 电子信息（计算机/AI 方向）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "中南大学",
+        "电子信息",
+        "408"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中南大学",
+        "program": "085400 电子信息",
+        "admission_year": 2027,
+        "region": "湖南",
+        "evidence_locator": "2027 统考目录 → 计算机/人工智能类学院 → 085400"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085400 电子信息（专业学位） 15 / 4 ① 101 思想政治理论 ② 204 英语（二） ③ 302 数学（二） ④ 408 计算机学科专业基础 01 计算机技术 02 人工智能 03 大数据技术与工程"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "csu-2027-catalog",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "organization": "中南大学研究生招生办公室",
+      "title": "中南大学2027年硕士研究生招生专业目录及考试科目一览表（统考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面为「中南大学2027年硕士研究生招生专业目录及考试科目一览表_统考」，列表页发布日 2026.10.08；详情页自身未印发布日，招生年度由标题「2027年」确定。原站为 gb2312 编码，本记录 artifact 的 raw 已转码为 UTF-8（文件名 csu-2027-catalog.utf8.raw），以便 htmlText() 按 UTF-8 复算文本；.txt 即 htmlText(该 UTF-8 raw) 的输出。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92c-csu/csu-2027-catalog.utf8.raw",
+      "sha256": "4772d962c234108d74987d8ff8ffb27fe7ab9d56baaad162a3965db4ae7a2095",
+      "captured_at": "2026-10-23T13:01:00.464Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-csu-2027-catalog-guide-devices-f6a45f2b",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "中南大学2027年089904 智能医学技术（交叉学科）初试科目",
+      "summary": "原文：089904 智能医学技术拟招 3 / 0；初试 ①101 思想政治理论 ②201 英语（一）③302 数学（二）④806 生物医学工程学概论；方向 01 智能医学技术。",
+      "applicability": "仅适用于中南大学 2027 年该学院 089904 智能医学技术。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "中南大学",
+        "医学技术",
+        "智能医学技术",
+        "生物医学工程"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中南大学",
+        "program": "089904 智能医学技术",
+        "admission_year": 2027,
+        "region": "湖南",
+        "evidence_locator": "2027 统考目录 → 该学院 → 089904"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "089904 智能医学技术 3 / 0 ① 101 思想政治理论 ② 201 英语（一） ③ 302 数学（二） ④ 806 生物医学工程学概论"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "csu-2027-catalog",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "organization": "中南大学研究生招生办公室",
+      "title": "中南大学2027年硕士研究生招生专业目录及考试科目一览表（统考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面为「中南大学2027年硕士研究生招生专业目录及考试科目一览表_统考」，列表页发布日 2026.10.08；详情页自身未印发布日，招生年度由标题「2027年」确定。原站为 gb2312 编码，本记录 artifact 的 raw 已转码为 UTF-8（文件名 csu-2027-catalog.utf8.raw），以便 htmlText() 按 UTF-8 复算文本；.txt 即 htmlText(该 UTF-8 raw) 的输出。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92c-csu/csu-2027-catalog.utf8.raw",
+      "sha256": "4772d962c234108d74987d8ff8ffb27fe7ab9d56baaad162a3965db4ae7a2095",
+      "captured_at": "2026-10-23T13:01:00.464Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-csu-2027-catalog-guide-imaging-eng-b325b4f0",
+      "role_id": "guide_imaging_eng",
+      "category": "admissions",
+      "title": "中南大学2027年100207 影像医学与核医学初试科目与人数",
+      "summary": "原文：100207 影像医学与核医学拟招 2 / 1；初试 ①101 思想政治理论 ②201 英语（一）③306 临床医学综合能力（西医）；方向 01 放射影像学、02 核医学。",
+      "applicability": "仅适用于中南大学 2027 年 100207 影像医学与核医学（学术学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "中南大学",
+        "临床医学",
+        "影像医学"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中南大学",
+        "program": "100207 影像医学与核医学",
+        "admission_year": 2027,
+        "region": "湖南",
+        "evidence_locator": "2027 统考目录 → 临床医学院 → 100207"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "100207 影像医学与核医学 2 / 1 ① 101 思想政治理论 ② 201 英语（一） ③ 306 临床医学综合能力（西医） 01 放射影像学 02 核医学"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "csu-2027-catalog",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "organization": "中南大学研究生招生办公室",
+      "title": "中南大学2027年硕士研究生招生专业目录及考试科目一览表（统考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面为「中南大学2027年硕士研究生招生专业目录及考试科目一览表_统考」，列表页发布日 2026.10.08；详情页自身未印发布日，招生年度由标题「2027年」确定。原站为 gb2312 编码，本记录 artifact 的 raw 已转码为 UTF-8（文件名 csu-2027-catalog.utf8.raw），以便 htmlText() 按 UTF-8 复算文本；.txt 即 htmlText(该 UTF-8 raw) 的输出。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92c-csu/csu-2027-catalog.utf8.raw",
+      "sha256": "4772d962c234108d74987d8ff8ffb27fe7ab9d56baaad162a3965db4ae7a2095",
+      "captured_at": "2026-10-23T13:01:00.464Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-csu-2027-catalog-guide-clinical-data-d5f02177",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "中南大学2027年105101 内科学（专硕）报考限制与科目",
+      "summary": "原文：105101 内科学（专业学位）拟招 17 / 0；初试 ①101 思想政治理论 ②201 英语（一）③306 临床医学综合能力（西医）；备注「不接受少干计划和退役大学生士兵计划报考；按专业领域招生」。",
+      "applicability": "仅适用于中南大学 2027 年 105101 内科学（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "中南大学",
+        "临床医学专硕",
+        "报考限制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中南大学",
+        "program": "105101 内科学",
+        "admission_year": 2027,
+        "region": "湖南",
+        "evidence_locator": "2027 统考目录 → 临床医学院 → 105101 备注"
+      }
+    },
+    "extracts": [
+      {
+        "field": "admission_requirements",
+        "pattern": "105101 内科学（专业学位） 17 / 0 ① 101 思想政治理论 ② 201 英语（一） ③ 306 临床医学综合能力（西医） 不接受少干计划和退役大学生士兵计划报考；按专业领域招生"
+      }
+    ],
+    "expected_fields": [
+      "admission_requirements",
+      "是否限本科专业（备注只限制专项计划，未设专业白名单）"
+    ]
+  }
+]

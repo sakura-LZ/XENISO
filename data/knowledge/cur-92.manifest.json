@@ -1,0 +1,419 @@
+[
+  {
+    "source": {
+      "id": "hit-cs-plan",
+      "url": "https://cs.hit.edu.cn/_upload/article/files/8f/53/a5532b7e482c90692a0a0340de30/7f6c7ae5-bb39-416f-b781-8b51ba0b8c28.pdf",
+      "organization": "哈尔滨工业大学 计算学部（计算机科学与技术学院）",
+      "title": "计算机科学与技术专业本科生培养方案（哈尔滨工业大学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 无发布日期与年级标注；正文提及「从2013级学生开始执行」的创新教育学分条款，可判定为 2013 级及以后版本，但无法确定具体年级，按非最新处理。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-92/hit-cs-plan.pdf",
+      "sha256": "fdf190eeb78303df9a8b7634f8893bb136f0f1d8be81402e82fa5650920b202f",
+      "captured_at": "2026-10-23T11:55:29.052Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-92/hit-cs-plan.txt",
+      "extracted_sha256": "20d70c74a2954a09badd2ce73e0f4d1621572a7ce6c33dba0db9160f4aa17759"
+    },
+    "record": {
+      "id": "learning-hit-cs-plan-guide-software-588d40dc",
+      "role_id": "guide_software",
+      "category": "learning",
+      "title": "哈工大计算机科学与技术专业培养目标（培养方案原文）",
+      "summary": "哈工大计算机科学与技术专业本科生培养方案「一、培养目标」原文：在可持续发展教育观指导下，倡导「研究型、个性化、精英式」人才培养理念，培养掌握数学与自然科学基础知识以及计算机、网络与信息系统基本理论与方法，具有创新精神和实践能力的高级复合型人才。（同一官方来源共 4 条原文事实，字段：training、learning_hours、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于哈工大该专业本科生培养方案的培养目标；原文无年级标注，不代表现行最新版。",
+      "relation": "context",
+      "tags": [
+        "哈尔滨工业大学",
+        "计算机科学与技术",
+        "培养目标",
+        "研究型",
+        "精英式",
+        "毕业学分",
+        "168.5学分",
+        "工学学士",
+        "学制",
+        "计算机组成原理",
+        "学时",
+        "学分",
+        "教学进程表",
+        "学分构成",
+        "学科基础课",
+        "专业核心课"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "哈尔滨工业大学",
+        "college": "计算学部",
+        "program": "计算机科学与技术（本科）",
+        "evidence_locator": "PDF 八、课程设置及学时学分比例表"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "一、 培养目标 在可持续发展教育观的指导下，倡导“研究型、个性化、精英式”人才培养理念，培养适应21世纪社会主义现代化建设需要，德、智、体等全面发展，掌握数学与自然科学基础知识以及计算机、网络与信息系统相关的基本理论、基本知识、基本技能和基本方法，具有较强的专业能力和良好的综合素质，具备抽象思维、逻辑思维能力和系统观，具有创新精神和实践能力的高级复合型人才。"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "五、 修业年限、授予学位及毕业学分要求 修业年限：四年。 授予学位：工学学士。 毕业学分要求：本专业学生应达到学校对本科毕业生提出的德、智、体、美等方面的要求，完成教学计划规定的全部课程的学习及实践环节训练， 修满168\\.5学分， 其中通识教育类课程 59\\.5学分，专业教育类课程76\\.5学分，实践环节32\\.5学分，毕业设计（论文）答辩合格，方可准予毕业。"
+      },
+      {
+        "field": "topics",
+        "pattern": "SC03100200 计算机组成原理 √ 4\\.0 64 52 12 SP08001400 工程训练\\(电子工艺实习\\) 2\\.0 2周 SP03100100 软件设计与开发实践I √ 2\\.0 48 48 GH00000003 人文与社会科学限选课 1\\.0 20 20 小计 23\\.5 402\\+2周 287 87 12 16\\+（15） 夏季 SP03100300 计算机设计与实践 √ 3\\.5 56 14 42 专业选修课（方向） 2\\.0 32 SE03100400 信号与系统 2\\.5 40 32 8 SE03400400 生物系统信息学原理 1\\.5 24 24 GH00000004 人文与社会科学限选课 1\\.0 20 20 小计 6\\.5 108"
+      },
+      {
+        "field": "topics",
+        "pattern": "八、课程设置及学时学分比例表 课程 大类 课程类别 学分 % 学时 % 上机 \\(学时\\) 实验 \\(学时\\) 课外 辅导 \\(学时\\) 学分 合计 通识教育类 公共基础课 20\\.0 14\\.7 424 18\\.0 60\\+（30） 59\\.5 数学与自然科学基础课 31\\.5 23\\.1 540 22\\.9 12 57 （28） 人文与社会科学限选课 4\\.0 3\\.0 80 3\\.4 全校任选课 4\\.0 3\\.0 80 3\\.4 专业教育类 学科基础课 22\\.5 16\\.5 370 15\\.6 86 76\\.5 专业核心课 28\\.0 20\\.6 452 19\\.1 96 专业选修课 26\\.0 19\\.1 416 17\\.6 合计 136\\.0 100 2362 100 12 239 60\\+（58） 136\\.0"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "prerequisites",
+      "access_requirement",
+      "learning_hours",
+      "topics"
+    ]
+  },
+  {
+    "source": {
+      "id": "dlut-bme-plan",
+      "url": "https://med.dlut.edu.cn/__local/F/F7/21/5E01A4CA327D28716EDCB0D3AEF_C94F83B3_9BC20.pdf",
+      "organization": "大连理工大学 医学部（电信学院）",
+      "title": "生物医学工程本科专业培养方案（大连理工大学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文标注「2009 年入学适用」，为 2009 级培养方案，**非最新**。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-92/dlut-bme-plan.pdf",
+      "sha256": "2234a9965e11b559ac65e60c0d0ebdae8ba8f901c442f714fd5076ff016778aa",
+      "captured_at": "2026-10-23T12:04:00.487Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-92/dlut-bme-plan.txt",
+      "extracted_sha256": "7130fccb03f783bbe53d2557e6200ad6137d078103265efdfbf74baa964b4fa5"
+    },
+    "record": {
+      "id": "learning-dlut-bme-plan-guide-devices-905a75d7",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "大连理工生物医学工程专业基础课逐门学分与学时（原文）★数理+编程基础",
+      "summary": "培养方案「（二）专业基础课程（57.5 学分）」逐门给出课内学分与课内学时：工科数学分析基础 必修 11 学分/176 学时、线性代数与解析几何 3.5/56、复变函数 2/32、概率与统计 A 3/48、积分变换与场论 B 2/32、大学物理 6.5/104、大学物理实验 2/48；画法几何与制图 D 3/48、电路理论 B 4/64、电路实验 1/24、模拟电子线路 3.5/56、数字电路与系统 3.5/56、**C/C++语言 4/48（另 24 上机）**、信号与系统(一) 2/32、**数据结构(一) 2.5/32（另 12 上机）**、工程训练 B 2/2周。（同一官方来源共 3 条原文事实，字段：topics、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于大连理工该专业 2009 级培养方案的专业基础课程设置与学分学时；这是 2009 年入学的旧版方案，非现行版本。",
+      "relation": "direct",
+      "tags": [
+        "大连理工大学",
+        "生物医学工程",
+        "专业基础课",
+        "工科数学分析",
+        "C/C++语言",
+        "数据结构",
+        "学时",
+        "医学成像技术与图像处理",
+        "数字信号处理",
+        "生物医学测量与仪器",
+        "通识教育",
+        "学分构成",
+        "大学计算机基础"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "大连理工大学",
+        "college": "医学部（电信学院）",
+        "program": "生物医学工程（本科，2009 级）",
+        "evidence_locator": "PDF 一、（一）通识教育课程 + （二）（三）（四）模块标题"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "（二）专业基础课程（57\\.5 学分） 课程类别 课 程 名 称 课程 属性 课内 学分 课 内 学 时 课外 学分 课外 学时 授课 实 践 环 节 实验 上机 实践 设计 自然科学类 工科数学分析基础 必修 11 176 线性代数与解析几何 必修 3\\.5 56 复变函数 必修 2 32 概率与统计 A 必修 3 48 积分变换与场论 B 必修 2 32 大学物理 必修 6\\.5 104 大学物理实验 必修 2 48 工程技术类 画法几何与制图 D 必修 3 48 电路理论 B 必修 4 64 电路实验 必修 1 24 模拟电子线路 必修 3\\.5 56 模拟电子线路实验 必修 0\\.5 16 模拟电路课程设计 必修 1 1 周 数字电路与系统 必修 3\\.5 56 数字电路与系统实验 必修 0\\.5 12 C/C\\+\\+语言 必修 4 48 24 信号与系统\\(一\\) 必修 2 32 数据结构\\(一\\) 必修 2\\.5 32 12 工程训练 B 必修 2 2 周"
+      },
+      {
+        "field": "topics",
+        "pattern": "（三）专业课程（含课程设计、实习或实践、毕业设计或论文等）（60 学分） 课程类别 课 程 名 称 课程 属性 课内 学分 课 内 学 时 课外 学分 课外 学时 授课 实 践 环 节 实验 上机 实践 设计 专业基础课程 生物医学工程概论 必修 2\\.5 40 医学基础一（生理学基础） 必修 2 32 医学基础二（人体解剖学） 必修 2\\.5 32 8 信号与系统\\(二\\) 必修 2 32 计算机原理 必修 4 64 随机信号与系统 必修 3 48 医学成像技术与图像处理 必修 2\\.5 40 生物医学测量与仪器 必修 3 48 通信原理 A 必修 3\\.5 56 医学信号分析与处理 必修 2\\.5 40 数字信号处理 必修 3 48 基础生物学 必修 2 32 实践环节 生物医学仪器实践 必修 1 1周 医学信息基础实验 必修 0\\.5 12 信号与系统实验 必修 0\\.5 12 数字信号处理实验 必修 0\\.5 12 计算机原理实验 必修 1 1 周 电子系统综合设计 A 必修 1\\.5 1\\.5 周 医学影像实践 必修 1 1 周 数字电路课程设计 必修 1 1 周 医学检测实验 必修 0\\.5 12 单片机原理及实验 必修 2 2 周 通信原理实验 必修 1 24"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "（一） 通识教育课程（42 学分） 课程类别 课 程 名 称 课程 属性 课内 学分 课 内 学 时 课外 学分 课外 学时 授课 实 践 环 节 实验 上机 实践 设计 思政类 思想道德修养与法律基础 必修 2\\.5 40 0\\.5 8 中国近现代史纲要 必修 1\\.5 24 0\\.5 8 马克思主义基本原理 必修 2\\.5 40 0\\.5 8 毛泽东思想和中国特色社会 主义理论体系概论 必修 4\\.0 64 2\\.0 32 形势与政策 必修 1\\.5 36 军体类 军事理论 必修 0\\.5 军训 必修 3 3 周 体育 选修 4 16 72 外语类 外语 必修 12 192 计算机类 大学计算机基础 必修 2 24 12 导论类 医学信息技术导论 必修 2 32 综合素质类 综合素质类 选修 8 128"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "learning_hours",
+      "prerequisites",
+      "access_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "sysu-bme-intro",
+      "url": "https://bme.sysu.edu.cn/about/about04/index.htm",
+      "organization": "中山大学 生物医学工程学院",
+      "title": "生物医学工程专业介绍（中山大学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面无发布时间与年级标注；文中提及 2021 年获校级教学成果一等奖等，可判定为 2021 年之后更新，但无法确定年级，按非最新处理。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-92/sysu-bme-intro.raw",
+      "sha256": "e5f96be7c4bdd90cf6cc743db3e7c42ac88ffbb5413d22736cae30c901d75da7",
+      "captured_at": "2026-10-23T12:02:15.479Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-sysu-bme-intro-guide-devices-7020fbae",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "中山大学生物医学工程专业培养目标（学院专业介绍原文）",
+      "summary": "中山大学生物医学工程学院专业介绍「培养目标」原文：通过生物、医学、材料、电子、信息等领域的交叉与融合，利用现代工程技术手段解决医学健康领域预防、检测诊断、治疗和康复问题，培养适应生物医学材料、生物医学传感和医疗仪器等相关行业发展的高素质复合型人才。（同一官方来源共 2 条原文事实，字段：training、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于中山大学生物医学工程专业官方介绍的培养目标；为专业介绍页，不含学分与学时。",
+      "relation": "context",
+      "tags": [
+        "中山大学",
+        "生物医学工程",
+        "培养目标",
+        "医工融合",
+        "医疗仪器",
+        "课程体系",
+        "生物医学材料",
+        "生物医学传感"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "college": "生物医学工程学院",
+        "program": "生物医学工程（本科）",
+        "evidence_locator": "页面 课程体系段"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "本专业致力于培养具有良好的人文科学素养、家国责任感、国际视野和创新意识，掌握生物医学工程及其相关学科的基础理论，具有综合应用多学科知识和方法解决医学相关领域实际问题的能力，德智体全面发展，具有较强管理能力和团队领导才能，适应生物医学材料、生物医学传感和医疗仪器等相关行业发展的高素质复合型人才。"
+      },
+      {
+        "field": "topics",
+        "pattern": "本专业课程体系强调 “厚基础、强专业、重实践”，根据大类培养和专业基础素养培育的需求，构建以工学、电学、化学、计算机科学为基础，三年级开始分专业方向的课程体系，具体特点为： 医疗仪器方向：课程体系包括一主干两支干，一主干即面向医疗仪器的电子电路，两支干即生物医学信号与系统、生物医学机械设计与制造；面向医疗电子仪器将电子电路、信号处理、机械制造进行复合交叉，构建丰富的专业提升课。 生物医学传感方向：课程体系加强医学电子学、电子传感的基础，真正做到将电子、化学、生物三大传感融为一体的生物医学传感学科特点，大力加强学科方向之间的交叉融合，为医疗传感技术和仪器的开发奠定基础。 生物医学材料方向：课程体系包括以化学和生物为基础，服务于生物材料制备、开发以及应用的各个方面。如化学基础体系课程包括普通化学、有机化学、高分子化学；生物基础课程体系包括医学生理学、细胞生物学、生物化学与分子生物学等；生物材料课程的主线包括生物材料导论、材料分析与表征、组织工程与再生医学、生物材料与药物输运等。"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "learning_hours",
+      "prerequisites",
+      "access_requirement",
+      "topics"
+    ]
+  },
+  {
+    "source": {
+      "id": "scu-bme-2025",
+      "url": "https://bme.scu.edu.cn/info/1283/3560.htm",
+      "organization": "四川大学 生物医学工程学院",
+      "title": "2025版培养方案（生物医学工程专业）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-04-14",
+      "publication_date_note": "页面标注「发布日期：2026年04月14日」，方案正文标注「培养方案【2025版】」。为最新版。"
+    },
+    "publication_pattern": "2026-04-14",
+    "artifact_capture": {
+      "path": "work/knowledge-cur-92/scu-bme-2025.raw",
+      "sha256": "98f236ef9e52419ff68839d7d48fb5d77c8052cf0f6101ad7417b463036701bd",
+      "captured_at": "2026-10-23T12:03:20.746Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-scu-bme-2025-guide-devices-3bceb787",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "四川大学生物医学工程 2025 版培养目标（原文）",
+      "summary": "四川大学生物医学工程学院 2025 版培养方案「培养目标」原文：以「健康中国」国家战略及产业发展需求为导向，以医学与材料学交叉融合为培养特色，培养掌握生物医学工程系统基础理论、专业知识和实践技能，并在生物医学材料及植入器械领域具有深入理解和较强创新能力的复合型高级专门人才。（同一官方来源共 2 条原文事实，字段：training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于四川大学生物医学工程专业 2025 版培养方案的培养目标；该页面为「工程认证」栏目下的培养方案正文，未附课程表与学分表。",
+      "relation": "context",
+      "tags": [
+        "四川大学",
+        "生物医学工程",
+        "培养目标",
+        "2025版",
+        "生物医学材料",
+        "植入器械",
+        "毕业要求",
+        "工程教育认证",
+        "培养目标分解"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "college": "生物医学工程学院",
+        "program": "生物医学工程（2025 版培养方案）",
+        "evidence_locator": "页面 培养目标 5 条分解"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "本专业以立德树人为根本任务，坚持为党育人、为国育才，致力于培养德智体美劳全面发展的社会主义建设者和接班人。具体目标为：立足 “健康中国” 国家战略及产业发展需求，以医学与材料学交叉融合为培养特色，培养掌握生物医学工程系统的基础理论、专业知识和实践技能，并在生物医学材料及植入器械领域具有深入理解和较强创新能力，能够解决生物医学材料及植入器械领域复杂工程问题，能胜任相关领域科学研究、工艺设计、生产管理、技术开发和应用推广等方面工作，具有较强团队协作精神、组织沟通能力、可持续发展意识和宽广国际视野的复合型高级专门人才。"
+      },
+      {
+        "field": "training",
+        "pattern": "工程 知识 与技术应用 ： 能够综合运用基础及专业知识，使用恰当的现代工具，解决生物医学材料及植入器械领域的复杂工程问题 ；（对应毕业要求： 1 、2、5） （ 2 ） 研究开发 ： 能够针对生物医学材料及植入器械的产品需求或工艺问题， 开展实验研究、 设计开发 ； （对应毕业要求： 3 、 4 ） （ 3 ） 可持续发展与社会责任 ： 能够分析和评价工程实践对健康、安全、环境及社会可持续发展的影响， 理解和践行工程伦理，遵守职业规范与相关法律 ， 具有工程报国、服务国家和社会发展的意识 ； （对应毕业要求： 6 、 7 ） （ 4 ） 团队协作与沟通 ： 能够在项目团队中承担个体、成员或负责人的角色，能够就专业问题与业界同行及社会公众进行有效沟通和交流 ；（对应毕业要求： 8 、 9 ） （ 5 ） 项目管理与终身发展 ： 能够将工程管理原理与经济决策方法应用于实际项目实践，具有自主学习和终身学习的意识与能力，具有批判性思维，能够适应行业技术演进与职业发展变化。 （对应毕业要求： 10 、 11 ）"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "learning_hours",
+      "prerequisites",
+      "access_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "xjtu-bme-plan",
+      "url": "https://dean.xjtu.edu.cn/__local/5/0B/D8/C93F4B3520A7AF8E621CDFE37CC_F03E7CD4_24336.pdf",
+      "organization": "西安交通大学 教务处",
+      "title": "Biomedical Engineering（西安交通大学生物医学工程专业培养方案·英文版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 无发布日期与年级标注，且正文为英文版（cultivation objectives / curriculum structure），无法判定年级，按非最新处理。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-92/xjtu-bme-plan.pdf",
+      "sha256": "87d4ec92fc31c384c7dec545fea02be05d3e74f385e0c4675e713ece99ea6b42",
+      "captured_at": "2026-10-23T11:59:47.499Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-92/xjtu-bme-plan.txt",
+      "extracted_sha256": "82cc4932e875d32383602ea0352f6c03affaece799dcde1f8a144485f193eefc"
+    },
+    "record": {
+      "id": "learning-xjtu-bme-plan-guide-devices-8305107c",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "西安交大生物医学工程培养目标（英文培养方案原文）",
+      "summary": "西安交大 BioMedical Engineering 培养方案「CULTIVATION OBJECTIVES」原文（英文）：培养在生物医学工程与生命科学交叉领域从事科研、产品开发、教学与管理的高级技术人才与科研人员，要求系统掌握电子工程、信息工程与生命科学的基础知识。（同一官方来源共 2 条原文事实，字段：training、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该来源为西安交大培养方案的英文版本，原文即英文；引用时保留英文原文，未翻译改写。适用于该校该专业培养目标，无法判定年级。",
+      "relation": "context",
+      "tags": [
+        "西安交通大学",
+        "生物医学工程",
+        "培养目标",
+        "英文培养方案",
+        "总学分",
+        "170学分",
+        "课程结构"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安交通大学",
+        "program": "Biomedical Engineering（培养方案英文版）",
+        "evidence_locator": "PDF Curriculum Structure Credits"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "This major is designated to cultivate senior technical and technological talents and scientific research staff who should develop their broad and acute analysis abilities, good teamwork, coordinating and leadership abilities, and abilities to integrate basic theories with creative project and application of science\\. They will have a systematic ma stery of basic knowledge on elect ronic engineering, information engineering, and life science, so as to engage themse lves in scientific research, development of products, teaching and management in the fields crossing biomedical engineering technology, between biomedical engineering and life science\\."
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "Curriculum Structure Credits: 170\\+8 Extracurricular Practice \\(Social Practice, Athletic Activities\\) Biomedical Engineering General Curriculum Ideological and Political Education and National Defense Education Physical Education, English, Fundamentals of Computer Technology General Course of Basic Cu"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "learning_hours",
+      "prerequisites",
+      "access_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "zcmu-cs-plan",
+      "url": "https://jwc.zcmu.edu.cn/resource/24259aaa-37fe-49a9-b9a2-e270a9b150fc.pdf",
+      "organization": "浙江中医药大学 教务处",
+      "title": "计算机科学与技术专业（四年制）培养方案（浙江中医药大学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 无发布日期与年级标注，按非最新处理。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-92/zcmu-cs-plan.pdf",
+      "sha256": "17bf0db6a2f84ba2f33fb40dfe9f50d21ccec9ac3491b4cc4c1dae8ec8d3eb01",
+      "captured_at": "2026-10-23T12:16:05.317Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-92/zcmu-cs-plan.txt",
+      "extracted_sha256": "b159ca0bc04e2bc7d28ab165d8e9d0db48e9ac23629bcbfa9b46d2009f99d4e3"
+    },
+    "record": {
+      "id": "learning-zcmu-cs-plan-guide-software-326809c8",
+      "role_id": "guide_software",
+      "category": "learning",
+      "title": "浙江中医药大学计算机科学与技术培养目标（原文）★医科院校里的计算机专业",
+      "summary": "浙江中医药大学计算机科学与技术专业（四年制）培养方案「【培养目标】」原文：培养掌握数学与自然科学基础知识以及计算机、网络与信息系统基本理论方法，**了解相关医药学基本知识**，具备较强计算机应用系统分析、设计和工程实践能力，能胜任医疗卫生领域行业信息化建设和 IT 行业计算机应用系统研究、开发、实施、管理工作的高级应用型人才；设网络工程、应用软件开发两个方向，第 5 学期分化。（同一官方来源共 3 条原文事实，字段：training、topics、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于浙江中医药大学该计算机专业培养方案的培养目标与方向设置。注意：本方案是**计算机科学与技术专业**，不属于医学技术类（1010/1058），其价值在于「医科院校开设的计算机专业」这一医工交叉形态。",
+      "relation": "context",
+      "tags": [
+        "浙江中医药大学",
+        "计算机科学与技术",
+        "培养目标",
+        "医药学基本知识",
+        "医工交叉",
+        "方向设置",
+        "学时",
+        "课程平台",
+        "2704学时",
+        "毕业总学分",
+        "173.5学分",
+        "学科基础平台",
+        "198周"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江中医药大学",
+        "college": "（教务处公布）",
+        "program": "计算机科学与技术（四年制本科）",
+        "evidence_locator": "PDF 四、课程设置 + 五、教学安排 各学年学分分配"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "【培养目标】 本专业培养德 、 智 、 体等方面全面发展 ， 掌握数学与自然科学基础知识以及计算机 、 网络与信息系统相关的基本理论 、 基本知识 、 基本技能和基本方法 ， 了解相关医药学基 本知识，具备较强的计算机应用系统分析、设计和工程实践能力以及良好的综合素质 ， 能胜任医疗卫生领域行业信息化建设和 IT 行业计算机应用系统的研究、开发、实施、 管理等方面工作的高级应用型人才。"
+      },
+      {
+        "field": "topics",
+        "pattern": "各类课程课时比例： 课程类别 学时数 占总学时的百分比 通识教育平台 748 27\\.7% 学科基础平台 391 14\\.5% 专业基础平台 732 27\\.1% 专业方向模块 153 5\\.7% 限定选修课 408 15\\.1% 公共选修课 272 10\\.1% 合 计 27 04 100%"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "课程设置分必修课、限定选修课和公共选修课三大类。 1 ．必修课：通识教育平台开设 10 门课程；学科基础平台开设 7 门课程；专业基 础平台开设 17 门课程；专业方向模块开设 4 门课程（其中：应用软件开发方向开设 3 门课程 ） 。 2 ．限定选修课开设 24 门课程。 学生最低要修满 24 学分。 3 ．公共选修课参见《选课手册》。 学生最低要修满 16 学分。 五、教学安排 时间分配（按周计算）：四年共 198 周。 学年 入学教育 / 毕业教育 教学 毕业 实习 考试 小学期 假期 合计 一 1 33 4 2 12 52 二 34 4 2 12 52 三 34 4 3 11 52 四 1 37 4 42 合计 2 101 37 12 7 39 198 注 ： ① 毕业实习具体要求参照实习大纲 ， 由教务处和所属学院负责安排 。 ② 小学期 安排 ： 第一学年军训 ， 由学院军训领导小组负责安排 ； 第二学年专业实践 ， 由教务处和 所属学院负责安排；第三学年社会实践，由学院团委负责安排。 各类课程课时比例： 课程类别 学时数 占总学时的百分比 通识教育平台 748 27\\.7% 学科基础平台 391 14\\.5% 专业基础平台 732 27\\.1% 专业方向模块 153 5\\.7% 限定选修课 408 15\\.1% 公共选修课 272 10\\.1% 合 计 27 04 100% 各学年学分分配： 课 程 分 类 门 数 学 分 说 明 各 学 年 学 分 分 配 一 二 三 四 必 修 课 通识教育平台 10 44 通识教育平台中 《大学生心理健 康教育 》 、 《形势 与政策》各 2 学 分不收学费 22 17 1 毕 业 设 计 与 毕 业 实 习 学科基础平台 7 23 17 6 专业基础平台 17 37\\.5 8\\.5 16\\.5 12\\.5 专业方向模块 4 9 9 限定选修课 24 ≥ 2 4 4 8 12 公共选修课 ≥ 16 3 5 8 毕业实习、毕业设计 20 毕业总计 ≥ 173\\.5\\+6\\+4\\+2 学分"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "prerequisites",
+      "access_requirement",
+      "topics",
+      "learning_hours"
+    ]
+  }
+]

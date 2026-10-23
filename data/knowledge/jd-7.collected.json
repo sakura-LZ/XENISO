@@ -1,0 +1,1763 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T13:02:09.821Z",
+  "sources": [
+    {
+      "id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "organization": "美团",
+      "title": "美团官方招聘职位检索结果（jobDuty/jobRequirement 原文）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "内容取自美团官方招聘站公开职位检索接口 JSON；接口不返回发布日期，故置空。"
+    },
+    {
+      "id": "netease-jobs-api",
+      "url": "https://hr.163.com/api/hr163/position/queryPage",
+      "organization": "网易",
+      "title": "网易官方招聘职位检索结果（requirement 原文）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "内容取自网易官方招聘站公开职位检索接口 JSON；接口不返回发布日期，故置空。"
+    },
+    {
+      "id": "tx-algo-api",
+      "url": "https://careers.tencent.com/tencentcareer/api/post/Query",
+      "organization": "腾讯",
+      "title": "腾讯官方招聘职位检索结果（keyword=算法）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "内容取自腾讯官方招聘站公开职位检索接口 JSON；接口不返回发布日期，故置空。"
+    }
+  ],
+  "records": [
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-2ceb1640",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：AI全栈工程师",
+      "summary": "美团官方职位检索接口返回的岗位「AI全栈工程师」，工作地点 北京市、上海市、成都市、深圳市。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "专业白名单"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"AI全栈工程师\"",
+          "quote": "\"name\":\"AI全栈工程师\"",
+          "start": 198,
+          "end": 214
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1. 本科及以上学历，计算机科学、软件工程或相关专业；",
+          "quote": "1. 本科及以上学历，计算机科学、软件工程或相关专业；",
+          "start": 1256,
+          "end": 1283
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.693Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 AI全栈工程师",
+        "region": "北京市、上海市、成都市、深圳市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-02e35b6d",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：AI后端开发工程师",
+      "summary": "美团官方职位检索接口返回的岗位「AI后端开发工程师」，工作地点 北京市、上海市、成都市。（同一官方来源共 2 条原文事实，字段：job_title、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "仅写学历"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"AI后端开发工程师\"",
+          "quote": "\"name\":\"AI后端开发工程师\"",
+          "start": 1825,
+          "end": 1843
+        },
+        {
+          "field": "education",
+          "value": "1. 本科及以上学历；",
+          "quote": "1. 本科及以上学历；",
+          "start": 2749,
+          "end": 2760
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.704Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 AI后端开发工程师",
+        "region": "北京市、上海市、成都市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-f17ee671",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：智能商业分析师（BA/DS）",
+      "summary": "美团官方职位检索接口返回的岗位「智能商业分析师（BA/DS）」，工作地点 北京市、上海市。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "专业白名单"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"智能商业分析师（BA/DS）\"",
+          "quote": "\"name\":\"智能商业分析师（BA/DS）\"",
+          "start": 3544,
+          "end": 3567
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1. 本科及以上学历，数学、统计、计算机、工科、商科等相关专业背景更佳；",
+          "quote": "1. 本科及以上学历，数学、统计、计算机、工科、商科等相关专业背景更佳；",
+          "start": 4244,
+          "end": 4280
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.708Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 智能商业分析师（BA/DS）",
+        "region": "北京市、上海市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-c48c3e1c",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：AI产品经理岗",
+      "summary": "美团官方职位检索接口返回的岗位「AI产品经理岗」，工作地点 北京市、上海市、成都市、深圳市。（同一官方来源共 2 条原文事实，字段：job_title、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "仅写学历"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"AI产品经理岗\"",
+          "quote": "\"name\":\"AI产品经理岗\"",
+          "start": 4954,
+          "end": 4970
+        },
+        {
+          "field": "education",
+          "value": "1. 本科及以上学历；",
+          "quote": "1. 本科及以上学历；",
+          "start": 2749,
+          "end": 2760
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.713Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 AI产品经理岗",
+        "region": "北京市、上海市、成都市、深圳市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-ec927f29",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：AI产品运营岗",
+      "summary": "美团官方职位检索接口返回的岗位「AI产品运营岗」，工作地点 北京市、科威特城、上海市、深圳市。（同一官方来源共 2 条原文事实，字段：job_title、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "仅写学历"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"AI产品运营岗\"",
+          "quote": "\"name\":\"AI产品运营岗\"",
+          "start": 6462,
+          "end": 6478
+        },
+        {
+          "field": "education",
+          "value": "1. 本科及以上学历；",
+          "quote": "1. 本科及以上学历；",
+          "start": 2749,
+          "end": 2760
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.719Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 AI产品运营岗",
+        "region": "北京市、科威特城、上海市、深圳市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-bc5d60a1",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：西部干货调味品招商运营",
+      "summary": "美团官方职位检索接口返回的岗位「西部干货调味品招商运营」，工作地点 成都市。（同一官方来源共 2 条原文事实，字段：job_title、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "仅写学历"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"西部干货调味品招商运营\"",
+          "quote": "\"name\":\"西部干货调味品招商运营\"",
+          "start": 8305,
+          "end": 8325
+        },
+        {
+          "field": "education",
+          "value": "1. 大学本科及以上学历，5年以上商品招商或供应链管理相关工作经验。",
+          "quote": "1. 大学本科及以上学历，5年以上商品招商或供应链管理相关工作经验。",
+          "start": 9007,
+          "end": 9041
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.723Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 西部干货调味品招商运营",
+        "region": "成都市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-2f538d1d",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：供给策略专家",
+      "summary": "美团官方职位检索接口返回的岗位「供给策略专家」，工作地点 圣保罗。（同一官方来源共 2 条原文事实，字段：job_title、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "仅写学历"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"供给策略专家\"",
+          "quote": "\"name\":\"供给策略专家\"",
+          "start": 9467,
+          "end": 9482
+        },
+        {
+          "field": "education",
+          "value": "1. 大学本科及以上学历，6年以上产品运营或商家运营相关工作经验。",
+          "quote": "1. 大学本科及以上学历，6年以上产品运营或商家运营相关工作经验。",
+          "start": 10155,
+          "end": 10188
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.728Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 供给策略专家",
+        "region": "圣保罗",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-7abe76d0",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：业务分析目标管理专家",
+      "summary": "美团官方职位检索接口返回的岗位「业务分析目标管理专家」，工作地点 圣保罗。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "专业白名单"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"业务分析目标管理专家\"",
+          "quote": "\"name\":\"业务分析目标管理专家\"",
+          "start": 14910,
+          "end": 14929
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1.本科及以上学历，数学、统计学、商业分析或商科相关专业；",
+          "quote": "1.本科及以上学历，数学、统计学、商业分析或商科相关专业；",
+          "start": 15837,
+          "end": 15866
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.737Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 业务分析目标管理专家",
+        "region": "圣保罗",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-e2df1c20",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：商家增长策略负责人",
+      "summary": "美团官方职位检索接口返回的岗位「商家增长策略负责人」，工作地点 圣保罗。",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"商家增长策略负责人\"",
+          "quote": "\"name\":\"商家增长策略负责人\"",
+          "start": 16651,
+          "end": 16669
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.741Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 商家增长策略负责人",
+        "region": "圣保罗",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 name 字段（连同 JSON 键名截取，保证为原文连续片段）"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-39f6586d",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：路线规划研发工程师",
+      "summary": "美团官方职位检索接口返回的岗位「路线规划研发工程师」，工作地点 北京市。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "专业白名单"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"路线规划研发工程师\"",
+          "quote": "\"name\":\"路线规划研发工程师\"",
+          "start": 18380,
+          "end": 18398
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1. 大学本科及以上学历，计算机、软件工程、地理信息等相关专业。",
+          "quote": "1. 大学本科及以上学历，计算机、软件工程、地理信息等相关专业。",
+          "start": 19068,
+          "end": 19100
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.745Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 路线规划研发工程师",
+        "region": "北京市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-7445eb80",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：Keeta Finance Business Partner (Saudi Arabia)",
+      "summary": "美团官方职位检索接口返回的岗位「Keeta Finance Business Partner (Saudi Arabia)」，工作地点 利雅得、北京市、迪拜、多哈。",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"Keeta Finance Business Partner (Saudi Arabia)\"",
+          "quote": "\"name\":\"Keeta Finance Business Partner (Saudi Arabia)\"",
+          "start": 19566,
+          "end": 19620
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.749Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 Keeta Finance Business Partner (Saudi Arabia)",
+        "region": "利雅得、北京市、迪拜、多哈",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 name 字段（连同 JSON 键名截取，保证为原文连续片段）"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-8d8f8281",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：生鲜食品核心品类策略",
+      "summary": "美团官方职位检索接口返回的岗位「生鲜食品核心品类策略」，工作地点 北京市。（同一官方来源共 2 条原文事实，字段：job_title、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "仅写学历"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"生鲜食品核心品类策略\"",
+          "quote": "\"name\":\"生鲜食品核心品类策略\"",
+          "start": 22905,
+          "end": 22924
+        },
+        {
+          "field": "education",
+          "value": "1. 大学本科及以上学历，3年以上电商或零售行业产品运营、品类运营相关经验。",
+          "quote": "1. 大学本科及以上学历，3年以上电商或零售行业产品运营、品类运营相关经验。",
+          "start": 23675,
+          "end": 23713
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.753Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 生鲜食品核心品类策略",
+        "region": "北京市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-8028089d",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：生鲜食品用户体验策略运营",
+      "summary": "美团官方职位检索接口返回的岗位「生鲜食品用户体验策略运营」，工作地点 北京市。（同一官方来源共 2 条原文事实，字段：job_title、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "仅写学历"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"生鲜食品用户体验策略运营\"",
+          "quote": "\"name\":\"生鲜食品用户体验策略运营\"",
+          "start": 24060,
+          "end": 24081
+        },
+        {
+          "field": "education",
+          "value": "1. 大学本科及以上学历，3年以上产品运营或商家运营相关经验，有生鲜电商或本地生活平台背景优先。",
+          "quote": "1. 大学本科及以上学历，3年以上产品运营或商家运营相关经验，有生鲜电商或本地生活平台背景优先。",
+          "start": 24758,
+          "end": 24806
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.756Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 生鲜食品用户体验策略运营",
+        "region": "北京市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-d613ac95",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：餐饮系统-高级客户成功（北京）",
+      "summary": "美团官方职位检索接口返回的岗位「餐饮系统-高级客户成功（北京）」，工作地点 北京市。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "专业白名单"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"餐饮系统-高级客户成功（北京）\"",
+          "quote": "\"name\":\"餐饮系统-高级客户成功（北京）\"",
+          "start": 25174,
+          "end": 25198
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1、学历本科以上，计算机、软件工程、信息管理，网络工程等相关专业，有至少3年以上餐饮SaaS行业工作经验；有2年以上销售、运营或客户成功经验",
+          "quote": "1、学历本科以上，计算机、软件工程、信息管理，网络工程等相关专业，有至少3年以上餐饮SaaS行业工作经验；有2年以上销售、运营或客户成功经验",
+          "start": 25927,
+          "end": 25997
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.760Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 餐饮系统-高级客户成功（北京）",
+        "region": "北京市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-a2d355e5",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：商业化",
+      "summary": "美团官方职位检索接口返回的岗位「商业化」，工作地点 北京市。（同一官方来源共 2 条原文事实，字段：job_title、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "仅写学历"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"商业化\"",
+          "quote": "\"name\":\"商业化\"",
+          "start": 26487,
+          "end": 26499
+        },
+        {
+          "field": "education",
+          "value": "1、本科及以上学历。",
+          "quote": "1、本科及以上学历。",
+          "start": 27352,
+          "end": 27362
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.763Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 商业化",
+        "region": "北京市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-9348e55e",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：督导专家",
+      "summary": "美团官方职位检索接口返回的岗位「督导专家」，工作地点 广州市。",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"督导专家\"",
+          "quote": "\"name\":\"督导专家\"",
+          "start": 27859,
+          "end": 27872
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.767Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 督导专家",
+        "region": "广州市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 name 字段（连同 JSON 键名截取，保证为原文连续片段）"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-cf275389",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：境外项目实习生（旅游景点玩乐）",
+      "summary": "美团官方职位检索接口返回的岗位「境外项目实习生（旅游景点玩乐）」，工作地点 深圳市。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "不限专业"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"境外项目实习生（旅游景点玩乐）\"",
+          "quote": "\"name\":\"境外项目实习生（旅游景点玩乐）\"",
+          "start": 29180,
+          "end": 29204
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1、28届毕业及以后，专业不限，本科或研究生，每周至少出勤4天，能连续实习3个月以上",
+          "quote": "1、28届毕业及以后，专业不限，本科或研究生，每周至少出勤4天，能连续实习3个月以上",
+          "start": 29872,
+          "end": 29914
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.771Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 境外项目实习生（旅游景点玩乐）",
+        "region": "深圳市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-0dd7079d",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：骑行硬件-电气部件测试工程师",
+      "summary": "美团官方职位检索接口返回的岗位「骑行硬件-电气部件测试工程师」，工作地点 北京市、深圳市。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "专业白名单"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"骑行硬件-电气部件测试工程师\"",
+          "quote": "\"name\":\"骑行硬件-电气部件测试工程师\"",
+          "start": 30299,
+          "end": 30322
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1、计算机软件、电子信息、自动化、通信等相关专业本科（含）以上学历；",
+          "quote": "1、计算机软件、电子信息、自动化、通信等相关专业本科（含）以上学历；",
+          "start": 31400,
+          "end": 31434
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.775Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 骑行硬件-电气部件测试工程师",
+        "region": "北京市、深圳市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-meituan-jobs-api-medical-ai-pm-89e1abc2",
+      "source_id": "meituan-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团岗位名：（天津）公共事务专家",
+      "summary": "美团官方职位检索接口返回的岗位「（天津）公共事务专家」，工作地点 天津市。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "美团",
+        "纯AI岗",
+        "专业白名单"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"（天津）公共事务专家\"",
+          "quote": "\"name\":\"（天津）公共事务专家\"",
+          "start": 32189,
+          "end": 32208
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1. 大学本科及以上学历，公共管理、法律、新闻传播、社会学等相关专业优先。",
+          "quote": "1. 大学本科及以上学历，公共管理、法律、新闻传播、社会学等相关专业优先。",
+          "start": 32959,
+          "end": 32996
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6dc3ca8d76e27eb3d0bd0ec4a556c91c8698efac7ed11e5438e9e525719ab21",
+      "collected_at": "2026-10-23T12:44:01.229Z",
+      "verified_at": "2026-10-23T13:02:09.778Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 （天津）公共事务专家",
+        "region": "天津市",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-netease-jobs-api-medical-ai-pm-e852c690",
+      "source_id": "netease-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "网易岗位名：服务端开发工程师",
+      "summary": "网易官方职位检索接口返回的岗位「服务端开发工程师」，类别 技术。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "网易",
+        "纯AI岗",
+        "专业白名单"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"服务端开发工程师\"",
+          "quote": "\"name\":\"服务端开发工程师\"",
+          "start": 3049,
+          "end": 3066
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1、计算机相关专业，本科以上学历，3年工作经验以上。",
+          "quote": "1、计算机相关专业，本科以上学历，3年工作经验以上。",
+          "start": 3137,
+          "end": 3163
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "ded151a9bab4c053b99492e256ba21ccc9270d0df74f70ca3f2474297f7584df",
+      "collected_at": "2026-10-23T12:56:32.564Z",
+      "verified_at": "2026-10-23T13:02:09.781Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "网易",
+        "program": "网易 服务端开发工程师",
+        "region": "未注明",
+        "evidence_locator": "网易官方招聘站职位检索接口 JSON 的 requirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-netease-jobs-api-medical-ai-pm-c4160ac8",
+      "source_id": "netease-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "网易岗位名：资深全栈开发工程师（VMS方向）",
+      "summary": "网易官方职位检索接口返回的岗位「资深全栈开发工程师（VMS方向）」，类别 技术。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "网易",
+        "纯AI岗",
+        "专业白名单"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"资深全栈开发工程师（VMS方向）\"",
+          "quote": "\"name\":\"资深全栈开发工程师（VMS方向）\"",
+          "start": 6905,
+          "end": 6930
+        },
+        {
+          "field": "major_restrictions",
+          "value": "本科及以上学历，计算机相关专业，5年以上前后端研发经验，具备中大型复杂业务系统（采购、财务、ERP类优先）的交付经验。",
+          "quote": "本科及以上学历，计算机相关专业，5年以上前后端研发经验，具备中大型复杂业务系统（采购、财务、ERP类优先）的交付经验。",
+          "start": 7010,
+          "end": 7069
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "ded151a9bab4c053b99492e256ba21ccc9270d0df74f70ca3f2474297f7584df",
+      "collected_at": "2026-10-23T12:56:32.564Z",
+      "verified_at": "2026-10-23T13:02:09.785Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "网易",
+        "program": "网易 资深全栈开发工程师（VMS方向）",
+        "region": "未注明",
+        "evidence_locator": "网易官方招聘站职位检索接口 JSON 的 requirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-netease-jobs-api-medical-ai-pm-7f0601c5",
+      "source_id": "netease-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "网易岗位名：测试开发工程师（性能-上海）",
+      "summary": "网易官方职位检索接口返回的岗位「测试开发工程师（性能-上海）」，类别 游戏测试。",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "网易",
+        "纯AI岗"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"测试开发工程师（性能-上海）\"",
+          "quote": "\"name\":\"测试开发工程师（性能-上海）\"",
+          "start": 12493,
+          "end": 12516
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "ded151a9bab4c053b99492e256ba21ccc9270d0df74f70ca3f2474297f7584df",
+      "collected_at": "2026-10-23T12:56:32.564Z",
+      "verified_at": "2026-10-23T13:02:09.788Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "网易",
+        "program": "网易 测试开发工程师（性能-上海）",
+        "region": "未注明",
+        "evidence_locator": "网易官方招聘站职位检索接口 JSON 的 name 字段（连同 JSON 键名截取，保证为原文连续片段）"
+      }
+    },
+    {
+      "id": "recruitment-netease-jobs-api-medical-ai-pm-3efcfb70",
+      "source_id": "netease-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "网易岗位名：AI产品策划实习生（游戏AI 竞技机器人方向）",
+      "summary": "网易官方职位检索接口返回的岗位「AI产品策划实习生（游戏AI 竞技机器人方向）」，类别 产品。（同一官方来源共 2 条原文事实，字段：job_title、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "网易",
+        "纯AI岗",
+        "仅写学历"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"AI产品策划实习生（游戏AI 竞技机器人方向）\"",
+          "quote": "\"name\":\"AI产品策划实习生（游戏AI 竞技机器人方向）\"",
+          "start": 13328,
+          "end": 13360
+        },
+        {
+          "field": "education",
+          "value": "1.本科及以上学历在读学生；",
+          "quote": "1.本科及以上学历在读学生；",
+          "start": 13431,
+          "end": 13445
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "ded151a9bab4c053b99492e256ba21ccc9270d0df74f70ca3f2474297f7584df",
+      "collected_at": "2026-10-23T12:56:32.564Z",
+      "verified_at": "2026-10-23T13:02:09.791Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "网易",
+        "program": "网易 AI产品策划实习生（游戏AI 竞技机器人方向）",
+        "region": "未注明",
+        "evidence_locator": "网易官方招聘站职位检索接口 JSON 的 requirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-netease-jobs-api-medical-ai-pm-ddeda5b5",
+      "source_id": "netease-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "网易岗位名：游戏引擎开发工程师-性能优化（无限大）",
+      "summary": "网易官方职位检索接口返回的岗位「游戏引擎开发工程师-性能优化（无限大）」，类别 游戏程序。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "网易",
+        "纯AI岗",
+        "专业白名单"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"游戏引擎开发工程师-性能优化（无限大）\"",
+          "quote": "\"name\":\"游戏引擎开发工程师-性能优化（无限大）\"",
+          "start": 19043,
+          "end": 19071
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1. 本科及以上学历，计算机相关专业，3年以上研发经验",
+          "quote": "1. 本科及以上学历，计算机相关专业，3年以上研发经验",
+          "start": 19144,
+          "end": 19171
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "ded151a9bab4c053b99492e256ba21ccc9270d0df74f70ca3f2474297f7584df",
+      "collected_at": "2026-10-23T12:56:32.564Z",
+      "verified_at": "2026-10-23T13:02:09.795Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "网易",
+        "program": "网易 游戏引擎开发工程师-性能优化（无限大）",
+        "region": "未注明",
+        "evidence_locator": "网易官方招聘站职位检索接口 JSON 的 requirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-netease-jobs-api-medical-ai-pm-b4f30764",
+      "source_id": "netease-jobs-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "网易岗位名：游戏营销-传播方向（魔兽世界）",
+      "summary": "网易官方职位检索接口返回的岗位「游戏营销-传播方向（魔兽世界）」，类别 市场。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "网易",
+        "纯AI岗",
+        "不限专业"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"name\":\"游戏营销-传播方向（魔兽世界）\"",
+          "quote": "\"name\":\"游戏营销-传播方向（魔兽世界）\"",
+          "start": 19787,
+          "end": 19811
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1、本科及以上学历，专业不限；有扎实的自媒体运营经验。有独立策划产出重点素材的能力。",
+          "quote": "1、本科及以上学历，专业不限；有扎实的自媒体运营经验。有独立策划产出重点素材的能力。",
+          "start": 19882,
+          "end": 19924
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "ded151a9bab4c053b99492e256ba21ccc9270d0df74f70ca3f2474297f7584df",
+      "collected_at": "2026-10-23T12:56:32.564Z",
+      "verified_at": "2026-10-23T13:02:09.799Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "网易",
+        "program": "网易 游戏营销-传播方向（魔兽世界）",
+        "region": "未注明",
+        "evidence_locator": "网易官方招聘站职位检索接口 JSON 的 requirement 字段；取字段内单行原文，未跨行、未加标签"
+      }
+    },
+    {
+      "id": "recruitment-tx-algo-api-medical-ai-pm-e4a7f0d2",
+      "source_id": "tx-algo-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "腾讯岗位名：策略算法工程师",
+      "summary": "腾讯官方职位检索接口返回的岗位「策略算法工程师」，工作地点 深圳，事业群 CSIG。（同一官方来源共 2 条原文事实，字段：job_title、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "腾讯",
+        "纯AI岗",
+        "职责"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"RecruitPostName\":\"策略算法工程师\"",
+          "quote": "\"RecruitPostName\":\"策略算法工程师\"",
+          "start": 103,
+          "end": 130
+        },
+        {
+          "field": "technical_requirements",
+          "value": "1.负责智能体 Harness Engineering 核心能力建设，包括 Agent Loop、多 Agent 协作、Memory、Skill、任务规划、工具调用、状态管理、异常恢复等关键模块设计与实现，提升 Agent 稳定性、可控性与任务完成质量；",
+          "quote": "1.负责智能体 Harness Engineering 核心能力建设，包括 Agent Loop、多 Agent 协作、Memory、Skill、任务规划、工具调用、状态管理、异常恢复等关键模块设计与实现，提升 Agent 稳定性、可控性与任务完成质量；",
+          "start": 270,
+          "end": 397
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education（该接口不返回）",
+        "major_restrictions（该接口不返回）",
+        "salary（该接口不返回）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "0f2aaf770ef1fae5fc8618becb3f74ff78036b7b636859c4b8be326a8712d862",
+      "collected_at": "2026-10-23T12:29:06.416Z",
+      "verified_at": "2026-10-23T13:02:09.803Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "腾讯",
+        "program": "腾讯 策略算法工程师",
+        "region": "深圳",
+        "evidence_locator": "腾讯官方招聘站职位检索接口 JSON 的 Responsibility 字段；取字段内单行原文"
+      }
+    },
+    {
+      "id": "recruitment-tx-algo-api-medical-ai-pm-8ce83e43",
+      "source_id": "tx-algo-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "腾讯岗位名：风控算法工程师",
+      "summary": "腾讯官方职位检索接口返回的岗位「风控算法工程师」，工作地点 深圳，事业群 TEG。",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "腾讯",
+        "纯AI岗"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"RecruitPostName\":\"风控算法工程师\"",
+          "quote": "\"RecruitPostName\":\"风控算法工程师\"",
+          "start": 961,
+          "end": 988
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "0f2aaf770ef1fae5fc8618becb3f74ff78036b7b636859c4b8be326a8712d862",
+      "collected_at": "2026-10-23T12:29:06.416Z",
+      "verified_at": "2026-10-23T13:02:09.806Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "腾讯",
+        "program": "腾讯 风控算法工程师",
+        "region": "深圳",
+        "evidence_locator": "腾讯官方招聘站职位检索接口 JSON 的 RecruitPostName 字段（连同 JSON 键名截取，保证为原文连续片段）"
+      }
+    },
+    {
+      "id": "recruitment-tx-algo-api-medical-ai-pm-86975f9e",
+      "source_id": "tx-algo-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "腾讯岗位名：游戏音频算法专家",
+      "summary": "腾讯官方职位检索接口返回的岗位「游戏音频算法专家」，工作地点 深圳，事业群 IEG。（同一官方来源共 2 条原文事实，字段：job_title、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "腾讯",
+        "纯AI岗",
+        "职责"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"RecruitPostName\":\"游戏音频算法专家\"",
+          "quote": "\"RecruitPostName\":\"游戏音频算法专家\"",
+          "start": 1504,
+          "end": 1532
+        },
+        {
+          "field": "technical_requirements",
+          "value": "1.负责游戏内音频算法的实现与优化；",
+          "quote": "1.负责游戏内音频算法的实现与优化；",
+          "start": 1674,
+          "end": 1692
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education（该接口不返回）",
+        "major_restrictions（该接口不返回）",
+        "salary（该接口不返回）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "0f2aaf770ef1fae5fc8618becb3f74ff78036b7b636859c4b8be326a8712d862",
+      "collected_at": "2026-10-23T12:29:06.416Z",
+      "verified_at": "2026-10-23T13:02:09.809Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "腾讯",
+        "program": "腾讯 游戏音频算法专家",
+        "region": "深圳",
+        "evidence_locator": "腾讯官方招聘站职位检索接口 JSON 的 Responsibility 字段；取字段内单行原文"
+      }
+    },
+    {
+      "id": "recruitment-tx-algo-api-medical-ai-pm-522e8bcb",
+      "source_id": "tx-algo-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "腾讯岗位名：QQ-高级算法工程师",
+      "summary": "腾讯官方职位检索接口返回的岗位「QQ-高级算法工程师」，工作地点 深圳，事业群 PCG。",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "腾讯",
+        "纯AI岗"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"RecruitPostName\":\"QQ-高级算法工程师\"",
+          "quote": "\"RecruitPostName\":\"QQ-高级算法工程师\"",
+          "start": 1994,
+          "end": 2024
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "0f2aaf770ef1fae5fc8618becb3f74ff78036b7b636859c4b8be326a8712d862",
+      "collected_at": "2026-10-23T12:29:06.416Z",
+      "verified_at": "2026-10-23T13:02:09.812Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "腾讯",
+        "program": "腾讯 QQ-高级算法工程师",
+        "region": "深圳",
+        "evidence_locator": "腾讯官方招聘站职位检索接口 JSON 的 RecruitPostName 字段（连同 JSON 键名截取，保证为原文连续片段）"
+      }
+    },
+    {
+      "id": "recruitment-tx-algo-api-medical-ai-pm-d6f9fc15",
+      "source_id": "tx-algo-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "腾讯岗位名：WorkBuddy-Agent Harness 算法工程师",
+      "summary": "腾讯官方职位检索接口返回的岗位「WorkBuddy-Agent Harness 算法工程师」，工作地点 深圳，事业群 CSIG。（同一官方来源共 2 条原文事实，字段：job_title、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "腾讯",
+        "纯AI岗",
+        "职责"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"RecruitPostName\":\"WorkBuddy-Agent Harness 算法工程师\"",
+          "quote": "\"RecruitPostName\":\"WorkBuddy-Agent Harness 算法工程师\"",
+          "start": 2685,
+          "end": 2734
+        },
+        {
+          "field": "technical_requirements",
+          "value": "1.负责 WorkBuddy Harness 的整体效果与能力优化，协同内部团队，以用户真实任务表现为反馈，不断优化迭代 Harness 效果；岗位为研究和工程复合型，可以偏向其中一个方向，但需要对另一个方向有所了解，更倾向于两者兼顾；",
+          "quote": "1.负责 WorkBuddy Harness 的整体效果与能力优化，协同内部团队，以用户真实任务表现为反馈，不断优化迭代 Harness 效果；岗位为研究和工程复合型，可以偏向其中一个方向，但需要对另一个方向有所了解，更倾向于两者兼顾；",
+          "start": 2887,
+          "end": 3005
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education（该接口不返回）",
+        "major_restrictions（该接口不返回）",
+        "salary（该接口不返回）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "0f2aaf770ef1fae5fc8618becb3f74ff78036b7b636859c4b8be326a8712d862",
+      "collected_at": "2026-10-23T12:29:06.416Z",
+      "verified_at": "2026-10-23T13:02:09.817Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "腾讯",
+        "program": "腾讯 WorkBuddy-Agent Harness 算法工程师",
+        "region": "深圳",
+        "evidence_locator": "腾讯官方招聘站职位检索接口 JSON 的 Responsibility 字段；取字段内单行原文"
+      }
+    },
+    {
+      "id": "recruitment-tx-algo-api-medical-ai-pm-6f3ab5b2",
+      "source_id": "tx-algo-api",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "腾讯岗位名：腾讯地图-AI算法专家",
+      "summary": "腾讯官方职位检索接口返回的岗位「腾讯地图-AI算法专家」，工作地点 深圳，事业群 CSIG。（同一官方来源共 2 条原文事实，字段：job_title、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名称样本，用于展示泛 AI/技术岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "腾讯",
+        "纯AI岗",
+        "职责"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "\"RecruitPostName\":\"腾讯地图-AI算法专家\"",
+          "quote": "\"RecruitPostName\":\"腾讯地图-AI算法专家\"",
+          "start": 3964,
+          "end": 3995
+        },
+        {
+          "field": "technical_requirements",
+          "value": "1.负责地图出行领域大语言模型（LLM）的设计、训练、调优与评估，结合地图出行场景需求进行模型优化创新；",
+          "quote": "1.负责地图出行领域大语言模型（LLM）的设计、训练、调优与评估，结合地图出行场景需求进行模型优化创新；",
+          "start": 4139,
+          "end": 4191
+        }
+      ],
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education（该接口不返回）",
+        "major_restrictions（该接口不返回）",
+        "salary（该接口不返回）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "0f2aaf770ef1fae5fc8618becb3f74ff78036b7b636859c4b8be326a8712d862",
+      "collected_at": "2026-10-23T12:29:06.416Z",
+      "verified_at": "2026-10-23T13:02:09.821Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "腾讯",
+        "program": "腾讯 腾讯地图-AI算法专家",
+        "region": "深圳",
+        "evidence_locator": "腾讯官方招聘站职位检索接口 JSON 的 Responsibility 字段；取字段内单行原文"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "meituan-jobs-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "at": "2026-10-23T12:44:01.229Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "netease-jobs-api",
+      "url": "https://hr.163.com/api/hr163/position/queryPage",
+      "at": "2026-10-23T12:56:32.564Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "netease-jobs-api",
+      "url": "https://hr.163.com/api/hr163/position/queryPage",
+      "at": "2026-10-23T12:56:32.564Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "netease-jobs-api",
+      "url": "https://hr.163.com/api/hr163/position/queryPage",
+      "at": "2026-10-23T12:56:32.564Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ]
+    },
+    {
+      "source_id": "netease-jobs-api",
+      "url": "https://hr.163.com/api/hr163/position/queryPage",
+      "at": "2026-10-23T12:56:32.564Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "netease-jobs-api",
+      "url": "https://hr.163.com/api/hr163/position/queryPage",
+      "at": "2026-10-23T12:56:32.564Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "netease-jobs-api",
+      "url": "https://hr.163.com/api/hr163/position/queryPage",
+      "at": "2026-10-23T12:56:32.564Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education"
+      ]
+    },
+    {
+      "source_id": "tx-algo-api",
+      "url": "https://careers.tencent.com/tencentcareer/api/post/Query",
+      "at": "2026-10-23T12:29:06.416Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education（该接口不返回）",
+        "major_restrictions（该接口不返回）",
+        "salary（该接口不返回）"
+      ]
+    },
+    {
+      "source_id": "tx-algo-api",
+      "url": "https://careers.tencent.com/tencentcareer/api/post/Query",
+      "at": "2026-10-23T12:29:06.416Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ]
+    },
+    {
+      "source_id": "tx-algo-api",
+      "url": "https://careers.tencent.com/tencentcareer/api/post/Query",
+      "at": "2026-10-23T12:29:06.416Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education（该接口不返回）",
+        "major_restrictions（该接口不返回）",
+        "salary（该接口不返回）"
+      ]
+    },
+    {
+      "source_id": "tx-algo-api",
+      "url": "https://careers.tencent.com/tencentcareer/api/post/Query",
+      "at": "2026-10-23T12:29:06.416Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）"
+      ]
+    },
+    {
+      "source_id": "tx-algo-api",
+      "url": "https://careers.tencent.com/tencentcareer/api/post/Query",
+      "at": "2026-10-23T12:29:06.416Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education（该接口不返回）",
+        "major_restrictions（该接口不返回）",
+        "salary（该接口不返回）"
+      ]
+    },
+    {
+      "source_id": "tx-algo-api",
+      "url": "https://careers.tencent.com/tencentcareer/api/post/Query",
+      "at": "2026-10-23T12:29:06.416Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（该接口无薪资字段）",
+        "education（该接口不返回）",
+        "major_restrictions（该接口不返回）",
+        "salary（该接口不返回）"
+      ]
+    }
+  ]
+}

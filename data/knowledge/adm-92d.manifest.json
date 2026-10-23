@@ -1,0 +1,381 @@
+[
+  {
+    "source": {
+      "id": "scu-2027-310",
+      "url": "https://yz.scu.edu.cn/sszyml",
+      "organization": "四川大学研究生院招生办公室",
+      "title": "四川大学2027年硕士研究生招生专业目录 — 310 生物医学工程学院/生物材料工程研究中心",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为四川大学研招「目录查询」单页应用（SPA），表格由「年份 + 学院」下拉交互后动态渲染，普通 HTTP GET 只能取得未渲染的应用壳（实测加 ?year=2027&yxsh=… 与裸页 sha256 完全相同、参数被前端吞掉）。本条记录同时提供 artifact_capture（ego 浏览器真实选择「2027 年 + 310 生物医学工程学院/生物材料工程研究中心」并点击查询后保存的渲染后 HTML），collect.ts 读取该 artifact 并用 htmlText() 复算文本，与 literal 同源。页面未印发布日，招生年度由「年份」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92d/scu-2027-310.raw",
+      "sha256": "2dea8d664ca20c93593dfc3fd99d3e2119eab238000920508c355adeb2108f01",
+      "captured_at": "2026-10-23T12:57:00.684Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-scu-2027-310-guide-devices-040bb01b",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "四川大学2027年083100 生物医学工程（学硕）考数学一 + 859 生物医学工程综合",
+      "summary": "原文：310 生物医学工程学院/生物材料工程研究中心，083100 生物医学工程 25(16) 人（「()」内为拟接收推免生人数），学术学位；方向 01 生物材料（全日制）；初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④859 生物医学工程综合；复试科目：生物材料综合；学制 3 年，学费 8000 元/生.年。",
+      "applicability": "仅适用于四川大学 2027 年 310 生物医学工程学院 083100 生物医学工程（学术学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "四川大学",
+        "生物医学工程",
+        "数学一",
+        "859"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "college": "生物医学工程学院",
+        "program": "083100 生物医学工程",
+        "admission_year": 2027,
+        "region": "四川",
+        "evidence_locator": "2027 目录 → 310 生物医学工程学院 → 083100"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "083100 生物医学工程 25 \\(16\\) 学术学位 01 \\(全日制\\)生物材料 张兴栋 王云兵 范红松 黄忠兵 何斌 吴方 吴尧 肖玉梅 朱向东 杨帮成 张凯 余睽 许晓阳 张仕勇 周长春 孙勇 蓝芳 杨晓 王科锋 孙静 杨为中 廖晓明 吴冬冬 李高参 罗日方 敖强 何静 王娟 金蓉蓉 李向锋 林海 肖芸 张婕妤 卫丹 陈晓琴 杨立 曾琴 王杰民 袁波 张博 郭高阳 王刚 宋旭 王书崎 张凡军 胡成 曹俊 曹舜泽 冉蓓 吴明雨 袁暾 王启光 吕志彬 栾超然 何苗苗 曹欢 洪友良 陈雪宁 聂宇 程杨洋 10 \\(6\\) ① 101 思想政治理论 ② 201 英语（一） ③ 301 数学（一） ④ 859 生物医学工程综合"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "各方向分方向人数（仅部分方向标注）"
+    ]
+  },
+  {
+    "source": {
+      "id": "scu-2027-310",
+      "url": "https://yz.scu.edu.cn/sszyml",
+      "organization": "四川大学研究生院招生办公室",
+      "title": "四川大学2027年硕士研究生招生专业目录 — 310 生物医学工程学院/生物材料工程研究中心",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为四川大学研招「目录查询」单页应用（SPA），表格由「年份 + 学院」下拉交互后动态渲染，普通 HTTP GET 只能取得未渲染的应用壳（实测加 ?year=2027&yxsh=… 与裸页 sha256 完全相同、参数被前端吞掉）。本条记录同时提供 artifact_capture（ego 浏览器真实选择「2027 年 + 310 生物医学工程学院/生物材料工程研究中心」并点击查询后保存的渲染后 HTML），collect.ts 读取该 artifact 并用 htmlText() 复算文本，与 literal 同源。页面未印发布日，招生年度由「年份」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92d/scu-2027-310.raw",
+      "sha256": "2dea8d664ca20c93593dfc3fd99d3e2119eab238000920508c355adeb2108f01",
+      "captured_at": "2026-10-23T12:57:00.684Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-scu-2027-310-guide-devices-bae294d4",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "四川大学2027年085409 生物医学工程（专硕）考数学二 + 同门 859",
+      "summary": "原文：085409 生物医学工程 5(4) 人，专业学位；方向 01 生物医学信息及仪器（全日制）；初试 ①101 思想政治理论 ②204 英语（二）③302 数学（二）④859 生物医学工程综合；备注「可招收少干、退役大学生士兵计划」；复试科目：医学图像处理；学制 3 年，学费 15000 元/生.年。",
+      "applicability": "仅适用于四川大学 2027 年 310 生物医学工程学院 085409 生物医学工程（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "四川大学",
+        "生物医学工程",
+        "数学二",
+        "085409"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "college": "生物医学工程学院",
+        "program": "085409 生物医学工程",
+        "admission_year": 2027,
+        "region": "四川",
+        "evidence_locator": "2027 目录 → 310 生物医学工程学院 → 085409"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085409 生物医学工程 5 \\(4\\) 专业学位 01 \\(全日制\\)生物医学信息及仪器 韩骁 林江莉 王明辉 张劲 杨刚 何凌 陈科 吕志彬 苏葆辉 孙建军 庄艳 ① 101 思想政治理论 ② 204 英语（二） ③ 302 数学（二） ④ 859 生物医学工程综合"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "scu-2027-310",
+      "url": "https://yz.scu.edu.cn/sszyml",
+      "organization": "四川大学研究生院招生办公室",
+      "title": "四川大学2027年硕士研究生招生专业目录 — 310 生物医学工程学院/生物材料工程研究中心",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为四川大学研招「目录查询」单页应用（SPA），表格由「年份 + 学院」下拉交互后动态渲染，普通 HTTP GET 只能取得未渲染的应用壳（实测加 ?year=2027&yxsh=… 与裸页 sha256 完全相同、参数被前端吞掉）。本条记录同时提供 artifact_capture（ego 浏览器真实选择「2027 年 + 310 生物医学工程学院/生物材料工程研究中心」并点击查询后保存的渲染后 HTML），collect.ts 读取该 artifact 并用 htmlText() 复算文本，与 literal 同源。页面未印发布日，招生年度由「年份」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92d/scu-2027-311.raw",
+      "sha256": "4e3627de7a10ad7d3bfecef9462287fc6a74f66dce60c8abc15a74753daa9f7b",
+      "captured_at": "2026-10-23T12:57:08.642Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-scu-2027-310-guide-ml-cv-fb00e401",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "四川大学2027年085400 电子信息（人工智能学院）考数学二 + 408",
+      "summary": "原文：311 人工智能学院，085400 电子信息 21(4) 人，专业学位；方向 01 人工智能（全日制）；初试 ①101 思想政治理论 ②204 英语（二）③302 数学（二）④408 计算机学科专业基础；备注「可招收少干、退役大学生士兵计划」；复试科目：人工智能综合（C/C++ 上机测试＋专业英语＋专业综合测试）；学制 3 年，学费 15000 元/生.年。",
+      "applicability": "仅适用于四川大学 2027 年 311 人工智能学院 085400 电子信息（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "四川大学",
+        "电子信息",
+        "408",
+        "人工智能"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "college": "人工智能学院",
+        "program": "085400 电子信息",
+        "admission_year": 2027,
+        "region": "四川",
+        "evidence_locator": "2027 目录 → 311 人工智能学院 → 085400"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085400 电子信息 21 \\(4\\) 专业学位 01 \\(全日制\\)人工智能 陈学勤 段磊 高绍兵 郭际香 何涛 贺喆南 胡俊杰 黄树东 琚玮 雷印杰 梁红茹 罗川 彭玺 蒲亦非 唐明洁 王建勇 王利团 王韬 王炎 肖蓉 徐修远 袁钟 张海仙 张蕾 郑远航 周尧 21 \\(4\\) ① 101 思想政治理论 ② 204 英语（二） ③ 302 数学（二） ④ 408 计算机学科专业基础"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "scu-2027-310",
+      "url": "https://yz.scu.edu.cn/sszyml",
+      "organization": "四川大学研究生院招生办公室",
+      "title": "四川大学2027年硕士研究生招生专业目录 — 310 生物医学工程学院/生物材料工程研究中心",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为四川大学研招「目录查询」单页应用（SPA），表格由「年份 + 学院」下拉交互后动态渲染，普通 HTTP GET 只能取得未渲染的应用壳（实测加 ?year=2027&yxsh=… 与裸页 sha256 完全相同、参数被前端吞掉）。本条记录同时提供 artifact_capture（ego 浏览器真实选择「2027 年 + 310 生物医学工程学院/生物材料工程研究中心」并点击查询后保存的渲染后 HTML），collect.ts 读取该 artifact 并用 htmlText() 复算文本，与 literal 同源。页面未印发布日，招生年度由「年份」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92d/scu-2027-311.raw",
+      "sha256": "4e3627de7a10ad7d3bfecef9462287fc6a74f66dce60c8abc15a74753daa9f7b",
+      "captured_at": "2026-10-23T12:57:08.642Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-scu-2027-310-guide-ml-cv-102d9043",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "四川大学2027年140500 智能科学与技术（学硕）考数学一 + 408",
+      "summary": "原文：140500 智能科学与技术 30(22) 人，学术学位；方向 01 人工智能基础理论、02 人工智能技术与系统、03 人工智能应用（全日制）；初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④408 计算机学科专业基础；复试科目：人工智能综合（C/C++ 上机测试＋专业英语＋专业综合测试）；学制 3 年，学费 8000 元/生.年。",
+      "applicability": "仅适用于四川大学 2027 年 311 人工智能学院 140500 智能科学与技术（学术学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "四川大学",
+        "智能科学与技术",
+        "数学一",
+        "408"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "college": "人工智能学院",
+        "program": "140500 智能科学与技术",
+        "admission_year": 2027,
+        "region": "四川",
+        "evidence_locator": "2027 目录 → 311 人工智能学院 → 140500"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "140500 智能科学与技术 30 \\(22\\) 学术学位 01 \\(全日制\\)人工智能基础理论 陈学勤 段磊 高绍兵 郭际香 何涛 贺喆南 胡俊杰 黄树东 琚玮 雷印杰 梁红茹 罗川 彭玺 蒲亦非 唐明洁 王建勇 王利团 王韬 王炎 肖蓉 徐修远 袁钟 张海仙 张蕾 郑远航 周尧 ① 101 思想政治理论 ② 201 英语（一） ③ 301 数学（一） ④ 408 计算机学科专业基础"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "scu-2027-310",
+      "url": "https://yz.scu.edu.cn/sszyml",
+      "organization": "四川大学研究生院招生办公室",
+      "title": "四川大学2027年硕士研究生招生专业目录 — 310 生物医学工程学院/生物材料工程研究中心",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为四川大学研招「目录查询」单页应用（SPA），表格由「年份 + 学院」下拉交互后动态渲染，普通 HTTP GET 只能取得未渲染的应用壳（实测加 ?year=2027&yxsh=… 与裸页 sha256 完全相同、参数被前端吞掉）。本条记录同时提供 artifact_capture（ego 浏览器真实选择「2027 年 + 310 生物医学工程学院/生物材料工程研究中心」并点击查询后保存的渲染后 HTML），collect.ts 读取该 artifact 并用 htmlText() 复算文本，与 literal 同源。页面未印发布日，招生年度由「年份」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92d/scu-2027-401.raw",
+      "sha256": "f667402be1a761293d3f3a5a67addbb25ce37f2eaa7067850661830aee3af3b2",
+      "captured_at": "2026-10-23T12:57:16.662Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-scu-2027-310-guide-devices-71d62fee",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "四川大学2027年107200 生物医学工程（基础医学院授医学学位）不考数学",
+      "summary": "原文：401 基础医学与法医学院，107200 生物医学工程 10(5) 人，学术学位；方向 01 心脑血管疾病发病机制与临床应用（全日制）；初试 ①101 思想政治理论 ②201 英语（一）③703 基础医学综合 ④-- 无；复试：细胞生物学（含专业英语），01-04 方向拉通排名择优录取；学制 3 年，学费 8000 元/生.年。学院备注：703 基础医学综合含医学微生物学、生物化学、生理学。",
+      "applicability": "仅适用于四川大学 2027 年 401 基础医学与法医学院 107200 生物医学工程（医学门类学术学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "四川大学",
+        "生物医学工程",
+        "107200",
+        "不考数学"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "college": "基础医学与法医学院",
+        "program": "107200 生物医学工程",
+        "admission_year": 2027,
+        "region": "四川",
+        "evidence_locator": "2027 目录 → 401 基础医学与法医学院 → 107200"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "107200 生物医学工程 10 \\(5\\) 学术学位 01 \\(全日制\\)心脑血管疾病发病机制与临床应用 刘肖珩 沈阳 曾烨 姜楠 应国量 宋阳 胡雪丰 谢静 丁楅森 曹中炜 江舟 余泓池 房飞 ① 101 思想政治理论 ② 201 英语（一） ③ 703 基础医学综合 ④ -- 无"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "scu-2027-310",
+      "url": "https://yz.scu.edu.cn/sszyml",
+      "organization": "四川大学研究生院招生办公室",
+      "title": "四川大学2027年硕士研究生招生专业目录 — 310 生物医学工程学院/生物材料工程研究中心",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为四川大学研招「目录查询」单页应用（SPA），表格由「年份 + 学院」下拉交互后动态渲染，普通 HTTP GET 只能取得未渲染的应用壳（实测加 ?year=2027&yxsh=… 与裸页 sha256 完全相同、参数被前端吞掉）。本条记录同时提供 artifact_capture（ego 浏览器真实选择「2027 年 + 310 生物医学工程学院/生物材料工程研究中心」并点击查询后保存的渲染后 HTML），collect.ts 读取该 artifact 并用 htmlText() 复算文本，与 literal 同源。页面未印发布日，招生年度由「年份」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92d/scu-2027-401.raw",
+      "sha256": "f667402be1a761293d3f3a5a67addbb25ce37f2eaa7067850661830aee3af3b2",
+      "captured_at": "2026-10-23T12:57:16.662Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-scu-2027-310-guide-clinical-data-dad18ba4",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "四川大学2027年100100 基础医学初试科目与人数",
+      "summary": "原文：100100 基础医学 31(15) 人，学术学位；方向 01 人体解剖与组织胚胎学、02 免疫学、03 病原生物学、04 病理学与病理生理学、05 医学生物化学与分子生物学、06 医学生理学、07 医学细胞生物学；初试 ①101 思想政治理论 ②201 英语（一）③703 基础医学综合 ④-- 无；复试：基础医学（含专业英语），01-07 方向拉通排名择优录取。",
+      "applicability": "仅适用于四川大学 2027 年 401 基础医学与法医学院 100100 基础医学（学术学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "四川大学",
+        "基础医学",
+        "医学门类"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "college": "基础医学与法医学院",
+        "program": "100100 基础医学",
+        "admission_year": 2027,
+        "region": "四川",
+        "evidence_locator": "2027 目录 → 401 基础医学与法医学院 → 100100"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "100100 基础医学 31 \\(15\\) 学术学位 01 \\(全日制\\)人体解剖与组织胚胎学 黄灿华 刘肖珩 丁楅森 张舒羽 刘戟 谢娜 王魁 陈镜宇 杨文星 胡雪丰 林佳 杨泽宏 赵志伟 罗涛 陈达丽 王保宁 李浇 周琳琳 何金蕾 郑之琬 王玉芳 陈军利 李婧瑜 王祎 孙晓东 万莉红 沈阳 曾烨 姜楠 宋阳 应国量 江舟 谢静 杨远 刘文博 余泓池 王佩佩 房飞 冯颖 梁伟波 廖林川 曹中炜 ① 101 思想政治理论 ② 201 英语（一） ③ 703 基础医学综合 ④ -- 无"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "是否限本科专业（学院备注未提）"
+    ]
+  },
+  {
+    "source": {
+      "id": "scu-2027-310",
+      "url": "https://yz.scu.edu.cn/sszyml",
+      "organization": "四川大学研究生院招生办公室",
+      "title": "四川大学2027年硕士研究生招生专业目录 — 310 生物医学工程学院/生物材料工程研究中心",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为四川大学研招「目录查询」单页应用（SPA），表格由「年份 + 学院」下拉交互后动态渲染，普通 HTTP GET 只能取得未渲染的应用壳（实测加 ?year=2027&yxsh=… 与裸页 sha256 完全相同、参数被前端吞掉）。本条记录同时提供 artifact_capture（ego 浏览器真实选择「2027 年 + 310 生物医学工程学院/生物材料工程研究中心」并点击查询后保存的渲染后 HTML），collect.ts 读取该 artifact 并用 htmlText() 复算文本，与 literal 同源。页面未印发布日，招生年度由「年份」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92d/scu-2027-402.raw",
+      "sha256": "606bcf8b0bb0a55de11a2741b55a2da6af469ab7aaae6318a8420bb434cec847",
+      "captured_at": "2026-10-23T12:57:24.630Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-scu-2027-310-guide-imaging-eng-59bea34a",
+      "role_id": "guide_imaging_eng",
+      "category": "admissions",
+      "title": "四川大学2027年临床医学专硕仅限全日制临床医学本科毕业（硬性限专业）",
+      "summary": "原文（学院备注）：「临床医学专业学位硕士研究生：仅限全日制临床医学本科毕业、符合医师资格考试报考条件规定专业背景的考生，且均需参加住院医师规范化培训；已完成规范化培训并取得《规范化培训合格证》的考生请选择学术学位报考。」402 临床医学院 2027 年拟招 684 人。",
+      "applicability": "仅适用于四川大学 2027 年 402 临床医学院的临床医学专业学位（1051xx）。非临床医学本科不可报专硕。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "四川大学",
+        "临床医学专硕",
+        "限本科专业",
+        "硬性限制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "college": "临床医学院",
+        "program": "临床医学专业学位（1051xx）",
+        "admission_year": 2027,
+        "region": "四川",
+        "evidence_locator": "2027 目录 → 402 临床医学院 → 学院备注"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "临床医学专业学位硕士研究生：仅限全日制临床医学本科毕业、符合医师资格考试报考条件规定专业背景的考生，且均需参加住院医师规范化培训；已完成规范化培训并取得《规范化培训合格证》的考生请选择学术学位报考。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  }
+]

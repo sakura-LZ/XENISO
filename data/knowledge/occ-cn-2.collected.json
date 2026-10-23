@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-23T10:11:28.490Z",
+  "generated_at": "2026-10-23T11:33:50.539Z",
   "sources": [
     {
       "id": "gov-ai-engineer-std",
@@ -449,7 +449,7 @@
       "verification": "quote_verified",
       "content_hash": "bcc34b232a724b9d6b295c8fd7b9443b9da6b430d27132ec3d70f7c7f19e021f",
       "collected_at": "2026-10-23T06:58:54.210Z",
-      "verified_at": "2026-10-23T10:11:28.223Z",
+      "verified_at": "2026-10-23T11:33:50.332Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -588,7 +588,7 @@
       "verification": "quote_verified",
       "content_hash": "cb4b8eb1fc2220da26070fa7bfbf4c4be12150f9af0e6e2d5e815eae1dfa2276",
       "collected_at": "2026-10-23T07:03:16.516Z",
-      "verified_at": "2026-10-23T10:11:28.239Z",
+      "verified_at": "2026-10-23T11:33:50.350Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -734,7 +734,7 @@
       "verification": "quote_verified",
       "content_hash": "cf40f300cffd9914d75f36f7a4753290afe899f2e007020d786fce3267caeadd",
       "collected_at": "2026-10-23T07:05:12.996Z",
-      "verified_at": "2026-10-23T10:11:28.252Z",
+      "verified_at": "2026-10-23T11:33:50.359Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -845,7 +845,7 @@
       "verification": "quote_verified",
       "content_hash": "151312592220889b8b51e1e6fd259248e6397496164cc9eb4bd5bb26dcf28103",
       "collected_at": "2026-10-23T07:02:28.529Z",
-      "verified_at": "2026-10-23T10:11:28.261Z",
+      "verified_at": "2026-10-23T11:33:50.367Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -991,7 +991,7 @@
       "verification": "quote_verified",
       "content_hash": "0bb173b040a60242f1a82ed928b867e00c85ef63abed92467e9762b336656349",
       "collected_at": "2026-10-23T07:01:49.472Z",
-      "verified_at": "2026-10-23T10:11:28.274Z",
+      "verified_at": "2026-10-23T11:33:50.375Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1123,7 +1123,7 @@
       "verification": "quote_verified",
       "content_hash": "80a16d03dbc1e92a31c4f9197c50d536caf8ef5a8a700849329e47e405765bf6",
       "collected_at": "2026-10-23T07:01:54.986Z",
-      "verified_at": "2026-10-23T10:11:28.285Z",
+      "verified_at": "2026-10-23T11:33:50.386Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1255,7 +1255,7 @@
       "verification": "quote_verified",
       "content_hash": "ebeaf3273703e28d0f069812755742d5e4b932ae1c39488efddf8ab189001662",
       "collected_at": "2026-10-23T07:02:01.484Z",
-      "verified_at": "2026-10-23T10:11:28.295Z",
+      "verified_at": "2026-10-23T11:33:50.397Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1387,7 +1387,7 @@
       "verification": "quote_verified",
       "content_hash": "52e38fcca2c98112834f0a97b22bc51b79f25df02b0b0a83392437974c109c7e",
       "collected_at": "2026-10-23T07:02:21.279Z",
-      "verified_at": "2026-10-23T10:11:28.305Z",
+      "verified_at": "2026-10-23T11:33:50.406Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1526,7 +1526,7 @@
       "verification": "quote_verified",
       "content_hash": "405306c784f512c8ff1f264f86233380552b9eeeebd088521b8fc30430a34512",
       "collected_at": "2026-10-23T07:01:40.922Z",
-      "verified_at": "2026-10-23T10:11:28.323Z",
+      "verified_at": "2026-10-23T11:33:50.417Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1665,7 +1665,7 @@
       "verification": "quote_verified",
       "content_hash": "a53ef30e8752200e17764188076029b7f6e4e760e22a7ab447b4b16629fe2aeb",
       "collected_at": "2026-10-23T07:03:10.598Z",
-      "verified_at": "2026-10-23T10:11:28.338Z",
+      "verified_at": "2026-10-23T11:33:50.426Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1769,7 +1769,7 @@
       "verification": "quote_verified",
       "content_hash": "b45cdada8b30df2ee86ec5bb0a257c8fa6ec6d5fdd858f4ee77bc357da2bfb39",
       "collected_at": "2026-10-23T07:03:24.593Z",
-      "verified_at": "2026-10-23T10:11:28.347Z",
+      "verified_at": "2026-10-23T11:33:50.433Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1880,7 +1880,7 @@
       "verification": "quote_verified",
       "content_hash": "c177c3304613d8d8e245685957201f8842abb20855adc799159de4e53e5de7a1",
       "collected_at": "2026-10-23T07:05:19.060Z",
-      "verified_at": "2026-10-23T10:11:28.364Z",
+      "verified_at": "2026-10-23T11:33:50.443Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1991,7 +1991,7 @@
       "verification": "quote_verified",
       "content_hash": "f6628a6adecd0c95c30f09aedf3e6e589eb0852fcabc13034f9ca699848cbc08",
       "collected_at": "2026-10-23T07:07:13.706Z",
-      "verified_at": "2026-10-23T10:11:28.381Z",
+      "verified_at": "2026-10-23T11:33:50.453Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -2207,7 +2207,7 @@
       "verification": "quote_verified",
       "content_hash": "708ef934bc220fab5c897d2c7f8f1e437479b275529c7d061cbff3aab17a7dc1",
       "collected_at": "2026-10-23T07:06:05.025Z",
-      "verified_at": "2026-10-23T10:11:28.405Z",
+      "verified_at": "2026-10-23T11:33:50.468Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -2311,7 +2311,7 @@
       "verification": "quote_verified",
       "content_hash": "2c73b9ecc104628d584318e53d5fd787b93643bd62deb3a7bd6ad72077ce0eef",
       "collected_at": "2026-10-23T07:10:28.093Z",
-      "verified_at": "2026-10-23T10:11:28.418Z",
+      "verified_at": "2026-10-23T11:33:50.481Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -2422,7 +2422,7 @@
       "verification": "quote_verified",
       "content_hash": "032aea2874d391a17e148423c5f4bfd745bf91e3f54f85e84ed3335ce0fb3f8a",
       "collected_at": "2026-10-23T07:30:21.281Z",
-      "verified_at": "2026-10-23T10:11:28.428Z",
+      "verified_at": "2026-10-23T11:33:50.491Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -2561,7 +2561,7 @@
       "verification": "quote_verified",
       "content_hash": "0da3b8dce0d5cab3d8452a06fc1eed72111221bff8e203e96aaeb4c6b14f054a",
       "collected_at": "2026-10-23T07:30:28.751Z",
-      "verified_at": "2026-10-23T10:11:28.442Z",
+      "verified_at": "2026-10-23T11:33:50.502Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -2686,7 +2686,7 @@
       "verification": "quote_verified",
       "content_hash": "6caf6a2e858c5dae286fd863921d584bf892718bae2c7eedbd495e06b5543bf3",
       "collected_at": "2026-10-23T07:30:38.603Z",
-      "verified_at": "2026-10-23T10:11:28.453Z",
+      "verified_at": "2026-10-23T11:33:50.511Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -2797,7 +2797,7 @@
       "verification": "quote_verified",
       "content_hash": "2086462411dae7134833259788c1d4a0e417aff4925df81561679a5eaa66ccc2",
       "collected_at": "2026-10-23T07:30:49.837Z",
-      "verified_at": "2026-10-23T10:11:28.463Z",
+      "verified_at": "2026-10-23T11:33:50.520Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -2915,7 +2915,7 @@
       "verification": "quote_verified",
       "content_hash": "72b093a91184f2048ec072aa8ff0effe9d4837d6df13e5ae53c6ac40fbd385c5",
       "collected_at": "2026-10-23T07:30:54.541Z",
-      "verified_at": "2026-10-23T10:11:28.477Z",
+      "verified_at": "2026-10-23T11:33:50.529Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -3040,7 +3040,7 @@
       "verification": "quote_verified",
       "content_hash": "c8bcccc9eb759ddd6e51d8d029e979be4c92723cf98d5c4590a4a793b92aaa85",
       "collected_at": "2026-10-23T07:28:40.844Z",
-      "verified_at": "2026-10-23T10:11:28.489Z",
+      "verified_at": "2026-10-23T11:33:50.538Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {

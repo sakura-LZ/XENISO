@@ -68,13 +68,18 @@ for (const item of handoff) {
   const normalized = (isHtml ? htmlText(text) : text.replace(/\s+/g, " ")).trim();
   const capturedAt = statSync(artifact.raw_path).mtime.toISOString();
   const isPdf = artifact.content_type === "application/pdf";
+  // 同为 zip 容器的 Office 原件（政府站常直接发布 Word/Excel 版目录）与 PDF 一样，
+  // 必须同时登记抽取文本及其 sha256，否则采集器无法在纯文本上定位 literal。
+  const isDocx = artifact.content_type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+  const isXlsx = artifact.content_type === "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+  const needsExtraction = isPdf || isDocx || isXlsx;
   const capture = {
     path: artifact.raw_path,
     sha256: hash(raw),
     captured_at: capturedAt,
     content_type: artifact.content_type,
-    method: isPdf ? "pypdf_page_text" : artifact.content_type === "text/plain" ? "downloaded_text" : "downloaded_html",
-    ...(isPdf ? { extracted_path: artifact.text_path, extracted_sha256: hash(Buffer.from(text, "utf8")) } : {}),
+    method: isPdf ? "pypdf_page_text" : isDocx ? "docx_text" : isXlsx ? "xlsx_text" : artifact.content_type === "text/plain" ? "downloaded_text" : "downloaded_html",
+    ...(needsExtraction && artifact.text_path ? { extracted_path: artifact.text_path, extracted_sha256: hash(Buffer.from(text, "utf8")) } : {}),
   };
 
   for (const quote of item.quotes) {

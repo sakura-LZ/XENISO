@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-23T10:00:21.877Z",
+  "generated_at": "2026-10-23T11:14:57.563Z",
   "sources": [
     {
       "id": "thu-cs-2025-plan",
@@ -136,7 +136,7 @@
       "verification": "quote_verified",
       "content_hash": "7762f55770a225e3b109bbaae3599a8952f81cca0211659b3e773fc917193687",
       "collected_at": "2026-10-23T07:57:53.174Z",
-      "verified_at": "2026-10-23T10:00:21.730Z",
+      "verified_at": "2026-10-23T11:14:55.512Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -180,7 +180,7 @@
       "verification": "quote_verified",
       "content_hash": "7762f55770a225e3b109bbaae3599a8952f81cca0211659b3e773fc917193687",
       "collected_at": "2026-10-23T07:57:53.174Z",
-      "verified_at": "2026-10-23T10:00:21.752Z",
+      "verified_at": "2026-10-23T11:14:55.964Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -243,7 +243,7 @@
       "verification": "quote_verified",
       "content_hash": "b723a0a7bf7ea5a8086cbfaae8c38d711ce180b2dceeadf981ab396d17ff2306",
       "collected_at": "2026-10-23T08:01:45.503Z",
-      "verified_at": "2026-10-23T10:00:21.765Z",
+      "verified_at": "2026-10-23T11:14:56.311Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -309,7 +309,7 @@
       "verification": "quote_verified",
       "content_hash": "1738c9ff4a6d7a162be8dc458cacd625c0d838f2f1397c916eba5b163f59e467",
       "collected_at": "2026-10-23T07:59:36.412Z",
-      "verified_at": "2026-10-23T10:00:21.775Z",
+      "verified_at": "2026-10-23T11:14:56.448Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -371,7 +371,7 @@
       "verification": "quote_verified",
       "content_hash": "e922a44f8adf7e9a1d17f823c8a55acd5ef7110b95aac0270cee40d6b9f73590",
       "collected_at": "2026-10-23T08:05:03.981Z",
-      "verified_at": "2026-10-23T10:00:21.792Z",
+      "verified_at": "2026-10-23T11:14:56.714Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -432,7 +432,7 @@
       "verification": "quote_verified",
       "content_hash": "cbce8377024a86aca22c3f9385be5a2bc2ec3f5c8a1316cb96b2407dd595d439",
       "collected_at": "2026-10-23T08:05:45.082Z",
-      "verified_at": "2026-10-23T10:00:21.803Z",
+      "verified_at": "2026-10-23T11:14:56.748Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -497,7 +497,7 @@
       "verification": "quote_verified",
       "content_hash": "6edad331bcc59274544661c60141f7821d51857a39707cce1761322d305f56e7",
       "collected_at": "2026-10-23T08:10:06.996Z",
-      "verified_at": "2026-10-23T10:00:21.859Z",
+      "verified_at": "2026-10-23T11:14:57.044Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -549,7 +549,7 @@
       "verification": "quote_verified",
       "content_hash": "8a44a02c6e5e8c3d237b6c343be51bcafa50ccafb6946f7121463063bd65ad95",
       "collected_at": "2026-10-23T08:12:33.605Z",
-      "verified_at": "2026-10-23T10:00:21.875Z",
+      "verified_at": "2026-10-23T11:14:57.429Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-23T10:16:19.770Z",
+  "generated_at": "2026-10-23T11:38:42.700Z",
   "sources": [
     {
       "id": "thu-bme-plan",
@@ -174,7 +174,7 @@
       "verification": "quote_verified",
       "content_hash": "911b768b915090e2507fee0a34115dea2e0cbce420ac67143e9d0967b84264e7",
       "collected_at": "2026-10-23T06:57:58.936Z",
-      "verified_at": "2026-10-23T10:16:19.646Z",
+      "verified_at": "2026-10-23T11:38:42.567Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -216,7 +216,7 @@
       "verification": "quote_verified",
       "content_hash": "911b768b915090e2507fee0a34115dea2e0cbce420ac67143e9d0967b84264e7",
       "collected_at": "2026-10-23T06:57:58.936Z",
-      "verified_at": "2026-10-23T10:16:19.661Z",
+      "verified_at": "2026-10-23T11:38:42.590Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -266,7 +266,7 @@
       "verification": "quote_verified",
       "content_hash": "19b174488764ac02b4417f6062d809890a734bf158e87d90dd3b99b825a33caa",
       "collected_at": "2026-10-23T06:58:36.862Z",
-      "verified_at": "2026-10-23T10:16:19.668Z",
+      "verified_at": "2026-10-23T11:38:42.595Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -311,7 +311,7 @@
       "verification": "quote_verified",
       "content_hash": "19b174488764ac02b4417f6062d809890a734bf158e87d90dd3b99b825a33caa",
       "collected_at": "2026-10-23T06:58:36.862Z",
-      "verified_at": "2026-10-23T10:16:19.672Z",
+      "verified_at": "2026-10-23T11:38:42.600Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -362,7 +362,7 @@
       "verification": "quote_verified",
       "content_hash": "3f0216f38e780aa69060b128ee0f2af264fcc9c2bcf53d2067f6793a5dbe1c8f",
       "collected_at": "2026-10-23T06:59:08.763Z",
-      "verified_at": "2026-10-23T10:16:19.681Z",
+      "verified_at": "2026-10-23T11:38:42.612Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -404,7 +404,7 @@
       "verification": "quote_verified",
       "content_hash": "3f0216f38e780aa69060b128ee0f2af264fcc9c2bcf53d2067f6793a5dbe1c8f",
       "collected_at": "2026-10-23T06:59:08.763Z",
-      "verified_at": "2026-10-23T10:16:19.690Z",
+      "verified_at": "2026-10-23T11:38:42.623Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -455,7 +455,7 @@
       "verification": "quote_verified",
       "content_hash": "e57df898482cc8ebe9840fa19dee2cf780fad3ff73b8b50b7918521334010f7b",
       "collected_at": "2026-10-23T07:00:14.306Z",
-      "verified_at": "2026-10-23T10:16:19.698Z",
+      "verified_at": "2026-10-23T11:38:42.628Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -497,7 +497,7 @@
       "verification": "quote_verified",
       "content_hash": "e57df898482cc8ebe9840fa19dee2cf780fad3ff73b8b50b7918521334010f7b",
       "collected_at": "2026-10-23T07:00:14.306Z",
-      "verified_at": "2026-10-23T10:16:19.703Z",
+      "verified_at": "2026-10-23T11:38:42.632Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -539,7 +539,7 @@
       "verification": "quote_verified",
       "content_hash": "e57df898482cc8ebe9840fa19dee2cf780fad3ff73b8b50b7918521334010f7b",
       "collected_at": "2026-10-23T07:00:14.306Z",
-      "verified_at": "2026-10-23T10:16:19.707Z",
+      "verified_at": "2026-10-23T11:38:42.639Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -589,7 +589,7 @@
       "verification": "quote_verified",
       "content_hash": "50a9266cf731b5b0c0e3c2cd8ab0fe41466e62dc1c60500265f7244ca0d40cff",
       "collected_at": "2026-10-23T07:22:50.286Z",
-      "verified_at": "2026-10-23T10:16:19.715Z",
+      "verified_at": "2026-10-23T11:38:42.643Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -632,7 +632,7 @@
       "verification": "quote_verified",
       "content_hash": "50a9266cf731b5b0c0e3c2cd8ab0fe41466e62dc1c60500265f7244ca0d40cff",
       "collected_at": "2026-10-23T07:22:50.286Z",
-      "verified_at": "2026-10-23T10:16:19.719Z",
+      "verified_at": "2026-10-23T11:38:42.647Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -701,7 +701,7 @@
       "verification": "quote_verified",
       "content_hash": "52f33dc00e76d53d0e7174a11bd5be4073bf932d8445fb2464197fd81fb9ca2f",
       "collected_at": "2026-10-23T07:02:31.633Z",
-      "verified_at": "2026-10-23T10:16:19.723Z",
+      "verified_at": "2026-10-23T11:38:42.651Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -762,7 +762,7 @@
       "verification": "quote_verified",
       "content_hash": "83c3cceb2d41323afa7b9f85d0993854fd69264f2bcabbb6ce7b274804d1c516",
       "collected_at": "2026-10-23T07:00:31.732Z",
-      "verified_at": "2026-10-23T10:16:19.731Z",
+      "verified_at": "2026-10-23T11:38:42.661Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -822,7 +822,7 @@
       "verification": "quote_verified",
       "content_hash": "190fdb7f85a344a651737746e4d0dac375367a212dfa5557229e1b0820c123fa",
       "collected_at": "2026-10-23T07:08:14.958Z",
-      "verified_at": "2026-10-23T10:16:19.735Z",
+      "verified_at": "2026-10-23T11:38:42.667Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -882,7 +882,7 @@
       "verification": "quote_verified",
       "content_hash": "222c8bde505e6c4b2ec92329557a75d8822caa129f02f80845c604b170a738ab",
       "collected_at": "2026-10-23T07:09:03.042Z",
-      "verified_at": "2026-10-23T10:16:19.739Z",
+      "verified_at": "2026-10-23T11:38:42.675Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -934,7 +934,7 @@
       "verification": "quote_verified",
       "content_hash": "e42665eb51c468b646c4194b6793834e11c16a084e46b6b3d4bb83e43af8da4b",
       "collected_at": "2026-10-23T07:22:50.333Z",
-      "verified_at": "2026-10-23T10:16:19.745Z",
+      "verified_at": "2026-10-23T11:38:42.679Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -986,7 +986,7 @@
       "verification": "quote_verified",
       "content_hash": "015c5eca8fa2b043f7d9b9036ceaa356fc258047734bdef0dca5eff71470f063",
       "collected_at": "2026-10-23T07:22:50.358Z",
-      "verified_at": "2026-10-23T10:16:19.749Z",
+      "verified_at": "2026-10-23T11:38:42.684Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1029,7 +1029,7 @@
       "verification": "quote_verified",
       "content_hash": "89cc6d684a024fbb7ac5cbdbe14aee80e9805735b82856e81289c1a8d0824e8e",
       "collected_at": "2026-10-23T07:22:50.498Z",
-      "verified_at": "2026-10-23T10:16:19.753Z",
+      "verified_at": "2026-10-23T11:38:42.690Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1072,7 +1072,7 @@
       "verification": "quote_verified",
       "content_hash": "89cc6d684a024fbb7ac5cbdbe14aee80e9805735b82856e81289c1a8d0824e8e",
       "collected_at": "2026-10-23T07:22:50.498Z",
-      "verified_at": "2026-10-23T10:16:19.763Z",
+      "verified_at": "2026-10-23T11:38:42.695Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -1114,7 +1114,7 @@
       "verification": "quote_verified",
       "content_hash": "89cc6d684a024fbb7ac5cbdbe14aee80e9805735b82856e81289c1a8d0824e8e",
       "collected_at": "2026-10-23T07:22:50.498Z",
-      "verified_at": "2026-10-23T10:16:19.769Z",
+      "verified_at": "2026-10-23T11:38:42.700Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {

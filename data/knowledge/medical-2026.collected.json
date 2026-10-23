@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-10-23T10:07:50.162Z",
+  "generated_at": "2026-10-23T11:28:49.268Z",
   "sources": [
     {
       "id": "guangdong-zhupei-jieye-2025",
@@ -139,7 +139,7 @@
       "verification": "quote_verified",
       "content_hash": "508769b842d623c656af36e946a38b203cc4e0d8bc563b7c7920ca69bf539b20",
       "collected_at": "2026-10-23T05:23:09.835Z",
-      "verified_at": "2026-10-23T10:07:50.100Z",
+      "verified_at": "2026-10-23T11:28:49.176Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -191,7 +191,7 @@
       "verification": "quote_verified",
       "content_hash": "0eb1318efcaec3a458e57b895fa2b6d1d4eeebca269f6216c488463cfb130ed2",
       "collected_at": "2026-10-23T05:23:09.852Z",
-      "verified_at": "2026-10-23T10:07:50.109Z",
+      "verified_at": "2026-10-23T11:28:49.188Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -243,7 +243,7 @@
       "verification": "quote_verified",
       "content_hash": "7e8500a6e02123ec200845f965522092e168510d8f5faaad4f7d30bf669a78eb",
       "collected_at": "2026-10-23T05:23:09.858Z",
-      "verified_at": "2026-10-23T10:07:50.112Z",
+      "verified_at": "2026-10-23T11:28:49.191Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -296,7 +296,7 @@
       "verification": "quote_verified",
       "content_hash": "3f597e2e6f736f4dd80984b3a0b898029084a6b1bb0de0b1a85b255f336e747a",
       "collected_at": "2026-10-23T05:13:03.353Z",
-      "verified_at": "2026-10-23T10:07:50.119Z",
+      "verified_at": "2026-10-23T11:28:49.202Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -347,7 +347,7 @@
       "verification": "quote_verified",
       "content_hash": "6be1b658f99dcc2e4b18bd62bf723bc47ac405b2dad2843edcbbdf9f05ecc060",
       "collected_at": "2026-10-23T05:09:45.512Z",
-      "verified_at": "2026-10-23T10:07:50.125Z",
+      "verified_at": "2026-10-23T11:28:49.209Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -421,7 +421,7 @@
       "verification": "quote_verified",
       "content_hash": "44210eee67409b8313c069700d2290e487d8ee05edc9539eeea3297e328e0028",
       "collected_at": "2026-10-23T05:11:14.618Z",
-      "verified_at": "2026-10-23T10:07:50.148Z",
+      "verified_at": "2026-10-23T11:28:49.250Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -476,7 +476,7 @@
       "verification": "quote_verified",
       "content_hash": "f12d3533ead168ac3d13de94ce8ea47a8222599caacfbb8076ce614c9ec525c5",
       "collected_at": "2026-10-23T05:12:47.396Z",
-      "verified_at": "2026-10-23T10:07:50.154Z",
+      "verified_at": "2026-10-23T11:28:49.255Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -530,7 +530,7 @@
       "verification": "quote_verified",
       "content_hash": "3bce774464e410641cf64f72ac928b976bc9da0991c3fa4c6a2074f188184948",
       "collected_at": "2026-10-23T05:23:09.970Z",
-      "verified_at": "2026-10-23T10:07:50.157Z",
+      "verified_at": "2026-10-23T11:28:49.262Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {
@@ -605,7 +605,7 @@
       "verification": "quote_verified",
       "content_hash": "df7dea9961d6f6c45f9c05d94881db91b9ed4ec3f8c5b91ffd66800863411bc9",
       "collected_at": "2026-10-23T05:23:09.984Z",
-      "verified_at": "2026-10-23T10:07:50.162Z",
+      "verified_at": "2026-10-23T11:28:49.268Z",
       "valid_through": null,
       "freshness_days": 60,
       "context": {

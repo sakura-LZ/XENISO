@@ -1,0 +1,681 @@
+[
+  {
+    "source": {
+      "id": "sph-37471",
+      "url": "https://www.sph.com.cn/Html/News/Articles/37471.html",
+      "organization": "山东第一医科大学附属省立医院（山东省立医院）",
+      "title": "山东省立医院2026年公开招聘部分岗位聘用制工作人员公告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-04-14",
+      "publication_date_note": "正文逐字显示「发布时间：2026/4/14 9:16:46」。"
+    },
+    "publication_pattern": "2026\\s*年\\s*4\\s*月\\s*14\\s*日",
+    "artifact_capture": {
+      "path": "work/knowledge-jd-5/sph-37471.raw",
+      "sha256": "48135126ec6f24377ff2ce6f8f2e863ca7b0eb509880652de7fb32697812f407",
+      "captured_at": "2026-10-23T11:55:58.240Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-sph-37471-guide-health-systems-4870d62c",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "山东省立医院2026年招聘规模：28个岗位、230名，均为专业技术岗",
+      "summary": "公告写明本次招聘岗位 28 个、招聘计划 230 名，均为专业技术岗位，岗位条件见《2026年聘用制岗位情况表》（附件1）。（同一官方来源共 5 条原文事实，字段：employer、education、major_restrictions、job_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "省级三甲一次性投放规模；具体岗位表在附件，网页正文不列岗位明细。",
+      "relation": "direct",
+      "tags": [
+        "省级三甲",
+        "聘用制",
+        "山东第一医科大学附属省立医院（山东省立医院）",
+        "学历门槛",
+        "院校限制",
+        "年龄门槛",
+        "规培",
+        "两个同等对待",
+        "用工形式"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "山东第一医科大学附属省立医院（山东省立医院）",
+        "program": "山东省立医院 2026 年聘用制专业技术岗位（含医技/工程/信息类，岗位表见附件1）",
+        "region": "山东省济南市",
+        "evidence_locator": "医院官网「院务公开-招聘通知」公告正文：一、基本条件 / 二、招聘岗位、计划及要求（一）年龄及其他要求（二）学历及其他要求 / 三、招聘程序"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employer",
+        "pattern": "本次招聘岗位28个，招聘计划230名，均为专业技术岗位"
+      },
+      {
+        "field": "education",
+        "pattern": "各岗位均需取得高中毕业证，且具有岗位要求的学历证及学位证，不包括民办院校及独立学院。"
+      },
+      {
+        "field": "education",
+        "pattern": "2、非护理岗位 本科毕业生年龄不超过28周岁（1998年1月1日及以后出生），硕士毕业生年龄不超过30周岁（1996年1月1日及以后出生），博士毕业生年龄不超过32周岁（1994年1月1日及以后出生）。"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "对于完成住院医师规范化培训人员，医院按照规定执行“两个同等对待”政策。"
+      },
+      {
+        "field": "job_type",
+        "pattern": "拟面向社会公开招聘部分岗位聘用制工作人员（签订劳动合同）"
+      }
+    ],
+    "expected_fields": [
+      "employer",
+      "salary",
+      "job_title（岗位表在附件，网页正文未列具体岗位名）",
+      "education",
+      "experience",
+      "major_restrictions",
+      "job_type"
+    ]
+  },
+  {
+    "source": {
+      "id": "gdg-64109",
+      "url": "https://www.gdghospital.org.cn/notice/info_itemid_64109.html",
+      "organization": "广东省人民医院（广东省医学科学院）",
+      "title": "广东省人民医院2026年度校园招聘公告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-11-21",
+      "publication_date_note": "正文逐字显示「发布时间：2025-11-21」。"
+    },
+    "publication_pattern": "2025-11-21",
+    "artifact_capture": {
+      "path": "work/knowledge-jd-5/gdg-64109.raw",
+      "sha256": "ba0bb940e1e3233d3d95538b6e6fb53fe44e42e3d5bdb2f433f36f66775d2f07",
+      "captured_at": "2026-10-23T11:56:03.563Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-gdg-64109-guide-health-systems-a276c987",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "广东省人民医院：医师岗/研究系列岗须 CET-6 425 分以上",
+      "summary": "岗位基本要求：医师岗、研究系列岗须取得全国大学英语六级合格证书（425 分及以上）或雅思 6.5、托福 95 以上。（同一官方来源共 4 条原文事实，字段：education、job_type、salary；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "★英语硬门槛：六级 425 是常见卡点。",
+      "relation": "direct",
+      "tags": [
+        "英语门槛",
+        "CET-6",
+        "广东省人民医院（广东省医学科学院）",
+        "CET-4",
+        "用工形式",
+        "转编",
+        "薪酬",
+        "无金额"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "广东省人民医院（广东省医学科学院）",
+        "program": "广东省人民医院 2026 年度校园招聘（岗位表见附件）",
+        "region": "广东省广州市",
+        "evidence_locator": "医院官网「人力资源-招聘信息」公告正文：二、招聘岗位及基本要求（二）岗位基本要求 / 三、用工形式及待遇"
+      }
+    },
+    "extracts": [
+      {
+        "field": "education",
+        "pattern": "须取得全国大学英语六级合格证书（ 425分及以上）或雅思6\\.5分（含）以上、托福网考95分（含）以上 ；其他 岗位 须取得全国大学英语四级及以上合格证书（ 425分及以上）。"
+      },
+      {
+        "field": "education",
+        "pattern": "其他 岗位 须取得全国大学英语四级及以上合格证书"
+      },
+      {
+        "field": "job_type",
+        "pattern": "入职签订劳动合同， 博士研究生或副高级以上职称人员 达到医院要求者， 经 考核合格 后 可 按广东省相关规定办理 转 事业编制"
+      },
+      {
+        "field": "salary",
+        "pattern": "试用期 3个月，执行试用期工资；转正后享有工资、津补贴、奖金、年终奖、科研教学专项奖励、夜班加班费等；按规定缴纳 社保和公积金"
+      }
+    ],
+    "expected_fields": [
+      "education",
+      "salary",
+      "job_type",
+      "salary_amount（原文无金额）"
+    ]
+  },
+  {
+    "source": {
+      "id": "njsdyy-10583",
+      "url": "https://www.njsdyyy.com.cn/renliziyuan/rencaizhaopin/biyeshengzhaopin/2025-12-25/10583.html",
+      "organization": "南京市第一医院",
+      "title": "南京市第一医院2026年公开招聘卫技人员公告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-12-25",
+      "publication_date_note": "URL 路径与正文均对应 2025-12-25 发布的公告。"
+    },
+    "publication_pattern": "2025-12-25",
+    "artifact_capture": {
+      "path": "work/knowledge-jd-5/njsdyy-10583.raw",
+      "sha256": "057ed2ff829de6aa53b59370f551b47e84f123d1f7bf4308a5037b53cefd77e8",
+      "captured_at": "2026-10-23T12:02:36.546Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-njsdyy-10583-guide-health-systems-5f2f3859",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "南京市第一医院年龄门槛：38周岁以下；博士或中级→43；高级→45",
+      "summary": "年龄在 38 周岁以下；具有博士研究生学历学位或中级职称者（及依法退出现役的退役军人）可放宽至 43 周岁；取得高级职称者放宽至 45 周岁。（同一官方来源共 4 条原文事实，字段：education、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "★市级三甲的年龄分层，比省级更宽。",
+      "relation": "direct",
+      "tags": [
+        "年龄门槛",
+        "市级三甲",
+        "南京市第一医院",
+        "英语门槛",
+        "425",
+        "规培",
+        "同等对待",
+        "本科",
+        "专业口径",
+        "目录"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京市第一医院",
+        "program": "南京市第一医院 2026 年公开招聘卫技人员（岗位信息表见附件1/附件2）",
+        "region": "江苏省南京市",
+        "evidence_locator": "医院官网「人力资源-人才招聘-毕业生招聘」公告正文：二、招聘条件（一）应聘人员应具备的条件（三）有关要求 / 三、报名程序"
+      }
+    },
+    "extracts": [
+      {
+        "field": "education",
+        "pattern": "年龄在38周岁以下（1986年12月26日后出生）；具有博士研究生学历及学位的人员或具有中级职称的人员，以及依法退出现役的退役军人应聘，年龄可放宽至43周岁；取得高级职称人员年龄可放宽至45周岁"
+      },
+      {
+        "field": "education",
+        "pattern": "资格条件中有要求通过大学英语四级或六级的，需提供相应的合格证书，只有四级或六级考试成绩通知单的，相应的成绩不低于425分。"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "对经住培合格的本科学历临床医师，在人员招聘中与临床医学、口腔医学、中医专业学位硕士研究生同等对待"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "“专业”的设置参考目录为《江苏省2026年度考试录用公务员专业参考目录》"
+      }
+    ],
+    "expected_fields": [
+      "education",
+      "experience",
+      "salary",
+      "major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "tx-algo-api",
+      "url": "https://careers.tencent.com/tencentcareer/api/post/Query",
+      "organization": "腾讯",
+      "title": "腾讯官方招聘职位库检索结果（keyword=算法）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该内容取自腾讯官方招聘站（careers.tencent.com）公开职位检索接口的 JSON 响应，经渲染为单行文本后入库；接口不返回发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-5/tx-algo-api.raw",
+      "sha256": "0f2aaf770ef1fae5fc8618becb3f74ff78036b7b636859c4b8be326a8712d862",
+      "captured_at": "2026-10-23T12:29:06.416Z",
+      "content_type": "application/json",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-tx-algo-api-medical-ai-pm-7ac0bb0a",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "腾讯（官方职位库）纯 AI 岗：策略算法工程师",
+      "summary": "腾讯官方招聘职位库检索「算法」返回的岗位：策略算法工程师，城市 深圳，事业群 CSIG，类别 技术；职责原文见 literal。（同一官方来源共 2 条原文事实，字段：job_title、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "★纯 AI 岗（非医疗）样本：用于对比「医学生能否进纯 AI 岗」。本接口不返回学历/专业字段，故学历与专业要求未知。",
+      "relation": "related",
+      "tags": [
+        "纯AI岗",
+        "腾讯",
+        "CSIG"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "腾讯",
+        "program": "腾讯 策略算法工程师（CSIG）",
+        "region": "深圳",
+        "evidence_locator": "腾讯官方招聘站 careers.tencent.com 职位检索 JSON 接口（post/Query，keyword=算法）渲染为文本；岗位详情页为 JS 路由，无静态 JD 文本"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称：策略算法工程师 城市：深圳 事业群：CSIG 类别：技术 工作年限：三年以上工作经验 招聘链接：http://careers\\.tencent\\.com/jobdesc\\.html\\?postId=1915242132004782080"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "工作职责：1\\.负责智能体 Harness Engineering 核心能力建设，包括 Agent Loop、多 Agent 协作、Memory、Skill、任务规划、工具调用、状态管理、异常恢复等关键模块设计与实现，提升 Agent 稳定性、可控性与任务完成质量； 2\\.负责 Prompt Engineering 与 Prompt 调优，提升智能体在复杂企业场景下的准确性、鲁棒性和可解释性； 3\\.使用 Go/Python 构建高并发 Agent 服务框架与调度系统，包括任务编排、工作流引擎、队列消费、资源调度和稳定性治理； 4\\.建设智能体评估与观测体系，包括任务成功率、工具调用准确率、成本、延迟、TTFT、上下文利用率、可解释性等核心指标； 5\\.持续分析 Bad Case，定位 Agent 在规划、工具调用、上下文、记忆、Prompt、模型能力等环节的问题，并推动优化迭代； 6\\.与产品、平台和业务团队协作，交付面向企业场景的高质量智能体能力。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "education（官方接口不返回）",
+      "major_restrictions（官方接口不返回）",
+      "salary",
+      "technical_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "tx-algo-api",
+      "url": "https://careers.tencent.com/tencentcareer/api/post/Query",
+      "organization": "腾讯",
+      "title": "腾讯官方招聘职位库检索结果（keyword=算法）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该内容取自腾讯官方招聘站（careers.tencent.com）公开职位检索接口的 JSON 响应，经渲染为单行文本后入库；接口不返回发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-5/tx-algo-api.raw",
+      "sha256": "0f2aaf770ef1fae5fc8618becb3f74ff78036b7b636859c4b8be326a8712d862",
+      "captured_at": "2026-10-23T12:29:06.416Z",
+      "content_type": "application/json",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-tx-algo-api-medical-ai-pm-29168638",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "腾讯（官方职位库）纯 AI 岗：风控算法工程师",
+      "summary": "腾讯官方招聘职位库检索「算法」返回的岗位：风控算法工程师，城市 深圳，事业群 TEG，类别 ；职责原文见 literal。（同一官方来源共 2 条原文事实，字段：job_title、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "★纯 AI 岗（非医疗）样本：用于对比「医学生能否进纯 AI 岗」。本接口不返回学历/专业字段，故学历与专业要求未知。",
+      "relation": "related",
+      "tags": [
+        "纯AI岗",
+        "腾讯",
+        "TEG"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "腾讯",
+        "program": "腾讯 风控算法工程师（TEG）",
+        "region": "深圳",
+        "evidence_locator": "腾讯官方招聘站 careers.tencent.com 职位检索 JSON 接口（post/Query，keyword=算法）渲染为文本；岗位详情页为 JS 路由，无静态 JD 文本"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称：风控算法工程师 城市：深圳 事业群：TEG 类别： 工作年限：三年以上工作经验 招聘链接：http://careers\\.tencent\\.com/jobdesc\\.html\\?postId=2088194595539304448"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "工作职责：1\\.识别和挖掘腾讯流量的爬虫、自动机等机器流量风险，制定安全风控策略与解决方案，保证腾讯流量安全； 2\\.完善流量安全风控体系的建设，包括但不限于RAG等知识库的构建、基于大模型和Agent的应用、风控策略的自动化挖掘和效能工具的建设等。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "education（官方接口不返回）",
+      "major_restrictions（官方接口不返回）",
+      "salary",
+      "technical_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "tx-algo-api",
+      "url": "https://careers.tencent.com/tencentcareer/api/post/Query",
+      "organization": "腾讯",
+      "title": "腾讯官方招聘职位库检索结果（keyword=算法）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该内容取自腾讯官方招聘站（careers.tencent.com）公开职位检索接口的 JSON 响应，经渲染为单行文本后入库；接口不返回发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-5/tx-algo-api.raw",
+      "sha256": "0f2aaf770ef1fae5fc8618becb3f74ff78036b7b636859c4b8be326a8712d862",
+      "captured_at": "2026-10-23T12:29:06.416Z",
+      "content_type": "application/json",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-tx-algo-api-medical-ai-pm-c037a821",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "腾讯（官方职位库）纯 AI 岗：游戏音频算法专家",
+      "summary": "腾讯官方招聘职位库检索「算法」返回的岗位：游戏音频算法专家，城市 深圳，事业群 IEG，类别 技术；职责原文见 literal。（同一官方来源共 2 条原文事实，字段：job_title、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "★纯 AI 岗（非医疗）样本：用于对比「医学生能否进纯 AI 岗」。本接口不返回学历/专业字段，故学历与专业要求未知。",
+      "relation": "related",
+      "tags": [
+        "纯AI岗",
+        "腾讯",
+        "IEG"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "腾讯",
+        "program": "腾讯 游戏音频算法专家（IEG）",
+        "region": "深圳",
+        "evidence_locator": "腾讯官方招聘站 careers.tencent.com 职位检索 JSON 接口（post/Query，keyword=算法）渲染为文本；岗位详情页为 JS 路由，无静态 JD 文本"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称：游戏音频算法专家 城市：深圳 事业群：IEG 类别：技术 工作年限：五年以上工作经验 招聘链接：http://careers\\.tencent\\.com/jobdesc\\.html\\?postId=1962418323614490624"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "工作职责：1\\.负责游戏内音频算法的实现与优化； 2\\.系统化的设计与研发游戏业内领先的音频算法与音效解决方案； 3\\.解决游戏音频疑难问题。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "education（官方接口不返回）",
+      "major_restrictions（官方接口不返回）",
+      "salary",
+      "technical_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "meituan-ai-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "organization": "美团",
+      "title": "美团官方招聘职位检索结果（keyword=算法，含岗位职责与岗位要求）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "内容取自美团官方招聘站（zhaopin.meituan.com）公开职位检索接口的 JSON 响应（含 jobDuty/jobRequirement 原文），渲染为单行文本入库；接口不返回发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-5/meituan-ai-api.raw",
+      "sha256": "6e9a63cbfdff4f827327a55be8d8c0170c0bec2e4236d411378710ba442b92a0",
+      "captured_at": "2026-10-23T12:38:36.706Z",
+      "content_type": "application/json",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-meituan-ai-api-medical-ai-pm-2ceb1640",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团纯 AI 岗：AI全栈工程师",
+      "summary": "美团官方招聘接口检索「算法」返回的岗位「AI全栈工程师」，类别与工作地点见 literal。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "★纯 AI 岗（非医疗）岗位样本：与医院/器械岗对照，说明泛 AI 岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "纯AI岗",
+        "美团",
+        "job_title",
+        "学历要求",
+        "专业要求"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 AI全栈工程师",
+        "region": "北京/上海/成都/深圳",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段原文"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称：AI全栈工程师 岗位类别：技术类/软件 工作地点：北京市、上海市、成都市、深圳市"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "岗位要求：岗位要求 1\\. 本科及以上学历，计算机科学、软件工程或相关专业； 2\\. 扎实的编程基础：熟练掌握至少一门编程语言（Python / Java / TypeScript / Go 等），具备良好的代码习惯； 3\\. 基本功扎实：了解前端框架（React / Vue 等）或后端框架（Spring / Django / Express 等）之一，具备完整 Web 项目开发经验； 4\\. AI 素养与好奇心：熟悉大模型基本原理与应用范式，有 ChatGPT / Claude 等工具的深度使用经验，理解 Prompt Engineering 基本技巧； 5\\. 学习与解决问题能力：对新技术保持敏感，能快速学习并应用 AI 领域新知识，具备良好的逻辑思维与沟通协作能力。 6\\. 有独立完成AI应用（Bot/Agent/自动化工作流）从0到1上线的经历者优先"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary（接口无薪资字段）",
+      "education",
+      "major_restrictions",
+      "technical_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "meituan-ai-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "organization": "美团",
+      "title": "美团官方招聘职位检索结果（keyword=算法，含岗位职责与岗位要求）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "内容取自美团官方招聘站（zhaopin.meituan.com）公开职位检索接口的 JSON 响应（含 jobDuty/jobRequirement 原文），渲染为单行文本入库；接口不返回发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-5/meituan-ai-api.raw",
+      "sha256": "6e9a63cbfdff4f827327a55be8d8c0170c0bec2e4236d411378710ba442b92a0",
+      "captured_at": "2026-10-23T12:38:36.706Z",
+      "content_type": "application/json",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-meituan-ai-api-medical-ai-pm-02e35b6d",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团纯 AI 岗：AI后端开发工程师",
+      "summary": "美团官方招聘接口检索「算法」返回的岗位「AI后端开发工程师」，类别与工作地点见 literal。",
+      "applicability": "★纯 AI 岗（非医疗）岗位样本：与医院/器械岗对照，说明泛 AI 岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "纯AI岗",
+        "美团",
+        "job_title"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 AI后端开发工程师",
+        "region": "北京/上海/成都/深圳",
+        "evidence_locator": "美团官方招聘站 zhaopin.meituan.com 的职位检索接口（api/official/job/getJobList）JSON 响应，字段 jobUnionId/name/jobFamily/cityList；职位列表页为 SPA，无静态 JD 文本"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称：AI后端开发工程师 岗位类别：技术类/软件 工作地点：北京市、上海市、成都市"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary（接口无薪资字段）"
+    ]
+  },
+  {
+    "source": {
+      "id": "meituan-ai-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "organization": "美团",
+      "title": "美团官方招聘职位检索结果（keyword=算法，含岗位职责与岗位要求）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "内容取自美团官方招聘站（zhaopin.meituan.com）公开职位检索接口的 JSON 响应（含 jobDuty/jobRequirement 原文），渲染为单行文本入库；接口不返回发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-5/meituan-ai-api.raw",
+      "sha256": "6e9a63cbfdff4f827327a55be8d8c0170c0bec2e4236d411378710ba442b92a0",
+      "captured_at": "2026-10-23T12:38:36.706Z",
+      "content_type": "application/json",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-meituan-ai-api-medical-ai-pm-f17ee671",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团纯 AI 岗：智能商业分析师（BA/DS）",
+      "summary": "美团官方招聘接口检索「算法」返回的岗位「智能商业分析师（BA/DS）」，类别与工作地点见 literal。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "★纯 AI 岗（非医疗）岗位样本：与医院/器械岗对照，说明泛 AI 岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "纯AI岗",
+        "美团",
+        "job_title",
+        "学历要求",
+        "专业要求"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 智能商业分析师（BA/DS）",
+        "region": "北京/上海/成都/深圳",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段原文"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称：智能商业分析师（BA/DS） 岗位类别：商业分析类/商业分析 工作地点：北京市、上海市"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "岗位要求：1\\. 本科及以上学历，数学、统计、计算机、工科、商科等相关专业背景更佳； 2\\. 聪明严谨、积极有韧性，乐于面对挑战、具备优秀的分析能力； 3\\. 具备充分的好奇心，有钻研的精神，喜欢从数据中发现问题、分析规律更佳；对商业运作模式和企业经营感兴趣； 4\\. 数据科学（DS方向）具备计算机背景或经济学和理工科双学位专业背景更佳； 5\\. 了解大语言模型的基本能力，对AI赋能商业分析有探索兴趣，有使用AI工具辅助数据分析或报告撰写的经验者优先。 具备以下经验者优先： 1\\. 有使用AI工具辅助商业研究的实践经验，如利用大模型进行行业报告生成、数据可视化、用户调研分析等； 2\\. 了解Text-to-SQL、自然语言数据分析等AI\\+数据分析前沿方向； 3\\. 了解主流 Agent 开发框架（如 LangChain、Dify 等），有将 Agent 应用于数据分析或商业研究场景的经验。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary（接口无薪资字段）",
+      "education",
+      "major_restrictions",
+      "technical_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "meituan-ai-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "organization": "美团",
+      "title": "美团官方招聘职位检索结果（keyword=算法，含岗位职责与岗位要求）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "内容取自美团官方招聘站（zhaopin.meituan.com）公开职位检索接口的 JSON 响应（含 jobDuty/jobRequirement 原文），渲染为单行文本入库；接口不返回发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-5/meituan-ai-api.raw",
+      "sha256": "6e9a63cbfdff4f827327a55be8d8c0170c0bec2e4236d411378710ba442b92a0",
+      "captured_at": "2026-10-23T12:38:36.706Z",
+      "content_type": "application/json",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-meituan-ai-api-medical-ai-pm-c48c3e1c",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团纯 AI 岗：AI产品经理岗",
+      "summary": "美团官方招聘接口检索「算法」返回的岗位「AI产品经理岗」，类别与工作地点见 literal。（同一官方来源共 2 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "★纯 AI 岗（非医疗）岗位样本：与医院/器械岗对照，说明泛 AI 岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "纯AI岗",
+        "美团",
+        "job_title",
+        "学历要求",
+        "专业要求"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 AI产品经理岗",
+        "region": "北京/上海/成都/深圳",
+        "evidence_locator": "美团官方招聘站职位检索接口 JSON 的 jobRequirement 字段原文"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称：AI产品经理岗 岗位类别：产品类/产品 工作地点：北京市、上海市、成都市、深圳市"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "岗位要求：1\\. 本科及以上学历； 2\\. 有强烈的好奇心和进取心，突出的学习能力； 3\\. 熟悉互联网产品和技术的主流发展动态，有产品经验或能证明这方面的潜力； 4\\. 对AI感兴趣、有热情，了解大语言模型（如GPT、Claude等）的基本原理与能力边界，了解主流AI产品形态（对话式产品、Copilot模式、Agent产品、多模态交互），有使用大模型产品或AI工具进行产品设计的经验者优先； 5\\. 具备AI产品思维，能够识别哪些场景适合AI赋能，理解AI产品的评估指标（如准确率、用户满意度、幻觉率等）者优先。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary（接口无薪资字段）",
+      "education",
+      "major_restrictions",
+      "technical_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "meituan-ai-api",
+      "url": "https://zhaopin.meituan.com/api/official/job/getJobList",
+      "organization": "美团",
+      "title": "美团官方招聘职位检索结果（keyword=算法，含岗位职责与岗位要求）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "内容取自美团官方招聘站（zhaopin.meituan.com）公开职位检索接口的 JSON 响应（含 jobDuty/jobRequirement 原文），渲染为单行文本入库；接口不返回发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-5/meituan-ai-api.raw",
+      "sha256": "6e9a63cbfdff4f827327a55be8d8c0170c0bec2e4236d411378710ba442b92a0",
+      "captured_at": "2026-10-23T12:38:36.706Z",
+      "content_type": "application/json",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-meituan-ai-api-medical-ai-pm-ec927f29",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "美团纯 AI 岗：AI产品运营岗",
+      "summary": "美团官方招聘接口检索「算法」返回的岗位「AI产品运营岗」，类别与工作地点见 literal。",
+      "applicability": "★纯 AI 岗（非医疗）岗位样本：与医院/器械岗对照，说明泛 AI 岗的类型分布。",
+      "relation": "related",
+      "tags": [
+        "纯AI岗",
+        "美团",
+        "job_title"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "美团",
+        "program": "美团 AI产品运营岗",
+        "region": "北京/上海/成都/深圳",
+        "evidence_locator": "美团官方招聘站 zhaopin.meituan.com 的职位检索接口（api/official/job/getJobList）JSON 响应，字段 jobUnionId/name/jobFamily/cityList；职位列表页为 SPA，无静态 JD 文本"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称：AI产品运营岗 岗位类别：运营类/用户运营,内容运营,产品运营 工作地点：北京市、科威特城、上海市、深圳市"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary（接口无薪资字段）"
+    ]
+  }
+]
