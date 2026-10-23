@@ -1,14 +1,7 @@
 // 交接文件自检：校验 literal 必须是 text 的逐字子串，并检查 role/field/context 是否在契约范围内。
 // 用法：npx tsx scripts/knowledge/verify-handoff.ts work/knowledge-<stream>/handoff.json
 import { readFileSync, existsSync } from "node:fs";
-
-const fieldsByCategory: Record<string, string[]> = {
-  occupation: ["interests", "responsibilities", "privacy_requirements", "skills", "career_path", "occupation_definition", "program_definition", "employment_directions", "departments", "work_tasks", "abilities", "education", "related_occupations", "standard_status"],
-  recruitment: ["employer", "city", "education", "major_restrictions", "technical_requirements", "salary", "job_title", "experience", "job_type"],
-  admissions: ["institution", "program", "admission_year", "exam_subjects", "cross_major_restrictions", "training_direction", "admission_requirements", "degree_type"],
-  industry: ["scope", "coverage_limit", "design_constraints", "governance_scope", "china_legal_requirement", "talent_demand", "policy_requirement", "policy_goals", "employment_statistics", "salary_statistics", "statistical_definition", "major_catalog", "industry_distribution", "further_study_rate"],
-  learning: ["topics", "materials", "prerequisites", "access_requirement", "training", "regional_limit", "learning_hours", "research_project", "resource_title", "curriculum", "credit_requirement", "course_prerequisites", "practice_hours"],
-};
+import { fieldRules as fieldsByCategory } from "./field-rules";
 const contextKeys = ["institution", "college", "program", "admission_year", "region", "medical_topic", "medical_department", "department_type", "statistic_scope", "evidence_locator", "valid_from", "valid_through"];
 
 const path = process.argv[2];
@@ -41,9 +34,9 @@ for (const [index, entry] of entries.entries()) {
   // http（实测湖南省统计局 https 报 TLS 错误）。不接受裸 IP 作为引用；
   // 例外必须在 publication_date_note 里说明取得方式。
   const srcUrl = source.url ?? "";
-  const httpExceptionAllowed = /^http:\/\/[^/]*\.gov\.cn(\/|:|$)/i.test(srcUrl)
-    && /https|http|通道|方式/i.test(source.publication_date_note ?? "");
-  if (!/^https:/i.test(srcUrl) && !httpExceptionAllowed) errors.push(`${where}: url 必须是 https（.gov.cn 的 http 例外需在 publication_date_note 披露）`);
+  const httpExceptionAllowed = (/^http:\/\/[^/]*\.(gov|edu)\.cn(\/|:|$)/i.test(srcUrl)
+    && /https|http|通道|方式/i.test(source.publication_date_note ?? ""));
+  if (!/^https:/i.test(srcUrl) && !httpExceptionAllowed) errors.push(`${where}: url 必须是 https（.gov.cn / .edu.cn 的 http 例外需在 publication_date_note 披露）`);
   if (!source.published_at && !source.publication_date_note) errors.push(`${where}: published_at 为 null 时必须写 publication_date_note`);
   if (source.source_tier !== "primary") errors.push(`${where}: source_tier 必须是 primary`);
 

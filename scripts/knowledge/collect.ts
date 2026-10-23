@@ -114,7 +114,7 @@ for (const item of manifest) {
       });
       throw new Error(whitespaceOnly ? "no_evidence_matched_whitespace" : "no_evidence_matched");
     }
-    if (classifyFacts(facts) !== item.record.category) throw new Error("classification_review_required");
+    if (classifyFacts(facts, item.record.category) !== item.record.category) throw new Error("classification_review_required");
     const missingFields = item.expected_fields.filter(field => !facts.some(fact => fact.field === field));
     const record = recordSchema.parse({ ...item.record, source_id: item.source.id, facts, missing_fields: missingFields, verification: "quote_verified", content_hash: contentHash, collected_at: at, verified_at: new Date().toISOString() });
     if (!verifyQuotes(record, text)) throw new Error("evidence_offsets_mismatch");

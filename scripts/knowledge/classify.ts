@@ -1,13 +1,12 @@
 import type { KnowledgeRecord } from "../../src/lib/knowledge";
+import { fieldRules } from "./field-rules";
 
-const fieldRules = {
-  occupation: ["interests", "responsibilities", "privacy_requirements", "skills", "career_path", "occupation_definition", "program_definition", "employment_directions", "departments", "work_tasks", "abilities", "education", "related_occupations", "standard_status"],
-  recruitment: ["employer", "city", "education", "major_restrictions", "technical_requirements", "salary", "job_title", "experience", "job_type"],
-  admissions: ["institution", "program", "admission_year", "exam_subjects", "cross_major_restrictions", "training_direction", "admission_requirements", "degree_type"],
-  industry: ["scope", "coverage_limit", "design_constraints", "governance_scope", "china_legal_requirement", "talent_demand", "policy_requirement", "policy_goals", "employment_statistics", "salary_statistics", "statistical_definition", "major_catalog"],
-  learning: ["topics", "materials", "prerequisites", "access_requirement", "training", "regional_limit", "learning_hours", "research_project", "resource_title"],
-};
-export function classifyFacts(facts: Pick<KnowledgeRecord["facts"][number], "field">[]) {
+// 少数字段（如 education）同时属于多个类目，只有一条事实时会打平。
+// 打平时以条目自己申报的类目为准；申报类目不在并列首位才判为需复核。
+export function classifyFacts(facts: Pick<KnowledgeRecord["facts"][number], "field">[], declared?: string) {
   const ranked = Object.entries(fieldRules).map(([category, fields]) => ({ category, score: facts.filter(fact => fields.includes(fact.field)).length })).sort((a, b) => b.score - a.score);
-  return ranked[0].score > 0 && ranked[0].score > ranked[1].score ? ranked[0].category : null;
+  if (ranked[0].score === 0) return null;
+  if (ranked[0].score > ranked[1].score) return ranked[0].category;
+  const tied = ranked.filter(entry => entry.score === ranked[0].score).map(entry => entry.category);
+  return declared && tied.includes(declared) ? declared : null;
 }
