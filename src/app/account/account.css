@@ -1,0 +1,123 @@
+/*
+ * XENISO · 我的资料（账户）
+ * 一张目录卡 + 三页资料，纸面来自 atlas.css。删除区是全页唯一使用 danger 色的地方。
+ */
+
+.account-page { padding-block: 52px 104px; }
+
+.account-head {
+  padding-bottom: 28px;
+  margin-bottom: 42px;
+  border-bottom: 1px solid var(--line);
+}
+.account-head h1 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 46px;
+  line-height: 1.16;
+  font-weight: 600;
+}
+.account-head p {
+  margin: 16px 0 0;
+  max-width: 760px;
+  font-size: 19px;
+  line-height: 1.72;
+  color: var(--ink-2);
+}
+
+.account-sheets { display: grid; gap: 30px; }
+
+.account-section { padding: 28px 30px 26px; }
+.account-section h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-serif);
+  font-size: 26px;
+  line-height: 1.38;
+  font-weight: 600;
+}
+.account-section h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.42;
+  font-weight: 600;
+}
+.account-section p {
+  margin: 0 0 12px;
+  max-width: 70ch;
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+.account-section p:last-child { margin-bottom: 0; }
+.account-section a { color: var(--green); text-underline-offset: 4px; }
+
+.account-kv { margin: 0 0 16px; display: grid; gap: 0; border-top: 1px solid var(--line-2); }
+.account-kv > div {
+  display: grid;
+  grid-template-columns: 144px minmax(0, 1fr);
+  gap: 16px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--line-2);
+}
+.account-kv dt {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: .04em;
+  color: var(--ink-3);
+}
+.account-kv dd { margin: 0; font-size: 17px; line-height: 1.7; color: var(--ink-2); }
+
+.account-section details {
+  border-top: 1px solid var(--line-2);
+  padding: 14px 0 12px;
+}
+.account-section details:last-of-type { border-bottom: 1px solid var(--line-2); }
+.account-section summary {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--ink);
+  list-style-position: outside;
+  padding-left: 2px;
+}
+.account-section summary::marker { color: var(--green-deep); }
+.account-section summary:hover { color: var(--green-deep); }
+.account-section details p { margin: 10px 0 0; font-size: 16px; line-height: 1.72; color: var(--ink-2); }
+
+.account-danger {
+  border-color: color-mix(in srgb, var(--danger) 38%, var(--line));
+  background: color-mix(in srgb, var(--danger-soft) 34%, var(--surface));
+}
+.account-danger h2 { color: var(--danger); }
+.account-danger .atlas-label { color: color-mix(in srgb, var(--danger) 80%, var(--ink-3)); }
+
+.account-confirm {
+  margin-top: 18px;
+  padding: 20px 20px 18px;
+  border: 1px solid color-mix(in srgb, var(--danger) 46%, var(--line));
+  background: var(--danger-soft);
+}
+.account-confirm h3 { color: var(--danger); }
+.account-confirm p { font-size: 16px; }
+
+.account-danger .button.danger { margin-top: 6px; }
+
+.account-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 16px; }
+
+.account-foot-note {
+  margin: 18px 0 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-3);
+}
+
+@media (max-width: 900px) {
+  .account-page { padding-block: 36px 72px; }
+  .account-head h1 { font-size: 38px; }
+  .account-head p { font-size: 18px; }
+  .account-section { padding: 22px 20px 20px; }
+  .account-kv > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .account-kv dt { font-size: 13px; }
+}

@@ -3,6 +3,7 @@ import { profileSchema, type Profile } from "./profile";
 import { assessmentSchema, type AssessmentResult } from "./assessment";
 import { experiencePresentation, type Experience } from "./experience";
 import { parseR2Planning } from "./planning";
+import { buildPathwayPlan } from "./planning-stages";
 
 export function skillEvidence(profile: Profile) {
   return [
@@ -28,25 +29,13 @@ export function competencyGaps(profile: Profile, direction: Direction) {
     return { skill, status: matches.length ? "已自述/待核实" : "信息不足/待了解", evidence_refs: matches.map((m) => m.ref), note: matches.length ? "名称匹配仅用于整理证据，不代表已掌握。" : "尚未获得相关证据，不推断学习潜力。" };
   });
 }
-function pathwayTasks(pathway: Profile["pathway"]) {
-  const common = { source: `limen_pathway_checklist:v1:${pathway}`, estimated_effort_range: null, stage: "升学准备（官方要求待核验）" };
-  const task = (id: string, title: string, why: string, deliverable: string, dependencies: string[], priority: string) => ({ ...common, id, title, why, deliverable, dependencies, priority });
-  if (pathway === "统考") return [
-    task("path-eligibility", "统考专属：核验专业资格与考试科目", "先确认目标项目当年的跨专业资格与科目，再决定备考内容；不统一假设408。", "目标年份、专业代码、考试科目、跨专业资格和复试要求的官方链接核验表；未知项留空", ["admissions"], "优先核验"),
-    task("path-materials", "统考专属：整理报名与复试准备清单", "准备内容以项目官方要求为准，已有课程和项目只能作为材料线索。", "已核验的报名与复试材料清单、待补证据及个人准备任务", ["path-eligibility"], "按官方要求准备"),
-    task("path-window", "统考专属：核验报名与考核窗口", "没有官方时间不能倒排具体月份，也不能保证赶上目标年份。", "报名、确认、考试与复试的官方时间及来源；未公布项目标待核验", ["admissions"], "现在开始"),
+/** 升学路径还没定时用的旧版任务：只做探索，不排时间表。 */
+function legacyTasks(direction: Direction, source: string) {
+  const courses = direction.courses.map((course, i) => ({ id: `course-${i + 1}`, title: `了解与练习：${course}`, why: `对应 ${direction.name} 的编辑性课程路径，具体先修要求需核验。`, source, deliverable: `${course} 的概念笔记与一个可复现练习`, dependencies: i === 0 ? [] as string[] : [`course-${i}`], priority: "基础准备", estimated_effort_range: null, stage: `学习阶段 ${i + 1}` }));
+  return [...courses,
+    { id: "research", title: "设计一个小型研究复现", why: `通过实际活动了解“${direction.work_tasks[0]}”是否愿意继续做。`, source, deliverable: "研究问题、公开或合成数据来源、方法、局限与可复现结果", dependencies: courses.length ? [courses[courses.length - 1].id] : [], priority: "实践探索", estimated_effort_range: null, stage: "项目阶段" },
+    { id: "admissions", title: "核验目标年份与路径的官方招生条件", why: "当前没有已核验招生条目，不能确认报考资格或统一考试科目。", source: "verifiedAdmissions:empty", deliverable: "官方 URL、招生年份、专业代码、资格要求、考试科目与核验日期", dependencies: [] as string[], priority: "并行核验", estimated_effort_range: null, stage: "现在开始" },
   ];
-  if (pathway === "推免") return [
-    task("path-eligibility", "推免专属：核验推荐与接收资格", "本校推荐资格与目标项目接收条件需要分别确认。", "本校推免资格、推荐规则及目标项目当年接收条件的官方来源对照表", ["admissions"], "优先核验"),
-    task("path-materials", "推免专属：整理申请材料与成果证据", "项目自述不等于已核验成果，材料格式和考核方式需以目标项目通知为准。", "目标项目要求的成绩、科研和考核材料清单；每项标已有证据或待补", ["path-eligibility"], "按官方要求准备"),
-    task("path-window", "推免专属：核验本校与目标项目时间", "推荐和接收两侧时间均需核实，不能将其他学校往年时间套用。", "本校推荐与目标项目接收、考核、确认时间的官方来源和待核验项", ["admissions"], "现在开始"),
-  ];
-  if (pathway === "申请制") return [
-    task("path-eligibility", "申请制专属：核验学历与语言条件", "不同项目规则可能不同，不据医学背景推断是否可申请。", "目标项目学历条件、语言要求、材料要求与官方来源；不预设语言分数", ["admissions"], "优先核验"),
-    task("path-materials", "申请制专属：整理项目要求的申请材料", "根据已核验材料要求整理研究问题与成果；推荐或导师联系只在项目要求或本人有明确目的时安排。", "个人陈述或研究计划等材料的项目要求对照、成果索引与待准备项；非必需材料不强加", ["path-eligibility"], "按官方要求准备"),
-    task("path-window", "申请制专属：核验申请与考核截止时间", "时间和时区未核实前不能制定可靠截止计划。", "项目官方申请、材料补交与考核时间（含时区）及来源；未公布则标未知", ["admissions"], "现在开始"),
-  ];
-  return [];
 }
 export function actionPlan(profile: Profile, directionId: string, experience: Experience | null, now = new Date(), assessment: AssessmentResult | null = null, planningInput?: unknown, alternativeIds: string[] = []) {
   const submittedPlanning = planningInput === undefined ? null : parseR2Planning(planningInput, now);
@@ -56,28 +45,23 @@ export function actionPlan(profile: Profile, directionId: string, experience: Ex
   if (alternativeIds.length > 2 || new Set(alternativeIds).size !== alternativeIds.length || alternativeIds.includes(directionId)) throw new Error("请选择最多两个不同于主目标的备选方向。");
   const alternatives = alternativeIds.map((id) => { const alternative = findDirection(id); if (!alternative) throw new Error("备选方向不在目录内。"); return alternative; });
   const source = `limen_direction_map:${direction.id}`;
-  const courses = direction.courses.map((course, i) => ({ id: `course-${i + 1}`, title: `了解与练习：${course}`, why: `对应 ${direction.name} 的编辑性课程路径，具体先修要求需核验。`, source, deliverable: `${course} 的概念笔记与一个可复现练习`, dependencies: i === 0 ? [] as string[] : [`course-${i}`], priority: "基础准备", estimated_effort_range: null, stage: `学习阶段 ${i + 1}` }));
-  const tasks = [...courses,
-    { id: "research", title: "设计一个小型研究复现", why: `通过实际活动了解“${direction.work_tasks[0]}”是否愿意继续做。`, source, deliverable: "研究问题、公开或合成数据来源、方法、局限与可复现结果", dependencies: courses.length ? [courses[courses.length - 1].id] : [], priority: "实践探索", estimated_effort_range: null, stage: "项目阶段" },
-    { id: "admissions", title: "核验目标年份与路径的官方招生条件", why: "当前没有已核验招生条目，不能确认报考资格或统一考试科目。", source: "verifiedAdmissions:empty", deliverable: "官方 URL、招生年份、专业代码、资格要求、考试科目与核验日期", dependencies: [] as string[], priority: "并行核验", estimated_effort_range: null, stage: "现在开始" },
-    ...pathwayTasks(profile.pathway),
-  ];
   const currentYear = now.getUTCFullYear();
   const hasParameters = profileSchema.safeParse(profile).success && profile.weekly_hours !== null && profile.weekly_hours > 0 && profile.transition_year !== null && profile.transition_year >= currentYear && profile.pathway !== "未决定";
   const official = assessment === null ? null : assessmentSchema.parse(assessment);
+  // 跨考指离开临床去别的学科；留在临床不算跨考，也就不需要补先修。
+  const crossMajor = direction.id !== "medicine";
+  const pathwayPlan = hasParameters && profile.transition_year !== null
+    ? buildPathwayPlan({ pathway: profile.pathway, direction, transitionYear: profile.transition_year, now, crossMajor })
+    : null;
+  const tasks = pathwayPlan ? pathwayPlan.tasks : legacyTasks(direction, source);
   return { version: submittedPlanning ? "limen-r2-rules-v3" : "limen-r2-rules-v2", direction, gaps: competencyGaps(profile, direction), tasks, experience: experience?.reflection ?? null,
     planning_input: submittedPlanning,
     alternative_directions: alternatives,
     interest: official ? { source: official.source, scores: official.scores, onet_version: official.onet_version, api_version: official.api_version, returned_at: official.returned_at } : null,
     experience_relevance: experience ? `本次为${experiencePresentation(experience).role}的${"mode" in experience && experience.mode === "interview" ? "模拟面试" : "项目练习"}，仅覆盖部分教学活动；不能据此判断整个方向的适配性或执业资格。` : "尚未完成职业体验。",
     planning_ready: hasParameters, formal_ready: false,
-    planning: hasParameters ? { target_year: profile.transition_year, weekly_hours: profile.weekly_hours, pathway: profile.pathway, official_deadlines_verified: false,
-      milestones: [
-        { stage: "现在开始", task_ids: ["admissions", "path-eligibility", "path-window"], exit_condition: "记录已核实来源与未知项；若资格或窗口不满足，先调整目标或路径" },
-        { stage: "基础准备", task_ids: courses.map((c) => c.id), exit_condition: "按依赖完成概念笔记与可复现练习，用实际耗时调整预算" },
-        { stage: "实践与复盘", task_ids: ["research"], exit_condition: "提交小型复现成果、方法局限与继续探索意愿" },
-        { stage: "申报准备", task_ids: ["path-materials"], exit_condition: "逐项对照官方材料与截止时间；未核验时不视为已具备申请资格" },
-      ], weekly_budget: ["将本人可用时间分成基础学习、一次可交付练习和复盘；比例由本人调整", "每周记录实际耗时，再决定是否推进到下一依赖阶段"], horizon: `目标年份为 ${profile.transition_year}；当前年份为 ${currentYear}。具体招生日期未核验，暂不倒排到月份。` } : null,
+    planning: pathwayPlan ? { target_year: profile.transition_year, weekly_hours: profile.weekly_hours, pathway: profile.pathway, official_deadlines_verified: false,
+      stages: pathwayPlan.stages, position: pathwayPlan.position, horizon: pathwayPlan.horizon, weekly_budget: pathwayPlan.weekly_budget } : null,
     risks: ["课程缺少经验证的工作量范围，无法判断是否能在目标年份前完成；不承诺进度", ...(!hasParameters ? ["缺少目标年份、正数每周时间或已选升学路径，未生成时间计划"] : []), ...(!experience ? ["尚未完成体验与明确反馈，仅能浏览规划结构"] : []), ...(profile.transition_year !== null && profile.transition_year < currentYear ? ["目标年份已经过去，请更新计划条件"] : [])],
   };
 }

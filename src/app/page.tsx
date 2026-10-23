@@ -1,2 +1,2 @@
-import { HomeExperience } from "@/components/home-experience";
-export default function Home() { return <HomeExperience />; }
+import { HomeAtlas } from "@/components/home-atlas";
+export default function Home() { return <HomeAtlas />; }

@@ -1,0 +1,520 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T14:49:00.760Z",
+  "sources": [
+    {
+      "id": "kdc-2024-employment-report-industry",
+      "url": "https://kdc.njmu.edu.cn/2025/1125/c10504a294471/page.htm",
+      "organization": "南京医科大学康达学院",
+      "title": "南京医科大学康达学院2024届毕业生就业质量数据年报",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "信息公开网正文为 HTML 年报（无 PDF 附件），数据来源标注全国高校毕业生就业管理系统与江苏招就调查。"
+    },
+    {
+      "id": "xzhmu-2024-quality-report-industry",
+      "url": "https://shpg.xzhmu.edu.cn/__local/9/47/35/7A1C13A34CE58F2858D461CEEAC_A330375C_470294.pdf",
+      "organization": "徐州医科大学",
+      "title": "徐州医科大学2023-2024学年本科教学质量报告（含2024届就业数据）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "就业章节数据来源为全国/江苏省就业管理系统，统计日期 2024-12-31；非独立就业质量报告，标题已注明。"
+    }
+  ],
+  "records": [
+    {
+      "id": "industry-kdc-2024-employment-report-industry-medicine-guide-610c35d2",
+      "source_id": "kdc-2024-employment-report-industry",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "康达学院2024届医学信息工程：全校年终落实率最高（94.44%）",
+      "summary": "2024 届医学信息工程专业年终毕业去向落实率 94.44%，为全校最高；同年医学技术学部 68.00% 为最低。",
+      "applicability": "仅适用于南京医科大学康达学院2024届毕业生口径；专业级数据的分母见 literal。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "南京医科大学康达学院",
+        "分专业去向",
+        "080711T 医学信息工程"
+      ],
+      "facts": [
+        {
+          "field": "employment_statistics",
+          "value": "各院系本科生中，年终毕业去向落实率较高的院系是 医学信息工程学部（ 94.44% ） ，年终毕业去向落实率较低的院系是 医学技术学部（ 68.00% ）",
+          "quote": "各院系本科生中，年终毕业去向落实率较高的院系是 医学信息工程学部（ 94.44% ） ，年终毕业去向落实率较低的院系是 医学技术学部（ 68.00% ）",
+          "start": 11963,
+          "end": 12039
+        }
+      ],
+      "missing_fields": [
+        "分专业升学率（报告只给全校口径）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "c43200d5099f965ab549bbd17d448240d9804f19ebd734492eb8f01a5c1811e5",
+      "collected_at": "2026-10-23T14:34:44.042Z",
+      "verified_at": "2026-10-23T14:48:59.770Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学康达学院",
+        "program": "080711T 医学信息工程",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "第二章 四、毕业去向落实率（二）年终毕业去向落实率"
+      }
+    },
+    {
+      "id": "industry-kdc-2024-employment-report-industry-medicine-guide-7e33a2f5",
+      "source_id": "kdc-2024-employment-report-industry",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "康达学院2024届医学影像技术：年终落实率 68.42%，全校最低学部",
+      "summary": "医学影像技术 2024 届年终毕业去向落实率 68.42%（医学技术学部整体 68.00%）。",
+      "applicability": "仅适用于南京医科大学康达学院2024届毕业生口径；专业级数据的分母见 literal。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "南京医科大学康达学院",
+        "分专业去向",
+        "101003 医学影像技术"
+      ],
+      "facts": [
+        {
+          "field": "employment_statistics",
+          "value": "医学技术学部 68.00 医学影像技术 68.42 医学检验技术 67.32",
+          "quote": "医学技术学部 68.00 医学影像技术 68.42 医学检验技术 67.32",
+          "start": 12331,
+          "end": 12369
+        }
+      ],
+      "missing_fields": [
+        "分专业升学率（报告只给全校口径）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "c43200d5099f965ab549bbd17d448240d9804f19ebd734492eb8f01a5c1811e5",
+      "collected_at": "2026-10-23T14:34:44.042Z",
+      "verified_at": "2026-10-23T14:48:59.904Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学康达学院",
+        "program": "101003 医学影像技术",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "第二章 四、毕业去向落实率（二）分院系（专业）表"
+      }
+    },
+    {
+      "id": "occupation-kdc-2024-employment-report-industry-medicine-guide-610c35d2",
+      "source_id": "kdc-2024-employment-report-industry",
+      "role_id": "medicine_guide",
+      "category": "occupation",
+      "title": "康达学院2024届医学信息工程：第一去向是 IT（20.00%）而非医疗（13.34%）",
+      "summary": "该专业就业量前五行业：信息传输/软件 20.00%、卫生和社会工作 13.34%、教育 13.34%、建筑业 13.33%、制造业 13.33%；IT 占比高于医疗。",
+      "applicability": "仅适用于南京医科大学康达学院2024届毕业生口径；专业级数据的分母见 literal。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "南京医科大学康达学院",
+        "分专业去向",
+        "080711T 医学信息工程"
+      ],
+      "facts": [
+        {
+          "field": "career_path",
+          "value": "医学信息工程学部 医学信息工程 信息传输、软件和信息技术服务业（ 20.00% ），卫生和社会工作（ 13.34% ），教育（ 13.34% ），建筑业（ 13.33% ），制造业（ 13.33% ）",
+          "quote": "医学信息工程学部 医学信息工程 信息传输、软件和信息技术服务业（ 20.00% ），卫生和社会工作（ 13.34% ），教育（ 13.34% ），建筑业（ 13.33% ），制造业（ 13.33% ）",
+          "start": 17454,
+          "end": 17554
+        }
+      ],
+      "missing_fields": [
+        "各行业人数（报告只给比例）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "c43200d5099f965ab549bbd17d448240d9804f19ebd734492eb8f01a5c1811e5",
+      "collected_at": "2026-10-23T14:34:44.042Z",
+      "verified_at": "2026-10-23T14:49:00.063Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学康达学院",
+        "program": "080711T 医学信息工程",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "第三章 二、就业行业分布（分专业 2024 届本科生就业量前五的行业）"
+      }
+    },
+    {
+      "id": "occupation-kdc-2024-employment-report-industry-medicine-guide-7e33a2f5",
+      "source_id": "kdc-2024-employment-report-industry",
+      "role_id": "medicine_guide",
+      "category": "occupation",
+      "title": "康达学院2024届医学影像技术：86.88% 进卫生和社会工作",
+      "summary": "该专业就业量前五行业：卫生和社会工作 86.88%、居民服务 5.00%、批发零售 3.75%、租赁商务 1.25%、住宿餐饮 0.62%。",
+      "applicability": "仅适用于南京医科大学康达学院2024届毕业生口径；专业级数据的分母见 literal。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "南京医科大学康达学院",
+        "分专业去向",
+        "101003 医学影像技术"
+      ],
+      "facts": [
+        {
+          "field": "career_path",
+          "value": "医学影像技术 卫生和社会工作（ 86.88% ），居民服务、修理和其他服务业（ 5.00% ），批发和零售业（ 3.75% ），租赁和商务服务业（ 1.25% ），住宿和餐饮业（ 0.62% ）",
+          "quote": "医学影像技术 卫生和社会工作（ 86.88% ），居民服务、修理和其他服务业（ 5.00% ），批发和零售业（ 3.75% ），租赁和商务服务业（ 1.25% ），住宿和餐饮业（ 0.62% ）",
+          "start": 17356,
+          "end": 17453
+        }
+      ],
+      "missing_fields": [
+        "各行业人数（报告只给比例）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "c43200d5099f965ab549bbd17d448240d9804f19ebd734492eb8f01a5c1811e5",
+      "collected_at": "2026-10-23T14:34:44.042Z",
+      "verified_at": "2026-10-23T14:49:00.134Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学康达学院",
+        "program": "101003 医学影像技术",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "第三章 二、就业行业分布（分专业 2024 届本科生就业量前五的行业）"
+      }
+    },
+    {
+      "id": "recruitment-kdc-2024-employment-report-industry-medicine-guide-610c35d2",
+      "source_id": "kdc-2024-employment-report-industry",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "康达学院2024届医学信息工程：86.67% 去民营企业，仅 6.66% 进医疗卫生单位",
+      "summary": "用人单位性质：其他企业（含民营）86.67%、国有企业 6.67%、医疗卫生单位 6.66%。",
+      "applicability": "仅适用于南京医科大学康达学院2024届毕业生口径；专业级数据的分母见 literal。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "南京医科大学康达学院",
+        "分专业去向",
+        "080711T 医学信息工程"
+      ],
+      "facts": [
+        {
+          "field": "employer",
+          "value": "医学信息工程学部 其他企业（含民营企业等）（ 86.67% ），国有企业（ 6.67% ），医疗卫生单位（ 6.66% ）",
+          "quote": "医学信息工程学部 其他企业（含民营企业等）（ 86.67% ），国有企业（ 6.67% ），医疗卫生单位（ 6.66% ）",
+          "start": 18411,
+          "end": 18472
+        }
+      ],
+      "missing_fields": [
+        "具体雇主名单（报告只给性质类别）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "c43200d5099f965ab549bbd17d448240d9804f19ebd734492eb8f01a5c1811e5",
+      "collected_at": "2026-10-23T14:34:44.042Z",
+      "verified_at": "2026-10-23T14:49:00.270Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学康达学院",
+        "program": "080711T 医学信息工程",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "第三章 三、就业单位分布（分院系 2024 届本科生用人单位性质分布）"
+      }
+    },
+    {
+      "id": "recruitment-kdc-2024-employment-report-industry-medicine-guide-7e33a2f5",
+      "source_id": "kdc-2024-employment-report-industry",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "康达学院2024届医学技术学部：66.80% 进医疗卫生单位",
+      "summary": "医学技术学部用人单位性质：医疗卫生单位 66.80%、其他企业 26.48%、个体工商户 4.34%、国企 0.79%、外商投资 0.40%。",
+      "applicability": "仅适用于南京医科大学康达学院2024届毕业生口径；专业级数据的分母见 literal。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "南京医科大学康达学院",
+        "分专业去向",
+        "101003 医学影像技术"
+      ],
+      "facts": [
+        {
+          "field": "employer",
+          "value": "医学技术学部 医疗卫生单位（ 66.80% ），其他企业（含民营企业等）（ 26.48% ），个体工商户（ 4.34% ），国有企业（ 0.79% ），外商投资企业（ 0.40% ）",
+          "quote": "医学技术学部 医疗卫生单位（ 66.80% ），其他企业（含民营企业等）（ 26.48% ），个体工商户（ 4.34% ），国有企业（ 0.79% ），外商投资企业（ 0.40% ）",
+          "start": 18319,
+          "end": 18410
+        }
+      ],
+      "missing_fields": [
+        "分专业（医学影像技术/医学检验技术）单位性质拆分"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "c43200d5099f965ab549bbd17d448240d9804f19ebd734492eb8f01a5c1811e5",
+      "collected_at": "2026-10-23T14:34:44.042Z",
+      "verified_at": "2026-10-23T14:49:00.463Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学康达学院",
+        "program": "101003 医学影像技术",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "第三章 三、就业单位分布（分院系 2024 届本科生用人单位性质分布）"
+      }
+    },
+    {
+      "id": "industry-xzhmu-2024-quality-report-industry-medicine-guide-040bb01b",
+      "source_id": "xzhmu-2024-quality-report-industry",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "徐州医科大学2024届生物医学工程：落实率 81.25%、升学 25.00%",
+      "summary": "生物医学工程 2024 届初次落实率 81.25%（39/48）、单位就业 56.25%、升学 25.00%。",
+      "applicability": "仅适用于徐州医科大学2024届毕业生口径；专业级数据的分母见 literal。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "徐州医科大学",
+        "分专业去向",
+        "083100 生物医学工程"
+      ],
+      "facts": [
+        {
+          "field": "employment_statistics",
+          "value": "生物医学工程 81.25%(39/48) 56.25%(27/48) 25.00%(12/48)",
+          "quote": "生物医学工程 81.25%(39/48) 56.25%(27/48) 25.00%(12/48)",
+          "start": 9316,
+          "end": 9364
+        }
+      ],
+      "missing_fields": [
+        "分专业就业行业分布（该校报告只给校级行业分布，未按专业拆分）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "851d149034187cc17a41f059563188166c72794c81818ca9c57e594c2826f201",
+      "collected_at": "2026-10-23T12:55:42.253Z",
+      "verified_at": "2026-10-23T14:49:00.519Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "徐州医科大学",
+        "program": "083100 生物医学工程",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "表1-2 2024届本科毕业生初次毕业去向分布"
+      }
+    },
+    {
+      "id": "industry-xzhmu-2024-quality-report-industry-medicine-guide-7e33a2f5",
+      "source_id": "xzhmu-2024-quality-report-industry",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "徐州医科大学2024届医学影像技术（合计）：落实率 81.82%、升学 7.27%",
+      "summary": "医学影像技术（合计）2024 届初次落实率 81.82%（90/110）、单位就业 74.55%、升学 7.27%；原文表头「医学影像技术（合计）」在 PDF 中换行，literal 取该行数值段。",
+      "applicability": "仅适用于徐州医科大学2024届毕业生口径；专业级数据的分母见 literal。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "徐州医科大学",
+        "分专业去向",
+        "101003 医学影像技术"
+      ],
+      "facts": [
+        {
+          "field": "employment_statistics",
+          "value": "医学影像学院 81.82%(90/110) 74.55%(82/110) 7.27%(8/110)",
+          "quote": "医学影像学院 81.82%(90/110) 74.55%(82/110) 7.27%(8/110)",
+          "start": 9426,
+          "end": 9475
+        }
+      ],
+      "missing_fields": [
+        "分专业就业行业分布（该校报告只给校级行业分布，未按专业拆分）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "851d149034187cc17a41f059563188166c72794c81818ca9c57e594c2826f201",
+      "collected_at": "2026-10-23T12:55:42.253Z",
+      "verified_at": "2026-10-23T14:49:00.572Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "徐州医科大学",
+        "program": "101003 医学影像技术",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "表1-2 2024届本科毕业生初次毕业去向分布"
+      }
+    },
+    {
+      "id": "industry-xzhmu-2024-quality-report-industry-medicine-guide-610c35d2",
+      "source_id": "xzhmu-2024-quality-report-industry",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "徐州医科大学2024届医学信息工程：落实率 83.33%、升学 22.22%",
+      "summary": "医学信息工程 2024 届初次落实率 83.33%（30/36）、单位就业 61.11%、升学 22.22%。",
+      "applicability": "仅适用于徐州医科大学2024届毕业生口径；专业级数据的分母见 literal。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "徐州医科大学",
+        "分专业去向",
+        "080711T 医学信息工程"
+      ],
+      "facts": [
+        {
+          "field": "employment_statistics",
+          "value": "医学信息工程 83.33%(30/36) 61.11%(22/36) 22.22%(8/36)",
+          "quote": "医学信息工程 83.33%(30/36) 61.11%(22/36) 22.22%(8/36)",
+          "start": 10664,
+          "end": 10711
+        }
+      ],
+      "missing_fields": [
+        "分专业就业行业分布（该校报告只给校级行业分布，未按专业拆分）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "851d149034187cc17a41f059563188166c72794c81818ca9c57e594c2826f201",
+      "collected_at": "2026-10-23T12:55:42.253Z",
+      "verified_at": "2026-10-23T14:49:00.662Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "徐州医科大学",
+        "program": "080711T 医学信息工程",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "表1-2 2024届本科毕业生初次毕业去向分布"
+      }
+    },
+    {
+      "id": "industry-xzhmu-2024-quality-report-industry-medicine-guide-33d0143c",
+      "source_id": "xzhmu-2024-quality-report-industry",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "徐州医科大学2024届智能医学工程：落实率 90.00%、升学 23.33%",
+      "summary": "智能医学工程 2024 届初次落实率 90.00%（27/30）、单位就业 66.67%、升学 23.33%。",
+      "applicability": "仅适用于徐州医科大学2024届毕业生口径；专业级数据的分母见 literal。",
+      "relation": "direct",
+      "tags": [
+        "2024",
+        "徐州医科大学",
+        "分专业去向",
+        "080711T 智能医学工程"
+      ],
+      "facts": [
+        {
+          "field": "employment_statistics",
+          "value": "智能医学工程 90.00%(27/30) 66.67%(20/30) 23.33%(7/30)",
+          "quote": "智能医学工程 90.00%(27/30) 66.67%(20/30) 23.33%(7/30)",
+          "start": 10760,
+          "end": 10807
+        }
+      ],
+      "missing_fields": [
+        "分专业就业行业分布（该校报告只给校级行业分布，未按专业拆分）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "851d149034187cc17a41f059563188166c72794c81818ca9c57e594c2826f201",
+      "collected_at": "2026-10-23T12:55:42.253Z",
+      "verified_at": "2026-10-23T14:49:00.760Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "徐州医科大学",
+        "program": "080711T 智能医学工程",
+        "statistic_scope": "2024届毕业生",
+        "evidence_locator": "表1-2 2024届本科毕业生初次毕业去向分布"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "kdc-2024-employment-report-industry",
+      "url": "https://kdc.njmu.edu.cn/2025/1125/c10504a294471/page.htm",
+      "at": "2026-10-23T14:34:44.042Z",
+      "status": "collected",
+      "missing_fields": [
+        "分专业升学率（报告只给全校口径）"
+      ]
+    },
+    {
+      "source_id": "kdc-2024-employment-report-industry",
+      "url": "https://kdc.njmu.edu.cn/2025/1125/c10504a294471/page.htm",
+      "at": "2026-10-23T14:34:44.042Z",
+      "status": "collected",
+      "missing_fields": [
+        "分专业升学率（报告只给全校口径）"
+      ]
+    },
+    {
+      "source_id": "kdc-2024-employment-report-industry",
+      "url": "https://kdc.njmu.edu.cn/2025/1125/c10504a294471/page.htm",
+      "at": "2026-10-23T14:34:44.042Z",
+      "status": "collected",
+      "missing_fields": [
+        "各行业人数（报告只给比例）"
+      ]
+    },
+    {
+      "source_id": "kdc-2024-employment-report-industry",
+      "url": "https://kdc.njmu.edu.cn/2025/1125/c10504a294471/page.htm",
+      "at": "2026-10-23T14:34:44.042Z",
+      "status": "collected",
+      "missing_fields": [
+        "各行业人数（报告只给比例）"
+      ]
+    },
+    {
+      "source_id": "kdc-2024-employment-report-industry",
+      "url": "https://kdc.njmu.edu.cn/2025/1125/c10504a294471/page.htm",
+      "at": "2026-10-23T14:34:44.042Z",
+      "status": "collected",
+      "missing_fields": [
+        "具体雇主名单（报告只给性质类别）"
+      ]
+    },
+    {
+      "source_id": "kdc-2024-employment-report-industry",
+      "url": "https://kdc.njmu.edu.cn/2025/1125/c10504a294471/page.htm",
+      "at": "2026-10-23T14:34:44.042Z",
+      "status": "collected",
+      "missing_fields": [
+        "分专业（医学影像技术/医学检验技术）单位性质拆分"
+      ]
+    },
+    {
+      "source_id": "xzhmu-2024-quality-report-industry",
+      "url": "https://shpg.xzhmu.edu.cn/__local/9/47/35/7A1C13A34CE58F2858D461CEEAC_A330375C_470294.pdf",
+      "at": "2026-10-23T12:55:42.253Z",
+      "status": "collected",
+      "missing_fields": [
+        "分专业就业行业分布（该校报告只给校级行业分布，未按专业拆分）"
+      ]
+    },
+    {
+      "source_id": "xzhmu-2024-quality-report-industry",
+      "url": "https://shpg.xzhmu.edu.cn/__local/9/47/35/7A1C13A34CE58F2858D461CEEAC_A330375C_470294.pdf",
+      "at": "2026-10-23T12:55:42.253Z",
+      "status": "collected",
+      "missing_fields": [
+        "分专业就业行业分布（该校报告只给校级行业分布，未按专业拆分）"
+      ]
+    },
+    {
+      "source_id": "xzhmu-2024-quality-report-industry",
+      "url": "https://shpg.xzhmu.edu.cn/__local/9/47/35/7A1C13A34CE58F2858D461CEEAC_A330375C_470294.pdf",
+      "at": "2026-10-23T12:55:42.253Z",
+      "status": "collected",
+      "missing_fields": [
+        "分专业就业行业分布（该校报告只给校级行业分布，未按专业拆分）"
+      ]
+    },
+    {
+      "source_id": "xzhmu-2024-quality-report-industry",
+      "url": "https://shpg.xzhmu.edu.cn/__local/9/47/35/7A1C13A34CE58F2858D461CEEAC_A330375C_470294.pdf",
+      "at": "2026-10-23T12:55:42.253Z",
+      "status": "collected",
+      "missing_fields": [
+        "分专业就业行业分布（该校报告只给校级行业分布，未按专业拆分）"
+      ]
+    }
+  ]
+}

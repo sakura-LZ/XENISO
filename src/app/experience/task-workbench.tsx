@@ -2,18 +2,92 @@
 import type { Template } from "@/lib/experience/templates";
 import { operationResult, type ChoiceState, type OperationResult } from "@/lib/experience/operations";
 
-export function OperationPreview({ result }: { result: OperationResult }) {
-  const colors = ["#52645B", "#8A642E", "#477D91"];
-  return <div className="task-operation-result mt-5 border-y border-slate-200 py-5" aria-label="本步操作结果" aria-live="polite" data-motion="M-E06">
-    <h3 className="font-semibold">操作结果 <span className="text-xs font-normal text-slate-500">simulation · 固定教学数据</span></h3>
-    {result.series && <figure className="mt-4"><svg viewBox="0 0 600 160" className="w-full" role="img" aria-label="参考、含噪与处理后教学信号"><path d="M0 80H600" stroke="#e2e8f0" />{result.series.map((line, i) => <polyline key={line.label} points={line.values.map((value, index) => `${index * 600 / (line.values.length - 1)},${80 - value * 50}`).join(" ")} stroke={colors[i]} fill="none" strokeWidth="2" />)}</svg><figcaption className="flex flex-wrap gap-4 text-xs">{result.series.map((line, i) => <span key={line.label} style={{ color: colors[i] }}>{line.label}</span>)}</figcaption></figure>}
-    {result.pixels && <figure className="mt-4"><svg viewBox="0 0 16 16" className="h-48 w-48 max-w-full" role="img" aria-label="合成几何影像"><title>固定噪声与降噪后的教学像素</title>{result.pixels.map((v, i) => <rect key={i} x={i % 16} y={Math.floor(i / 16)} width="1" height="1" fill={`rgb(${v},${v},${v})`} />)}</svg><figcaption className="mt-2 text-xs muted">合成几何图形，不是患者影像</figcaption></figure>}
-    <dl className="mt-4 grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-3">{Object.entries(result.metrics).map(([label, value]) => <div key={label}><dt className="text-xs leading-6 text-slate-500">{label}</dt><dd className="text-base font-semibold tabular-nums text-slate-900">{value ?? "无法计算"}</dd></div>)}</dl>
-    <ul className="mt-4 space-y-2 text-xs leading-6 text-slate-600">{result.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
-  </div>;
+const seriesColors = ["var(--green)", "var(--ochre)", "var(--blue)"];
+const seriesLabels = ["参考曲线", "含噪曲线", "处理后曲线"];
+
+function SeriesChart({ series }: { series: { label: string; values: number[] }[] }) {
+  return (
+    <figure className="xd-figure">
+      <svg viewBox="0 0 600 180" role="img" aria-label={`参考、含噪与处理后教学信号的对比，共 ${series[0].values.length} 个采样点`}>
+        <title>固定教学信号</title>
+        <path d="M0 96H600" style={{ stroke: "var(--line)" }} strokeWidth="1" />
+        {series.map((line, i) => (
+          <polyline
+            key={line.label}
+            points={line.values.map((value, index) => `${index * 600 / (line.values.length - 1)},${96 - value * 62}`).join(" ")}
+            fill="none"
+            style={{ stroke: seriesColors[i] }}
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
+        ))}
+      </svg>
+      <figcaption>
+        {series.map((line, i) => (
+          <span key={line.label} style={{ marginRight: 14, color: seriesColors[i] }}>
+            {seriesLabels[i] ?? line.label}
+          </span>
+        ))}
+      </figcaption>
+    </figure>
+  );
 }
+
+export function OperationPreview({ result }: { result: OperationResult }) {
+  return (
+    <div className="xd-result" aria-live="polite" data-motion="M-E06">
+      <div className="xd-result-head">
+        <h4>这一步的结果</h4>
+        <span className="simulation-tag">simulation · 固定教学数据</span>
+      </div>
+      {result.series && <SeriesChart series={result.series} />}
+      {result.pixels && (
+        <figure className="xd-figure xd-pixels">
+          <svg viewBox="0 0 16 16" role="img" aria-label="16 乘 16 的合成教学像素，不是患者影像">
+            <title>合成几何图形</title>
+            {result.pixels.map((value, i) => <rect key={i} x={i % 16} y={Math.floor(i / 16)} width="1" height="1" fill={`rgb(${value},${value},${value})`} />)}
+          </svg>
+          <figcaption>16 × 16 几何方块，只用来练习显示与降噪的判断，不是患者影像。</figcaption>
+        </figure>
+      )}
+      <dl className="xd-metrics">
+        {Object.entries(result.metrics).map(([label, value]) => (
+          <div key={label}>
+            <dt>{label}</dt>
+            <dd>{value ?? "无法计算"}</dd>
+          </div>
+        ))}
+      </dl>
+      <ul className="xd-details">
+        {result.details.map(detail => <li key={detail}>{detail}</li>)}
+      </ul>
+    </div>
+  );
+}
+
 export function TaskWorkbench({ template, choices, step, onChange }: { template: Template; choices: ChoiceState; step: number; onChange(value: string): void }) {
   const operation = template.stages[step];
   const result = choices[step] !== null ? operationResult(template.id, choices, step) : null;
-  return <section className="task-operation-controls mt-6" aria-label="任务操作台"><fieldset><legend className="font-medium leading-7">{operation.question}</legend><div className="mt-3 grid gap-2">{operation.options.map(option => <label key={option.value} className={`task-operation-option ${choices[step] === option.value ? "is-selected" : ""}`}><input type="radio" name={`operation-${step}`} value={option.value} checked={choices[step] === option.value} onChange={() => onChange(option.value)} />{option.label}</label>)}</div></fieldset>{result ? <OperationPreview result={result} /> : <p className="mt-5 text-sm muted" role="status">选择一个方案，查看数据或交接结构的变化。</p>}</section>;
+  return (
+    <section className="atlas-sheet xd-tight" aria-label="任务操作台">
+      <div className="xd-sheet-head">
+        <h3>先做决定</h3>
+        <p className="xd-sheet-note">单选项，可以随时改；改过之后，后面几步要重新确认</p>
+      </div>
+      <fieldset className="xd-options-set">
+        <legend className="sr-only">{operation.question}</legend>
+        <div className="xd-options">
+          {operation.options.map(option => (
+            <label key={option.value} className="xd-option">
+              <input type="radio" name={`operation-${step}`} value={option.value} checked={choices[step] === option.value} onChange={() => onChange(option.value)} />
+              <span>{option.label}</span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+      {result
+        ? <OperationPreview result={result} />
+        : <p className="xd-hint" role="status">选一项之后，这里会出现这一步的数据变化。</p>}
+    </section>
+  );
 }

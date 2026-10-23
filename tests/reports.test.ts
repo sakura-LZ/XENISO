@@ -85,7 +85,8 @@ test("simulation P4: explicit report planning overrides stale profile planning w
   assert.equal(plan.planning?.target_year, 2030);
   assert.equal(plan.planning?.weekly_hours, 6);
   assert.equal(plan.planning?.pathway, "申请制");
-  assert.ok(plan.tasks.some((task) => task.title.includes("申请制专属")));
+  assert.ok(plan.tasks.some((task) => task.title.includes("语言条件")));
+  assert.equal(plan.planning?.pathway, "申请制");
   assert.equal(profile.transition_year, 2028);
   assert.equal(profile.weekly_hours, 4);
   assert.equal(profile.pathway, "统考");
@@ -104,4 +105,63 @@ test("simulation P4: selected alternatives survive the report and invalid choice
   const plan = actionPlan(simulationProfile, "ml_cv", null, new Date("2026-10-20"), null, undefined, ["software", "clinical_data"]);
   assert.deepEqual(plan.alternative_directions?.map((direction) => direction.id), ["software", "clinical_data"]);
   for (const invalid of [["ml_cv"], ["fake"], ["software", "software"], ["software", "clinical_data", "signals"]]) assert.throws(() => actionPlan(simulationProfile, "ml_cv", null, new Date("2026-10-20"), null, undefined, invalid));
+});
+
+test("simulation P4: 统考 stages follow the standard preparation rhythm with dated windows and exit criteria", () => {
+  const plan = actionPlan({ ...simulationProfile, pathway: "统考" }, "ml_cv", null, new Date("2026-10-20"));
+  const stages = plan.planning!.stages;
+  assert.deepEqual(stages.map((stage) => stage.id), ["locate", "prerequisite", "base", "intensify", "real", "sprint", "post"]);
+  for (const stage of stages) {
+    assert.ok(stage.window.length > 0, stage.id);
+    assert.ok(stage.goal.length > 10, stage.id);
+    assert.ok(stage.exit.length > 10, stage.id);
+    assert.ok(stage.task_ids.length > 0, stage.id);
+    assert.ok(stage.task_ids.every((id) => plan.tasks.some((task) => task.id === id)), stage.id);
+    assert.ok(["官方", "惯例"].includes(stage.basis), stage.id);
+  }
+  // 报名与确认是本页最容易写死日期的地方：只允许说"各省自定"，不允许出现具体日期。
+  const real = stages.find((stage) => stage.id === "real")!;
+  assert.match(real.verify, /网上确认/);
+  assert.match(real.verify, /没有全国统一日期/);
+  for (const stage of stages) assert.doesNotMatch(`${stage.goal}${stage.exit}${stage.verify}`, /\d{4}-\d{2}-\d{2}/);
+});
+
+test("simulation P4: cross-major adds a prerequisite stage, staying in clinical medicine does not", () => {
+  const cross = actionPlan({ ...simulationProfile, pathway: "统考" }, "ml_cv", null, new Date("2026-10-20"));
+  const same = actionPlan({ ...simulationProfile, pathway: "统考" }, "medicine", null, new Date("2026-10-20"));
+  assert.ok(cross.planning!.stages.some((stage) => stage.id === "prerequisite"));
+  assert.ok(!same.planning!.stages.some((stage) => stage.id === "prerequisite"));
+  const prerequisites = cross.planning!.stages.find((stage) => stage.id === "prerequisite")!;
+  assert.equal(prerequisites.task_ids.length, directions.find((d) => d.id === "ml_cv")!.courses.length);
+  assert.ok(cross.tasks.some((task) => task.title.startsWith("补先修")));
+  assert.ok(!same.tasks.some((task) => task.title.startsWith("补先修")));
+});
+
+test("simulation P4: current position is derived from the target year, never invented as a progress percentage", () => {
+  // 默认画像的目标年份是 2028，所以 2027-08 应该落在「强化轮」。
+  const inside = actionPlan({ ...simulationProfile, pathway: "统考" }, "ml_cv", null, new Date("2027-08-15"));
+  assert.equal(inside.planning!.position.months, 4);
+  assert.equal(inside.planning!.position.current_stage, "强化轮");
+  assert.match(inside.planning!.position.note, /现在应该在/);
+  // 目标年份过去后 planning 会整个关掉，所以"窗口已过"只能用同一年内更晚的月份来测。
+  const late = actionPlan({ ...simulationProfile, pathway: "统考" }, "ml_cv", null, new Date("2028-06-15"));
+  assert.match(late.planning!.position.note, /已经过去/);
+  const early = actionPlan({ ...simulationProfile, pathway: "统考", transition_year: 2030 }, "ml_cv", null, new Date("2026-10-20"));
+  assert.match(early.planning!.position.note, /更早/);
+  for (const plan of [inside, late, early]) assert.doesNotMatch(plan.planning!.position.note, /%/);
+});
+
+test("simulation P4: 推免 and 申请制 get their own stage skeletons, not the 统考 one", () => {
+  const exam = actionPlan({ ...simulationProfile, pathway: "统考" }, "ml_cv", null, new Date("2026-10-20"));
+  const recommendation = actionPlan({ ...simulationProfile, pathway: "推免" }, "ml_cv", null, new Date("2026-10-20"));
+  const application = actionPlan({ ...simulationProfile, pathway: "申请制" }, "ml_cv", null, new Date("2026-10-20"));
+  assert.deepEqual(recommendation.planning!.stages.map((stage) => stage.id), ["qualify", "materials", "camp", "pre-recommend", "system", "result"]);
+  assert.deepEqual(application.planning!.stages.map((stage) => stage.id), ["qualify", "language", "materials", "apply", "interview"]);
+  assert.notDeepEqual(exam.planning!.stages, recommendation.planning!.stages);
+  assert.notDeepEqual(recommendation.planning!.stages, application.planning!.stages);
+  for (const plan of [exam, recommendation, application]) {
+    assert.ok(plan.planning!.stages.every((stage) => stage.task_ids.every((id) => plan.tasks.some((task) => task.id === id))));
+    assert.equal(plan.planning!.official_deadlines_verified, false);
+  }
+  assert.match(recommendation.planning!.stages.find((stage) => stage.id === "system")!.verify, /每年节点/);
 });

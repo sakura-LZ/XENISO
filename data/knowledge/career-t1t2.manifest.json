@@ -1,0 +1,294 @@
+[
+  {
+    "source": {
+      "id": "nju-2018-employment-by-college",
+      "url": "https://xxgk.nju.edu.cn/af/a9/c16400a438185/page.htm",
+      "organization": "南京大学信息公开网",
+      "title": "2018毕业生规模、结构、就业率、流向（南京大学2018届毕业生就业质量报告）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "信息公开网「就业情况」栏目页面未标注发布日期；报告统计截止 2018-11-30，对应 2018 届。抓取时间 2026-10-23。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-career-t1t2/nju-2018-liuxiang.raw",
+      "sha256": "f8b226755aa4baaf4ec75ba188af81fed790bcb51f929cfca0bc34d1aa03b667",
+      "captured_at": "2026-10-23T14:44:32.927Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-nju-2018-employment-by-college-guide-devices-5c616618",
+      "role_id": "guide_devices",
+      "category": "industry",
+      "title": "南大 2018 分院系就业率表：生命科学学院 269 人（合计 99.26），现代工程与应用科学学院 265 人（合计 97.36）",
+      "summary": "南京大学 2018 届毕业生分院系就业率一览表原文摘录（含表头）：表头为「院 系 人数 就业率 暂不就业率 待就业率 签约率 升学率 出国率 合计」。其中生命科学学院 269 人，数值依次 51.67 / 36.07 / 11.52 / 99.26 / 0.00 / 0.74。可自洽验证：51.67+36.07+11.52=99.26，即前三项（就业率、暂不就业率、待就业率）之和等于合计。现代工程与应用科学学院 265 人，数值依次 61.51 / 25.28 / 10.57 / 97.36 / 0.00 / 2.64（61.51+25.28+10.57=97.36）。",
+      "applicability": "适用于了解南京大学与医工相关的两个院系的就业率结构：生命科学学院（合计 99.26%）与现代工程与应用科学学院（合计 97.36%，南大生物医学工程依托该院）。粒度是**院系级，不含专业细分**，不能据此推断 083100 单专业的就业率。数据为 2018 届，时效性有限，不宜直接用于 2027 报考决策的定量结论。",
+      "relation": "direct",
+      "tags": [
+        "南京大学",
+        "2018届",
+        "就业质量报告",
+        "分院系就业率",
+        "生命科学学院",
+        "现代工程与应用科学学院",
+        "院系级"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京大学",
+        "college": "生命科学学院 / 现代工程与应用科学学院",
+        "program": "生命科学学院全部专业（院系级，未细分到专业）",
+        "region": "江苏",
+        "statistic_scope": "2018 届毕业生，分院系就业率一览表（数据截止 2018-11-30）",
+        "evidence_locator": "表 1-8「南京大学 2018 届毕业生分院系就业率一览表（%）」表头 + 生命科学学院行 + 现代工程与应用科学学院行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employment_statistics",
+        "pattern": "表 1-8 南京大学 2018 届毕业生分院系就业率一览表（ % ） 院 系 人数 就业率 暂不 就业率 待就业率 签约率 升学率 出国率 合计 软件学院 323 58\\.20 27\\.56 14\\.24 100\\.00 0\\.00 0\\.00 工程管理学院 220 73\\.18 15\\.91 10\\.91 100\\.00 0\\.00 0\\.00 大气科学学院 139 48\\.20 42\\.45 9\\.35 100\\.00 0\\.00 0\\.00 匡亚明学院 83 21\\.69 38\\.55 39\\.76 100\\.00 0\\.00 0\\.00 教育研究院 53 100\\.00 0\\.00 0\\.00 100\\.00 0\\.00 0\\.00 模式动物研究所 37 48\\.65 51\\.35 0\\.00 100\\.00 0\\.00 0\\.00 国际关系研究院 19 100\\.00 0\\.00 0\\.00 100\\.00 0\\.00 0\\.00 体育研究所 3 100\\.00 0\\.00 0\\.00 100\\.00 0\\.00 0\\.00 文学院 384 75\\.26 17\\.71 6\\.77 99\\.74 0\\.00 0\\.26 计算机科学与技术系 374 70\\.05 20\\.05 9\\.63 99\\.73 0\\.00 0\\.27 环境学院 265 62\\.26 27\\.93 9\\.43 99\\.62 0\\.00 0\\.38 生命科学学院 269 51\\.67 36\\.07 11\\.52 99\\.26 0\\.00 0\\.74"
+      }
+    ],
+    "expected_fields": [
+      "employment_statistics",
+      "career_path",
+      "employer"
+    ]
+  },
+  {
+    "source": {
+      "id": "thu-2022-employment-report",
+      "url": "https://career.tsinghua.edu.cn/__local/E/20/76/2B9F9D2BDE5C9FB3F1436218F4D_FCD98D0B_483A2F.pdf",
+      "organization": "清华大学学生职业发展指导中心",
+      "title": "清华大学2022年毕业生就业质量报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "发布公告页（career.tsinghua.edu.cn/info/1031/4775.htm）标注更新时间 2022.12.31；报告数据统计截至 2022-10-31。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-career-t1t2/thu-jiuye-2022.pdf",
+      "sha256": "4e2da401f3788f8a525f5b7a9073a698c189aa539a1b7655d9f6e18728cd2abe",
+      "captured_at": "2026-10-23T14:38:20.195Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-career-t1t2/thu-jiuye-2022.txt",
+      "extracted_sha256": "dbde5dd8281a04fdcef9c3abc770abad31d12e31a65267b1a55bc56fe4f3eb46"
+    },
+    "record": {
+      "id": "industry-thu-2022-employment-report-guide-devices-8fdf11f7",
+      "role_id": "guide_devices",
+      "category": "industry",
+      "title": "清华 2022 届毕业生规模：8003 人（本科 3197 / 硕士 2657 / 博士 2149），全校级口径",
+      "summary": "清华大学 2022 年毕业生就业质量报告原文：2022 届毕业生共 8003 人，其中本科生 3197 人（39.9%）、硕士生 2657 人（33.2%）、博士生 2149 人（26.9%）；男生 5135 人、女生 2868 人，男女比例 1.8:1。统计对象为档案在校的 8003 名毕业生。",
+      "applicability": "仅作清华全校毕业生规模的背景口径使用。**该报告不含生物医学工程或生命学院的分专业、分院系就业数据**，不能用于回答「清华 BME 去向」。",
+      "relation": "context",
+      "tags": [
+        "清华大学",
+        "2022届",
+        "就业质量报告",
+        "毕业生规模",
+        "全校级"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "program": "全校毕业生（未细分院系与专业）",
+        "region": "北京",
+        "statistic_scope": "2022 届档案在校毕业生 8003 人（数据截止 2022-10-31）",
+        "evidence_locator": "报告「2022届毕业生就业概况 · 一、毕业生总规模」正文"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employment_statistics",
+        "pattern": "清华大学2022届毕业生共8003人 ①，与往年相比有所增加。其中，本科生3197人（39\\.9%）、硕士 生2657人（33\\.2%）、博士生2149人（26\\.9%）；男生5135人（64\\.2%）、女生2868人 （35\\.8%），男女比例为1\\.8:1"
+      }
+    ],
+    "expected_fields": [
+      "employment_statistics",
+      "career_path",
+      "employer"
+    ]
+  },
+  {
+    "source": {
+      "id": "thu-2022-employment-report",
+      "url": "https://career.tsinghua.edu.cn/__local/E/20/76/2B9F9D2BDE5C9FB3F1436218F4D_FCD98D0B_483A2F.pdf",
+      "organization": "清华大学学生职业发展指导中心",
+      "title": "清华大学2022年毕业生就业质量报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "发布公告页（career.tsinghua.edu.cn/info/1031/4775.htm）标注更新时间 2022.12.31；报告数据统计截至 2022-10-31。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-career-t1t2/thu-jiuye-2022.pdf",
+      "sha256": "4e2da401f3788f8a525f5b7a9073a698c189aa539a1b7655d9f6e18728cd2abe",
+      "captured_at": "2026-10-23T14:38:20.195Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-career-t1t2/thu-jiuye-2022.txt",
+      "extracted_sha256": "dbde5dd8281a04fdcef9c3abc770abad31d12e31a65267b1a55bc56fe4f3eb46"
+    },
+    "record": {
+      "id": "industry-thu-2022-employment-report-medical-ai-pm-8fdf11f7",
+      "role_id": "medical_ai_pm",
+      "category": "industry",
+      "title": "清华 2022 届毕业去向落实率 98.0%，国内深造比例 28.3%（全校级）",
+      "summary": "清华大学 2022 年毕业生就业质量报告原文：截至 2022 年 10 月 31 日，2022 届毕业生毕业去向落实率为 98.0%，其中国内深造比例为 28.3%。报告同时给出「毕业去向落实率」定义：深造和就业毕业生数量占毕业生总数的比例，深造含国内深造与出国（境）深造，就业含签三方协议就业与灵活就业。",
+      "applicability": "适用于理解清华整体就业质量与「毕业去向落实率」的口径定义（该定义在各校报告间不完全可比）。**不是生物医学工程专业的数据**，不能用于专业级判断。",
+      "relation": "context",
+      "tags": [
+        "清华大学",
+        "2022届",
+        "毕业去向落实率",
+        "98.0%",
+        "国内深造",
+        "统计口径",
+        "全校级"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "program": "全校毕业生（未细分院系与专业）",
+        "region": "北京",
+        "statistic_scope": "2022 届毕业生毕业去向落实率（数据截止 2022-10-31）",
+        "evidence_locator": "报告「毕业去向落实率与毕业去向」段及其脚注定义"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employment_statistics",
+        "pattern": "截至2022年10月31日，清华大学2022届毕业生毕业去向落实率为98\\.0%。其中，国内深造比例为 28\\.3%"
+      }
+    ],
+    "expected_fields": [
+      "employment_statistics",
+      "career_path",
+      "employer"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2023-employment-report",
+      "url": "https://gk.sjtu.edu.cn/Assets/userfiles/sys_eb538c1c-65ff-4e82-8e6a-a1ef01127fed/files/20241125/20241125135303680.pdf",
+      "organization": "上海交通大学信息公开网",
+      "title": "上海交通大学2023年就业质量报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "信息公开网「高校毕业生就业质量年度报告」栏目该条目发布时间 2024-11-05；报告数据截至 2023-11-30。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-career-t1t2/sjtu-jiuye-2023.pdf",
+      "sha256": "f99cd478576a0769a836dc36151965eb0f920abc5da9d588c750d66661ee6f5b",
+      "captured_at": "2026-10-23T14:39:44.598Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-career-t1t2/sjtu-jiuye-2023.txt",
+      "extracted_sha256": "4cd1b1848d87ff4ddfe7a542be7cc1882a851a824246f2e3e5728504fa59293e"
+    },
+    "record": {
+      "id": "industry-sjtu-2023-employment-report-guide-devices-53623479",
+      "role_id": "guide_devices",
+      "category": "industry",
+      "title": "上交 2023 届毕业生 12003 人（含医学院），全日制 10347 人、非全日制 1656 人",
+      "summary": "上海交通大学 2023 年就业质量报告原文：截至 2023 年 11 月 30 日，2023 届毕业生（含医学院）共 12003 人，其中全日制毕业生 10347 人、非全日制毕业生 1656 人。",
+      "applicability": "作上交全校规模口径使用，并说明该校报告把「医学院」单列统计（含医学院合计 12003 人）。**不含生物医学工程学院的分专业数据**。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "2023届",
+        "就业质量报告",
+        "毕业生规模",
+        "含医学院",
+        "全校级"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "全校毕业生（含医学院，未细分专业）",
+        "region": "上海",
+        "statistic_scope": "2023 届毕业生（含医学院）12003 人，数据截至 2023-11-30",
+        "evidence_locator": "报告「2023 届毕业生基本情况 · 一、毕业生规模」正文"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employment_statistics",
+        "pattern": "上海交通大学 2023 届毕业生（含医学院）共 12003 人，其中全日制毕业生 10347 人，非全日制2毕业生 1656 人。 2023 届全日制毕业生中"
+      }
+    ],
+    "expected_fields": [
+      "employment_statistics",
+      "career_path",
+      "employer"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2023-employment-report",
+      "url": "https://gk.sjtu.edu.cn/Assets/userfiles/sys_eb538c1c-65ff-4e82-8e6a-a1ef01127fed/files/20241125/20241125135303680.pdf",
+      "organization": "上海交通大学信息公开网",
+      "title": "上海交通大学2023年就业质量报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "信息公开网「高校毕业生就业质量年度报告」栏目该条目发布时间 2024-11-05；报告数据截至 2023-11-30。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-career-t1t2/sjtu-jiuye-2023.pdf",
+      "sha256": "f99cd478576a0769a836dc36151965eb0f920abc5da9d588c750d66661ee6f5b",
+      "captured_at": "2026-10-23T14:39:44.598Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-career-t1t2/sjtu-jiuye-2023.txt",
+      "extracted_sha256": "4cd1b1848d87ff4ddfe7a542be7cc1882a851a824246f2e3e5728504fa59293e"
+    },
+    "record": {
+      "id": "industry-sjtu-2023-employment-report-medicine-guide-c5db18f7",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "上交医学院 2023 届毕业去向落实率 95.71%，国内深造 26.17%、出国（境）深造 2.55%（学院级）",
+      "summary": "上海交通大学 2023 年就业质量报告原文：医学院 2023 届毕业生毕业去向落实率为 95.71%，国内深造比例为 26.17%，出国（境）深造比例为 2.55%。该报告另载明医学院 2023 届全日制毕业生共 2354 人，其中本科生 629 人（26.72%）、硕士生 989 人（42.01%）。",
+      "applicability": "适用于上交**医学院**（临床医学等医学门类）的就业与深造结构，粒度是学院级。注意：这是「医学院」，**不是生物医学工程学院（082）**，两者是上交不同的独立院系，不可混用。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "医学院",
+        "2023届",
+        "毕业去向落实率",
+        "95.71%",
+        "国内深造",
+        "学院级"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "college": "医学院",
+        "program": "医学院全部专业（学院级，未细分专业）",
+        "region": "上海",
+        "statistic_scope": "2023 届医学院毕业生（全日制 2354 人）",
+        "evidence_locator": "报告「医学院」独立板块：毕业生学历分布 + 毕业去向落实情况段"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employment_statistics",
+        "pattern": "医学院 2023 届毕业生毕业去向落实率为 95\\.71%。国内深造比例为 26\\.17%，出 国（境）深造比例为 2\\.55%"
+      }
+    ],
+    "expected_fields": [
+      "employment_statistics",
+      "career_path",
+      "employer"
+    ]
+  }
+]

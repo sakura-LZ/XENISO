@@ -10,7 +10,13 @@ import "../experience-social-redesign.css";
 
 const labels = { interest: "职业兴趣接近度", readiness: "能力准备度", transition: "转型可行性线索", admissions: "升学条件适配度" } as const;
 function Score({ data }: { data: Dimension }) {
-  return <><strong>{data.score === null ? "待补充" : `${data.score.toFixed(1)} / 100`}</strong><p>覆盖率 {Math.round(data.coverage * 100)}%{data.status === "partial" ? " · 部分依据" : ""}</p></>;
+  const correlation = data.detail?.correlation;
+  return <><strong>{data.score === null ? "待补充" : `${data.score.toFixed(1)} / 100`}</strong><p>覆盖率 {Math.round(data.coverage * 100)}%{data.status === "partial" ? " · 部分依据" : ""}{typeof correlation === "number" ? ` · 轮廓相关 r=${correlation.toFixed(2)}` : ""}</p></>;
+}
+function rankLabel(rank: number | null, range: [number, number] | null) {
+  if (!rank) return "";
+  if (range && range[1] > range[0]) return `${rank}.（${range[0]}–${range[1]}）`;
+  return `${rank}. `;
 }
 export default function MatchWorkbench() {
   const [input, setInput] = useState<MatchInput | null>(null);
@@ -45,16 +51,18 @@ export default function MatchWorkbench() {
     {input && <section key={mode} className="match-input" data-motion="M-T01">
       <h2>确认技能准备</h2>
       <p>{input.user.simulation ? "simulation：以下画像、岗位数值均为合成演示。" : "个人模式：数据仅在本页面计算，不保存本次修改。"}</p>
-      <p>等级：0 未接触 · 1 在指导下完成 · 2 独立完成基础任务 · 3 独立完成复杂任务 · 4 指导与评审。未填写保持未知。</p>
+      <p>等级：0 未接触 · 1 在指导下完成 · 2 独立完成基础任务 · 3 独立完成复杂任务 · 4 指导与评审。未填写保持未知。自评会按可靠性向中位收缩（没有作品或评分依据时不当作能力认证）。</p>
       <div className="match-skill-fields">{Object.entries(skillLabels).map(([id, label]) => <label key={id} className="form-label">{label}<select aria-label={label} className="field" value={input.user.skills.find(s => s.skill_id === id)?.level.value ?? ""} onChange={e => changeSkill(id as keyof typeof skillLabels, e.target.value)}><option value="">未知</option>{[0, 1, 2, 3, 4].map(v => <option value={v} key={v}>{v}</option>)}</select></label>)}</div>
       <button className="button" onClick={() => { const result = match(input); setReport(result); setSelected(result.results[0]?.occupation_id ?? ""); setMessage("已完成计算。选择岗位查看依据，并导出本次行动清单。"); }}>计算岗位匹配</button>
     </section>}
     {report && <section className="match-results" data-motion="M-T02">
       <h2>比较并选择探索目标</h2><p>{report.ranking_basis}</p>
-      <div className="match-table-scroll" tabIndex={0} role="region" aria-label="岗位比较表，可横向滚动"><table className="match-table"><thead><tr><th scope="col">岗位</th>{Object.values(labels).map(label => <th scope="col" key={label}>{label}</th>)}<th scope="col">岗位资格</th></tr></thead><tbody>{report.results.map(r => <tr key={r.occupation_id} className={selected === r.occupation_id ? "is-selected" : ""}><td><button aria-pressed={selected === r.occupation_id} onClick={() => setSelected(r.occupation_id)}>{r.rank ? `${r.rank}. ` : ""}{r.title}</button></td>{Object.keys(labels).map(k => <td key={k}><Score data={r[k as keyof typeof labels]} /></td>)}<td>{r.eligibility.status === "met" ? "所列条件已满足" : r.eligibility.status === "not_met" ? "存在不满足条件" : "待核实"}</td></tr>)}</tbody></table></div>
+      <p role="status">排序稳定性：{{ stable: "稳定（权重 ±20% 扰动后名次不变）", variable: "可变（个别名次会随权重互换）", unstable: "不稳定（名次跨度过大，请并列看待）", "n/a": "不足以排序" }[report.sensitivity.stability]}。名次只用于提示探索顺序，不是适合度。</p>
+      <div className="match-table-scroll" tabIndex={0} role="region" aria-label="岗位比较表，可横向滚动"><table className="match-table"><thead><tr><th scope="col">岗位</th>{Object.values(labels).map(label => <th scope="col" key={label}>{label}</th>)}<th scope="col">岗位资格</th></tr></thead><tbody>{report.results.map(r => <tr key={r.occupation_id} className={selected === r.occupation_id ? "is-selected" : ""}><td><button aria-pressed={selected === r.occupation_id} onClick={() => setSelected(r.occupation_id)}>{rankLabel(r.rank, r.rank_range)}{r.title}</button></td>{Object.keys(labels).map(k => <td key={k}><Score data={r[k as keyof typeof labels]} /></td>)}<td>{r.eligibility.status === "met" ? "所列条件已满足" : r.eligibility.status === "not_met" ? "存在不满足条件" : "待核实"}</td></tr>)}</tbody></table></div>
       {active && <article className="match-evidence" key={active.occupation_id} data-motion="M-T03"><h3>{active.title} · 依据与下一步</h3>
+        {typeof active.readiness.detail?.must_have_gap === "string" && <p role="alert">关键要求未达到：{active.readiness.detail.must_have_gap}。准备度已封顶，不会因为其他技能而抵消。</p>}
         <h4>技能差距</h4>
-        <ul>{active.gaps.map(g => <li key={g.skill_id}>{g.label}：当前 {g.current ?? "未知"} / 要求 {g.target ?? "未知"} · 差距 {g.gap ?? "待核实"}</li>)}</ul>
+        <ul>{active.gaps.map(g => <li key={g.skill_id}>{g.label}：当前 {g.current ?? "未知"} / 要求 {g.target ?? "未知"} · 差距 {g.gap ?? "待核实"}{g.must_have ? " · 关键要求" : ""}</li>)}</ul>
         <h4>招生项目核验</h4>
         {active.programs.length === 0 ? <p>尚无已审核的关联招生项目；请补充目标年份的官方目录及跨考规定。</p> : <ul>{active.programs.map(p => <li key={p.id}>{p.university} · {p.major} · {p.year} · {p.pathway}：{({ met: "所列条件满足", not_met: "存在不满足条件", unknown: "待核实", expired: "资料已过期", plan_mismatch: "与当前年份或路径不符" } as Record<string, string>)[p.status]}</li>)}</ul>}
         {Object.entries(labels).map(([key, label]) => { const d = active[key as keyof typeof labels]; return <details key={key}><summary className="cursor-pointer">{label}的计算依据</summary><p className="my-2">{d.basis}</p>{d.missing.map(m => <p key={m} className="text-sm text-slate-600">{m}</p>)}<ul className="mt-2 space-y-1">{d.evidence.map((e, i) => <li key={`${e.ref}:${i}`} className="break-words text-sm">{e.url ? <a className="text-blue-700 underline" href={e.url} target="_blank" rel="noreferrer">{e.ref}</a> : e.ref} · {e.locator} · 发布日期 {e.published_at ?? "未知"}</li>)}</ul></details>; })}

@@ -1,0 +1,1374 @@
+[
+  {
+    "source": {
+      "id": "nju-2027-catalog-medical-restrictions",
+      "url": "https://yzb.nju.edu.cn/",
+      "organization": "南京大学研究生院",
+      "title": "南京大学2027年硕士研究生招生目录·035 医学院·临床医学/口腔医学/护理 报考条件",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该 PDF 正文未印发布日期；招生年度依据页眉「南京大学2027年硕士研究生招生目录」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1/nju-2027-catalog-pdf.pdf",
+      "sha256": "c52a87be238e8665e67e213b3e65e20f21bbcb11966f13dbae4462faf8ab642e",
+      "captured_at": "2026-10-23T07:17:35.243Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-tier1/nju-2027-catalog-pdf.txt",
+      "extracted_sha256": "81baccbc6b3d80e6380bb22b2f79b2c6f72b55ff2b3a59ad92bdc09ab66d4b0a"
+    },
+    "record": {
+      "id": "admissions-nju-2027-catalog-medical-restrictions-medicine-guide-af115b77",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "南大2027：105100 临床医学（专硕）「不接收跨专业考生，不接收已获得规培结业证考生」，另拟接收本校长学制约 83 人",
+      "summary": "南京大学 2027 年硕士研究生招生目录 035 医学院段：105100 临床医学△（专业学位）拟招 197 人，备注原文「专业学位。不接收跨专业考生，不接收已获得规培结业证考生。拟接收本校临床医学长学制学生约83人。」该备注与本专业代码位于同一表格行。",
+      "applicability": "**这是最硬的排除条款**：南大临床医学专硕明确「不接收跨专业考生」——非临床本科一律不可报；已获规培结业证者亦不可报。且 197 个计划中含本校临床医学长学制学生约 83 人，**留给统考外校的实际名额远少于 197**。判定依据：该备注与 105100 专业代码在同一表格行内（目录第 44 页 035 医学院段）。",
+      "relation": "direct",
+      "tags": [
+        "南京大学",
+        "临床医学",
+        "105100",
+        "不接收跨专业考生",
+        "规培结业证",
+        "长学制83人",
+        "限制类"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京大学",
+        "program": "105100 临床医学（专业学位）",
+        "admission_year": 2027,
+        "region": "江苏南京",
+        "college": "医学院",
+        "department_type": "clinical",
+        "evidence_locator": "目录 035 医学院段 105100 临床医学△ 条目行的备注列（与专业代码同行）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "105100 临床医学△ 197 专业学位。不接收跨专业考生，不 接收已获得规培结业证考生。拟接 收本校临床医学长学制学生约83人 。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "nju-2027-catalog-medical-restrictions",
+      "url": "https://yzb.nju.edu.cn/",
+      "organization": "南京大学研究生院",
+      "title": "南京大学2027年硕士研究生招生目录·035 医学院·临床医学/口腔医学/护理 报考条件",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该 PDF 正文未印发布日期；招生年度依据页眉「南京大学2027年硕士研究生招生目录」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1/nju-2027-catalog-pdf.pdf",
+      "sha256": "c52a87be238e8665e67e213b3e65e20f21bbcb11966f13dbae4462faf8ab642e",
+      "captured_at": "2026-10-23T07:17:35.243Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-tier1/nju-2027-catalog-pdf.txt",
+      "extracted_sha256": "81baccbc6b3d80e6380bb22b2f79b2c6f72b55ff2b3a59ad92bdc09ab66d4b0a"
+    },
+    "record": {
+      "id": "admissions-nju-2027-catalog-medical-restrictions-medicine-guide-cc3de00d",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "南大2027：105200 口腔医学（专硕）「不接收跨专业考生，不接收已获得规培结业证考生」",
+      "summary": "同目录 035 医学院段：105200 口腔医学△（专业学位）拟招 38 人，备注原文「专业学位。不接收跨专业考生，不接收已获得规培结业证考生。」方向为 01（全日制）口腔医学（专业硕士），初试 ①101 ②201 英语（一）③352 口腔综合。备注与专业代码同一表格行。",
+      "applicability": "适用于判断能否跨考南大口腔专硕：**明确「不接收跨专业考生」**，非口腔本科不可报；已获规培结业证者亦不可报。与 105100 临床医学、105400 护理同属南大医学院的封闭型条款。",
+      "relation": "direct",
+      "tags": [
+        "南京大学",
+        "口腔医学",
+        "105200",
+        "不接收跨专业考生",
+        "规培结业证",
+        "352口腔综合",
+        "限制类"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京大学",
+        "program": "105200 口腔医学（专业学位）",
+        "admission_year": 2027,
+        "region": "江苏南京",
+        "college": "医学院",
+        "department_type": "clinical",
+        "evidence_locator": "目录 035 医学院段 105200 口腔医学△ 条目行的备注列（与专业代码同行）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "105200 口腔医学△ 38 专业学位。不接收跨专业考生，不 接收已获得规培结业证考生。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "nju-2027-catalog-medical-restrictions",
+      "url": "https://yzb.nju.edu.cn/",
+      "organization": "南京大学研究生院",
+      "title": "南京大学2027年硕士研究生招生目录·035 医学院·临床医学/口腔医学/护理 报考条件",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该 PDF 正文未印发布日期；招生年度依据页眉「南京大学2027年硕士研究生招生目录」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1/nju-2027-catalog-pdf.pdf",
+      "sha256": "c52a87be238e8665e67e213b3e65e20f21bbcb11966f13dbae4462faf8ab642e",
+      "captured_at": "2026-10-23T07:17:35.243Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-tier1/nju-2027-catalog-pdf.txt",
+      "extracted_sha256": "81baccbc6b3d80e6380bb22b2f79b2c6f72b55ff2b3a59ad92bdc09ab66d4b0a"
+    },
+    "record": {
+      "id": "admissions-nju-2027-catalog-medical-restrictions-guide-clinical-data-63211134",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "南大2027：105400 护理（专硕）「不接收跨专业考生」，初试 308 护理综合",
+      "summary": "同目录 035 医学院段：105400 护理△（专业学位）拟招 15 人，备注原文「专业学位。不接收跨专业考生。」方向 01（全日制）护理学，初试 ①101 ②201 英语（一）③308 护理综合。备注与专业代码同一表格行。",
+      "applicability": "适用于判断能否跨考南大护理专硕：**明确「不接收跨专业考生」**——医学门类中非护理本科亦不可报（这是「同门类内也不通」的典型案例）。对比南大 085400/085600 等工科专业无本科专业限制，可见南大把限制集中在医学类专业学位。",
+      "relation": "direct",
+      "tags": [
+        "南京大学",
+        "护理",
+        "105400",
+        "不接收跨专业考生",
+        "308护理综合",
+        "限制类",
+        "同门类内也不通"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京大学",
+        "program": "105400 护理（专业学位）",
+        "admission_year": 2027,
+        "region": "江苏南京",
+        "college": "医学院",
+        "department_type": "clinical",
+        "evidence_locator": "目录 035 医学院段 105400 护理△ 条目行的备注列（与专业代码同行）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "105400 护理△ 15 专业学位。不接收跨专业考生。 01 \\(全日制\\)护理学 ①101 思想政治理论 ②201 英语（一） ③308 护理综合"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-bc3c47d5",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 01 控制工程 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 01 控制工程 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（01 控制工程）",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 01 控制工程 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 01控制工程 \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-daf0c1a0",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 02 控制工程（四川研究院） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 02 控制工程（四川研究院） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（02 控制工程（四川研究院））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 02 控制工程（四川研究院） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 02控制工程（四川研究院） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-85071812",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 03 控制工程（中电科联培基地） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 03 控制工程（中电科联培基地） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（03 控制工程（中电科联培基地））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 03 控制工程（中电科联培基地） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 03控制工程（中电科联培基地） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-7a1766c6",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 04 控制工程（宁波研究院） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 04 控制工程（宁波研究院） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（04 控制工程（宁波研究院））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 04 控制工程（宁波研究院） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 04控制工程（宁波研究院） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-ac84ee4b",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 05 控制工程（海南专项） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 05 控制工程（海南专项） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（05 控制工程（海南专项））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 05 控制工程（海南专项） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 05控制工程（海南专项） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-7505bcc3",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 06 控制工程（苏州智研院） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 06 控制工程（苏州智研院） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（06 控制工程（苏州智研院））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 06 控制工程（苏州智研院） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 06控制工程（苏州智研院） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-9a6ce6a2",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 07 控制工程（卫星工程研究所） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 07 控制工程（卫星工程研究所） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（07 控制工程（卫星工程研究所））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 07 控制工程（卫星工程研究所） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 07控制工程（卫星工程研究所） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-56024ac2",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 08 智能感知工程(I) 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 08 智能感知工程(I) 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（08 智能感知工程(I)）",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 08 智能感知工程(I) 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 08智能感知工程\\(I\\) \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④817自动控制原理 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-85a0b871",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 09 智能感知工程(II) 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 09 智能感知工程(II) 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（09 智能感知工程(II)）",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 09 智能感知工程(II) 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 09智能感知工程\\(II\\) \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④819信号系统与信号处理 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-devices-4dae8845",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 10 智能感知工程(III) 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 10 智能感知工程(III) 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（10 智能感知工程(III)）",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 10 智能感知工程(III) 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 10智能感知工程\\(III\\) \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④827材料科学基础 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-0e7dbd98",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 11 智能感知工程（中电科联培基地I） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 11 智能感知工程（中电科联培基地I） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（11 智能感知工程（中电科联培基地I））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 11 智能感知工程（中电科联培基地I） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 11智能感知工程（中电科联培基地I） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④817自动控制原理 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-df587813",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 12 智能感知工程（中电科联培基地II） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 12 智能感知工程（中电科联培基地II） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（12 智能感知工程（中电科联培基地II））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 12 智能感知工程（中电科联培基地II） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 12智能感知工程（中电科联培基地II） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④819信号系统与信号处理 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-de0801af",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 13 智能感知工程（苏州智研院I） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 13 智能感知工程（苏州智研院I） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（13 智能感知工程（苏州智研院I））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 13 智能感知工程（苏州智研院I） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 13智能感知工程（苏州智研院I） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④817自动控制原理 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-devices-c0626b0e",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 14 智能感知工程（苏州智研院II） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 14 智能感知工程（苏州智研院II） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（14 智能感知工程（苏州智研院II））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 14 智能感知工程（苏州智研院II） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 14智能感知工程（苏州智研院II） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④827材料科学基础 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-568393fd",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 15 智能感知工程（贵州联培基地） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 15 智能感知工程（贵州联培基地） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（15 智能感知工程（贵州联培基地））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 15 智能感知工程（贵州联培基地） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 15智能感知工程（贵州联培基地） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④817自动控制原理 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-cceab9df",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 16 智能感知工程（卫星工程研究所） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 16 智能感知工程（卫星工程研究所） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（16 智能感知工程（卫星工程研究所））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 16 智能感知工程（卫星工程研究所） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 16智能感知工程（卫星工程研究所） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④817自动控制原理 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-2027-catalog-032-crossmajor",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "organization": "上海交通大学研究生院",
+      "title": "上海交通大学2027年硕士研究生招生专业目录（校本部）·032 自动化与感知学院 085400 跨考条款",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-21",
+      "publication_date_note": "发布日来自上交研招网「硕士生招生」栏目该条目的日期标注 09.21/2026；目录正文本身未印发布日期。"
+    },
+    "publication_pattern": "2026-09-21",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1d/sjtu-2027-catalog-detail.raw.html",
+      "sha256": "4780063847f49d04a83d5c4b0bcda80428e8d0cff50de6ac91204f2ba3b72dba",
+      "captured_at": "2026-10-23T11:58:40.522Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-sjtu-2027-catalog-032-crossmajor-guide-software-1bc6369f",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "上交2027（032 自动化与感知学院）：085400 17 控制工程（宁德高研院） 的跨考条款「可以跨学科报考的专业：理工科相关专业」",
+      "summary": "上海交通大学 2027 年硕士研究生招生专业目录 032 自动化与感知学院：085400 电子信息 17 控制工程（宁德高研院） 方向行末附「可以跨学科报考的专业：理工科相关专业。」该条款与本方向（专业代码 085400 + 方向名 + 考试科目）位于同一表格行内。",
+      "applicability": "**上交对跨专业的正式口径**：目录不写「不接收跨专业」，而是写「可以跨学科报考的专业：理工科相关专业」——属**正向许可句式**。医学门类是否被算作「理工科」原文未列举，属边界模糊条款：既不是明确欢迎（未点名医学），也不是明确禁止（未排除医学）。产品应把它渲染为「需向院系确认」而非「可报」或「不可报」。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "自动化与感知学院",
+        "085400",
+        "可以跨学科报考",
+        "理工科相关专业",
+        "边界模糊条款",
+        "开放类（有条件）"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "program": "085400 电子信息（17 控制工程（宁德高研院））",
+        "admission_year": 2027,
+        "region": "上海",
+        "college": "自动化与感知学院",
+        "evidence_locator": "目录 032 自动化与感知学院段 085400 电子信息 17 控制工程（宁德高研院） 行末的「可以跨学科报考的专业」列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400电子信息 17控制工程（宁德高研院） \\(1\\)全日制 ①101思想政治理论②201英语（一）③301数学（一）④816自动控制理论 可以跨学科报考的专业：理工科相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "fudan-2026-catalog-305-crossmajor",
+      "url": "https://gsas.fudan.edu.cn/sszsml2026/index.html",
+      "organization": "复旦大学研究生院",
+      "title": "复旦大学2026年招收攻读硕士学位研究生专业目录·305 计算与智能创新学院 085400 报考条件",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该目录为单页应用，页面未印发布日期；2026 招生年度依据入口页 gsao.fudan.edu.cn 栏目中该条目标注「复旦大学2026年招收攻读硕士学位研究生专业目录 2025-09-29」，且 2027 版截至 2026-10-23 实测仍未发布。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1e/fudan-2026-305-ai.raw.html",
+      "sha256": "4b07492a7e9c2eb75b6040a68a67580dd7dbf0127fc4df7686fcd12ea1af11d8",
+      "captured_at": "2026-10-23T12:58:01.244Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-fudan-2026-catalog-305-crossmajor-guide-software-aa7a8dac",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "复旦2026：305 学院 085400 备注第 6 条「欢迎具有计算机科学与技术、软件工程、信息安全等学科背景的考生报考」",
+      "summary": "复旦大学 2026 年专业目录 305 计算与智能创新学院：085400（专业学位）电子信息条目备注第 6 条原文「6.欢迎具有计算机科学与技术、软件工程、信息安全等学科背景的考生报考。」该备注紧随 085400 的考试科目与方向说明，处于同一专业条目块内（其后紧接 01（全日制）人工智能 等方向列表）。",
+      "applicability": "**复旦 305 的跨考口径属「开放列举」型**：用「欢迎具有…等学科背景」的句式，列举了计算机/软工/信息安全但用「等」字开放，且**未出现任何排除性表述**。因此对医学类本科而言：不属于「明确欢迎」（未点名医学），但也不属于「明确禁止」（无排除条款）——比南大「不接收跨专业考生」（明确排除）宽松得多。产品宜渲染为「未设明文限制，建议向院系确认」。",
+      "relation": "direct",
+      "tags": [
+        "复旦大学",
+        "计算与智能创新学院",
+        "085400",
+        "欢迎等学科背景",
+        "开放列举句式",
+        "无排除条款",
+        "开放类"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "复旦大学",
+        "program": "085400 电子信息（305 计算与智能创新学院）",
+        "admission_year": 2026,
+        "region": "上海",
+        "college": "计算与智能创新学院",
+        "evidence_locator": "目录 305 计算与智能创新学院 085400 条目备注第 6 条（同一专业条目块内，其后紧接方向列表）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085400（专业学位）电子信息 399 01、02、03、04、05、06、07、08、09、10、11、12、13、14、15、16、17、18、19、20方向：①101思想政治理论②204英语（二）③302数学（二）④408计算机学科专业基础 91方向：只招收推免生 1\\.本专业拟招收全日制309人，其中拟招收推免生59人。拟招收非全日制90人，不招收推免生。 2\\.学制3年。 3\\.13方向为大数据研究院依托招生。 4\\.14方向为人工智能创新与产业研究院、上海科学智能研究院依托招生。 5\\.91方向只招收推免生，招生计划另行安排。 6\\.欢迎具有计算机科学与技术、软件工程、信息安全等学科背景的考生报考。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "fudan-2026-catalog-305-crossmajor",
+      "url": "https://gsas.fudan.edu.cn/sszsml2026/index.html",
+      "organization": "复旦大学研究生院",
+      "title": "复旦大学2026年招收攻读硕士学位研究生专业目录·305 计算与智能创新学院 085400 报考条件",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该目录为单页应用，页面未印发布日期；2026 招生年度依据入口页 gsao.fudan.edu.cn 栏目中该条目标注「复旦大学2026年招收攻读硕士学位研究生专业目录 2025-09-29」，且 2027 版截至 2026-10-23 实测仍未发布。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1e/fudan-2026-309-info.raw.html",
+      "sha256": "b84d04b94c3a3197d28423f19774e91373ddcd455c1494e6a6693550642ec7e7",
+      "captured_at": "2026-10-23T12:58:08.249Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-fudan-2026-catalog-305-crossmajor-guide-signals-41e0f294",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "复旦2026：309 未来信息创新学院【学院级】备注「2.欢迎广大考生报考。」——无任何本科专业限制",
+      "summary": "复旦大学 2026 年专业目录 309 未来信息创新学院：该学院条目的开头备注原文「1.考试招生的实际录取人数将根据招生计划下达数、推免录取人数和生源情况等进行调整。2.欢迎广大考生报考。」随后进入 080300 光学工程、085400 电子信息等各专业条目。该备注位于学院级说明段，适用于该院全部专业（含 085400 电子信息）。",
+      "applicability": "**「欢迎广大考生报考」是目录里最强的无限制表述**——比「欢迎具有…等学科背景」更彻底，未列举任何学科、未设排除项。**作用域标注：这是学院级条款，适用于 309 未来信息创新学院全部专业（含 085400），非 085400 单专业备注**（原文位于 309 学院条目开头、先于 080300 光学工程）。产品渲染时应按「学院级」降权（不能当作 085400 独有的专业级承诺），但语义上确实覆盖 085400，故属有效证据而非错配。",
+      "relation": "direct",
+      "tags": [
+        "复旦大学",
+        "未来信息创新学院",
+        "欢迎广大考生报考",
+        "学院级条款",
+        "无本科专业限制",
+        "开放类"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "复旦大学",
+        "program": "085400 电子信息（309 未来信息创新学院）",
+        "admission_year": 2026,
+        "region": "上海",
+        "college": "未来信息创新学院",
+        "evidence_locator": "目录 309 未来信息创新学院条目开头的学院级备注第 2 条（先于 080300 光学工程，适用于该院全部专业含 085400）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "（Tel：021-31242677） 249 1\\.考试招生的实际录取人数将根据招生计划下达数、推免录取人数和生源情况等进行调整。 2\\.欢迎广大考生报考。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-spa-cbeis-crossmajor",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（SPA 渲染快照·生仪学院 085400 两方向跨专业白名单）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浙大研招「2027年硕士研究生招生专业目录查询」为单页应用，正文由查询结果动态渲染，页面未印发布日，故 published_at 记 null；年度由标题「2027年」确定。artifact 为 ego 真实点击（学院=生物医学工程与仪器科学学院、专业=电子信息(085400)、点查询）后保存的渲染后 HTML。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1e/zju-2027-生仪-085400.raw.html",
+      "sha256": "66bbe45905bb81271b213eea8dc03e671e49e40cb6b9deb5d692dbfea0caf26d",
+      "captured_at": "2026-10-23T13:04:17.810Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-spa-cbeis-crossmajor-guide-devices-812f7cd4",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "浙大2027：生仪学院 085400 生物医学工程(02) 白名单「欢迎医学……考生报考」，医学列首位（开放类）",
+      "summary": "浙大 2027 专业目录渲染快照（查询：学院=生物医学工程与仪器科学学院、专业=电子信息(085400)）：085400 电子信息 生物医学工程(02) 方向备注原文「本专业单独分数线划档，单独录取。欢迎医学、药学、数学、物理、化学、生物、信电、计算机、电子、电气、电机、自控、仪器类考生报考。」该白名单与本方向（代码+方向名+科目）位于同一表格行。",
+      "applicability": "**这是全库已知唯一把「医学」明文排在欢迎名单第一位的工科方向**：浙大 085400 生物医学工程(02) 明确「欢迎医学、药学、数学、物理…考生报考」。对医学本科生而言这是**明确欢迎**（而非「未设限制」或「需确认」）——等级高于复旦 305 的「欢迎计算机/软工/信息安全等」和上交的「理工科相关专业」。注意仍需考 301 数学（一）+ 891 数字医疗仪器综合。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "生物医学工程与仪器科学学院",
+        "085400",
+        "生物医学工程",
+        "欢迎医学考生",
+        "医学列首位",
+        "明确欢迎",
+        "开放类"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（02 生物医学工程）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "生物医学工程与仪器科学学院",
+        "department_type": "medical_technology",
+        "evidence_locator": "查询结果表·生仪学院 085400 生物医学工程(02) 行备注栏跨专业白名单（与专业代码同行）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "生 物 医 学 工 程 \\(02\\) 生 物 医 学 工 程 领 域 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.891数字医疗仪器综合 11 \\(以最终实际录取人数为准。\\) 本专业单独分数线划档，单独录取。 欢迎医学、药学、数学、物理、化学、生物、信电、计算机、电子、电气、电机、自控、仪器类考生报考。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-spa-cbeis-crossmajor",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（SPA 渲染快照·生仪学院 085400 两方向跨专业白名单）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "浙大研招「2027年硕士研究生招生专业目录查询」为单页应用，正文由查询结果动态渲染，页面未印发布日，故 published_at 记 null；年度由标题「2027年」确定。artifact 为 ego 真实点击（学院=生物医学工程与仪器科学学院、专业=电子信息(085400)、点查询）后保存的渲染后 HTML。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1e/zju-2027-生仪-085400.raw.html",
+      "sha256": "66bbe45905bb81271b213eea8dc03e671e49e40cb6b9deb5d692dbfea0caf26d",
+      "captured_at": "2026-10-23T13:04:17.810Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-spa-cbeis-crossmajor-guide-devices-924e0421",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "浙大2027：生仪学院 085400 仪器仪表工程(01) 白名单不含医学（限制类·相对 02 方向）",
+      "summary": "同表：085400 电子信息 仪器仪表工程(01) 方向备注原文「本专业单独分数线划档，单独录取。欢迎电子信息、计算机、自控、电气、应用电子类和应用数学考生报考。」该白名单枚举了六类学科但**不含医学、药学、生物**，与本方向位于同一表格行。",
+      "applicability": "**同一学院、同一专业代码、完全相同的考试科目，白名单却排除了医学**：085400 仪器仪表工程(01) 的白名单是「电子信息、计算机、自控、电气、应用电子类和应用数学」——医学不在列；而 02 生物医学工程把医学排第一。因此对医学本科生，01 方向实质是**受限**（不在欢迎名单内），应报 02。这是「同代码不同方向报考资格不同」的关键案例。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "生物医学工程与仪器科学学院",
+        "085400",
+        "仪器仪表工程",
+        "白名单不含医学",
+        "相对限制",
+        "限制类"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（01 仪器仪表工程）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "生物医学工程与仪器科学学院",
+        "department_type": "medical_technology",
+        "evidence_locator": "查询结果表·生仪学院 085400 仪器仪表工程(01) 行备注栏跨专业白名单（与专业代码同行）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "仪 器 仪 表 工 程 \\(01\\) 仪 器 仪 表 工 程 领 域 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.891数字医疗仪器综合 12 \\(以最终实际录取人数为准。\\) 本专业单独分数线划档，单独录取。 欢迎电子信息、计算机、自控、电气、应用电子类和应用数学考生报考。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  }
+]

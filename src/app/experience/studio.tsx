@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { z } from "zod";
-import { AvatarPanel } from "@/components/avatar-panel";
+import { AvatarPanel, type MentorLinkState } from "@/components/avatar-panel";
 import { presenterForExperience } from "@/lib/avatar-presenters";
-import { directions, findDirection } from "@/lib/directions";
+import { directions, findDirection, groups } from "@/lib/directions";
 import { experienceSchema, workbenchExperienceSchema, reflectionSchema, evaluationCard, experiencePresentation, type Experience, type WorkbenchExperience } from "@/lib/experience";
 import { experienceTemplates, getTemplate, stageTitles, medicineDisciplines, medicineNamingSource, type Mode } from "@/lib/experience/templates";
 import { choiceSchema } from "@/lib/experience/scenario";
@@ -12,8 +12,7 @@ import { type ChoiceState, validChoice, operationResult } from "@/lib/experience
 import { download } from "@/lib/download";
 import { TaskWorkbench, OperationPreview } from "./task-workbench";
 import { TaskMaterial, TaskModePreview } from "./task-material";
-import { DirectionArt, StorysetAttribution } from "@/components/direction-art";
-import "../experience-social-redesign.css";
+import "./experience-desk.css";
 
 const draftKey = "limen:career-draft:v3";
 const emptyReflection = { favorite_operation: "", least_favorite_operation: "", willingness_for_3_hours: 3, followup_question: "" };
@@ -21,6 +20,8 @@ const draftSchema = z.object({ template_id: z.string(), mode: z.enum(["project",
   const template = experienceTemplates.find(item => item.id === draft.template_id);
   if (!template || draft.choices.some((value, i) => value !== null && !validChoice(draft.template_id, i, value)) || draft.outputs.some((value, i) => i < draft.step && (value.trim().length < 10 || draft.choices[i] === null))) ctx.addIssue({ code: "custom", message: "草稿不完整或版本不符。" });
 });
+const mentorLinkLabels: Record<MentorLinkState, string> = { idle: "未接通", connecting: "接通中", connected: "已接通", closed: "断开" };
+
 export function CareerStudio({ initialDirection }: { initialDirection: string }) {
   const [direction, setDirection] = useState(findDirection(initialDirection)?.id ?? directions[0].id);
   const [templateId, setTemplateId] = useState(getTemplate(findDirection(initialDirection)?.id ?? directions[0].id).id);
@@ -33,62 +34,68 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
   const [saved, setSaved] = useState<Experience | null>(null);
   const [transcript, setTranscript] = useState<WorkbenchExperience["transcript"]>([]);
   const [record, setRecord] = useState(false);
-  const [mentorExpanded, setMentorExpanded] = useState(true);
   const [hasSaved, setHasSaved] = useState(false);
   const [hasDraft, setHasDraft] = useState(false);
   const [legacyDraft, setLegacyDraft] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [mentorLink, setMentorLink] = useState<MentorLinkState>("idle");
+  const [message, setMessage] = useState("");
   const busyRef = useRef(false);
   const contentRevision = useRef(0);
   const stageHeading = useRef<HTMLHeadingElement>(null);
-  const [message, setMessage] = useState("");
   const template = getTemplate(direction, templateId);
   const titles = stageTitles(template, mode);
   const templates = experienceTemplates.filter(item => item.direction === direction).sort((a, b) => direction === "medicine" ? medicineDisciplines.findIndex(item => item.template_id === a.id) - medicineDisciplines.findIndex(item => item.template_id === b.id) : 0);
+  const handsOff = useCallback((next: MentorLinkState) => setMentorLink(next), []);
+
   useEffect(() => { if (started) stageHeading.current?.focus(); }, [started, step]);
-  useEffect(() => {
-    const narrow = window.matchMedia("(max-width: 1279px)");
-    const update = () => setMentorExpanded(!narrow.matches);
-    const timer = setTimeout(update, 0);
-    narrow.addEventListener("change", update);
-    return () => { clearTimeout(timer); narrow.removeEventListener("change", update); };
-  }, []);
   useEffect(() => {
     const controller = new AbortController();
     void (async () => {
       await Promise.resolve();
       if (controller.signal.aborted) return;
-      try { setHasDraft(draftSchema.safeParse(JSON.parse(localStorage.getItem(draftKey) ?? "null")).success); setLegacyDraft(!!localStorage.getItem("limen:career-draft:v2")); } catch { /* Local storage can be unavailable. */ }
-      try { const response = await fetch("/api/experience", { signal: controller.signal }); if (!response.ok) return; const data = await response.json(); if (!controller.signal.aborted) setHasSaved(experienceSchema.safeParse(data.experience).success); } catch { /* New visitors may have no saved outcome. */ }
+      try { setHasDraft(draftSchema.safeParse(JSON.parse(localStorage.getItem(draftKey) ?? "null")).success); setLegacyDraft(!!localStorage.getItem("limen:career-draft:v2")); } catch { /* 本机存储可能被禁用。 */ }
+      // 先确认这台浏览器已经有私有会话，再去读成果；访客不建匿名身份，也不会打出 401。
+      try {
+        const session = await fetch("/api/session", { signal: controller.signal });
+        if (!session.ok) return;
+        const identity = await session.json();
+        if (!identity.user) return;
+        const response = await fetch("/api/experience", { signal: controller.signal });
+        if (!response.ok) return;
+        const data = await response.json();
+        if (!controller.signal.aborted) setHasSaved(experienceSchema.safeParse(data.experience).success);
+      } catch { /* 第一次来的用户还没有保存过成果。 */ }
     })();
     return () => controller.abort();
   }, []);
+
   function invalidate() { contentRevision.current++; setSaved(null); setMessage(""); }
   function edit(value: string) {
     invalidate();
-    // Earlier edits invalidate later submissions; preserve their text for review.
+    // 改前面的内容会让后面的提交失效，但保留文字，方便回看。
     setOutputs(previous => previous.map((text, i) => i === step ? value : text) as typeof outputs);
     setChoices(previous => previous.map((value, i) => i > step ? null : value) as ChoiceState);
   }
   function choose(value: string) { invalidate(); setChoices(previous => previous.map((old, i) => i === step ? value : i > step ? null : old) as ChoiceState); }
   function reset() { if (busyRef.current) return; invalidate(); setStarted(false); setStep(0); setChoices([null, null, null]); setOutputs(["", "", ""]); setReflection(emptyReflection); setTranscript([]); setRecord(false); }
-  function pause() { if (busyRef.current) return; try { localStorage.setItem(draftKey, JSON.stringify({ template_id: templateId, mode, step, choices, outputs, reflection })); setHasDraft(true); setMessage("已保存到本机，刷新后可继续。共享设备使用后请清除暂存。"); } catch { setMessage("本机保存失败，请导出当前记录。"); } }
+  function pause() { if (busyRef.current) return; try { localStorage.setItem(draftKey, JSON.stringify({ template_id: templateId, mode, step, choices, outputs, reflection })); setHasDraft(true); setMessage("已存到这台机器，刷新后可以接着做。共用电脑用完记得清掉暂存。"); } catch { setMessage("本机存不下，先导出当前记录。"); } }
   function restore() {
     if (busyRef.current) return;
-    try { const draft = draftSchema.parse(JSON.parse(localStorage.getItem(draftKey) ?? "null")); const found = experienceTemplates.find(item => item.id === draft.template_id)!; invalidate(); setDirection(found.direction); setTemplateId(found.id); setMode(draft.mode); setChoices(draft.choices); setOutputs(draft.outputs); setReflection(draft.reflection); setStep(draft.step); setStarted(true); setTranscript([]); setRecord(false); setMessage("已恢复同一基础案例和本机进度；对话不在本机暂存中。"); } catch { setMessage("暂存内容不符合当前模板，请先导出旧记录。"); }
+    try { const draft = draftSchema.parse(JSON.parse(localStorage.getItem(draftKey) ?? "null")); const found = experienceTemplates.find(item => item.id === draft.template_id)!; invalidate(); setDirection(found.direction); setTemplateId(found.id); setMode(draft.mode); setChoices(draft.choices); setOutputs(draft.outputs); setReflection(draft.reflection); setStep(draft.step); setStarted(true); setTranscript([]); setRecord(false); setMessage("已恢复同一个任务和本机进度；和导师的对话不在暂存里。"); } catch { setMessage("暂存内容对不上当前模板，先把旧记录导出去。"); }
   }
   async function loadSaved() {
     if (busyRef.current) return; busyRef.current = true; setBusy(true);
     try { const response = await fetch("/api/experience"); const data = await response.json(); if (!response.ok) throw new Error(data.error?.message ?? "读取失败。"); const value = experienceSchema.parse(data.experience); invalidate(); setSaved(value); setHasSaved(true);
       if (value.scenario_id === "direction_workbench") { setDirection(value.direction_id); setTemplateId(value.template_id); setMode(value.mode); setChoices(value.choices); setOutputs(value.outputs); setReflection(value.reflection); setStarted(true); setStep(3); setTranscript(value.transcript); setRecord(value.transcript.length > 0); }
-      setMessage("已读取私有成果；历史版本保留原职业和阶段说明。");
-    } catch (error) { setMessage(error instanceof Error && error.name !== "ZodError" ? error.message : "没有可读取的有效成果。"); }
+      setMessage("已读回私有成果；旧版本保留当时的职业和阶段名称。");
+    } catch (error) { setMessage(error instanceof Error && error.name !== "ZodError" ? error.message : "没有可以读取的有效成果。"); }
     finally { busyRef.current = false; setBusy(false); }
   }
   function payload(): WorkbenchExperience { return workbenchExperienceSchema.parse({ version: "3.0", simulation: true, scenario_id: "direction_workbench", template_id: templateId, template_version: "e1-1", source: "curated_template", direction_id: direction, role: template.role, mode, choices, outputs, reflection, completed_at: new Date().toISOString(), transcript: record ? transcript : [] }); }
   async function finish() {
     if (busyRef.current) return; busyRef.current = true; setBusy(true); setSaved(null); const revision = contentRevision.current;
-    try { const value = payload(); const login = await fetch("/api/session", { method: "POST" }); if (!login.ok) throw new Error("无法建立私有会话，请稍后重试。"); const response = await fetch("/api/experience", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(value) }); const data = await response.json(); if (!response.ok) throw new Error(data.error?.message ?? "私有保存失败，请先导出成果。"); setHasSaved(true); if (contentRevision.current === revision) { setSaved(value); setMessage("成果已私有保存，可进入行动规划。"); try { localStorage.removeItem(draftKey); setHasDraft(false); } catch { /* Cloud save succeeded. */ } } else { setMessage("已保存提交时的成果；此后收到的新对话尚未保存，请再次保存。"); }
+    try { const value = payload(); const login = await fetch("/api/session", { method: "POST" }); if (!login.ok) throw new Error("无法建立私有会话，请稍后重试。"); const response = await fetch("/api/experience", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(value) }); const data = await response.json(); if (!response.ok) throw new Error(data.error?.message ?? "私有保存失败，请先导出成果。"); setHasSaved(true); if (contentRevision.current === revision) { setSaved(value); setMessage("成果已私有保存，可以进入行动规划。"); try { localStorage.removeItem(draftKey); setHasDraft(false); } catch { /* 云端已经存好。 */ } } else { setMessage("已保存提交时的成果；之后新收到的话还没保存，请再存一次。"); }
     } catch (error) { setMessage(error instanceof Error && error.name !== "ZodError" ? error.message : "请完成三次操作、具体记录和复盘。"); }
     finally { busyRef.current = false; setBusy(false); }
   }
@@ -96,63 +103,300 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
     const complete = workbenchExperienceSchema.safeParse({ version: "3.0", simulation: true, scenario_id: "direction_workbench", template_id: templateId, template_version: "e1-1", source: "curated_template", direction_id: direction, role: template.role, mode, choices, outputs, reflection, completed_at: new Date().toISOString(), transcript: record ? transcript : [] });
     const outcome = complete.success ? evaluationCard(complete.data) : { simulation: true, template_id: templateId, source: "curated_template", choices, outputs, reflection, status: "in_progress" };
     const status = complete.success ? saved?.scenario_id === "direction_workbench" ? "已私有保存" : "本机成果，尚未私有保存" : "进行中";
-    const markdown = `# ${template.deliverable}\n\nsimulation · LIMEN 编辑性基础模板 · ${status}\n\n职业：${template.role}\n\n${template.brief}\n\n${titles.map((title, i) => `## ${title}\n\n${outputs[i] || "未提交"}`).join("\n\n")}\n\n## 操作与成果\n\n\`\`\`json\n${JSON.stringify(outcome, null, 2)}\n\`\`\`\n\n教学记录，不代表专业能力、报考或执业资格。`;
+    const markdown = `# ${template.deliverable}\n\nsimulation · LIMEN 编辑性教学模板 · ${status}\n\n职业：${template.role}\n\n${template.brief}\n\n${titles.map((title, i) => `## ${title}\n\n${outputs[i] || "未提交"}`).join("\n\n")}\n\n## 操作与成果\n\n\`\`\`json\n${JSON.stringify(outcome, null, 2)}\n\`\`\`\n\n教学记录，不代表专业能力、报考或执业资格。`;
     download(`limen-${templateId}.${format}`, format === "json" ? JSON.stringify({ ...outcome, save_status: status }, null, 2) : markdown);
     setMessage(`已发起 ${format === "json" ? "JSON" : "Markdown"} 下载。`);
   }
   const savedView = saved ? experiencePresentation(saved) : null;
   const completeResult = step === 3 && choices.every(value => value !== null) ? operationResult(template.id, choices, 2) : null;
-  const stages = <ol className="experience-stages" aria-label="体验步骤" data-motion="M-E05">{[...titles, "复盘与成果"].map((title, i) => <li key={`${i}:${title}`} aria-current={step === i ? "step" : undefined}><span aria-hidden="true">{i < step ? "✓" : i + 1}</span><span>{title}</span></li>)}</ol>;
-  const mentor = <aside className="experience-mentor" data-motion={mode === "project" ? "M-E08" : "M-E11"}>
-    <details className="experience-mentor-disclosure" open={mentorExpanded} onToggle={event => setMentorExpanded(event.currentTarget.open)}><summary>{mode === "project" ? "项目导师与会话" : "面试官与会话"}</summary><div>
-      <AvatarPanel key={`${templateId}:${mode}`} presenter={presenterForExperience(direction, templateId)} role={`${template.role}${mode === "project" ? "（项目导师）" : "（面试官）"}`} onTranscript={entry => { if (record) { setTranscript(previous => [...previous.slice(-59), entry]); invalidate(); } }} context={`simulation编辑性教学场景：${template.brief}\n当前步骤：${titles[Math.min(step, 2)]}。${template.stages[Math.min(step, 2)].question}。不提供诊疗建议，不评定用户能力。`} />
-      <p className="task-source mt-4">点击连接后，角色和当前任务发给星云。个人画像、操作与回答不会自动发送。</p>
-      <label className="experience-transcript-choice"><input type="checkbox" checked={record} onChange={e => { invalidate(); setRecord(e.target.checked); if (!e.target.checked) setTranscript([]); }} /><span>将本次文字对话随成果私有保存</span></label>
-    </div></details>
+  const lit = mentorLink === "connected";
+
+  const stages = <ol className="xd-stage" aria-label="体验步骤" data-motion="M-E05">
+    {[...titles, "复盘与成果"].map((title, i) => <li key={`${i}:${title}`}>
+      <button type="button" className="xd-stage-btn" data-state={i < step ? "done" : i === step ? "current" : "todo"} aria-current={i === step ? "step" : undefined} disabled={i > step} onClick={() => setStep(i)}>
+        <span className="xd-stage-no">第 {i + 1} 步</span>
+        <span>{title}{i < step && <span className="xd-stage-mark">已提交</span>}</span>
+      </button>
+    </li>)}
+  </ol>;
+
+  // 导师面板只挂一次：目录态就在，进入任务后沿用同一个连接，不重复初始化。
+  const mentor = <aside className="xd-mentor">
+    <AvatarPanel
+      presenter={presenterForExperience(direction, templateId)}
+      role={`${template.role}${started ? mode === "project" ? "（项目导师）" : "（面试官）" : "（带教老师）"}`}
+      onConnectionChange={handsOff}
+      onTranscript={entry => { if (record) { setTranscript(previous => [...previous.slice(-59), entry]); invalidate(); } }}
+      context={started
+        ? `simulation编辑性教学场景：${template.brief}\n当前步骤：${titles[Math.min(step, 2)]}。${template.stages[Math.min(step, 2)].question}。不提供诊疗建议，不评定用户能力。`
+        : `simulation编辑性教学场景：用户还在挑任务，方向是${direction === "medicine" ? "继续医学" : findDirection(direction)?.name}，可选任务有${templates.map(item => item.title).join("、")}。不提供诊疗建议，不评定用户能力。`}
+    />
+    <div className="atlas-sheet xd-mentor-note">
+      <p>{started
+        ? "接通后导师只知道你在看哪个方向、做到哪一步。你写下的理由不会自动发过去，想让它看就贴进对话里。"
+        : "还没开始也能先问。接通后导师只知道你在看哪个方向；你选定任务后，它会换成本步的问题继续，不用再接通一次。"}</p>
+      <ul>
+        <li>第一次接通要加载数字人资源，通常十几秒；断开后可以重新接通。</li>
+        <li>可以打字，也可以按话筒说话；回复能随时打断。</li>
+        <li>对话默认不保存，勾选下面这项才随成果一起存进你的档案。</li>
+      </ul>
+      <label className="xd-consent">
+        <input type="checkbox" checked={record} onChange={e => { invalidate(); setRecord(e.target.checked); if (!e.target.checked) setTranscript([]); }} />
+        <span>把这次对话随成果一起私有保存</span>
+      </label>
+    </div>
   </aside>;
-  return <main id="main" className={`shell xn-experience-page experience-redesign ${started ? `is-${mode}` : "is-catalog"}`}><fieldset disabled={busy} className="contents">
-    <header className="experience-page-header" data-motion="M-E01" data-reveal><div><h1>{started ? template.title : "职业体验"}</h1>{started && <p>{template.role} · {mode === "project" ? "模拟项目" : "模拟面试"}</p>}</div>{started && <div className="experience-header-actions"><button className="button secondary" onClick={pause}>暂存进度</button><button className="button secondary" onClick={reset}>返回任务选择</button></div>}</header>
-    {message && <p className="inline-feedback experience-status" role="status">{message}</p>}
-    {!started ? <div className="experience-catalog">
-      <aside className="experience-direction-nav"><h2>探索方向</h2><nav aria-label="体验方向">{directions.map(item => <button key={item.id} type="button" aria-pressed={direction === item.id} onClick={() => { invalidate(); setDirection(item.id); setTemplateId(getTemplate(item.id).id); }}>{item.id === "medicine" ? "临床工作" : item.name}</button>)}</nav><div className="experience-resume">{hasDraft && <button onClick={restore}>继续本机进度</button>}{hasSaved && <button onClick={() => void loadSaved()}>读取已保存成果</button>}{legacyDraft && <button onClick={() => { try { download("limen-legacy-draft-v2.json", localStorage.getItem("limen:career-draft:v2") ?? "{}"); } catch { setMessage("旧暂存读取失败。"); } }}>导出旧版暂存</button>}</div></aside>
-      <section className="experience-task-list" key={direction} data-motion="M-E02" aria-label="可选择的体验任务">
-        <p className="task-source">simulation · 编辑性教学模板与合成数据</p>
-        {direction === "medicine" && <p className="experience-medicine-note">按研究生招生常用学科名称组织，学科与医院科室并非一一对应；具体代码与报考条件按目标院校当年目录核验。<a href={medicineNamingSource.url} target="_blank" rel="noreferrer">学科名称来源</a></p>}
-        {templates.map(item => <article className={`experience-task-row ${templateId === item.id ? "is-selected" : ""}`} key={item.id}>
-          <button type="button" className="experience-task-select" aria-expanded={templateId === item.id} aria-controls={`task-${item.id}`} onClick={() => { invalidate(); setTemplateId(item.id); }}><span className="experience-task-art"><DirectionArt direction={item.direction} compact /></span><span><span className="experience-task-role">{medicineDisciplines.find(d => d.template_id === item.id)?.name ?? item.role}</span><span className="experience-task-title">{item.title}</span><span className="experience-task-brief">{item.brief}</span></span><span aria-hidden="true" className="experience-task-toggle">{templateId === item.id ? "−" : "+"}</span></button>
-          {templateId === item.id && <div id={`task-${item.id}`} className="experience-mode-options" key={item.id}>
-            {(["project", "interview"] as const).map(value => <section className="experience-mode-option" key={value}><TaskModePreview template={item} mode={value} /><h3>{value === "project" ? "模拟项目" : "模拟面试"}</h3><p>{value === "project" ? item.id === "clinical_data" ? "检查数据，记录处理方案。" : `${item.stages[0].title}，逐步形成${item.deliverable}。` : item.id === "clinical_data" ? "说明数据处理的依据，并根据新约束修订方案。" : `围绕“${item.stages[0].question}”说明证据，修订方案。`}</p><button type="button" className="button" onClick={() => { invalidate(); setMode(value); setStarted(true); setSaved(null); setMessage(""); }}>{value === "project" ? "开始项目" : "开始面试"}</button></section>)}
-            <Link href={`/explore?direction=${direction}`} className="experience-handbook-link">查阅{direction === "medicine" ? "临床工作" : findDirection(direction)?.name}手册 →</Link>
-          </div>}
-        </article>)}
-        <StorysetAttribution />
-      </section>
-    </div> : step < 3 ? <>
-      <p className="task-source experience-simulation">simulation · {template.brief}</p>
-      <div className={`experience-workspace experience-workspace-${mode}`}>
-        <nav className="experience-stage-nav" aria-label="当前任务阶段">{stages}</nav>
-        <section className="experience-main-task" aria-label={mode === "project" ? "项目工作区" : "面试案例与回答"}>
-          <h2 ref={stageHeading} tabIndex={-1} className="experience-stage-heading">{titles[step]}</h2>
-          <TaskMaterial template={template} choices={choices} />
-          {mentor}
-          <div className="experience-current-question" key={step} data-motion={mode === "project" ? "M-E07" : "M-E09 M-E10"}>
-            {mode === "interview" && <p className="experience-interview-context">{["先选择一种处理方式，并说明你有哪些相关经历或哪些内容尚不了解。", "结合上一阶段的选择解释当前取舍，不必假装已有专业工作经历。", "新约束：团队需要知道方案的未知项。请修订选择，并留下一个具体反问。"][step]}</p>}
-            {step > 0 && <details className="experience-previous"><summary>上一阶段的记录</summary><p className="whitespace-pre-wrap">{outputs[step - 1]}</p></details>}
-            <TaskWorkbench template={template} choices={choices} step={step} onChange={choose} />
-            <label className="form-label experience-answer">{mode === "project" ? "操作理由与待核对事项" : "回答、证据与反问"}<textarea className="field" rows={5} maxLength={3000} value={outputs[step]} onChange={e => edit(e.target.value)} placeholder="根据实际操作结果，说明选择理由、发现的问题与仍需核对的事项。" /></label><p className="task-source">{outputs[step].trim().length} / 3000 字 · 至少10字，记录具体理由</p>
-            <div className="form-actions"><button className="button secondary" disabled={step === 0} onClick={() => setStep(step - 1)}>上一步</button><button className="button" disabled={choices[step] === null || outputs[step].trim().length < 10} onClick={() => setStep(step + 1)}>{step === 2 ? "完成操作，开始复盘" : "提交本步，继续 →"}</button></div>
+
+  const ink = <div className="xd-ink" aria-hidden="true" data-atlas-in={lit ? "1" : undefined}>
+    <svg className="atlas-draw" viewBox="0 0 158 46" style={{ "--len": 214 } as CSSProperties}>
+      <path d="M152 32C132 8 116 40 94 22S58 6 30 24" fill="none" style={{ stroke: "var(--green)" }} strokeWidth="1.6" strokeLinecap="round" />
+      <circle cx="152" cy="32" r="2.6" style={{ fill: "var(--ochre)" }} />
+      <circle cx="6" cy="26" r="2.6" style={{ fill: "var(--green)" }} />
+    </svg>
+  </div>;
+
+  return <main id="main" className="xd-page"><div className="container"><fieldset disabled={busy} className="contents">
+    <header className="xd-head" data-motion="M-E01">
+      <div>
+        <h1>{started ? template.title : "职业体验"}</h1>
+        <p className="xd-lede">{started
+          ? `${template.role} · ${mode === "project" ? "按项目做" : "按面试做"}。${template.brief}`
+          : "挑一个方向的任务，在合成材料上做三次决定：先看材料，再选方案，最后写下你为什么这么选。做完会留下一张体验卡，写着你选了什么、依据是什么，可以带走，也可以推翻重来。"}</p>
+      </div>
+      <div className="xd-head-meta">
+        <span className="atlas-chip">第 3 步 / 共 4 步</span>
+        <span className="atlas-chip">约 25 分钟</span>
+        <span className="atlas-chip" data-tone={lit ? "ok" : undefined}>导师 · {mentorLinkLabels[mentorLink]}</span>
+        <span className="simulation-tag">simulation · 合成材料</span>
+      </div>
+    </header>
+
+    {message && <p className="xd-flash" role="status">{message}</p>}
+
+    <div className="xd-desk" data-lit={lit ? "1" : "0"}>
+      <div className="xd-lamp" aria-hidden="true" />
+      {ink}
+      {!started ? <>
+      <aside className="xd-rail">
+        <p className="xd-rail-label">先从哪一类看</p>
+        <ul className="xd-dir">
+          {groups.map(group => <li key={group.id}>
+            <p className="xd-dir-group">{group.name}</p>
+            {directions.filter(item => item.group_id === group.id).map(item => <button key={item.id} type="button" className="xd-dir-btn" aria-pressed={direction === item.id} onClick={() => { invalidate(); setDirection(item.id); setTemplateId(getTemplate(item.id).id); if (mentorLink !== "idle") setMessage("换了方向，导师也换成这个方向的那位，需要重新接通一次。"); }}>{item.id === "medicine" ? "继续医学（留在临床）" : item.name}</button>)}
+          </li>)}
+        </ul>
+      </aside>
+
+      <section className="xd-main" aria-label="可选择的体验任务" data-motion="M-E02">
+        <div className="xd-main-head">
+          <h2>可做的任务</h2>
+          <p className="xd-question">每个方向下面有 1 到 4 个任务，材料都是编辑好的固定数据和合成记录。做的时候没人给你打分，也不用假装已经有相关经历。</p>
+        </div>
+        <div className="xd-tasks" key={direction}>
+          {direction === "medicine" && <p className="xd-sheet-note">按研究生招生常用学科名称组织，学科和医院科室不是一一对应；具体代码和报考条件要按目标院校当年目录核验。{medicineNamingSource.url && <a href={medicineNamingSource.url} target="_blank" rel="noreferrer" style={{ marginLeft: 6 }}>学科名称来源</a>}</p>}
+          {templates.map(item => <article className="atlas-sheet xd-task" key={item.id} data-selected={templateId === item.id}>
+            <button type="button" className="xd-task-btn" aria-expanded={templateId === item.id} aria-controls={`task-${item.id}`} onClick={() => { invalidate(); setTemplateId(item.id); }}>
+              <span>
+                <span className="xd-task-role">{medicineDisciplines.find(d => d.template_id === item.id)?.name ?? item.role}</span>
+                <span className="xd-task-title">{item.title}</span>
+                <span className="xd-task-brief">{item.brief}</span>
+              </span>
+              <span className="xd-task-mark" aria-hidden="true">{templateId === item.id ? "−" : "+"}</span>
+            </button>
+            {templateId === item.id && <div id={`task-${item.id}`} className="xd-task-body">
+              <div className="xd-modes">
+                {(["project", "interview"] as const).map(value => <section className="xd-mode" key={value}>
+                  <h4>{value === "project" ? "按项目做" : "按面试做"}</h4>
+                  <TaskModePreview template={item} mode={value} />
+                  <p>{value === "project" ? "看材料、做三次决定、每步写理由，最后拿到成果卡。" : "先选证据再解释取舍，第三步会来一条新约束，要你改一版并留一个反问。"}</p>
+                  <button type="button" className="atlas-btn atlas-btn-primary" onClick={() => { invalidate(); setMode(value); setStarted(true); setSaved(null); setStep(0); setMessage(""); }}>{value === "project" ? "用项目方式开始" : "用面试方式开始"}</button>
+                </section>)}
+              </div>
+              <p className="xd-handbook"><Link href={`/explore?direction=${direction}`}>先看{direction === "medicine" ? "继续医学" : findDirection(direction)?.name}的手册</Link></p>
+            </div>}
+          </article>)}
+        </div>
+
+        <section className="xd-leaves" aria-label="这一步会留下什么">
+          <div className="xd-leaves-head">
+            <h3>这一步会留下什么</h3>
+            <p className="xd-sheet-note">做完不是看完就散，会留下三样东西，都能带走</p>
+          </div>
+          <div className="xd-leaves-grid">
+            <article className="atlas-sheet xd-leaf">
+              <p className="xd-leaf-no">记录</p>
+              <h4>三步选择与理由</h4>
+              <p>每步选一个方案，再写一句为什么。改主意可以回去改，但后面的提交会作废，需要重做一次。</p>
+            </article>
+            <article className="atlas-sheet xd-leaf">
+              <p className="xd-leaf-no">复盘</p>
+              <h4>四个具体问题</h4>
+              <p>哪部分最想继续做、哪部分最不想再碰、下次想验证什么、再投三小时愿不愿意。答完才算完成。</p>
+            </article>
+            <article className="atlas-sheet xd-leaf">
+              <p className="xd-leaf-no">成果</p>
+              <h4>一张可导出的成果卡</h4>
+              <p>写着你的选择、依据和当天日期，可导出 JSON 或 Markdown，带到第 4 步做行动规划。</p>
+            </article>
           </div>
         </section>
-      </div>
-    </> : <section className="experience-outcome" aria-label="成果与复盘">
-      <h2 ref={stageHeading} tabIndex={-1}>{template.deliverable}</h2><p className="task-source">simulation · 本次操作记录，不评定专业能力。</p>
-      <div className="experience-outcome-summary" data-motion="M-E12"><div>{completeResult && <OperationPreview result={completeResult} />}</div><section><h3>本次选择</h3><dl>{template.stages.map((stage, i) => <div key={stage.title}><dt>{stage.title}</dt><dd>{stage.options.find(option => option.value === choices[i])?.label ?? "未选择"}</dd></div>)}</dl></section></div>
-      <ol className="experience-outcome-records">{titles.map((title, i) => <li key={title} style={{ animationDelay: `${i * 80}ms` }}><details open={i === 0}><summary>{i + 1}. {title}</summary><p className="whitespace-pre-wrap">{outputs[i]}</p></details></li>)}</ol>
-      <section className="experience-reflection" data-motion="M-E13"><h3>哪部分工作让你想继续？</h3><div>{([['favorite_operation', '最想继续做的部分'], ['least_favorite_operation', '最不喜欢的部分'], ['followup_question', '下一次想验证的问题']] as const).map(([key, label]) => <label key={key} className="form-label">{label}<textarea className="field" rows={2} maxLength={key === "followup_question" ? 1000 : 240} value={reflection[key]} onChange={e => { invalidate(); setReflection(previous => ({ ...previous, [key]: e.target.value })); }} /></label>)}<label className="form-label">你愿意再投入3小时吗？<select className="field" value={reflection.willingness_for_3_hours} onChange={e => { invalidate(); setReflection(previous => ({ ...previous, willingness_for_3_hours: Number(e.target.value) })); }}>{["完全不想", "不太想", "还不确定", "比较愿意", "很愿意"].map((label, i) => <option key={label} value={i + 1}>{label}</option>)}</select></label></div>
-        <p className="experience-save-consequence">私有保存会替换当前身份上一次保存的体验成果。需要保留旧成果时，请先导出。</p><div className="form-actions"><button className="button secondary" onClick={() => setStep(2)}>返回修改</button><button className="button" disabled={!reflectionSchema.safeParse(reflection).success} onClick={() => void finish()}>{busy ? "保存中…" : "保存成果与复盘"}</button></div>
+
+        <section className="atlas-sheet xd-tight xd-before" aria-label="开始之前">
+          <div className="xd-before-grid">
+            <div>
+              <h3>开始之前</h3>
+              <p>这里不预测你能不能考上，也不给方向排名。它只回答一件事：这类工作你做得下去吗。</p>
+            </div>
+            <ul>
+              <li>材料是合成的：记录、波形、指标都为教学生成，不能当临床依据，也不能当岗位绩效。</li>
+              <li>三步都要留痕：每步选一个方案，写十来个字说明理由。</li>
+              <li>留在临床也是正经选项，方向清单里一直有继续医学。</li>
+            </ul>
+          </div>
+          {(hasDraft || hasSaved || legacyDraft) && <div className="xd-resume">
+            {hasDraft && <button type="button" className="atlas-btn" onClick={restore}>接着做本机暂存</button>}
+            {hasSaved && <button type="button" className="atlas-btn" onClick={() => void loadSaved()}>读回已保存成果</button>}
+            {legacyDraft && <button type="button" className="atlas-btn" onClick={() => { try { download("limen-legacy-draft-v2.json", localStorage.getItem("limen:career-draft:v2") ?? "{}"); } catch { setMessage("旧暂存读不出来。"); } }}>导出旧版暂存</button>}
+          </div>}
+        </section>
       </section>
+      </> : step < 3 ? <>
+      <aside className="xd-rail">
+        <p className="xd-rail-label">做到第 {step + 1} 步</p>
+        {stages}
+        <div className="xd-rail-foot">
+          <span className="atlas-chip">{mode === "project" ? "项目模式" : "面试模式"}</span>
+          <button type="button" className="atlas-btn" onClick={pause}>暂存到本机</button>
+          <button type="button" className="atlas-btn" onClick={reset}>换一个任务</button>
+        </div>
+      </aside>
+
+      <section className="xd-main" aria-label={mode === "project" ? "项目工作区" : "面试案例与回答"}>
+        <div className="xd-main-head">
+          <h2 ref={stageHeading} tabIndex={-1}>{titles[step]}</h2>
+          <p className="xd-question">{template.stages[step].question}</p>
+          {mode === "interview" && <p className="xd-hint">{["先选一种处理方式，并说明你有哪些相关经历，或者哪些内容还没接触过。", "结合上一步的选择解释这次取舍，不用假装已经有专业工作经历。", "新约束：团队要知道方案的未知项。请改一版选择，并留一个具体反问。"][step]}</p>}
+        </div>
+        <div key={`material-${step}`} className="swap-in">
+          <TaskMaterial template={template} choices={choices} />
+        </div>
+        <TaskWorkbench template={template} choices={choices} step={step} onChange={choose} />
+        <section className="atlas-sheet xd-tight">
+          {step > 0 && <details className="xd-records" style={{ marginBottom: 14 }}>
+            <summary>上一步写下的记录</summary>
+            <p>{outputs[step - 1]}</p>
+          </details>}
+          <div className="xd-reason-head">
+            <h3>{mode === "project" ? "你为什么这样选" : "回答、依据和反问"}</h3>
+            <p className="xd-sheet-note">至少 10 个字才能进下一步</p>
+          </div>
+          <label className="sr-only" htmlFor="xd-reason">{mode === "project" ? "操作理由" : "回答与反问"}</label>
+          <textarea id="xd-reason" className="xd-reason-field" rows={5} maxLength={3000} value={outputs[step]} onChange={e => edit(e.target.value)} placeholder={mode === "project" ? "写清你依据哪一条材料、放弃了什么。比如：我先把 A 组单独筛了一遍，误报都落在夜间低幅段，所以我宁可多报一点。" : "说明你的依据，也留一个具体的问题给面试官。"} />
+          <div className="xd-reason-foot">
+            <p>{outputs[step].trim().length} / 3000 字 · 写具体一点，后面复盘要用到这句</p>
+            <div className="xd-actions">
+              <button type="button" className="atlas-btn" disabled={step === 0} onClick={() => setStep(step - 1)}>上一步</button>
+              <button type="button" className="atlas-btn atlas-btn-primary" disabled={choices[step] === null || outputs[step].trim().length < 10} onClick={() => setStep(step + 1)}>{step === 2 ? "完成操作，进入复盘" : "提交本步，继续"}</button>
+            </div>
+          </div>
+        </section>
+      </section>
+      </> : <>
+      <aside className="xd-rail">
+        <p className="xd-rail-label">第 4 步 / 共 4 步</p>
+        {stages}
+        <div className="xd-rail-foot">
+          <span className="atlas-chip">可以导出</span>
+          <button type="button" className="atlas-btn" onClick={() => exportNotes("json")}>导出 JSON</button>
+          <button type="button" className="atlas-btn" onClick={() => exportNotes("md")}>导出 Markdown</button>
+        </div>
+      </aside>
+
+      <section className="xd-main xd-outcome" aria-label="成果与复盘">
+        <div className="xd-main-head">
+          <h2 ref={stageHeading} tabIndex={-1}>{template.deliverable}</h2>
+          <p className="xd-question">下面是这次的三步选择和每一步的结果。先看一遍，再回答三个复盘问题，最后保存或者导出。</p>
+        </div>
+
+        <section className="atlas-sheet xd-tight" data-motion="M-E12">
+          <div className="xd-sheet-head">
+            <h3>本次选择</h3>
+            <p className="xd-sheet-note">simulation · 只记录选择，不评能力</p>
+          </div>
+          <div className="atlas-kv">
+            {template.stages.map((stageItem, i) => <div key={stageItem.title}>
+              <dt>{stageItem.title}</dt>
+              <dd>{stageItem.options.find(option => option.value === choices[i])?.label ?? "未选择"}</dd>
+            </div>)}
+          </div>
+          {completeResult && <OperationPreview result={completeResult} />}
+        </section>
+
+        <section className="atlas-sheet xd-tight">
+          <div className="xd-sheet-head"><h3>三步记录</h3><p className="xd-sheet-note">保存前还能回去改</p></div>
+          <ol className="xd-records">
+            {titles.map((title, i) => <li key={title}>
+              <details open={i === 0}>
+                <summary>{i + 1}. {title}</summary>
+                <p>{outputs[i]}</p>
+              </details>
+            </li>)}
+          </ol>
+        </section>
+
+        <section className="atlas-sheet xd-tight" data-motion="M-E13">
+          <div className="xd-sheet-head"><h3>回头看这次体验</h3><p className="xd-sheet-note">这四项会一起存进成果，第 4 步要用</p></div>
+          <div className="xd-reflection">
+            {([["favorite_operation", "哪部分你最想继续做"], ["least_favorite_operation", "哪部分你最不想再碰"], ["followup_question", "下一次想验证什么"]] as const).map(([key, label]) => <label key={key} className="form-label">{label}
+              <textarea className="field" rows={2} maxLength={key === "followup_question" ? 1000 : 240} value={reflection[key]} onChange={e => { invalidate(); setReflection(previous => ({ ...previous, [key]: e.target.value })); }} />
+            </label>)}
+            <label className="form-label">再让你投入 3 小时，你愿意吗
+              <select className="field" value={reflection.willingness_for_3_hours} onChange={e => { invalidate(); setReflection(previous => ({ ...previous, willingness_for_3_hours: Number(e.target.value) })); }}>{["完全不想", "不太想", "还不确定", "比较愿意", "很愿意"].map((label, i) => <option key={label} value={i + 1}>{label}</option>)}</select>
+            </label>
+          </div>
+          <p className="xd-hint">私有保存会替换你上一次保存的体验成果。旧的要留，就先导出。</p>
+          <div className="xd-actions" style={{ marginTop: 14 }}>
+            <button type="button" className="atlas-btn" onClick={() => setStep(2)}>返回修改</button>
+            <button type="button" className="atlas-btn atlas-btn-primary" disabled={!reflectionSchema.safeParse(reflection).success} onClick={() => void finish()}>{busy ? "保存中…" : "保存成果与复盘"}</button>
+          </div>
+        </section>
+
+        <article className="xd-card" aria-label="可以带走的成果卡">
+          <h3>{template.deliverable}</h3>
+          <p className="xd-card-role">{template.role} · {direction === "medicine" ? "继续医学" : findDirection(direction)?.name}</p>
+          <dl className="atlas-kv">
+            <div><dt>方向</dt><dd>{direction === "medicine" ? "继续医学（留在临床）" : findDirection(direction)?.name}</dd></div>
+            <div><dt>任务</dt><dd>{template.title}</dd></div>
+            <div><dt>方式</dt><dd>{mode === "project" ? "项目" : "面试"}</dd></div>
+            {template.stages.map((stageItem, i) => <div key={stageItem.title}><dt>第 {i + 1} 步</dt><dd>{stageItem.options.find(option => option.value === choices[i])?.label ?? "未选择"}</dd></div>)}
+            <div><dt>日期</dt><dd>{saved?.completed_at ? saved.completed_at.slice(0, 10) : "尚未保存"}</dd></div>
+          </dl>
+          <p className="xd-card-foot">教学记录，不代表专业能力、报考条件或执业资格。数据为合成，不能当临床依据。</p>
+          <div className="xd-card-seal"><span className="atlas-stamp ochre">simulation</span><span>合成数据 · 教学记录</span></div>
+        </article>
+
+        <div className="xd-export">
+          <button type="button" className="atlas-btn" onClick={() => exportNotes("json")}>导出 JSON</button>
+          <button type="button" className="atlas-btn" onClick={() => exportNotes("md")}>导出 Markdown</button>
+          {hasDraft && <button type="button" className="atlas-btn" onClick={() => { try { localStorage.removeItem(draftKey); setHasDraft(false); setMessage("本机暂存已清掉。"); } catch { setMessage("本机暂存清不掉。"); } }}>清掉本机暂存</button>}
+          <Link className="atlas-btn atlas-btn-primary" href={`/report/plan?direction=${direction}`}>带着成果去做行动规划</Link>
+        </div>
+      </section>
+      </>}
+
+      {mentor}
+    </div>
+
+    {saved && savedView && <section className="atlas-sheet xd-saved" data-motion="M-E14">
+      <p className="xd-sheet-note">已私有保存</p>
+      <h2>{savedView.role} · {savedView.deliverable}</h2>
+      {saved.scenario_id !== "direction_workbench" && "outputs" in saved && <ol>
+        {saved.outputs.map((output, i) => <li key={i}><h3>{savedView.stage_names[i]}</h3><p>{output}</p></li>)}
+      </ol>}
+      <div className="xd-actions" style={{ marginTop: 16 }}>
+        <button type="button" className="atlas-btn" onClick={() => { download("limen-saved-outcome.json", JSON.stringify(evaluationCard(saved), null, 2)); setMessage("已发起已保存成果下载。"); }}>导出已保存成果</button>
+        <Link className="atlas-btn atlas-btn-primary" href={`/report/plan?direction=${"direction_id" in saved ? saved.direction_id : "ml_cv"}`}>制定行动规划</Link>
+      </div>
     </section>}
-    {started && <div className="experience-export-tools"><button onClick={pause}>暂停，保存到本机</button><button onClick={() => exportNotes("json")}>导出 JSON</button><button onClick={() => exportNotes("md")}>导出 Markdown</button>{hasDraft && <button onClick={() => { try { localStorage.removeItem(draftKey); setHasDraft(false); setMessage("本机暂存已清除。"); } catch { setMessage("本机暂存清除失败。"); } }}>清除本机暂存</button>}</div>}
-    {saved && savedView && <section className="experience-saved" data-motion="M-E14"><p className="task-source">已私有保存</p><h2>{savedView.role} · {savedView.deliverable}</h2>{saved.scenario_id !== "direction_workbench" && "outputs" in saved && <ol className="experience-outcome-records">{saved.outputs.map((output, i) => <li key={i}><h3>{savedView.stage_names[i]}</h3><p className="whitespace-pre-wrap">{output}</p></li>)}</ol>}<div className="form-actions"><button className="button secondary" onClick={() => { download("limen-saved-outcome.json", JSON.stringify(evaluationCard(saved), null, 2)); setMessage("已发起已保存成果下载。"); }}>导出已保存成果</button><Link className="button" href={`/report/plan?direction=${"direction_id" in saved ? saved.direction_id : "ml_cv"}`}>制定行动规划 →</Link></div></section>}
-  </fieldset></main>;
+  </fieldset></div></main>;
 }

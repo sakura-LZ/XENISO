@@ -1,0 +1,371 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T15:10:59.887Z",
+  "sources": [
+    {
+      "id": "sjtu-bme-courses",
+      "url": "https://bme.sjtu.edu.cn/Upload/Files/2021-04-13-11-03-30-500000.pdf",
+      "organization": "上海交通大学 生物医学工程学院",
+      "title": "2018年级生物医学工程专业课程设置一览表（上海交通大学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "文档标题与正文标注「2018 年级」，即 2018 级培养方案，非最新。"
+    },
+    {
+      "id": "seu-bme-plan",
+      "url": "https://bme.seu.edu.cn/_upload/article/files/f7/ba/abc422de49f485fa2b86da3b222f/5d7a787f-4812-46a9-8d35-b924c44b9427.pdf",
+      "organization": "东南大学 生物科学与医学工程学院",
+      "title": "生物医学工程专业培养方案（东南大学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 无发布日期与年级标注，按非最新处理。"
+    },
+    {
+      "id": "sustech-ime-2024",
+      "url": "https://mirrors.sustech.edu.cn/courses/%E6%9C%AC%E7%A7%91%E4%BA%BA%E6%89%8D%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88/2024%E7%BA%A7%E6%9C%AC%E7%A7%91%E4%BA%BA%E6%89%8D%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88/24-2024%E7%BA%A7%E6%99%BA%E8%83%BD%E5%8C%BB%E5%AD%A6%E5%B7%A5%E7%A8%8B%E4%B8%93%E4%B8%9A%E6%9C%AC%E7%A7%91%E4%BA%BA%E6%89%8D%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88.pdf",
+      "organization": "南方科技大学 生物医学工程系",
+      "title": "智能医学工程专业本科人才培养方案（2024 级）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "标题标注「（2024 级）」，即 2024 级培养方案；为目前取得的**最新年级**版本。"
+    },
+    {
+      "id": "tju-ime-plan",
+      "url": "https://www.tmu.edu.cn/_upload/article/files/91/58/b0b1c32840dea7650b13011839a6/0456aec0-c84d-4cdb-b63b-1795fd11a0e8.pdf",
+      "organization": "天津医科大学",
+      "title": "智能医学工程专业培养方案（四年制）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 无发布日期与年级标注，仅标注「四年制」，按非最新处理。"
+    }
+  ],
+  "records": [
+    {
+      "id": "learning-sjtu-bme-courses-guide-devices-1dc2c192",
+      "source_id": "sjtu-bme-courses",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "上海交通大学生物医学工程培养目标（2018 级原文）",
+      "summary": "上海交大生物医学工程专业 2018 级培养目标原文：为学生提供优质的生物医学工程教育，期望毕业生在工程领域或其他专业领域获得成功，成为具有国际化视野的学术界、工业界、商业界的领军人才。（同一官方来源共 4 条原文事实，字段：training、learning_hours、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于上海交大该专业 2018 级培养方案的培养目标；为 2018 级版本，非最新。",
+      "relation": "context",
+      "tags": [
+        "上海交通大学",
+        "生物医学工程",
+        "083100",
+        "培养目标",
+        "2018级",
+        "学分",
+        "模块学分",
+        "通识教育",
+        "专业教育",
+        "程序设计思想与方法",
+        "数据结构",
+        "理论学时",
+        "实践学时",
+        "生物医学图像处理",
+        "生物医学信号与系统",
+        "解剖与生理"
+      ],
+      "facts": [
+        {
+          "field": "training",
+          "value": "2018 年级培养目标（Program educational objectives ） 上海交通大学生物医学工程专业的目标是为学生提供优质的生物医学工程教育。 我 们期望本专业的毕业生： ➢ 在工程领域或其他专业领域获得成功 ➢ 成为具有国际化视野的学术界、工业界、商业界的领军人才",
+          "quote": "2018 年级培养目标（Program educational objectives ） 上海交通大学生物医学工程专业的目标是为学生提供优质的生物医学工程教育。 我 们期望本专业的毕业生： ➢ 在工程领域或其他专业领域获得成功 ➢ 成为具有国际化视野的学术界、工业界、商业界的领军人才",
+          "start": 0,
+          "end": 142
+        },
+        {
+          "field": "learning_hours",
+          "value": "专业教育课程 要求最低学分：93 学分 (1) 基础类 要求最低学分：50 学分 1) 必修 要求最低学分：50 学分 须修满全部",
+          "quote": "专业教育课程 要求最低学分：93 学分 (1) 基础类 要求最低学分：50 学分 1) 必修 要求最低学分：50 学分 须修满全部",
+          "start": 2457,
+          "end": 2522
+        },
+        {
+          "field": "topics",
+          "value": "MA080 高等数学（A）（1） 6.09696 0 一 1 必修 A5 B2,B1C1,C2,C4 Calculus I CS154 程序设计思想与方法 （C++） 3.04848 0 一 1 必修 A3 B3,B1,B2C3 D1 Thinking and Approach of Programming MA077 线性代数（B类） 3.04848 0 一 1 必修 A2,A4,A3, A1,A5B1,B2,B3C1,C4,C2, C3,C5D2,D3,D1 Linear Algebra PH001 大学物理（A类 ）（1） 4.06464 0 一 2 必修 A3,A4,A5B3,B1C3,C5D1,D2,D3 Physics I CS149 数据结构 3.04848 0 一 2 必修 A3 B1,B2,B3C3 D3,D2,D1 Data Structure MA119 概率统计 3.04848 0 一 2 必修 A3,A4B1,B3,B2,B 4,B5 C3 D2 Probability and Statistics MA081 高等数学（A）（2） 4.06464 0 一 2 必修 A5 B1,B2C1,C2,C4 Calculus II ME116 工程学导论 3.0482424 一 2 必修 A2,A3 B2 C2,C4 Introduction to Engineering CA001 大学化学 2.03232 0 一 2 必修 A5,A3B3,B1C2,C3,C5D1,D3 General chemistry MA097 数理方法 3.04848 0 二 1 必修 A3 B1,B3,B5C3,C5 D3 Mathematical Methods in Physics EI203 基本电路理论 4.06464 0 二 1 必修 A3 B2,B1,B3C3 D2,D3,D1 Fundamental Circuit Theory",
+          "quote": "MA080 高等数学（A）（1） 6.09696 0 一 1 必修 A5 B2,B1C1,C2,C4 Calculus I CS154 程序设计思想与方法 （C++） 3.04848 0 一 1 必修 A3 B3,B1,B2C3 D1 Thinking and Approach of Programming MA077 线性代数（B类） 3.04848 0 一 1 必修 A2,A4,A3, A1,A5B1,B2,B3C1,C4,C2, C3,C5D2,D3,D1 Linear Algebra PH001 大学物理（A类 ）（1） 4.06464 0 一 2 必修 A3,A4,A5B3,B1C3,C5D1,D2,D3 Physics I CS149 数据结构 3.04848 0 一 2 必修 A3 B1,B2,B3C3 D3,D2,D1 Data Structure MA119 概率统计 3.04848 0 一 2 必修 A3,A4B1,B3,B2,B 4,B5 C3 D2 Probability and Statistics MA081 高等数学（A）（2） 4.06464 0 一 2 必修 A5 B1,B2C1,C2,C4 Calculus II ME116 工程学导论 3.0482424 一 2 必修 A2,A3 B2 C2,C4 Introduction to Engineering CA001 大学化学 2.03232 0 一 2 必修 A5,A3B3,B1C2,C3,C5D1,D3 General chemistry MA097 数理方法 3.04848 0 二 1 必修 A3 B1,B3,B5C3,C5 D3 Mathematical Methods in Physics EI203 基本电路理论 4.06464 0 二 1 必修 A3 B2,B1,B3C3 D2,D3,D1 Fundamental Circuit Theory",
+          "start": 2603,
+          "end": 3437
+        },
+        {
+          "field": "topics",
+          "value": "BI148 生物医学统计概论 2.03232 0 二 2 必修 B1,B2 Introduction of Biomedical Statistics BI277 细胞生物学 2.03232 0 二 2 必修 A4,A3B2,B1C5,C3 D4 Cell Biology BM251 生物医学信号与系统 （1） 2.03232 0 二 2 必修 A3 B2,B4,B1C3 Biomedical Signals and System BI120 生物学导论 2.03232 0 二 2 必修 A1,A3 Introduction to Biology BI124 解剖与生理（1） 2.03224 8 三 1 必修 A3,A1B2,B3,B4C3,C5 Anatomy and Physiology I BI908 生物医学图像处理(1)2.03224 8 三 1 必修 A3,A5,A2B2,B3C2,C3 D3 Biomedical Image Processing BM253 生物医学信号与系统 （2） 2.03226 6 三 1 必修 A1,A3,A4B2,B4C3,C2,C5D2,D1 Biomedical Signals and System BI122 解剖与生理（2） 2.03230 2 三 2 必修 B3,B1,B2,B 4 Anatomy and Physiology II",
+          "quote": "BI148 生物医学统计概论 2.03232 0 二 2 必修 B1,B2 Introduction of Biomedical Statistics BI277 细胞生物学 2.03232 0 二 2 必修 A4,A3B2,B1C5,C3 D4 Cell Biology BM251 生物医学信号与系统 （1） 2.03232 0 二 2 必修 A3 B2,B4,B1C3 Biomedical Signals and System BI120 生物学导论 2.03232 0 二 2 必修 A1,A3 Introduction to Biology BI124 解剖与生理（1） 2.03224 8 三 1 必修 A3,A1B2,B3,B4C3,C5 Anatomy and Physiology I BI908 生物医学图像处理(1)2.03224 8 三 1 必修 A3,A5,A2B2,B3C2,C3 D3 Biomedical Image Processing BM253 生物医学信号与系统 （2） 2.03226 6 三 1 必修 A1,A3,A4B2,B4C3,C2,C5D2,D1 Biomedical Signals and System BI122 解剖与生理（2） 2.03230 2 三 2 必修 B3,B1,B2,B 4 Anatomy and Physiology II",
+          "start": 3892,
+          "end": 4493
+        }
+      ],
+      "missing_fields": [
+        "prerequisites",
+        "access_requirement"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "19b174488764ac02b4417f6062d809890a734bf158e87d90dd3b99b825a33caa",
+      "collected_at": "2026-10-23T14:33:56.716Z",
+      "verified_at": "2026-10-23T15:10:59.853Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "college": "生物医学工程学院",
+        "program": "生物医学工程（2018 级本科培养方案）",
+        "evidence_locator": "PDF (2) 专业类 1) 必修 课程表"
+      }
+    },
+    {
+      "id": "learning-seu-bme-plan-guide-devices-d5489d65",
+      "source_id": "seu-bme-plan",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "东南大学生物医学工程培养目标（原文）",
+      "summary": "东南大学生物医学工程专业培养目标原文：培养具有坚定理想信念、高尚道德情操、深厚人文素养和突出创新思维，系统掌握数学、物理、化学、生物、医学等专业基础知识与电子信息科学基础，能在生物医学工程及相关领域从事科学研究、技术开发和管理工作，具有家国情怀和国际视野的领军人才；并给出毕业五年内 5 条分目标。（同一官方来源共 3 条原文事实，字段：training、learning_hours、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于东南大学该专业培养方案的培养目标；原文无年级标注，不代表现行最新版。",
+      "relation": "context",
+      "tags": [
+        "东南大学",
+        "生物医学工程",
+        "083100",
+        "培养目标",
+        "领军人才",
+        "165学分",
+        "3019学时",
+        "工学学士",
+        "集中实践环节",
+        "专业主干课",
+        "生物分析与传感",
+        "数字信号处理",
+        "生物系统建模与分析",
+        "实验学时",
+        "讨论学时"
+      ],
+      "facts": [
+        {
+          "field": "training",
+          "value": "培养目标 培养具有坚定的理想信念、高尚的道德情操、深厚的人文素养和突出的创新思维，能够系统地掌握专业基础知识（数 学、物理、化学、生物、医学等）和电子信息科学基础，以及生物医学工程学科的基本理论和基本技能；能够在生物医学 工程及相关领域从事科学研究、技术开发和管理等工作；能够不断学习适应发展，具有家国情怀和国际视野、担当引领未 来和造福人类的领军人才。",
+          "quote": "培养目标 培养具有坚定的理想信念、高尚的道德情操、深厚的人文素养和突出的创新思维，能够系统地掌握专业基础知识（数 学、物理、化学、生物、医学等）和电子信息科学基础，以及生物医学工程学科的基本理论和基本技能；能够在生物医学 工程及相关领域从事科学研究、技术开发和管理等工作；能够不断学习适应发展，具有家国情怀和国际视野、担当引领未 来和造福人类的领军人才。",
+          "start": 1166,
+          "end": 1343
+        },
+        {
+          "field": "learning_hours",
+          "value": "十. 各类课程学分与学时分配 课程类型 学分 学时 学分 比例 通识教育基础课程 73 1508 44.24% 专业相关课程 56 1255 33.94% 集中实践环节（含课外实践） &短学期课程 36 256 + 课程周数： 42 21.82% 总计 165 3019 + 课程周数： 42 100% 十一. 实践类课程学分比例",
+          "quote": "十. 各类课程学分与学时分配 课程类型 学分 学时 学分 比例 通识教育基础课程 73 1508 44.24% 专业相关课程 56 1255 33.94% 集中实践环节（含课外实践） &短学期课程 36 256 + 课程周数： 42 21.82% 总计 165 3019 + 课程周数： 42 100% 十一. 实践类课程学分比例",
+          "start": 3280,
+          "end": 3445
+        },
+        {
+          "field": "topics",
+          "value": "(2)专业主干课 课程编号 课程名称 学分 授课 学时 实验 学时 讨论 学时 课外 学时 周学 时 授课 学年 授课 学期 考核 类型 备注 B1110010 电子电路基础 4 64 0 0 0 4 二 3 + B1120041 生物分析与传感（含实验） 4 32 16 16 0 4 三 1 + B1110320 电磁场与波（全英文） 4 64 0 0 0 4 三 1 + B1110041 数字信号处理（双语、研讨） 3 32 20 16 0 3 三 1 + B11D0061 生物系统建模与分析（研讨） 3 32 16 16 0 4 三 3 + 合计 18 224 52 48 0",
+          "quote": "(2)专业主干课 课程编号 课程名称 学分 授课 学时 实验 学时 讨论 学时 课外 学时 周学 时 授课 学年 授课 学期 考核 类型 备注 B1110010 电子电路基础 4 64 0 0 0 4 二 3 + B1120041 生物分析与传感（含实验） 4 32 16 16 0 4 三 1 + B1110320 电磁场与波（全英文） 4 64 0 0 0 4 三 1 + B1110041 数字信号处理（双语、研讨） 3 32 20 16 0 3 三 1 + B11D0061 生物系统建模与分析（研讨） 3 32 16 16 0 4 三 3 + 合计 18 224 52 48 0",
+          "start": 6396,
+          "end": 6690
+        }
+      ],
+      "missing_fields": [
+        "prerequisites",
+        "access_requirement"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "d48ec36f1a123144de54329e9a18daddbaa23b4538e77783ecd981b714bf47e0",
+      "collected_at": "2026-10-23T14:36:39.280Z",
+      "verified_at": "2026-10-23T15:10:59.864Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "college": "生物科学与医学工程学院",
+        "program": "生物医学工程（本科培养方案）",
+        "evidence_locator": "PDF 专业相关课程 (2)专业主干课"
+      }
+    },
+    {
+      "id": "learning-sustech-ime-2024-medical-ai-pm-612687a2",
+      "source_id": "sustech-ime-2024",
+      "role_id": "medical_ai_pm",
+      "category": "learning",
+      "title": "南方科技大学智能医学工程培养目标（2024 级原文）★101011T / 医学技术类 1010",
+      "summary": "南方科技大学智能医学工程专业（专业类：医学技术类 1010；专业代码 101011T）2024 级培养目标原文：智能医学工程是医、理、工高度交叉的学科，面向「健康中国2030」国家需求，培养兼具医学背景和较强工程实践能力的医工复合型高端人才和医学拔尖创新人才。（同一官方来源共 4 条原文事实，字段：training、learning_hours、topics、prerequisites；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于南方科技大学该专业 2024 级培养方案；专业代码 101011T 属医学技术类 1010，是本轮范围内「智能医学工程」方向的直接证据。",
+      "relation": "context",
+      "tags": [
+        "南方科技大学",
+        "智能医学工程",
+        "101011T",
+        "医学技术类1010",
+        "培养目标",
+        "2024级",
+        "医工交叉",
+        "162学分",
+        "工学学士",
+        "专业核心课",
+        "通识课程",
+        "专业基础课",
+        "机器学习及医学工程应用",
+        "数据结构与算法分析",
+        "实验学分",
+        "先修课程",
+        "CS109",
+        "MA127",
+        "MA113",
+        "MA212"
+      ],
+      "facts": [
+        {
+          "field": "training",
+          "value": "1. 智能医学工程是医、理、工高度交叉的学科，面向“健康中国2030”的重大国家需求，培养兼具医学 背景和较强工程实践能力的医工复合型高端人才和医学拔尖创新人才。",
+          "quote": "1. 智能医学工程是医、理、工高度交叉的学科，面向“健康中国2030”的重大国家需求，培养兼具医学 背景和较强工程实践能力的医工复合型高端人才和医学拔尖创新人才。",
+          "start": 703,
+          "end": 784
+        },
+        {
+          "field": "learning_hours",
+          "value": "三、学制、授予学位及毕业学分要求 1. 学制：4年。 2. 学位：对完成并符合本科培养方案学位要求的学生，授予工学学士学位。 3. 最低学分要求：本专业毕业最低学分要求为162学分。具体要求如下： 课程模块 课程类别 最低学分要求 通识课程 思想政治教育模块 思政类 17 基础素质培养模块 体育类 4 军训类 4 综合素质类 2 美育类 2 基础能力培养模块 计算机类 3 写作类 2 外语类 14 人文社科基础模块 人文类 6 社科类 国学类 2 自然科学基础模块 数学类 12 物理类 10 化学类 3 地生类 3 通专衔接模块 专业导论类 2 专业课程 专业必修课程 专业基础课 15 专业核心课 22 集中实践 （毕业论文、实习、科研创新项目等） 16 专业选修课程 专业选修课 23（其中实验学分 不少于 6 学分） 合计学分 162",
+          "quote": "三、学制、授予学位及毕业学分要求 1. 学制：4年。 2. 学位：对完成并符合本科培养方案学位要求的学生，授予工学学士学位。 3. 最低学分要求：本专业毕业最低学分要求为162学分。具体要求如下： 课程模块 课程类别 最低学分要求 通识课程 思想政治教育模块 思政类 17 基础素质培养模块 体育类 4 军训类 4 综合素质类 2 美育类 2 基础能力培养模块 计算机类 3 写作类 2 外语类 14 人文社科基础模块 人文类 6 社科类 国学类 2 自然科学基础模块 数学类 12 物理类 10 化学类 3 地生类 3 通专衔接模块 专业导论类 2 专业课程 专业必修课程 专业基础课 15 专业核心课 22 集中实践 （毕业论文、实习、科研创新项目等） 16 专业选修课程 专业选修课 23（其中实验学分 不少于 6 学分） 合计学分 162",
+          "start": 997,
+          "end": 1370
+        },
+        {
+          "field": "topics",
+          "value": "表 1 专业必修课教学安排一览表 智能医学工程专业 课程类别 课程编号 课程名称 学分 其中实验/ 实践学分 建议修读 学期 建议先 修 课程 开课单位 专 业 基 础 课 BMEB111 电路原理 3 1/春秋 生医工系 EE205 信号和系统 3 1 2/秋 MA117 电子系 CS203B 数据结构与算法分析 B① 3 1 2/春 CS109 计算机系 MA212 概率论与数理统计 3 2/秋 MA127 数学系 BMEB215 机器学习及医学工程应用 3 2/春 MA113, MA212 生医工系 合计 15 2",
+          "quote": "表 1 专业必修课教学安排一览表 智能医学工程专业 课程类别 课程编号 课程名称 学分 其中实验/ 实践学分 建议修读 学期 建议先 修 课程 开课单位 专 业 基 础 课 BMEB111 电路原理 3 1/春秋 生医工系 EE205 信号和系统 3 1 2/秋 MA117 电子系 CS203B 数据结构与算法分析 B① 3 1 2/春 CS109 计算机系 MA212 概率论与数理统计 3 2/秋 MA127 数学系 BMEB215 机器学习及医学工程应用 3 2/春 MA113, MA212 生医工系 合计 15 2",
+          "start": 3449,
+          "end": 3712
+        },
+        {
+          "field": "prerequisites",
+          "value": "CS203B 数据结构与算法分析 B① 3 1 2/春 CS109 计算机系 MA212 概率论与数理统计 3 2/秋 MA127 数学系 BMEB215 机器学习及医学工程应用 3 2/春 MA113, MA212 生医工系 合计 15 2",
+          "quote": "CS203B 数据结构与算法分析 B① 3 1 2/春 CS109 计算机系 MA212 概率论与数理统计 3 2/秋 MA127 数学系 BMEB215 机器学习及医学工程应用 3 2/春 MA113, MA212 生医工系 合计 15 2",
+          "start": 3591,
+          "end": 3712
+        }
+      ],
+      "missing_fields": [
+        "access_requirement"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f3837ba0be12dea85b70e53800e579c446900d194452c4f914ca868c2cb49b9f",
+      "collected_at": "2026-10-23T14:39:05.997Z",
+      "verified_at": "2026-10-23T15:10:59.876Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南方科技大学",
+        "college": "生物医学工程系",
+        "program": "智能医学工程（101011T，2024 级本科培养方案）",
+        "evidence_locator": "PDF 六、表1 建议先修列"
+      }
+    },
+    {
+      "id": "learning-tju-ime-plan-medical-ai-pm-ca5c4bee",
+      "source_id": "tju-ime-plan",
+      "role_id": "medical_ai_pm",
+      "category": "learning",
+      "title": "天津医科大学智能医学工程培养目标（四年制培养方案原文）★医学技术类",
+      "summary": "天津医科大学智能医学工程专业（四年制）培养目标原文：培养具有扎实数理知识，掌握智能科学、基础医学、电子信息技术基础理论，能够将人工智能技术应用到生物医学信号处理、医疗数据分析、医学仪器设计等方面的医-理-工复合型人才，具备对生物医学信号与医学图像数据的智能采集、分析能力。（同一官方来源共 3 条原文事实，字段：training、learning_hours、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于天津医科大学该专业四年制培养方案的培养目标；原文该方案的学科门类和专业类别标注为「医学类 医学技术类」。原文无年级标注。",
+      "relation": "context",
+      "tags": [
+        "天津医科大学",
+        "智能医学工程",
+        "医学技术类",
+        "培养目标",
+        "医学图像",
+        "人工智能",
+        "医理工复合",
+        "193学分",
+        "毕业学分",
+        "必修143学分",
+        "毕业设计",
+        "医学人工智能",
+        "机器学习与模式识别",
+        "深度学习技术",
+        "计算机视觉与智能医学图像处理",
+        "实践学时",
+        "2513学时"
+      ],
+      "facts": [
+        {
+          "field": "training",
+          "value": "一、培养目标 培养具有坚定理想信念，践行社会主义核心价值观，德智体美劳全面发展； 具有扎实的数理知识，掌握智能科学、基础医学、电子信息技术的基础理论，能 够将人工智能技术应用到生物医学信号处理、医疗数据分析、医学仪器设计等方 面的医-理-工复合型人才。具备对于生物医学信号、医学图像数据的智能采集、 分析能力；同时具备较强的知识更新能力、实践能力和创新能力。能够在智慧医 疗的相关行业、研究院所、企业中从事研究、服务、管理和技术支持等工作 智能医学工程专业培养方案 （四年制）",
+          "quote": "一、培养目标 培养具有坚定理想信念，践行社会主义核心价值观，德智体美劳全面发展； 具有扎实的数理知识，掌握智能科学、基础医学、电子信息技术的基础理论，能 够将人工智能技术应用到生物医学信号处理、医疗数据分析、医学仪器设计等方 面的医-理-工复合型人才。具备对于生物医学信号、医学图像数据的智能采集、 分析能力；同时具备较强的知识更新能力、实践能力和创新能力。能够在智慧医 疗的相关行业、研究院所、企业中从事研究、服务、管理和技术支持等工作 智能医学工程专业培养方案 （四年制）",
+          "start": 0,
+          "end": 238
+        },
+        {
+          "field": "learning_hours",
+          "value": "十三、毕业要求与学位授予 智能医学工程专业毕业学分要求为在 4 年内必须修满 193 学分+4 学分（思 想教育实践学分）+4 学分（创新创业学分）+1 学分（考核与能力测试），其中 必修课程143 学分",
+          "quote": "十三、毕业要求与学位授予 智能医学工程专业毕业学分要求为在 4 年内必须修满 193 学分+4 学分（思 想教育实践学分）+4 学分（创新创业学分）+1 学分（考核与能力测试），其中 必修课程143 学分",
+          "start": 6598,
+          "end": 6700
+        },
+        {
+          "field": "topics",
+          "value": "分 专业核心 课程 ） 1 神经工程学 5 3.0 48 24 24 3.0 2 医学智能传感技术 6 3.0 48 40 8 3.0 3 自动控制原理 5 3.0 48 42 6 3.0 智能医学类 4 医学成像基础 5 2.0 32 28 4 2.0 5 计算机视觉与智能医学 图像处理 6 3.0 48 32 16 3.0 24.5学分 智能医学工程专业培养方案教学进程表 (必修课程） 类别 序号 课 程 开 课 学 期 学分 学时数 学年及学期分配 总 理论 Ⅰ学 实践 年 Ⅱ学年 Ⅲ学年 Ⅳ学年 1 2 3 4 5 6 7 8 16 18 18 18 18 18 18 18 每周学时数 智能医学类 （11学分） 6 医学人工智能（上） 4 2.0 32 22 10 2.0 7 医疗大数据与数据挖掘 6 1.5 27 27 0 1.5 8 智能医学信号处理 6 3.0 48 32 16 3.0 人工智能类 （4学分） 9 机器学习与模式识别 5 2.0 32 28 4 2.0 10 深度学习技术 6 2.0 32 28 4 2.0 实训（4学分） 1 单片机开发与应用 5 1.5 27 0 27 1.5 2 EDA电路设计实践 5 1.0 16 0 16 1.0 3 电子工艺实训 5 1.5 27 0 27 1.5 总学时及周学时（不含实习和毕业论文）",
+          "quote": "分 专业核心 课程 ） 1 神经工程学 5 3.0 48 24 24 3.0 2 医学智能传感技术 6 3.0 48 40 8 3.0 3 自动控制原理 5 3.0 48 42 6 3.0 智能医学类 4 医学成像基础 5 2.0 32 28 4 2.0 5 计算机视觉与智能医学 图像处理 6 3.0 48 32 16 3.0 24.5学分 智能医学工程专业培养方案教学进程表 (必修课程） 类别 序号 课 程 开 课 学 期 学分 学时数 学年及学期分配 总 理论 Ⅰ学 实践 年 Ⅱ学年 Ⅲ学年 Ⅳ学年 1 2 3 4 5 6 7 8 16 18 18 18 18 18 18 18 每周学时数 智能医学类 （11学分） 6 医学人工智能（上） 4 2.0 32 22 10 2.0 7 医疗大数据与数据挖掘 6 1.5 27 27 0 1.5 8 智能医学信号处理 6 3.0 48 32 16 3.0 人工智能类 （4学分） 9 机器学习与模式识别 5 2.0 32 28 4 2.0 10 深度学习技术 6 2.0 32 28 4 2.0 实训（4学分） 1 单片机开发与应用 5 1.5 27 0 27 1.5 2 EDA电路设计实践 5 1.0 16 0 16 1.0 3 电子工艺实训 5 1.5 27 0 27 1.5 总学时及周学时（不含实习和毕业论文）",
+          "start": 9201,
+          "end": 9789
+        }
+      ],
+      "missing_fields": [
+        "access_requirement"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "66fd98d4798760a4f99a4b11c08d57c8b42888dcded985f0c52dc4fe73260079",
+      "collected_at": "2026-10-23T14:44:19.522Z",
+      "verified_at": "2026-10-23T15:10:59.886Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "天津医科大学",
+        "program": "智能医学工程（四年制本科培养方案）",
+        "evidence_locator": "PDF 十、课程设置与学分（一）必修课程 专业核心课 + 教学进程表"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "sjtu-bme-courses",
+      "url": "https://bme.sjtu.edu.cn/Upload/Files/2021-04-13-11-03-30-500000.pdf",
+      "at": "2026-10-23T14:33:56.716Z",
+      "status": "collected",
+      "missing_fields": [
+        "prerequisites",
+        "access_requirement"
+      ]
+    },
+    {
+      "source_id": "seu-bme-plan",
+      "url": "https://bme.seu.edu.cn/_upload/article/files/f7/ba/abc422de49f485fa2b86da3b222f/5d7a787f-4812-46a9-8d35-b924c44b9427.pdf",
+      "at": "2026-10-23T14:36:39.280Z",
+      "status": "collected",
+      "missing_fields": [
+        "prerequisites",
+        "access_requirement"
+      ]
+    },
+    {
+      "source_id": "sustech-ime-2024",
+      "url": "https://mirrors.sustech.edu.cn/courses/%E6%9C%AC%E7%A7%91%E4%BA%BA%E6%89%8D%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88/2024%E7%BA%A7%E6%9C%AC%E7%A7%91%E4%BA%BA%E6%89%8D%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88/24-2024%E7%BA%A7%E6%99%BA%E8%83%BD%E5%8C%BB%E5%AD%A6%E5%B7%A5%E7%A8%8B%E4%B8%93%E4%B8%9A%E6%9C%AC%E7%A7%91%E4%BA%BA%E6%89%8D%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88.pdf",
+      "at": "2026-10-23T14:39:05.997Z",
+      "status": "collected",
+      "missing_fields": [
+        "access_requirement"
+      ]
+    },
+    {
+      "source_id": "tju-ime-plan",
+      "url": "https://www.tmu.edu.cn/_upload/article/files/91/58/b0b1c32840dea7650b13011839a6/0456aec0-c84d-4cdb-b63b-1795fd11a0e8.pdf",
+      "at": "2026-10-23T14:44:19.522Z",
+      "status": "collected",
+      "missing_fields": [
+        "access_requirement"
+      ]
+    }
+  ]
+}

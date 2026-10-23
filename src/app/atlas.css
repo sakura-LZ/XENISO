@@ -1,0 +1,247 @@
+/*
+ * XENISO · 采集册（herbarium / 档案袋）视觉原语
+ * 只依赖 globals.css 里的 token，不新开色板。
+ * 用法：给区块套 .atlas-sheet / .atlas-band，需要贴纸感加 .atlas-tape / .atlas-pin。
+ * 动效全部可降级：prefers-reduced-motion 下静止。
+ */
+
+:root {
+  --atlas-shadow-1: 0 1px 0 rgba(90, 76, 48, .10), 0 6px 16px -10px rgba(70, 58, 34, .45);
+  --atlas-shadow-2: 0 2px 0 rgba(90, 76, 48, .10), 0 18px 34px -22px rgba(60, 48, 26, .55);
+  --atlas-edge: 1px solid var(--line);
+  --atlas-tilt-a: -.35deg;
+  --atlas-tilt-b: .4deg;
+}
+
+/* ---------- 纸面 ---------- */
+.atlas-sheet {
+  position: relative;
+  background: var(--surface);
+  border: var(--atlas-edge);
+  box-shadow: var(--atlas-shadow-1);
+  padding: 28px 30px;
+}
+.atlas-sheet::after {
+  /* 纸纤维：极淡的横纹 + 边缘泛黄 */
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(0deg, rgba(90, 76, 48, .028) 0 1px, transparent 1px 3px);
+  box-shadow: inset 0 0 42px rgba(120, 100, 60, .07);
+}
+.atlas-sheet > * { position: relative; z-index: 1; }
+.atlas-sheet.tilt-l { transform: rotate(var(--atlas-tilt-a)); }
+.atlas-sheet.tilt-r { transform: rotate(var(--atlas-tilt-b)); }
+.atlas-sheet.flat { box-shadow: none; background: transparent; border-style: dashed; }
+.atlas-sheet.raised { box-shadow: var(--atlas-shadow-2); }
+
+/* 档案袋封条 */
+.atlas-tape {
+  position: absolute;
+  width: 132px;
+  height: 26px;
+  background: rgba(226, 214, 180, .82);
+  border-left: 1px solid rgba(120, 100, 60, .18);
+  border-right: 1px solid rgba(120, 100, 60, .18);
+  box-shadow: 0 1px 3px rgba(90, 76, 48, .16);
+  transform: rotate(-2.5deg);
+  pointer-events: none;
+}
+.atlas-tape.tl { top: -12px; left: 22px; }
+.atlas-tape.tr { top: -12px; right: 22px; transform: rotate(2.2deg); }
+.atlas-tape.mid { top: -13px; left: 50%; margin-left: -66px; transform: rotate(-1.2deg); }
+
+.atlas-pin {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #a8763f, #6d4620 70%);
+  box-shadow: 0 2px 4px rgba(60, 48, 26, .45);
+  pointer-events: none;
+}
+
+/* ---------- 章、签、手写 ---------- */
+.atlas-stamp {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 2px solid var(--green);
+  color: var(--green);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+  opacity: .82;
+}
+/* 印章整体 opacity .82 会把深赭色压到 4.19:1，低于正文 4.5:1 门槛；
+   赭色章单独提回不透明，保留印章质感但保证可读。 */
+.atlas-stamp.ochre { border-color: #593d0d; color: #593d0d; opacity: 1; }
+.atlas-stamp.solid { background: var(--green); color: var(--paper); }
+
+.atlas-hand {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--ochre);
+  letter-spacing: .01em;
+}
+
+.atlas-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.atlas-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.atlas-chip[data-tone="gap"] { border-color: #c9b08a; background: var(--ochre-soft); color: #6b4a15; }
+.atlas-chip[data-tone="ok"] { border-color: #b6c4a8; background: var(--green-wash); color: var(--green-deep); }
+.atlas-chip[data-tone="miss"] { border-color: #cbb2ac; background: var(--danger-soft); color: var(--danger); }
+
+/* ---------- 带纹样的横幅 ---------- */
+.atlas-band {
+  position: relative;
+  padding: 72px 0;
+}
+.atlas-band + .atlas-band { border-top: 1px solid var(--line-2); }
+.atlas-band[data-tone="paper-2"] { background: var(--paper-2); }
+.atlas-band[data-tone="night"] { background: var(--night); color: var(--night-ink); }
+.atlas-band[data-tone="night"] .atlas-label { color: var(--night-ink-2); }
+
+/* 横格纸 */
+.atlas-ruled {
+  background-image: repeating-linear-gradient(180deg, transparent 0 27px, rgba(120, 100, 60, .16) 27px 28px);
+}
+
+/* ---------- 键值小表 ---------- */
+.atlas-kv { display: grid; gap: 10px; }
+.atlas-kv > div { display: grid; grid-template-columns: 92px 1fr; gap: 14px; align-items: baseline; }
+.atlas-kv dt, .atlas-kv b { font-family: var(--font-mono); font-size: 13px; letter-spacing: .06em; color: var(--ink-3); font-weight: 500; }
+.atlas-kv dd, .atlas-kv i { margin: 0; font-style: normal; font-size: 16px; color: var(--ink-2); }
+
+/* ---------- 按钮 ---------- */
+.atlas-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 16px;
+  text-decoration: none;
+  transition: transform 260ms var(--ease), box-shadow 260ms var(--ease), background 260ms var(--ease), border-color 260ms var(--ease);
+}
+.atlas-btn:hover { border-color: var(--ink-2); box-shadow: var(--atlas-shadow-1); transform: translateY(-1px); }
+.atlas-btn:active { transform: translateY(0); }
+.atlas-btn-primary { background: var(--green); border-color: var(--green-deep); color: var(--paper); }
+.atlas-btn-primary:hover { background: var(--green-deep); color: var(--paper); }
+.atlas-btn-quiet { background: transparent; border-style: dashed; }
+.atlas-btn:disabled, .atlas-btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+
+/* ---------- 网格助手 ---------- */
+.atlas-cols-2 { display: grid; gap: 28px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.atlas-cols-3 { display: grid; gap: 24px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.atlas-cols-4 { display: grid; gap: 20px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1024px) {
+  .atlas-cols-3, .atlas-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .atlas-cols-2, .atlas-cols-3, .atlas-cols-4 { grid-template-columns: minmax(0, 1fr); }
+  .atlas-sheet { padding: 22px 20px; }
+  .atlas-band { padding: 52px 0; }
+}
+
+/* ---------- 动效 ---------- */
+/* 1. 入场：轻微上浮 + 去模糊。
+   关键：默认状态是"可见"，只有 XenisoMotion 判定元素在视口下方时才打上
+   data-state="pending" 把它藏起来。这样 JS 挂了或爬虫抓页面时内容照样在。 */
+[data-atlas-reveal] {
+  transition: opacity 620ms var(--ease), transform 620ms var(--ease), filter 620ms var(--ease);
+}
+[data-atlas-reveal][data-state="pending"] {
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(3px);
+}
+[data-atlas-reveal][data-atlas-stagger] > * {
+  transition: opacity 520ms var(--ease), transform 520ms var(--ease);
+}
+[data-atlas-reveal][data-atlas-stagger][data-state="pending"] > * {
+  opacity: 0;
+  transform: translateY(10px);
+}
+[data-atlas-reveal][data-atlas-stagger][data-state="in"] > :nth-child(1) { transition-delay: 40ms; }
+[data-atlas-reveal][data-atlas-stagger][data-state="in"] > :nth-child(2) { transition-delay: 110ms; }
+[data-atlas-reveal][data-atlas-stagger][data-state="in"] > :nth-child(3) { transition-delay: 180ms; }
+[data-atlas-reveal][data-atlas-stagger][data-state="in"] > :nth-child(4) { transition-delay: 250ms; }
+[data-atlas-reveal][data-atlas-stagger][data-state="in"] > :nth-child(n+5) { transition-delay: 310ms; }
+
+/* 2. 悬停：纸片被指尖拨动 */
+.atlas-lift { transition: transform 420ms var(--ease), box-shadow 420ms var(--ease); }
+@media (hover: hover) {
+  .atlas-lift:hover { transform: translateY(-3px) rotate(-.18deg); box-shadow: var(--atlas-shadow-2); }
+}
+
+/* 3. 墨线：SVG 路径描边 */
+.atlas-draw path, .atlas-draw line, .atlas-draw circle, .atlas-draw polyline {
+  stroke-dasharray: var(--len, 600);
+  stroke-dashoffset: var(--len, 600);
+  transition: stroke-dashoffset 1400ms var(--ease);
+}
+[data-atlas-in="1"] .atlas-draw path,
+[data-atlas-in="1"] .atlas-draw line,
+[data-atlas-in="1"] .atlas-draw circle,
+[data-atlas-in="1"] .atlas-draw polyline { stroke-dashoffset: 0; }
+
+/* 4. 印章落下 */
+@keyframes atlas-stamp-in {
+  0% { opacity: 0; transform: rotate(-14deg) scale(1.5); }
+  62% { opacity: .92; transform: rotate(-2deg) scale(.96); }
+  100% { opacity: .82; transform: rotate(-3deg) scale(1); }
+}
+.atlas-stamp.animate[data-atlas-in="1"] { animation: atlas-stamp-in 620ms var(--ease) both; }
+
+/* 5. 纸张缓慢呼吸（只用于单张主视觉，不铺满页面） */
+@keyframes atlas-drift {
+  0%, 100% { transform: translateY(0) rotate(var(--atlas-tilt-a)); }
+  50% { transform: translateY(-6px) rotate(calc(var(--atlas-tilt-a) * -1)); }
+}
+.atlas-drift { animation: atlas-drift 9s ease-in-out infinite; }
+
+/* 6. 高亮扫过：用于"当前步"或关键数字，克制使用 */
+@keyframes atlas-sweep {
+  0% { background-size: 0% 100%; }
+  100% { background-size: 100% 100%; }
+}
+.atlas-sweep[data-atlas-in="1"] {
+  background-image: linear-gradient(transparent 62%, var(--green-soft) 62%);
+  background-repeat: no-repeat;
+  animation: atlas-sweep 900ms var(--ease) 220ms both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-atlas-reveal],
+  [data-atlas-reveal][data-atlas-stagger] > * { opacity: 1 !important; transform: none !important; filter: none !important; }
+  .atlas-drift, .atlas-stamp.animate[data-atlas-in="1"], .atlas-sweep[data-atlas-in="1"] { animation: none !important; }
+  .atlas-draw path, .atlas-draw line, .atlas-draw circle, .atlas-draw polyline { stroke-dashoffset: 0 !important; }
+}

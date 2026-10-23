@@ -1,0 +1,494 @@
+/*
+ * XENISO · 交流社区 —— 留言墙
+ * 纸片、图钉、封条、印章都来自 atlas.css；这里只负责布局、纸条排版和一处主动效。
+ * 色板只用 globals.css 的 token：苔绿表示"可以照做"，赭石表示"还没确认"。
+ */
+
+.community-page { padding-block: 52px 96px; }
+
+/* ---------- 页头 ---------- */
+.community-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px 56px;
+  align-items: end;
+  padding-bottom: 28px;
+  margin-bottom: 34px;
+  border-bottom: 1px solid var(--line);
+}
+.community-head h1 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 46px;
+  line-height: 1.16;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.community-lede {
+  margin: 16px 0 0;
+  max-width: 760px;
+  font-size: 19px;
+  line-height: 1.72;
+  color: var(--ink-2);
+}
+.community-head-meta {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--ink-2);
+  text-align: right;
+}
+.community-head-meta b { font-weight: 600; color: var(--ink); }
+
+/* ---------- 提示条 ---------- */
+.community-notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 18px;
+  margin: 0 0 26px;
+  padding: 13px 18px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-2);
+}
+.community-notice[data-tone="ok"] { border-color: var(--green); background: var(--green-wash); color: var(--green-deep); }
+.community-notice[data-tone="error"] { border-color: var(--danger); background: var(--danger-soft); color: var(--danger); }
+
+/* ---------- 主栅格：左边墙，右边规则 ---------- */
+.community-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 400px;
+  gap: 40px;
+  align-items: start;
+}
+.community-wall { min-width: 0; }
+
+/* ---------- 发帖纸 ---------- */
+.community-compose { margin-bottom: 30px; padding: 26px 30px 24px; }
+.community-compose h2 {
+  margin: 0 0 8px;
+  font-family: var(--font-serif);
+  font-size: 27px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+.community-note {
+  margin: 0 0 16px;
+  max-width: 62ch;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+.community-kinds { border: 0; margin: 0 0 18px; padding: 0; }
+.community-kinds legend { padding: 0; margin-bottom: 10px; }
+.community-kind-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.community-kind-btn {
+  min-height: 46px;
+  padding: 9px 16px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface-2);
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 1.45;
+  text-align: left;
+  transition: border-color 160ms ease-out, background-color 160ms ease-out, color 160ms ease-out, transform 120ms ease-out;
+}
+.community-kind-btn:hover { border-color: var(--ink-3); background: var(--surface); }
+.community-kind-btn:active { transform: translateY(1px); }
+.community-kind-btn[aria-pressed="true"] {
+  border-color: var(--green);
+  background: var(--green-wash);
+  color: var(--green-deep);
+  font-weight: 600;
+}
+.community-field { position: relative; margin-bottom: 16px; }
+.community-counter {
+  float: right;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-2);
+}
+.community-error {
+  margin: 6px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--danger);
+}
+.community-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 4px 0 18px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.community-consent input { margin-top: 3px; }
+.community-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+}
+.community-form-note {
+  margin: 0;
+  flex: 1 1 220px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-3);
+}
+
+/* 文字按钮：与 .text-action 同族，但更小、更克制 */
+.community-link {
+  border: 0;
+  background: none;
+  padding: 2px 0;
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--green) 35%, transparent);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 4px;
+  transition: color 160ms ease-out, text-decoration-color 160ms ease-out;
+}
+.community-link:hover { color: var(--green-deep); text-decoration-color: currentColor; }
+.community-link[data-tone="danger"] { color: var(--danger); text-decoration-color: color-mix(in srgb, var(--danger) 35%, transparent); }
+.community-link[data-tone="danger"]:hover { color: var(--danger); text-decoration-color: currentColor; }
+
+/* ---------- 筛选 + 搜索 ---------- */
+.community-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.community-filters { display: flex; flex-wrap: wrap; gap: 8px; }
+.community-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 1.4;
+  transition: border-color 160ms ease-out, background-color 160ms ease-out, color 160ms ease-out, transform 120ms ease-out;
+}
+.community-filter:hover { border-color: var(--ink-3); background: var(--surface-2); }
+.community-filter:active { transform: translateY(1px); }
+.community-filter[aria-pressed="true"] {
+  border-color: var(--green);
+  background: var(--green-wash);
+  color: var(--green-deep);
+  font-weight: 600;
+}
+.community-filter .count {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  opacity: .75;
+}
+.community-query { flex: 0 1 280px; min-width: 200px; }
+.community-query .field { margin-top: 0; min-height: 46px; font-size: 16px; padding: 10px 14px; }
+
+/* ---------- 墙上的纸片 ---------- */
+.community-wall-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 28px;
+}
+.community-wall-list > li { transform: rotate(-.42deg); }
+.community-wall-list > li:nth-child(even) { transform: rotate(.34deg); }
+
+.community-slip {
+  padding: 26px 30px 20px;
+  transition: box-shadow 420ms var(--ease), border-color 240ms ease-out;
+}
+.community-slip .atlas-pin { left: 42px; margin-left: 0; }
+.community-wall-list > li:nth-child(3n+2) .atlas-pin { left: auto; right: 48px; }
+.community-wall-list > li:nth-child(3n) .atlas-pin { left: 50%; right: auto; margin-left: -7px; }
+.community-slip.is-taped .atlas-pin { display: none; }
+
+.community-slip-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+.community-kind {
+  padding: 1px 9px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper-2);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.community-kind[data-kind="help"] { border-color: #c9b08a; background: var(--ochre-soft); color: #6b4a15; }
+.community-kind[data-kind="experience"] { border-color: #b6c4a8; background: var(--green-wash); color: var(--green-deep); }
+.community-mine { color: var(--green-deep); }
+
+.community-slip-title {
+  margin: 12px 0 0;
+  font-family: var(--font-serif);
+  font-size: 25px;
+  line-height: 1.42;
+  font-weight: 600;
+  max-width: 34ch;
+}
+.community-slip-body {
+  margin: 10px 0 0;
+  max-width: 64ch;
+  font-size: 17px;
+  line-height: 1.78;
+  color: var(--ink-2);
+  white-space: pre-wrap;
+}
+.community-slip-body[data-clamped="true"] {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.community-slip-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  margin-top: 16px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line-2);
+}
+.community-slip-hint { margin-left: auto; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+
+/* 举报抽屉 */
+.community-report-drawer,
+.community-confirm {
+  margin-top: 16px;
+  padding: 18px 18px 16px;
+  border: 1px dashed var(--line-strong);
+  background: var(--paper-2);
+  animation: community-unfold 220ms var(--ease) both;
+}
+.community-confirm { border-color: color-mix(in srgb, var(--danger) 45%, var(--line)); background: var(--danger-soft); }
+.community-report-drawer h3,
+.community-confirm h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-serif);
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.community-report-drawer p,
+.community-confirm p {
+  margin: 0 0 12px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-2);
+}
+.community-report-drawer .form-label,
+.community-confirm .form-label { margin-bottom: 12px; }
+
+/* ---------- 主动效：纸条被钉上墙 ---------- */
+@keyframes community-pin-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-28px) rotate(-1.6deg) scale(.986);
+    box-shadow: 0 30px 52px -18px rgba(60, 48, 26, .42);
+  }
+  58% {
+    opacity: 1;
+    transform: translateY(3px) rotate(.5deg) scale(1.004);
+    box-shadow: var(--atlas-shadow-2);
+  }
+  78% { transform: translateY(-1.5px) rotate(.15deg); }
+  100% {
+    opacity: 1;
+    transform: none;
+    box-shadow: var(--atlas-shadow-1);
+  }
+}
+@keyframes community-pin-press {
+  0% { transform: translateY(-14px) scale(1.35); opacity: 0; }
+  62% { transform: translateY(0) scale(.92); opacity: 1; }
+  100% { transform: none; opacity: 1; }
+}
+@keyframes community-unfold {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
+}
+.community-slip.is-fresh { animation: community-pin-drop 760ms var(--ease) both; }
+.community-slip.is-fresh .atlas-pin { animation: community-pin-press 760ms var(--ease) both; }
+.community-slip.is-fresh .atlas-tape { animation: community-pin-press 760ms var(--ease) 60ms both; }
+
+/* ---------- 空状态 / 加载 ---------- */
+.community-wall-empty {
+  padding: 34px 32px;
+  text-align: left;
+}
+.community-wall-empty h2 {
+  margin: 0 0 8px;
+  font-family: var(--font-serif);
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.community-wall-empty p { margin: 0 0 14px; max-width: 56ch; font-size: 17px; line-height: 1.75; color: var(--ink-2); }
+.community-wall-loading { margin: 0; padding: 22px 0; font-size: 17px; color: var(--ink-2); }
+
+/* ---------- 未验证时的预览：说明条 + 示例纸片 ---------- */
+.community-preview-note {
+  margin: 0 0 22px;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  max-width: 64ch;
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--ink-2);
+}
+.community-preview { margin-top: 34px; }
+.community-preview-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  margin-bottom: 10px;
+}
+.community-preview-head h2 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 27px;
+  line-height: 1.38;
+  font-weight: 600;
+}
+.community-preview-head .atlas-stamp { letter-spacing: .06em; font-size: 13px; }
+.community-preview-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 24px;
+}
+.community-preview-list > li { transform: rotate(-.4deg); }
+.community-preview-list > li:nth-child(even) { transform: rotate(.36deg); }
+.community-preview-list .atlas-pin { left: 40px; margin-left: 0; }
+.community-preview-list > li:nth-child(2) .atlas-pin { left: auto; right: 44px; }
+.community-preview-list > li:nth-child(3) .atlas-pin { left: 50%; right: auto; margin-left: -7px; }
+.community-preview-list .community-slip-title { font-size: 23px; }
+.community-sample-flag { color: var(--ochre); font-family: var(--font-sans); font-size: 14px; }
+.community-preview-list .sim-tag { font-family: var(--font-mono); font-size: 13px; }
+
+/* 未验证时也能看见「在哪发帖」 */
+.community-publish-entry {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-2);
+}
+.community-publish-label { font-size: 16px; font-weight: 600; color: var(--ink); }
+.community-publish-hint { flex: 1 1 240px; font-size: 15px; line-height: 1.6; color: var(--ink-2); }
+
+/* ---------- 右栏 ---------- */
+.community-rail {
+  position: sticky;
+  top: calc(var(--header-h) + 28px);
+  display: grid;
+  gap: 24px;
+}
+.community-rail-card { padding: 24px 26px 22px; }
+.community-rail-card h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.38;
+  font-weight: 600;
+}
+.community-rail-card p { margin: 0 0 12px; max-width: 44ch; font-size: 16px; line-height: 1.75; color: var(--ink-2); }
+.community-rail-card p:last-child { margin-bottom: 0; }
+.community-rail-list { margin: 0 0 12px; display: grid; gap: 10px; }
+.community-rail-list > div { display: grid; gap: 2px; }
+.community-rail-list dt { font-size: 16px; font-weight: 600; color: var(--ink); }
+.community-rail-list dd { margin: 0; max-width: 44ch; font-size: 16px; line-height: 1.75; color: var(--ink-2); }
+.community-rules { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; counter-reset: rule; }
+.community-rules li {
+  position: relative;
+  padding-left: 28px;
+  max-width: 46ch;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--ink-2);
+}
+.community-rules li::before {
+  counter-increment: rule;
+  content: counter(rule, cjk-ideographic) "、";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-serif);
+  color: var(--green-deep);
+}
+.community-rules b { color: var(--ink); }
+
+/* ---------- 窄屏 ---------- */
+@media (max-width: 1100px) {
+  .community-grid { grid-template-columns: minmax(0, 1fr) 340px; gap: 30px; }
+  .community-slip-title { font-size: 24px; }
+}
+@media (max-width: 900px) {
+  .community-page { padding-block: 36px 72px; }
+  .community-head { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .community-head h1 { font-size: 38px; }
+  .community-lede { font-size: 18px; }
+  .community-head-meta { text-align: left; }
+  .community-grid { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .community-rail { position: static; }
+  .community-wall-list > li,
+  .community-preview-list > li { transform: none; }
+  .community-compose { padding: 22px 20px 20px; }
+  .community-slip { padding: 24px 22px 18px; }
+  .community-slip-title { font-size: 23px; }
+  .community-slip-hint { margin-left: 0; }
+}
+@media (max-width: 520px) {
+  .community-head h1 { font-size: 33px; }
+  .community-filter { padding: 7px 11px; font-size: 15px; }
+  .community-query { flex: 1 1 100%; }
+  .community-kind-btn { width: 100%; }
+  .community-slip-title { font-size: 21px; }
+  .community-head-meta { font-size: 13px; }
+}
+
+/* 窄屏上纸片不旋转，主动效也去掉位移，只留淡入，避免横向溢出 */
+@media (max-width: 420px) {
+  .community-slip.is-fresh { animation: community-unfold 320ms ease-out both; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community-slip.is-fresh,
+  .community-slip.is-fresh .atlas-pin,
+  .community-slip.is-fresh .atlas-tape,
+  .community-report-drawer,
+  .community-confirm { animation: none !important; }
+}

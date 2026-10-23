@@ -4,6 +4,7 @@ import { NavShell } from "@/components/nav-shell";
 import { SiteFooter } from "@/components/site-footer";
 import "./fonts.css";
 import "./globals.css";
+import "./atlas.css";
 import "./chrome.css";
 import "./home.css";
 import "./profile.css";

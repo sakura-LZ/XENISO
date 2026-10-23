@@ -1,0 +1,661 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T13:54:09.219Z",
+  "sources": [
+    {
+      "id": "xmu-2027-catalog-restrict",
+      "url": "https://zs.xmu.edu.cn/info/1056/36842.htm",
+      "organization": "厦门大学招生办公室",
+      "title": "厦门大学2027年硕士研究生招生专业目录（报考条件与跨考限制）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "附件为「厦门大学2027年硕士研究生招生专业目录」xlsx；公告页发布日 2026.10，文件内未印日期，招生年度由文件名「2027」确定。每行自带院系/专业/研究方向/学习方式/是否接收退役专项/是否接收少骨专项/备注，限制条款与专业代码同行。"
+    },
+    {
+      "id": "sysu-2027-catalog-restrict",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "organization": "中山大学研究生招生办公室",
+      "title": "中山大学2027年硕士研究生招生学科专业目录（报考条件与推免限制）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "文件为「中山大学2027硕士研究生招生学科专业目录.pdf」（上传目录 2026-10）；PDF 内未印发布日期，招生年度由文件名「2027」确定。"
+    },
+    {
+      "id": "hnu-2027-catalog-restrict",
+      "url": "https://gra.hnu.edu.cn/system/_content/download.jsp?owner=1327586600&urltype=news.DownloadAttachUrl&wbfileid=18166055",
+      "organization": "湖南大学研究生院",
+      "title": "湖南大学2027年硕士研究生招生专业目录（报考条件）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "附件为「湖南大学2027年硕士研究生招生专业目录」PDF，取自研究生院招生信息页的 download.jsp 附件地址（https 可达；该附件需带 Referer 指向详情页才能下载）。PDF 内未印发布日期，招生年度由标题「2027」确定。"
+    },
+    {
+      "id": "lzu-2027-catalog-restrict",
+      "url": "https://yz.lzu.edu.cn/zsb/2027sszsml.pdf",
+      "organization": "兰州大学研究生招生办公室",
+      "title": "兰州大学2027年硕士研究生招生专业目录（报考条件）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "文件为兰州大学 2027 年硕士研究生招生专业目录 PDF；PDF 内未印发布日期，招生年度由标题「2027」确定。"
+    },
+    {
+      "id": "csu-2027-catalog-restrict",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "organization": "中南大学研究生招生办公室",
+      "title": "中南大学2027年硕士研究生招生专业目录（报考条件）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面为「中南大学2027年硕士研究生招生专业目录及考试科目一览表_统考」，列表页发布日 2026.10.08；详情页未印发布日，招生年度由标题「2027年」确定。原站 gb2312，本记录 raw 已转 UTF-8（同名 .utf8.raw）。"
+    },
+    {
+      "id": "scu-2027-310-restrict",
+      "url": "https://yz.scu.edu.cn/sszyml",
+      "organization": "四川大学研究生院招生办公室",
+      "title": "四川大学2027年硕士研究生招生专业目录 — 310 生物医学工程学院（报考条件）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为四川大学研招「目录查询」单页应用（SPA），表格由「年份 + 学院」下拉交互后动态渲染，普通 GET 加参数无效（实测 ?year=2027&yxsh=… 与裸页 sha256 相同）。本记录提供 artifact_capture（ego 真实选择 2027 年 + 310 生物医学工程学院 后保存的渲染 HTML），collect 用 htmlText() 复算文本；页面未印发布日，年度由下拉选中 2027 确定。"
+    }
+  ],
+  "records": [
+    {
+      "id": "admissions-xmu-2027-catalog-restrict-guide-clinical-data-85b47091",
+      "source_id": "xmu-2027-catalog-restrict",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "厦门大学2027年105100 临床医学：只接受西医临床医学五年制本科（硬性限专业）",
+      "summary": "原文（105100 临床医学 01内科学 整行）：「3.只接受西医临床医学五年制或与报考专业相对应的五年制医学专业全日制本科毕业生（含应届生）报考，且须符合相应医师资格考试报考条件。」该备注出现在 105100 各方向行内（01内科学…11眼科学 等）。",
+      "applicability": "仅适用于厦门大学 2027 年 150 医学院 105100 临床医学（专业学位）。非西医临床五年制本科不可报。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "厦门大学",
+        "临床医学",
+        "限本科专业",
+        "硬性限制"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "150医学院 105100临床医学 01内科学 (1)全日制 否 否 1.本专业计划仅供参考，我校有权进行调整。2.本专业报名时须选择研究方向，按研究方向录取，研究方向招生计划在学院官网公布。3.只接受西医临床医学五年制或与报考专业相对应的五年制医学专业全日制本科毕业生（含应届生）报考，且须符合相应医师资格考试报考条件。",
+          "quote": "150医学院 105100临床医学 01内科学 (1)全日制 否 否 1.本专业计划仅供参考，我校有权进行调整。2.本专业报名时须选择研究方向，按研究方向录取，研究方向招生计划在学院官网公布。3.只接受西医临床医学五年制或与报考专业相对应的五年制医学专业全日制本科毕业生（含应届生）报考，且须符合相应医师资格考试报考条件。",
+          "start": 53289,
+          "end": 53450
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "5c4bc5a905ccf771cd43aa0c9009f4bfedf0332b796f215b228d1f5909580555",
+      "collected_at": "2026-10-23T12:38:37.237Z",
+      "verified_at": "2026-10-23T13:54:09.091Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "厦门大学",
+        "college": "医学院",
+        "program": "105100 临床医学",
+        "admission_year": 2027,
+        "region": "福建",
+        "evidence_locator": "2027 目录 xlsx → 150医学院 → 105100 临床医学 → 备注列"
+      }
+    },
+    {
+      "id": "admissions-xmu-2027-catalog-restrict-guide-clinical-data-7c3c6ed0",
+      "source_id": "xmu-2027-catalog-restrict",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "厦门大学2027年1002Z1 临床护理学：只接受本科护理学专业（澄清错配）",
+      "summary": "原文（1002Z1 临床护理学 01内科护理 整行）：「2.本专业只接受本科为护理学专业的毕业生（含应届本科毕业生）报考。」该备注出现在 1002Z1 各方向行内（01内科护理、02外科护理、03护理管理）。",
+      "applicability": "仅适用于厦门大学 2027 年 150 医学院 1002Z1 临床护理学（学术学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "厦门大学",
+        "护理学",
+        "限本科专业"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "150医学院 1002Z1临床护理学 01内科护理 (1)全日制 否 否 1.本专业计划仅供参考，我校有权对该计划进行相应调整。2.本专业只接受本科为护理学专业的毕业生（含应届本科毕业生）报考。",
+          "quote": "150医学院 1002Z1临床护理学 01内科护理 (1)全日制 否 否 1.本专业计划仅供参考，我校有权对该计划进行相应调整。2.本专业只接受本科为护理学专业的毕业生（含应届本科毕业生）报考。",
+          "start": 52286,
+          "end": 52383
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "5c4bc5a905ccf771cd43aa0c9009f4bfedf0332b796f215b228d1f5909580555",
+      "collected_at": "2026-10-23T12:38:37.237Z",
+      "verified_at": "2026-10-23T13:54:09.109Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "厦门大学",
+        "college": "医学院",
+        "program": "1002Z1 临床护理学",
+        "admission_year": 2027,
+        "region": "福建",
+        "evidence_locator": "2027 目录 xlsx → 150医学院 → 1002Z1 临床护理学 → 备注列"
+      }
+    },
+    {
+      "id": "admissions-xmu-2027-catalog-restrict-guide-clinical-data-f51b6ec9",
+      "source_id": "xmu-2027-catalog-restrict",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "厦门大学2027年1002Z2 中西医结合医学：只接受中医/中西医结合医学学位本科",
+      "summary": "原文（1002Z2 中西医结合医学 01中西医结合内科 整行）：「2.本专业只接受本科为医学学位的中医学专业（含针灸推拿）或中西医结合医学专业考生报考。」该备注亦见于 02中西医结合针灸 行。",
+      "applicability": "仅适用于厦门大学 2027 年 150 医学院 1002Z2 中西医结合医学（学术学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "厦门大学",
+        "中西医结合",
+        "限本科专业"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "150医学院 1002Z2中西医结合医学 01中西医结合内科 (1)全日制 否 是 1.本专业计划仅供参考，我校有权对该计划进行相应调整。2.本专业只接受本科为医学学位的中医学专业（含针灸推拿）或中西医结合医学专业考生报考。",
+          "quote": "150医学院 1002Z2中西医结合医学 01中西医结合内科 (1)全日制 否 是 1.本专业计划仅供参考，我校有权对该计划进行相应调整。2.本专业只接受本科为医学学位的中医学专业（含针灸推拿）或中西医结合医学专业考生报考。",
+          "start": 52700,
+          "end": 52812
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "5c4bc5a905ccf771cd43aa0c9009f4bfedf0332b796f215b228d1f5909580555",
+      "collected_at": "2026-10-23T12:38:37.237Z",
+      "verified_at": "2026-10-23T13:54:09.118Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "厦门大学",
+        "college": "医学院",
+        "program": "1002Z2 中西医结合医学",
+        "admission_year": 2027,
+        "region": "福建",
+        "evidence_locator": "2027 目录 xlsx → 150医学院 → 1002Z2 → 备注列"
+      }
+    },
+    {
+      "id": "admissions-xmu-2027-catalog-restrict-guide-ml-cv-3c97bbf8",
+      "source_id": "xmu-2027-catalog-restrict",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "厦门大学2027年085404 计算机技术：无本科专业限制（开放型）",
+      "summary": "原文（085404 计算机技术 整行）：备注列仅「本专业计划仅供参考，我校有权对该计划进行相应调整。」，无任何本科专业限制；是否接收退役专项=是、是否接收少骨专项=是。",
+      "applicability": "仅适用于厦门大学 2027 年 131 计算机科学与技术系 085404 计算机技术（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "厦门大学",
+        "电子信息",
+        "408",
+        "开放型"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "085404计算机技术 00不区分研究方向 (1)全日制 是 是 本专业计划仅供参考，我校有权对该计划进行相应调整。 ①101思想政治理论②204英语（二）③302数学（二）④408计算机学科专业基础",
+          "quote": "085404计算机技术 00不区分研究方向 (1)全日制 是 是 本专业计划仅供参考，我校有权对该计划进行相应调整。 ①101思想政治理论②204英语（二）③302数学（二）④408计算机学科专业基础",
+          "start": 48397,
+          "end": 48497
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "5c4bc5a905ccf771cd43aa0c9009f4bfedf0332b796f215b228d1f5909580555",
+      "collected_at": "2026-10-23T12:38:37.237Z",
+      "verified_at": "2026-10-23T13:54:09.125Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "厦门大学",
+        "college": "计算机科学与技术系",
+        "program": "085404 计算机技术",
+        "admission_year": 2027,
+        "region": "福建",
+        "evidence_locator": "2027 目录 xlsx → 131 计算机科学与技术系 → 085404 → 备注列"
+      }
+    },
+    {
+      "id": "admissions-sysu-2027-catalog-restrict-guide-devices-bae294d4",
+      "source_id": "sysu-2027-catalog-restrict",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "中山大学2027年085409 生物医学工程：不分方向行无任何本科专业限制（开放型）",
+      "summary": "原文（769 生物医学工程学院 085409 生物医学工程「69 不分方向」整行）：仅列人数 51 与四门科目，备注列为空，未出现任何本科专业、学历形式或应届限制。同专业 02 生物医学传感 / 03 医疗仪器 方向行亦无限制（仅数学改为 301 数学（一））。",
+      "applicability": "仅适用于中山大学 2027 年 769 生物医学工程学院 085409 生物医学工程（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "中山大学",
+        "生物医学工程",
+        "开放型"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "085409 生物医学工程 51 69 不分方向 (全日制) ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④884 信号与系统",
+          "quote": "085409 生物医学工程 51 69 不分方向 (全日制) ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④884 信号与系统",
+          "start": 29658,
+          "end": 29733
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f",
+      "collected_at": "2026-10-23T12:46:13.131Z",
+      "verified_at": "2026-10-23T13:54:09.133Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "college": "生物医学工程学院",
+        "program": "085409 生物医学工程",
+        "admission_year": 2027,
+        "region": "广东",
+        "evidence_locator": "2027 目录 → 769 生物医学工程学院 → 085409 69 不分方向 行"
+      }
+    },
+    {
+      "id": "admissions-sysu-2027-catalog-restrict-guide-ml-cv-3c97bbf8",
+      "source_id": "sysu-2027-catalog-restrict",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "中山大学2027年085404 计算机技术（670 计算机学院）：仅招收推免生",
+      "summary": "原文（670 计算机学院 085404 计算机技术 210 人 行）：「69 不分方向 (全日制) 085404 计算机技术 210 仅招收推免生。」同学院 081200 计算机科学与技术 60 人亦「仅招收推免生。」（同一官方来源共 2 条原文事实，字段：cross_major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于中山大学 2027 年 670 计算机学院 085404 计算机技术。对统考考生属硬性不可报。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "中山大学",
+        "电子信息",
+        "推免",
+        "不可统考",
+        "408",
+        "开放型"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "69 不分方向 (全日制) 085404 计算机技术 210 仅招收推免生。",
+          "quote": "69 不分方向 (全日制) 085404 计算机技术 210 仅招收推免生。",
+          "start": 20549,
+          "end": 20587
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "085404 计算机技术 13 69 不分方向 (全日制) ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④408 计算机学科专业基础 复试专业课: 7715003 离散数学与C程序设计",
+          "quote": "085404 计算机技术 13 69 不分方向 (全日制) ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④408 计算机学科专业基础 复试专业课: 7715003 离散数学与C程序设计",
+          "start": 30465,
+          "end": 30569
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f",
+      "collected_at": "2026-10-23T12:46:13.131Z",
+      "verified_at": "2026-10-23T13:54:09.141Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "college": "微电子科学与技术学院",
+        "program": "085404 计算机技术",
+        "admission_year": 2027,
+        "region": "广东",
+        "evidence_locator": "2027 目录 → 772 微电子科学与技术学院 → 085404"
+      }
+    },
+    {
+      "id": "admissions-hnu-2027-catalog-restrict-guide-devices-fb00e401",
+      "source_id": "hnu-2027-catalog-restrict",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "湖南大学2027年085400 电子信息：无本科专业限制（开放型）",
+      "summary": "原文（物理与微电子科学学院 085400 电子信息 整行）：全日制 19人，四门科目，备注列为空，未设本科专业限制。同页同学院学硕 080900 电子科学与技术为 301 数学（一）+ 863。",
+      "applicability": "仅适用于湖南大学 2027 年物理与微电子科学学院 085400 电子信息（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "湖南大学",
+        "电子信息",
+        "开放型"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "085400 电子信息 全日制 19人 ①101思想政治理论 ②204英语（二） ③302数学（二） ④863数字与模拟电子技术",
+          "quote": "085400 电子信息 全日制 19人 ①101思想政治理论 ②204英语（二） ③302数学（二） ④863数字与模拟电子技术",
+          "start": 3671,
+          "end": 3735
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "9306821a3c4db4183e708e30d1a12bbddc6c7f57abc05a5644d291aeac4a6808",
+      "collected_at": "2026-10-23T12:33:58.997Z",
+      "verified_at": "2026-10-23T13:54:09.146Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "湖南大学",
+        "college": "物理与微电子科学学院",
+        "program": "085400 电子信息",
+        "admission_year": 2027,
+        "region": "湖南",
+        "evidence_locator": "2027 目录 → 物理与微电子科学学院 → 085400"
+      }
+    },
+    {
+      "id": "admissions-hnu-2027-catalog-restrict-guide-clinical-data-05ca66d4",
+      "source_id": "hnu-2027-catalog-restrict",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "湖南大学2027年086000 生物与医药：无本科专业限制、不考数学（开放型）",
+      "summary": "原文（生物学院 086000 生物与医药 整行）：方向 01 生物技术与工程、02 制药工程、03 食品工程、04 发酵工程；全日制 30人；初试 ①101 ②204 英语（二）③338 生物化学 ④851 细胞生物学；备注列为空，无本科专业限制。",
+      "applicability": "仅适用于湖南大学 2027 年生物学院 086000 生物与医药（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "湖南大学",
+        "生物与医药",
+        "不考数学",
+        "开放型"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "086000 生物与医药 01 生物技术与工程 02 制药工程 03 食品工程 04 发酵工程 全日制 30人 ①101思想政治理论 ②204英语（二） ③338生物化学 ④851细胞生物学",
+          "quote": "086000 生物与医药 01 生物技术与工程 02 制药工程 03 食品工程 04 发酵工程 全日制 30人 ①101思想政治理论 ②204英语（二） ③338生物化学 ④851细胞生物学",
+          "start": 4183,
+          "end": 4278
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "9306821a3c4db4183e708e30d1a12bbddc6c7f57abc05a5644d291aeac4a6808",
+      "collected_at": "2026-10-23T12:33:58.997Z",
+      "verified_at": "2026-10-23T13:54:09.153Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "湖南大学",
+        "college": "生物学院",
+        "program": "086000 生物与医药",
+        "admission_year": 2027,
+        "region": "湖南",
+        "evidence_locator": "2027 目录 → 生物学院 → 086000"
+      }
+    },
+    {
+      "id": "admissions-lzu-2027-catalog-restrict-guide-ml-cv-3c97bbf8",
+      "source_id": "lzu-2027-catalog-restrict",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "兰州大学2027年085404 计算机技术：02/03 专项方向仅限推免，01 统考不限",
+      "summary": "原文（信息科学与工程学院 ◆计算机技术(085404) 行）：「01 不区分研究方向 02 工程硕博士专项-中核集团联合培养（仅限推免） 03 工程硕博士专项-中国电子集团联合培养（仅限推免）」。即统考只能报 01，02/03 属推免专项。（同一官方来源共 2 条原文事实，字段：cross_major_restrictions、admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于兰州大学 2027 年信息科学与工程学院 085404 计算机技术。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "兰州大学",
+        "电子信息",
+        "408",
+        "方向级推免限制",
+        "同一学历要求",
+        "同等学力"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "◆计算机技术(085404) 01 不区分研究方向 02 工程硕博士专项-中核集团联合 培养（仅限推免） 03 工程硕博士专项-中国电子集团 联合培养（仅限推免）",
+          "quote": "◆计算机技术(085404) 01 不区分研究方向 02 工程硕博士专项-中核集团联合 培养（仅限推免） 03 工程硕博士专项-中国电子集团 联合培养（仅限推免）",
+          "start": 3870,
+          "end": 3951
+        },
+        {
+          "field": "admission_requirements",
+          "value": "1.同等学力考生要求及加试科目 同计算机科学与技术 （081200）专 业。",
+          "quote": "1.同等学力考生要求及加试科目 同计算机科学与技术 （081200）专 业。",
+          "start": 4009,
+          "end": 4047
+        }
+      ],
+      "missing_fields": [
+        "081200 的具体四级分数与加试科目未在本段展开"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "b3393f2b7f5ec8443b0f6224ceb6b8ffe2ab9c5e7d2f6b6eb32328f68b00d948",
+      "collected_at": "2026-10-23T11:59:23.399Z",
+      "verified_at": "2026-10-23T13:54:09.163Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "兰州大学",
+        "college": "信息科学与工程学院",
+        "program": "085404 计算机技术",
+        "admission_year": 2027,
+        "region": "甘肃",
+        "evidence_locator": "2027 目录 → 016 信息科学与工程学院 → 085404 备注列"
+      }
+    },
+    {
+      "id": "admissions-csu-2027-catalog-restrict-guide-devices-fb00e401",
+      "source_id": "csu-2027-catalog-restrict",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "中南大学2027年085400 电子信息（物理类学院）：按一级学科招生，无本科专业限制",
+      "summary": "原文（085400 电子信息（专业学位）20 / 0 行）：备注仅「按一级学科招生；01、02、03、04、06方向选考853信号与系统；05方向选考809量子力学」，无任何本科专业限制。",
+      "applicability": "仅适用于中南大学 2027 年该物理类学院 085400 电子信息（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "中南大学",
+        "电子信息",
+        "按一级学科招生",
+        "开放型"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "085400 电子信息（专业学位） 20 / 0 ① 101 思想政治理论 ② 204 英语（二） ③ 302 数学（二） ④ 809 量子力学或853 信号与系统 按一级学科招生；01、02、03、04、06方向选考853信号与系统；05方向选考809量子力学",
+          "quote": "085400 电子信息（专业学位） 20 / 0 ① 101 思想政治理论 ② 204 英语（二） ③ 302 数学（二） ④ 809 量子力学或853 信号与系统 按一级学科招生；01、02、03、04、06方向选考853信号与系统；05方向选考809量子力学",
+          "start": 4957,
+          "end": 5088
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "952e1beea6fe2945af1e3a045fb87175a79ca8fc1f08d3a8fed9ec65ba14e914",
+      "collected_at": "2026-10-23T13:01:00.464Z",
+      "verified_at": "2026-10-23T13:54:09.187Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中南大学",
+        "program": "085400 电子信息",
+        "admission_year": 2027,
+        "region": "湖南",
+        "evidence_locator": "2027 统考目录 → 物理类学院 → 085400 备注列"
+      }
+    },
+    {
+      "id": "admissions-csu-2027-catalog-restrict-guide-ml-cv-fb00e401",
+      "source_id": "csu-2027-catalog-restrict",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "中南大学2027年085400 电子信息（计算机类学院）：无备注、无本科专业限制",
+      "summary": "原文（085400 电子信息（专业学位）15 / 4 行）：备注列为空（科目后直接进入方向 01 计算机技术、02 人工智能、03 大数据技术与工程），无本科专业限制，也无「按一级学科招生」字样。",
+      "applicability": "仅适用于中南大学 2027 年该计算机/AI 类学院 085400 电子信息（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "中南大学",
+        "电子信息",
+        "408",
+        "开放型"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "085400 电子信息（专业学位） 15 / 4 ① 101 思想政治理论 ② 204 英语（二） ③ 302 数学（二） ④ 408 计算机学科专业基础 01 计算机技术 02 人工智能 03 大数据技术与工程",
+          "quote": "085400 电子信息（专业学位） 15 / 4 ① 101 思想政治理论 ② 204 英语（二） ③ 302 数学（二） ④ 408 计算机学科专业基础 01 计算机技术 02 人工智能 03 大数据技术与工程",
+          "start": 9836,
+          "end": 9942
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "952e1beea6fe2945af1e3a045fb87175a79ca8fc1f08d3a8fed9ec65ba14e914",
+      "collected_at": "2026-10-23T13:01:00.464Z",
+      "verified_at": "2026-10-23T13:54:09.210Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中南大学",
+        "program": "085400 电子信息",
+        "admission_year": 2027,
+        "region": "湖南",
+        "evidence_locator": "2027 统考目录 → 计算机/AI 类学院 → 085400 备注列"
+      }
+    },
+    {
+      "id": "admissions-scu-2027-310-restrict-guide-devices-bae294d4",
+      "source_id": "scu-2027-310-restrict",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "四川大学2027年085409 生物医学工程：无本科专业限制，可招少干/退役专项",
+      "summary": "原文（310 生物医学工程学院 085409 生物医学工程 5(4) 行）：备注仅「可招收少干、退役大学生士兵计划。」，未设本科专业限制。同学院学硕 083100 行备注为空。",
+      "applicability": "仅适用于四川大学 2027 年 310 生物医学工程学院 085409 生物医学工程（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "四川大学",
+        "生物医学工程",
+        "开放型"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "085409 生物医学工程 5 (4) 专业学位 01 (全日制)生物医学信息及仪器 韩骁 林江莉 王明辉 张劲 杨刚 何凌 陈科 吕志彬 苏葆辉 孙建军 庄艳 ① 101 思想政治理论 ② 204 英语（二） ③ 302 数学（二） ④ 859 生物医学工程综合 可招收少干、退役大学生士兵计划。",
+          "quote": "085409 生物医学工程 5 (4) 专业学位 01 (全日制)生物医学信息及仪器 韩骁 林江莉 王明辉 张劲 杨刚 何凌 陈科 吕志彬 苏葆辉 孙建军 庄艳 ① 101 思想政治理论 ② 204 英语（二） ③ 302 数学（二） ④ 859 生物医学工程综合 可招收少干、退役大学生士兵计划。",
+          "start": 2843,
+          "end": 2992
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "eee9cee79215e610884a65d6bd52879efc7e7789e75a23c41981f4d290f4b096",
+      "collected_at": "2026-10-23T12:57:00.684Z",
+      "verified_at": "2026-10-23T13:54:09.219Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "college": "生物医学工程学院",
+        "program": "085409 生物医学工程",
+        "admission_year": 2027,
+        "region": "四川",
+        "evidence_locator": "2027 目录 → 310 → 085409 备注列"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "xmu-2027-catalog-restrict",
+      "url": "https://zs.xmu.edu.cn/info/1056/36842.htm",
+      "at": "2026-10-23T12:38:37.237Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "xmu-2027-catalog-restrict",
+      "url": "https://zs.xmu.edu.cn/info/1056/36842.htm",
+      "at": "2026-10-23T12:38:37.237Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "xmu-2027-catalog-restrict",
+      "url": "https://zs.xmu.edu.cn/info/1056/36842.htm",
+      "at": "2026-10-23T12:38:37.237Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "xmu-2027-catalog-restrict",
+      "url": "https://zs.xmu.edu.cn/info/1056/36842.htm",
+      "at": "2026-10-23T12:38:37.237Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "sysu-2027-catalog-restrict",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T12:46:13.131Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "sysu-2027-catalog-restrict",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T12:46:13.131Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "hnu-2027-catalog-restrict",
+      "url": "https://gra.hnu.edu.cn/system/_content/download.jsp?owner=1327586600&urltype=news.DownloadAttachUrl&wbfileid=18166055",
+      "at": "2026-10-23T12:33:58.997Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "hnu-2027-catalog-restrict",
+      "url": "https://gra.hnu.edu.cn/system/_content/download.jsp?owner=1327586600&urltype=news.DownloadAttachUrl&wbfileid=18166055",
+      "at": "2026-10-23T12:33:58.997Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "lzu-2027-catalog-restrict",
+      "url": "https://yz.lzu.edu.cn/zsb/2027sszsml.pdf",
+      "at": "2026-10-23T11:59:23.399Z",
+      "status": "collected",
+      "missing_fields": [
+        "081200 的具体四级分数与加试科目未在本段展开"
+      ]
+    },
+    {
+      "source_id": "csu-2027-catalog-restrict",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "at": "2026-10-23T13:01:00.464Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "csu-2027-catalog-restrict",
+      "url": "https://yzzyml.csu.edu.cn/news/MasterView.aspx?d=0ca8c9df-fe1f-4692-afba-bdcacd2f9eef",
+      "at": "2026-10-23T13:01:00.464Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "scu-2027-310-restrict",
+      "url": "https://yz.scu.edu.cn/sszyml",
+      "at": "2026-10-23T12:57:00.684Z",
+      "status": "collected",
+      "missing_fields": []
+    }
+  ]
+}

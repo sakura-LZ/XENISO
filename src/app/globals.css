@@ -8,24 +8,25 @@
 
 :root {
   color-scheme: light;
-  /* surfaces */
-  --paper: #f6f4ec;
-  --paper-2: #efece1;
-  --surface: #ffffff;
-  --surface-2: #fbfaf5;
-  /* ink */
-  --ink: #15241c;
-  --ink-2: #33473c;
-  --ink-3: #5c6d63;
-  --line: #dcd8c9;
-  --line-2: #e8e5d8;
-  --line-strong: #8e9c92;
-  /* brand */
-  --green: #2c5e43;
-  --green-deep: #1f4631;
-  --green-mark: #1e8c4e;
-  --green-soft: #e3ece2;
-  --green-wash: #f0f4ec;
+  /* surfaces —— 手工纸：偏暖，带一点泛黄 */
+  --paper: #f1ead9;
+  --paper-2: #e9e0cb;
+  --paper-3: #ddd1b6;
+  --surface: #f8f4e8;
+  --surface-2: #f1ead9;
+  /* ink —— 不用纯黑，深褐更贴纸面 */
+  --ink: #211f19;
+  --ink-2: #33302a;
+  --ink-3: #464033;
+  --line: #d6cbb1;
+  --line-2: #e2d8c0;
+  --line-strong: #a2957a;
+  /* brand —— 苔绿为主，赭石为辅 */
+  --green: #4a5d3a;
+  --green-deep: #37452b;
+  --green-mark: #6b7d4e;
+  --green-soft: #dfe3d2;
+  --green-wash: #ecefdf;
   /* data + states */
   --blue: #3c6d8a;
   --blue-soft: #e2ebf0;
@@ -38,7 +39,7 @@
   --night-2: #1c2c23;
   --night-line: #2e4236;
   --night-ink: #eef1e8;
-  --night-ink-2: #a6b5aa;
+  --night-ink-2: #c2cec5;
   --night-mark: #6cc08e;
   /* type */
   --font-sans: "Xeniso Sans", "Noto Sans SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;

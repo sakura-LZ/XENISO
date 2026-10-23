@@ -1,0 +1,457 @@
+[
+  {
+    "source": {
+      "id": "mindray-jobs",
+      "url": "https://mindray.zhiye.com/social/jobs",
+      "organization": "深圳迈瑞生物医疗电子股份有限公司",
+      "title": "迈瑞医疗社会招聘岗位详情（客户经理/技术支持/战略规划/学术等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "企业官方网申门户（北森承载）渲染后的职位列表与岗位详情；列表显示「2026-10-22 发布」等日期但不含整体发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-8/mindray-jd-3.raw",
+      "sha256": "96451a0a253d9a7f19685286953c54d114ce9e07c89adb62b4d25211735188ed",
+      "captured_at": "2026-10-23T14:34:34.769Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-mindray-jobs-guide-devices-d12156b7",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "雇主：迈瑞医疗（深圳迈瑞生物医疗电子股份有限公司）",
+      "summary": "页面页脚版权行原文「©2026 迈瑞医疗」；门户所属企业为深圳迈瑞生物医疗电子股份有限公司。（同一官方来源共 3 条原文事实，字段：employer、job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "★典型雇主事实：医疗器械龙头，医学/医工背景的主要就业出口之一。",
+      "relation": "direct",
+      "tags": [
+        "雇主",
+        "医疗器械",
+        "迈瑞",
+        "岗位",
+        "专业要求",
+        "生物医学工程",
+        "医学影像",
+        "临床医学"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳迈瑞生物医疗电子股份有限公司",
+        "program": "082601 生物医学工程",
+        "region": "全国（详见岗位）",
+        "evidence_locator": "迈瑞官方网申门户（北森承载）职位列表展开后的「工作职责/任职资格」区块与页脚版权行「©2026 迈瑞医疗」"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employer",
+        "pattern": "©2026 迈瑞医疗"
+      },
+      {
+        "field": "job_title",
+        "pattern": "客户经理（KA）\\(J19241\\)"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "1、本科以上学历，医学影像、生物医学工程，临床医学等相关专业背景优先"
+      }
+    ],
+    "expected_fields": [
+      "employer",
+      "salary",
+      "job_title",
+      "major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "mindray-jobs",
+      "url": "https://mindray.zhiye.com/social/jobs",
+      "organization": "深圳迈瑞生物医疗电子股份有限公司",
+      "title": "迈瑞医疗社会招聘岗位详情（客户经理/技术支持/战略规划/学术等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "企业官方网申门户（北森承载）渲染后的职位列表与岗位详情；列表显示「2026-10-22 发布」等日期但不含整体发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-8/mindray-jd-3.raw",
+      "sha256": "96451a0a253d9a7f19685286953c54d114ce9e07c89adb62b4d25211735188ed",
+      "captured_at": "2026-10-23T14:34:34.769Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-mindray-jobs-guide-devices-d8da4350",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "迈瑞 国际IVD技术支持：本科及以上，医学检验/生物医学工程/电子等专业",
+      "summary": "国际 IVD 技术支持岗任职资格第 1 条原文：本科及以上学历，医学检验、生物医学工程、电子或相关专业。",
+      "applicability": "★医学检验技术对口出口：IVD 设备技术支持（需熟悉 IVD 产品原理与常见故障）。",
+      "relation": "direct",
+      "tags": [
+        "专业要求",
+        "医学检验",
+        "IVD",
+        "技术支持"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳迈瑞生物医疗电子股份有限公司",
+        "program": "101001 医学检验技术",
+        "region": "全国（详见岗位）",
+        "evidence_locator": "迈瑞官方网申门户（北森承载）职位列表展开后的「工作职责/任职资格」区块与页脚版权行「©2026 迈瑞医疗」"
+      }
+    },
+    "extracts": [
+      {
+        "field": "major_restrictions",
+        "pattern": "1\\.本科及以上学历,医学检验、生物医学工程、电子或相关专业"
+      }
+    ],
+    "expected_fields": [
+      "major_restrictions",
+      "salary"
+    ]
+  },
+  {
+    "source": {
+      "id": "mindray-jobs",
+      "url": "https://mindray.zhiye.com/social/jobs",
+      "organization": "深圳迈瑞生物医疗电子股份有限公司",
+      "title": "迈瑞医疗社会招聘岗位详情（客户经理/技术支持/战略规划/学术等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "企业官方网申门户（北森承载）渲染后的职位列表与岗位详情；列表显示「2026-10-22 发布」等日期但不含整体发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-8/mindray-jd-3.raw",
+      "sha256": "96451a0a253d9a7f19685286953c54d114ce9e07c89adb62b4d25211735188ed",
+      "captured_at": "2026-10-23T14:34:34.769Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-mindray-jobs-guide-devices-241a4494",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "迈瑞 战略规划经理：硕士及以上，公共卫生/卫生经济学/流行病学/卫生管理等专业优先",
+      "summary": "战略规划经理任职资格第 1 条原文：硕士及以上学历，公共卫生、卫生经济学、药物经济学、流行病学、卫生管理、医保政策等相关专业优先。",
+      "applicability": "★公共卫生/预防医学背景的对口出口：医疗器械企业的卫生经济学与医保准入岗（需 5 年经验）。",
+      "relation": "direct",
+      "tags": [
+        "专业要求",
+        "公共卫生",
+        "卫生经济学",
+        "医保准入"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳迈瑞生物医疗电子股份有限公司",
+        "program": "100401K 预防医学",
+        "region": "全国（详见岗位）",
+        "evidence_locator": "迈瑞官方网申门户（北森承载）职位列表展开后的「工作职责/任职资格」区块与页脚版权行「©2026 迈瑞医疗」"
+      }
+    },
+    "extracts": [
+      {
+        "field": "major_restrictions",
+        "pattern": "1\\. 硕士及以上学历，公共卫生、卫生经济学、药物经济学、流行病学、卫生管理、医保政策等相关专业优先"
+      }
+    ],
+    "expected_fields": [
+      "major_restrictions",
+      "salary"
+    ]
+  },
+  {
+    "source": {
+      "id": "mindray-jobs",
+      "url": "https://mindray.zhiye.com/social/jobs",
+      "organization": "深圳迈瑞生物医疗电子股份有限公司",
+      "title": "迈瑞医疗社会招聘岗位详情（客户经理/技术支持/战略规划/学术等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "企业官方网申门户（北森承载）渲染后的职位列表与岗位详情；列表显示「2026-10-22 发布」等日期但不含整体发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-8/mindray-jd-3.raw",
+      "sha256": "96451a0a253d9a7f19685286953c54d114ce9e07c89adb62b4d25211735188ed",
+      "captured_at": "2026-10-23T14:34:34.769Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-mindray-jobs-guide-devices-88f0a272",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "迈瑞 学术类岗位：博士及以上，医学及相关专业",
+      "summary": "学术类岗位任职资格第 1 条原文：博士及以上学历（医学及相关专业）；另要求发表 SCI 或核心期刊 ≥1 篇。",
+      "applicability": "★医学博士出口：企业医学事务/学术岗（要求论文与课题经历）。",
+      "relation": "direct",
+      "tags": [
+        "专业要求",
+        "医学",
+        "博士",
+        "医学事务"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳迈瑞生物医疗电子股份有限公司",
+        "program": "100201K 临床医学",
+        "region": "全国（详见岗位）",
+        "evidence_locator": "迈瑞官方网申门户（北森承载）职位列表展开后的「工作职责/任职资格」区块与页脚版权行「©2026 迈瑞医疗」"
+      }
+    },
+    "extracts": [
+      {
+        "field": "major_restrictions",
+        "pattern": "1、博士及以上学历（医学及相关专业）"
+      }
+    ],
+    "expected_fields": [
+      "major_restrictions",
+      "salary"
+    ]
+  },
+  {
+    "source": {
+      "id": "united-imaging-jobs",
+      "url": "https://united-imaging.zhiye.com/social/jobs",
+      "organization": "上海联影医疗科技有限公司",
+      "title": "联影医疗社会招聘岗位详情（临床应用/产品市场/电子/销售/技术支持等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "企业官方网申门户（北森承载）渲染后的职位列表与岗位详情；列表含各岗位发布日期但不含整体发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-8/united-imaging-jd-3.raw",
+      "sha256": "dc08cf6d5a36bf9bf1b727b42d8ac0318597b8b94bb048c080e28d80e2bdb129",
+      "captured_at": "2026-10-23T14:34:52.228Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-united-imaging-jobs-guide-devices-d12156b7",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "雇主：联影医疗（上海联影医疗科技有限公司）",
+      "summary": "页面页脚版权行原文「©2026 联影网申门户」；门户所属企业为上海联影医疗科技有限公司，列表显示在招岗位 609 个。（同一官方来源共 2 条原文事实，字段：employer、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "★典型雇主事实：医学影像设备龙头，在招岗位规模大。",
+      "relation": "direct",
+      "tags": [
+        "雇主",
+        "医学影像设备",
+        "联影",
+        "专业要求",
+        "生物医学工程",
+        "销售"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海联影医疗科技有限公司",
+        "program": "082601 生物医学工程",
+        "region": "全国（详见岗位）",
+        "evidence_locator": "联影官方网申门户（北森承载）职位列表展开后的「工作职责/任职资格」区块与页脚版权行「©2026 联影网申门户」"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employer",
+        "pattern": "©2026 联影网申门户"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "1\\.本科及以上学历，市场营销、生物医学工程、医疗器械等相关专业优先"
+      }
+    ],
+    "expected_fields": [
+      "employer",
+      "salary",
+      "major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "united-imaging-jobs",
+      "url": "https://united-imaging.zhiye.com/social/jobs",
+      "organization": "上海联影医疗科技有限公司",
+      "title": "联影医疗社会招聘岗位详情（临床应用/产品市场/电子/销售/技术支持等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "企业官方网申门户（北森承载）渲染后的职位列表与岗位详情；列表含各岗位发布日期但不含整体发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-8/united-imaging-jd-3.raw",
+      "sha256": "dc08cf6d5a36bf9bf1b727b42d8ac0318597b8b94bb048c080e28d80e2bdb129",
+      "captured_at": "2026-10-23T14:34:52.228Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-united-imaging-jobs-guide-devices-88f0a272",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "联影 临床应用专家岗位",
+      "summary": "联影社会招聘在招岗位「临床应用专家-A25-016(J18244)」。（同一官方来源共 3 条原文事实，字段：job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "岗位名样本：临床应用岗是临床/影像背景最直接的产业出口。",
+      "relation": "direct",
+      "tags": [
+        "岗位",
+        "联影",
+        "临床应用",
+        "专业要求",
+        "临床医学",
+        "医学影像",
+        "生物医学工程",
+        "产品市场",
+        "硕士"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海联影医疗科技有限公司",
+        "program": "100201K 临床医学",
+        "region": "全国（详见岗位）",
+        "evidence_locator": "联影官方网申门户（北森承载）职位列表展开后的「工作职责/任职资格」区块与页脚版权行「©2026 联影网申门户」"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "临床应用专家-A25-016\\(J18244\\)"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "1\\. 学历与专业背景：超声医学、影像医学与核医学、影像技术、临床医学、生物医学工程等相关专业，本科及以上学历"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "硕士以上学历，临床医学专业优先"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary",
+      "major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "united-imaging-jobs",
+      "url": "https://united-imaging.zhiye.com/social/jobs",
+      "organization": "上海联影医疗科技有限公司",
+      "title": "联影医疗社会招聘岗位详情（临床应用/产品市场/电子/销售/技术支持等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "企业官方网申门户（北森承载）渲染后的职位列表与岗位详情；列表含各岗位发布日期但不含整体发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-8/united-imaging-jd-3.raw",
+      "sha256": "dc08cf6d5a36bf9bf1b727b42d8ac0318597b8b94bb048c080e28d80e2bdb129",
+      "captured_at": "2026-10-23T14:34:52.228Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-united-imaging-jobs-guide-devices-2cab8a0d",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "联影 电子工程师：硕士及以上，电子工程/自动化/计算机/通信/生物医学工程等",
+      "summary": "任职资格第 1 条原文：硕士及以上，电子工程/自动化/计算机/通信/生物医学工程等相关专业。（同一官方来源共 2 条原文事实，字段：major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "★工科（含生物医学工程）出口：硬件电子研发岗，硕士起。",
+      "relation": "direct",
+      "tags": [
+        "专业要求",
+        "电子信息",
+        "生物医学工程",
+        "硬件研发",
+        "射频"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海联影医疗科技有限公司",
+        "program": "080701 电子信息工程",
+        "region": "全国（详见岗位）",
+        "evidence_locator": "联影官方网申门户（北森承载）职位列表展开后的「工作职责/任职资格」区块与页脚版权行「©2026 联影网申门户」"
+      }
+    },
+    "extracts": [
+      {
+        "field": "major_restrictions",
+        "pattern": "1\\. 硕士及以上，电子工程/自动化/计算机/通信/生物医学工程等相关专业"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "1\\.硕士及以上学历，电子信息、电磁场与微波、电气工程等目关专业"
+      }
+    ],
+    "expected_fields": [
+      "major_restrictions",
+      "salary"
+    ]
+  },
+  {
+    "source": {
+      "id": "united-imaging-jobs",
+      "url": "https://united-imaging.zhiye.com/social/jobs",
+      "organization": "上海联影医疗科技有限公司",
+      "title": "联影医疗社会招聘岗位详情（临床应用/产品市场/电子/销售/技术支持等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "企业官方网申门户（北森承载）渲染后的职位列表与岗位详情；列表含各岗位发布日期但不含整体发布日期，故 published_at 置空。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-jd-8/united-imaging-jd-3.raw",
+      "sha256": "dc08cf6d5a36bf9bf1b727b42d8ac0318597b8b94bb048c080e28d80e2bdb129",
+      "captured_at": "2026-10-23T14:34:52.228Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-united-imaging-jobs-guide-devices-08efdca2",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "联影 技术支持工程师(J19493)：本科及以上，电气工程/电力电子与电力传动/自动化等",
+      "summary": "任职资格第 1 条原文：本科及以上学历，电气工程/电力电子与电力传动/自动化等相关专业。",
+      "applicability": "★电气类出口：设备售后技术支持岗；该岗不含医学专业，是「非医学背景」的对照样本。",
+      "relation": "direct",
+      "tags": [
+        "专业要求",
+        "电气工程",
+        "技术支持"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海联影医疗科技有限公司",
+        "program": "080601 电气工程及其自动化",
+        "region": "全国（详见岗位）",
+        "evidence_locator": "联影官方网申门户（北森承载）职位列表展开后的「工作职责/任职资格」区块与页脚版权行「©2026 联影网申门户」"
+      }
+    },
+    "extracts": [
+      {
+        "field": "major_restrictions",
+        "pattern": "1、本科及以上学历，电气工程/电力电子与电力传动/自动化等相关专业"
+      }
+    ],
+    "expected_fields": [
+      "major_restrictions",
+      "salary"
+    ]
+  }
+]

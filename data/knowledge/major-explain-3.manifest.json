@@ -1,0 +1,474 @@
+[
+  {
+    "source": {
+      "id": "chsi-zyk-73385052",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/detail/73385052",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "预防医学 专业知识库（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库页面「数据统计截止日期：2025年12月31日」；页面本身无发布日，published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain-3/chsi-预防医学.raw",
+      "sha256": "f96da59790deaf48028b6e365aee6810ac4f65e0a8a1c5d1c3103110b0265d97",
+      "captured_at": "2026-10-23T14:44:33.457Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "occupation-chsi-zyk-73385052-guide-health-systems-5686e4ad",
+      "role_id": "guide_health_systems",
+      "category": "occupation",
+      "title": "预防医学：专业介绍（培养目标与学科内涵）",
+      "summary": "官方专业介绍原文，回答「这个专业是什么、学什么、毕业能做什么」。（同一官方来源共 4 条原文事实，字段：program_definition、employment_directions、related_occupations、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于说明「预防医学」（100401K）的专业介绍（培养目标与学科内涵）。来源为教育部学生服务与素质发展中心主办的阳光高考信息平台「专业知识库」全国口径页面，原文照录、未提炼；不适用于具体院校培养方案差异、录取分数或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "100401K",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 统计信息"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program_definition",
+        "pattern": "预防医学以人群为研究对象，应用基础医学和临床医学理论以及预防医学的理论和方法，从群体的角度研究环境因素、宿主因素以及致病因子与人类疾病和健康的关系，是预防疾病发生、控制疾病发展以及促进健康的一门医学科学；本专业要求学生系统掌握基础医学、临床医学和预防医学的基本理论和技能，能灵活运用所学知识分析、解决预防医学与公共卫生领域的实际问题，具有进行卫生监督与管理、科学研究、信息和数据处理的能力，具备应对突发公共卫生事件的能力，能成为应用型、复合型的预防医学人才。"
+      },
+      {
+        "field": "employment_directions",
+        "pattern": "事业单位人员卫生防疫、妇幼保健员公务员\\(区县级及以下机关\\)公务员\\(地市级机关\\)公务员\\(省级机关\\)公务员\\(中央国家机关\\)医疗管理人员"
+      },
+      {
+        "field": "related_occupations",
+        "pattern": "食品卫生与营养学 妇幼保健医学 卫生监督 全球健康学 运动与公共健康"
+      },
+      {
+        "field": "education",
+        "pattern": "10000-12000"
+      }
+    ],
+    "expected_fields": [
+      "program_definition",
+      "具体院校培养方案",
+      "employment_directions",
+      "岗位招聘要求",
+      "薪资数值",
+      "related_occupations",
+      "education",
+      "逐年数据"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyk-73385052-courses",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/kskcPage/73385052",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "预防医学 开设课程（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库「开设课程」栏目；页面无发布日，published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain-3/chsi-kskc-预防医学.raw",
+      "sha256": "2eed3780798c106de46471972e5d2e03524a4e6ad9f5ab9894e8e9e7a221f7ea",
+      "captured_at": "2026-10-23T14:44:33.461Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "learning-chsi-zyk-73385052-courses-guide-health-systems-5686e4ad",
+      "role_id": "guide_health_systems",
+      "category": "learning",
+      "title": "预防医学：开设课程（主干课程）",
+      "summary": "阳光高考统计的高校实际开设课程名称清单（开设课程 高校综合课程 课程名称 课程难易度 课程实用性（于工作、个人成长) 生理学 4 9人 4 7人 基础毒理 4 4人 5 4人 营养与食品卫生学实验 4 3人 4 3人 卫…）。",
+      "applicability": "用于回答「这个专业学什么课」。课程名来自各高校申报汇总，不是教育部统一规定的核心课程目录，具体院校课程设置会不同。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk",
+        "courses"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "100401K",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 开设课程栏目"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "开设课程 高校综合课程 课程名称 课程难易度 课程实用性（于工作、个人成长\\) 生理学 4 9人 4 7人 基础毒理 4 4人 5 4人 营养与食品卫生学实验 4 3人 4 3人 卫生统计学实践 4 4人 5 4人 耳鼻喉科学 5 4人 2 3人 劳动卫生学 5 4人 5 4人 组织与胚胎学 4 3人 3 3人 妇幼保健 4 2人 5 2人 精神病学 5 7人 5 4人 卫生微生物学 4 4人 4 4人 病理解剖学 4 8人 5 8人 放射生物学 5 1人 5 1人 机能实验学 5 1人 5 1人 社会医疗保险学 5 1人 5 1人 卫生法规与监督 4 2人 5 2人 皮肤科实习 5 2人 5 1人 医学影像学 4 4人 4 4人 卫生政策 4 2人 5 2人 医学营养学 4 3人 4 3人 分析化学与仪器分析 5 1人 5 1人 医学文献检索与利用 5 2人 5 2人 营养与食品卫生 5 2人 4 2人 卫生理化检验 4 2人 5 2人 行政秘书与公文写作 3 3人 3 3人 卫生管理学 4 2人 4 2人 传染病学理论 5 3人 5 3人 急救知识与技术 5 1人 5 1人 卫生管理信息系统 5 1人 5 1人 外科及妇科见习 3 3人 3 3人 预防医学概论 4 2人 4 2人 妇幼心理学 5 1人 5 1人 新公共卫生概论 5 1人 5 1人 流行病学实践 5 4人 5 5人 医疗保障学 5 1人 5 1人 医学细胞与遗传学 4 2人 3 2人 职业卫生与职业医学实验 4 3人 4 3人 少儿卫生学 4 2人 5 2人 环境卫生学实验 4 4人 4 4人 内科及儿科见习 4 4人 4 4人 公共关系学 3 1人 5 1人 系统解剖学 4 8人 4 8人 医学物理学 2 1人 3 1人 医学高等数学 2 1人 5 1人 基础化学 5 1人 2 1人 医学通识英语 2 1人 3 1人 毒理学 4 1人 4 1人 环境卫生学 3 1人 4 1人 社会医学 2 1人 4 1人 健康教育学 2 1人 3 1人 卫生统计学 5 5人 5 5人 流行病学 4 5人 5 5人 病原生物学 3 1人 5 1人 生物化学 2 1人 3 1人 组织学与胚胎学 4 3人 4 3人 预防医学 4 2人 3 2人 外科学 5 1人 1 1人 细胞生物学 3 1人 2 1人"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "学分学时",
+      "教材"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyk-73383855",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/detail/73383855",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "生物信息学 专业知识库（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库页面「数据统计截止日期：2025年12月31日」；页面本身无发布日，published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain-3/chsi-生物信息学.raw",
+      "sha256": "f3d431a8c6394d7eb47b1f254748d56d29d80f402f95fa3dc9ff88a2d2b043cd",
+      "captured_at": "2026-10-23T14:44:33.469Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "occupation-chsi-zyk-73383855-guide-clinical-data-5d6b0d5c",
+      "role_id": "guide_clinical_data",
+      "category": "occupation",
+      "title": "生物信息学：专业介绍（培养目标与学科内涵）",
+      "summary": "官方专业介绍原文，回答「这个专业是什么、学什么、毕业能做什么」。（同一官方来源共 4 条原文事实，字段：program_definition、employment_directions、related_occupations、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于说明「生物信息学」（071003）的专业介绍（培养目标与学科内涵）。来源为教育部学生服务与素质发展中心主办的阳光高考信息平台「专业知识库」全国口径页面，原文照录、未提炼；不适用于具体院校培养方案差异、录取分数或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "071003",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 统计信息"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program_definition",
+        "pattern": "生物信息学是一门以生物学、数学和信息科学为基础的交叉科学，它通过综合运用数学和信息科学等多领域的方法和工具对生物信息进行获取、加工、存储、分析和解释，来阐明大量生物数据所包含的生物学意义。本专业培养具备生命科学和医学基础知识，掌握与生物信息学相关的信息科学、计算机科学、数学和生物技术等基本理论知识和技能，实践能力强，受过严格的科学实验训练，具备较强的知识更新能力和创新能力的高素质人才。毕业后能从事生物信息学及相关领域的科学研究、技术开发、服务、管理和教育等工作。"
+      },
+      {
+        "field": "employment_directions",
+        "pattern": "考研事业单位人员高中教师科研人员药品研发生物工程/生物制药"
+      },
+      {
+        "field": "related_occupations",
+        "pattern": "生物科学 生物技术 生态学 整合科学 神经科学"
+      },
+      {
+        "field": "education",
+        "pattern": "全国普通高校毕业生规模（人） 1500-2000"
+      }
+    ],
+    "expected_fields": [
+      "program_definition",
+      "具体院校培养方案",
+      "employment_directions",
+      "岗位招聘要求",
+      "薪资数值",
+      "related_occupations",
+      "education",
+      "逐年数据"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyk-73383855-courses",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/kskcPage/73383855",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "生物信息学 开设课程（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库「开设课程」栏目；页面无发布日，published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain-3/chsi-kskc-生物信息学.raw",
+      "sha256": "f31589ed7779775fb273a4041bdd0c4b2c8a680228b8d4e258227214744c3cd0",
+      "captured_at": "2026-10-23T14:44:33.474Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "learning-chsi-zyk-73383855-courses-guide-clinical-data-5d6b0d5c",
+      "role_id": "guide_clinical_data",
+      "category": "learning",
+      "title": "生物信息学：开设课程（主干课程）",
+      "summary": "阳光高考统计的高校实际开设课程名称清单（开设课程 高校综合课程 课程名称 课程难易度 课程实用性（于工作、个人成长) 系统进化生物学原理 - - 植物资源学及应用 - - 进化算法 - - 现代生物技术大实验 - - 生…）。",
+      "applicability": "用于回答「这个专业学什么课」。课程名来自各高校申报汇总，不是教育部统一规定的核心课程目录，具体院校课程设置会不同。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk",
+        "courses"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "071003",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 开设课程栏目"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "开设课程 高校综合课程 课程名称 课程难易度 课程实用性（于工作、个人成长\\) 系统进化生物学原理 - - 植物资源学及应用 - - 进化算法 - - 现代生物技术大实验 - - 生物信息学的计算技术 - - 微生物药物 5 1人 5 1人 新药开发的药理学基础 - - 高通量药物筛选 - - 生物数据库管理系统 - - 动物资源学及应用 - - 药物基因组学 - - 微生物学基础 5 2人 3 2人 生物信息学进展 - - 基因工程 5 4人 3 3人 系统生物学 - - 分子克隆技术 3 1人 3 1人 数量遗传学 - - 系统仿真导论 - - 生物信息软件综合实践 - - 动物学基础 2 1人 4 1人 生物统计与实验设计 - - 生物信息学原理 - - 数据挖掘原理及应用 - - 药物设计导论 - - 生物芯片制作技术 - - 微生物基因组学 - - 动物系统学原理 5 1人 - Perl/Python语言编程 4 1人 5 2人"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "学分学时",
+      "教材"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyk-eriffz262uwx51rn",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/detail/eriffz262uwx51rn",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "数据科学与大数据技术 专业知识库（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库页面「数据统计截止日期：2025年12月31日」；页面本身无发布日，published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain-3/chsi-数据科学与大数据技术.raw",
+      "sha256": "dfce2a92b8fda55e6b2b16515691757a0e2245f35b3af3c55b821a09bcd86df7",
+      "captured_at": "2026-10-23T14:44:33.478Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "occupation-chsi-zyk-eriffz262uwx51rn-guide-clinical-data-e30a792e",
+      "role_id": "guide_clinical_data",
+      "category": "occupation",
+      "title": "数据科学与大数据技术：专业介绍（培养目标与学科内涵）",
+      "summary": "官方专业介绍原文，回答「这个专业是什么、学什么、毕业能做什么」。（同一官方来源共 4 条原文事实，字段：program_definition、employment_directions、related_occupations、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于说明「数据科学与大数据技术」（080910T）的专业介绍（培养目标与学科内涵）。来源为教育部学生服务与素质发展中心主办的阳光高考信息平台「专业知识库」全国口径页面，原文照录、未提炼；不适用于具体院校培养方案差异、录取分数或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "080910T",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 统计信息"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program_definition",
+        "pattern": "本专业培养具有扎实的计算机与大数据学科的理论基础，拥有较强的英语能力、知识面广，实践动手能力强的研究型或工程型数据科学领军人才。本专业课程体系在数据科学与大数据技术主干课基础上突出算法与大数据应用课程。在专业培养模式上聚焦行业需求，深耕产学合作，注重前沿交叉、国际交流与校企合作，面向大数据未来技术发展培养具有创新能力和国际视野的高层次拔尖人才。 专业面向：毕业后可在信息技术企业、科研部门、高等院校、事业单位等就业。可从事信息和大数据技术的研究、设计、开发及管理等方面的工作，或推动大数据在互联网、物联网、金融、教育、交通、电商等相关行业的应用创新。"
+      },
+      {
+        "field": "employment_directions",
+        "pattern": "软件工程师WEB前端开发软件测试IT技术支持/维护工程师网络工程师公务员数据分析师信息技术专员网络与信息安全工程师IT项目经理/主管游戏设计/开发小学教师高中教师行政专员/助理互联网产品专员/助理职业技术教师初中教师项目专员/助理"
+      },
+      {
+        "field": "related_occupations",
+        "pattern": "计算机科学与技术 软件工程 网络工程 信息安全 物联网工程 数字媒体技术 智能科学与技术 空间信息与数字技术 电子与计算机工程 网络空间安全 新媒体技术 电影制作 保密技术 服务科学与工程 虚拟现实技术 区块链工程 密码科学与技术 工业软件"
+      },
+      {
+        "field": "education",
+        "pattern": "55000-60000"
+      }
+    ],
+    "expected_fields": [
+      "program_definition",
+      "具体院校培养方案",
+      "employment_directions",
+      "岗位招聘要求",
+      "薪资数值",
+      "related_occupations",
+      "education",
+      "逐年数据"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyk-eriffz262uwx51rn-courses",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/kskcPage/eriffz262uwx51rn",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "数据科学与大数据技术 开设课程（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库「开设课程」栏目；页面无发布日，published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain-3/chsi-kskc-数据科学与大数据技术.raw",
+      "sha256": "52c7ecb676679cff85ca6d4e9b96ff2b5c82fe4629613e6fc98da7a6849e911c",
+      "captured_at": "2026-10-23T14:44:33.489Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "learning-chsi-zyk-eriffz262uwx51rn-courses-guide-clinical-data-e30a792e",
+      "role_id": "guide_clinical_data",
+      "category": "learning",
+      "title": "数据科学与大数据技术：开设课程（主干课程）",
+      "summary": "阳光高考统计的高校实际开设课程名称清单（开设课程 高校综合课程 课程名称 课程难易度 课程实用性（于工作、个人成长) 神经网络与深度学习 5 1人 5 1人 数据挖掘 5 2人 5 2人 云计算与大数据平台 - - 离散…）。",
+      "applicability": "用于回答「这个专业学什么课」。课程名来自各高校申报汇总，不是教育部统一规定的核心课程目录，具体院校课程设置会不同。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk",
+        "courses"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "080910T",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 开设课程栏目"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "开设课程 高校综合课程 课程名称 课程难易度 课程实用性（于工作、个人成长\\) 神经网络与深度学习 5 1人 5 1人 数据挖掘 5 2人 5 2人 云计算与大数据平台 - - 离散数学 5 1人 5 1人 计算机网络 3 1人 5 1人 算法设计与分析 5 1人 5 1人 工程导论 - - 数据结构 2 1人 4 1人 计算机组成与体系结构 - - 计算机安全与数据安全 5 1人 5 1人 计算机与软件工程概论 - - 高级语言程序设计 - - 大数据导论 - - 数据库系统 - - 操作系统 - -"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "学分学时",
+      "教材"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyk-73384408",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/detail/73384408",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "医学信息工程 专业知识库（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库页面「数据统计截止日期：2025年12月31日」；页面本身无发布日，published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain-3/chsi-医学信息工程.raw",
+      "sha256": "a18c7c304112a61ea56be222a623600c24503fb49a58f647dcfa03bbd59dc2c0",
+      "captured_at": "2026-10-23T14:44:33.495Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "occupation-chsi-zyk-73384408-guide-clinical-data-9b7b1945",
+      "role_id": "guide_clinical_data",
+      "category": "occupation",
+      "title": "医学信息工程：专业介绍（培养目标与学科内涵）",
+      "summary": "官方专业介绍原文，回答「这个专业是什么、学什么、毕业能做什么」。（同一官方来源共 4 条原文事实，字段：program_definition、employment_directions、related_occupations、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "用于说明「医学信息工程」（080711T）的专业介绍（培养目标与学科内涵）。来源为教育部学生服务与素质发展中心主办的阳光高考信息平台「专业知识库」全国口径页面，原文照录、未提炼；不适用于具体院校培养方案差异、录取分数或就业率。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "080711T",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 统计信息"
+      }
+    },
+    "extracts": [
+      {
+        "field": "program_definition",
+        "pattern": "医学信息工程专业培养具备生命科学、计算机技术及信息科学有关的基础理论知识，能在医学信息系统及集成、数字医疗及其他信息技术领域从事研究、设计、应用、开发和管理的理工医结合的复合型高级工程技术人才。学生需具备生命科学、电子技术、计算机信息技术有关的较为宽广的理论知识，受到医学信息系统相关的工程能力的训练，能在医学信息工程、数字医疗及相关领域从事研究、设计、应用、开发和管理工作。"
+      },
+      {
+        "field": "employment_directions",
+        "pattern": "硬件工程师软件工程师通信技术工程师IT技术支持/维护工程师项目专员/助理软件测试WEB前端开发硬件测试售前/售后技术支持工程师电子技术研发工程师公务员算法工程师助理/秘书/文员电子/电器工艺/制程工程师网络工程师半导体技术人力资源专员/助理电子/电器工程师"
+      },
+      {
+        "field": "related_occupations",
+        "pattern": "电子信息工程 电子科学与技术 通信工程 微电子科学与工程 光电信息科学与工程 信息工程 广播电视工程 水声工程 电子封装技术 集成电路设计与集成系统 电磁场与无线技术 电波传播与天线 电子信息科学与技术 电信工程及管理 应用电子技术教育 人工智能 海洋信息工程 柔性电子学 智能测控工程 智能视觉工程 智能视听工程 半导体工艺与装备"
+      },
+      {
+        "field": "education",
+        "pattern": "全国普通高校毕业生规模（人） 3000-3500"
+      }
+    ],
+    "expected_fields": [
+      "program_definition",
+      "具体院校培养方案",
+      "employment_directions",
+      "岗位招聘要求",
+      "薪资数值",
+      "related_occupations",
+      "education",
+      "逐年数据"
+    ]
+  },
+  {
+    "source": {
+      "id": "chsi-zyk-73384408-courses",
+      "url": "https://gaokao.chsi.com.cn/zyk/zybk/kskcPage/73384408",
+      "organization": "教育部学生服务与素质发展中心（阳光高考信息平台）",
+      "title": "医学信息工程 开设课程（阳光高考）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "阳光高考专业知识库「开设课程」栏目；页面无发布日，published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-major-explain-3/chsi-kskc-医学信息工程.raw",
+      "sha256": "f85cf431b707104eb0f892112cf56cbc8444d7b99057547940fc0c4b0e5a7acb",
+      "captured_at": "2026-10-23T14:44:33.509Z",
+      "content_type": "text/plain",
+      "method": "downloaded_text"
+    },
+    "record": {
+      "id": "learning-chsi-zyk-73384408-courses-guide-clinical-data-9b7b1945",
+      "role_id": "guide_clinical_data",
+      "category": "learning",
+      "title": "医学信息工程：开设课程（主干课程）",
+      "summary": "阳光高考统计的高校实际开设课程名称清单（开设课程 高校综合课程 课程名称 课程难易度 课程实用性（于工作、个人成长) 生物医学信号处理 - - 生物医学信息学导论 - - 数字化医学 - - 医学图像与信号处理 - - …）。",
+      "applicability": "用于回答「这个专业学什么课」。课程名来自各高校申报汇总，不是教育部统一规定的核心课程目录，具体院校课程设置会不同。",
+      "relation": "direct",
+      "tags": [
+        "moe_platform",
+        "chsi_zyk",
+        "courses"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "program": "080711T",
+        "region": "全国",
+        "evidence_locator": "专业知识库 · 开设课程栏目"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "开设课程 高校综合课程 课程名称 课程难易度 课程实用性（于工作、个人成长\\) 生物医学信号处理 - - 生物医学信息学导论 - - 数字化医学 - - 医学图像与信号处理 - - 线性电子电路 - - 人体解剖与生理学实验 - - 临床医学工程实践 - - 医学仪器原理及设计 - - 单片机技术及应用 5 1人 4 1人 细胞与分子生物学导论 - - Windows/Linux软件开发 - - 人体解剖与生理学 - - 面向对象程序设计 4 1人 5 1人 数据结构 4 1人 4 1人 算法分析与设计 5 1人 4 1人 程序设计基础 4 2人 5 2人 软件工程 4 1人 4 1人 移动开发技术 3 1人 5 1人 大学物理 3 2人 3 2人 汇编语言 3 1人 1 1人 Java EE开发 5 1人 5 1人 Web开发技术 4 1人 5 1人 大学计算机基础 3 1人 5 1人"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "学分学时",
+      "教材"
+    ]
+  }
+]

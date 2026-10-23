@@ -1,1 +1,142 @@
-/* XENISO home area styles. Uses tokens + primitives from globals.css. */
+/* XENISO 首页（采集册版）。共用 token 与 atlas.css 原语，这里只放首页专属排版。 */
+
+/* ---------- 首屏 ---------- */
+.atlas-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 76px;
+  border-bottom: 1px solid var(--line);
+}
+.atlas-hero-ink {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.atlas-hero-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: .9;
+  mix-blend-mode: multiply;
+}
+.atlas-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, .8fr);
+  gap: 40px;
+  align-items: start;
+}
+.atlas-hero-sheet {
+  padding: 44px 46px 40px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+}
+.atlas-hero-sheet h1 { margin: 14px 0 0; max-width: 19em; text-wrap: balance; }
+.atlas-hero-rule { display: block; width: min(420px, 62%); height: 14px; margin: 18px 0 0; }
+.atlas-hero-lede { margin: 18px 0 0; max-width: 34em; color: var(--ink-2); }
+.atlas-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.atlas-hero-meta { margin: 18px 0 0; }
+
+.atlas-hero-side { display: grid; gap: 18px; padding-top: 18px; }
+.atlas-hero-side .atlas-sheet { padding: 20px 22px; }
+.atlas-hero-side .t-small { font-size: 15.5px; line-height: 1.72; color: var(--ink-2); }
+.atlas-hero-side .atlas-label { font-size: 12.5px; color: var(--ink-2); }
+.atlas-hero-count { margin: 10px 0 6px; font-family: var(--font-serif); font-size: 20px; color: var(--ink); }
+.atlas-hero-count strong { font-size: 28px; color: var(--green-deep); }
+.atlas-hero-list { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 7px; }
+.atlas-hero-list li { position: relative; padding-left: 16px; font-size: 15px; line-height: 1.7; color: var(--ink-2); }
+.atlas-hero-list li::before { content: ""; position: absolute; left: 0; top: .72em; width: 6px; height: 6px; background: var(--green-mark); }
+
+@media (max-width: 1024px) {
+  .atlas-hero-inner { grid-template-columns: minmax(0, 1fr); }
+  .atlas-hero-side { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-top: 0; }
+}
+@media (max-width: 760px) {
+  .atlas-hero { padding: 30px 0 52px; }
+  .atlas-hero-sheet { padding: 30px 22px 26px; }
+  .atlas-hero-side { grid-template-columns: minmax(0, 1fr); }
+  .atlas-hero-rule { width: 100%; }
+}
+
+/* ---------- 区块头 ---------- */
+.atlas-band-head { max-width: 46em; margin-bottom: 34px; }
+.atlas-band-head h2 { margin: 0 0 12px; }
+.atlas-band-head .t-lede { margin: 0; }
+
+/* ---------- 四步 ---------- */
+.atlas-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.atlas-step {
+  display: block;
+  height: 100%;
+  padding: 30px 28px 24px;
+  color: inherit;
+  text-decoration: none;
+}
+.atlas-step-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.atlas-step-no { font-family: var(--font-mono); font-size: 13px; letter-spacing: .1em; color: var(--green); }
+.atlas-step h3 { margin: 14px 0 10px; }
+.atlas-step .t-small { margin: 0 0 18px; max-width: 34em; }
+.atlas-step .atlas-kv { margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 24px; }
+.atlas-step .atlas-kv > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+.atlas-step .atlas-kv dt { font-size: 12px; }
+.atlas-step .atlas-kv dd { font-size: 15px; }
+
+@media (max-width: 760px) {
+  .atlas-steps { grid-template-columns: minmax(0, 1fr); }
+  .atlas-step .atlas-kv { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- 文库 ---------- */
+.atlas-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+  gap: 44px;
+  align-items: start;
+}
+.atlas-split h2 { margin: 0 0 14px; }
+.atlas-split .t-lede { margin: 0 0 22px; }
+.atlas-dir-list { list-style: none; margin: 12px 0 0; padding: 0; }
+.atlas-dir-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 16px;
+}
+.atlas-dir-list li:last-child { border-bottom: 0; }
+.atlas-dir-list i { font-family: var(--font-mono); font-size: 12.5px; font-style: normal; color: var(--ink-3); white-space: nowrap; }
+
+@media (max-width: 1024px) { .atlas-split { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
+
+/* ---------- 社区 ---------- */
+.atlas-notes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.atlas-note { padding: 26px 24px 22px; }
+.atlas-note-title { margin: 12px 0 8px; font-family: var(--font-serif); font-size: 19px; line-height: 1.5; color: var(--ink); }
+.atlas-center { text-align: center; margin: 30px 0 0; }
+.atlas-center a { color: var(--green-deep); border-bottom: 1px solid currentColor; }
+
+@media (max-width: 1024px) { .atlas-notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .atlas-notes { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- 边界 ---------- */
+.atlas-limits h2 { margin: 0 0 28px; color: var(--night-ink); }
+.atlas-limits .atlas-label { color: var(--night-mark); margin-bottom: 8px; }
+.atlas-limits p { color: var(--night-ink-2); margin: 0; font-size: 17px; line-height: 1.8; }
+.atlas-limits .atlas-cols-3 > div { padding-top: 18px; border-top: 1px solid var(--night-line); }

@@ -1,0 +1,665 @@
+[
+  {
+    "source": {
+      "id": "hust-2027-smzl-170",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "organization": "华中科技大学研究生院",
+      "title": "华中科技大学2027年硕士研究生招生专业目录 — 170 生命科学与技术学院（报考条件）",
+      "publication_date_note": "页面为华中科技大学研招「2027年硕士研究生招生专业目录」查询页（ASP.NET WebForms）。默认只渲染第一个院系，须以 POST 提交 __VIEWSTATE/__EVENTVALIDATION 并置 __EVENTTARGET=ctl00$contentParent$drpYx、ctl00$contentParent$drpYx=<院系代码>、drpNd=2027 才能取得「170 生命科学与技术学院」的表格；本条 artifact 即该次 POST 返回的渲染后 HTML。页面未印发布日，招生年度由「年度」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/hust-170.raw",
+      "sha256": "f5b86d96e636fe6f29fc02db34a22cfe9e84ab8881537b020963a460534f177c",
+      "captured_at": "2026-10-23T14:37:24.727Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-smzl-170-guide-devices-040bb01b",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "华中科技大学2027年083100 生物医学工程（学硕）：原文未设本科专业限制，但不招收同等学力",
+      "summary": "原文（170 生命科学与技术学院 083100 生物医学工程（全日制）45 人 行）：方向 01 生物医学工程；初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④890 普通物理；备注「01方向、03-04方向、06-09方向含武汉光电国家研究中心招生计划。不招收同等学力考生」。全文未出现任何本科专业限制条款。",
+      "applicability": "仅适用于华中科技大学 2027 年 170 生命科学与技术学院 083100 生物医学工程（学术学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "华中科技大学",
+        "生物医学工程",
+        "数学一",
+        "不招同等学力"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "生命科学与技术学院",
+        "program": "083100 生物医学工程",
+        "admission_year": 2027,
+        "region": "湖北",
+        "evidence_locator": "2027 目录 → 170 → 083100 备注列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "083100 生物医学工程（全日制） 45 01 生物医学工程 ① 101\\|思想政治理论 ② 201\\|英语（一） ③ 301\\|数学（一） ④ 890\\|普通物理 01方向、03-04方向、06-09方向含武汉光电国家研究中心招生计划。不招收同等学力考生"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-2027-smzl-170",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "organization": "华中科技大学研究生院",
+      "title": "华中科技大学2027年硕士研究生招生专业目录 — 170 生命科学与技术学院（报考条件）",
+      "publication_date_note": "页面为华中科技大学研招「2027年硕士研究生招生专业目录」查询页（ASP.NET WebForms）。默认只渲染第一个院系，须以 POST 提交 __VIEWSTATE/__EVENTVALIDATION 并置 __EVENTTARGET=ctl00$contentParent$drpYx、ctl00$contentParent$drpYx=<院系代码>、drpNd=2027 才能取得「170 生命科学与技术学院」的表格；本条 artifact 即该次 POST 返回的渲染后 HTML。页面未印发布日，招生年度由「年度」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/hust-170.raw",
+      "sha256": "f5b86d96e636fe6f29fc02db34a22cfe9e84ab8881537b020963a460534f177c",
+      "captured_at": "2026-10-23T14:37:24.727Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-smzl-170-guide-devices-bae294d4",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "华中科技大学2027年085409 生物医学工程（专硕）：原文未设本科专业限制，不招同等学力",
+      "summary": "原文（170 生命科学与技术学院 085409 生物医学工程（全日制）40 人 行）：00 不区分研究方向；初试 ①101 ②204 英语（二）③302 数学（二）④890 普通物理；备注「含武汉光电国家研究中心招生计划、国家卓越工程师学院“卓越项目”计划。不招收同等学力考生」。",
+      "applicability": "仅适用于华中科技大学 2027 年 170 生命科学与技术学院 085409 生物医学工程（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "华中科技大学",
+        "生物医学工程",
+        "数学二",
+        "不招同等学力"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "生命科学与技术学院",
+        "program": "085409 生物医学工程",
+        "admission_year": 2027,
+        "region": "湖北",
+        "evidence_locator": "2027 目录 → 170 → 085409 备注列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085409 生物医学工程（全日制） 40 00 不区分研究方向 ① 101\\|思想政治理论 ② 204\\|英语（二） ③ 302\\|数学（二） ④ 890\\|普通物理 含武汉光电国家研究中心招生计划、国家卓越工程师学院“卓越项目”计划。不招收同等学力考生"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-2027-smzl-170",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "organization": "华中科技大学研究生院",
+      "title": "华中科技大学2027年硕士研究生招生专业目录 — 170 生命科学与技术学院（报考条件）",
+      "publication_date_note": "页面为华中科技大学研招「2027年硕士研究生招生专业目录」查询页（ASP.NET WebForms）。默认只渲染第一个院系，须以 POST 提交 __VIEWSTATE/__EVENTVALIDATION 并置 __EVENTTARGET=ctl00$contentParent$drpYx、ctl00$contentParent$drpYx=<院系代码>、drpNd=2027 才能取得「170 生命科学与技术学院」的表格；本条 artifact 即该次 POST 返回的渲染后 HTML。页面未印发布日，招生年度由「年度」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/hust-170.raw",
+      "sha256": "f5b86d96e636fe6f29fc02db34a22cfe9e84ab8881537b020963a460534f177c",
+      "captured_at": "2026-10-23T14:37:24.727Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-smzl-170-guide-clinical-data-05ca66d4",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "华中科技大学2027年086000 生物与医药：不考数学，原文未设本科专业限制",
+      "summary": "原文（170 生命科学与技术学院 086000 生物与医药（全日制）50 人 行）：方向 01 生物技术与工程；初试 ①101 思想政治理论 ②204 英语（二）③**338 生物化学** ④**891 细胞生物学**（无数学）；备注「含国家卓越工程师学院“卓越项目”计划。不招收同等学力考生」。",
+      "applicability": "仅适用于华中科技大学 2027 年 170 生命科学与技术学院 086000 生物与医药（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "华中科技大学",
+        "生物与医药",
+        "不考数学",
+        "开放型"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "生命科学与技术学院",
+        "program": "086000 生物与医药",
+        "admission_year": 2027,
+        "region": "湖北",
+        "evidence_locator": "2027 目录 → 170 → 086000 备注列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "086000 生物与医药（全日制） 50 01 生物技术与工程 ① 101\\|思想政治理论 ② 204\\|英语（二） ③ 338\\|生物化学 ④ 891\\|细胞生物学 含国家卓越工程师学院“卓越项目”计划。不招收同等学力考生"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-2027-smzl-170",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "organization": "华中科技大学研究生院",
+      "title": "华中科技大学2027年硕士研究生招生专业目录 — 170 生命科学与技术学院（报考条件）",
+      "publication_date_note": "页面为华中科技大学研招「2027年硕士研究生招生专业目录」查询页（ASP.NET WebForms）。默认只渲染第一个院系，须以 POST 提交 __VIEWSTATE/__EVENTVALIDATION 并置 __EVENTTARGET=ctl00$contentParent$drpYx、ctl00$contentParent$drpYx=<院系代码>、drpNd=2027 才能取得「170 生命科学与技术学院」的表格；本条 artifact 即该次 POST 返回的渲染后 HTML。页面未印发布日，招生年度由「年度」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/hust-210.raw",
+      "sha256": "6bbabc07024ba54e2a3fbbd798e35816de019fcba5721148329dca41811c9060",
+      "captured_at": "2026-10-23T14:38:52.336Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-smzl-170-guide-ml-cv-3c97bbf8",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "华中科技大学2027年085404 计算机技术（专硕）：原文未设本科专业限制，不招同等学力",
+      "summary": "原文（210 计算机科学与技术学院 085404 计算机技术（全日制）201 人 行）：00 不区分研究方向；初试 ①101 ②201 英语（一）③**301 数学（一）**④408 计算机学科专业基础；备注「含国家卓越工程师学院“卓越项目”计划、武汉光电国家研究中心招生计划。不招收同等学力考生。」",
+      "applicability": "仅适用于华中科技大学 2027 年 210 计算机科学与技术学院 085404 计算机技术（专业学位，全日制）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "华中科技大学",
+        "电子信息",
+        "408",
+        "数学一",
+        "不招同等学力"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "计算机科学与技术学院",
+        "program": "085404 计算机技术",
+        "admission_year": 2027,
+        "region": "湖北",
+        "evidence_locator": "2027 目录 → 210 → 085404 备注列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085404 计算机技术（全日制） 201 00 不区分研究方向 ① 101\\|思想政治理论 ② 201\\|英语（一） ③ 301\\|数学（一） ④ 408\\|计算机学科专业基础 含国家卓越工程师学院“卓越项目”计划、武汉光电国家研究中心招生计划。不招收同等学力考生"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-2027-smzl-170",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "organization": "华中科技大学研究生院",
+      "title": "华中科技大学2027年硕士研究生招生专业目录 — 170 生命科学与技术学院（报考条件）",
+      "publication_date_note": "页面为华中科技大学研招「2027年硕士研究生招生专业目录」查询页（ASP.NET WebForms）。默认只渲染第一个院系，须以 POST 提交 __VIEWSTATE/__EVENTVALIDATION 并置 __EVENTTARGET=ctl00$contentParent$drpYx、ctl00$contentParent$drpYx=<院系代码>、drpNd=2027 才能取得「170 生命科学与技术学院」的表格；本条 artifact 即该次 POST 返回的渲染后 HTML。页面未印发布日，招生年度由「年度」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/hust-920.raw",
+      "sha256": "faf78da6354359b2ee19dd8122143f163ba7f1db40963650d8557ba6dccc4d99",
+      "captured_at": "2026-10-23T14:40:52.021Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-smzl-170-guide-ml-cv-1b726c3f",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "华中科技大学2027年085412 网络与信息安全：原文未设本科专业限制，不招同等学力",
+      "summary": "原文（920 网络空间安全学院 085412 网络与信息安全（全日制）81 人 行）：00 不区分研究方向；初试 ①101 ②204 英语（二）③302 数学（二）④408 计算机学科专业基础；备注「不招收同等学力考生」。",
+      "applicability": "仅适用于华中科技大学 2027 年 920 网络空间安全学院 085412 网络与信息安全（专业学位，全日制）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "华中科技大学",
+        "电子信息",
+        "408",
+        "数学二",
+        "不招同等学力"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "网络空间安全学院",
+        "program": "085412 网络与信息安全",
+        "admission_year": 2027,
+        "region": "湖北",
+        "evidence_locator": "2027 目录 → 920 → 085412 备注列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085412 网络与信息安全（全日制） 81 00 不区分研究方向 ① 101\\|思想政治理论 ② 204\\|英语（二） ③ 302\\|数学（二） ④ 408\\|计算机学科专业基础 不招收同等学力考生"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-2027-smzl-170",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "organization": "华中科技大学研究生院",
+      "title": "华中科技大学2027年硕士研究生招生专业目录 — 170 生命科学与技术学院（报考条件）",
+      "publication_date_note": "页面为华中科技大学研招「2027年硕士研究生招生专业目录」查询页（ASP.NET WebForms）。默认只渲染第一个院系，须以 POST 提交 __VIEWSTATE/__EVENTVALIDATION 并置 __EVENTTARGET=ctl00$contentParent$drpYx、ctl00$contentParent$drpYx=<院系代码>、drpNd=2027 才能取得「170 生命科学与技术学院」的表格；本条 artifact 即该次 POST 返回的渲染后 HTML。页面未印发布日，招生年度由「年度」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/hust-190.raw",
+      "sha256": "c1ef387a60af73b4ed656e1ec5a33f24550a6244205f99ff724084b331dc87f8",
+      "captured_at": "2026-10-23T14:37:50.027Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-smzl-170-guide-devices-9535ce3c",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "华中科技大学2027年085403 集成电路工程：原文未设本科专业限制，不招同等学力",
+      "summary": "原文（190 集成电路学院 085403 集成电路工程（全日制）142 人 行）：00 不区分研究方向；初试 ①101 ②201 英语（一）③301 数学（一）④831 电子技术基础；备注「含国家卓越工程师学院“卓越项目”计划。不招收同等学力考生」。",
+      "applicability": "仅适用于华中科技大学 2027 年 190 集成电路学院 085403 集成电路工程（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "华中科技大学",
+        "集成电路",
+        "数学一",
+        "不招同等学力"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "集成电路学院",
+        "program": "085403 集成电路工程",
+        "admission_year": 2027,
+        "region": "湖北",
+        "evidence_locator": "2027 目录 → 190 → 085403 备注列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085403 集成电路工程（全日制） 142 00 不区分研究方向 ① 101\\|思想政治理论 ② 201\\|英语（一） ③ 301\\|数学（一） ④ 831\\|电子技术基础 含国家卓越工程师学院“卓越项目”计划。不招收同等学力考生"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "xidian-2027-catalog-restrict",
+      "url": "https://gr.xidian.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1281831001&wbfileid=0A0A1E22D2F47500B248F6850F857EDA",
+      "organization": "西安电子科技大学研究生院",
+      "title": "西安电子科技大学2027年硕士研究生招生专业目录（报考条件）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "附件为「西安电子科技大学2027年硕士研究生招生招生专业目录.pdf」，取自研究生院 2027 年招生简章页（https://gr.xidian.edu.cn/info/1074/20804.htm）的 download.jsp 附件（需带 Referer 指向简章页方可下载）。PDF 内未印发布日期；招生年度由文件名与正文「2027年硕士研究生招生专业目录」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/xidian-2027-catalog.pdf",
+      "sha256": "60e3f7384c02acf6c39a0be09f62a2f85f7972c05cd3b366684ad8ee99a21ec1",
+      "captured_at": "2026-10-23T14:49:19.861Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-92g/xidian-2027-catalog.txt",
+      "extracted_sha256": "c9daefd5959721ffa235c33ab338ebb656c9db967def90e2fb6b1d2431c2f148"
+    },
+    "record": {
+      "id": "admissions-xidian-2027-catalog-restrict-guide-devices-c01d4e61",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "西电2027年077700 生物医学工程：用 602 高等数学（非数学一/二），原文未设本科专业限制",
+      "summary": "原文（012 生命科学技术学院 077700 生物医学工程 行）：00 不区分研究方向；初试 ①101 思想政治理论 ②201 英语（一）③**602 高等数学** ④891 分子生物学；复试二选一 9122 无机化学与分析化学 / 9123 细胞生物学；拟招 3 人。全表未出现任何本科专业限制条款。",
+      "applicability": "仅适用于西安电子科技大学 2027 年 012 生命科学技术学院 077700 生物医学工程（按理学门类招生的学硕）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "西安电子科技大学",
+        "生物医学工程",
+        "602高等数学",
+        "开放型"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安电子科技大学",
+        "college": "生命科学技术学院",
+        "program": "077700 生物医学工程",
+        "admission_year": 2027,
+        "region": "陕西",
+        "evidence_locator": "2027 目录 → 012 生命科学技术学院 → 077700"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "077700 生物医学工程00不区分研究方向① ：101 思想政治理论② ：201 英语（一）③ ：602 高等数学④ ：891 分子生物学 （二选一）9122 无机化学与分析化学9123 细胞生物学3"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "xidian-2027-catalog-restrict",
+      "url": "https://gr.xidian.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1281831001&wbfileid=0A0A1E22D2F47500B248F6850F857EDA",
+      "organization": "西安电子科技大学研究生院",
+      "title": "西安电子科技大学2027年硕士研究生招生专业目录（报考条件）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "附件为「西安电子科技大学2027年硕士研究生招生招生专业目录.pdf」，取自研究生院 2027 年招生简章页（https://gr.xidian.edu.cn/info/1074/20804.htm）的 download.jsp 附件（需带 Referer 指向简章页方可下载）。PDF 内未印发布日期；招生年度由文件名与正文「2027年硕士研究生招生专业目录」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/xidian-2027-catalog.pdf",
+      "sha256": "60e3f7384c02acf6c39a0be09f62a2f85f7972c05cd3b366684ad8ee99a21ec1",
+      "captured_at": "2026-10-23T14:49:19.861Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-92g/xidian-2027-catalog.txt",
+      "extracted_sha256": "c9daefd5959721ffa235c33ab338ebb656c9db967def90e2fb6b1d2431c2f148"
+    },
+    "record": {
+      "id": "admissions-xidian-2027-catalog-restrict-guide-devices-040bb01b",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "西电2027年083100 生物医学工程：★为退役士兵计划可报，原文未设本科专业限制",
+      "summary": "原文（012 生命科学技术学院 083100 生物医学工程★ 01生物医学工程 行）：初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④844 信号与系统；复试二选一 9121 电子线路 / 9124 数字信号处理；拟招 25 人。专业名后缀「★」按目录注 3 意为「退役大学生士兵计划可报考专业」。",
+      "applicability": "仅适用于西安电子科技大学 2027 年 012 生命科学技术学院 083100 生物医学工程。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "西安电子科技大学",
+        "生物医学工程",
+        "数学一",
+        "退役士兵计划",
+        "开放型"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安电子科技大学",
+        "college": "生命科学技术学院",
+        "program": "083100 生物医学工程",
+        "admission_year": 2027,
+        "region": "陕西",
+        "evidence_locator": "2027 目录 → 012 → 083100（含★标记）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "083100 生物医学工程★01生物医学工程① ：101 思想政治理论② ：201 英语（一）③ ：301 数学（一）④ ：844 信号与系统（二选一）9121 电子线路9124 数字信号处理25"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "xidian-2027-catalog-restrict",
+      "url": "https://gr.xidian.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1281831001&wbfileid=0A0A1E22D2F47500B248F6850F857EDA",
+      "organization": "西安电子科技大学研究生院",
+      "title": "西安电子科技大学2027年硕士研究生招生专业目录（报考条件）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "附件为「西安电子科技大学2027年硕士研究生招生招生专业目录.pdf」，取自研究生院 2027 年招生简章页（https://gr.xidian.edu.cn/info/1074/20804.htm）的 download.jsp 附件（需带 Referer 指向简章页方可下载）。PDF 内未印发布日期；招生年度由文件名与正文「2027年硕士研究生招生专业目录」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/xidian-2027-catalog.pdf",
+      "sha256": "60e3f7384c02acf6c39a0be09f62a2f85f7972c05cd3b366684ad8ee99a21ec1",
+      "captured_at": "2026-10-23T14:49:19.861Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-92g/xidian-2027-catalog.txt",
+      "extracted_sha256": "c9daefd5959721ffa235c33ab338ebb656c9db967def90e2fb6b1d2431c2f148"
+    },
+    "record": {
+      "id": "admissions-xidian-2027-catalog-restrict-guide-devices-bae294d4",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "西电2027年085409 生物医学工程（专硕）：▲为少干计划可报，考数学一",
+      "summary": "原文（012 生命科学技术学院 085409 生物医学工程（专业学位）▲ 01高端医疗设备 行）：初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④844 信号与系统；复试二选一 9121 电子线路 / 9124 数字信号处理；拟招 14 人。后缀「▲」按目录注 4 意为「少数民族高层次骨干人才计划可报考专业」。",
+      "applicability": "仅适用于西安电子科技大学 2027 年 012 生命科学技术学院 085409 生物医学工程（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "西安电子科技大学",
+        "生物医学工程",
+        "数学一",
+        "少干计划",
+        "开放型"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安电子科技大学",
+        "college": "生命科学技术学院",
+        "program": "085409 生物医学工程",
+        "admission_year": 2027,
+        "region": "陕西",
+        "evidence_locator": "2027 目录 → 012 → 085409（含▲标记）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085409 生物医学工程（专业学位）▲ 01高端医疗设备① ：101 思想政治理论② ：201 英语（一）③ ：301 数学（一）④ ：844 信号与系统 （二选一）9121 电子线路9124 数字信号处理14"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "xidian-2027-catalog-restrict",
+      "url": "https://gr.xidian.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1281831001&wbfileid=0A0A1E22D2F47500B248F6850F857EDA",
+      "organization": "西安电子科技大学研究生院",
+      "title": "西安电子科技大学2027年硕士研究生招生专业目录（报考条件）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "附件为「西安电子科技大学2027年硕士研究生招生招生专业目录.pdf」，取自研究生院 2027 年招生简章页（https://gr.xidian.edu.cn/info/1074/20804.htm）的 download.jsp 附件（需带 Referer 指向简章页方可下载）。PDF 内未印发布日期；招生年度由文件名与正文「2027年硕士研究生招生专业目录」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/xidian-2027-catalog.pdf",
+      "sha256": "60e3f7384c02acf6c39a0be09f62a2f85f7972c05cd3b366684ad8ee99a21ec1",
+      "captured_at": "2026-10-23T14:49:19.861Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-92g/xidian-2027-catalog.txt",
+      "extracted_sha256": "c9daefd5959721ffa235c33ab338ebb656c9db967def90e2fb6b1d2431c2f148"
+    },
+    "record": {
+      "id": "admissions-xidian-2027-catalog-restrict-guide-ml-cv-fd93d587",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "西电2027年085410 人工智能：考数学一 + 408，▲为少干计划可报",
+      "summary": "原文（017 人工智能学院 085410 人工智能（专业学位）▲ 01大数据与人工智能 行）：初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④408 计算机学科专业基础；复试 9173 人工智能专业基础；拟招 12 人。全表未设本科专业限制。",
+      "applicability": "仅适用于西安电子科技大学 2027 年 017 人工智能学院 085410 人工智能（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "西安电子科技大学",
+        "电子信息",
+        "408",
+        "数学一",
+        "开放型"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安电子科技大学",
+        "college": "人工智能学院",
+        "program": "085410 人工智能",
+        "admission_year": 2027,
+        "region": "陕西",
+        "evidence_locator": "2027 目录 → 017 人工智能学院 → 085410"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085410 人工智能（专业学位）▲01大数据与人工智能① ：101 思想政治理论② ：201 英语（一）③ ：301 数学（一）④ ：408 计算机学科专业基础9173 人工智能专业基础12"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "xidian-2027-catalog-restrict",
+      "url": "https://gr.xidian.edu.cn/system/_content/download.jsp?urltype=news.DownloadAttachUrl&owner=1281831001&wbfileid=0A0A1E22D2F47500B248F6850F857EDA",
+      "organization": "西安电子科技大学研究生院",
+      "title": "西安电子科技大学2027年硕士研究生招生专业目录（报考条件）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "附件为「西安电子科技大学2027年硕士研究生招生招生专业目录.pdf」，取自研究生院 2027 年招生简章页（https://gr.xidian.edu.cn/info/1074/20804.htm）的 download.jsp 附件（需带 Referer 指向简章页方可下载）。PDF 内未印发布日期；招生年度由文件名与正文「2027年硕士研究生招生专业目录」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/xidian-2027-catalog.pdf",
+      "sha256": "60e3f7384c02acf6c39a0be09f62a2f85f7972c05cd3b366684ad8ee99a21ec1",
+      "captured_at": "2026-10-23T14:49:19.861Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-92g/xidian-2027-catalog.txt",
+      "extracted_sha256": "c9daefd5959721ffa235c33ab338ebb656c9db967def90e2fb6b1d2431c2f148"
+    },
+    "record": {
+      "id": "admissions-xidian-2027-catalog-restrict-guide-clinical-data-05ca66d4",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "西电2027年086000 生物与医药：不考数学，原文未设本科专业限制",
+      "summary": "原文（012 生命科学技术学院 086000 生物与医药（专业学位）行）：方向 01 智能分子探针与生物传感、02 医学合成生物工程；初试 ①101 思想政治理论 ②201 英语（一）③**338 生物化学** ④**891 分子生物学**（无数学）；复试二选一 9122 无机化学与分析化学 / 9123 细胞生物学；拟招 22 人。",
+      "applicability": "仅适用于西安电子科技大学 2027 年 012 生命科学技术学院 086000 生物与医药（专业学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "西安电子科技大学",
+        "生物与医药",
+        "不考数学",
+        "开放型"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安电子科技大学",
+        "college": "生命科学技术学院",
+        "program": "086000 生物与医药",
+        "admission_year": 2027,
+        "region": "陕西",
+        "evidence_locator": "2027 目录 → 012 → 086000"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "086000 生物与医药（专业学位）01智能分子探针与生物传感① ：101 思想政治理论② ：201 英语（一）③ ：338 生物化学④ ：891 分子生物学 （二选一）9122 无机化学与分析化学9123 细胞生物学2202医学合成生物工程"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-2027-smzl-170",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "organization": "华中科技大学研究生院",
+      "title": "华中科技大学2027年硕士研究生招生专业目录 — 170 生命科学与技术学院（报考条件）",
+      "publication_date_note": "页面为华中科技大学研招「2027年硕士研究生招生专业目录」查询页（ASP.NET WebForms）。默认只渲染第一个院系，须以 POST 提交 __VIEWSTATE/__EVENTVALIDATION 并置 __EVENTTARGET=ctl00$contentParent$drpYx、ctl00$contentParent$drpYx=<院系代码>、drpNd=2027 才能取得「170 生命科学与技术学院」的表格；本条 artifact 即该次 POST 返回的渲染后 HTML。页面未印发布日，招生年度由「年度」下拉选中 2027 确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-92g/hust-184.raw",
+      "sha256": "31e147dc18c6e1a0f38e724fcaf646bf89df4cea373cacdef0678814061d118d",
+      "captured_at": "2026-10-23T14:37:46.573Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-smzl-170-guide-ml-cv-102d9043",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "华中科技大学2027年140500 智能科学与技术：原文未设本科专业限制，不招同等学力",
+      "summary": "原文（184 人工智能与自动化学院 140500 智能科学与技术（全日制）53 人 行）：方向 01 计算机视觉与感知智能；初试 ①101 ②201 英语（一）③301 数学（一）④832 数据结构与模式识别；备注「含海军工程大学联培计划。不招收同等学力考生」。",
+      "applicability": "仅适用于华中科技大学 2027 年 184 人工智能与自动化学院 140500 智能科学与技术（学术学位）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "华中科技大学",
+        "智能科学与技术",
+        "数学一",
+        "不招同等学力"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "人工智能与自动化学院",
+        "program": "140500 智能科学与技术",
+        "admission_year": 2027,
+        "region": "湖北",
+        "evidence_locator": "2027 目录 → 184 → 140500 备注列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "140500 智能科学与技术（全日制） 53 01 计算机视觉与感知智能 ① 101\\|思想政治理论 ② 201\\|英语（一） ③ 301\\|数学（一） ④ 832\\|数据结构与模式识别 含海军工程大学联培计划。不招收同等学力考生"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  }
+]

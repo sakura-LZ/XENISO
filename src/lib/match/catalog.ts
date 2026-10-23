@@ -10,7 +10,7 @@ export const matchOccupations: Occupation[] = [
   const direction = findDirection(spec.direction);
   if (!direction) throw new Error(`Missing direction ${spec.direction}`);
   return {
-    schema_version: "match-1", id: spec.id, title: spec.title, simulation: false,
+    schema_version: "match-2", id: spec.id, title: spec.title, simulation: false,
     direction_ids: [direction.id], onet_codes: direction.onet.map(o => o.code), mapping_basis: editorial.locator,
     tasks: known(direction.work_tasks, editorial), interests: unknown(),
     skills: spec.skills.map(skill => ({ skill_id: skill as keyof typeof import("./contracts").skillLabels, importance: unknown(), required_level: unknown() })),

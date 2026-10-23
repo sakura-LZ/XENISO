@@ -9,7 +9,7 @@ export function extractionHandoff(raw: unknown, now = new Date()) {
   const bundle = collectionSchema.parse(raw);
   if (new Set(bundle.sources.map(s => s.id)).size !== bundle.sources.length || new Set(bundle.records.map(r => r.id)).size !== bundle.records.length) throw new Error("Duplicate knowledge identity");
   return {
-    schema_version: "match-1", status: "review_required", generated_at: now.toISOString(),
+    schema_version: "match-2", status: "review_required", generated_at: now.toISOString(),
     candidates: bundle.records.map(record => {
       const source = bundle.sources.find(s => s.id === record.source_id);
       if (!source) throw new Error(`Missing source: ${record.source_id}`);

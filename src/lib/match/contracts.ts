@@ -25,13 +25,14 @@ export const evidenceSchema = z.object({
 });
 export type Evidence = z.infer<typeof evidenceSchema>;
 export function factSchema<T extends z.ZodType>(value: T) {
-  return z.object({ value: value.nullable(), status: z.enum(["known", "unknown", "unverified", "not_applicable"]), evidence: z.array(evidenceSchema).max(30) }).strict().superRefine((v, c) => {
+  return z.object({ value: value.nullable(), status: z.enum(["known", "unknown", "unverified", "not_applicable"]), evidence: z.array(evidenceSchema).max(30), reliability: z.number().min(0).max(1).optional() }).strict().superRefine((v, c) => {
     const rawValue = (v as { value?: unknown }).value;
     if (v.status === "known" && (rawValue == null || !v.evidence.length)) c.addIssue({ code: "custom", message: "Known facts require value and evidence" });
     if (v.status !== "known" && rawValue !== null) c.addIssue({ code: "custom", message: "Unconfirmed values belong in source evidence, not computation" });
   });
 }
-export type Fact<T> = { value: T | null; status: "known" | "unknown" | "unverified" | "not_applicable"; evidence: Evidence[] };
+// reliability 是测量可靠性(0–1)：用于对自评等级做衰减校正，不用于改变岗位标准本身。
+export type Fact<T> = { value: T | null; status: "known" | "unknown" | "unverified" | "not_applicable"; evidence: Evidence[]; reliability?: number };
 export const unknown = <T>(): Fact<T> => ({ value: null, status: "unknown", evidence: [] });
 export const known = <T>(value: T, evidence: Evidence): Fact<T> => ({ value, status: "known", evidence: [evidence] });
 const text = z.string().min(1).max(2000);
@@ -48,16 +49,17 @@ export const requirementSchema = z.object({
   allowed: z.array(z.string().min(1)).min(1), evidence: z.array(evidenceSchema).min(1),
 }).strict();
 export const occupationSchema = z.object({
-  schema_version: z.literal("match-1"), id, title: text, simulation: z.boolean(),
+  schema_version: z.literal("match-2"), id, title: text, simulation: z.boolean(),
   direction_ids: z.array(id), onet_codes: z.array(z.string().regex(/^\d{2}-\d{4}\.\d{2}$/)),
   mapping_basis: text, tasks: factSchema(z.array(text).min(1)),
   interests: factSchema(interestSchema),
-  skills: z.array(z.object({ skill_id: skillIdSchema, importance: factSchema(z.number().int().min(1).max(5)), required_level: factSchema(level) }).strict()).max(50),
+  // must_have：非补偿项。任一已知不足即封顶准备度，不允许被其余加权项平均掉。
+  skills: z.array(z.object({ skill_id: skillIdSchema, importance: factSchema(z.number().int().min(1).max(5)), required_level: factSchema(level), must_have: z.boolean().optional() }).strict()).max(50),
   professional_background: factSchema(text), hard_requirements: factSchema(z.array(requirementSchema)),
   preferences: factSchema(z.array(text)),
 }).strict();
 export const admissionSchema = z.object({
-  schema_version: z.literal("match-1"), id, simulation: z.boolean(), university: text, major_code: text, major_name: text,
+  schema_version: z.literal("match-2"), id, simulation: z.boolean(), university: text, major_code: text, major_name: text,
   year: z.number().int().min(2026).max(2100), pathway: z.enum(["统考", "推免", "申请制"]),
   occupation_ids: z.array(id).min(1), mapping_evidence: z.array(evidenceSchema).min(1),
   valid_through: z.iso.date(), exam_subjects: factSchema(z.array(text)),
@@ -71,7 +73,7 @@ export const experienceSignalSchema = z.object({
   evaluations: z.array(z.object({ skill_id: skillIdSchema, level: factSchema(level), rubric_version: text, evaluator: z.enum(["human", "deterministic", "llm"]) }).strict()).max(50),
 }).strict();
 export const userSchema = z.object({
-  schema_version: z.literal("match-1"), simulation: z.boolean(),
+  schema_version: z.literal("match-2"), simulation: z.boolean(),
   medical_background: factSchema(text), research_projects: z.array(z.object({ title: text, evidence: z.array(evidenceSchema).min(1) }).strict()),
   interests: factSchema(interestSchema), skills: z.array(z.object({ skill_id: skillIdSchema, level: factSchema(level) }).strict()).max(50),
   qualifications: z.object({ major: factSchema(text), degree: factSchema(text), graduation_year: factSchema(text), pathway: factSchema(text), recommendation_eligible: factSchema(text) }).strict(),

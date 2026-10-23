@@ -18,7 +18,7 @@ export function adaptProfile(profile: Profile, assessment: AssessmentResult | nu
   const skills = [...profile.tech_skills.map(s => ({ name: s.skill, raw: s.self_reported_level })), ...profile.wetlab_skills.map(s => ({ name: s.skill, raw: s.level }))];
   const mapped = skills.flatMap(s => { const id = resolveSkill(s.name); return id ? [{ skill_id: id, level: { ...unknown<number>(), evidence: [{ ...evidence("skills"), locator: `${s.name}；原自评：${s.raw || "未填"}；尚未映射 LIMEN 等级` }] } }] : []; });
   const result: MatchUser = {
-    schema_version: "match-1", simulation: false, medical_background: fact(profile.major, "major"),
+    schema_version: "match-2", simulation: false, medical_background: fact(profile.major, "major"),
     research_projects: profile.research_projects.filter(p => p.title.trim()).map((p, i) => ({ title: p.title, evidence: [{ ...evidence(`research_projects[${i}]`), locator: JSON.stringify(p) }] })),
     interests: assessment ? known({ instrument: assessment.instrument, version: assessment.onet_version,
       scores: Object.fromEntries(areas.map(area => [area, assessment.scores.find(s => s.code === area)!.score])) as Record<typeof areas[number], number>,

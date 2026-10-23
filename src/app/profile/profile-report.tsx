@@ -3,9 +3,11 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { readSavedExplanation } from "@/lib/ai";
 import { download } from "@/lib/download";
+import "./profile.css";
 
 type Saved = ReturnType<typeof readSavedExplanation>;
 const kindLabels = { interest: "职业兴趣", transfer: "能力迁移", gap: "知识准备", experience: "职业体验", direction: "探索方向", planning: "行动规划" };
+
 export function ProfileReport({ ready, checking }: { ready: boolean; checking: boolean }) {
   const [report, setReport] = useState<Saved | null>(null);
   const [state, setState] = useState<"idle" | "reading" | "generating" | "ready" | "error" | "stale">("reading");
@@ -51,17 +53,34 @@ export function ProfileReport({ ready, checking }: { ready: boolean; checking: b
     } finally { clearTimeout(timeout); if (active.current === controller) active.current = null; }
   }
   const busy = ready && (state === "generating" || state === "reading");
-  return <section className="xn-profile-report" aria-labelledby="profile-report-title" aria-busy={busy}>
-    <div className="xn-report-heading"><div><span className="xn-report-number">R1</span><h2 id="profile-report-title">个人画像报告</h2></div>{report && ready && <span className="xn-completion is-complete">已保存</span>}</div>
-    {!ready && <p className="xn-report-hint">{checking ? "确认资料中" : "完成基本情况与职业兴趣后可生成。"}</p>}
-    {busy && <p className="xn-report-progress" role="status">{state === "generating" ? "生成中" : "读取中"}</p>}
-    {message && <p role="alert" className="xn-report-message">{message}</p>}
-    <div className="xn-report-actions">{report && ready ? <>
-      <button type="button" className="xn-start-button" aria-expanded={expanded} aria-controls="profile-report-content" onClick={() => setExpanded(!expanded)}>{expanded ? "收起报告" : "查看报告"}</button>
-      <button type="button" className="xn-text-button" onClick={() => download("XENISO-R1-个人画像报告.json", JSON.stringify({ kind: "R1", source: "llm_live", ...report }, null, 2))}>下载报告</button>
-      <button type="button" className="xn-text-button" disabled={busy} onClick={() => void request(true)}>重新生成</button>
-    </> : <><button type="button" className="xn-start-button" disabled={!ready || busy} onClick={() => void request(true)}>{busy ? "处理中" : state === "stale" ? "重新生成报告" : "生成报告"}</button>{ready && <button type="button" className="xn-text-button" disabled={busy} onClick={() => void request(false)}>重新读取</button>}</>}</div>
-    {report && ready && <div id="profile-report-content" hidden={!expanded} className="xn-report-content"><p className="xn-report-date">生成于 {new Date(report.generated_at).toLocaleString("zh-CN")}</p>{report.explanation.explanations.map((item, index) => <section key={index}><h3>{kindLabels[item.kind]}</h3><p>{item.text}</p><div className="xn-evidence-links">{item.evidence_refs.map((ref, i) => <a href={`#evidence-${encodeURIComponent(ref)}`} key={ref} onClick={() => { const details = document.getElementById("profile-report-evidence"); if (details instanceof HTMLDetailsElement) details.open = true; }}>依据 {i + 1}</a>)}</div></section>)}{report.explanation.unknowns.length > 0 && <section><h3>待确认事项</h3><ul>{report.explanation.unknowns.map(text => <li key={text}>{text}</li>)}</ul></section>}<details id="profile-report-evidence" className="xn-report-evidence"><summary>报告来源与证据</summary>{report.evidence.map(item => <div id={`evidence-${encodeURIComponent(item.ref)}`} key={item.ref}><h4>{kindLabels[item.kind]}</h4><pre>{JSON.stringify(item.value, null, 2)}</pre></div>)}</details><Link className="xn-text-button" href="/report/initial">查看完整初步评价</Link></div>}
-    <details className="xn-report-privacy"><summary>数据使用与报告说明</summary><p>报告使用已保存的画像与 O*NET 官方兴趣结果。点击生成时，相关经历和兴趣证据会发送给报告服务；昵称和院校字段不发送。报告供探索参考，不代表报考资格。</p></details>
+  return <section className="xp-report xp-sheet atlas-sheet" aria-labelledby="profile-report-title" aria-busy={busy}>
+    <span className="atlas-tape mid" aria-hidden="true" />
+    <div className="xp-report-head">
+      <h2 id="profile-report-title">个人画像报告</h2>
+      <div className="xp-report-meta">
+        <span className="atlas-chip">R1 · 初步评价</span>
+        {report && ready && <span className="atlas-chip" data-tone="ok">已保存</span>}
+      </div>
+    </div>
+    {!ready && <p className="xp-footnote">{checking ? "正在确认资料是否齐全…" : "完成基本信息与职业兴趣后可生成。"}</p>}
+    {busy && <p className="xp-footnote" role="status">{state === "generating" ? "正在生成，最多需要 90 秒…" : "正在读取已保存的报告…"}</p>}
+    {message && <p role="alert" className="xp-msg" data-tone="error">{message}</p>}
+    <div className="xp-report-actions">{report && ready ? <>
+      <button type="button" className="button secondary" aria-expanded={expanded} aria-controls="profile-report-content" onClick={() => setExpanded(!expanded)}>{expanded ? "收起报告" : "查看报告"}</button>
+      <button type="button" className="button quiet" onClick={() => download("XENISO-R1-个人画像报告.json", JSON.stringify({ kind: "R1", source: "llm_live", ...report }, null, 2))}>下载报告</button>
+      <button type="button" className="button quiet" disabled={busy} onClick={() => void request(true)}>重新生成</button>
+    </> : <><button type="button" className="button" disabled={!ready || busy} onClick={() => void request(true)}>{busy ? "处理中" : state === "stale" ? "重新生成报告" : "生成报告"}</button>{ready && <button type="button" className="button quiet" disabled={busy} onClick={() => void request(false)}>重新读取</button>}</>}</div>
+    {report && ready && <div id="profile-report-content" hidden={!expanded} className="xp-report-body">
+      <p className="xp-report-date">生成于 {new Date(report.generated_at).toLocaleString("zh-CN")}</p>
+      {report.explanation.explanations.map((item, index) => <section key={index}>
+        <h3>{kindLabels[item.kind]}</h3>
+        <p>{item.text}</p>
+        <p className="xp-report-date">{item.evidence_refs.map((ref, i) => <span key={ref}><a href={`#evidence-${encodeURIComponent(ref)}`} onClick={() => { const details = document.getElementById("profile-report-evidence"); if (details instanceof HTMLDetailsElement) details.open = true; }}>依据 {i + 1}</a>{i < item.evidence_refs.length - 1 ? " · " : ""}</span>)}</p>
+      </section>)}
+      {report.explanation.unknowns.length > 0 && <section><h3>待确认事项</h3><ul>{report.explanation.unknowns.map(text => <li key={text}>{text}</li>)}</ul></section>}
+      <details id="profile-report-evidence" className="xp-report-evidence"><summary>报告来源与证据</summary>{report.evidence.map(item => <div key={item.ref} id={`evidence-${encodeURIComponent(item.ref)}`}><h3>{kindLabels[item.kind]}</h3><pre>{JSON.stringify(item.value, null, 2)}</pre></div>)}</details>
+      <Link className="xp-text-link" href="/report/initial">查看完整初步评价</Link>
+    </div>}
+    <details className="xp-footnote"><summary>数据使用与报告说明</summary><p>报告使用已保存的画像与 O*NET 官方兴趣结果。点击生成时，相关经历和兴趣证据会发送给报告服务；昵称和院校字段不发送。报告供探索参考，不代表报考资格。</p></details>
   </section>;
 }

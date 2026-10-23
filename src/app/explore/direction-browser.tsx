@@ -4,7 +4,6 @@ import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import { handbookEntries, type HandbookDirectionId } from "@/lib/handbook";
 import { directions, findDirection, groups, occupationUrl, type Direction } from "@/lib/directions";
 import { getTemplate } from "@/lib/experience/templates";
-import { DirectionArt, StorysetAttribution } from "@/components/direction-art";
 import { OfficialDossier } from "./official-dossier";
 import { MedicineBrowser } from "./medicine-browser";
 
@@ -54,22 +53,11 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
   const [message, setMessage] = useState("");
   const [evidenceSide, setEvidenceSide] = useState<"medical" | "new">("medical");
   const scrollPositions = useRef(new Map<string, number>());
-  const directoryVisited = useRef(false);
-  const readingAside = useRef<HTMLElement>(null);
   const current = findDirection(state.direction);
   const visible = useMemo(() => directions.filter(item => (state.group === "all" || item.group_id === state.group) && (!state.query.trim() || searchText(item).includes(state.query.trim().toLowerCase()))), [state.group, state.query]);
   const directoryState: LibraryState = { ...state, direction: "", view: "directory" };
   const directoryUrl = stateUrl(directoryState);
-  useEffect(() => {
-    if (!window.IntersectionObserver || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add("xn-revealed"); observer.unobserve(entry.target); }
-    }), { threshold: .25 });
-    const targets = ".xn-work-sequence li:not(.xn-revealed), .xn-practice-steps li:not(.xn-revealed), .xn-practice-result:not(.xn-revealed)";
-    document.querySelectorAll(`${!directoryVisited.current ? ".xn-directory-row:not(.xn-revealed), " : ""}${targets}`).forEach(element => observer.observe(element));
-    if (state.view === "directory") directoryVisited.current = true;
-    return () => observer.disconnect();
-  }, [state.view, state.direction, state.query, state.group]);
+
   useEffect(() => {
     function pop() {
       const next = parseState(Object.fromEntries(new URLSearchParams(window.location.search)));
@@ -82,21 +70,10 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
   }, []);
   useEffect(() => {
     if (state.view !== "reading") return;
-    const aside = readingAside.current;
-    if (!aside) return;
-    function measure() {
-      if (!aside) return;
-      const top = Number.parseFloat(getComputedStyle(aside).top) || 104;
-      aside.classList.toggle("is-tall", aside.getBoundingClientRect().height + top + 24 > window.innerHeight);
-    }
-    const observer = new ResizeObserver(measure);
-    observer.observe(aside); measure();
-    window.addEventListener("resize", measure);
     const hash = window.location.hash;
-    const frame = requestAnimationFrame(() => {
-      if (/^#chapter-(overview|work|skills|practice|admissions|industry)$/.test(hash)) document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: "instant", block: "start" });
-    });
-    return () => { observer.disconnect(); cancelAnimationFrame(frame); window.removeEventListener("resize", measure); };
+    if (!/^#chapter-(overview|work|skills|practice|admissions|industry)$/.test(hash)) return;
+    const frame = requestAnimationFrame(() => document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: "instant", block: "start" }));
+    return () => cancelAnimationFrame(frame);
   }, [state.view, state.direction]);
   useEffect(() => {
     if (state.view !== "reading") return;
@@ -118,16 +95,17 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
     window.addEventListener("resize", updateChapter);
     return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", updateChapter); window.removeEventListener("resize", updateChapter); };
   }, [state.view, state.direction]);
+
   function navigate(next: LibraryState, replace = false, preserveScroll = false) {
     const oldUrl = stateUrl(state);
     scrollPositions.current.set(oldUrl, window.scrollY);
-    if (state.view === "directory") try { sessionStorage.setItem(`xeniso:library:${oldUrl}`, String(window.scrollY)); } catch { /* Reading remains available without storage. */ }
+    if (state.view === "directory") try { sessionStorage.setItem(`xeniso:library:${oldUrl}`, String(window.scrollY)); } catch { /* 没有本地存储也能继续读。 */ }
     const href = stateUrl(next);
     window.history[replace ? "replaceState" : "pushState"](window.history.state, "", href);
     setState(next); setMessage("");
     if (!preserveScroll) {
       let top = next.view === "directory" ? scrollPositions.current.get(href) ?? 0 : 0;
-      if (next.view === "directory" && !top) try { top = Number(sessionStorage.getItem(`xeniso:library:${href}`) ?? 0); } catch { /* Optional directory position. */ }
+      if (next.view === "directory" && !top) try { top = Number(sessionStorage.getItem(`xeniso:library:${href}`) ?? 0); } catch { /* 目录位置可选。 */ }
       requestAnimationFrame(() => window.scrollTo({ top, behavior: "instant" }));
     }
   }
@@ -136,7 +114,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
     event.preventDefault(); navigate(next);
   }
   function toggle(id: string) {
-    if (!state.compare.includes(id) && state.compare.length === 2) { setMessage("已选择两个方向，请先取消其中一个。"); return; }
+    if (!state.compare.includes(id) && state.compare.length === 2) { setMessage("已经选了两个方向，先取消一个再选新的。"); return; }
     navigate({ ...state, compare: state.compare.includes(id) ? state.compare.filter(value => value !== id) : [...state.compare, id] }, true, true);
   }
   function chapterLink(event: MouseEvent<HTMLAnchorElement>, id: ChapterId) {
@@ -147,47 +125,187 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
     document.getElementById(`chapter-${id}`)?.scrollIntoView({ behavior: reduced ? "instant" : "smooth", block: "start" });
     setChapter(id);
   }
-  const chapterNav = <nav className="xn-reading-nav" aria-label="方向章节">{chapters.map((entry, i) => <a key={entry.id} href={`#chapter-${entry.id}`} aria-current={chapter === entry.id ? "location" : undefined} onClick={event => chapterLink(event, entry.id)}><span>0{i + 1}</span>{entry.title}</a>)}</nav>;
+
+  const chapterNav = <nav aria-label="方向章节"><ol className="xnlib-toc">{chapters.map((entry, i) => <li key={entry.id}><a href={`#chapter-${entry.id}`} aria-current={chapter === entry.id ? "location" : undefined} onClick={event => chapterLink(event, entry.id)}><span>第 {i + 1} 章</span>{entry.title}</a></li>)}</ol></nav>;
 
   if (state.view === "compare") return <>
-    <Link href={directoryUrl} onClick={event => follow(event, directoryState)} className="xn-library-back">← 返回信息文库</Link>
-    <header className="xn-library-pagehead"><h1>方向比较</h1></header>
-    {state.compare.length !== 2 ? <div className="notice" role="status"><p>请选择两个不同方向后比较。</p><Link className="button mt-4" href={directoryUrl} onClick={event => follow(event, directoryState)}>选择方向</Link></div> : <DirectionComparison selected={state.compare} onChange={(index, id) => { if (state.compare.includes(id)) { setMessage("请选择不同的方向。"); return; } const next = [...state.compare]; next[index] = id; navigate({ ...state, compare: next }, false, true); }} />}
-    <p role="status" className="xn-library-status">{message}</p><StorysetAttribution />
+    <Link href={directoryUrl} onClick={event => follow(event, directoryState)} className="xnlib-back">返回信息文库</Link>
+    <header className="xnlib-compare-head">
+      <h1>方向比较</h1>
+      <p className="xnlib-compare-note">这张表把两个方向的工作、能力缺口和报考条件排在一起，只为方便你对照。它不排优劣，也不给适合度百分比：两条路都有人走通，差别在门槛和起步任务。</p>
+    </header>
+    {state.compare.length !== 2
+      ? <div className="xnlib-empty" role="status"><p>选两个方向才能并排比较。现在只选了一个，或者还没选。</p><Link className="button secondary" href={directoryUrl} onClick={event => follow(event, directoryState)}>回目录选方向</Link></div>
+      : <DirectionComparison selected={state.compare} onChange={(index, id) => { if (state.compare.includes(id)) { setMessage("这两个位置不能是同一个方向。"); return; } const next = [...state.compare]; next[index] = id; navigate({ ...state, compare: next }, false, true); }} />}
+    <p role="status" className="xnlib-status">{message}</p>
   </>;
+
   if (state.view === "reading" && current) {
     const handbook = handbookEntries[current.id as HandbookDirectionId];
     const template = getTemplate(current.id);
     const medicine = current.id === "medicine";
-    const taskChapter = chapter === "work" || chapter === "practice" || chapter === "skills";
     return <>
-      <Link href={directoryUrl} onClick={event => follow(event, directoryState)} className="xn-library-back">← 返回信息文库</Link>
-      <header className="xn-reading-head" data-motion="M-D01"><p className="xn-library-meta">{current.group_name}</p><h1>{current.name}</h1><p>{handbook.overview}</p><div className="xn-reading-actions"><Link className="button" href={`/experience?direction=${current.id}`}>查看相关任务</Link><label className="xn-compare-check"><input type="checkbox" checked={state.compare.includes(current.id)} onChange={() => toggle(current.id)} />比较此方向</label>{state.compare.length === 2 && <Link className="button secondary" href={stateUrl({ ...state, direction: "", view: "compare" })} onClick={event => follow(event, { ...state, direction: "", view: "compare" })}>比较所选方向</Link>}</div><p role="status" className="xn-library-status">{message}</p></header>
-      <div className="xn-reading-layout">
-        <aside ref={readingAside} className="xn-reading-aside" data-motion="M-D02">
-          <div className="xn-reading-art" data-side={evidenceSide} key={`${current.id}:${chapter}`}><DirectionArt direction={current.id} mode={taskChapter ? "task" : "identity"} chapter={chapter} />{chapter === "skills" && <p key={evidenceSide} className="xn-art-label xn-evidence-label">{evidenceSide === "medical" ? current.medical_transfer[0] : current.skills[0]}</p>}</div>
-          <div className="xn-reading-desktop-nav">{chapterNav}</div>
-          <details className="xn-reading-mobile-nav"><summary>章节目录 · {chapters.find(item => item.id === chapter)?.title}</summary>{chapterNav}</details>
+      <Link href={directoryUrl} onClick={event => follow(event, directoryState)} className="xnlib-back">返回信息文库</Link>
+      <header className="xnlib-file-head" data-atlas-reveal>
+        <h1>{current.name}</h1>
+        <div className="xnlib-file-meta">
+          <span className="atlas-chip">{current.group_name}</span>
+          {current.onet.length
+            ? current.onet.map(item => <a className="atlas-chip" key={item.code} href={occupationUrl(item.code)} target="_blank" rel="noreferrer">SOC {item.code}</a>)
+            : <span className="atlas-chip">不适用 O*NET 职业条目</span>}
+          <span className="atlas-chip" data-tone="ok">资料按来源逐条标注</span>
+        </div>
+        <p className="xnlib-file-lede">{handbook.overview}</p>
+        <div className="xnlib-file-actions">
+          <Link className="button secondary" href={`/experience?direction=${current.id}`}>看这个方向的练习任务</Link>
+          <label className="xnlib-check"><input type="checkbox" checked={state.compare.includes(current.id)} onChange={() => toggle(current.id)} />加入比较</label>
+          {state.compare.length === 2 && <Link className="text-action" href={stateUrl({ ...state, direction: "", view: "compare" })} onClick={event => follow(event, { ...state, direction: "", view: "compare" })}>比较已选的两个方向</Link>}
+        </div>
+        <p role="status" className="xnlib-status">{message}</p>
+      </header>
+      <div className="xnlib-file-layout">
+        <aside className="xnlib-file-aside">
+          <div className="atlas-sheet xnlib-cover">
+            <p className="xnlib-cover-name">{current.name}</p>
+            <dl className="atlas-kv">
+              <div><dt>分类</dt><dd>{current.group_name}</dd></div>
+              <div><dt>职业条目</dt><dd>{current.onet.length ? current.onet.map(item => item.code).join(" / ") : "不适用"}</dd></div>
+              <div><dt>来源</dt><dd>O*NET 与站内资料库，逐条标抓取时间</dd></div>
+            </dl>
+          </div>
+          {chapterNav}
         </aside>
-        <article className="xn-reading-body" key={current.id}>
-          <section id="chapter-overview" className="xn-reading-section" data-motion="M-D03"><h2>专业特点</h2><p>{handbook.overview}</p><ul>{current.work_tasks.map(task => <li key={task}>{task}</li>)}</ul><div className="xn-reading-mobile-art"><DirectionArt direction={current.id} /></div>{medicine ? <p>医院科室、招生学科和岗位身份需要分别核对；科室介绍不能证明个人报考、执业或入职资格。</p> : <><h3>代表职业与映射来源</h3><p className="xn-library-meta">职业信息来自 O*NET；与国内研究方向的关联由 LIMEN 编辑，并非 O*NET 官方中国考研专业结论。</p><ul className="xn-source-links">{current.onet.map(o => <li key={o.code}><a href={occupationUrl(o.code)} target="_blank" rel="noreferrer">{o.name} ↗</a><span>SOC {o.code} · {relationshipLabel[o.relationship] ?? o.relationship}</span></li>)}</ul><OfficialDossier directionId={current.id} initialCategory="occupation" chapterMode /></>}</section>
-          <section id="chapter-work" className="xn-reading-section" data-active={chapter === "work"} data-motion="M-D04"><h2>职业日常</h2><ol className="xn-work-sequence">{handbook.daily_work.map((task, i) => <li key={task}><span>0{i + 1}</span><p>{task}</p></li>)}</ol><div className="xn-task-relation"><div><h3>输入</h3><p>{template.brief}</p></div><div><h3>处理</h3><p>{template.stages.map(stage => stage.title).join(" → ")}</p></div><div><h3>结果</h3><p>{template.deliverable}</p></div></div><div className="xn-reading-mobile-art"><DirectionArt direction={current.id} mode="task" /></div></section>
-          <section id="chapter-skills" className="xn-reading-section" data-motion="M-D05"><h2>能力基础</h2><div className="xn-skill-comparison" data-side={evidenceSide}><div><button aria-pressed={evidenceSide === "medical"} onClick={() => setEvidenceSide("medical")}>医学经历可能提供的起点</button><ul>{current.medical_transfer.map(item => <li key={item}>{item}</li>)}</ul></div><div><button aria-pressed={evidenceSide === "new"} onClick={() => setEvidenceSide("new")}>需要补充与验证的要求</button><ul>{current.skills.map(item => <li key={item}>{item}</li>)}</ul></div></div><h3>入门前的基础</h3><ul>{handbook.prerequisites.map(item => <li key={item}>{item}</li>)}</ul><p className="xn-library-meta">以上为编辑性学习线索；具体要求需对照来源资料与个人作品，不由医学专业名称推断能力。</p></section>
-          <section id="chapter-practice" className="xn-reading-section" data-motion="M-D06"><h2>学习实践</h2><p className="xn-library-meta">LIMEN 编辑的入门项目 · simulation</p><h3>{template.title}</h3><p>{template.brief}</p><ol className="xn-practice-steps">{template.stages.map(item => <li key={item.title}><strong>{item.title}</strong><p>{item.question}</p></li>)}</ol><div className="xn-practice-result"><DirectionArt direction={current.id} mode="task" /><div><h3>成果</h3><p>{template.deliverable}</p></div></div><h3>可作为起点的课程</h3><ul>{current.courses.map(item => <li key={item}>{item}</li>)}</ul><h3>延伸阅读与实践资料</h3><ul className="xn-source-links">{handbook.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a><p>{source.purpose}</p></li>)}</ul><Link className="button secondary" href={`/experience?direction=${current.id}`}>查看相关任务</Link>{!medicine && <OfficialDossier directionId={current.id} initialCategory="learning" chapterMode />}</section>
-          <section id="chapter-admissions" className="xn-reading-section" data-motion="M-D07"><h2>升学准备</h2><p>按院校、项目与招生年份核对专业要求。医学本科能否报考、是否加试及当年计划，以院校原文为准；个人资格未知时保持待核验。</p>{medicine ? <MedicineBrowser initialView="programs" initialCategory="admissions" /> : <OfficialDossier directionId={current.id} initialCategory="admissions" chapterMode />}</section>
-          <section id="chapter-industry" className="xn-reading-section" data-motion="M-D08"><h2>招聘与行业</h2><p>核对发布单位、日期与统计对象；单个岗位、院校或年度样本不代表整个行业。</p>{medicine ? <MedicineBrowser initialView="departments" /> : <><OfficialDossier directionId={current.id} initialCategory="recruitment" chapterMode /><OfficialDossier directionId={current.id} initialCategory="industry" chapterMode /></>}</section>
+        <article className="xnlib-file-body">
+          <section id="chapter-overview" className="xnlib-file-section" data-atlas-reveal>
+            <h2>专业特点</h2>
+            <p>{handbook.overview}</p>
+            <ul className="xnlib-plain-list">{current.work_tasks.map(task => <li key={task}>{task}</li>)}</ul>
+            {medicine ? <p className="xnlib-note">医院科室、招生学科和岗位身份要分开核对。科室介绍不能证明个人的报考、执业或入职资格。</p> : <>
+              <h3>对应到哪些职业</h3>
+              <p className="xnlib-note">职业信息来自 O*NET；这些职业与国内研究方向怎么对应，是 LIMEN 编辑整理的，不是 O*NET 官方对中国考研专业的结论。</p>
+              <ul className="xnlib-sources">{current.onet.map(item => <li key={item.code}><a href={occupationUrl(item.code)} target="_blank" rel="noreferrer">{item.name}</a><span className="xnlib-source-code">SOC {item.code} · {relationshipLabel[item.relationship] ?? item.relationship}</span></li>)}</ul>
+              <OfficialDossier directionId={current.id} initialCategory="occupation" chapterMode />
+            </>}
+          </section>
+          <section id="chapter-work" className="xnlib-file-section" data-atlas-reveal>
+            <h2>职业日常</h2>
+            <ol className="xnlib-steps">{handbook.daily_work.map((task, i) => <li key={task}><span>第 {i + 1} 步</span><p>{task}</p></li>)}</ol>
+            <div className="xnlib-kv3">
+              <div><h3>输入</h3><p>{template.brief}</p></div>
+              <div><h3>处理</h3><p>{template.stages.map(stage => stage.title).join("，然后")}</p></div>
+              <div><h3>结果</h3><p>{template.deliverable}</p></div>
+            </div>
+          </section>
+          <section id="chapter-skills" className="xnlib-file-section" data-atlas-reveal>
+            <h2>能力基础</h2>
+            <p>医学训练给你的起点，和这个方向另外要补的东西，是两件事。下面分开列，别把前者当成后者的替代。</p>
+            <div className="xnlib-skill-switch" role="group" aria-label="能力对照">
+              <button aria-pressed={evidenceSide === "medical"} onClick={() => setEvidenceSide("medical")}>医学经历可能提供的起点</button>
+              <button aria-pressed={evidenceSide === "new"} onClick={() => setEvidenceSide("new")}>这个方向要求、你可能没学过的</button>
+            </div>
+            <div className="xnlib-skill-panel">
+              {evidenceSide === "medical"
+                ? <ul className="xnlib-plain-list">{current.medical_transfer.map(item => <li key={item}>{item}</li>)}</ul>
+                : <ul className="xnlib-gap-list">{current.skills.map(item => <li key={item}><span className="atlas-chip" data-tone="gap">要补基础</span>{item}</li>)}</ul>}
+            </div>
+            <h3>入门前先补的基础</h3>
+            <ul className="xnlib-gap-list">{handbook.prerequisites.map(item => <li key={item}><span className="atlas-chip" data-tone="gap">要补基础</span>{item}</li>)}</ul>
+            <p className="xnlib-note">这些是编辑整理的学习线索。具体一门课要补到什么程度，看目标院校当年的考试科目和岗位原文，不从「我是临床医学」直接推断。</p>
+          </section>
+          <section id="chapter-practice" className="xnlib-file-section" data-atlas-reveal>
+            <h2>学习实践</h2>
+            <p className="xnlib-note">LIMEN 编辑的入门练习，用虚构材料做，不接触真实病历。<span className="simulation-tag" style={{ marginLeft: 8 }}>simulation</span></p>
+            <div className="atlas-sheet xnlib-project">
+              <h3>{template.title}</h3>
+              <p>{template.brief}</p>
+              <ol className="xnlib-steps">{template.stages.map((item, i) => <li key={item.title}><span>第 {i + 1} 步</span><p><strong>{item.title}</strong>：{item.question}</p></li>)}</ol>
+              <p className="xnlib-note">做完应该拿到：{template.deliverable}</p>
+            </div>
+            <h3>可以作为起点的课程</h3>
+            <ul className="xnlib-plain-list">{current.courses.map(item => <li key={item}>{item}</li>)}</ul>
+            <h3>延伸阅读与实践资料</h3>
+            <ul className="xnlib-sources">{handbook.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a><p>{source.purpose}</p></li>)}</ul>
+            <div className="xnlib-file-actions"><Link className="button secondary" href={`/experience?direction=${current.id}`}>在职业体验里做一遍</Link></div>
+            {!medicine && <OfficialDossier directionId={current.id} initialCategory="learning" chapterMode />}
+          </section>
+          <section id="chapter-admissions" className="xnlib-file-section" data-atlas-reveal>
+            <h2>升学准备</h2>
+            <p>报考条件要按院校、项目和招生年份逐条核对。临床医学本科能不能报、要不要加试、当年计划多少，都以院校原文为准；没写清的地方，我们标「没查到」。</p>
+            {medicine ? <MedicineBrowser initialView="programs" initialCategory="admissions" /> : <OfficialDossier directionId={current.id} initialCategory="admissions" chapterMode />}
+          </section>
+          <section id="chapter-industry" className="xnlib-file-section" data-atlas-reveal>
+            <h2>招聘与行业</h2>
+            <p>看招聘原文时先看发布单位、发布日期和统计对象。一个岗位、一所院校或一年的样本，都不代表整个行业。</p>
+            {medicine ? <MedicineBrowser initialView="departments" /> : <><OfficialDossier directionId={current.id} initialCategory="recruitment" chapterMode /><OfficialDossier directionId={current.id} initialCategory="industry" chapterMode /></>}
+          </section>
         </article>
-      </div><StorysetAttribution />
+      </div>
     </>;
   }
+
   return <>
-    <header className="xn-library-pagehead" data-motion="M-K01"><h1>信息文库</h1><label className="xn-directory-search"><span className="sr-only">搜索方向或工作内容</span><input type="search" placeholder="搜索方向或工作内容" value={state.query} onChange={event => navigate({ ...state, query: event.target.value }, true, true)} /></label></header>
-    <div className="xn-directory-layout">
-      <aside className="xn-directory-filters"><div className="xn-directory-desktop-filters" role="group" aria-label="方向分类"><button aria-pressed={state.group === "all"} onClick={() => navigate({ ...state, group: "all" }, false, true)}>全部方向</button>{groups.map(group => <button key={group.id} aria-pressed={state.group === group.id} onClick={() => navigate({ ...state, group: group.id }, false, true)}>{group.name}</button>)}</div><label className="xn-directory-mobile-filter">方向分类<select value={state.group} onChange={event => navigate({ ...state, group: event.target.value }, false, true)}><option value="all">全部方向</option>{groups.map(group => <option key={group.id} value={group.id}>{group.name}</option>)}</select></label></aside>
-      <div className="xn-directory-results" key={`${state.query}:${state.group}`} data-motion="M-K02"><p className="sr-only" role="status">找到 {visible.length} 个方向</p>{visible.length ? <ul>{visible.map(item => { const next: LibraryState = { ...state, view: "reading", direction: item.id }; return <li key={item.id} className="xn-directory-row" data-motion="M-K03"><Link className="xn-directory-link" href={stateUrl(next)} onClick={event => follow(event, next)}><DirectionArt direction={item.id} compact /><span><h2>{item.name}</h2><p>{summaries[item.id]}</p></span></Link><label className="xn-directory-compare" title={`比较${item.name}`}><input type="checkbox" checked={state.compare.includes(item.id)} aria-label={`比较${item.name}`} onChange={() => toggle(item.id)} /><span className="sr-only">比较{item.name}</span></label></li>; })}</ul> : <div role="status" className="xn-library-empty"><p>没有匹配的方向。</p><button className="button secondary" onClick={() => navigate({ ...state, query: "", group: "all" }, true, true)}>清空筛选</button></div>}</div>
+    <header className="xnlib-head">
+      <div>
+        <h1>信息文库</h1>
+        <p className="xnlib-lede">这里收三样能查的东西：O*NET 的职业条目、公司招聘页上写的岗位要求、院系招生目录里的考试科目。每条资料都带来源和抓取时间；原文没写的，我们写「没查到」，不替它补。</p>
+      </div>
+      <label className="xnlib-search">
+        <span>检索方向或工作内容</span>
+        <input className="field" type="search" placeholder="如 影像、SAS、408" value={state.query} onChange={event => navigate({ ...state, query: event.target.value }, true, true)} />
+      </label>
+    </header>
+    <div className="xnlib-cabinet">
+      <aside className="xnlib-rail">
+        <h2>方向分类</h2>
+        <div className="xnlib-rail-list" role="group" aria-label="方向分类">
+          <button className="xnlib-rail-btn" aria-pressed={state.group === "all"} onClick={() => navigate({ ...state, group: "all" }, false, true)}>全部方向<span className="xnlib-rail-count">{directions.length}</span></button>
+          {groups.map(group => <button key={group.id} className="xnlib-rail-btn" aria-pressed={state.group === group.id} onClick={() => navigate({ ...state, group: group.id }, false, true)}>{group.name}<span className="xnlib-rail-count">{group.specializations.length}</span></button>)}
+        </div>
+        <p className="xnlib-rail-note">分类是站内编辑的方向分组，不是官方学科目录。</p>
+        <ul className="xnlib-legend">
+          <li><span className="atlas-chip" data-tone="ok">有出处</span>原文能查到</li>
+          <li><span className="atlas-chip" data-tone="miss">没查到</span>原文没写或没公开</li>
+          <li><span className="atlas-chip" data-tone="gap">要补基础</span>要求了，你本科没学</li>
+        </ul>
+      </aside>
+      <div className="xnlib-cabinet-drawers">
+        <div className="xnlib-drawers-head">
+          <p className="xnlib-drawers-count" role="status">共 {visible.length} 个方向</p>
+          <p className="xnlib-drawers-count">每行末尾可以勾选，凑够两个就能并排比较</p>
+        </div>
+        <ul className="xnlib-drawer" key={`${state.query}:${state.group}`}>
+          {visible.map(item => {
+            const next: LibraryState = { ...state, view: "reading", direction: item.id };
+            return <li key={item.id} className="xnlib-drawer-row">
+              <Link className="xnlib-drawer-main" href={stateUrl(next)} onClick={event => follow(event, next)}>
+                <span className="xnlib-drawer-title">{item.name}</span>
+                <span className="xnlib-drawer-sum">{summaries[item.id]}</span>
+              </Link>
+              <span className="xnlib-drawer-chips">
+                {item.onet.length
+                  ? <><span className="atlas-chip">SOC {item.onet[0].code}</span><span className="atlas-chip">{relationshipLabel[item.onet[0].relationship] ?? item.onet[0].relationship}</span></>
+                  : <span className="atlas-chip">科室与执业路径</span>}
+              </span>
+              <label className="xnlib-drawer-pick">
+                <input type="checkbox" checked={state.compare.includes(item.id)} aria-label={`比较${item.name}`} onChange={() => toggle(item.id)} />
+                <span aria-hidden="true">比较</span>
+              </label>
+            </li>;
+          })}
+        </ul>
+        {!visible.length && <div className="xnlib-empty" role="status">
+          <p>按现在的关键词和分类，没查到对应的方向。换个说法试试，比如只写「影像」或「数据」，或者把分类切回全部方向。</p>
+          <button className="button secondary" onClick={() => navigate({ ...state, query: "", group: "all" }, true, true)}>清空筛选</button>
+        </div>}
+        {state.compare.length > 0 && <div className="xnlib-tray">
+          <div className="xnlib-tray-picks">{state.compare.map(id => <button key={id} onClick={() => toggle(id)} aria-label={`取消比较${findDirection(id)!.name}`}>{findDirection(id)!.name}<span aria-hidden="true"> ×</span></button>)}</div>
+          {state.compare.length === 2
+            ? <Link className="button small" href={stateUrl({ ...state, direction: "", view: "compare" })} onClick={event => follow(event, { ...state, direction: "", view: "compare" })}>并排比较这两个方向</Link>
+            : <p>再选一个方向就能并排比较。</p>}
+        </div>}
+        <p className="xnlib-status" role="status">{message}</p>
+      </div>
     </div>
-    <div className="xn-compare-slot" data-motion="M-K04">{state.compare.length > 0 && <div className="xn-compare-tray"><div>{state.compare.map(id => <button key={id} onClick={() => toggle(id)} aria-label={`移除${findDirection(id)!.name}`}>{findDirection(id)!.name}<span aria-hidden="true"> ×</span></button>)}</div>{state.compare.length === 2 ? <Link className="button" href={stateUrl({ ...state, direction: "", view: "compare" })} onClick={event => follow(event, { ...state, direction: "", view: "compare" })}>比较所选方向</Link> : <p>再选择一个方向</p>}</div>}<p className="xn-library-status" role="status">{message}</p></div>
-    <StorysetAttribution />
   </>;
 }
 
@@ -195,10 +313,36 @@ function DirectionComparison({ selected, onChange }: { selected: string[]; onCha
   const compared = selected.map(id => findDirection(id)!);
   const rows = [
     { title: "实际工作", render: (item: Direction) => <ul>{item.work_tasks.map(value => <li key={value}>{value}</li>)}</ul> },
-    { title: "能力基础", render: (item: Direction) => <><h3>医学迁移线索</h3><ul>{item.medical_transfer.map(value => <li key={value}>{value}</li>)}</ul><h3>新要求</h3><ul>{item.skills.map(value => <li key={value}>{value}</li>)}</ul></> },
-    { title: "学习实践", render: (item: Direction) => <><p>{getTemplate(item.id).title}</p><p>{getTemplate(item.id).deliverable}</p><Link href={`/experience?direction=${item.id}`}>查看相关任务 →</Link></> },
-    { title: "升学条件", render: (item: Direction) => <><p>个人报考资格尚未核定。院校、年份、专业限制与加试要求需逐项核对。</p><a href={`/explore?direction=${item.id}#chapter-admissions`}>核对该方向招生来源 →</a></> },
-    { title: "来源", render: (item: Direction) => <><p className="xn-library-meta">方向映射与入门项目为 LIMEN 编辑性整理。</p><ul className="xn-source-links">{handbookEntries[item.id as HandbookDirectionId].sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a><details><summary>资料用途</summary><p>{source.purpose}</p></details></li>)}</ul></> },
+    { title: "能力基础", render: (item: Direction) => <><h3>医学经历可能提供的起点</h3><ul>{item.medical_transfer.map(value => <li key={value}>{value}</li>)}</ul><h3>要求、你可能没学过的</h3><ul>{item.skills.map(value => <li key={value}>{value}</li>)}</ul><span className="atlas-chip xnlib-compare-tag" data-tone="gap">要补基础</span></> },
+    { title: "入门任务", render: (item: Direction) => <><p>{getTemplate(item.id).title}</p><p>做完拿到：{getTemplate(item.id).deliverable}</p><Link className="text-action" href={`/experience?direction=${item.id}`}>在职业体验里做一遍</Link></> },
+    { title: "报考门槛", render: (item: Direction) => <><p>个人报考资格还没核定。院校、年份、专业限制和加试要求要逐项核对原文。</p><Link className="text-action" href={`/explore?direction=${item.id}#chapter-admissions`}>核对该方向的招生来源</Link><br /><span className="atlas-chip xnlib-compare-tag" data-tone="miss">没查到</span></> },
+    { title: "来源", render: (item: Direction) => <><p>方向映射与入门任务为 LIMEN 编辑整理。</p><ul>{handbookEntries[item.id as HandbookDirectionId].sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a></li>)}</ul></> },
   ];
-  return <div className="xn-comparison" data-motion="M-V02"><div className="xn-comparison-header" data-motion="M-V01"><div aria-hidden="true" />{compared.map((item, i) => <div key={i} className="xn-comparison-direction"><DirectionArt direction={item.id} compact /><label><span className="sr-only">第{i + 1}个比较方向</span><select value={item.id} onChange={event => onChange(i, event.target.value)}>{directions.map(option => <option key={option.id} value={option.id} disabled={option.id === selected[1 - i]}>{option.name}</option>)}</select></label></div>)}</div>{rows.map(row => <section key={row.title} className="xn-comparison-row"><h2>{row.title}</h2>{compared.map(item => <div key={item.id} className="xn-comparison-cell" data-motion="M-V03"><p className="xn-comparison-mobile-name">{item.name}</p>{row.render(item)}</div>)}</section>)}</div>;
+  return <div className="xnlib-compare-wrap">
+    <table className="xnlib-compare">
+      <caption className="sr-only">两个方向的并排对照，不排优劣，也不给适合度百分比</caption>
+      <thead>
+        <tr>
+          <th scope="col">对照项</th>
+          {compared.map((item, i) => <th scope="col" key={i}>
+            <p className="xnlib-compare-name">{item.name}</p>
+            <label className="xnlib-compare-pick"><span className="sr-only">第 {i + 1} 个比较方向</span>
+              <select className="field" value={item.id} onChange={event => onChange(i, event.target.value)}>
+                {directions.map(option => <option key={option.id} value={option.id} disabled={option.id === selected[1 - i]}>{option.name}</option>)}
+              </select>
+            </label>
+          </th>)}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map(row => <tr key={row.title}>
+          <th scope="row">{row.title}</th>
+          {compared.map((item, i) => <td key={`${row.title}-${item.id}`}>
+            <span className="xnlib-compare-cell-name">{i === 0 ? "左边" : "右边"} · {item.name}</span>
+            {row.render(item)}
+          </td>)}
+        </tr>)}
+      </tbody>
+    </table>
+  </div>;
 }

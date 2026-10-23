@@ -6,21 +6,9 @@ import { evaluate, experiencePresentation, generateSamples, type Experience } fr
 import { operationResult } from "@/lib/experience/operations";
 import "../profile-reports-redesign.css";
 
-/** Content remains visible before JavaScript and when animation is unavailable. */
+/** 入场交给 atlas.css 的 [data-atlas-reveal]；只保留 delay 参数兼容旧调用。 */
 export function ReportReveal({ children, className = "", motion, delay = 0 }: { children: ReactNode; className?: string; motion: string; delay?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const element = ref.current;
-    if (!element || !window.IntersectionObserver || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const observer = new IntersectionObserver(entries => {
-      if (!entries.some(entry => entry.isIntersecting)) return;
-      element.animate([{ opacity: 0, transform: "translateY(12px)" }, { opacity: 1, transform: "translateY(0)" }], { duration: 450, delay, easing: "cubic-bezier(.22,.68,.2,1)", fill: "backwards" });
-      observer.disconnect();
-    }, { threshold: 0.12 });
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, [delay]);
-  return <div ref={ref} className={className} data-motion={motion}>{children}</div>;
+  return <div className={className} data-atlas-reveal data-motion={motion} style={delay ? { transitionDelay: `${delay}ms` } : undefined}>{children}</div>;
 }
 
 export function SectionNav({ items, label = "报告章节", motion }: { items: { id: string; label: string }[]; label?: string; motion: string }) {

@@ -15,6 +15,11 @@ supabase/.temp/
 
 .vercel
 
+# 本机 agent / 编辑器配置，含本机绝对路径，不属于源码
+.claude/
+# 视觉走查截图产物
+review-shots/
+
 # Local generation outputs and imported prompt archives are not source releases.
 output/
 tmp/
