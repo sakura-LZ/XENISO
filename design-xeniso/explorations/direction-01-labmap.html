@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XENISO · 方向01：实验室地图桌</title>
+<style>
+:root {
+  --bg-deep: #0B0E13;
+  --bg-mid: #12161E;
+  --surface: #1A202C;
+  --grid: rgba(30, 155, 107, 0.12);
+  --primary: #1E9B6B;
+  --text-primary: #E8EDF3;
+  --text-secondary: #9BA5B8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, system-ui, sans-serif;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* 网格背景 - 像实验室桌面上的坐标纸 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.logo-area {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10;
+}
+
+.logo-mark {
+  width: 36px;
+  height: 36px;
+  background: var(--primary);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+nav {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  display: flex;
+  gap: 28px;
+  z-index: 10;
+}
+
+nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* 主要内容 - 像在桌上放置的几个实验站点 */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 2px;
+  max-width: 1280px;
+  margin: 120px auto 0;
+  padding: 0 32px 80px;
+}
+
+/* 左上 - 主操作区域 */
+.station-primary {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  background: var(--bg-mid);
+  border: 1px solid rgba(30, 155, 107, 0.2);
+  padding: 48px;
+  position: relative;
+}
+
+.station-primary::before {
+  content: '01';
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.station-primary h1 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.station-primary .subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  max-width: 420px;
+}
+
+.cta-box {
+  background: var(--surface);
+  border: 1px solid rgba(30, 155, 107, 0.25);
+  padding: 24px;
+  margin-top: 32px;
+}
+
+.cta-box label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  font-weight: 500;
+}
+
+.cta-box input {
+  width: 100%;
+  background: var(--bg-deep);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 2px;
+  font-family: inherit;
+  margin-bottom: 16px;
+}
+
+.cta-box input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.cta-box button {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 2px;
+  letter-spacing: 0.3px;
+  transition: opacity 0.2s;
+}
+
+.cta-box button:hover {
+  opacity: 0.9;
+}
+
+/* 右上 - 路径节点图 */
+.station-flow {
+  background: var(--surface);
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.station-flow::before {
+  content: '02';
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.flow-title {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.path-nodes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.node {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.node-marker {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  background: var(--bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.node-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* 右下 - 数据快照 */
+.station-data {
+  background: var(--bg-mid);
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+
+.station-data::before {
+  content: '03';
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.data-title {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.data-cell {
+  padding: 16px;
+  background: var(--surface);
+  border-left: 2px solid var(--primary);
+}
+
+.data-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.data-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.tagline {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+</style>
+</head>
+<body>
+
+<div class="logo-area">
+  <div class="logo-mark">X</div>
+  <div class="logo-text">XENISO</div>
+</div>
+
+<nav>
+  <a href="#">首页</a>
+  <a href="#">异域探索</a>
+  <a href="#">信息文库</a>
+  <a href="#">交流社区</a>
+</nav>
+
+<div class="main-grid">
+  <div class="station-primary">
+    <h1>异域同构<br>Different Fields.<br>Shared Potential.</h1>
+    <div class="subtitle">
+      面向医学生的职业方向定位和行动规划平台
+    </div>
+
+    <div class="cta-box">
+      <label>开始探索你的跨学科路径</label>
+      <input type="text" placeholder="输入你的学籍信息或直接开始测评">
+      <button>进入异域探索</button>
+    </div>
+  </div>
+
+  <div class="station-flow">
+    <div class="flow-title">探索路径</div>
+    <div class="path-nodes">
+      <div class="node">
+        <div class="node-marker">1</div>
+        <div class="node-label">个人画像</div>
+      </div>
+      <div class="node">
+        <div class="node-marker">2</div>
+        <div class="node-label">初步评价</div>
+      </div>
+      <div class="node">
+        <div class="node-marker">3</div>
+        <div class="node-label">职业体验</div>
+      </div>
+      <div class="node">
+        <div class="node-marker">4</div>
+        <div class="node-label">行动规划</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="station-data">
+    <div class="data-title">方向覆盖</div>
+    <div class="data-grid">
+      <div class="data-cell">
+        <div class="data-value">9+1</div>
+        <div class="data-label">跨学科方向</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">127</div>
+        <div class="data-label">官方资料</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">O*NET</div>
+        <div class="data-label">职业测评</div>
+      </div>
+      <div class="data-cell">
+        <div class="data-value">14</div>
+        <div class="data-label">体验模板</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tagline">Different Fields. Shared Potential.</div>
+
+</body>
+</html>

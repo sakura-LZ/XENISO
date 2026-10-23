@@ -1,0 +1,28 @@
+{
+  "candidates": [
+    {
+      "source": "direction-01-labmap.html",
+      "name": "实验室地图桌",
+      "concept": "像在实验室桌上布置几个独立研究站点，用网格和编号呈现结构化探索",
+      "typography": "IBM Plex Sans + JetBrains Mono（数据感）",
+      "palette": ["#0B0E13", "#1E9B6B", "#E8EDF3"],
+      "traits": ["精密", "系统化", "有方法论"]
+    },
+    {
+      "source": "direction-02-pathreport.html",
+      "name": "病理报告标注",
+      "concept": "借用病理报告的标注系统：编号标记、严谨排版、纸质档案感",
+      "typography": "Crimson Pro衬线 + Inter",
+      "palette": ["#FAFAF8", "#1E9B6B", "#D4934F", "#1A1816"],
+      "traits": ["严谨", "可信", "有温度"]
+    },
+    {
+      "source": "direction-03-kanban.html",
+      "name": "科研项目看板",
+      "concept": "像项目管理工具的工作区：清晰的阶段、任务卡片、流程可视化",
+      "typography": "Inter（全栈）",
+      "palette": ["#FDFCFA", "#1E9B6B", "#E8A04F", "#2A2826"],
+      "traits": ["清爽", "工具感", "流程清晰"]
+    }
+  ]
+}

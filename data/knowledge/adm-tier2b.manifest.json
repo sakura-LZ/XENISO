@@ -1,0 +1,325 @@
+[
+  {
+    "source": {
+      "id": "sysu-bme-zyjs",
+      "url": "https://bme.sysu.edu.cn/about/about04/index.htm",
+      "organization": "中山大学 生物医学工程学院",
+      "title": "中山大学生物医学工程学院 — 专业介绍（生物医学工程专业）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面未显示发布日期与年级；为学院「学院概况 → 专业介绍」栏目正文。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2b/sysu-bme-zyjs.raw",
+      "sha256": "1d761902e0bfdcf56e015b07e85b5fa52ef68f5464325ecad2af8e4a53472fcb",
+      "captured_at": "2026-10-23T07:45:45.575Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-sysu-bme-zyjs-guide-devices",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "中山大学生物医学工程课程体系与三方向课程构成",
+      "summary": "原文：课程体系强调「厚基础、强专业、重实践」，以工学、电学、化学、计算机科学为基础，三年级起分方向。医疗仪器方向＝一主干（面向医疗仪器的电子电路）两支干（生物医学信号与系统、生物医学机械设计与制造）；生物医学传感方向加强医学电子学与电子传感；生物医学材料方向：化学基础含普通化学、有机化学、高分子化学，生物基础含医学生理学、细胞生物学、生物化学与分子生物学，材料主线含生物材料导论、材料分析与表征、组织工程与再生医学、生物材料与药物输运。（同一官方来源共 4 条原文事实，字段：topics、learning_hours、training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于中山大学生物医学工程本科专业；为专业介绍页的方向级课程构成，未逐门列学分学时。",
+      "relation": "direct",
+      "tags": [
+        "中山大学",
+        "生物医学工程",
+        "课程体系",
+        "专业方向",
+        "学分",
+        "学制",
+        "培养目标",
+        "培养规格",
+        "能力要求"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "college": "生物医学工程学院",
+        "program": "生物医学工程",
+        "region": "广东",
+        "evidence_locator": "专业介绍 → 培养规格"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "生物医学学科及专业具有多学科交叉融合的特点，本专业课程体系强调“厚基础、强专业、重实践”，根据大类培养和专业基础素养培育的需求，构建以工学、电学、化学、计算机科学为基础，三年级开始分专业方向的课程体系，具体特点为： 医疗仪器方向：课程体系包括一主干两支干，一主干即面向医疗仪器的电子电路，两支干即生物医学信号与系统、生物医学机械设计与制造；面向医疗电子仪器将电子电路、信号处理、机械制造进行复合交叉，构建丰富的专业提升课。 生物医学传感方向：课程体系加强医学电子学、电子传感的基础，真正做到将电子、化学、生物三大传感融为一体的生物医学传感学科特点，大力加强学科方向之间的交叉融合，为医疗传感技术和仪器的开发奠定基础。 生物医学材料方向：课程体系包括以化学和生物为基础，服务于生物材料制备、开发以及应用的各个方面。如化学基础体系课程包括普通化学、有机化学、高分子化学；生物基础课程体系包括医学生理学、细胞生物学、生物化学与分子生物学等；生物材料课程的主线包括生物材料导论、材料分析与表征、组织工程与再生医学、生物材料与药物输运等。"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "生物医学工程专业毕业总学分为169分，其中实验实践教学学分为45分，修业年限为4年，按要求完成学业者授予工学学士学位。"
+      },
+      {
+        "field": "training",
+        "pattern": "在“为党育人、为国育才”的人才培养目标引领下，本专业致力于培养德智体美劳全面发展的专业人才，落实立德树人根本任务，为党和国家培养合格的社会主义建设者和接班人。生物医学工程专业通过生物、医学、材料、电子、信息等领域的交叉与融合，利用现代工程技术手段，解决医学健康相关领域中的预防、检测诊断、治疗和康复等问题。本专业致力于培养具有良好的人文科学素养、家国责任感、国际视野和创新意识，掌握生物医学工程及其相关学科的基础理论，具有综合应用多学科知识和方法解决医学相关领域实际问题的能力，德智体全面发展，具有较强管理能力和团队领导才能，适应生物医学材料、生物医学传感和医疗仪器等相关行业发展的高素质复合型人才。"
+      },
+      {
+        "field": "training",
+        "pattern": "生物医学工程专业培养规格为：通过理论学习和实践训练，掌握生物医学工程、电子技术、生物材料和生物医学检测的基本理论和知识，受到工程技术方面的良好训练；通过医学电子、医学影像和医用材料的理论学习和实验训练，了解临床中的实际问题和需求，掌握综合应用所学知识和方法解决临床问题的能力，具备在健康产业\\(包括生物材料与组织工程、医疗仪器、生物医学检测\\)等相关领域从事科学研究和应用开发的能力；掌握扎实的专业知识和英语能力，具备广阔国际视野；具有健全的体魄和良好的综合素质，具有开拓创新、团队合作精神。"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "逐门课程学分/学时（页面未列）",
+      "先修课程要求（原文未列）",
+      "learning_hours",
+      "学时（页面只给学分）",
+      "training"
+    ]
+  },
+  {
+    "source": {
+      "id": "xjtu-bme-zyjs",
+      "url": "https://slst.xjtu.edu.cn/info/1030/9041.htm",
+      "organization": "西安交通大学 生命科学与技术学院",
+      "title": "西安交通大学生命科学与技术学院 — 本科生培养 · 生物医学工程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面标注「发布日期: 2024-06-06」；属 2024 年版专业介绍，非最新年级。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2b/xjtu-bme-zyjs.raw",
+      "sha256": "909a57607c7754d5002accb48f6621187b801c4213d5c53169a7b069ff0b79a5",
+      "captured_at": "2026-10-23T07:45:45.580Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-xjtu-bme-zyjs-guide-devices",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "西安交通大学生物医学工程专业培养目标",
+      "summary": "培养目标原文：面向国际科技前沿、国家重大战略需求、国民经济主战场、人民生命健康，以解决生物医学与健康领域「卡脖子」问题为己任，掌握扎实系统的数学、物理、电子信息技术、计算机、人工智能、材料科学等基础知识，并与生物、医学交叉融合；毕业 5 年后具备综合分析、工程实践与终身学习能力，能在生物医学工程、医疗器械等领域从事科研、教育、技术研发与工程管理。（同一官方来源共 2 条原文事实，字段：training、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于西安交通大学生物医学工程本科专业（2024-06-06 版介绍）。",
+      "relation": "direct",
+      "tags": [
+        "西安交通大学",
+        "培养目标",
+        "生物医学工程",
+        "课程体系"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安交通大学",
+        "college": "生命科学与技术学院",
+        "program": "生物医学工程",
+        "region": "陕西",
+        "evidence_locator": "正文第 3 段"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "本专业贯彻服务国家战略和经济社会发展需求，坚持德智体美劳全面发展，培养面向国际科技前沿未来，面向国家重大战略需求,面向国民经济主战场,面向人民生命健康，以解决生物医学、健康相关领域的“卡脖子”问题，推动我国生物医学工程学科和医疗健康行业进步为己任，掌握扎实系统的数学、物理、电子信息技术、计算机、人工智能、材料科学等基础知识，并将之与生物、医学领域的理论知识和技能交叉融合的专业人才。预期在毕业后5年后，成为具备综合分析、工程实践和终身学习的能力，创新创业精神，良好的职业道德、合作精神和领导力，富有社会责任感，能够在生物医学工程学科、医疗器械等健康领域从事科学研究、教育、技术研发与工程管理等工作，具有国际视野和竞争力的创新人才。"
+      },
+      {
+        "field": "topics",
+        "pattern": "构建了“两厚一强一突出”理工医深交叉的创新人才培养课程体系，设计实施了“4\\+2”个性化、循序渐进的实践创新训练计划"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "逐门课程清单（页面未列）",
+      "topics",
+      "具体课程名称与学分学时（页面未列）",
+      "先修课程要求（原文未列）"
+    ]
+  },
+  {
+    "source": {
+      "id": "hit-plan2",
+      "url": "https://jwc.hit.edu.cn/_upload/article/files/e2/10/e109b2174261a40b0f12c48212c5/0bb8b474-c2d0-4161-8151-5b835712863b.pdf",
+      "organization": "哈尔滨工业大学 本科生院（教务处）",
+      "title": "哈尔滨工业大学本科专业培养方案汇编（含「十二、生物医学工程专业培养方案」）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 未标注年份与发布日期；正文单位为「电信学院/航天学院/理学院/计教中心」等哈工大建制，归属依站点域名 jwc.hit.edu.cn 与学院名称判定；年级未知。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2b/hit-plan2.pdf",
+      "sha256": "f9d5e74b78528febbffd8af99e306c9aef06219c4bc366776795c2be95a2cf92",
+      "captured_at": "2026-10-23T07:36:03.276Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-tier2b/hit-plan2.txt",
+      "extracted_sha256": "86faea2b76ce316a2b932f9c519c2aa4eb49debcdca2cad07286bae35c1e0a4d"
+    },
+    "record": {
+      "id": "learning-hit-plan2-guide-devices",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "哈尔滨工业大学生物医学工程主干课程（培养方案）",
+      "summary": "主干课程原文：医学基础、生物化学、医学物理、电路、模拟电子技术、数字电子技术、信号与系统、电磁场与波、微机原理与接口技术、医学信号处理、生物医学测量与仪器、医学成像、医学信息工程。主要实践环节：生产实习、电子实习、金工实习、工程训练、毕业设计（论文）等。（同一官方来源共 3 条原文事实，字段：topics、training、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于哈工大该培养方案中的生物医学工程专业；年级未标注。",
+      "relation": "direct",
+      "tags": [
+        "哈尔滨工业大学",
+        "生物医学工程",
+        "主干课程",
+        "培养方案",
+        "培养目标",
+        "学分",
+        "学制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "哈尔滨工业大学",
+        "program": "生物医学工程",
+        "region": "黑龙江",
+        "evidence_locator": "十二、生物医学工程专业培养方案 → 学制与学位 / 毕业条件"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "主干课程 医学基础、生物化学、医学物理、电路、模拟电子技术、数字电子技术、信号与系统、电磁场 与波、微机原理与接口技术、医学信号处理、生物医学测量与仪器、医学成像、医学信息工程。"
+      },
+      {
+        "field": "training",
+        "pattern": "本专业培养德、智、体全面发展，具有开阔的视野和敏锐的分析能力，具有良好的协作精神和 协调领导能力，具有把基础理论与创造性的工程与科学应用相结合的能力，较系统地掌握电子工程、 信息工程和生命科学的基础知识，能在生物医学与工程技术相结合、生物医学工程与生命科学相结 合的交叉领域，以及电子技术、计算机技术、信息技术等部门从事科学研究、产品开发，以及教学 和管理等方面工作的高级工程技术人才和科研人才。"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "毕业条件 最低完成 180 学分\\+课外 8 学分，其中必修课 100 学分、选修课 50 学分、集中实践 30 学分、课 外实践 8 学分。"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "各课程学分学时（在课程设置表中，未抽取）",
+      "先修课程要求（原文未列）",
+      "training",
+      "learning_hours",
+      "学时（方案以学分计）"
+    ]
+  },
+  {
+    "source": {
+      "id": "tongji-2027-077700-yjfx",
+      "url": "https://yzbm.tongji.edu.cn/zsml/sszsml/zsmlYjfx/2027/110/077700?ksfs=21",
+      "organization": "同济大学 研究生院",
+      "title": "同济大学2027年硕士研究生招生专业目录 — 医学院 077700 生物医学工程（研究方向与初试科目）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该查询系统为「2027 年招收攻读硕士学位研究生专业目录」（年度参数 nd=2027，最新）；页面本身无发布日期，上级列表页标注 2026-09-30。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2b/tongji-2027-077700-yjfx.raw",
+      "sha256": "916731195fe71dc52dd234faf1e534dad69b8c9ac34209938a4daf43637fc055",
+      "captured_at": "2026-10-23T07:45:45.590Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-tongji-2027-077700-yjfx-guide-devices",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "同济大学2027年077700 生物医学工程初试与复试科目（含科目代码）",
+      "summary": "原文：077700（学术学位）生物医学工程（全国统考），初试科目为 ①101 思想政治理论 ②201 英语（一）③302 数学（二）④840 生物综合；复试科目为 ①110001 学科专业综合。5 个研究方向（生物材料与组织工程、健康医学工程、医学诊疗技术与器械、康复医学工程、生物医学信息工程）均可推免。（同一官方来源共 2 条原文事实，字段：exam_subjects、cross_major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于同济大学 2027 年 077700 生物医学工程（学术学位，医学院）。科目代码为同济自设，不可外推。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "同济大学",
+        "考试科目",
+        "科目代码",
+        "生物医学工程",
+        "同等学力",
+        "报考限制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "同济大学",
+        "college": "医学院",
+        "program": "077700 生物医学工程",
+        "admission_year": 2027,
+        "region": "上海",
+        "evidence_locator": "2027 专业目录 → 077700 → 备注"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "077700 （学术学位） 生物医学工程（全国统考） ①101思想政治理论 ②201英语（一） ③302数学（二） ④840生物综合 复试科目：①110001学科专业综合"
+      },
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "生物医学信息工程 可推免 备注 不接收同等学力考生"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "840 生物综合参考书目（该页未列）",
+      "110001 学科专业综合考试范围（未列）",
+      "cross_major_restrictions",
+      "是否限制本科专业（备注未提，即未设专业白名单）"
+    ]
+  },
+  {
+    "source": {
+      "id": "tongji-2027-140500-yjfx",
+      "url": "https://yzbm.tongji.edu.cn/zsml/sszsml/zsmlYjfx/2027/350/140500?ksfs=21",
+      "organization": "同济大学 研究生院",
+      "title": "同济大学2027年硕士研究生招生专业目录 — 上海自主智能无人系统科学中心 140500 智能科学与技术",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "同上，2027 年度目录（nd=2027），页面无发布日期。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2b/tongji-2027-140500-yjfx.raw",
+      "sha256": "ac62e7e4c858a637d79bc517a31e75ce88d100716b51e0e99acbaff6de415587",
+      "captured_at": "2026-10-23T07:45:45.594Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-tongji-2027-140500-yjfx-guide-ml-cv",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "同济大学2027年140500 智能科学与技术只招收推免生（统考不可报）",
+      "summary": "原文：140500 智能科学与技术（学术学位，全国统考）四个单元科目均标注「188/288/388/488 只招收推免生」，即该专业 2027 年只通过推免招生，统考考生无法报考。6 个方向：智能基础理论、人工智能技术、智能系统与工程、人工智能安全与治理、智能交叉、人工智能应用。",
+      "applicability": "仅适用于同济大学 2027 年 140500 智能科学与技术（上海自主智能无人系统科学中心）；对统考跨考者是硬性不可报。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "同济大学",
+        "推免",
+        "智能科学与技术",
+        "不可统考"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "同济大学",
+        "college": "上海自主智能无人系统科学中心",
+        "program": "140500 智能科学与技术",
+        "admission_year": 2027,
+        "region": "上海",
+        "evidence_locator": "2027 专业目录 → 350 → 140500 → 初试科目"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "①188只招收推免生 ②288只招收推免生 ③388只招收推免生 ④488只招收推免生"
+      }
+    ],
+    "expected_fields": [
+      "access_requirement",
+      "cross_major_restrictions",
+      "统考是否完全无名额（页面标注只招推免）"
+    ]
+  }
+]

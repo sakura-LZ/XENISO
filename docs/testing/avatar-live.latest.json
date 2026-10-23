@@ -1,0 +1,53 @@
+{
+  "checked_at_utc": "2026-10-21T16:05:09.545Z",
+  "checked_date_local": "2026-10-21",
+  "timezone": "America/Los_Angeles",
+  "app": "http://127.0.0.1:3001/experience",
+  "status": "passed",
+  "mock": false,
+  "synthetic_probe": true,
+  "sdk_runtime_patch": false,
+  "browser": "isolated fresh headless Chromium, no shared cookies",
+  "build": "production build includes HTMLElement container fix",
+  "network": [
+    {
+      "method": "GET",
+      "status": 200,
+      "at": "2026-10-21T16:02:57.699Z"
+    },
+    {
+      "method": "POST",
+      "status": 200,
+      "at": "2026-10-21T16:03:00.848Z"
+    },
+    {
+      "method": "DELETE",
+      "status": 200,
+      "at": "2026-10-21T16:05:09.545Z"
+    }
+  ],
+  "assertions": {
+    "context_reply_received": true,
+    "explicit_reply_received": true,
+    "explicit_reply_chars": 112,
+    "connection_status": true,
+    "canvas_rendered": true,
+    "pending_before_interrupt": true,
+    "interrupt_feedback": true,
+    "send_unlocked": true
+  },
+  "session_end_confirmed": true,
+  "microphone_permission": "prompt",
+  "microphone_used": false,
+  "recording_opt_in": false,
+  "cleanup": {
+    "cleanup_status": 200,
+    "deleted": true,
+    "session_cleared": true
+  },
+  "limitations": [
+    "No microphone capture, ASR, audible playback, or real-user interview validation.",
+    "Canvas presence/size and task-specific text were verified; not a human assessment of avatar animation/lip synchronization.",
+    "Only the project-mode mentor path was tested here; full main-flow evidence is maintained separately."
+  ]
+}

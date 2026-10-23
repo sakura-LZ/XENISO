@@ -1,0 +1,738 @@
+[
+  {
+    "source": {
+      "id": "onet-details-15-1211-01",
+      "url": "https://www.onetonline.org/link/details/15-1211.01",
+      "organization": "O*NET OnLine（美国劳工部 U.S. Department of Labor / Employment and Training Administration）",
+      "title": "O*NET OnLine — 15-1211.01 Health Informatics Specialists",
+      "jurisdiction": "US",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "O*NET 页面标注 \"Updated 2026\"，未给出精确发布日期；本记录 raw 下载于 2026-10-22。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-standards/onet-details-15-1211-01.raw",
+      "sha256": "7d805216009efd2f4ae3cdb69c8a8e026a998d4228eee82f58a9420e10423185",
+      "captured_at": "2026-10-23T03:55:45.212Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "occupation-onet-details-15-1211-01-medical-ai-pm",
+      "role_id": "medical_ai_pm",
+      "category": "occupation",
+      "title": "O*NET 职业定义（15-1211.01 健康信息学专家）",
+      "summary": "O*NET 对该职业的官方定义原文（英文）。对应 LIMEN 方向线索，用于理解岗位职责边界，不代表中国岗位要求。（同一官方来源共 5 条原文事实，字段：occupation_definition、responsibilities、skills、interests；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于美国 O*NET-SOC 职业分类 15-1211.01 Health Informatics Specialists。这是美国劳工部职业信息系统中的职业定义，不可直接当作中国对应岗位（如医学 AI 产品经理 / 临床数据分析师 / 医学机器学习工程师）的招聘或报考要求。",
+      "relation": "related",
+      "tags": [
+        "O*NET",
+        "occupation_definition",
+        "15-1211.01",
+        "US",
+        "responsibilities",
+        "tasks",
+        "skills",
+        "importance",
+        "RIASEC",
+        "interests"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "region": "US",
+        "evidence_locator": "Career Interest Types, 15-1211.01",
+        "statistic_scope": "O*NET Career Interest Types 兴趣分值（网页 0–100）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "occupation_definition",
+        "pattern": "Apply knowledge of nursing and informatics to assist in the design, development, and ongoing modification of computerized health care systems\\. May educate staff and assist in problem solving to promote the implementation of the health care system\\."
+      },
+      {
+        "field": "responsibilities",
+        "pattern": "Importance Category Task 95 Core Translate nursing practice information between nurses and systems engineers, analysts, or designers, using object-oriented models or other techniques\\. Related occupations 93 Core Use informatics science to design or implement health information technology applications for resolution of clinical or health care administrative problems\\. Related occupations 86 Core Develop or implement policies or practices to ensure the privacy, confidentiality, or security of patient information\\. Related occupations 83 Core Analyze and interpret patient, nursing, or information systems data to improve nursing services\\. Related occupations 81 Core Identify, collect, record, or analyze data relevant to the nursing care of patients\\."
+      },
+      {
+        "field": "skills",
+        "pattern": "Importance Essential Skill 85 Reading Comprehension — Understanding written sentences and paragraphs in work-related documents\\. Related occupations 75 Active Listening — Giving full attention to what other people are saying, taking time to understand the points being made, asking questions as appropriate, and not interrupting at inappropriate times\\. Related occupations 75 Critical Thinking — Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions, or approaches to problems\\. Related occupations 75 Speaking — Talking to others to convey information effectively\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Occupational Interest Career Interest Type 88 Investigative — Work involves studying and researching non-living objects, living organisms, disease or other forms of impairment, or human behavior\\. Investigative occupations are often associated with physical, life, medical, or social sciences, and can be found in the fields of humanities, mathematics/statistics, information technology, or health care service\\. Related occupations 62 Conventional — Work involves following procedures and regulations to organize information or data, typically in a business setting\\. Conventional occupations are often associated with office work, accounting, mathematics/statistics, information technology, finance, or human resources\\. Related occupations 59 Social — Work involves helping, teaching, advising, assisting, or providing service to others\\. Social occupations are often associated with social, health care, personal service, teaching/education, or religious activities\\. Related occupations 31 Realistic — Work involves designing, building, or repairing of equipment, materials, or structures, engaging in physical activity, or working outdoors\\. Realistic occupations are often associated with engineering, mechanics and electronics, construction, woodworking, transportation, machine operation, agriculture, animal services, physical or manual labor, athletics, or protective services\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Enterprising — Work involves managing, negotiating, marketing, or selling, typically in a business setting, or leading or advising people in political and legal situations\\. Enterprising occupations are often associated with business initiatives, sales, marketing/advertising, finance, management/administration, professional advising, public speaking, politics, or law\\. Related occupations 17 Artistic — Work involves creating original visual artwork, performances, written works, food, or music for a variety of media, or applying artistic principles to the design of various objects and materials\\. Artistic occupations are often associated with visual arts, applied arts and design, performing arts, music, creative writing, media, or culinary art\\. Related occupations back to top Specific Interest Areas"
+      }
+    ],
+    "expected_fields": [
+      "occupation_definition",
+      "中国官方对应职业定义",
+      "hard_requirements",
+      "responsibilities",
+      "中国岗位职责官方原文",
+      "skills",
+      "required_level（技能等级要求）",
+      "中国技能等级认定",
+      "interests",
+      "中国 RIASEC 职业常模"
+    ]
+  },
+  {
+    "source": {
+      "id": "onet-details-15-1211-00",
+      "url": "https://www.onetonline.org/link/details/15-1211.00",
+      "organization": "O*NET OnLine（美国劳工部 U.S. Department of Labor / Employment and Training Administration）",
+      "title": "O*NET OnLine — 15-1211.00 Computer Systems Analysts",
+      "jurisdiction": "US",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "O*NET 页面标注 \"Updated 2026\"，未给出精确发布日期；本记录 raw 下载于 2026-10-22。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-standards/onet-details-15-1211-00.raw",
+      "sha256": "e4cbec1f7eca3c59ce3c8582655c63a9479ddd690acb8ca5de9d856e655a1885",
+      "captured_at": "2026-10-23T03:55:45.245Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "occupation-onet-details-15-1211-00-medical-ai-pm",
+      "role_id": "medical_ai_pm",
+      "category": "occupation",
+      "title": "O*NET 职业定义（15-1211.00 计算机系统分析师）",
+      "summary": "O*NET 对该职业的官方定义原文（英文）。对应 LIMEN 方向线索，用于理解岗位职责边界，不代表中国岗位要求。（同一官方来源共 5 条原文事实，字段：occupation_definition、responsibilities、skills、interests；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于美国 O*NET-SOC 职业分类 15-1211.00 Computer Systems Analysts。这是美国劳工部职业信息系统中的职业定义，不可直接当作中国对应岗位（如医学 AI 产品经理 / 临床数据分析师 / 医学机器学习工程师）的招聘或报考要求。",
+      "relation": "related",
+      "tags": [
+        "O*NET",
+        "occupation_definition",
+        "15-1211.00",
+        "US",
+        "responsibilities",
+        "tasks",
+        "skills",
+        "importance",
+        "RIASEC",
+        "interests"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "region": "US",
+        "evidence_locator": "Career Interest Types, 15-1211.00",
+        "statistic_scope": "O*NET Career Interest Types 兴趣分值（网页 0–100）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "occupation_definition",
+        "pattern": "Analyze science, engineering, business, and other data processing problems to develop and implement solutions to complex applications problems, system administration issues, or network concerns\\. Perform systems management and integration functions, improve existing computer systems, and review computer system capabilities, workflow, and schedule limitations\\. May analyze or recommend commercially available software\\."
+      },
+      {
+        "field": "responsibilities",
+        "pattern": "Importance Category Task 81 Core Troubleshoot program and system malfunctions to restore normal functioning\\. Related occupations 76 Core Provide staff and users with assistance solving computer-related problems, such as malfunctions and program problems\\. Related occupations 75 Core Test, maintain, and monitor computer programs and systems, including coordinating the installation of computer programs and systems\\. Related occupations 74 Core Use the computer in the analysis and solution of business problems, such as development of integrated production and inventory control and cost analysis systems\\. Related occupations 70 Core Coordinate and link the computer systems within an organization to increase compatibility so that information can be shared\\."
+      },
+      {
+        "field": "skills",
+        "pattern": "Importance Essential Skill 75 Speaking — Talking to others to convey information effectively\\. Related occupations 72 Reading Comprehension — Understanding written sentences and paragraphs in work-related documents\\. Related occupations 69 Active Listening — Giving full attention to what other people are saying, taking time to understand the points being made, asking questions as appropriate, and not interrupting at inappropriate times\\. Related occupations 69 Critical Thinking — Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions, or approaches to problems\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Occupational Interest Career Interest Type 90 Investigative — Work involves studying and researching non-living objects, living organisms, disease or other forms of impairment, or human behavior\\. Investigative occupations are often associated with physical, life, medical, or social sciences, and can be found in the fields of humanities, mathematics/statistics, information technology, or health care service\\. Related occupations 82 Conventional — Work involves following procedures and regulations to organize information or data, typically in a business setting\\. Conventional occupations are often associated with office work, accounting, mathematics/statistics, information technology, finance, or human resources\\. Related occupations 38 Realistic — Work involves designing, building, or repairing of equipment, materials, or structures, engaging in physical activity, or working outdoors\\. Realistic occupations are often associated with engineering, mechanics and electronics, construction, woodworking, transportation, machine operation, agriculture, animal services, physical or manual labor, athletics, or protective services\\. Related occupations 21 Enterprising — Work involves managing, negotiating, marketing, or selling, typically in a business setting, or leading or advising people in political and legal situations\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Enterprising — Work involves managing, negotiating, marketing, or selling, typically in a business setting, or leading or advising people in political and legal situations\\. Enterprising occupations are often associated with business initiatives, sales, marketing/advertising, finance, management/administration, professional advising, public speaking, politics, or law\\. Related occupations 16 Artistic — Work involves creating original visual artwork, performances, written works, food, or music for a variety of media, or applying artistic principles to the design of various objects and materials\\. Artistic occupations are often associated with visual arts, applied arts and design, performing arts, music, creative writing, media, or culinary art\\. Related occupations 15 Social — Work involves helping, teaching, advising, assisting, or providing service to others\\. Social occupations are often associated with social, health care, personal service, teaching/education, or religious activities\\. Related occupations back to top Specific Interest Areas"
+      }
+    ],
+    "expected_fields": [
+      "occupation_definition",
+      "中国官方对应职业定义",
+      "hard_requirements",
+      "responsibilities",
+      "中国岗位职责官方原文",
+      "skills",
+      "required_level（技能等级要求）",
+      "中国技能等级认定",
+      "interests",
+      "中国 RIASEC 职业常模"
+    ]
+  },
+  {
+    "source": {
+      "id": "onet-details-15-2051-02",
+      "url": "https://www.onetonline.org/link/details/15-2051.02",
+      "organization": "O*NET OnLine（美国劳工部 U.S. Department of Labor / Employment and Training Administration）",
+      "title": "O*NET OnLine — 15-2051.02 Clinical Data Managers",
+      "jurisdiction": "US",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "O*NET 页面标注 \"Updated 2026\"，未给出精确发布日期；本记录 raw 下载于 2026-10-22。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-standards/onet-details-15-2051-02.raw",
+      "sha256": "00ebe9dc5085f5254566f103a085167347c1d0d088efd970cd343e05652ab9ba",
+      "captured_at": "2026-10-23T03:55:45.262Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "occupation-onet-details-15-2051-02-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "occupation",
+      "title": "O*NET 职业定义（15-2051.02 临床数据管理员）",
+      "summary": "O*NET 对该职业的官方定义原文（英文）。对应 LIMEN 方向线索，用于理解岗位职责边界，不代表中国岗位要求。（同一官方来源共 5 条原文事实，字段：occupation_definition、responsibilities、skills、interests；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于美国 O*NET-SOC 职业分类 15-2051.02 Clinical Data Managers。这是美国劳工部职业信息系统中的职业定义，不可直接当作中国对应岗位（如医学 AI 产品经理 / 临床数据分析师 / 医学机器学习工程师）的招聘或报考要求。",
+      "relation": "related",
+      "tags": [
+        "O*NET",
+        "occupation_definition",
+        "15-2051.02",
+        "US",
+        "responsibilities",
+        "tasks",
+        "skills",
+        "importance",
+        "RIASEC",
+        "interests"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "region": "US",
+        "evidence_locator": "Career Interest Types, 15-2051.02",
+        "statistic_scope": "O*NET Career Interest Types 兴趣分值（网页 0–100）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "occupation_definition",
+        "pattern": "Apply knowledge of health care and database management to analyze clinical data, and to identify and report trends\\."
+      },
+      {
+        "field": "responsibilities",
+        "pattern": "Importance Category Task 88 Core Design and validate clinical databases, including designing or testing logic checks\\. Related occupations 84 Core Process clinical data, including receipt, entry, verification, or filing of information\\. Related occupations 83 Core Generate data queries, based on validation checks or errors and omissions identified during data entry, to resolve identified problems\\. Related occupations 82 Core Develop project-specific data management plans that address areas such as coding, reporting, or transfer of data, database locks, and work flow processes\\. Related occupations 76 Core Monitor work productivity or quality to ensure compliance with standard operating procedures\\."
+      },
+      {
+        "field": "skills",
+        "pattern": "Importance Essential Skill 75 Critical Thinking — Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions, or approaches to problems\\. Related occupations 72 Active Listening — Giving full attention to what other people are saying, taking time to understand the points being made, asking questions as appropriate, and not interrupting at inappropriate times\\. Related occupations 72 Reading Comprehension — Understanding written sentences and paragraphs in work-related documents\\. Related occupations 72 Speaking — Talking to others to convey information effectively\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Occupational Interest Career Interest Type 93 Conventional — Work involves following procedures and regulations to organize information or data, typically in a business setting\\. Conventional occupations are often associated with office work, accounting, mathematics/statistics, information technology, finance, or human resources\\. Related occupations 78 Investigative — Work involves studying and researching non-living objects, living organisms, disease or other forms of impairment, or human behavior\\. Investigative occupations are often associated with physical, life, medical, or social sciences, and can be found in the fields of humanities, mathematics/statistics, information technology, or health care service\\. Related occupations 38 Enterprising — Work involves managing, negotiating, marketing, or selling, typically in a business setting, or leading or advising people in political and legal situations\\. Enterprising occupations are often associated with business initiatives, sales, marketing/advertising, finance, management/administration, professional advising, public speaking, politics, or law\\. Related occupations 30 Social — Work involves helping, teaching, advising, assisting, or providing service to others\\. Social occupations are often associated with social, health care, personal service, teaching/education, or religious activities\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Enterprising — Work involves managing, negotiating, marketing, or selling, typically in a business setting, or leading or advising people in political and legal situations\\. Enterprising occupations are often associated with business initiatives, sales, marketing/advertising, finance, management/administration, professional advising, public speaking, politics, or law\\. Related occupations 30 Social — Work involves helping, teaching, advising, assisting, or providing service to others\\. Social occupations are often associated with social, health care, personal service, teaching/education, or religious activities\\. Related occupations 5 Artistic — Work involves creating original visual artwork, performances, written works, food, or music for a variety of media, or applying artistic principles to the design of various objects and materials\\. Artistic occupations are often associated with visual arts, applied arts and design, performing arts, music, creative writing, media, or culinary art\\. Related occupations 4 Realistic — Work involves designing, building, or repairing of equipment, materials, or structures, engaging in physical activity, or working outdoors\\. Realistic occupations are often associated with engineering, mechanics and electronics, construction, woodworking, transportation, machine operation, agriculture, animal services, physical or manual labor, athletics, or protective services\\. Related occupations back to top Specific Interest Areas"
+      }
+    ],
+    "expected_fields": [
+      "occupation_definition",
+      "中国官方对应职业定义",
+      "hard_requirements",
+      "responsibilities",
+      "中国岗位职责官方原文",
+      "skills",
+      "required_level（技能等级要求）",
+      "中国技能等级认定",
+      "interests",
+      "中国 RIASEC 职业常模"
+    ]
+  },
+  {
+    "source": {
+      "id": "onet-details-15-2041-01",
+      "url": "https://www.onetonline.org/link/details/15-2041.01",
+      "organization": "O*NET OnLine（美国劳工部 U.S. Department of Labor / Employment and Training Administration）",
+      "title": "O*NET OnLine — 15-2041.01 Biostatisticians",
+      "jurisdiction": "US",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "O*NET 页面标注 \"Updated 2026\"，未给出精确发布日期；本记录 raw 下载于 2026-10-22。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-standards/onet-details-15-2041-01.raw",
+      "sha256": "32b87a17fcfb177fd95fb7fdaf53429408bf9a97d33d61206a0572de9330061c",
+      "captured_at": "2026-10-23T03:55:45.280Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "occupation-onet-details-15-2041-01-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "occupation",
+      "title": "O*NET 职业定义（15-2041.01 生物统计师）",
+      "summary": "O*NET 对该职业的官方定义原文（英文）。对应 LIMEN 方向线索，用于理解岗位职责边界，不代表中国岗位要求。（同一官方来源共 5 条原文事实，字段：occupation_definition、responsibilities、skills、interests；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于美国 O*NET-SOC 职业分类 15-2041.01 Biostatisticians。这是美国劳工部职业信息系统中的职业定义，不可直接当作中国对应岗位（如医学 AI 产品经理 / 临床数据分析师 / 医学机器学习工程师）的招聘或报考要求。",
+      "relation": "related",
+      "tags": [
+        "O*NET",
+        "occupation_definition",
+        "15-2041.01",
+        "US",
+        "responsibilities",
+        "tasks",
+        "skills",
+        "importance",
+        "RIASEC",
+        "interests"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "region": "US",
+        "evidence_locator": "Career Interest Types, 15-2041.01",
+        "statistic_scope": "O*NET Career Interest Types 兴趣分值（网页 0–100）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "occupation_definition",
+        "pattern": "Develop and apply biostatistical theory and methods to the study of life sciences\\."
+      },
+      {
+        "field": "responsibilities",
+        "pattern": "Importance Category Task 88 Core Draw conclusions or make predictions, based on data summaries or statistical analyses\\. Related occupations 85 Core Analyze clinical or survey data, using statistical approaches such as longitudinal analysis, mixed-effect modeling, logistic regression analyses, and model-building techniques\\. Related occupations 85 Core Write detailed analysis plans and descriptions of analyses and findings for research protocols or reports\\. Related occupations 84 Core Calculate sample size requirements for clinical studies\\."
+      },
+      {
+        "field": "skills",
+        "pattern": "Importance Essential Skill 91 Mathematics — Using mathematics to solve problems\\. Related occupations 75 Active Learning — Understanding the implications of new information for both current and future problem-solving and decision-making\\. Related occupations 75 Critical Thinking — Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions, or approaches to problems\\. Related occupations 75 Reading Comprehension — Understanding written sentences and paragraphs in work-related documents\\. Related occupations 75 Science — Using scientific rules and methods to solve problems\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Occupational Interest Career Interest Type 100 Investigative — Work involves studying and researching non-living objects, living organisms, disease or other forms of impairment, or human behavior\\. Investigative occupations are often associated with physical, life, medical, or social sciences, and can be found in the fields of humanities, mathematics/statistics, information technology, or health care service\\. Related occupations 57 Conventional — Work involves following procedures and regulations to organize information or data, typically in a business setting\\. Conventional occupations are often associated with office work, accounting, mathematics/statistics, information technology, finance, or human resources\\. Related occupations 35 Social — Work involves helping, teaching, advising, assisting, or providing service to others\\. Social occupations are often associated with social, health care, personal service, teaching/education, or religious activities\\. Related occupations 30 Artistic — Work involves creating original visual artwork, performances, written works, food, or music for a variety of media, or applying artistic principles to the design of various objects and materials\\. Artistic occupations are often associated with visual arts, applied arts and design, performing arts, music, creative writing, media, or culinary art\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Enterprising — Work involves managing, negotiating, marketing, or selling, typically in a business setting, or leading or advising people in political and legal situations\\. Enterprising occupations are often associated with business initiatives, sales, marketing/advertising, finance, management/administration, professional advising, public speaking, politics, or law\\. Related occupations back to top Specific Interest Areas"
+      }
+    ],
+    "expected_fields": [
+      "occupation_definition",
+      "中国官方对应职业定义",
+      "hard_requirements",
+      "responsibilities",
+      "中国岗位职责官方原文",
+      "skills",
+      "required_level（技能等级要求）",
+      "中国技能等级认定",
+      "interests",
+      "中国 RIASEC 职业常模"
+    ]
+  },
+  {
+    "source": {
+      "id": "onet-details-15-2051-00",
+      "url": "https://www.onetonline.org/link/details/15-2051.00",
+      "organization": "O*NET OnLine（美国劳工部 U.S. Department of Labor / Employment and Training Administration）",
+      "title": "O*NET OnLine — 15-2051.00 Data Scientists",
+      "jurisdiction": "US",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "O*NET 页面标注 \"Updated 2026\"，未给出精确发布日期；本记录 raw 下载于 2026-10-22。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-standards/onet-details-15-2051-00.raw",
+      "sha256": "49eaa35557bbfca149689a41c640f2df1fb5cf5d2d2a66c1ec8ecaad1b3dc393",
+      "captured_at": "2026-10-23T03:55:45.297Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "occupation-onet-details-15-2051-00-guide-ml-cv",
+      "role_id": "guide_ml_cv",
+      "category": "occupation",
+      "title": "O*NET 职业定义（15-2051.00 数据科学家）",
+      "summary": "O*NET 对该职业的官方定义原文（英文）。对应 LIMEN 方向线索，用于理解岗位职责边界，不代表中国岗位要求。（同一官方来源共 5 条原文事实，字段：occupation_definition、responsibilities、skills、interests；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于美国 O*NET-SOC 职业分类 15-2051.00 Data Scientists。这是美国劳工部职业信息系统中的职业定义，不可直接当作中国对应岗位（如医学 AI 产品经理 / 临床数据分析师 / 医学机器学习工程师）的招聘或报考要求。",
+      "relation": "related",
+      "tags": [
+        "O*NET",
+        "occupation_definition",
+        "15-2051.00",
+        "US",
+        "responsibilities",
+        "tasks",
+        "skills",
+        "importance",
+        "RIASEC",
+        "interests"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "region": "US",
+        "evidence_locator": "Career Interest Types, 15-2051.00",
+        "statistic_scope": "O*NET Career Interest Types 兴趣分值（网页 0–100）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "occupation_definition",
+        "pattern": "Develop and implement a set of techniques or analytics applications to transform raw data into meaningful information using data-oriented programming languages and visualization software\\. Apply data mining, data modeling, natural language processing, and machine learning to extract and analyze information from large structured and unstructured datasets\\. Visualize, interpret, and report data findings\\. May create dynamic data reports\\."
+      },
+      {
+        "field": "responsibilities",
+        "pattern": "Importance Category Task 83 Core Analyze, manipulate, or process large sets of data using statistical software\\. Related occupations 83 Core Create graphs, charts, or other visualizations to convey the results of data analysis using specialized software\\. Related occupations 81 Core Test, validate, and reformulate models to ensure accurate prediction of outcomes of interest\\. Related occupations 80 Core Deliver oral or written presentations of the results of mathematical modeling and data analysis to management or other end users\\. Related occupations 79 Core Recommend data-driven solutions to key stakeholders\\. Related occupations 78 Core Identify business problems or management objectives that can be addressed through data analysis\\."
+      },
+      {
+        "field": "skills",
+        "pattern": "Importance Essential Skill 85 Mathematics — Using mathematics to solve problems\\. Related occupations 81 Critical Thinking — Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions, or approaches to problems\\. Related occupations 72 Reading Comprehension — Understanding written sentences and paragraphs in work-related documents\\. Related occupations 66 Active Learning — Understanding the implications of new information for both current and future problem-solving and decision-making\\. Related occupations 66 Speaking — Talking to others to convey information effectively\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Occupational Interest Career Interest Type 100 Investigative — Work involves studying and researching non-living objects, living organisms, disease or other forms of impairment, or human behavior\\. Investigative occupations are often associated with physical, life, medical, or social sciences, and can be found in the fields of humanities, mathematics/statistics, information technology, or health care service\\. Related occupations 73 Conventional — Work involves following procedures and regulations to organize information or data, typically in a business setting\\. Conventional occupations are often associated with office work, accounting, mathematics/statistics, information technology, finance, or human resources\\. Related occupations 27 Artistic — Work involves creating original visual artwork, performances, written works, food, or music for a variety of media, or applying artistic principles to the design of various objects and materials\\. Artistic occupations are often associated with visual arts, applied arts and design, performing arts, music, creative writing, media, or culinary art\\. Related occupations 20 Realistic — Work involves designing, building, or repairing of equipment, materials, or structures, engaging in physical activity, or working outdoors\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Enterprising — Work involves managing, negotiating, marketing, or selling, typically in a business setting, or leading or advising people in political and legal situations\\. Enterprising occupations are often associated with business initiatives, sales, marketing/advertising, finance, management/administration, professional advising, public speaking, politics, or law\\. Related occupations 11 Social — Work involves helping, teaching, advising, assisting, or providing service to others\\. Social occupations are often associated with social, health care, personal service, teaching/education, or religious activities\\. Related occupations back to top Specific Interest Areas"
+      }
+    ],
+    "expected_fields": [
+      "occupation_definition",
+      "中国官方对应职业定义",
+      "hard_requirements",
+      "responsibilities",
+      "中国岗位职责官方原文",
+      "skills",
+      "required_level（技能等级要求）",
+      "中国技能等级认定",
+      "interests",
+      "中国 RIASEC 职业常模"
+    ]
+  },
+  {
+    "source": {
+      "id": "onet-details-15-1221-00",
+      "url": "https://www.onetonline.org/link/details/15-1221.00",
+      "organization": "O*NET OnLine（美国劳工部 U.S. Department of Labor / Employment and Training Administration）",
+      "title": "O*NET OnLine — 15-1221.00 Computer and Information Research Scientists",
+      "jurisdiction": "US",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "O*NET 页面标注 \"Updated 2026\"，未给出精确发布日期；本记录 raw 下载于 2026-10-22。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-standards/onet-details-15-1221-00.raw",
+      "sha256": "656c70317a13b2e9a1e373d70e3d24aade0321f3b4133c3aafeb4ee825c1a8b2",
+      "captured_at": "2026-10-23T03:55:45.313Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "occupation-onet-details-15-1221-00-guide-ml-cv",
+      "role_id": "guide_ml_cv",
+      "category": "occupation",
+      "title": "O*NET 职业定义（15-1221.00 计算机与信息研究科学家）",
+      "summary": "O*NET 对该职业的官方定义原文（英文）。对应 LIMEN 方向线索，用于理解岗位职责边界，不代表中国岗位要求。（同一官方来源共 5 条原文事实，字段：occupation_definition、responsibilities、skills、interests；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于美国 O*NET-SOC 职业分类 15-1221.00 Computer and Information Research Scientists。这是美国劳工部职业信息系统中的职业定义，不可直接当作中国对应岗位（如医学 AI 产品经理 / 临床数据分析师 / 医学机器学习工程师）的招聘或报考要求。",
+      "relation": "related",
+      "tags": [
+        "O*NET",
+        "occupation_definition",
+        "15-1221.00",
+        "US",
+        "responsibilities",
+        "tasks",
+        "skills",
+        "importance",
+        "RIASEC",
+        "interests"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "region": "US",
+        "evidence_locator": "Career Interest Types, 15-1221.00",
+        "statistic_scope": "O*NET Career Interest Types 兴趣分值（网页 0–100）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "occupation_definition",
+        "pattern": "Conduct research into fundamental computer and information science as theorists, designers, or inventors\\. Develop solutions to problems in the field of computer hardware and software\\."
+      },
+      {
+        "field": "responsibilities",
+        "pattern": "Importance Category Task 81 Core Analyze problems to develop solutions involving computer hardware and software\\. Related occupations 72 Core Apply theoretical expertise and innovation to create or apply new technology, such as adapting principles for applying computers to new uses\\. Related occupations 69 Core Assign or schedule tasks to meet work priorities and goals\\. Related occupations 66 Core Meet with managers, vendors, and others to solicit cooperation and resolve problems\\. Related occupations 66 Core Design computers and the software that runs them\\. Related occupations 65 Core Conduct logical analyses of business, scientific, engineering, and other technical problems, formulating mathematical models of problems for solution by computers\\."
+      },
+      {
+        "field": "skills",
+        "pattern": "Importance Essential Skill 75 Critical Thinking — Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions, or approaches to problems\\. Related occupations 69 Active Listening — Giving full attention to what other people are saying, taking time to understand the points being made, asking questions as appropriate, and not interrupting at inappropriate times\\. Related occupations 69 Reading Comprehension — Understanding written sentences and paragraphs in work-related documents\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Occupational Interest Career Interest Type 100 Investigative — Work involves studying and researching non-living objects, living organisms, disease or other forms of impairment, or human behavior\\. Investigative occupations are often associated with physical, life, medical, or social sciences, and can be found in the fields of humanities, mathematics/statistics, information technology, or health care service\\. Related occupations 63 Conventional — Work involves following procedures and regulations to organize information or data, typically in a business setting\\. Conventional occupations are often associated with office work, accounting, mathematics/statistics, information technology, finance, or human resources\\. Related occupations 46 Realistic — Work involves designing, building, or repairing of equipment, materials, or structures, engaging in physical activity, or working outdoors\\. Realistic occupations are often associated with engineering, mechanics and electronics, construction, woodworking, transportation, machine operation, agriculture, animal services, physical or manual labor, athletics, or protective services\\. Related occupations 33 Artistic — Work involves creating original visual artwork, performances, written works, food, or music for a variety of media, or applying artistic principles to the design of various objects and materials\\."
+      },
+      {
+        "field": "interests",
+        "pattern": "Enterprising — Work involves managing, negotiating, marketing, or selling, typically in a business setting, or leading or advising people in political and legal situations\\. Enterprising occupations are often associated with business initiatives, sales, marketing/advertising, finance, management/administration, professional advising, public speaking, politics, or law\\. Related occupations 17 Social — Work involves helping, teaching, advising, assisting, or providing service to others\\. Social occupations are often associated with social, health care, personal service, teaching/education, or religious activities\\. Related occupations back to top Specific Interest Areas"
+      }
+    ],
+    "expected_fields": [
+      "occupation_definition",
+      "中国官方对应职业定义",
+      "hard_requirements",
+      "responsibilities",
+      "中国岗位职责官方原文",
+      "skills",
+      "required_level（技能等级要求）",
+      "中国技能等级认定",
+      "interests",
+      "中国 RIASEC 职业常模"
+    ]
+  },
+  {
+    "source": {
+      "id": "cn-ai-standard",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/d9a82994c8bc4db2beb4a31b9d16e687.pdf",
+      "organization": "中华人民共和国人力资源和社会保障部、工业和信息化部",
+      "title": "人工智能工程技术人员国家职业技术技能标准（2021 年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "标准正文标注为 2021 年版；gov.cn 文件发布于 2021-10（URL 路径 2021-10/09），文内未单列精确颁布日期，故取 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-standards/cn-ai-standard.pdf",
+      "sha256": "01d30d557413b1c71186cfde1e574c481dbf67994be38164b63bd7f675ffb71f",
+      "captured_at": "2026-10-23T03:40:12.651Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-standards/cn-ai-standard.txt",
+      "extracted_sha256": "bcc34b232a724b9d6b295c8fd7b9443b9da6b430d27132ec3d70f7c7f19e021f"
+    },
+    "record": {
+      "id": "occupation-cn-ai-standard-guide-ml-cv",
+      "role_id": "guide_ml_cv",
+      "category": "occupation",
+      "title": "中国国家职业标准：人工智能工程技术人员职业定义",
+      "summary": "人社部、工信部《人工智能工程技术人员国家职业技术技能标准（2021年版）》1.3 职业定义官方原文。（同一官方来源共 4 条原文事实，字段：occupation_definition、career_path、skills、responsibilities；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "中国官方国家职业技术技能标准，适用于从事人工智能算法、深度学习等技术研发与系统设计/运维/管理的人员。它不等同于「医学机器学习工程师」这一细分岗位，也不涉及医学场景的额外要求。",
+      "relation": "related",
+      "tags": [
+        "中国职业标准",
+        "人工智能工程技术人员",
+        "2-02-10-09",
+        "CN",
+        "等级",
+        "职业方向",
+        "skills",
+        "知识要求",
+        "responsibilities",
+        "工作要求"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "region": "CN",
+        "evidence_locator": "3 工作要求"
+      }
+    },
+    "extracts": [
+      {
+        "field": "occupation_definition",
+        "pattern": "从事与人工智能相关算法 、 深度学习等多种技术的分析 、 研究 、 开发 ， 并对 人工智能系统进行设计、优化、运维、管理和应用的工程技术人员 。"
+      },
+      {
+        "field": "career_path",
+        "pattern": "1\\.4 专业技术等级 本职业共设三个等级，分别为初级、中级、高级 。 初级 、 中级 、 高级均设五个职业方向 ： 人工智能芯片产品实现 、 人工智能平 台产品实现 、 自然语言及语音处理产品实现 、 计算机视觉产品实现 、 人工智能应 用产品集成实现。"
+      },
+      {
+        "field": "skills",
+        "pattern": "2\\.2\\.1 专业基础知识 （ 1 ） 数学基础知识 （ 2 ） 编程基础知识 （ 3 ） 数据处理知识 （ 4 ） 软件工程知识 （ 5 ） 计算平台知识 （ 6 ） 机器学习知识"
+      },
+      {
+        "field": "responsibilities",
+        "pattern": "本标准对初级 、 中级 、 高级三个等级的专业能力要求和相关知识要求依次递 进，高级别涵盖低级别的要求。"
+      }
+    ],
+    "expected_fields": [
+      "occupation_definition",
+      "医疗场景专项要求",
+      "career_path",
+      "skills",
+      "required_level（分值/等级化技能要求）",
+      "responsibilities",
+      "逐项工作内容（原文为表格，未逐条摘录）"
+    ]
+  },
+  {
+    "source": {
+      "id": "cn-bigdata-standard",
+      "url": "https://gsca.miit.gov.cn/cms_files/filemanager/1508294071/attach/20213/33b353f635c24924b4cf8d237b696895.pdf",
+      "organization": "中华人民共和国人力资源和社会保障部、工业和信息化部",
+      "title": "大数据工程技术人员国家职业技术技能标准（2021 年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "随人社厅发〔2021〕10号颁布，成文日期 2021 年 2 月 3 日（见中国政府网通知）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-standards/cn-bigdata-standard.pdf",
+      "sha256": "2c46a49def9bc1d57b476c443f0c3e9e3672bb93ce8c3806609381788fd5d62b",
+      "captured_at": "2026-10-23T03:42:01.583Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-standards/cn-bigdata-standard.txt",
+      "extracted_sha256": "cb4b8eb1fc2220da26070fa7bfbf4c4be12150f9af0e6e2d5e815eae1dfa2276"
+    },
+    "record": {
+      "id": "occupation-cn-bigdata-standard-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "occupation",
+      "title": "中国国家职业标准：大数据工程技术人员职业定义",
+      "summary": "人社部、工信部《大数据工程技术人员国家职业技术技能标准（2021年版）》1.3 职业定义官方原文。（同一官方来源共 3 条原文事实，字段：occupation_definition、career_path、responsibilities；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "中国官方国家职业技术技能标准，适用于从事大数据采集、清洗、分析、治理、挖掘及管理运维服务的人员。与「临床数据分析师」的临床数据场景有交集但不重合，不涉及临床隐私与伦理专项要求。",
+      "relation": "related",
+      "tags": [
+        "中国职业标准",
+        "大数据工程技术人员",
+        "2-02-10-11",
+        "CN",
+        "等级",
+        "职业方向",
+        "responsibilities",
+        "工作要求"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "region": "CN",
+        "evidence_locator": "3 工作要求"
+      }
+    },
+    "extracts": [
+      {
+        "field": "occupation_definition",
+        "pattern": "从事大数据采集 、 清洗 、 分析 、 治理 、 挖掘等技术研究 ， 并加以利用 、 管理 、 维护和服务的工程技术人员。"
+      },
+      {
+        "field": "career_path",
+        "pattern": "1\\.4 专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级、中级分为三个职业方向：大数据处理、大数据分析、大数据管理。 高级不分职业方向。"
+      },
+      {
+        "field": "responsibilities",
+        "pattern": "本标准对初级 、 中级 、 高级的专业能力要求和相关知识要求依次递进 ， 高级 别涵盖低级别的要求。"
+      }
+    ],
+    "expected_fields": [
+      "occupation_definition",
+      "临床数据专项要求",
+      "career_path",
+      "responsibilities",
+      "逐项工作内容（原文为表格，未逐条摘录）"
+    ]
+  },
+  {
+    "source": {
+      "id": "nhc-resident-training",
+      "url": "https://www.nhc.gov.cn/bgt/2014dbq/201501/631fa4f55a8c4f52b2e13f131530f150/files/1745204508443_20265.pdf",
+      "organization": "国家卫生计生委（现国家卫生健康委员会）",
+      "title": "住院医师规范化培训管理办法（试行）（国卫科教发〔2014〕49 号）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2014-08-22",
+      "publication_date_note": "办法正文落款 2014 年 8 月 22 日，见 PDF 通知页。"
+    },
+    "publication_pattern": "2014\\D{0,6}0?8\\D{0,6}0?22",
+    "artifact_capture": {
+      "path": "work/knowledge-standards/nhc-resident-training.pdf",
+      "sha256": "c30df1e981f2976878a44c9dc672702689c9634472aba062f8fb6f3b9301dff9",
+      "captured_at": "2026-10-23T03:39:49.738Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-standards/nhc-resident-training.txt",
+      "extracted_sha256": "b7fb7170a074ef702accaad1bd130a219a20dff1d76fb6e03b68e5351115f68f"
+    },
+    "record": {
+      "id": "industry-nhc-resident-training-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "中国：住院医师规范化培训的法定性质与目的",
+      "summary": "《住院医师规范化培训管理办法（试行）》第二条原文：住院医师规范化培训是毕业后医学教育的重要组成部分，目的是培养能独立规范承担本专业常见多发疾病诊疗的临床医师。（同一官方来源共 2 条原文事实，字段：china_legal_requirement；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "中国住院医师规范化培训的法规依据，适用于拟从事临床医疗工作并进入规培的人员。这是临床医师的执业准入门槛相关制度，与「医学 AI 产品经理/临床数据分析师/医学机器学习工程师」等非临床技术岗不构成直接准入条件。",
+      "relation": "context",
+      "tags": [
+        "中国法规",
+        "住院医师规范化培训",
+        "nhc",
+        "CN",
+        "执业医师资格"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "region": "CN",
+        "evidence_locator": "第三条 培训对象"
+      }
+    },
+    "extracts": [
+      {
+        "field": "china_legal_requirement",
+        "pattern": "住院医师规范化培训是毕业后医学教 育的重要组成部分，目的是为各级医疗机构培养具 有良好的职业道德、扎实的医学理论知识和临床技 能，能独立、规范地承担本专业常见多发疾病诊疗 工作的临床医师。"
+      },
+      {
+        "field": "china_legal_requirement",
+        "pattern": "从事临床医疗工作并获得执业医师资格，需要接受 培训的人员；（三）其他需要接受培训的人员。"
+      }
+    ],
+    "expected_fields": [
+      "china_legal_requirement",
+      "非临床技术岗位的执业门槛（通常无此类门槛）"
+    ]
+  },
+  {
+    "source": {
+      "id": "gov-notice-ai-standard",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-02/22/content_5588249.htm",
+      "organization": "人力资源社会保障部办公厅、工业和信息化部办公厅",
+      "title": "人力资源社会保障部办公厅 工业和信息化部办公厅关于颁布智能制造工程技术人员等3个国家职业技术技能标准的通知（人社厅发〔2021〕10号）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2021-02-03",
+      "publication_date_note": "通知成文日期 2021 年 2 月 3 日（页面元数据\"成文日期：2021年02月03日\"）。"
+    },
+    "publication_pattern": "2021\\s*年\\s*2\\s*月\\s*3\\s*日",
+    "artifact_capture": {
+      "path": "work/knowledge-standards/gov-notice-ai-standard.raw",
+      "sha256": "19bade2cc6d452b526721473347c928a1b466f3699724cddcc337023f474473b",
+      "captured_at": "2026-10-23T03:55:45.350Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-gov-notice-ai-standard-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "industry",
+      "title": "中国：大数据等 3 个国家职业技术技能标准颁布依据",
+      "summary": "人社厅发〔2021〕10号原文：依据《劳动法》，人社部、工信部共同制定智能制造、大数据、区块链工程技术人员等 3 个国家职业技术技能标准并颁布施行。",
+      "applicability": "中国国家层面的政策依据，说明大数据工程技术人员等已有人社部/工信部发布的国家职业技术技能标准。适用于说明\"存在官方职业标准\"，不构成具体岗位录用或报考条件。",
+      "relation": "context",
+      "tags": [
+        "中国政策",
+        "人社厅发〔2021〕10号",
+        "大数据工程技术人员",
+        "CN"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "region": "CN",
+        "evidence_locator": "通知正文"
+      }
+    },
+    "extracts": [
+      {
+        "field": "policy_requirement",
+        "pattern": "根据《中华人民共和国劳动法》有关规定，人力资源社会保障部、工业和信息化部共同制定了智能制造工程技术人员、大数据工程技术人员、区块链工程技术人员等3个国家职业技术技能标准，现予颁布施行。"
+      }
+    ],
+    "expected_fields": [
+      "policy_requirement"
+    ]
+  }
+]

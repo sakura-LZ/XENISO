@@ -1,0 +1,713 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T05:13:51.737Z",
+  "sources": [
+    {
+      "id": "hit-2026-master-charter",
+      "url": "https://yzb.hit.edu.cn/_t786/2025/0930/c8823a379157/page.htm",
+      "organization": "哈尔滨工业大学研究生招生办公室",
+      "title": "2026年哈尔滨工业大学硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-09-30",
+      "publication_date_note": "页面正文逐字含「发布时间：2025-09-30」。"
+    },
+    {
+      "id": "xidian-2026-master-charter",
+      "url": "https://gr.xidian.edu.cn/system/_content/download.jsp?owner=1281831001&urltype=news.DownloadAttachUrl&wbfileid=77D91182F408843F2CF2166DB0F86C40",
+      "organization": "西安电子科技大学研究生院",
+      "title": "西安电子科技大学2026年硕士研究生招生简章",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该 PDF 正文未印发布日；其发布页 https://gr.xidian.edu.cn/info/1074/17284.htm 正文含「发布时间：2025年09月30日」，但按规则日期须在本 artifact 内逐字可见，故记 null。"
+    },
+    {
+      "id": "xidian-2026-master-catalog",
+      "url": "https://gr.xidian.edu.cn/system/_content/download.jsp?owner=1281831001&urltype=news.DownloadAttachUrl&wbfileid=47019763F0BB099FA47E714497F81F4D",
+      "organization": "西安电子科技大学研究生院",
+      "title": "西安电子科技大学2026年硕士研究生招生专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 目录正文未印发布日（封面无日期），故记为 null；发布日期见同批简章发布页。"
+    },
+    {
+      "id": "smu-2026-master-charter",
+      "url": "https://portal.smu.edu.cn/yzw/info/1002/11761.htm",
+      "organization": "南方医科大学研究生院",
+      "title": "南方医科大学2026年硕士研究生招生简章",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-09-29",
+      "publication_date_note": "页面正文逐字含「发布时间：2025-09-29 09:00:00」。"
+    },
+    {
+      "id": "hrbmu-2026-master-charter",
+      "url": "https://yjsy.hrbmu.edu.cn/info/1024/3082.htm",
+      "organization": "哈尔滨医科大学研究生院",
+      "title": "哈尔滨医科大学2026年硕士研究生招生简章",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-09-29",
+      "publication_date_note": "页面正文逐字含「时间：2025-09-29 15:16:34」。"
+    },
+    {
+      "id": "jlu-2026-master-charter",
+      "url": "https://yjsy.jlu.edu.cn/info/1011/6074.htm",
+      "organization": "吉林大学研究生招生办公室",
+      "title": "吉林大学2026年硕士研究生招生章程及招生专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-09-30",
+      "publication_date_note": "页面正文逐字含「发布日期：2025-09-30」。"
+    },
+    {
+      "id": "seu-2027-master-charter",
+      "url": "https://yzb.seu.edu.cn/2026/1008/c6667a585158/page.htm",
+      "organization": "东南大学研究生招生办公室",
+      "title": "东南大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-08",
+      "publication_date_note": "页面正文逐字含「发布时间： 2026-10-08」。"
+    },
+    {
+      "id": "jnu-2026-master-charter",
+      "url": "https://yz.jnu.edu.cn/2025/0930/c32995a843598/page.htm",
+      "organization": "暨南大学研究生院",
+      "title": "2026年暨南大学硕士研究生招生简章",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-09-30",
+      "publication_date_note": "页面正文逐字含「发布时间：2025-09-30」。"
+    },
+    {
+      "id": "zzu-2026-master-charter",
+      "url": "https://yz.zzu.edu.cn/nry.jsp?urltype=news.NewsContentUrl&wbnewsid=2281&wbtreeid=1092",
+      "organization": "郑州大学研究生招生办公室",
+      "title": "郑州大学2026年攻读硕士学位研究生招生简章",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-10-01",
+      "publication_date_note": "页面正文逐字含「发布日期：2025-10-01」。"
+    }
+  ],
+  "records": [
+    {
+      "id": "admissions-hit-2026-master-charter-medicine-guide",
+      "source_id": "hit-2026-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "哈工大2026：同等学力考生复试须加试至少两门本科主干课程，不合格不予录取",
+      "summary": "章程「复试」部分第3条：以同等学力参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程，具体科目由相关招生学院确定；加试方式为笔试，加试科目不得与初试科目相同，加试不合格者不予录取。",
+      "applicability": "适用于以同等学力身份报考哈尔滨工业大学并进入复试的考生（各学院通用条款）；具体加试科目由招生学院确定，章程本身未列科目。不适用于以本科学历正常报考的考生。",
+      "relation": "direct",
+      "tags": [
+        "哈尔滨工业大学",
+        "同等学力",
+        "加试",
+        "复试"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "加试。以同等学力参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程，具体科目由相关招生学院确定。加试方式为笔试，加试科目不得与初试科目相同，加试不合格者不予录取。",
+          "quote": "加试。以同等学力参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程，具体科目由相关招生学院确定。加试方式为笔试，加试科目不得与初试科目相同，加试不合格者不予录取。",
+          "start": 3195,
+          "end": 3284
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects",
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f4d9b3915034dfce73843dd144755274394820eef051662890b57dacdad981f7",
+      "collected_at": "2026-10-23T04:59:25.052Z",
+      "verified_at": "2026-10-23T05:13:51.614Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "哈尔滨工业大学",
+        "admission_year": 2026,
+        "region": "黑龙江哈尔滨"
+      }
+    },
+    {
+      "id": "admissions-xidian-2026-master-charter-medicine-guide",
+      "source_id": "xidian-2026-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "西电2026：同等学力考生复试须加试笔试 2 门，科目在专业目录中列明",
+      "summary": "简章「复试」部分第2条：同等学力考生参加复试须加试（笔试）2门科目，各学科/专业领域加试科目在招生专业目录中列明，加试由学院组织。（同一官方来源共 2 条原文事实，字段：admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于以同等学力身份报考西安电子科技大学的考生；加试科目需另查专业目录（该校目录中标注了复试/加试参考科目）。不适用于本科应届/往届正常报考者。",
+      "relation": "direct",
+      "tags": [
+        "西安电子科技大学",
+        "同等学力",
+        "加试",
+        "复试",
+        "报考身份",
+        "非定向",
+        "本科生年级限制"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "2.同等学力考生参加复试，须加试（笔试）2 门科目，各学科/专业领域加试科目在招生专业目 录中列明，加试由学院组织。",
+          "quote": "2.同等学力考生参加复试，须加试（笔试）2 门科目，各学科/专业领域加试科目在招生专业目 录中列明，加试由学院组织。",
+          "start": 6900,
+          "end": 6958
+        },
+        {
+          "field": "admission_requirements",
+          "value": "5.全日制硕士研究生招收非定向就业考生 （“少数民族高层次骨干人才计划”除外） ， 非全日制硕 士研究生招收定向就业考生。 6.不接收大学三年级及以下本科生报考。",
+          "quote": "5.全日制硕士研究生招收非定向就业考生 （“少数民族高层次骨干人才计划”除外） ， 非全日制硕 士研究生招收定向就业考生。 6.不接收大学三年级及以下本科生报考。",
+          "start": 4919,
+          "end": 5000
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects",
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "94b999d10f5a2a4ecd1ad19d8551f48ebc4cfc59481045c322792dcec95d558f",
+      "collected_at": "2026-10-23T05:01:17.474Z",
+      "verified_at": "2026-10-23T05:13:51.638Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安电子科技大学",
+        "admission_year": 2026,
+        "region": "陕西西安"
+      }
+    },
+    {
+      "id": "admissions-xidian-2026-master-catalog-guide-signals",
+      "source_id": "xidian-2026-master-catalog",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "西电2026：012生命科学技术学院 083100 生物医学工程 初试 101/201/301/844 信号与系统（复试二选一）",
+      "summary": "专业目录 012 生命科学技术学院下 083100 生物医学工程（★）01 生物医学工程方向：①101 思想政治理论 ②201 英语（一）③301 数学（一）④844 信号与系统；复试科目在 9121 电子线路、9124 数字信号处理中二选一。同专业 02 生物材料与细胞工程方向第四科改考 891 分子生物学。",
+      "applicability": "适用于西安电子科技大学 083100 生物医学工程学术学位；01 方向为「信号与系统」路线，对医学/生物背景考生需自补信号与系统。不适用于 085409 专业学位或其他院校。",
+      "relation": "direct",
+      "tags": [
+        "西安电子科技大学",
+        "生物医学工程",
+        "083100",
+        "844信号与系统",
+        "生命科学技术学院"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "083100 生物医学工程★01生物医学工程① ：101 思想政治理论② ：201 英语（一）③ ：301 数学（一）④ ：844 信号与系统（二选一）9121 电子线路9124 数字信号处理",
+          "quote": "083100 生物医学工程★01生物医学工程① ：101 思想政治理论② ：201 英语（一）③ ：301 数学（一）④ ：844 信号与系统（二选一）9121 电子线路9124 数字信号处理",
+          "start": 4824,
+          "end": 4920
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "05599ecb831908066dd99ea0971fa834d9d2b765dcc131435dd4dce2ea32750d",
+      "collected_at": "2026-10-23T05:02:12.807Z",
+      "verified_at": "2026-10-23T05:13:51.659Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安电子科技大学",
+        "college": "生命科学技术学院",
+        "program": "083100 生物医学工程（01 生物医学工程）",
+        "admission_year": 2026,
+        "region": "陕西西安"
+      }
+    },
+    {
+      "id": "admissions-xidian-2026-master-catalog-guide-devices",
+      "source_id": "xidian-2026-master-catalog",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "西电2026：085409 生物医学工程（专业学位）01 高端医疗设备，初试 844 信号与系统",
+      "summary": "专业目录 012 生命科学技术学院下 085409 生物医学工程（专业学位）（▲）01 高端医疗设备方向：①101 思想政治理论 ②201 英语（一）③301 数学（一）④844 信号与系统，复试科目在 9121 电子线路、9124 数字信号处理中二选一。",
+      "applicability": "适用于西安电子科技大学 085409 生物医学工程专业学位（高端医疗设备方向），是该校最贴近「智能医疗器械」培养的专硕方向。原文该行未印招生人数。不适用于学术学位 083100。",
+      "relation": "direct",
+      "tags": [
+        "西安电子科技大学",
+        "生物医学工程专业学位",
+        "085409",
+        "高端医疗设备",
+        "844信号与系统"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085409 生物医学工程（专业学位）▲ 01高端医疗设备① ：101 思想政治理论② ：201 英语（一）③ ：301 数学（一）④ ：844 信号与系统 （二选一）9121 电子线路9124 数字信号处理",
+          "quote": "085409 生物医学工程（专业学位）▲ 01高端医疗设备① ：101 思想政治理论② ：201 英语（一）③ ：301 数学（一）④ ：844 信号与系统 （二选一）9121 电子线路9124 数字信号处理",
+          "start": 5012,
+          "end": 5116
+        }
+      ],
+      "missing_fields": [
+        "training_direction",
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "05599ecb831908066dd99ea0971fa834d9d2b765dcc131435dd4dce2ea32750d",
+      "collected_at": "2026-10-23T05:02:12.807Z",
+      "verified_at": "2026-10-23T05:13:51.681Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安电子科技大学",
+        "college": "生命科学技术学院",
+        "program": "085409 生物医学工程（01 高端医疗设备）",
+        "admission_year": 2026,
+        "region": "陕西西安"
+      }
+    },
+    {
+      "id": "admissions-smu-2026-master-charter-medicine-guide",
+      "source_id": "smu-2026-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "南方医科2026：须按与本科毕业专业相关或相近专业报考；临床医学学术学位（1002）只接受医学门类本科",
+      "summary": "简章「（五）考生报考专业原则必须符合以下条件」：1.考生须按照与本科毕业专业相关或相近专业进行报考；2.（1）临床医学学术学位（专业代码1002开头）各专业只接受本科专业为医学门类考生报考；口腔医学学术学位（专业代码1003开头）只接受本科为口腔医学及临床医学专业的考生报考。（同一官方来源共 5 条原文事实，字段：cross_major_restrictions、admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于全部报考南方医科大学硕士的考生（第1条为全校原则）；1002 学术学位以「本科专业为医学门类」为硬门槛——非医学门类（含工学、理学）本科不能报考该校临床医学学术学位，但原文并未禁止其报考其他门类专业。不适用于专业学位（另有条目）。",
+      "relation": "direct",
+      "tags": [
+        "南方医科大学",
+        "跨专业限制",
+        "临床医学学术学位",
+        "1002",
+        "医学门类",
+        "临床医学专业学位",
+        "1051",
+        "五年制",
+        "口腔医学专业学位",
+        "中医专业学位",
+        "1052",
+        "1057",
+        "规培合格证",
+        "医师资格考试",
+        "同等学力",
+        "加试"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "（五）考生报考专业原则必须符合以下条件： 1.考生须按照与本科毕业专业相关或相近专业进行报考； 2.部分专业报考要求： （1）临床医学及口腔医学硕士学术学位报考要求如下: 临床医学学术学位（专业代码1002开头）各专业只接受本科专业为医学门类考生报考。 口腔医学学术学位（专业代码1003开头）只接受本科为口腔医学及临床医学专业的考生报考。",
+          "quote": "（五）考生报考专业原则必须符合以下条件： 1.考生须按照与本科毕业专业相关或相近专业进行报考； 2.部分专业报考要求： （1）临床医学及口腔医学硕士学术学位报考要求如下: 临床医学学术学位（专业代码1002开头）各专业只接受本科专业为医学门类考生报考。 口腔医学学术学位（专业代码1003开头）只接受本科为口腔医学及临床医学专业的考生报考。",
+          "start": 1864,
+          "end": 2034
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "①临床医学专业学位（专业代码1051开头）:（除精神病与精神卫生学、放射影像学、超声医学、核医学、临床检验诊断学、眼科学、麻醉学、放射肿瘤学、儿科学、儿外科学以外各专业）只接收全日制本科为五年及以上学制西医临床医学专业的考生报考； ②精神病与精神卫生学：只接收全日制本科为五年及以上学制西医临床医学和精神医学（医学学位）专业的考生报考； ③放射影像学、超声医学、核医学：只接收全日制本科为五年及以上学制西医临床医学和医学影像学（医学学位）专业的考生报考； ④临床检验诊断学：只接收全日制本科为五年及以上学制西医临床医学和医学检验（医学学位）专业的考生报考； ⑤眼科学：只接收全日制本科为五年及以上学制西医临床医学和眼视光医学（医学学位）专业的考生报考； ⑥麻醉学：只接收全日制本科为五年及以上学制西医临床医学和麻醉学（医学学位）专业的考生报考； ⑦放射肿瘤学：只接收全日制本科为五年及以上学制西医临床医学和放射医学（医学学位）专业的考生报考； ⑧儿科学、儿外科学：只接收全日制本科为五年及以上学制西医临床医学和儿科学（医学学位）专业的考生报考。",
+          "quote": "①临床医学专业学位（专业代码1051开头）:（除精神病与精神卫生学、放射影像学、超声医学、核医学、临床检验诊断学、眼科学、麻醉学、放射肿瘤学、儿科学、儿外科学以外各专业）只接收全日制本科为五年及以上学制西医临床医学专业的考生报考； ②精神病与精神卫生学：只接收全日制本科为五年及以上学制西医临床医学和精神医学（医学学位）专业的考生报考； ③放射影像学、超声医学、核医学：只接收全日制本科为五年及以上学制西医临床医学和医学影像学（医学学位）专业的考生报考； ④临床检验诊断学：只接收全日制本科为五年及以上学制西医临床医学和医学检验（医学学位）专业的考生报考； ⑤眼科学：只接收全日制本科为五年及以上学制西医临床医学和眼视光医学（医学学位）专业的考生报考； ⑥麻醉学：只接收全日制本科为五年及以上学制西医临床医学和麻醉学（医学学位）专业的考生报考； ⑦放射肿瘤学：只接收全日制本科为五年及以上学制西医临床医学和放射医学（医学学位）专业的考生报考； ⑧儿科学、儿外科学：只接收全日制本科为五年及以上学制西医临床医学和儿科学（医学学位）专业的考生报考。",
+          "start": 2064,
+          "end": 2536
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "（3）口腔医学专业学位（专业代码1052开头）：只接收全日制本科为五年制口腔医学专业的考生报考。 （4）中医专业学位（专业代码1057开头）：只接收全日制本科为五年制中医学、针灸推拿学、中西医临床医学专业的考生报考。",
+          "quote": "（3）口腔医学专业学位（专业代码1052开头）：只接收全日制本科为五年制口腔医学专业的考生报考。 （4）中医专业学位（专业代码1057开头）：只接收全日制本科为五年制中医学、针灸推拿学、中西医临床医学专业的考生报考。",
+          "start": 2537,
+          "end": 2645
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "（7）我校临床医学、口腔医学、中医硕士专业学位研究生招生对象为符合医师资格考试报考条件规定专业的应届或往届本科毕业生。入学前已获得临床、口腔、中医住院医师规范化培训合格证书人员不得报考临床医学、口腔医学、中医硕士专业学位研究生。",
+          "quote": "（7）我校临床医学、口腔医学、中医硕士专业学位研究生招生对象为符合医师资格考试报考条件规定专业的应届或往届本科毕业生。入学前已获得临床、口腔、中医住院医师规范化培训合格证书人员不得报考临床医学、口腔医学、中医硕士专业学位研究生。",
+          "start": 2726,
+          "end": 2840
+        },
+        {
+          "field": "admission_requirements",
+          "value": "报考专业与所学专业及目前从事专业相同或相近，并从事本专业工作2年以上； ③复试时需加试两门业务课。",
+          "quote": "报考专业与所学专业及目前从事专业相同或相近，并从事本专业工作2年以上； ③复试时需加试两门业务课。",
+          "start": 1552,
+          "end": 1601
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "3b0d40520f9b013d750b8d89aff275d8079e05ab7361303ba08b3ca8d311eaa0",
+      "collected_at": "2026-10-23T05:03:04.913Z",
+      "verified_at": "2026-10-23T05:13:51.687Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南方医科大学",
+        "program": "临床医学/口腔医学/中医 专业学位",
+        "admission_year": 2026,
+        "region": "广东广州",
+        "department_type": "clinical"
+      }
+    },
+    {
+      "id": "admissions-hrbmu-2026-master-charter-medicine-guide",
+      "source_id": "hrbmu-2026-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "哈医大2026：已获规培证/正在规培或三年内退出者不得报考临床、口腔专业学位；不接受履约期内定向生",
+      "summary": "简章：已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学、口腔医学专业学位硕士研究生；正在参加住院医师规范化培训或三年内退出住院医师规范化培训的人员不得报考临床医学、口腔医学专业学位硕士研究生；不接受服务期内的农村订单定向免费医学生或其他合同履约期内人员报考。（同一官方来源共 2 条原文事实，字段：cross_major_restrictions、admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于报考哈尔滨医科大学临床医学、口腔医学专业学位的考生；三条均为排除性条件，原文对「正在规培」「三年内退出」也一并禁止。不适用于学术学位。各专业具体前置毕业专业要求另见《2026年哈尔滨医科大学前置毕业专业及学历要求》（附件3，本 artifact 未包含）。",
+      "relation": "direct",
+      "tags": [
+        "哈尔滨医科大学",
+        "规培合格证",
+        "临床医学专业学位",
+        "农村订单定向",
+        "跨专业限制",
+        "同等学力",
+        "加试科目",
+        "医学门类"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学、口腔医学专业学位硕士研究生。正在参加住院医师规范化培训或三年内退出住院医师规范化培训的人员不得报考临床医学、口腔医学专业学位硕士研究生。 不接受服务期内的农村订单定向免费医学生或其他合同履约期内人员报考。",
+          "quote": "已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学、口腔医学专业学位硕士研究生。正在参加住院医师规范化培训或三年内退出住院医师规范化培训的人员不得报考临床医学、口腔医学专业学位硕士研究生。 不接受服务期内的农村订单定向免费医学生或其他合同履约期内人员报考。",
+          "start": 1762,
+          "end": 1895
+        },
+        {
+          "field": "admission_requirements",
+          "value": "（三）同等学力加试 根据国家招生政策，报考我校的同等学力考生在复试期间加试两科主干课程，医学门类加试科目范围为：人体解剖学、病理学、生理学、生物化学、免疫学、卫生统计学，但所选科目不能与本人报考专业的初试考试科目相同。加试方式为笔试，加试科目成绩不合格者不予录取。",
+          "quote": "（三）同等学力加试 根据国家招生政策，报考我校的同等学力考生在复试期间加试两科主干课程，医学门类加试科目范围为：人体解剖学、病理学、生理学、生物化学、免疫学、卫生统计学，但所选科目不能与本人报考专业的初试考试科目相同。加试方式为笔试，加试科目成绩不合格者不予录取。",
+          "start": 3400,
+          "end": 3532
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "bf17ad9f10ee17c2c52a985766779e260f1c41ce4dc1855313d2fde386e3f48a",
+      "collected_at": "2026-10-23T05:03:43.891Z",
+      "verified_at": "2026-10-23T05:13:51.694Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "哈尔滨医科大学",
+        "program": "临床医学/口腔医学 专业学位",
+        "admission_year": 2026,
+        "region": "黑龙江哈尔滨",
+        "evidence_locator": "简章「二、报考条件」末段（前置学历专业条件之后）"
+      }
+    },
+    {
+      "id": "admissions-jlu-2026-master-charter-medicine-guide",
+      "source_id": "jlu-2026-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "吉林大学2026：跨学科/跨专业及同等学力考生只能选报目录备注栏注明「招收」的专业",
+      "summary": "章程「十二、其他事项（一）」：跨学科、专业及同等学力考生只能选报招生专业目录中备注栏内注明招收的专业，没有注明的为不招收跨学科、跨专业以及同等学力的专业。（同一官方来源共 2 条原文事实，字段：cross_major_restrictions、admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于全部报考吉林大学的跨学科、跨专业及同等学力考生：默认不招跨专业，只有专业目录备注栏明确注明才可报。这是 985 高校中对跨考最直接的总则性限制，必须逐专业查目录备注栏。不适用于本科专业与报考专业一致的考生。",
+      "relation": "direct",
+      "tags": [
+        "吉林大学",
+        "跨专业限制",
+        "跨学科",
+        "同等学力",
+        "专业目录备注",
+        "加试",
+        "复试"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "（一）跨学科、专业及同等学力考生只能选报招生专业目录中备注栏内注明招收的专业，没有注明的为不招收跨学科、跨专业以及同等学力的专业。",
+          "quote": "（一）跨学科、专业及同等学力考生只能选报招生专业目录中备注栏内注明招收的专业，没有注明的为不招收跨学科、跨专业以及同等学力的专业。",
+          "start": 8023,
+          "end": 8088
+        },
+        {
+          "field": "admission_requirements",
+          "value": "6.对以同等学力身份（以报名时填报的信息为准）报考的考生，复试中须加试至少两门与报考专业相关的本科主干课程。加试科目不得与初试科目相同。加试方式为笔试。",
+          "quote": "6.对以同等学力身份（以报名时填报的信息为准）报考的考生，复试中须加试至少两门与报考专业相关的本科主干课程。加试科目不得与初试科目相同。加试方式为笔试。",
+          "start": 6012,
+          "end": 6088
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "73fff26b6a80daed9f1bfc259a5e602c5f06b3b05619e61b40de15696c8dc8c3",
+      "collected_at": "2026-10-23T05:04:23.306Z",
+      "verified_at": "2026-10-23T05:13:51.703Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "吉林大学",
+        "admission_year": 2026,
+        "region": "吉林长春"
+      }
+    },
+    {
+      "id": "admissions-seu-2027-master-charter-medicine-guide",
+      "source_id": "seu-2027-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "东南大学2027：同等学力考生复试须加试至少两门本科主干课程，科目见复试细则",
+      "summary": "2027 年章程复试部分第（五）条：对以同等学力身份报考并参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程，加试方式为笔试，加试科目及要求将在复试录取工作细则中另行通知，加试不合格者不予录取。（同一官方来源共 2 条原文事实，字段：admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于以同等学力身份报考东南大学（生物医学工程 A+ 学科所在校）的考生；加试科目具体在院系复试细则中公布，章程未列。不适用于本科学历正常报考者。",
+      "relation": "direct",
+      "tags": [
+        "东南大学",
+        "同等学力",
+        "加试",
+        "2027",
+        "复试",
+        "差额复试"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "（五） 对以同等学力身份报考并参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程。加试方式为笔试，加试科目及要求将在复试录取工作细则中另行通知，加试不合格者不予录取。",
+          "quote": "（五） 对以同等学力身份报考并参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程。加试方式为笔试，加试科目及要求将在复试录取工作细则中另行通知，加试不合格者不予录取。",
+          "start": 3776,
+          "end": 3867
+        },
+        {
+          "field": "admission_requirements",
+          "value": "（二） 复试采取差额形式，进入复试的考生人数不少于各学科专业已公布招生计划的120%。合格生源比例不足的，按实际合格生源数组织复试。",
+          "quote": "（二） 复试采取差额形式，进入复试的考生人数不少于各学科专业已公布招生计划的120%。合格生源比例不足的，按实际合格生源数组织复试。",
+          "start": 3528,
+          "end": 3594
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects",
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "4aeb0e90a39bda557b2781ebd25ba04f058dadc9a8cf4a17172666a2902a84e4",
+      "collected_at": "2026-10-23T05:09:01.839Z",
+      "verified_at": "2026-10-23T05:13:51.711Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "admission_year": 2027,
+        "region": "江苏南京"
+      }
+    },
+    {
+      "id": "admissions-jnu-2026-master-charter-medicine-guide",
+      "source_id": "jnu-2026-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "暨南大学2026：部分专业不接受同等学力或跨专业考生，须查专业目录",
+      "summary": "简章第六条之末：我校部分专业不接受同等学力或跨专业考生，详见招生目录相关专业要求。（同一官方来源共 3 条原文事实，字段：cross_major_restrictions、admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于全部报考暨南大学的考生：该校未在章程中统一禁止跨专业，而是把限制下沉到各专业目录条目，必须逐专业核对。原文未指明具体专业名单。不构成对某专业的直接禁止。",
+      "relation": "direct",
+      "tags": [
+        "暨南大学",
+        "跨专业限制",
+        "同等学力",
+        "专业目录",
+        "临床医学类专业学位",
+        "规培合格证",
+        "医师资格考试",
+        "加试",
+        "复试"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "我校部分专业不接受同等学力或跨专业考生，详见招生目录相关专业要求。",
+          "quote": "我校部分专业不接受同等学力或跨专业考生，详见招生目录相关专业要求。",
+          "start": 1146,
+          "end": 1179
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "（五）报名参加临床医学类专业学位硕士研究生招生考试的人员，须符合下列条件： 1.符合医师资格考试报考条件规定专业的应届或往届本科毕业生。 2.对于已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学类专业学位硕士研究生。",
+          "quote": "（五）报名参加临床医学类专业学位硕士研究生招生考试的人员，须符合下列条件： 1.符合医师资格考试报考条件规定专业的应届或往届本科毕业生。 2.对于已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学类专业学位硕士研究生。",
+          "start": 1760,
+          "end": 1874
+        },
+        {
+          "field": "admission_requirements",
+          "value": "第十九条 对以同等学力身份（以报名时填报的信息为准）报考的考生，复试时应加试至少两门与报考专业相关的本科主干课程。加试科目不得与初试科目相同，加试方式为笔试，加试科目成绩不计入复试总成绩，但不及格者不予录取。",
+          "quote": "第十九条 对以同等学力身份（以报名时填报的信息为准）报考的考生，复试时应加试至少两门与报考专业相关的本科主干课程。加试科目不得与初试科目相同，加试方式为笔试，加试科目成绩不计入复试总成绩，但不及格者不予录取。",
+          "start": 5184,
+          "end": 5288
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "86d687e9337b8c9df229bbc30381983b90cf6bf11a05b1f9aced4600ce442869",
+      "collected_at": "2026-10-23T05:09:41.951Z",
+      "verified_at": "2026-10-23T05:13:51.722Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "暨南大学",
+        "program": "临床医学类专业学位",
+        "admission_year": 2026,
+        "region": "广东广州",
+        "department_type": "clinical"
+      }
+    },
+    {
+      "id": "admissions-zzu-2026-master-charter-medicine-guide",
+      "source_id": "zzu-2026-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "郑州大学2026：临床医学专业学位（1051）须全日制本科临床医学类毕业且专业相同或相近；规培证者原则上不得报考",
+      "summary": "简章报名条件第4条：报考临床医学专业学位（1051）一般应为全日制本科临床医学类专业毕业并获得学士学位，须符合国家执业医师资格考试及住院医师规范化培训报考条件的应届或往届本科毕业生，报考专业一般应与本科所学专业相同或相近；口腔医学专业学位（1052）一般应为全日制本科口腔医学专业毕业并获得学士学位；正在参加规培或已获规培合格证书人员原则上不得报考临床/口腔专业学位。（同一官方来源共 2 条原文事实，字段：cross_major_restrictions、admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于郑州大学临床医学（1051）、口腔医学（1052）专业学位；「一般应为」为原文措辞（保留原文弹性），并明确「报考专业一般应与本科所学专业相同或相近」。不适用于学术学位或其他专业学位。",
+      "relation": "direct",
+      "tags": [
+        "郑州大学",
+        "临床医学专业学位",
+        "1051",
+        "口腔医学",
+        "规培合格证",
+        "跨专业限制",
+        "同等学力",
+        "加试",
+        "复试"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "4. 报考临床医学、口腔医学硕士专业学位考生须符合下列条件： （ 1 ）符合（一）项中第 1 、 2 、 3 各项的要求。 （ 2 ）报考攻读临床医学专业学位（专业代码 1051）硕士研究生一般应为全日制本科临床医学类专业毕业并获得学士学位，且须符合国家执业医师资格考试及住院医师规范化培训报考条件的应届或往届本科毕业生，报考专业一般应与本科所学专业相同或相近； 报考攻读口腔医学专业学位（专业代码 1052）硕士研究生一般应为全日制本科口腔医学专业毕业并获得学士学位，且须符合国家执业医师资格考试及住院医师规范化培训报考条件的应届或往届本科毕业生。 对于正在参加住院医师规范化培训或者已经获得住院医师规范化培训合格证书人员，原则上不得报考临床医学 ∕口腔医学专业学位硕士研究生。",
+          "quote": "4. 报考临床医学、口腔医学硕士专业学位考生须符合下列条件： （ 1 ）符合（一）项中第 1 、 2 、 3 各项的要求。 （ 2 ）报考攻读临床医学专业学位（专业代码 1051）硕士研究生一般应为全日制本科临床医学类专业毕业并获得学士学位，且须符合国家执业医师资格考试及住院医师规范化培训报考条件的应届或往届本科毕业生，报考专业一般应与本科所学专业相同或相近； 报考攻读口腔医学专业学位（专业代码 1052）硕士研究生一般应为全日制本科口腔医学专业毕业并获得学士学位，且须符合国家执业医师资格考试及住院医师规范化培训报考条件的应届或往届本科毕业生。 对于正在参加住院医师规范化培训或者已经获得住院医师规范化培训合格证书人员，原则上不得报考临床医学 ∕口腔医学专业学位硕士研究生。",
+          "start": 1564,
+          "end": 1904
+        },
+        {
+          "field": "admission_requirements",
+          "value": "（二） 对以同等学力身份报考并参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程。加试方式为笔试，加试科目不得与初试科目相同，加试不合格者不予录取。",
+          "quote": "（二） 对以同等学力身份报考并参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程。加试方式为笔试，加试科目不得与初试科目相同，加试不合格者不予录取。",
+          "start": 3738,
+          "end": 3820
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "06040641aee221169c7c0fb4f3ab370ed1b9996b209d15519282dbbcb5c71bc6",
+      "collected_at": "2026-10-23T05:09:55.384Z",
+      "verified_at": "2026-10-23T05:13:51.736Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "郑州大学",
+        "program": "临床医学（1051）/ 口腔医学（1052）专业学位",
+        "admission_year": 2026,
+        "region": "河南郑州",
+        "department_type": "clinical"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "hit-2026-master-charter",
+      "url": "https://yzb.hit.edu.cn/_t786/2025/0930/c8823a379157/page.htm",
+      "at": "2026-10-23T04:59:25.052Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects",
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "xidian-2026-master-charter",
+      "url": "https://gr.xidian.edu.cn/system/_content/download.jsp?owner=1281831001&urltype=news.DownloadAttachUrl&wbfileid=77D91182F408843F2CF2166DB0F86C40",
+      "at": "2026-10-23T05:01:17.474Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects",
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "xidian-2026-master-catalog",
+      "url": "https://gr.xidian.edu.cn/system/_content/download.jsp?owner=1281831001&urltype=news.DownloadAttachUrl&wbfileid=47019763F0BB099FA47E714497F81F4D",
+      "at": "2026-10-23T05:02:12.807Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "xidian-2026-master-catalog",
+      "url": "https://gr.xidian.edu.cn/system/_content/download.jsp?owner=1281831001&urltype=news.DownloadAttachUrl&wbfileid=47019763F0BB099FA47E714497F81F4D",
+      "at": "2026-10-23T05:02:12.807Z",
+      "status": "collected",
+      "missing_fields": [
+        "training_direction",
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "smu-2026-master-charter",
+      "url": "https://portal.smu.edu.cn/yzw/info/1002/11761.htm",
+      "at": "2026-10-23T05:03:04.913Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "hrbmu-2026-master-charter",
+      "url": "https://yjsy.hrbmu.edu.cn/info/1024/3082.htm",
+      "at": "2026-10-23T05:03:43.891Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "jlu-2026-master-charter",
+      "url": "https://yjsy.jlu.edu.cn/info/1011/6074.htm",
+      "at": "2026-10-23T05:04:23.306Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "seu-2027-master-charter",
+      "url": "https://yzb.seu.edu.cn/2026/1008/c6667a585158/page.htm",
+      "at": "2026-10-23T05:09:01.839Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects",
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "jnu-2026-master-charter",
+      "url": "https://yz.jnu.edu.cn/2025/0930/c32995a843598/page.htm",
+      "at": "2026-10-23T05:09:41.951Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "zzu-2026-master-charter",
+      "url": "https://yz.zzu.edu.cn/nry.jsp?urltype=news.NewsContentUrl&wbnewsid=2281&wbtreeid=1092",
+      "at": "2026-10-23T05:09:55.384Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    }
+  ]
+}

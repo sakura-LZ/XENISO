@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T04:57:52.398Z",
+  "sources": [
+    {
+      "id": "mohrss-ai-trainer-standard",
+      "url": "https://www.mohrss.gov.cn/wap/zc/zqyj/202106/W020210617509883457681.pdf",
+      "organization": "中华人民共和国人力资源和社会保障部",
+      "title": "人工智能训练师国家职业技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未标注发布日期；按人力资源社会保障部 2021 年 6 月征求意见稿页面挂出，发布日期保持未知。"
+    }
+  ],
+  "records": [
+    {
+      "id": "learning-mohrss-ai-trainer-standard-guide-ml-cv",
+      "source_id": "mohrss-ai-trainer-standard",
+      "role_id": "guide_ml_cv",
+      "category": "learning",
+      "title": "人工智能训练师（2021年版）：各等级培训参考学时",
+      "summary": "官方标准原文给出培训参考学时：五级/初级工 60 标准学时、四级/中级工 50 标准学时、三级/高级工 40 标准学时（二级/技师及以降接排）。这是官方对培训时长的口径，不是学历教育学分。（同一官方来源共 3 条原文事实，字段：learning_hours、training、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于该国家职业技能标准的培训与鉴定场景；不构成高校课程学时、个人学习计划或就业能力的结论。",
+      "relation": "related",
+      "tags": [
+        "人工智能训练师",
+        "国家职业技能标准",
+        "培训学时",
+        "职业等级",
+        "基础知识",
+        "职业标准",
+        "通用知识",
+        "职业定义",
+        "职业技能等级"
+      ],
+      "facts": [
+        {
+          "field": "learning_hours",
+          "value": "1.8 培训参考学时 五级/初级工 60 标准学时；四级/中级工 50 标准学时；三级/高级工40 标准 学时；二级/技师",
+          "quote": "1.8 培训参考学时 五级/初级工 60 标准学时；四级/中级工 50 标准学时；三级/高级工40 标准 学时；二级/技师",
+          "start": 297,
+          "end": 358
+        },
+        {
+          "field": "training",
+          "value": "2.2 基础知识 2.2.1 通用知识 （1）计算机操作知识。 （2）常用办公软件使用知识。 2.2.2 相关法律、法规知识",
+          "quote": "2.2 基础知识 2.2.1 通用知识 （1）计算机操作知识。 （2）常用办公软件使用知识。 2.2.2 相关法律、法规知识",
+          "start": 1897,
+          "end": 1959
+        },
+        {
+          "field": "topics",
+          "value": "1.3 职业定义 使用智能训练软件，在人工智能产品实际使用过程中进行数据库管理、算法 参数设置、人机交互设计、性能测试跟踪及其他辅助作业的人员。 1.4 职业技能等级 本职业共设 5 个等级，分别为：五级/初级工、四级/中级工、三级/高级工、 二级/技师、一级/高级技师。 1.5 职业环境条件",
+          "quote": "1.3 职业定义 使用智能训练软件，在人工智能产品实际使用过程中进行数据库管理、算法 参数设置、人机交互设计、性能测试跟踪及其他辅助作业的人员。 1.4 职业技能等级 本职业共设 5 个等级，分别为：五级/初级工、四级/中级工、三级/高级工、 二级/技师、一级/高级技师。 1.5 职业环境条件",
+          "start": 74,
+          "end": 221
+        }
+      ],
+      "missing_fields": [
+        "prerequisites",
+        "occupation_definition"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "4e450742a64fd153eeef59799917a2ad39dc4ca3a176b3b363e7d5470dd34fb0",
+      "collected_at": "2026-10-23T04:50:06.584Z",
+      "verified_at": "2026-10-23T04:57:52.262Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "evidence_locator": "第1章 职业概况 · 1.3 职业定义、1.4 职业技能等级"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "mohrss-ai-trainer-standard",
+      "url": "https://www.mohrss.gov.cn/wap/zc/zqyj/202106/W020210617509883457681.pdf",
+      "at": "2026-10-23T04:50:06.584Z",
+      "status": "collected",
+      "missing_fields": [
+        "prerequisites",
+        "occupation_definition"
+      ]
+    }
+  ]
+}

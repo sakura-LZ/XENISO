@@ -1,0 +1,513 @@
+[
+  {
+    "source": {
+      "id": "huaxi-info-center-84106",
+      "url": "https://www.cd120.com/public/notice/recruit/84106.html",
+      "organization": "四川大学华西医院（信息中心）",
+      "title": "华西医院信息中心招聘启事",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-12-26",
+      "publication_date_note": "原文正文逐字出现「2024.12.26」，为启事页面标注日期。"
+    },
+    "publication_pattern": "2024\\.12\\.26",
+    "artifact_capture": {
+      "path": "work/knowledge-recruitment/huaxi-info-center-84106.raw",
+      "sha256": "d4776063a2716fc8c7585c3b46173da94ef4e28949695e91c8072b427f48e708",
+      "captured_at": "2026-10-23T04:55:08.614Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-info-center-84106-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "华西医院信息中心面向社会招聘工作人员3名",
+      "summary": "四川大学华西医院信息中心因发展需要，面向社会公开招聘工作人员3名（AI工程师2名、医学信息工程师1名）。（同一官方来源共 6 条原文事实，字段：employer、job_title、technical_requirements、education、major_restrictions、experience；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅说明该次招聘的用人单位与人数；不代表长期常态招聘或岗位开放状态。",
+      "relation": "direct",
+      "tags": [
+        "华西医院",
+        "信息中心",
+        "招聘",
+        "3名",
+        "AI工程师",
+        "岗位名称",
+        "技术栈",
+        "后端",
+        "大模型",
+        "K8S",
+        "硕士",
+        "学历",
+        "英文",
+        "专业要求",
+        "临床医学",
+        "软件开发",
+        "数据统计",
+        "跨专业",
+        "工作经验",
+        "3年",
+        "放宽"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "region": "四川省成都市",
+        "medical_department": "信息中心"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employer",
+        "pattern": "因发展需要，四川大学华西医院信息中心面向社会招聘以下工作人员3名。详情如下："
+      },
+      {
+        "field": "job_title",
+        "pattern": "岗位名称 岗位职责 应聘要求 招聘人数 AI 工程师"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "1\\. 具备python、java、golang、nodejs等后端技术开发经验； 2\\. 具备react、vue等前端开发经验； 3\\. 具备K8S、vLLM、ollama、transformer等大模型运维经验（1、2、3满足其一即可）； 4\\. 熟悉开源大模型相关开发，如QWen、ChatGLM；"
+      },
+      {
+        "field": "education",
+        "pattern": "6\\. 具有硕士以上学位，政治立场坚定，团队意识和协作分享精神好，学习能力强，逻辑思维清晰，归纳分析能力强，语言表达流畅；具备良好的英文阅读写作能力；"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "1\\.专业背景要求：软件开发相关、数据统计相关、临床医学相关。三类之一均可。"
+      },
+      {
+        "field": "experience",
+        "pattern": "2\\.硕士及以上学历，有头部软件公司 工作背景且有 项目开发经验且工作年限 3年以上的可 适当 放宽要求。"
+      }
+    ],
+    "expected_fields": [
+      "employer",
+      "city（原文未逐字写城市）",
+      "job_title",
+      "salary（原文未写薪资）",
+      "technical_requirements",
+      "salary",
+      "education",
+      "major_restrictions",
+      "experience"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-medeng-82007",
+      "url": "https://www.cd120.com/public/notice/recruit/82007.html",
+      "organization": "四川大学华西医院（设备物资部医学工程科）",
+      "title": "设备物资部医学工程科招聘启事",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-09-02",
+      "publication_date_note": "原文正文逐字出现「2024.09.02」，为启事页面标注日期。"
+    },
+    "publication_pattern": "2024\\D{0,6}0?9\\D{0,6}0?2",
+    "artifact_capture": {
+      "path": "work/knowledge-recruitment/huaxi-medeng-82007.raw",
+      "sha256": "60d773c32506f06746c2193e5d6a4770f02501d8c5777e6c340354cfe4f3a94f",
+      "captured_at": "2026-10-23T04:55:08.625Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-medeng-82007-guide-devices",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "华西医学工程科招聘岗位：医学装备管理（专业技术，3人）",
+      "summary": "华西医院设备物资部医学工程科招聘岗位名称为「医学装备管理」，岗位类型为专业技术，招聘3人，聘用方式为与医院签订劳动合同。（同一官方来源共 4 条原文事实，字段：job_title、job_type、major_restrictions、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次招聘的岗位名称、岗位类型与用工方式；不涉及薪资与编制性质。",
+      "relation": "direct",
+      "tags": [
+        "医学工程",
+        "医学装备管理",
+        "专业技术",
+        "劳动合同",
+        "聘用方式",
+        "合同制",
+        "专业要求",
+        "生物医学工程",
+        "生物电子",
+        "医学",
+        "岗位职责",
+        "设备全生命周期",
+        "物联网",
+        "数据统计"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "medical_department": "设备物资部医学工程科"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称 医学装备管理 岗位类型 专业技术 招聘人数 3 人 所属部门/科室 设备 物资部医学工程 科 聘用方式 与医院签订劳动合同"
+      },
+      {
+        "field": "job_type",
+        "pattern": "聘用方式 与医院签订劳动合同"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "2、生物医学工程专业、生物电子、医学、管理等相关专业毕业。"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "岗位职责 参与医疗设备的全生命周期的管理（准入论证、安装验收、维护维修、使用培训、计量质控、报废鉴定等）、医疗设备物联网系统开发与管理、医疗设备开发与创新等工作。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "job_type",
+      "salary",
+      "city",
+      "major_restrictions",
+      "technical_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-zhonglizi-81507",
+      "url": "https://www.cd120.com/public/notice/recruit/81507.html",
+      "organization": "成都重离子质子医院（四川大学华西医院）",
+      "title": "成都重离子质子医院医学工程招聘启事",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-07-26",
+      "publication_date_note": "原文正文逐字出现「2024.07.26」，为启事页面标注日期。"
+    },
+    "publication_pattern": "2024\\D{0,6}0?7\\D{0,6}0?26",
+    "artifact_capture": {
+      "path": "work/knowledge-recruitment/huaxi-zhonglizi-81507.raw",
+      "sha256": "9255bec8a7689524886cbc45cd374a573f14f2ea25bb70a3f0167ecd697fbd15",
+      "captured_at": "2026-10-23T04:55:08.629Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-zhonglizi-81507-guide-devices",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "成都重离子质子医院招聘岗位：医学工程师（专业技术，1人）",
+      "summary": "成都重离子质子医院招聘岗位名称为「医学工程师」，岗位类型专业技术，招聘1人。（同一官方来源共 2 条原文事实，字段：job_title、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次招聘的岗位名称与类型；不涉及薪资。",
+      "relation": "direct",
+      "tags": [
+        "医学工程师",
+        "专业技术",
+        "重离子",
+        "硕士",
+        "应届优先",
+        "生物医学工程",
+        "专业要求"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "成都重离子质子医院",
+        "medical_department": "医学工程"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称 医学 工程师 岗位类型 专业技术 招聘人数 1 人"
+      },
+      {
+        "field": "education",
+        "pattern": "1、硕士研究生毕业及以上，应届毕业生优先。 2、生物医学工程专业及相关专业毕业。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary",
+      "city",
+      "education",
+      "major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-binganke-71906",
+      "url": "https://www.cd120.com/public/notice/recruit/71906.html",
+      "organization": "四川大学华西医院（医务部病案科）",
+      "title": "医务部病案科招聘公告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2023-02-13",
+      "publication_date_note": "原文正文逐字出现「2023.02.13」，为公告页面标注日期。"
+    },
+    "publication_pattern": "2023\\D{0,6}0?2\\D{0,6}0?13",
+    "artifact_capture": {
+      "path": "work/knowledge-recruitment/huaxi-binganke-71906.raw",
+      "sha256": "1f9c9af5662d7c188df219bda6aa5609c546b690e17d4568fd20f763ad6ddd87",
+      "captured_at": "2026-10-23T04:55:08.632Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-binganke-71906-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "华西病案科招聘岗位：病案疾病编码岗",
+      "summary": "华西医院医务部病案科招聘「病案疾病编码岗」，职责为通过数字化扫描病案完成病案首页诊疗信息编码、病历首页审核、疾病分类培训与诊断/手术字典库维护等。（同一官方来源共 3 条原文事实，字段：job_title、education、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次岗位名称与职责概要；反映病案编码与数据质量工作实际内容。",
+      "relation": "direct",
+      "tags": [
+        "病案科",
+        "疾病编码",
+        "病案首页",
+        "数据质量",
+        "硕士",
+        "医学背景",
+        "英语六级",
+        "数据库",
+        "专业要求",
+        "病案"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "medical_department": "医务部病案科"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "病案疾病编码岗 病案科 1\\. 每日通过调取数字化扫描病案完成病案首页诊疗信息的编码工作，尽可能做到准确无误，不断提高编码正确率"
+      },
+      {
+        "field": "education",
+        "pattern": "1\\.硕士及以上学历，有良好的医学背景； 2\\.熟练掌握各类办公软件及数据库管理软件； 3\\.具良好的英文读写能力，通过国家英语六级考试；"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "1\\.硕士及以上学历，有良好的医学背景；"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary",
+      "city",
+      "education",
+      "technical_requirements",
+      "major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "cicams-info-deputy-1347783",
+      "url": "https://www.cicams.ac.cn/zyb/zhaopin/detail/1347783.html",
+      "organization": "中国医学科学院肿瘤医院",
+      "title": "关于公开招聘信息管理中心副主任的公告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-11-14",
+      "publication_date_note": "原文逐字出现「时间：2024.11.14」。"
+    },
+    "publication_pattern": "2024/11/14",
+    "artifact_capture": {
+      "path": "work/knowledge-recruitment/cicams-info-deputy-1347783.raw",
+      "sha256": "cea1e3d7038410d580d7eb19f380dbe15f5db60a4e31b8fc1f3f945a19b255c0",
+      "captured_at": "2026-10-23T04:55:08.635Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-cicams-info-deputy-1347783-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "中国医学科学院肿瘤医院招聘：信息管理中心副主任（1-2名）",
+      "summary": "肿瘤医院公开招聘信息管理中心副主任1-2名。（同一官方来源共 3 条原文事实，字段：job_title、education、experience；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次招聘的岗位名称与人数；属于管理岗，不等同于普通信息科岗。",
+      "relation": "direct",
+      "tags": [
+        "信息管理中心",
+        "副主任",
+        "管理岗",
+        "肿瘤医院",
+        "本科及以上",
+        "高级职称",
+        "年龄",
+        "条件",
+        "三甲",
+        "5年",
+        "信息管理",
+        "管理经验"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中国医学科学院肿瘤医院",
+        "medical_department": "信息管理中心"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "因工作需要，肿瘤医院公开招聘信息管理中心副主任 1-2 名，现将有关事宜公告如下："
+      },
+      {
+        "field": "education",
+        "pattern": "\\(四 \\) 原则上年龄在 50 周岁及以下，具有大学本科及以上学历，高级专业技术职称。"
+      },
+      {
+        "field": "experience",
+        "pattern": "\\(五 \\) 具有较为丰富的信息管理知识和信息技术应用能力，具有高水平三甲医院从业经历，在本专业有 5 年以上工作经历，有科室管理经验者优先。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary",
+      "city",
+      "education",
+      "experience"
+    ]
+  },
+  {
+    "source": {
+      "id": "rjh-74667",
+      "url": "https://www.rjh.com.cn/2018RJPortal/doc/2026/10/16/74667.shtml",
+      "organization": "上海交通大学医学院附属瑞金医院",
+      "title": "上海交通大学医学院附属瑞金医院医疗、科研、医技岗位招聘启事",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-16",
+      "publication_date_note": "原文逐字出现「发布时间： 2026-10-16」及落款「2026年 10 月 16 日」。"
+    },
+    "publication_pattern": "2026-10-16",
+    "artifact_capture": {
+      "path": "work/knowledge-recruitment/rjh-74667.raw",
+      "sha256": "f663cea4d0cbd3fbe563b81599b53a55df231248df97f810b16d187efbfe8495",
+      "captured_at": "2026-10-23T04:55:08.642Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-rjh-74667-guide-devices",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "瑞金医院伤骨科研究所实验室技术员（工作地点：上海市嘉定院区）",
+      "summary": "瑞金医院上海市伤骨科研究所招聘实验室技术员，工作地点标注为嘉定院区（上海市）。（同一官方来源共 3 条原文事实，字段：city、job_title、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该条对应实验室技术员岗的工作地点；不涉及薪资。",
+      "relation": "related",
+      "tags": [
+        "上海",
+        "嘉定院区",
+        "伤骨科研究所",
+        "实验室技术员",
+        "硕士",
+        "临床工程技术",
+        "生物学",
+        "科研助理",
+        "博士",
+        "生物医学工程",
+        "专业要求"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学医学院附属瑞金医院",
+        "region": "上海市",
+        "medical_department": "伤骨科研究所"
+      }
+    },
+    "extracts": [
+      {
+        "field": "city",
+        "pattern": "上海市 伤骨科研究所 实验室技术员 嘉定院区"
+      },
+      {
+        "field": "job_title",
+        "pattern": "上海市 伤骨科研究所 实验室技术员 嘉定院区 1、 硕士 及以上学历；生物学、临床工程技术等相关专业；"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "1、博士 学历学位 ；遗传学、分子生物学、细胞生物学、生物化学、药学、生物医学工程、生物医用材料、感染学等相关专业；有博士后经历优先考虑；"
+      }
+    ],
+    "expected_fields": [
+      "city",
+      "salary",
+      "job_title",
+      "education",
+      "major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "bj-wjw-2024-zhishu",
+      "url": "https://wjw.beijing.gov.cn/zwgk_20040/zfxxgk2020/gknr/zkly/202405/t20240514_3680349.html",
+      "organization": "北京市卫生健康委员会",
+      "title": "北京市卫生健康委员会直属事业单位2024年公开招聘工作人员公告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "公告正文抽取文本中未逐字出现发布日期（具体岗位与日期在附件1/2中，未随正文提供），故记为未知。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-recruitment/bj-wjw-2024-zhishu.raw",
+      "sha256": "fcd11617d71f8ef34c00d1708bfdee381e9de67891e6ef229be8f2acf013ccbf",
+      "captured_at": "2026-10-23T04:55:08.646Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-bj-wjw-2024-zhishu-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "北京卫健委直属事业单位：面向应届/择业期毕业生及社会人员招聘",
+      "summary": "北京市卫生健康委员会直属事业单位面向2024年应届毕业生、择业期未就业毕业生及社会人员公开招聘事业单位工作人员。（同一官方来源共 3 条原文事实，字段：job_type、major_restrictions、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "北京市卫健委直属事业单位招聘的对象范围；具体岗位见附件，本记录不含岗位明细。",
+      "relation": "context",
+      "tags": [
+        "事业单位",
+        "应届",
+        "社会人员",
+        "北京卫健委",
+        "专业目录",
+        "专业认定",
+        "审核",
+        "学历学位",
+        "职业资格",
+        "工作经历"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京市卫生健康委员会直属事业单位",
+        "region": "北京市",
+        "statistic_scope": "2024年公开招聘"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_type",
+        "pattern": "面向2024年应届毕业生、择业期未就业毕业生及社会人员公开招聘事业单位工作人员"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "专业要求参照教育部公布的专业目录执行，对于专业（学科）目录中没有具体对应的自设学科（专业）和境外留学专业，报考人员需及时与招聘单位沟通联系，说明主要课程、研究方向和学习内容等情况，招聘单位将根据岗位专业需求进行审核"
+      },
+      {
+        "field": "education",
+        "pattern": "6\\.符合岗位要求的学历、学位、专业技术（职务任职）资格、职（执）业资格或专业技能等级证书（截至公告发布之日前取得），基层工作年限或相关工作经历（年限计算时间截至公告发布之日）等"
+      }
+    ],
+    "expected_fields": [
+      "job_type",
+      "job_title",
+      "salary",
+      "major_restrictions",
+      "education"
+    ]
+  }
+]

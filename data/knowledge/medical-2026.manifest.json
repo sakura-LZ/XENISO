@@ -1,0 +1,606 @@
+[
+  {
+    "source": {
+      "id": "guangdong-zhupei-jieye-2025",
+      "url": "https://wsjkw.gd.gov.cn/zwgk_bmwj/content/post_4669585.html",
+      "organization": "广东省卫生健康委员会办公室",
+      "title": "广东省卫生健康委办公室关于做好2025年住院医师规范化培训和助理全科医生培训结业考核工作的通知（粤卫办科教函〔2025〕1号）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-02-19",
+      "publication_date_note": "页面「发文日期: 2025年02月19日」，「文 号: 粤卫办科教函〔2025〕1号」，位于广东省卫健委「政务公开 > 部门文件」。"
+    },
+    "publication_pattern": "2025-02-19",
+    "artifact_capture": {
+      "path": "work/knowledge-medical-2026/guangdong-zhupei-jieye-2025.raw",
+      "sha256": "dfd372f8ee1f0ef9d85eb10eccbca4539271128af6dee4f472febdc4d71344ef",
+      "captured_at": "2026-10-23T05:23:09.835Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-guangdong-zhupei-jieye-2025-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "learning",
+      "title": "2025年广东住培结业考核：须同时满足完成培训内容、出科与年度考核合格、已取得医师资格证书",
+      "summary": "广东省卫健委2025年住培结业考核通知列明考核对象应同时符合三项条件：在规定时间内完成住培相关内容；出科考核、年度考核合格；已取得《医师资格证书》（或医师资格考试通过）。考核对象为2025年在省内国家住培基地完成核定年限培训的住培医师、往年未通过且符合补考条件者、其他满足条件者。（同一官方来源共 2 条原文事实，字段：access_requirement、training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于2025年广东省住院医师规范化培训和助理全科医生培训结业考核（粤卫办科教函〔2025〕1号，2025-02-19）。属省级年度考核口径，报名与考试时间已过期；其他省份的结业条件以该省当年通知为准，不得直接套用。",
+      "relation": "direct",
+      "tags": [
+        "住培结业考核",
+        "2025年",
+        "广东省",
+        "医师资格证书",
+        "出科考核",
+        "年度考核",
+        "2022年版内容与标准",
+        "结业理论考核",
+        "现行依据",
+        "人机对话",
+        "国家统考"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "广东省卫生健康委员会",
+        "medical_topic": "住院医师规范化培训内容与标准",
+        "region": "广东省"
+      }
+    },
+    "extracts": [
+      {
+        "field": "access_requirement",
+        "pattern": "上述对象应同时符合以下三项条件： 1\\.在规定时间内完成住培相关内容； 2\\.出科考核、年度考核合格； 3\\.已取得《医师资格证书》（或医师资格考试通过）。"
+      },
+      {
+        "field": "training",
+        "pattern": "参照国家《住院医师规范化培训内容与标准（2022年版）》和《住院医师规范化培训结业理论考核大纲（试行）》，考核大纲可在国家人才网下载。"
+      }
+    ],
+    "expected_fields": [
+      "access_requirement",
+      "access_requirement（未列各专业考核大纲差异）",
+      "training",
+      "training（未列各专业轮转细则内容）"
+    ]
+  },
+  {
+    "source": {
+      "id": "guizhou-zhupei-jieye-2025",
+      "url": "https://wjw.guizhou.gov.cn/zwgk/zdlyxx/kjjy/202502/t20250213_86887673.html",
+      "organization": "贵州省卫生健康委员会（科教处）",
+      "title": "省卫生健康委关于做好2025年度住院医师规范化培训和助理全科医生培训结业考核工作的通知",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-02-13",
+      "publication_date_note": "页面标注「发布时间：2025-02-13 09:17」「科教处」，位于「政务公开 > 重点领域信息 > 科技教育」。"
+    },
+    "publication_pattern": "2025-02-13",
+    "artifact_capture": {
+      "path": "work/knowledge-medical-2026/guizhou-zhupei-jieye-2025.raw",
+      "sha256": "5cf045b062e3160ab909aa4b5cbebea5d152b423f1b3d9ee2e886c087c45b4b6",
+      "captured_at": "2026-10-23T05:23:09.852Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-guizhou-zhupei-jieye-2025-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "learning",
+      "title": "2025年贵州住培结业考核分三部分：培训过程考核、专业理论考核、临床实践能力考核",
+      "summary": "贵州省2025年结业考核通知「二、考核内容」明确：结业考核按培训专业施行，分为培训过程考核、专业理论考核、临床实践能力考核三部分；重点评价培训对象在实际医疗保健工作中综合运用临床基本理论、基本知识、基本技能以及基本经验，安全有效规范从事临床诊疗活动、独立处理本专业常见多发疾病诊疗问题的能力和相关综合素质。（同一官方来源共 2 条原文事实，字段：training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于2025年度贵州省住院医师规范化培训和助理全科医生培训结业考核（2025-02-13发布）。三部分构成反映国家《住院医师规范化培训考核实施办法（试行）》框架下的省级执行方式；各省具体考点与时间安排不同。",
+      "relation": "direct",
+      "tags": [
+        "结业考核",
+        "2025年",
+        "贵州省",
+        "过程考核",
+        "专业理论考核",
+        "临床实践能力考核",
+        "轮转登记手册",
+        "病种数",
+        "大病历"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "贵州省卫生健康委员会",
+        "medical_topic": "住院医师规范化培训过程考核",
+        "region": "贵州省"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "结业考核按培训专业施行。结业考核分为培训过程考核、专业理论考核、临床实践能力考核三部分。重点评价培训对象经过理论与实践相结合的系统临床培训后，在实际医疗保健工作中综合运用临床基本理论、基本知识、基本技能以及基本经验，安全有效规范地从事临床诊疗活动、独立处理本专业常见多发疾病诊疗问题的能力和相关综合素质。"
+      },
+      {
+        "field": "training",
+        "pattern": "培训过程考核由各培训基地组织实施，各培训基地成立考核专家组，依据国家相应培训标准，对完成培训的住院医师和助理全科医生进行过程考核，并在学员提交的《结业考核申请表》上明确过程考核审查意见。过程考核重点审查学员《住院医师规范化培训轮转登记手册》或《助理全科医生培训手册》，对学员轮转科室及时间、学习并掌握的病例病种数、手册填写完成情况、大病历书写、"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "training（未列各专业考核分值）",
+      "training（未给病种数具体下限）"
+    ]
+  },
+  {
+    "source": {
+      "id": "pumch-zhupei-2026",
+      "url": "https://www.pumch.cn/detail/46077.html",
+      "organization": "中国医学科学院北京协和医院（教育处）",
+      "title": "招录简章 | 中国医学科学院北京协和医院2026年北京市住院医师规范化培训招录启动",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-15",
+      "publication_date_note": "页面标注「时间：2026.07.15」「发布来源：本站原创」，位于「新闻中心 > 医院动态」。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?7\\D{0,6}0?15",
+    "artifact_capture": {
+      "path": "work/knowledge-medical-2026/pumch-zhupei-2026.raw",
+      "sha256": "2fafe9e1e11e1eaab1506fa6b74b70a502c31a7fa79268bb9ed068a76d541446",
+      "captured_at": "2026-10-23T05:23:09.858Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-pumch-zhupei-2026-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "learning",
+      "title": "2026年协和住培：落实「两个同等对待」，住培合格本科医师与专硕同等对待",
+      "summary": "2026年招录简章「两个同等对待政策」段：面向社会招收的普通高校应届毕业生培训对象培训合格当年在医疗卫生机构就业的，在招聘、派遣、落户等方面按当年应届毕业生同等对待；对经住培合格的本科学历临床医师，在人员招聘、职称晋升、岗位聘用、薪酬待遇等方面，与临床医学、中医专业学位硕士研究生同等对待。（同一官方来源共 2 条原文事实，字段：training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "这是北京协和医院对2026年招录学员的待遇政策表述，援引国家「两个同等对待」要求。属于培训基地的招录承诺，非国家文件原文；各地落实程度与具体经办口径可能存在差异，不构成对任何个人落户/晋升结果的保证。",
+      "relation": "direct",
+      "tags": [
+        "两个同等对待",
+        "2026年",
+        "住培合格",
+        "应届毕业生",
+        "协和医院",
+        "医教协同",
+        "同等学力",
+        "专业学位",
+        "协和"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京协和医院",
+        "medical_topic": "专业学位与规培衔接",
+        "region": "北京市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "医院参照国家要求，严格落实两个同等对待政策：面向社会招收的普通高校应届毕业生培训对象培训合格当年在医疗卫生机构就业的，在招聘、派遣、落户等方面，按当年应届毕业生同等对待；对经住培合格的本科学历临床医师，在人员招聘、职称晋升、岗位聘用、薪酬待遇等方面，与临床医学、中医专业学位硕士研究生同等对待。"
+      },
+      {
+        "field": "training",
+        "pattern": "通过“同等学力人员申请硕士学位外国语水平和学科综合水平全国统一考试” 的本科学历住院医师，可攻读北京协和医学院临床医学硕士专业学位研究生，达到毕业和学位授予要求，颁发北京协和医学院医学硕士（专业型）学位证书。"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "training（未列政策依据文号）",
+      "training（未写学位申请年限与名额）"
+    ]
+  },
+  {
+    "source": {
+      "id": "zhupei-neirong-biaozhun-2022",
+      "url": "https://rzrmyy.cn/upload/202208/20/202208200827224798.pdf",
+      "organization": "中国医师协会（《住院医师规范化培训内容与标准（2022年版）》，日照市人民医院网站转载 PDF）",
+      "title": "住院医师规范化培训内容与标准（2022年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未印统一发布日期，仅有「(2022年版)」版本标识；该 PDF 于 2022-08 上传至转载站点路径 /upload/202208/20/，但上传日期不是文件发布日期，故不填 published_at。本版为广东省卫健委2025年结业考核通知所引的现行依据。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-medical-2026/zhupei-neirong-2022.pdf",
+      "sha256": "3dd4c87a06b839d575ef9471c078797cffeaf99da384f33bf710bc3a6046e298",
+      "captured_at": "2026-10-23T05:13:03.353Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-medical-2026/zhupei-neirong-2022.txt",
+      "extracted_sha256": "3f597e2e6f736f4dd80984b3a0b898029084a6b1bb0de0b1a85b255f336e747a"
+    },
+    "record": {
+      "id": "learning-zhupei-neirong-biaozhun-2022-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "learning",
+      "title": "2022年版内容与标准：全科规培方法含理论学习、全科医疗实践与临床科室轮转",
+      "summary": "《住院医师规范化培训内容与标准（2022年版）》全科培训细则规定：全科专业住院医师规范化培训方法包括理论学习、全科医疗实践及其他临床科室轮转培训；理论学习以临床实际需要为重点，时间安排可集中或分散在3年培训过程中完成，可采用集中面授、远程教学、系列讲座、专题讲座、临床案例讨论、读书报告会等多种形式。（同一官方来源共 2 条原文事实，字段：training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于国家《住院医师规范化培训内容与标准（2022年版）》全科培训细则（本 PDF 为该细则章节）。原文把理论学习分散在「3年培训过程」中，可用于理解规培学制时长与培训形式；其他专业的细则内容不同，不得外推。",
+      "relation": "direct",
+      "tags": [
+        "2022年版",
+        "内容与标准",
+        "全科",
+        "培训方法",
+        "3年培训",
+        "轮转时长",
+        "全科实践",
+        "10个月",
+        "基层实践基地"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中国医师协会（国家规培内容与标准）",
+        "medical_topic": "住院医师规范化培训轮转",
+        "region": "CN",
+        "medical_department": "全科医学科"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "全科专业住院医师规范化培训方法包括理 论 学 习、全 科 医 疗 实 践 及 其 他 临 床 科室轮转培训。 \\(一\\)理论学习 理论学习以临床实际需要为重点,时间安排 可 集 中 或 分 散 在3 年 培 训 过 程 中 完成,培训方法可采用集 中 面 授、远 程 教 学、系 列 讲 座、专 题 讲 座、临 床 案 例 讨 论、 读书报告会等多种形式进行。"
+      },
+      {
+        "field": "training",
+        "pattern": "全科医疗实践\\(以下简称全科实践\\)总计培训时间为 10个月。由临 床 基 地 全 科和基层实践基地共同完成 相 关 培 训 工 作。"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "learning_hours",
+      "learning_hours（未给学时数，仅给3年与月数安排）",
+      "learning_hours（未给全科以外专业轮转月数）"
+    ]
+  },
+  {
+    "source": {
+      "id": "nhc-3a-pingshen-2025-tongzhi",
+      "url": "https://www.shanxi.gov.cn/zfxxgk/zfxxgkzl/fdzdgknr/zdlygk/ylws/202506/t20250612_9872584.shtml",
+      "organization": "国家卫生健康委（文件）；山西省人民政府门户网站转载",
+      "title": "国家卫生健康委关于印发《三级医院评审标准（2025年版）》的通知（国卫医政发〔2025〕4号）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-06-12",
+      "publication_date_note": "页面标注「时间：2025-06-12 09:01」「来源：山西省卫生健康委员会」；文件本身署「国家卫生健康委 2025年5月29日」，文号国卫医政发〔2025〕4号。"
+    },
+    "publication_pattern": "2025-06-12",
+    "artifact_capture": {
+      "path": "work/knowledge-medical-2026/shanxi-3a-pingshen-2025.raw",
+      "sha256": "5a862545bb978fae92aab73812457553266dab4caa7a99a510868172b33197f3",
+      "captured_at": "2026-10-23T05:09:45.512Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-nhc-3a-pingshen-2025-tongzhi-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "国卫医政发〔2025〕4号：印发《三级医院评审标准（2025年版）》并要求遵照执行",
+      "summary": "通知正文：为持续推进医院评审工作，进一步引导三级医院落实功能定位，重点做好急危重症和疑难复杂疾病的诊疗服务，发挥在专科服务、技术创新、人才培养和对基层医疗卫生机构帮扶支持等方面的作用，深化质量内涵效率式发展，国家卫生健康委组织制定了《三级医院评审标准（2025年版）》，现印发并请遵照执行。文件署国家卫生健康委 2025年5月29日。（同一官方来源共 2 条原文事实，字段：policy_requirement；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "这是三级医院评审的**现行最新版本依据**（2025年版，2025-05-29成文、2025-06-12公开）。本页面为山西省政府门户转载的国家卫健委文件全文。评审标准用于医院等级评审，不直接等同于科室设置强制标准，也不适用于二级医院或专科医院的评审。",
+      "relation": "direct",
+      "tags": [
+        "三级医院评审标准",
+        "2025年版",
+        "国卫医政发〔2025〕4号",
+        "现行版本",
+        "2022年版废止",
+        "版本时效",
+        "国卫医政发〔2022〕31号",
+        "2025年版取代"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "国家卫生健康委员会",
+        "medical_topic": "三级医院评审标准版本",
+        "region": "CN"
+      }
+    },
+    "extracts": [
+      {
+        "field": "policy_requirement",
+        "pattern": "我委组织制定了《三级医院评审标准（2025年版）》。现印发给你们，请遵照执行。 《〈三级医院评审标准（2022年版）〉及其实施细则》（国卫医政发〔2022〕31号）自本通知印发之日起废止。 国家卫生健康委 2025年5月29日"
+      },
+      {
+        "field": "policy_requirement",
+        "pattern": "《〈三级医院评审标准（2022年版）〉及其实施细则》（国卫医政发〔2022〕31号）自本通知印发之日起废止。"
+      }
+    ],
+    "expected_fields": [
+      "policy_requirement",
+      "policy_requirement（本页仅为印发通知，标准正文为附件）"
+    ]
+  },
+  {
+    "source": {
+      "id": "xizang-3a-pingshen-2025-xize",
+      "url": "https://wjw.xizang.gov.cn/zwgk/zcwj/202510/P020251028634076824574.pdf",
+      "organization": "西藏自治区卫生健康委员会",
+      "title": "三级医院评审标准（2025年版）西藏自治区实施细则",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 封面标注「三级医院评审标准（2025年版） 西藏自治区实施细则 西藏自治区卫生健康委员会 2025 年 10 月」，只精确到月份，未印具体日期，故 published_at 为 null；URL 路径含 202510 与文件上传时间一致。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-medical-2026/xizang-3a-pingshen-2025-xize.pdf",
+      "sha256": "0d8b5dbe8a29e79cf1c0f6e81a757c2b2ace5058f26547fd1a6be880cec35d55",
+      "captured_at": "2026-10-23T05:11:14.618Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-medical-2026/xizang-3a-pingshen-2025-xize.txt",
+      "extracted_sha256": "45ac96beff2a4e8de2946209007a2f6b7dec9f776f00e863946fc04fd7e541b8"
+    },
+    "record": {
+      "id": "occupation-xizang-3a-pingshen-2025-xize-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "occupation",
+      "title": "2025年版评审前置要求：三级综合医院须设儿科、感染性疾病科、病理科、老年医学科、公共卫生科/预防保健科",
+      "summary": "《三级医院评审标准（2025年版）》第一部分「前置要求」一、床位规模和科室设置第（二）条：三级综合医院未按规定设置儿科、感染性疾病科、病理科、老年医学科，以及公共卫生科（职能科室）或者预防保健科等直接从事疾病预防控制工作的科室，属不符合前置要求。（同一官方来源共 4 条原文事实，字段：departments；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于三级综合医院评审的**现行（2025年版）科室设置前置要求**，是本轮替换1994年《医疗机构基本标准》作为科室设置依据的最新来源。原文为「未按规定设置…」的评审否决条件，属评审口径而非《医疗机构执业许可证》发证标准；二级医院与专科医院另论。",
+      "relation": "direct",
+      "tags": [
+        "科室设置",
+        "2025年版",
+        "三级综合医院",
+        "病理科",
+        "感染性疾病科",
+        "老年医学科",
+        "前置要求",
+        "人员配置",
+        "1.15比1",
+        "卫生技术人员",
+        "绩效监测平台",
+        "精神科",
+        "三级甲等综合医院",
+        "修订说明",
+        "取消现场检查",
+        "98节235条"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西藏自治区卫生健康委员会（实施国家2025年版标准）",
+        "medical_department": "精神科",
+        "region": "西藏自治区",
+        "medical_topic": "三级医院评审标准版本"
+      }
+    },
+    "extracts": [
+      {
+        "field": "departments",
+        "pattern": "三级综合医院未按规定设置儿科、感染性疾病科、病理科、 老年医学科，以及公共卫生科（职能科室）或者预防保健科等直接从 事疾病预防控制工作的科室。"
+      },
+      {
+        "field": "departments",
+        "pattern": "卫生技术人员与实际开放床位之比≥1\\.15∶1 【指标导向】符合标准 【数据来源】国家三级公立医院绩效监测平台"
+      },
+      {
+        "field": "departments",
+        "pattern": "三级甲等综合医院应当设置精神科 2\\.精神科医师数占比"
+      },
+      {
+        "field": "departments",
+        "pattern": "优化调整了功能定位、床 位规模、科室设置、科研要求、医防融合、舆情管理、行风建设等方 面的内容和指标，取消了“现场检查”部分。"
+      }
+    ],
+    "expected_fields": [
+      "departments",
+      "departments（未列医技科室完整清单与人员数量下限）",
+      "departments（未给各科室单独配比）",
+      "departments（未给精神科床位数与医师配比下限）"
+    ]
+  },
+  {
+    "source": {
+      "id": "nhsa-drg-dip-2-0-2024",
+      "url": "https://www.nhsa.gov.cn/art/2024/7/23/art_52_13319.html",
+      "organization": "国家医疗保障局",
+      "title": "按病组（DRG）和病种分值（DIP）付费2.0版分组方案新闻发布会实录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-07-23",
+      "publication_date_note": "页面标注「日期：2024-07-23」，位于国家医保局「医保动态」栏目；发布会于7月23日上午举行。"
+    },
+    "publication_pattern": "2024-07-23",
+    "artifact_capture": {
+      "path": "work/knowledge-medical-2026/nhsa-drg-dip-20-2024.raw",
+      "sha256": "e5726f37f976ad21daa5540949a666c00f5827e4a907288bf55a23848cfd1f47",
+      "captured_at": "2026-10-23T05:12:47.396Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-nhsa-drg-dip-2-0-2024-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "DRG/DIP 2.0版：DRG核心分组409组、细分组634组；DIP核心病种9520种覆盖95%以上出院病例",
+      "summary": "国家医保局发布会实录：调整后的2.0版DRG分组包括核心分组409组（较之前增加33组）、细分组634组（较之前增加6组），重点调整了临床意见集中的13个学科，细化了资源消耗较高的分组；2.0版DIP分组包括核心病种9520种，能够覆盖95%以上的出院病例。此前提及各地此前普遍使用的是DRG1.1版分组方案和DIP1.0版病种库。（同一官方来源共 2 条原文事实，字段：policy_requirement；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于确认DRG/DIP分组方案的**现行版本为2.0版**（2024-07-23发布），并给出核心分组409组这一数量。此处为新闻发布会实录口径，正式发文为《关于印发按病组（DRG）和病种分值（DIP）付费2.0版分组方案并深入推进相关工作的通知》；具体分组明细以附件为准。",
+      "relation": "direct",
+      "tags": [
+        "DRG",
+        "DIP",
+        "2.0版",
+        "核心分组409组",
+        "2024-07-23",
+        "医保支付方式改革",
+        "三年行动计划",
+        "2022-2024",
+        "DRG/DIP付费",
+        "统筹地区",
+        "医保改革"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "国家医疗保障局",
+        "medical_topic": "医保支付方式改革",
+        "region": "CN"
+      }
+    },
+    "extracts": [
+      {
+        "field": "policy_requirement",
+        "pattern": "调整后的2\\.0版DRG分组，包括核心分组409组（较之前增加33组）、细分组634组（较之前增加6组），重点调整了临床意见集中的13个学科，细化了资源消耗较高的分组。2\\.0版DIP分组，包括核心病种9520种，能够覆盖95%以上的出院病例。"
+      },
+      {
+        "field": "policy_requirement",
+        "pattern": "2022年起，在总结试点经验的基础上，我局以全面推开DRG/DIP付费为目标，启动了2022-2024年支付方式改革三年行动计划。"
+      }
+    ],
+    "expected_fields": [
+      "policy_requirement",
+      "policy_requirement（发布会实录未列409组明细，明细在通知附件）",
+      "policy_requirement（未列2025年后接续政策）"
+    ]
+  },
+  {
+    "source": {
+      "id": "shisiwu-quanmin-jiankang-xinxihua",
+      "url": "https://www.ndcpa.gov.cn/jbkzzx/c100030/common/content/content_1658745812574605312.html",
+      "organization": "国家卫生健康委、国家中医药局、国家疾控局（国家疾病预防控制局网站转载）",
+      "title": "关于印发「十四五」全民健康信息化规划的通知",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2022-11-09",
+      "publication_date_note": "页面标注「日期：2022-11-09」「来源：规划财务与法规司」；文件署「国家卫生健康委 国家中医药局 国家疾控局 2022年11月7日」。"
+    },
+    "publication_pattern": "2022-11-09",
+    "artifact_capture": {
+      "path": "work/knowledge-medical-2026/shisiwu-quanmin-jiankang-xinxihua.raw",
+      "sha256": "74f6cc3b5bda5126688059a0fc8cb216314e0bf31762782e0f17287d3ff57d8e",
+      "captured_at": "2026-10-23T05:23:09.970Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-shisiwu-quanmin-jiankang-xinxihua-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "「十四五」全民健康信息化规划：制订唯一对象标识、临床医学术语、检查检验代码等基础标准",
+      "summary": "规划提出完善全民健康信息化应用基础标准：按照《关于加强全民健康信息标准化体系建设的意见》要求，研究制订唯一对象标识、对象注册与解析、临床医学术语、检查检验代码、药品耗材应用编码、数据交互接口、数据分析、数据质量、临床决策支持等基础标准，并加快健全完善网络安全等级保护、数据安全、个人信息保护等标准体系。（同一官方来源共 2 条原文事实，字段：policy_goals；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于「十四五」期间（2021—2025）国家层面对医疗信息化基础数据标准的要求，是理解医院集成平台、术语与编码（含检查检验代码、临床决策支持）政策依据的原文。该规划为期五年，2025年底到期；2026年后的接续规划需另查。",
+      "relation": "direct",
+      "tags": [
+        "十四五",
+        "全民健康信息化",
+        "数据标准",
+        "临床医学术语",
+        "检查检验代码",
+        "数据安全",
+        "医学人工智能",
+        "远程会诊",
+        "临床辅助诊断",
+        "互联网+医疗健康",
+        "医院管理"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "国家卫生健康委/国家中医药局/国家疾控局",
+        "medical_topic": "全民健康信息化",
+        "region": "CN"
+      }
+    },
+    "extracts": [
+      {
+        "field": "policy_goals",
+        "pattern": "研究制订唯一对象标识、对象注册与解析、临床医学术语、检查检验代码、药品耗材应用编码、数据交互接口、数据分析、数据质量、临床决策支持等基础标准，加快健全完善网络安全等级保护、数据安全、个人信息保护等标准体系。"
+      },
+      {
+        "field": "policy_goals",
+        "pattern": "支撑在应急救治、远程会诊、远程检查、临床辅助诊断决策、公共卫生服务、医院管理等方面应用。鼓励医疗卫生机构、科研院所、高等院校、学会协会、企业等参与团体标准和地方标准的研制工作。"
+      }
+    ],
+    "expected_fields": [
+      "policy_goals",
+      "policy_goals（未给标准发布的具体时间表）",
+      "policy_goals（未列具体量化指标）"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-2026-shehui-zhaopin",
+      "url": "https://www.cd120.com/public/notice/recruit/90689.html",
+      "organization": "四川大学华西临床医学院、四川大学华西医院（人力资源部）",
+      "title": "四川大学华西临床医学院、华西医院2026年社会招聘公告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-03-04",
+      "publication_date_note": "页面标注「2026.03.04」，位于「通知公告 > 招聘 > 详细页」；文末来源署「人力资源部」。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?3\\D{0,6}0?4",
+    "artifact_capture": {
+      "path": "work/knowledge-medical-2026/huaxi-2026-shehui-zhaopin.raw",
+      "sha256": "fa3ace3dfe6e429907d482d6b40f73706585a0af5aa1b81df7d86a560629a298",
+      "captured_at": "2026-10-23T05:23:09.984Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-2026-shehui-zhaopin-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "华西医院2026年社会招聘岗位类别：医师、技师、技术、辅助岗",
+      "summary": "2026年社会招聘公告「一、招聘岗位」：岗位包括医师、技师、技术、辅助岗；具体岗位信息及要求详见附件【岗位计划表】，各部门/科室介绍可查看医院官网。（同一官方来源共 4 条原文事实，字段：job_title、job_type、major_restrictions、city；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于四川大学华西临床医学院、华西医院2026年社会招聘（2026-03-04发布，报名截止2026年3月13日18:00）。四个岗位类别是公告的分类口径，具体岗位、学历与专业要求在该公告附件的岗位计划表内，本页正文未逐岗列出。",
+      "relation": "direct",
+      "tags": [
+        "2026年招聘",
+        "华西医院",
+        "医师岗",
+        "技师岗",
+        "岗位类别",
+        "聘用方式",
+        "劳动合同",
+        "华西健康科技",
+        "托管医院",
+        "2026年",
+        "住院医师规范化培训合格证",
+        "专科医师规范化培训合格证",
+        "资格证书",
+        "成都",
+        "工作地点",
+        "通讯地址"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "medical_topic": "医院社会招聘",
+        "region": "四川省"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位包括医师、技师、技术、辅助岗。具体岗位信息及要求详见附件【岗位计划表】，各部门 /科室介绍可查看医院官网"
+      },
+      {
+        "field": "job_type",
+        "pattern": "方式一：与四川大学 华西医院签订劳动合同； 方式二：与华西健康科技有限公司签订劳动合同，其工作地点为华西托管医院。"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "住院医师规范化培训合格证、专科医师规范化培训合格证等材料，请上传至个人简历中的 “资格证书”栏目。"
+      },
+      {
+        "field": "city",
+        "pattern": "通讯地址：四川省成都市国学巷 37号 联系电话： 028-85421969、028-85422038 电子信箱"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "job_title（未在正文逐岗列名称，明细在附件岗位计划表）",
+      "job_type",
+      "salary（未给薪资）",
+      "job_type（未用全职/兼职等表述）",
+      "major_restrictions",
+      "major_restrictions（未逐岗列专业限制）",
+      "city"
+    ]
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "generated_date": "2026-10-22",
+  "method": "imagegen bundled CLI; two independent generate requests; no reference image upload or edit",
+  "api_base": "https://api.zz-api.cc.cd/v1",
+  "credentials": "Process environment only; no credentials included in archive",
+  "source": "work/pathways-redesign/image-prompts.jsonl",
+  "images": [
+    {
+      "prompt": "为 LIMEN 医学生职业探索网站生成一幅精致、克制的编辑式静物摄影，作为“个人基本情况”入口的配图。横幅 3:2，1536×1024。米白纸质背景与浅米色桌面自然衔接。画面中央偏左是一册打开的素色档案夹，里面是无文字的奶油白纸张，一张小的抽象人物侧影卡片半露在纸下；右侧是深森林绿色封面的薄笔记本和一支简洁铅笔，表现学习经历、已有经验、个人选择正在被整理。所有纸张没有可读文字，没有表格或假 UI。柔和自然光从左上方照入，真实纸纤维和轻微阴影，安静、有秩序、温暖、专业。主体占画面约 55%，保留大片连续米白留白，边缘不要裁掉关键物件。森林绿与鼠尾草绿作为少量实体物件颜色。不要电脑屏幕、听诊器堆叠、科技蓝光、粒子、霓虹、玻璃悬浮面板、卡通人物、文字、字母、数字、logo、水印。与另一幅职业兴趣问卷图保持同一摄影系列。",
+      "model": "gpt-image-2",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "png",
+      "original_path": "output/imagegen/profile-basics.png",
+      "web_path": "public/previews/assets/profile-basics.webp",
+      "web_size": "1200x800",
+      "web_quality": 86
+    },
+    {
+      "prompt": "生成与米白纸张、左上自然光和森林绿实体物件组成的档案静物摄影同系列的第二幅编辑式静物摄影，用于 LIMEN“职业兴趣问卷”入口。横幅 3:2，1536×1024。延续相同米白纸面、自然左上光、柔和阴影和森林绿 / 鼠尾草绿配色。中央是六张素色厚纸小卡，形成舒展但整齐的扇面，每张卡只用极简的实体压印抽象符号，分别暗示动手、观察、创作、帮助、组织和整理，不出现任何字母、数字或文字；前方三个小圆形绿色木质选择片，像正在回答兴趣偏好的选择。对象尺度与配套档案静物图的档案夹相近，摆放高度、投影方向和留白一致。材质真实，像杂志静物拍摄，有视觉识别度，不像网页截屏。主体占画面约 55%，图下方不生成标题或按钮。不要雷达图、分数、人格类型标签、假测评结论、蓝色、霓虹、粒子、发光圆环、logo、水印。",
+      "model": "gpt-image-2",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "png",
+      "original_path": "output/imagegen/profile-interests.png",
+      "web_path": "public/previews/assets/profile-interests.webp",
+      "web_size": "1200x800",
+      "web_quality": 86
+    }
+  ]
+}

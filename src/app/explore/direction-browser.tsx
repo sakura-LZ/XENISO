@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import { handbookEntries, type HandbookDirectionId } from "@/lib/handbook";
-import { directions, findDirection, groups, occupationUrl } from "@/lib/directions";
+import { directions, findDirection, groups, occupationUrl, type Direction } from "@/lib/directions";
+import { getTemplate } from "@/lib/experience/templates";
+import { DirectionArt, StorysetAttribution } from "@/components/direction-art";
 import { OfficialDossier } from "./official-dossier";
 import { MedicineBrowser } from "./medicine-browser";
-
-const interdisciplinaryGroups = groups.filter((group) => group.id !== "medicine");
 
 const chapters = [
   { id: "overview", title: "专业特点", category: "occupation" },
@@ -17,111 +17,188 @@ const chapters = [
   { id: "industry", title: "招聘与行业", category: "industry" },
 ] as const;
 type ChapterId = (typeof chapters)[number]["id"];
-
+type LibraryState = { direction: string; view: "directory" | "reading" | "compare"; query: string; group: string; compare: string[] };
+export type LibraryParams = { direction?: string | string[]; view?: string | string[]; q?: string | string[]; group?: string | string[]; compare?: string | string[] };
 const relationshipLabel: Record<string, string> = { direct: "直接关联", related: "相关关联", adjacent: "邻近关联" };
+function parseState(params: LibraryParams): LibraryState {
+  const first = (value: string | string[] | undefined) => (Array.isArray(value) ? value[0] : value) ?? "";
+  const direction = findDirection(first(params.direction))?.id ?? "";
+  const compare = [...new Set(first(params.compare).split(",").filter(id => findDirection(id)))].slice(0, 2);
+  const group = first(params.group);
+  return { direction, view: first(params.view) === "compare" ? "compare" : direction ? "reading" : "directory", query: first(params.q).slice(0, 160), group: groups.some(g => g.id === group) ? group : "all", compare };
+}
+function stateUrl(state: LibraryState) {
+  const params = new URLSearchParams();
+  if (state.direction && state.view === "reading") params.set("direction", state.direction);
+  if (state.view === "compare") params.set("view", "compare");
+  if (state.query) params.set("q", state.query);
+  if (state.group !== "all") params.set("group", state.group);
+  if (state.compare.length) params.set("compare", state.compare.join(","));
+  return `/explore${params.size ? `?${params}` : ""}`;
+}
+function searchText(item: Direction) {
+  const h = handbookEntries[item.id as HandbookDirectionId];
+  return [item.name, h.overview, ...item.work_tasks, ...h.daily_work].join(" ").toLowerCase();
+}
+const summaries: Record<string, string> = {
+  ml_cv: "划分验证样本，比较模型阈值与错误。", software: "实现医疗流程，验证输入与状态变化。",
+  llm_agent: "核对回答依据，设置未知与人工处理路径。", devices: "组合采集与通信方案，验证原型需求。",
+  signals: "比较原始与处理波形，检查噪声和误差。", imaging_eng: "检查图像质量，比较处理前后的像素。",
+  clinical_data: "整理临床数据，检查变量与数据质量。", health_systems: "梳理医院工作流程，核对字段与交接。",
+  med_nlp_kg: "标注医学文本，保留否定与不确定信息。", medicine: "整理信息来源，沟通与核对团队交接。",
+};
 
-function searchText(id: string, name: string): string {
-  const h = handbookEntries[id as HandbookDirectionId];
-  return [name, h?.overview ?? "", ...(h?.daily_work ?? []), h?.starter_project?.title ?? ""].join(" ").toLowerCase();
+export function DirectionBrowser({ initialParams = {} }: { initialParams?: LibraryParams }) {
+  const [state, setState] = useState(() => parseState(initialParams));
+  const [chapter, setChapter] = useState<ChapterId>("overview");
+  const [message, setMessage] = useState("");
+  const [evidenceSide, setEvidenceSide] = useState<"medical" | "new">("medical");
+  const scrollPositions = useRef(new Map<string, number>());
+  const directoryVisited = useRef(false);
+  const readingAside = useRef<HTMLElement>(null);
+  const current = findDirection(state.direction);
+  const visible = useMemo(() => directions.filter(item => (state.group === "all" || item.group_id === state.group) && (!state.query.trim() || searchText(item).includes(state.query.trim().toLowerCase()))), [state.group, state.query]);
+  const directoryState: LibraryState = { ...state, direction: "", view: "directory" };
+  const directoryUrl = stateUrl(directoryState);
+  useEffect(() => {
+    if (!window.IntersectionObserver || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add("xn-revealed"); observer.unobserve(entry.target); }
+    }), { threshold: .25 });
+    const targets = ".xn-work-sequence li:not(.xn-revealed), .xn-practice-steps li:not(.xn-revealed), .xn-practice-result:not(.xn-revealed)";
+    document.querySelectorAll(`${!directoryVisited.current ? ".xn-directory-row:not(.xn-revealed), " : ""}${targets}`).forEach(element => observer.observe(element));
+    if (state.view === "directory") directoryVisited.current = true;
+    return () => observer.disconnect();
+  }, [state.view, state.direction, state.query, state.group]);
+  useEffect(() => {
+    function pop() {
+      const next = parseState(Object.fromEntries(new URLSearchParams(window.location.search)));
+      setState(next);
+      const y = scrollPositions.current.get(stateUrl(next));
+      if (y !== undefined) requestAnimationFrame(() => window.scrollTo({ top: y, behavior: "instant" }));
+    }
+    window.addEventListener("popstate", pop);
+    return () => window.removeEventListener("popstate", pop);
+  }, []);
+  useEffect(() => {
+    if (state.view !== "reading") return;
+    const aside = readingAside.current;
+    if (!aside) return;
+    function measure() {
+      if (!aside) return;
+      const top = Number.parseFloat(getComputedStyle(aside).top) || 104;
+      aside.classList.toggle("is-tall", aside.getBoundingClientRect().height + top + 24 > window.innerHeight);
+    }
+    const observer = new ResizeObserver(measure);
+    observer.observe(aside); measure();
+    window.addEventListener("resize", measure);
+    const hash = window.location.hash;
+    const frame = requestAnimationFrame(() => {
+      if (/^#chapter-(overview|work|skills|practice|admissions|industry)$/.test(hash)) document.getElementById(hash.slice(1))?.scrollIntoView({ behavior: "instant", block: "start" });
+    });
+    return () => { observer.disconnect(); cancelAnimationFrame(frame); window.removeEventListener("resize", measure); };
+  }, [state.view, state.direction]);
+  useEffect(() => {
+    if (state.view !== "reading") return;
+    let frame = 0;
+    function updateChapter() {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const threshold = Math.max(160, window.innerHeight / 3);
+        let next: ChapterId = "overview";
+        for (const entry of chapters) {
+          const node = document.getElementById(`chapter-${entry.id}`);
+          if (node && node.getBoundingClientRect().top <= threshold) next = entry.id;
+        }
+        setChapter(previous => previous === next ? previous : next);
+      });
+    }
+    updateChapter();
+    window.addEventListener("scroll", updateChapter, { passive: true });
+    window.addEventListener("resize", updateChapter);
+    return () => { cancelAnimationFrame(frame); window.removeEventListener("scroll", updateChapter); window.removeEventListener("resize", updateChapter); };
+  }, [state.view, state.direction]);
+  function navigate(next: LibraryState, replace = false, preserveScroll = false) {
+    const oldUrl = stateUrl(state);
+    scrollPositions.current.set(oldUrl, window.scrollY);
+    if (state.view === "directory") try { sessionStorage.setItem(`xeniso:library:${oldUrl}`, String(window.scrollY)); } catch { /* Reading remains available without storage. */ }
+    const href = stateUrl(next);
+    window.history[replace ? "replaceState" : "pushState"](window.history.state, "", href);
+    setState(next); setMessage("");
+    if (!preserveScroll) {
+      let top = next.view === "directory" ? scrollPositions.current.get(href) ?? 0 : 0;
+      if (next.view === "directory" && !top) try { top = Number(sessionStorage.getItem(`xeniso:library:${href}`) ?? 0); } catch { /* Optional directory position. */ }
+      requestAnimationFrame(() => window.scrollTo({ top, behavior: "instant" }));
+    }
+  }
+  function follow(event: MouseEvent<HTMLAnchorElement>, next: LibraryState) {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault(); navigate(next);
+  }
+  function toggle(id: string) {
+    if (!state.compare.includes(id) && state.compare.length === 2) { setMessage("已选择两个方向，请先取消其中一个。"); return; }
+    navigate({ ...state, compare: state.compare.includes(id) ? state.compare.filter(value => value !== id) : [...state.compare, id] }, true, true);
+  }
+  function chapterLink(event: MouseEvent<HTMLAnchorElement>, id: ChapterId) {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.history.replaceState(window.history.state, "", `${stateUrl(state)}#chapter-${id}`);
+    document.getElementById(`chapter-${id}`)?.scrollIntoView({ behavior: reduced ? "instant" : "smooth", block: "start" });
+    setChapter(id);
+  }
+  const chapterNav = <nav className="xn-reading-nav" aria-label="方向章节">{chapters.map((entry, i) => <a key={entry.id} href={`#chapter-${entry.id}`} aria-current={chapter === entry.id ? "location" : undefined} onClick={event => chapterLink(event, entry.id)}><span>0{i + 1}</span>{entry.title}</a>)}</nav>;
+
+  if (state.view === "compare") return <>
+    <Link href={directoryUrl} onClick={event => follow(event, directoryState)} className="xn-library-back">← 返回信息文库</Link>
+    <header className="xn-library-pagehead"><h1>方向比较</h1></header>
+    {state.compare.length !== 2 ? <div className="notice" role="status"><p>请选择两个不同方向后比较。</p><Link className="button mt-4" href={directoryUrl} onClick={event => follow(event, directoryState)}>选择方向</Link></div> : <DirectionComparison selected={state.compare} onChange={(index, id) => { if (state.compare.includes(id)) { setMessage("请选择不同的方向。"); return; } const next = [...state.compare]; next[index] = id; navigate({ ...state, compare: next }, false, true); }} />}
+    <p role="status" className="xn-library-status">{message}</p><StorysetAttribution />
+  </>;
+  if (state.view === "reading" && current) {
+    const handbook = handbookEntries[current.id as HandbookDirectionId];
+    const template = getTemplate(current.id);
+    const medicine = current.id === "medicine";
+    const taskChapter = chapter === "work" || chapter === "practice" || chapter === "skills";
+    return <>
+      <Link href={directoryUrl} onClick={event => follow(event, directoryState)} className="xn-library-back">← 返回信息文库</Link>
+      <header className="xn-reading-head" data-motion="M-D01"><p className="xn-library-meta">{current.group_name}</p><h1>{current.name}</h1><p>{handbook.overview}</p><div className="xn-reading-actions"><Link className="button" href={`/experience?direction=${current.id}`}>查看相关任务</Link><label className="xn-compare-check"><input type="checkbox" checked={state.compare.includes(current.id)} onChange={() => toggle(current.id)} />比较此方向</label>{state.compare.length === 2 && <Link className="button secondary" href={stateUrl({ ...state, direction: "", view: "compare" })} onClick={event => follow(event, { ...state, direction: "", view: "compare" })}>比较所选方向</Link>}</div><p role="status" className="xn-library-status">{message}</p></header>
+      <div className="xn-reading-layout">
+        <aside ref={readingAside} className="xn-reading-aside" data-motion="M-D02">
+          <div className="xn-reading-art" data-side={evidenceSide} key={`${current.id}:${chapter}`}><DirectionArt direction={current.id} mode={taskChapter ? "task" : "identity"} chapter={chapter} />{chapter === "skills" && <p key={evidenceSide} className="xn-art-label xn-evidence-label">{evidenceSide === "medical" ? current.medical_transfer[0] : current.skills[0]}</p>}</div>
+          <div className="xn-reading-desktop-nav">{chapterNav}</div>
+          <details className="xn-reading-mobile-nav"><summary>章节目录 · {chapters.find(item => item.id === chapter)?.title}</summary>{chapterNav}</details>
+        </aside>
+        <article className="xn-reading-body" key={current.id}>
+          <section id="chapter-overview" className="xn-reading-section" data-motion="M-D03"><h2>专业特点</h2><p>{handbook.overview}</p><ul>{current.work_tasks.map(task => <li key={task}>{task}</li>)}</ul><div className="xn-reading-mobile-art"><DirectionArt direction={current.id} /></div>{medicine ? <p>医院科室、招生学科和岗位身份需要分别核对；科室介绍不能证明个人报考、执业或入职资格。</p> : <><h3>代表职业与映射来源</h3><p className="xn-library-meta">职业信息来自 O*NET；与国内研究方向的关联由 LIMEN 编辑，并非 O*NET 官方中国考研专业结论。</p><ul className="xn-source-links">{current.onet.map(o => <li key={o.code}><a href={occupationUrl(o.code)} target="_blank" rel="noreferrer">{o.name} ↗</a><span>SOC {o.code} · {relationshipLabel[o.relationship] ?? o.relationship}</span></li>)}</ul><OfficialDossier directionId={current.id} initialCategory="occupation" chapterMode /></>}</section>
+          <section id="chapter-work" className="xn-reading-section" data-active={chapter === "work"} data-motion="M-D04"><h2>职业日常</h2><ol className="xn-work-sequence">{handbook.daily_work.map((task, i) => <li key={task}><span>0{i + 1}</span><p>{task}</p></li>)}</ol><div className="xn-task-relation"><div><h3>输入</h3><p>{template.brief}</p></div><div><h3>处理</h3><p>{template.stages.map(stage => stage.title).join(" → ")}</p></div><div><h3>结果</h3><p>{template.deliverable}</p></div></div><div className="xn-reading-mobile-art"><DirectionArt direction={current.id} mode="task" /></div></section>
+          <section id="chapter-skills" className="xn-reading-section" data-motion="M-D05"><h2>能力基础</h2><div className="xn-skill-comparison" data-side={evidenceSide}><div><button aria-pressed={evidenceSide === "medical"} onClick={() => setEvidenceSide("medical")}>医学经历可能提供的起点</button><ul>{current.medical_transfer.map(item => <li key={item}>{item}</li>)}</ul></div><div><button aria-pressed={evidenceSide === "new"} onClick={() => setEvidenceSide("new")}>需要补充与验证的要求</button><ul>{current.skills.map(item => <li key={item}>{item}</li>)}</ul></div></div><h3>入门前的基础</h3><ul>{handbook.prerequisites.map(item => <li key={item}>{item}</li>)}</ul><p className="xn-library-meta">以上为编辑性学习线索；具体要求需对照来源资料与个人作品，不由医学专业名称推断能力。</p></section>
+          <section id="chapter-practice" className="xn-reading-section" data-motion="M-D06"><h2>学习实践</h2><p className="xn-library-meta">LIMEN 编辑的入门项目 · simulation</p><h3>{template.title}</h3><p>{template.brief}</p><ol className="xn-practice-steps">{template.stages.map(item => <li key={item.title}><strong>{item.title}</strong><p>{item.question}</p></li>)}</ol><div className="xn-practice-result"><DirectionArt direction={current.id} mode="task" /><div><h3>成果</h3><p>{template.deliverable}</p></div></div><h3>可作为起点的课程</h3><ul>{current.courses.map(item => <li key={item}>{item}</li>)}</ul><h3>延伸阅读与实践资料</h3><ul className="xn-source-links">{handbook.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a><p>{source.purpose}</p></li>)}</ul><Link className="button secondary" href={`/experience?direction=${current.id}`}>查看相关任务</Link>{!medicine && <OfficialDossier directionId={current.id} initialCategory="learning" chapterMode />}</section>
+          <section id="chapter-admissions" className="xn-reading-section" data-motion="M-D07"><h2>升学准备</h2><p>按院校、项目与招生年份核对专业要求。医学本科能否报考、是否加试及当年计划，以院校原文为准；个人资格未知时保持待核验。</p>{medicine ? <MedicineBrowser initialView="programs" initialCategory="admissions" /> : <OfficialDossier directionId={current.id} initialCategory="admissions" chapterMode />}</section>
+          <section id="chapter-industry" className="xn-reading-section" data-motion="M-D08"><h2>招聘与行业</h2><p>核对发布单位、日期与统计对象；单个岗位、院校或年度样本不代表整个行业。</p>{medicine ? <MedicineBrowser initialView="departments" /> : <><OfficialDossier directionId={current.id} initialCategory="recruitment" chapterMode /><OfficialDossier directionId={current.id} initialCategory="industry" chapterMode /></>}</section>
+        </article>
+      </div><StorysetAttribution />
+    </>;
+  }
+  return <>
+    <header className="xn-library-pagehead" data-motion="M-K01"><h1>信息文库</h1><label className="xn-directory-search"><span className="sr-only">搜索方向或工作内容</span><input type="search" placeholder="搜索方向或工作内容" value={state.query} onChange={event => navigate({ ...state, query: event.target.value }, true, true)} /></label></header>
+    <div className="xn-directory-layout">
+      <aside className="xn-directory-filters"><div className="xn-directory-desktop-filters" role="group" aria-label="方向分类"><button aria-pressed={state.group === "all"} onClick={() => navigate({ ...state, group: "all" }, false, true)}>全部方向</button>{groups.map(group => <button key={group.id} aria-pressed={state.group === group.id} onClick={() => navigate({ ...state, group: group.id }, false, true)}>{group.name}</button>)}</div><label className="xn-directory-mobile-filter">方向分类<select value={state.group} onChange={event => navigate({ ...state, group: event.target.value }, false, true)}><option value="all">全部方向</option>{groups.map(group => <option key={group.id} value={group.id}>{group.name}</option>)}</select></label></aside>
+      <div className="xn-directory-results" key={`${state.query}:${state.group}`} data-motion="M-K02"><p className="sr-only" role="status">找到 {visible.length} 个方向</p>{visible.length ? <ul>{visible.map(item => { const next: LibraryState = { ...state, view: "reading", direction: item.id }; return <li key={item.id} className="xn-directory-row" data-motion="M-K03"><Link className="xn-directory-link" href={stateUrl(next)} onClick={event => follow(event, next)}><DirectionArt direction={item.id} compact /><span><h2>{item.name}</h2><p>{summaries[item.id]}</p></span></Link><label className="xn-directory-compare" title={`比较${item.name}`}><input type="checkbox" checked={state.compare.includes(item.id)} aria-label={`比较${item.name}`} onChange={() => toggle(item.id)} /><span className="sr-only">比较{item.name}</span></label></li>; })}</ul> : <div role="status" className="xn-library-empty"><p>没有匹配的方向。</p><button className="button secondary" onClick={() => navigate({ ...state, query: "", group: "all" }, true, true)}>清空筛选</button></div>}</div>
+    </div>
+    <div className="xn-compare-slot" data-motion="M-K04">{state.compare.length > 0 && <div className="xn-compare-tray"><div>{state.compare.map(id => <button key={id} onClick={() => toggle(id)} aria-label={`移除${findDirection(id)!.name}`}>{findDirection(id)!.name}<span aria-hidden="true"> ×</span></button>)}</div>{state.compare.length === 2 ? <Link className="button" href={stateUrl({ ...state, direction: "", view: "compare" })} onClick={event => follow(event, { ...state, direction: "", view: "compare" })}>比较所选方向</Link> : <p>再选择一个方向</p>}</div>}<p className="xn-library-status" role="status">{message}</p></div>
+    <StorysetAttribution />
+  </>;
 }
 
-export function DirectionBrowser({ initialDirection }: { initialDirection?: string }) {
-  const [selected, setSelected] = useState(initialDirection !== "medicine" ? findDirection(initialDirection ?? "")?.id ?? directions[0].id : directions[0].id);
-  const [medicine, setMedicine] = useState(initialDirection === "medicine");
-  const [groupFilter, setGroupFilter] = useState<string>("all");
-  const [query, setQuery] = useState("");
-  const [chapter, setChapter] = useState<ChapterId | null>(null);
-  const [compare, setCompare] = useState<string[]>([]);
-  const [message, setMessage] = useState("");
-
-  const current = findDirection(selected)!;
-  const handbook = handbookEntries[current.id as HandbookDirectionId];
-  const compared = compare.map((id) => findDirection(id)!);
-  const activeChapter = chapter ? chapters.find((c) => c.id === chapter) ?? null : null;
-
-  const visible = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    return interdisciplinaryGroups
-      .filter((g) => groupFilter === "all" || g.id === groupFilter)
-      .flatMap((g) => g.specializations)
-      .filter((item) => !q || searchText(item.id, item.name).includes(q));
-  }, [groupFilter, query]);
-
-  function toggle(id: string) {
-    if (compare.includes(id)) setCompare(compare.filter((value) => value !== id));
-    else if (compare.length === 2) setMessage("一次可对比两个方向，请先移除其中一个。");
-    else { setCompare([...compare, id]); setMessage(""); }
-  }
-  function pickDirection(id: string) { setMedicine(false); setSelected(id); setChapter(null); }
-  function pickMedicine() { if (!medicine) setChapter(null); setMedicine(true); }
-  function leaveMedicine() { if (medicine) setChapter(null); setMedicine(false); }
-  const chapterNav = <nav className="xn-library-chapters" aria-label="章节">{chapters.map((c, i) => <button key={c.id} className="xn-library-chapter" aria-pressed={chapter === c.id} aria-expanded={chapter === c.id} onClick={() => setChapter(c.id)}><span className="xn-library-chapter-num">0{i + 1}</span><span className="xn-library-chapter-title">{c.title}</span></button>)}</nav>;
-  function resetFilters() { setQuery(""); setGroupFilter("all"); }
-
-  return <>
-    <header className="xn-page-heading"><h1>信息文库</h1><p className="xn-page-subtitle">职业、升学与实践的原始资料。</p></header>
-    <div className="xn-library-strip">
-      <div className="xn-library-filterbar xn-library-filterbar-groups">
-        <div className="xn-library-filter-groups" role="group" aria-label="方向分组">
-          <button className="xn-text-button" aria-pressed={!medicine && groupFilter === "all"} onClick={() => { leaveMedicine(); setGroupFilter("all"); }}>全部</button>
-          {interdisciplinaryGroups.map((g) => <button key={g.id} className="xn-text-button" aria-pressed={!medicine && groupFilter === g.id} onClick={() => { leaveMedicine(); setGroupFilter(g.id); }}>{g.name}</button>)}
-          <button className="xn-text-button" aria-pressed={medicine} onClick={pickMedicine}>临床工作</button>
-        </div>
-        <div className="xn-library-search">
-          <label className="sr-only" htmlFor="xn-library-search">搜索方向或手册内容</label>
-          <input id="xn-library-search" type="search" value={query} placeholder="搜索方向或手册内容" onChange={(e) => { setQuery(e.target.value); leaveMedicine(); }} />
-        </div>
-      </div>
-      {!medicine && <div className="xn-library-filterbar" role="group" aria-label="跨学科方向">
-        {visible.length > 0 ? visible.map((item) => <button key={item.id} className="xn-text-button" aria-pressed={selected === item.id} onClick={() => pickDirection(item.id)}>{item.name}</button>)
-          : <p role="status" className="text-sm muted">没有匹配的方向。<button className="xn-text-button" onClick={resetFilters}>清空搜索并显示全部</button></p>}
-        <button className="xn-text-button" aria-pressed={false} onClick={pickMedicine}>临床工作</button>
-      </div>}
-    </div>
-
-    {medicine ? <article aria-live="polite" className="min-w-0 mt-8">
-        <div className="xn-library-head"><div className="xn-library-title"><div className="xn-library-title-row"><h2>临床工作</h2></div></div></div>
-        {chapterNav}
-        {activeChapter && <section className="xn-library-read" aria-label={activeChapter.title}>
-          <h3 className="xn-library-read-title">{activeChapter.title}</h3>
-          <MedicineBrowser />
-        </section>}
-      </article> : <>
-      <article aria-live="polite" className="min-w-0 mt-8">
-        <div className="xn-library-head"><div className="xn-library-title"><p className="text-sm muted">{current.group_name}</p><div className="xn-library-title-row"><h2>{current.name}</h2><button className="xn-library-compare" onClick={() => toggle(current.id)}>{compare.includes(current.id) ? "移出对比" : "加入对比"}（{compare.length}/2）</button></div></div><p className="xn-library-overview">{handbook.overview}</p></div>
-        {chapterNav}
-        {activeChapter && <section className="xn-library-read" aria-label={activeChapter.title}>
-          <h3 className="xn-library-read-title">{activeChapter.title}</h3>
-          {chapter === "overview" && <>
-            <ul className="mt-4 list-disc space-y-3 pl-5 leading-7">{current.work_tasks.map((task) => <li key={task}>{task}</li>)}</ul>
-            <h4 className="mt-6 font-semibold">医学背景可能提供的起点</h4><p className="mt-2 leading-7">{current.medical_transfer.join("；")}。</p>
-            <h4 className="mt-6 font-semibold">代表职业与映射来源</h4><p className="mt-2 text-xs leading-6 muted">职业信息来自 O*NET；与国内研究方向的关联由 LIMEN 编辑。</p>
-            <ul className="mt-3 space-y-3">{current.onet.map((o) => <li key={o.code} className="flex flex-wrap justify-between gap-2 text-sm"><a href={occupationUrl(o.code)} target="_blank" rel="noreferrer" className="underline">{o.name} ↗</a><span className="muted">SOC {o.code} · {relationshipLabel[o.relationship] ?? o.relationship}</span></li>)}</ul>
-          </>}
-          {chapter === "work" && <ol className="mt-4 space-y-4">{handbook.daily_work.map((task, i) => <li key={task} className="flex gap-4 text-sm leading-7"><span className="font-semibold">0{i + 1}</span><span>{task}</span></li>)}</ol>}
-          {chapter === "skills" && <>
-            <ul className="mt-3 space-y-2">{current.skills.map((s) => <li key={s} className="text-sm">{s}</li>)}</ul>
-            <h4 className="mt-6 font-semibold">开始前，先了解这些</h4><ul className="mt-3 list-disc pl-5 text-sm leading-7">{handbook.prerequisites.map((p) => <li key={p}>{p}</li>)}</ul>
-          </>}
-          {chapter === "practice" && <>
-            <p className="mt-3 text-xs muted">以下为 LIMEN 编辑的模拟入门项目，非官方资料。</p>
-            <h4 className="mt-3 font-semibold">{handbook.starter_project.title}</h4><p className="mt-2 text-sm leading-7">{handbook.starter_project.question}</p><p className="mt-2 text-sm leading-7 muted">准备材料：{handbook.starter_project.inputs}</p>
-            <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-7">{handbook.starter_project.steps.map((s) => <li key={s}>{s}</li>)}</ol>
-            <p className="mt-3 text-sm leading-7">成果：{handbook.starter_project.deliverable}</p><ul className="mt-2 list-disc pl-5 text-sm leading-7">{handbook.starter_project.checks.map((c) => <li key={c}>{c}</li>)}</ul>
-            <h4 className="mt-6 font-semibold">可作为起点的课程</h4><ol className="mt-2 list-decimal space-y-2 pl-5 text-sm">{current.courses.map((c) => <li key={c}>{c}</li>)}</ol>
-            <h4 className="mt-6 font-semibold">延伸阅读与实践资料</h4><ul className="mt-3 space-y-3">{handbook.sources.map((s) => <li key={s.url}><a href={s.url} target="_blank" rel="noreferrer" className="text-sm font-medium">{s.title} ↗</a><p className="mt-1 text-sm leading-6 muted">{s.purpose}</p></li>)}</ul>
-          </>}
-          {chapter === "admissions" && <p className="notice mt-4 text-sm leading-7">下方提供带年份的官方目录与章程。医学本科能否报考具体项目（报考资格未知时以院校原文为准）、院系加试和当年计划仍须逐项核对；往年资料仅作参考。</p>}
-          {chapter === "industry" && <p className="mt-3 text-sm muted">以下为真实招聘原文与行业统计来源，请展开核对。</p>}
-          <OfficialDossier key={`${current.id}:${activeChapter.category}`} directionId={current.id} initialCategory={activeChapter.category} />
-        </section>}
-        <div className="mt-7 flex flex-wrap gap-3"><Link href={`/experience?direction=${current.id}`} className="button">进入职业体验</Link><Link href={`/report/plan?direction=${current.id}`} className="button secondary">将此方向作为规划目标</Link></div>
-      </article>
-      <details className="mt-12 border-t border-slate-200 pt-7"><summary className="text-xl font-semibold">方向对比（{compare.length}/2）</summary>
-        <p role="status" className="mt-3 text-sm muted">{message || (compare.length < 2 ? `已选择 ${compare.length}/2 个方向。请选择两个不同方向，查看任务与课程差异。` : "比较任务、技能和课程，找出你更想尝试的活动。")}</p>
-        {compared.length > 0 && <div className="mt-4 flex flex-wrap gap-3">{compared.map((item) => <button key={item.id} onClick={() => toggle(item.id)} className="xn-text-button">{item.name} · 移除</button>)}</div>}
-        {compared.length === 2 && <div className="mt-5 overflow-x-auto"><table className="w-full min-w-[600px] border-collapse text-left text-sm"><thead><tr><th className="p-3">比较维度</th>{compared.map((item) => <th key={item.id} className="p-3">{item.name}</th>)}</tr></thead><tbody>{([["典型任务", "work_tasks"], ["技能", "skills"], ["课程", "courses"], ["医学迁移线索", "medical_transfer"]] as const).map(([label, key]) => <tr key={key} className="border-t border-slate-200"><th className="p-3 align-top font-medium">{label}</th>{compared.map((item) => <td className="p-3 align-top leading-7" key={item.id}>{item[key].join("；")}</td>)}</tr>)}</tbody></table></div>}
-      </details>
-    </>}
-  </>;
+function DirectionComparison({ selected, onChange }: { selected: string[]; onChange: (index: number, id: string) => void }) {
+  const compared = selected.map(id => findDirection(id)!);
+  const rows = [
+    { title: "实际工作", render: (item: Direction) => <ul>{item.work_tasks.map(value => <li key={value}>{value}</li>)}</ul> },
+    { title: "能力基础", render: (item: Direction) => <><h3>医学迁移线索</h3><ul>{item.medical_transfer.map(value => <li key={value}>{value}</li>)}</ul><h3>新要求</h3><ul>{item.skills.map(value => <li key={value}>{value}</li>)}</ul></> },
+    { title: "学习实践", render: (item: Direction) => <><p>{getTemplate(item.id).title}</p><p>{getTemplate(item.id).deliverable}</p><Link href={`/experience?direction=${item.id}`}>查看相关任务 →</Link></> },
+    { title: "升学条件", render: (item: Direction) => <><p>个人报考资格尚未核定。院校、年份、专业限制与加试要求需逐项核对。</p><a href={`/explore?direction=${item.id}#chapter-admissions`}>核对该方向招生来源 →</a></> },
+    { title: "来源", render: (item: Direction) => <><p className="xn-library-meta">方向映射与入门项目为 LIMEN 编辑性整理。</p><ul className="xn-source-links">{handbookEntries[item.id as HandbookDirectionId].sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title} ↗</a><details><summary>资料用途</summary><p>{source.purpose}</p></details></li>)}</ul></> },
+  ];
+  return <div className="xn-comparison" data-motion="M-V02"><div className="xn-comparison-header" data-motion="M-V01"><div aria-hidden="true" />{compared.map((item, i) => <div key={i} className="xn-comparison-direction"><DirectionArt direction={item.id} compact /><label><span className="sr-only">第{i + 1}个比较方向</span><select value={item.id} onChange={event => onChange(i, event.target.value)}>{directions.map(option => <option key={option.id} value={option.id} disabled={option.id === selected[1 - i]}>{option.name}</option>)}</select></label></div>)}</div>{rows.map(row => <section key={row.title} className="xn-comparison-row"><h2>{row.title}</h2>{compared.map(item => <div key={item.id} className="xn-comparison-cell" data-motion="M-V03"><p className="xn-comparison-mobile-name">{item.name}</p>{row.render(item)}</div>)}</section>)}</div>;
 }

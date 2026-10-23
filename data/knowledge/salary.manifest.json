@@ -1,0 +1,402 @@
+[
+  {
+    "source": {
+      "id": "sz-hrss-wage-guide-2025",
+      "url": "https://hrss.sz.gov.cn/attachment/1/1703/1703629/12735120.pdf",
+      "organization": "深圳市人力资源和社会保障局",
+      "title": "深圳市2025年人力资源市场工资价位及行业人工成本信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文内未出现发布日期；其政府信息公开发布页 https://hrss.sz.gov.cn/gkmlpt/content/12/12735/post_12735120.html 标注「发布日期：2026-04-14」「成文日期：2026-04-14」。因 PDF 原文无日期、无法提供可在 raw 内匹配的 publication_pattern，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary/sz-wage-2025-pdf.pdf",
+      "sha256": "e62941a671c77c38564a090ba18c027cb8aaae652509a1b14e542af2bb58a421",
+      "captured_at": "2026-10-23T05:01:31.968Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary/sz-wage-2025-pdf.txt",
+      "extracted_sha256": "a9b26643694e7478261cf61f7fc3f95840399081f681bd54e34bdf98fa9b6c46"
+    },
+    "record": {
+      "id": "industry-sz-hrss-wage-guide-2025-medical-ai-pm",
+      "role_id": "medical_ai_pm",
+      "category": "industry",
+      "title": "深圳工资价位统计口径：10%–90% 分位数的官方定义（低位数/中位数/高位数）",
+      "summary": "深圳市人社局在该年度工资价位报告中给出的官方统计口径：分位数是把企业薪酬调查数据由低到高排序后处于某分位的数据值；90%为高位数（反映高端水平）、75%为上四分位数、50%为中位数（反映中等水平）、25%为下四分位数、10%为低位数（反映低端水平）。这是理解本报告全部数字含义的前提：报告给出的是分位值，不是平均值。（同一官方来源共 4 条原文事实，字段：statistical_definition、coverage_limit、salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于引用深圳市人社局工资价位报告中的任何分位数数字时的口径说明。不适用于其他城市或其他统计制度（如人社部行业工资价位）的分位数定义，也不代表平均值或到手收入。",
+      "relation": "direct",
+      "tags": [
+        "分位数",
+        "中位数",
+        "统计口径",
+        "深圳",
+        "工资价位",
+        "税前",
+        "数据边界",
+        "样本量",
+        "调查期",
+        "就业统计",
+        "人工智能产业集群",
+        "战略性新兴产业",
+        "AI就业"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳市人力资源和社会保障局",
+        "region": "深圳",
+        "statistic_scope": "2024年度深圳市企业薪酬调查（发布年度标识为2025年）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "statistical_definition",
+        "pattern": "分位数 指将通过企业薪酬调查获取的工资价位或人工成本数 据按由低到高的顺序排序，处在某个分位上的数据值 反映的市场价位水平。 90% （高位数） 将通过企业薪酬调查获取的数据按由低到高的顺序排 序，排在后10%位置的数据值，反映市场的高端水平。 75% （上四分位数） 将通过企业薪酬调查获取的数据按由低到高的顺序排 序，排在后25%位置的数据值，反映市场的较高水平。 50% （中位数） 将通过企业薪酬调查获取的数据按由低到高的顺序排 序，排在 50%中间位置的数据值，反映市场的中等水 平。 25% （下四分位数） 将通过企业薪酬调查获取的数据按由低到高的顺序排 序，排在前25%位置的数据值，反映市场的较低水平。 10% （低位数） 将通过企业薪酬调查获取的数据按由低到高的顺序排 序，排在前10%位置的数据值，反映市场的低端水平。"
+      },
+      {
+        "field": "statistical_definition",
+        "pattern": "工资价位 指企业从业人员在报告期内的工资报酬合计，包括 基本工资、绩效工资、津补贴、加班加点工资和特 殊情况下支付的工资等。"
+      },
+      {
+        "field": "coverage_limit",
+        "pattern": "我市对 4794 家企业的人工成本情况和在岗职工工资报 酬情况进行调查，调查对象涵盖 19 个国民经济行业门类的 企业和由调查企业支付工资的劳动者。调查的时期指标为 2024 年 1 月1 日至 12 月 31 日的数据。"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "（一）分产业集群的工资价位 序号 产业集群 单位：元/人\\.年 10% 25% 50% 75% 90% 1 整体 56020 70819 94143 152730 272400 2 软件与信息服务产业集群 64952 90451 135600 274471 395038 3 人工智能产业集群 70902 89166 125815 256169 377986"
+      }
+    ],
+    "expected_fields": [
+      "statistical_definition",
+      "平均值/算术平均工资",
+      "分岗位到手收入",
+      "税后到手收入",
+      "单位人工成本分摊",
+      "coverage_limit",
+      "机关事业单位工资",
+      "个体经营者收入",
+      "2025年当年数据",
+      "salary_statistics",
+      "医疗AI专属薪资",
+      "单纯职业口径"
+    ]
+  },
+  {
+    "source": {
+      "id": "sz-hrss-wage-guide-2025",
+      "url": "https://hrss.sz.gov.cn/attachment/1/1703/1703629/12735120.pdf",
+      "organization": "深圳市人力资源和社会保障局",
+      "title": "深圳市2025年人力资源市场工资价位及行业人工成本信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文内未出现发布日期；其政府信息公开发布页 https://hrss.sz.gov.cn/gkmlpt/content/12/12735/post_12735120.html 标注「发布日期：2026-04-14」「成文日期：2026-04-14」。因 PDF 原文无日期、无法提供可在 raw 内匹配的 publication_pattern，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary/sz-wage-2025-pdf.pdf",
+      "sha256": "e62941a671c77c38564a090ba18c027cb8aaae652509a1b14e542af2bb58a421",
+      "captured_at": "2026-10-23T05:01:31.968Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary/sz-wage-2025-pdf.txt",
+      "extracted_sha256": "a9b26643694e7478261cf61f7fc3f95840399081f681bd54e34bdf98fa9b6c46"
+    },
+    "record": {
+      "id": "industry-sz-hrss-wage-guide-2025-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "深圳工资价位发布门槛：仅公布样本量达 20 家企业、100 人的数据",
+      "summary": "官方说明本次共发布75张表，且「发布数据为企业样本量达20家、员工样本量达100人的数据」。这解释了为何某些细分职业（如医学信息工程技术人员）未出现在表中：样本不足即不发布，属制度性缺口而非该职业不存在。（同一官方来源共 4 条原文事实，字段：coverage_limit、salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于解释深圳报告中职业细类的缺项原因。不适用于推断未发布职业的薪资水平。",
+      "relation": "direct",
+      "tags": [
+        "数据边界",
+        "发布门槛",
+        "样本量",
+        "深圳",
+        "缺项解释",
+        "行业工资",
+        "卫生和社会工作",
+        "软件和信息技术服务业",
+        "分位数",
+        "卫生行业",
+        "卫生专业技术人员",
+        "药师",
+        "行业×职业",
+        "医疗卫生技术人员",
+        "护理人员"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳市人力资源和社会保障局",
+        "region": "深圳",
+        "statistic_scope": "2024年度深圳市企业薪酬调查（发布年度标识为2025年）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "coverage_limit",
+        "pattern": "本次发布信息分为人力资源市场工资价位、人工成本 信息和职业映射三部分，共计 75 张表。发布数据为企业样 本量达20 家、员工样本量达 100 人的数据。"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "（一）分行业门类的工资价位 序号 行业门类 单位：元/人\\.年 10% 25% 50% 75% 90% 1 全行业 55200 70479 96100 154213 249800 2 制造业 54840 66623 85520 124069 199824 3 建筑业 50700 66090 93476 132000 200355 4 批发和零售业 54326 70015 95760 144000 231140 5 交通运输、仓储和邮政业 60865 78902 106145 157302 243600 6 住宿和餐饮业 45600 54000 69600 93792 132000 7 信息传输、软件和信息技术服务业 82746 107062 162400 252850 370238 8 金融业 87497 130448 216176 364763 609670 9 房地产业 48000 63318 84800 135602 240000 10 租赁和商务服务业 56067 71992 104000 165052 247455 11 科学研究和技术服务业 72458 95000 132243 192031 285236 12 水利、环境和公共设施管理业 52200 59934 87282 122631 173210 13 居民服务、修理和其他服务业 46760 56800 75110 102462 140000 14 教育 54364 71320 93300 136625 216000 15 卫生和社会工作 69292 84000 110026 170012 259892 16 文化、体育和娱乐业 46560 60700 93200 152655 241813"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "（1）卫生 序号 职业 单位：元/人\\.年 10% 25% 50% 75% 90% 1 单位负责人 91308 124001 189800 287192 450000 2 企事业单位负责人 91308 124001 189800 287192 450000 3 企业负责人 91308 124001 189800 287192 450000 4 销售和营销部门经理 74610 119410 171120 217073 305600 5 其他职能部门经理 96004 124001 189815 300000 496322 6 专业技术人员 72000 85692 107799 155488 215797 7 卫生专业技术人员 72007 86400 108953 157699 215771 8 临床和口腔医师 84800 110258 158800 220363 330638 9 口腔科医师 81971 106796 161520 266735 432343 10 药学技术人员 72000 79743 94006 114474 152016 11 药师 72000 82269 94640 120189 152838"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "12 医疗卫生技术人员 75682 95309 124091 170400 174000 13 护理人员 71541 81240 96000 125639 155488"
+      }
+    ],
+    "expected_fields": [
+      "coverage_limit",
+      "未达标职业的薪资数字",
+      "salary_statistics",
+      "具体岗位薪资",
+      "月薪口径",
+      "其他城市对比",
+      "其他城市卫生行业",
+      "公立医院薪酬制度",
+      "其他城市",
+      "平均值"
+    ]
+  },
+  {
+    "source": {
+      "id": "sz-hrss-wage-guide-2025",
+      "url": "https://hrss.sz.gov.cn/attachment/1/1703/1703629/12735120.pdf",
+      "organization": "深圳市人力资源和社会保障局",
+      "title": "深圳市2025年人力资源市场工资价位及行业人工成本信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文内未出现发布日期；其政府信息公开发布页 https://hrss.sz.gov.cn/gkmlpt/content/12/12735/post_12735120.html 标注「发布日期：2026-04-14」「成文日期：2026-04-14」。因 PDF 原文无日期、无法提供可在 raw 内匹配的 publication_pattern，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary/sz-wage-2025-pdf.pdf",
+      "sha256": "e62941a671c77c38564a090ba18c027cb8aaae652509a1b14e542af2bb58a421",
+      "captured_at": "2026-10-23T05:01:31.968Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary/sz-wage-2025-pdf.txt",
+      "extracted_sha256": "a9b26643694e7478261cf61f7fc3f95840399081f681bd54e34bdf98fa9b6c46"
+    },
+    "record": {
+      "id": "industry-sz-hrss-wage-guide-2025-guide-software",
+      "role_id": "guide_software",
+      "category": "industry",
+      "title": "深圳 2024 年「计算机软件工程技术人员」工资价位（职业细类）",
+      "summary": "深圳市人社局2024年度分职业细类工资价位：计算机软件工程技术人员（职业编码行20，标注S）为 96000/132000/184648/266342/366246，即低位数9.6万、中位数13.2万、中位以上至高位区间18.46万–36.62万（5 列依次为 10%（低位数）/25%（下四分位数）/50%（中位数）/75%（上四分位数）/90%（高位数），单位为元/人·年）。这是少数可直接引用的「具体职业+具体数字」官方数据，可用于对照软件工程方向在深圳的薪酬分位。",
+      "applicability": "适用于引用深圳该职业细类年度工资价位分位数。属职业细类口径而非具体公司/岗位offer；不适用于其他城市；行业不限（全体行业合并统计）。",
+      "relation": "direct",
+      "tags": [
+        "计算机软件工程技术人员",
+        "职业工资",
+        "分位数",
+        "深圳",
+        "软件工程"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳市人力资源和社会保障局",
+        "region": "深圳",
+        "statistic_scope": "2024年度深圳市企业薪酬调查（发布年度标识为2025年）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "20 计算机软件工程技术人员S 96000 132000 184648 266342 366246 21 计算机网络工程技术人员S 85200 103338 143494 195144 271000"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "具体公司薪资",
+      "月薪",
+      "其他城市"
+    ]
+  },
+  {
+    "source": {
+      "id": "sz-hrss-wage-guide-2025",
+      "url": "https://hrss.sz.gov.cn/attachment/1/1703/1703629/12735120.pdf",
+      "organization": "深圳市人力资源和社会保障局",
+      "title": "深圳市2025年人力资源市场工资价位及行业人工成本信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文内未出现发布日期；其政府信息公开发布页 https://hrss.sz.gov.cn/gkmlpt/content/12/12735/post_12735120.html 标注「发布日期：2026-04-14」「成文日期：2026-04-14」。因 PDF 原文无日期、无法提供可在 raw 内匹配的 publication_pattern，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary/sz-wage-2025-pdf.pdf",
+      "sha256": "e62941a671c77c38564a090ba18c027cb8aaae652509a1b14e542af2bb58a421",
+      "captured_at": "2026-10-23T05:01:31.968Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary/sz-wage-2025-pdf.txt",
+      "extracted_sha256": "a9b26643694e7478261cf61f7fc3f95840399081f681bd54e34bdf98fa9b6c46"
+    },
+    "record": {
+      "id": "industry-sz-hrss-wage-guide-2025-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "industry",
+      "title": "深圳 2024 年「数据分析处理工程技术人员」工资价位（职业细类）",
+      "summary": "深圳市人社局2024年度分职业细类工资价位：数据分析处理工程技术人员（行44，标注S）为 85864/102534/196247/233160/299840（5 列依次为 10%（低位数）/25%（下四分位数）/50%（中位数）/75%（上四分位数）/90%（高位数），单位为元/人·年）。该职业是临床数据科学/AI数据方向最接近的官方职业分类口径，可作跨考后就业薪资的现实参照。",
+      "applicability": "适用于引用深圳该职业细类年度工资价位分位数。属职业分类大典口径，不区分医疗/非医疗行业；不适用于其他城市。",
+      "relation": "direct",
+      "tags": [
+        "数据分析处理工程技术人员",
+        "临床数据",
+        "职业工资",
+        "分位数",
+        "深圳"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳市人力资源和社会保障局",
+        "region": "深圳",
+        "statistic_scope": "2024年度深圳市企业薪酬调查（发布年度标识为2025年）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "44 数据分析处理工程技术人员S 85864 102534 196247 233160 299840 45 工程造价工程技术人员 72000 90679 110992 159728 199683"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "医疗行业内该职业的单独数字",
+      "其他城市"
+    ]
+  },
+  {
+    "source": {
+      "id": "sz-hrss-wage-guide-2025",
+      "url": "https://hrss.sz.gov.cn/attachment/1/1703/1703629/12735120.pdf",
+      "organization": "深圳市人力资源和社会保障局",
+      "title": "深圳市2025年人力资源市场工资价位及行业人工成本信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文内未出现发布日期；其政府信息公开发布页 https://hrss.sz.gov.cn/gkmlpt/content/12/12735/post_12735120.html 标注「发布日期：2026-04-14」「成文日期：2026-04-14」。因 PDF 原文无日期、无法提供可在 raw 内匹配的 publication_pattern，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary/sz-wage-2025-pdf.pdf",
+      "sha256": "e62941a671c77c38564a090ba18c027cb8aaae652509a1b14e542af2bb58a421",
+      "captured_at": "2026-10-23T05:01:31.968Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary/sz-wage-2025-pdf.txt",
+      "extracted_sha256": "a9b26643694e7478261cf61f7fc3f95840399081f681bd54e34bdf98fa9b6c46"
+    },
+    "record": {
+      "id": "industry-sz-hrss-wage-guide-2025-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "深圳 2024 年卫生专业技术人员与医师（临床/内科）工资价位",
+      "summary": "深圳市人社局2024年度分职业细类工资价位：卫生专业技术人员 72006/86016/106675/151000/209524；临床和口腔医师 84936/105889/152796/216660/336122；内科医师 94920/121440/159558/194512/261133（5 列依次为 10%（低位数）/25%（下四分位数）/50%（中位数）/75%（上四分位数）/90%（高位数），单位为元/人·年）。这是临床背景人员留在医疗体系内的官方薪酬分位参照。（同一官方来源共 2 条原文事实，字段：salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于引用深圳卫生专业技术人员及医师类职业细类的年度工资分位。属全体行业合并的企业口径，不含机关事业单位编制内工资制度；不适用于其他城市。",
+      "relation": "direct",
+      "tags": [
+        "卫生专业技术人员",
+        "临床医师",
+        "内科医师",
+        "职业工资",
+        "分位数",
+        "深圳",
+        "医疗卫生技术人员",
+        "临床检验技师",
+        "护理人员"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳市人力资源和社会保障局",
+        "region": "深圳",
+        "statistic_scope": "2024年度深圳市企业薪酬调查（发布年度标识为2025年）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "55 卫生专业技术人员 72006 86016 106675 151000 209524 56 临床和口腔医师 84936 105889 152796 216660 336122 57 内科医师 94920 121440 159558 194512 261133"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "62 医疗卫生技术人员 69718 90665 120046 170400 171600 63 临床检验技师 60000 73650 92920 122281 160000 64 护理人员 70536 81000 95548 124158 152911"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "公立医院编制内工资",
+      "绩效奖金单列口径",
+      "医院等级差异",
+      "其他城市"
+    ]
+  },
+  {
+    "source": {
+      "id": "sz-hrss-wage-guide-2025",
+      "url": "https://hrss.sz.gov.cn/attachment/1/1703/1703629/12735120.pdf",
+      "organization": "深圳市人力资源和社会保障局",
+      "title": "深圳市2025年人力资源市场工资价位及行业人工成本信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文内未出现发布日期；其政府信息公开发布页 https://hrss.sz.gov.cn/gkmlpt/content/12/12735/post_12735120.html 标注「发布日期：2026-04-14」「成文日期：2026-04-14」。因 PDF 原文无日期、无法提供可在 raw 内匹配的 publication_pattern，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary/sz-wage-2025-pdf.pdf",
+      "sha256": "e62941a671c77c38564a090ba18c027cb8aaae652509a1b14e542af2bb58a421",
+      "captured_at": "2026-10-23T05:01:31.968Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary/sz-wage-2025-pdf.txt",
+      "extracted_sha256": "a9b26643694e7478261cf61f7fc3f95840399081f681bd54e34bdf98fa9b6c46"
+    },
+    "record": {
+      "id": "industry-sz-hrss-wage-guide-2025-guide-devices",
+      "role_id": "guide_devices",
+      "category": "industry",
+      "title": "深圳 2024 年大健康、生物医药、高端医疗器械产业集群工资价位",
+      "summary": "同一张战略性新兴产业分产业集群表：大健康产业集群 49163/63840/94473/149484/244230；生物医药产业集群 57003/81566/113758/143532/227000；高端医疗器械产业集群 60881/74927/101923/174611/280340（5 列依次为 10%（低位数）/25%（下四分位数）/50%（中位数）/75%（上四分位数）/90%（高位数），单位为元/人·年）。智能医疗器械方向的产业侧薪酬参照即为此三行。",
+      "applicability": "适用于引用深圳大健康/生物医药/高端医疗器械产业集群的工资分位。属产业集群口径，非具体岗位；不适用于其他城市。",
+      "relation": "direct",
+      "tags": [
+        "高端医疗器械",
+        "生物医药",
+        "大健康",
+        "产业集群",
+        "分位数",
+        "深圳"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳市人力资源和社会保障局",
+        "region": "深圳",
+        "statistic_scope": "2024年度深圳市企业薪酬调查（发布年度标识为2025年）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "18 大健康产业集群 49163 63840 94473 149484 244230 19 生物医药产业集群 57003 81566 113758 143532 227000 20 高端医疗器械产业集群 60881 74927 101923 174611 280340"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "具体岗位薪资",
+      "其他城市"
+    ]
+  }
+]

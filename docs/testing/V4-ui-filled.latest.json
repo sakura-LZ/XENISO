@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-21T17:54:56.562Z",
+  "results": [
+    {
+      "width": 1440,
+      "path": "/report/initial",
+      "overflow": false,
+      "internalRefs": [],
+      "taskTitles": true
+    },
+    {
+      "width": 1440,
+      "path": "/report/plan",
+      "overflow": false,
+      "internalRefs": [],
+      "taskTitles": true
+    },
+    {
+      "width": 1440,
+      "path": "/experience",
+      "overflow": false,
+      "internalRefs": [],
+      "taskTitles": true
+    },
+    {
+      "width": 820,
+      "path": "/report/initial",
+      "overflow": false,
+      "internalRefs": [],
+      "taskTitles": true
+    },
+    {
+      "width": 820,
+      "path": "/report/plan",
+      "overflow": false,
+      "internalRefs": [],
+      "taskTitles": true
+    },
+    {
+      "width": 820,
+      "path": "/experience",
+      "overflow": false,
+      "internalRefs": [],
+      "taskTitles": true
+    },
+    {
+      "width": 390,
+      "path": "/report/initial",
+      "overflow": false,
+      "internalRefs": [],
+      "taskTitles": true
+    },
+    {
+      "width": 390,
+      "path": "/report/plan",
+      "overflow": false,
+      "internalRefs": [],
+      "taskTitles": true
+    },
+    {
+      "width": 390,
+      "path": "/experience",
+      "overflow": false,
+      "internalRefs": [],
+      "taskTitles": true
+    }
+  ],
+  "editing": {
+    "oldSuccess": false,
+    "oldReadMessage": false,
+    "nextStep": false
+  },
+  "restored": true
+}

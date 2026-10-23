@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XENISO · 异域同构 · 病理报告标注系统</title>
+<style>
+:root {
+  --paper-white: #FAFAF8;
+  --paper-aged: #F5F1E8;
+  --ink-black: #1A1816;
+  --ink-gray: #6B6864;
+  --medical-green: #1E9B6B;
+  --archive-tan: #D4934F;
+  --stamp-red: #C73E1D;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--paper-white);
+  color: var(--ink-black);
+  line-height: 1.6;
+}
+
+/* 文档容器 */
+.pathology-document {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background: var(--paper-white);
+  position: relative;
+}
+
+/* 纸张纹理 */
+.pathology-document::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.01) 2px, rgba(0,0,0,0.01) 4px);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* 文档页眉 */
+.document-header {
+  border-bottom: 3px solid var(--ink-black);
+  padding-bottom: 24px;
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header-title {
+  flex: 1;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-mark {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--medical-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--medical-green);
+  font-family: 'Crimson Pro', 'Georgia', serif;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--ink-black);
+}
+
+.logo-sub {
+  font-size: 13px;
+  color: var(--ink-gray);
+  margin-top: 2px;
+}
+
+.doc-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--ink-gray);
+  margin-bottom: 8px;
+}
+
+.doc-title {
+  font-family: 'Crimson Pro', 'Georgia', serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink-black);
+  margin-bottom: 8px;
+}
+
+.doc-subtitle {
+  font-family: 'Crimson Pro', 'Georgia', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--ink-gray);
+}
+
+/* 引言区 */
+.document-intro {
+  background: var(--paper-aged);
+  padding: 32px 36px;
+  margin-bottom: 48px;
+  border-left: 4px solid var(--medical-green);
+  position: relative;
+}
+
+.document-intro::before {
+  content: '※';
+  position: absolute;
+  top: 32px;
+  left: -14px;
+  font-size: 20px;
+  color: var(--medical-green);
+  background: var(--paper-white);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.intro-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--ink-black);
+  margin-bottom: 16px;
+}
+
+.intro-meta {
+  font-size: 13px;
+  color: var(--ink-gray);
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.meta-item::before {
+  content: '▪';
+  color: var(--medical-green);
+}
+
+/* 标注区块 */
+.annotation-section {
+  margin-bottom: 56px;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink-black);
+}
+
+.section-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--medical-green);
+  background: var(--paper-aged);
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+.section-title {
+  font-family: 'Crimson Pro', 'Georgia', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--ink-black);
+}
+
+/* 标注卡片 */
+.annotation-card {
+  background: white;
+  border: 2px solid var(--ink-black);
+  padding: 28px 32px;
+  margin-bottom: 24px;
+  position: relative;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.08);
+}
+
+.annotation-card::before {
+  content: attr(data-index);
+  position: absolute;
+  top: -16px;
+  left: 24px;
+  width: 32px;
+  height: 32px;
+  background: var(--medical-green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(30, 155, 107, 0.3);
+}
+
+.card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--ink-gray);
+  margin-bottom: 12px;
+}
+
+.card-title {
+  font-family: 'Crimson Pro', 'Georgia', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink-black);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.card-content {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-black);
+  margin-bottom: 16px;
+}
+
+.card-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--ink-gray);
+  padding-top: 16px;
+  border-top: 1px dashed rgba(0,0,0,0.15);
+}
+
+.card-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-meta-item::before {
+  content: '→';
+  color: var(--medical-green);
+  font-weight: 700;
+}
+
+/* 行动区块 */
+.action-block {
+  background: var(--medical-green);
+  color: white;
+  padding: 40px;
+  border-radius: 8px;
+  margin-top: 56px;
+  position: relative;
+}
+
+.action-block::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 40px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid var(--medical-green);
+}
+
+.action-title {
+  font-family: 'Crimson Pro', 'Georgia', serif;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.action-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+  opacity: 0.95;
+}
+
+.action-input {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.action-input input {
+  flex: 1;
+  min-width: 280px;
+  padding: 16px 20px;
+  border: 2px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.15);
+  border-radius: 6px;
+  font-size: 15px;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.action-input input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.action-input input:focus {
+  outline: none;
+  background: rgba(255,255,255,0.25);
+  border-color: white;
+}
+
+.action-input button {
+  padding: 16px 36px;
+  background: var(--ink-black);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.action-input button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* 页脚注释 */
+.document-footer {
+  margin-top: 80px;
+  padding-top: 32px;
+  border-top: 2px solid var(--ink-black);
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--ink-gray);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.footer-note {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--ink-gray);
+  padding-top: 20px;
+  border-top: 1px dashed rgba(0,0,0,0.15);
+}
+
+@media (max-width: 768px) {
+  .pathology-document {
+    padding: 40px 24px;
+  }
+
+  .document-header {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .doc-title {
+    font-size: 32px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .action-input {
+    flex-direction: column;
+  }
+
+  .action-input input {
+    min-width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="pathology-document">
+  <!-- 文档页眉 -->
+  <header class="document-header">
+    <div class="header-title">
+      <div class="doc-category">Career Pathology Report</div>
+      <h1 class="doc-title">异域同构<br>职业方向定位与行动规划</h1>
+      <div class="doc-subtitle">Different Fields. Shared Potential.</div>
+    </div>
+    <div class="header-logo">
+      <div class="logo-mark">X</div>
+      <div>
+        <div class="logo-text">XENISO</div>
+        <div class="logo-sub">异域同构</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 引言 -->
+  <div class="document-intro">
+    <p class="intro-text">
+      医学生职业探索不是单向选择，而是解剖自身潜力结构的过程。基于 O*NET 职业兴趣量表（Mini-IP 30题官方版本），
+      我们梳理9大跨学科方向+1个医学方向，并整合38个中国官方来源的127条资料与270条事实实例，
+      帮助你找到与医学背景同构的职业可能。
+    </p>
+    <div class="intro-meta">
+      <div class="meta-item">O*NET Interest Profiler 官方框架</div>
+      <div class="meta-item">RIASEC 六维模型</div>
+      <div class="meta-item">9+1 跨学科方向</div>
+      <div class="meta-item">127条官方资料</div>
+    </div>
+  </div>
+
+  <!-- 第一节：诊断流程 -->
+  <section class="annotation-section">
+    <div class="section-header">
+      <span class="section-number">Section I</span>
+      <h2 class="section-title">诊断流程 / Diagnostic Procedure</h2>
+    </div>
+
+    <div class="annotation-card" data-index="1">
+      <div class="card-label">Step 01 · Profilus Initialis</div>
+      <h3 class="card-title">个人画像建立</h3>
+      <p class="card-content">
+        梳理医学学习经历、科研项目、实习实践与兴趣偏好，建立初始档案。
+        信息仅用于个性化匹配，不被第三方获取。
+      </p>
+      <div class="card-meta">
+        <span class="card-meta-item">必填项目</span>
+        <span class="card-meta-item">约10分钟</span>
+        <span class="card-meta-item">隐私保护</span>
+      </div>
+    </div>
+
+    <div class="annotation-card" data-index="2">
+      <div class="card-label">Step 02 · Evaluatio Primaria</div>
+      <h3 class="card-title">初步评价 / 兴趣量表测评</h3>
+      <p class="card-content">
+        使用 O*NET Mini-IP 30题官方职业兴趣量表，生成 RIASEC 六维结构（现实型、研究型、艺术型、社会型、企业型、常规型），
+        产出初步报告 R1，给出推荐方向与匹配度说明。
+      </p>
+      <div class="card-meta">
+        <span class="card-meta-item">标准测评</span>
+        <span class="card-meta-item">约15分钟</span>
+        <span class="card-meta-item">生成报告 R1</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第二节：探索系统 -->
+  <section class="annotation-section">
+    <div class="section-header">
+      <span class="section-number">Section II</span>
+      <h2 class="section-title">探索系统 / Exploration System</h2>
+    </div>
+
+    <div class="annotation-card" data-index="3">
+      <div class="card-label">Step 03 · Experientia Professio</div>
+      <h3 class="card-title">职业体验 / 模拟任务</h3>
+      <p class="card-content">
+        进入9大跨学科方向（生物技术、医疗器械、数据科学、政策法规、医学传播、教育培训、健康管理、咨询战略、创业投资）
+        +1个医学方向，体验14个真实任务模板，模拟实际工作场景，辅助判断兴趣与能力匹配度。
+      </p>
+      <div class="card-meta">
+        <span class="card-meta-item">可选步骤</span>
+        <span class="card-meta-item">14个任务模板</span>
+        <span class="card-meta-item">127条资料支持</span>
+      </div>
+    </div>
+
+    <div class="annotation-card" data-index="4">
+      <div class="card-label">Step 04 · Database Cognitio</div>
+      <h3 class="card-title">信息文库 / 官方资料库</h3>
+      <p class="card-content">
+        整合38个中国官方来源（包括人社部职业大典、教育部专业目录、各部委产业规划等），
+        涵盖职业、招聘、招生、行业和学习五类资料，共270条事实实例，可按方向、类型、来源筛选查阅。
+      </p>
+      <div class="card-meta">
+        <span class="card-meta-item">38个官方来源</span>
+        <span class="card-meta-item">270条事实实例</span>
+        <span class="card-meta-item">五类资料</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第三节：行动规划 -->
+  <section class="annotation-section">
+    <div class="section-header">
+      <span class="section-number">Section III</span>
+      <h2 class="section-title">行动规划 / Action Planning</h2>
+    </div>
+
+    <div class="annotation-card" data-index="5">
+      <div class="card-label">Step 05 · Planum Actionis</div>
+      <h3 class="card-title">行动规划生成</h3>
+      <p class="card-content">
+        根据目标方向、计划年份（1-5年）和时间投入（全职/兼职），
+        生成技能缺口分析、院校清单（含项目名称、学制、入学要求、往年分数）和定制路径，
+        输出行动规划报告 R2，可导出留存。
+      </p>
+      <div class="card-meta">
+        <span class="card-meta-item">定制路径</span>
+        <span class="card-meta-item">生成报告 R2</span>
+        <span class="card-meta-item">可导出</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 行动区块 -->
+  <div class="action-block">
+    <h3 class="action-title">开始你的职业解剖</h3>
+    <p class="action-desc">
+      输入邮箱或学籍信息，建立初始档案，开始你的异域同构之旅。
+      所有信息仅用于个性化推荐，不被第三方获取。
+    </p>
+    <div class="action-input">
+      <input type="text" placeholder="输入邮箱或学籍信息">
+      <button>Begin Examination</button>
+    </div>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="document-footer">
+    <div class="footer-grid">
+      <div>
+        <strong>数据来源说明</strong><br>
+        本平台基于 O*NET Interest Profiler 官方框架，整合中国人社部、教育部、各部委等38个官方来源的公开资料。
+        招生项目信息需官方核验，不提供录取概率推算。
+      </div>
+      <div>
+        <strong>隐私保护承诺</strong><br>
+        个人画像、测评结果和行动规划数据仅用于平台内个性化推荐，不被第三方获取或用于商业用途。
+        用户可随时删除账号及所有关联数据。
+      </div>
+    </div>
+    <div class="footer-note">
+      * Different Fields. Shared Potential. · XENISO 异域同构 2026<br>
+      * 本报告仅供职业探索参考，不构成升学或就业保证
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

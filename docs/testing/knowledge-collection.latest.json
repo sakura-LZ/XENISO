@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-22T03:40:43.900Z",
+  "sources": 7,
+  "records": 8,
+  "by_category": {
+    "occupation": 1,
+    "recruitment": 1,
+    "admissions": 2,
+    "industry": 2,
+    "learning": 2
+  },
+  "attempts": [
+    {
+      "source_id": "internlm-cn-tutorial",
+      "url": "https://raw.githubusercontent.com/InternLM/Tutorial/main/README.md",
+      "at": "2026-10-22T03:40:41.221Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "prerequisites",
+        "learning_hours",
+        "current_enrollment"
+      ]
+    },
+    {
+      "source_id": "fudan-disc-medllm",
+      "url": "https://raw.githubusercontent.com/FudanDISC/DISC-MedLLM/main/README.md",
+      "at": "2026-10-22T03:40:42.258Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "research_vacancy",
+        "learning_hours",
+        "clinical_validation"
+      ]
+    },
+    {
+      "source_id": "bytedance-medical-pm-a176552",
+      "url": "https://jobs.bytedance.com/campus/position/7669685133130221877/detail",
+      "at": "2026-10-22T03:19:00.000Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "major_restrictions",
+        "deadline"
+      ]
+    },
+    {
+      "source_id": "bytedance-medical-pm-a176552",
+      "url": "https://jobs.bytedance.com/campus/position/7669685133130221877/detail",
+      "at": "2026-10-22T03:19:00.000Z",
+      "status": "collected",
+      "missing_fields": [
+        "career_path"
+      ]
+    },
+    {
+      "source_id": "cn-nhc-ai-health-policy",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047018.htm",
+      "at": "2026-10-22T03:40:42.729Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "employment_statistics",
+        "salary_statistics",
+        "observed_talent_demand"
+      ]
+    },
+    {
+      "source_id": "cn-cmde-ai-guideline-notice",
+      "url": "https://www.ccfdie.org/cn/yjxx/ylqx/webinfo/2022/03/1648289422561065.htm",
+      "at": "2026-10-22T03:40:42.866Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "full_guideline",
+        "current_product_classification",
+        "employment_statistics"
+      ]
+    },
+    {
+      "source_id": "sjtu-2027-bme-catalog",
+      "url": "https://yzb.sjtu.edu.cn/post/3772",
+      "at": "2026-10-22T03:40:43.097Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "cross_major_restrictions",
+        "tuition",
+        "current_program_capacity"
+      ]
+    },
+    {
+      "source_id": "sjtu-2027-master-charter",
+      "url": "https://yzb.sjtu.edu.cn/post/3784",
+      "at": "2026-10-22T03:40:43.641Z",
+      "status": "collected",
+      "http_status": 200,
+      "missing_fields": [
+        "ordinary_bachelor_program_eligibility",
+        "personal_eligibility"
+      ]
+    }
+  ]
+}

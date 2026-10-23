@@ -1,0 +1,403 @@
+[
+  {
+    "source": {
+      "id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（全日制·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用，正文由查询结果动态渲染，页面本身未印发布日，故 published_at 记 null；招生年度由标题「2027年」与查询条件确定，为最新版本。artifact 为 ego 浏览器真实点击（学习方式=全日制 → 学院 → 专业 → 查询）后渲染的 DOM 文本。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1b/zju-2027-ee-085400.raw",
+      "sha256": "cd72ece249ea8e347cafd32b407aef0f1f2ebc09887f23e73be1d77d0cd2bcd2",
+      "captured_at": "2026-10-23T07:32:28.071Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-catalog-085400-bme-guide-devices-7d8f166e",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "浙大2027：085400 电子信息「生物医学工程」方向明确「欢迎医学…考生报考」（医学列首位）",
+      "summary": "浙大 2027 专业目录查询结果：生物医学工程与仪器科学学院·电子信息(085400)·生物医学工程(02)方向，备注原文「欢迎医学、药学、数学、物理、化学、生物、信电、计算机、电子、电气、电机、自控、仪器类考生报考」。同方向统考生名额 11（以最终实际录取人数为准），本专业单独分数线划档、单独录取。（同一官方来源共 2 条原文事实，字段：cross_major_restrictions、exam_subjects；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "**这是全库对「医学本科」最正面的一条原文**：浙大在 085400 生物医学工程方向的白名单里把「医学」列在第一位，护理/药学/医学技术/预防医学等医学门类本科属明确欢迎范围，不需跨专业加试的表述也未出现。注意仅限该学院的 085400，不适用于同院 仪器仪表工程(01) 方向（另条）。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "电子信息",
+        "085400",
+        "生物医学工程方向",
+        "欢迎医学考生",
+        "白名单",
+        "跨专业限制",
+        "891数字医疗仪器综合",
+        "初试科目"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（生物医学工程 02 方向）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "生物医学工程与仪器科学学院",
+        "department_type": "medical_technology",
+        "evidence_locator": "专业目录查询结果表·电子信息(085400) 生物医学工程(02) 行考试科目列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "生物医学工程\\(02\\) 生物医学工程领域 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.891数字医疗仪器综合 11\\(以最终实际录取人数为准。\\) 本专业单独分数线划档，单独录取。 欢迎医学、药学、数学、物理、化学、生物、信电、计算机、电子、电气、电机、自控、仪器类考生报考。"
+      },
+      {
+        "field": "exam_subjects",
+        "pattern": "生物医学工程\\(02\\) 生物医学工程领域 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.891数字医疗仪器综合"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions",
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（全日制·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用，正文由查询结果动态渲染，页面本身未印发布日，故 published_at 记 null；招生年度由标题「2027年」与查询条件确定，为最新版本。artifact 为 ego 浏览器真实点击（学习方式=全日制 → 学院 → 专业 → 查询）后渲染的 DOM 文本。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1b/zju-2027-ee-085400.raw",
+      "sha256": "cd72ece249ea8e347cafd32b407aef0f1f2ebc09887f23e73be1d77d0cd2bcd2",
+      "captured_at": "2026-10-23T07:32:28.071Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-catalog-085400-bme-guide-signals-aef3812a",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "浙大2027：同专业 085400「仪器仪表工程」方向白名单只列工科类，不含医学（与生医方向形成对照）",
+      "summary": "同一 085400 专业代码下：仪器仪表工程(01) 方向备注「欢迎电子信息、计算机、自控、电气、应用电子类和应用数学考生报考」，统考名额 12；该白名单**没有列入医学**，与生物医学工程(02)方向「欢迎医学…」形成同专业内的方向级差异。",
+      "applicability": "适用于想报浙大 085400 但需选方向的医学本科生：**同一专业代码下方向白名单不同**——报 02 方向（生物医学工程）医学被明确欢迎，报 01 方向（仪器仪表工程）医学不在欢迎之列。这是「专业内选方向决定跨考可行性」的关键原文。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "电子信息",
+        "085400",
+        "仪器仪表工程",
+        "白名单",
+        "方向差异",
+        "跨专业限制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（仪器仪表工程 01 方向）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "生物医学工程与仪器科学学院",
+        "evidence_locator": "专业目录查询结果表·电子信息(085400) 第 1 行（仪器仪表工程(01)方向）备注栏"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "仪器仪表工程\\(01\\) 仪器仪表工程领域 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.891数字医疗仪器综合 12\\(以最终实际录取人数为准。\\) 本专业单独分数线划档，单独录取。 欢迎电子信息、计算机、自控、电气、应用电子类和应用数学考生报考。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（全日制·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用，正文由查询结果动态渲染，页面本身未印发布日，故 published_at 记 null；招生年度由标题「2027年」与查询条件确定，为最新版本。artifact 为 ego 浏览器真实点击（学习方式=全日制 → 学院 → 专业 → 查询）后渲染的 DOM 文本。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1b/zju-2027-clin-105100.raw",
+      "sha256": "adedb46e97da4aca1cea365aca2da18c82741dbb9414404640942074d99418da",
+      "captured_at": "2026-10-23T07:38:35.046Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-catalog-085400-bme-medicine-guide-af115b77",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "浙大2027：105100 临床医学专硕「仅招收临床医学专业（本科专业代码100201K，不包括中西医结合临床医学）」",
+      "summary": "浙大 2027 专业目录：医学院·临床医学(105100) 专业学位各方向（105101 内科学-浙一/浙二/邵医等）备注原文「仅招收临床医学专业（普通高等学校本科专业代码100201K，不包括中西医结合临床医学）考生。对于已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学硕士专业学位研究生。」",
+      "applicability": "适用于报考浙大临床医学专硕（105100）的考生：限制精确到**教育部本科专业代码 100201K**，且明确**排除中西医结合临床医学**——护理、药学、医学技术、预防医学、中西医结合临床均不在范围内。已获规培证者原则上不得报考。不适用于学术学位 100200（另条）。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "临床医学专业学位",
+        "105100",
+        "100201K",
+        "中西医结合临床医学",
+        "规培合格证",
+        "跨专业限制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "105100 临床医学（专业学位）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "医学院",
+        "department_type": "clinical",
+        "evidence_locator": "专业目录查询结果表·临床医学(105100) 105101内科学-浙一(01) 行备注栏"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "仅招收临床医学专业（普通高等学校本科专业代码100201K，不包括中西医结合临床医学）考生。对于已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学硕士专业学位研究生。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（全日制·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用，正文由查询结果动态渲染，页面本身未印发布日，故 published_at 记 null；招生年度由标题「2027年」与查询条件确定，为最新版本。artifact 为 ego 浏览器真实点击（学习方式=全日制 → 学院 → 专业 → 查询）后渲染的 DOM 文本。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1b/zju-2027-med-1052.raw",
+      "sha256": "0cf8231a9ba932adc6fa3656ce6615d3e38a1ef9ffb5fa8d26d70bfa52344255",
+      "captured_at": "2026-10-23T07:36:07.061Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-catalog-085400-bme-medicine-guide-cc3de00d",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "浙大2027：105200 口腔医学专硕「仅招收口腔医学专业毕业的考生」",
+      "summary": "浙大 2027 专业目录：医学院·口腔医学(105200)（拟招 6 人，初试 ③352 口腔综合）备注原文「仅招收口腔医学专业毕业的考生。对于已经获得口腔相关住院医师规范化培训合格证书人员原则上不得报考口腔医学硕士专业学位研究生。」",
+      "applicability": "适用于报考浙大口腔医学专硕（105200）的考生：仅口腔医学本科可报，临床医学本科亦被排除（与 105100 互为封闭）。已获口腔相关规培证者原则上不得报考。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "口腔医学",
+        "105200",
+        "352口腔综合",
+        "规培合格证",
+        "跨专业限制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "105200 口腔医学（专业学位）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "医学院",
+        "department_type": "clinical",
+        "evidence_locator": "专业目录查询结果表·口腔医学(105200) 不区分研究方向(01) 行备注栏"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "仅招收口腔医学专业毕业的考生。对于已经获得口腔相关住院医师规范化培训合格证书人员原则上不得报考口腔医学硕士专业学位研究生。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（全日制·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用，正文由查询结果动态渲染，页面本身未印发布日，故 published_at 记 null；招生年度由标题「2027年」与查询条件确定，为最新版本。artifact 为 ego 浏览器真实点击（学习方式=全日制 → 学院 → 专业 → 查询）后渲染的 DOM 文本。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1b/zju-2027-nurse-105400.raw",
+      "sha256": "ec22d46a770b8d712564a19b1d04833739b07d09bf4aa7ba2287da1ecc61a9a9",
+      "captured_at": "2026-10-23T07:38:51.159Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-catalog-085400-bme-medicine-guide-63211134",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "浙大2027：105400 护理专硕「仅招收护理学及护理学相关专业考生」，初试 308 护理综合",
+      "summary": "浙大 2027 专业目录：医学院·护理(105400)（统考名额 10，初试 ①101 ②201 英语（一）③308 护理综合）备注原文「仅招收护理学及护理学相关专业考生。初试参考书见《护理综合考试大纲》，中国学位与研究生教育学会医药科工作委员会编写。」",
+      "applicability": "适用于报考浙大护理专硕（105400）的考生：限定「护理学及护理学相关专业」，医学门类中临床/药学/医学技术等非护理专业是否属「相关专业」原文未列举，需向学院确认；初试第三科为 308 护理综合（护理本科课程）。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "护理",
+        "105400",
+        "308护理综合",
+        "跨专业限制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "105400 护理（专业学位）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "医学院",
+        "department_type": "clinical",
+        "evidence_locator": "专业目录查询结果表·护理(105400) 105400护理(01) 行备注栏"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "仅招收护理学及护理学相关专业考生。初试参考书见《护理综合考试大纲》，中国学位与研究生教育学会医药科工作委员会编写。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions",
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（全日制·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用，正文由查询结果动态渲染，页面本身未印发布日，故 published_at 记 null；招生年度由标题「2027年」与查询条件确定，为最新版本。artifact 为 ego 浏览器真实点击（学习方式=全日制 → 学院 → 专业 → 查询）后渲染的 DOM 文本。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1b/zju-2027-mph-105300.raw",
+      "sha256": "48247ff42f393907eaed6d62e9c2d826486d29bbe75114c955d824ec0a8dd734",
+      "captured_at": "2026-10-23T07:39:07.099Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-catalog-085400-bme-guide-clinical-data-37e3f301",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "浙大2027：105300 公共卫生专硕「欢迎医学专业、管理学专业及其他专业毕业的考生报考」",
+      "summary": "浙大 2027 专业目录：医学院·公共卫生(105300) 105300公共卫生-公卫学院(01) 方向（初试 ①101 ②201 ③353 卫生综合）备注原文「欢迎医学专业、管理学专业及其他专业毕业的考生报考。」数智院(02) 方向备注「欢迎医学专业、生命科学专业、生物信息学、管理学专业、食品及其他专业毕业的考生报考」。",
+      "applicability": "适用于医学本科生寻找「跨考门槛最低」的浙大通道：公共卫生专硕明文「欢迎医学专业…及其他专业」，「及其他专业」等于对专业不设封闭白名单，是所有医学专业学位里表述最开放的。初试 353 卫生综合。不适用于临床/口腔/护理（各自封闭）。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "公共卫生",
+        "105300",
+        "353卫生综合",
+        "欢迎医学专业",
+        "跨专业限制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "105300 公共卫生（专业学位）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "医学院",
+        "department_type": "clinical",
+        "evidence_locator": "专业目录查询结果表·公共卫生(105300) 公卫学院(01) 行备注栏"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "105300公共卫生-公卫学院\\(01\\) 01大数据健康科学 02流行病学与卫生统计学 03卫生毒理学 04劳动卫生与环境卫生学 05营养与食品卫生学 06社会医学与卫生事业管理 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.353卫生综合 ④\\.--无 0\\(以最终实际录取人数为准。\\) 本专业按专业学位类别招生、复试、录取和培养。 欢迎医学专业、管理学专业及其他专业毕业的考生报考。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions",
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（全日制·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用，正文由查询结果动态渲染，页面本身未印发布日，故 published_at 记 null；招生年度由标题「2027年」与查询条件确定，为最新版本。artifact 为 ego 浏览器真实点击（学习方式=全日制 → 学院 → 专业 → 查询）后渲染的 DOM 文本。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1b/zju-2027-med-1051.raw",
+      "sha256": "9604c2a052cd910799a856c4eb477fb85488b71b45369d249067bb75b236fc48",
+      "captured_at": "2026-10-23T07:35:51.745Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-catalog-085400-bme-medicine-guide-41e5e507",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "浙大2027：100200 临床医学（学术学位）初试 101/201/306 临床医学综合能力（西医）",
+      "summary": "浙大 2027 专业目录：医学院·临床医学(100200) 学术学位，按一级学科招生，105101 前身条目 100201 内科学-浙一(01) 等各方向初试 ①.101 思想政治理论 ②.201 英语（一）③.306 临床医学综合能力（西医）④.--无；各方向统考名额当日显示 0（以最终实际录取人数为准），且部分方向备注「欢迎生物化学与分子生物学专业考生报考」。",
+      "applicability": "适用于报考浙大临床医学学术学位（100200）的考生：第三科为教育部统考 306 临床医学综合能力（西医），无第四科。注意学术学位的部分方向对非临床本科留了口子（明确欢迎生物化学与分子生物学专业），与专硕 105100 的封闭白名单形成对照。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "临床医学",
+        "100200",
+        "306临床医学综合能力（西医）",
+        "学术学位"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "100200 临床医学（学术学位）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "医学院",
+        "department_type": "clinical",
+        "evidence_locator": "专业目录查询结果表·临床医学(100200) 100201内科学-浙一(01) 行考试科目列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "100201内科学-浙一\\(01\\) ①\\.101思想政治理论 ②\\.201英语（一） ③\\.306临床医学综合能力（西医）"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects"
+    ]
+  }
+]

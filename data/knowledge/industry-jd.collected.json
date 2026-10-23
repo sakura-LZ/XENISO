@@ -1,0 +1,523 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T10:00:02.593Z",
+  "sources": [
+    {
+      "id": "mindray-medaffair",
+      "url": "https://mindray.zhiye.com/social/jobs",
+      "organization": "迈瑞医疗（深圳迈瑞生物医疗电子股份有限公司）",
+      "title": "高级医学事务专员/经理（体外诊断产品）(J19133)",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-17",
+      "publication_date_note": "列表页该岗位行逐字显示「2026-09-17 发布」；抓取时为在招状态。"
+    },
+    {
+      "id": "ui-clinicalapp",
+      "url": "https://united-imaging.zhiye.com/social/jobs",
+      "organization": "联影医疗（上海联影医疗科技股份有限公司）",
+      "title": "临床应用专家-A25-016(J18244)",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-09-22",
+      "publication_date_note": "列表页该岗位行逐字显示「2025-09-22 发布」；抓取时为在招状态。"
+    },
+    {
+      "id": "deepwise-join",
+      "url": "https://www.deepwise.com/join",
+      "organization": "深睿医疗（DeepWise）",
+      "title": "深睿医疗「加入我们」招聘岗位",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "官网加入我们页面为长期招聘展示页，未逐字标注发布日期；抓取时为在招状态，发布日期未知。"
+    }
+  ],
+  "records": [
+    {
+      "id": "recruitment-mindray-medaffair-medicine-guide",
+      "source_id": "mindray-medaffair",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "迈瑞医疗招聘岗位：高级医学事务专员/经理（体外诊断产品）",
+      "summary": "迈瑞医疗公开招聘「高级医学事务专员/经理（体外诊断产品）」，工作地点四川省成都市。（同一官方来源共 10 条原文事实，字段：job_title、education、major_restrictions、experience、technical_requirements、city；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次在招岗位名称与地点；薪资原文未写。",
+      "relation": "direct",
+      "tags": [
+        "迈瑞",
+        "医学事务",
+        "体外诊断",
+        "博士",
+        "医学",
+        "专业要求",
+        "临床相关",
+        "3年",
+        "医院背景",
+        "经验",
+        "工作职责",
+        "临床研究",
+        "医学教育",
+        "学术",
+        "成都",
+        "全职",
+        "社会招聘",
+        "临床应用专员",
+        "生命信息与支持",
+        "本科",
+        "重症",
+        "麻醉",
+        "临床背景",
+        "5年",
+        "三级医院",
+        "培训",
+        "学科推广",
+        "KOL"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "高级医学事务专员/经理（体外诊断产品）(J19133)",
+          "quote": "高级医学事务专员/经理（体外诊断产品）(J19133)",
+          "start": 689,
+          "end": 716
+        },
+        {
+          "field": "city",
+          "value": "社会招聘 全职 四川省·成都市 2026-09-17 发布",
+          "quote": "社会招聘 全职 四川省·成都市 2026-09-17 发布",
+          "start": 717,
+          "end": 746
+        },
+        {
+          "field": "job_title",
+          "value": "国内临床应用专员（生命信息与支持产品）(J19017)",
+          "quote": "国内临床应用专员（生命信息与支持产品）(J19017)",
+          "start": 1061,
+          "end": 1088
+        },
+        {
+          "field": "education",
+          "value": "1、本科以上学历，重症和麻醉临床背景优先；",
+          "quote": "1、本科以上学历，重症和麻醉临床背景优先；",
+          "start": 1284,
+          "end": 1305
+        },
+        {
+          "field": "experience",
+          "value": "2、具有5年以上三级医院重症医学科工作经验或具有呼吸机、麻醉机市场/临床应用工作经验；",
+          "quote": "2、具有5年以上三级医院重症医学科工作经验或具有呼吸机、麻醉机市场/临床应用工作经验；",
+          "start": 1306,
+          "end": 1349
+        },
+        {
+          "field": "technical_requirements",
+          "value": "工作职责 1、负责区域内产品售前售后支持及临床应用培训，销售及渠道专业化培训及渠道人员培养； 2、负责针对麻醉机、呼吸机和高端监护及信息化产品进行专业化培训和推广； 3、负责对区域内重症和麻醉学科进行专业化主动推广； 4、负责为区域内重大市场活动及重点商机提供学术支持； 5、负责区域KOL专家分析，提供科研学术支持。",
+          "quote": "工作职责 1、负责区域内产品售前售后支持及临床应用培训，销售及渠道专业化培训及渠道人员培养； 2、负责针对麻醉机、呼吸机和高端监护及信息化产品进行专业化培训和推广； 3、负责对区域内重症和麻醉学科进行专业化主动推广； 4、负责为区域内重大市场活动及重点商机提供学术支持； 5、负责区域KOL专家分析，提供科研学术支持。",
+          "start": 1119,
+          "end": 1278
+        }
+      ],
+      "missing_fields": [
+        "salary",
+        "major_restrictions",
+        "job_type"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "5fbc51b0b8cdb9e134204cece4385fc8d2304751f6bc461c7cf037aac541638f",
+      "collected_at": "2026-10-23T07:21:14.642Z",
+      "verified_at": "2026-10-23T10:00:02.572Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "迈瑞医疗",
+        "region": "广东省深圳市",
+        "medical_department": "临床应用",
+        "evidence_locator": "国内临床应用专员（生命信息与支持产品）(J19017) · 该岗位详情在该页点击展开 · 页面无独立岗位 URL"
+      }
+    },
+    {
+      "id": "recruitment-mindray-medaffair-guide-devices",
+      "source_id": "mindray-medaffair",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "迈瑞医疗招聘岗位：技术支持工程师（IVD 国际）",
+      "summary": "迈瑞医疗公开招聘「技术支持工程师」，工作地点河南省郑州市，职责面向国际 IVD 技术支持。（同一官方来源共 8 条原文事实，字段：job_title、education、experience、technical_requirements、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次在招岗位名称与地点；薪资未写。",
+      "relation": "direct",
+      "tags": [
+        "迈瑞",
+        "技术支持工程师",
+        "IVD",
+        "本科",
+        "医学检验",
+        "生物医学工程",
+        "电子",
+        "5年",
+        "经验",
+        "工作职责",
+        "知识库",
+        "平台建设",
+        "用户服务工程师",
+        "医学影像",
+        "专业",
+        "2年",
+        "医疗器械",
+        "技术支持",
+        "现场交付",
+        "服务营销"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "技术支持工程师(J19229)",
+          "quote": "技术支持工程师(J19229)",
+          "start": 428,
+          "end": 443
+        },
+        {
+          "field": "job_title",
+          "value": "用户服务工程师(J18957)",
+          "quote": "用户服务工程师(J18957)",
+          "start": 1171,
+          "end": 1186
+        },
+        {
+          "field": "major_restrictions",
+          "value": "学历：本科及以上专业：生物医学工程、电子、自动化、机械、医学影像、信息化等专业",
+          "quote": "学历：本科及以上专业：生物医学工程、电子、自动化、机械、医学影像、信息化等专业",
+          "start": 1397,
+          "end": 1436
+        },
+        {
+          "field": "experience",
+          "value": "经历：医疗器械相关行业两年以上工作经验（具备影像产品服务经验者优先）",
+          "quote": "经历：医疗器械相关行业两年以上工作经验（具备影像产品服务经验者优先）",
+          "start": 1437,
+          "end": 1471
+        },
+        {
+          "field": "technical_requirements",
+          "value": "工作职责 1.负责完成部门制定的医学影像产品（超声、放射、数智化）相关计划和任务2.负责区域内客户的技术支持、现场交付等工作，提升客户满意度3.负责区域内销售支持及合作渠道服务队伍建设，提升渠道工程师服务能力和质量4.负责区域客户管理，开展服务营销工作，助力任务达成5.参与客户调研、竞品调研、服务流程改善和服务品牌建设 6.完成产品线服务营销指标",
+          "quote": "工作职责 1.负责完成部门制定的医学影像产品（超声、放射、数智化）相关计划和任务2.负责区域内客户的技术支持、现场交付等工作，提升客户满意度3.负责区域内销售支持及合作渠道服务队伍建设，提升渠道工程师服务能力和质量4.负责区域客户管理，开展服务营销工作，助力任务达成5.参与客户调研、竞品调研、服务流程改善和服务品牌建设 6.完成产品线服务营销指标",
+          "start": 1217,
+          "end": 1391
+        }
+      ],
+      "missing_fields": [
+        "salary",
+        "education"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "14530c84b7085e3e7d4fcc8ecf4ac0e58f989681489d7defb10c8740fb2a312d",
+      "collected_at": "2026-10-23T07:21:14.657Z",
+      "verified_at": "2026-10-23T10:00:02.580Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "迈瑞医疗",
+        "region": "云南省昆明市",
+        "medical_department": "用户服务",
+        "evidence_locator": "用户服务工程师(J18957) · 该岗位详情在该页点击展开 · 页面无独立岗位 URL"
+      }
+    },
+    {
+      "id": "recruitment-ui-clinicalapp-guide-imaging-eng",
+      "source_id": "ui-clinicalapp",
+      "role_id": "guide_imaging_eng",
+      "category": "recruitment",
+      "title": "联影医疗招聘岗位：临床应用专家",
+      "summary": "联影医疗公开招聘「临床应用专家」，工作地点覆盖杭州/南京/成都/重庆。（同一官方来源共 19 条原文事实，字段：job_title、education、major_restrictions、experience、technical_requirements、city；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次在招岗位名称与地点；薪资未写。",
+      "relation": "direct",
+      "tags": [
+        "联影",
+        "临床应用专家",
+        "临床",
+        "本科",
+        "临床医学",
+        "影像医学",
+        "生物医学工程",
+        "专业要求",
+        "跨专业",
+        "超声",
+        "临床经验",
+        "培训经验",
+        "工作职责",
+        "临床培训",
+        "临床试验",
+        "图像质量",
+        "杭州",
+        "南京",
+        "成都",
+        "重庆",
+        "临床应用工程师",
+        "超声医生",
+        "医学硕士",
+        "医生背景",
+        "学历",
+        "临床超声",
+        "3年",
+        "腹部妇产心脏",
+        "超声图像",
+        "设计确认"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "临床应用专家-A25-016(J18244)",
+          "quote": "临床应用专家-A25-016(J18244)",
+          "start": 416,
+          "end": 438
+        },
+        {
+          "field": "city",
+          "value": "浙江省·杭州市,江苏省·南京市,四川省·成都市,重庆市 2025-09-22 发布",
+          "quote": "浙江省·杭州市,江苏省·南京市,四川省·成都市,重庆市 2025-09-22 发布",
+          "start": 439,
+          "end": 480
+        },
+        {
+          "field": "job_title",
+          "value": "高级/资深临床应用工程师-超声(J17003)",
+          "quote": "高级/资深临床应用工程师-超声(J17003)",
+          "start": 721,
+          "end": 744
+        },
+        {
+          "field": "job_title",
+          "value": "软件算法工程师（超声图像处理）(J16996)",
+          "quote": "软件算法工程师（超声图像处理）(J16996)",
+          "start": 1164,
+          "end": 1187
+        },
+        {
+          "field": "education",
+          "value": "硕士及以上学历，博士优先；",
+          "quote": "硕士及以上学历，博士优先；",
+          "start": 926,
+          "end": 939
+        },
+        {
+          "field": "major_restrictions",
+          "value": "数学/物理/生物医学工程/电子工程/通讯等相关专业",
+          "quote": "数学/物理/生物医学工程/电子工程/通讯等相关专业",
+          "start": 900,
+          "end": 925
+        },
+        {
+          "field": "job_title",
+          "value": "软件算法工程师（大模型方向）(J16997)",
+          "quote": "软件算法工程师（大模型方向）(J16997)",
+          "start": 770,
+          "end": 792
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1、数学/物理/生物医学工程/电子工程/通讯等相关专业，硕士及以上学历，博士优先；",
+          "quote": "1、数学/物理/生物医学工程/电子工程/通讯等相关专业，硕士及以上学历，博士优先；",
+          "start": 898,
+          "end": 939
+        },
+        {
+          "field": "technical_requirements",
+          "value": "工作职责 1、负责医学超声图像增强、图像分割、自动匹配与测量等图像处理算法研发工作； 2、探索基于大模型的Agent开发、RAG增强、工具调用等应用框架。",
+          "quote": "工作职责 1、负责医学超声图像增强、图像分割、自动匹配与测量等图像处理算法研发工作； 2、探索基于大模型的Agent开发、RAG增强、工具调用等应用框架。",
+          "start": 815,
+          "end": 892
+        },
+        {
+          "field": "technical_requirements",
+          "value": "3、熟练掌握Python，具备C++/CUDA优化能力者优先；",
+          "quote": "3、熟练掌握Python，具备C++/CUDA优化能力者优先；",
+          "start": 978,
+          "end": 1009
+        }
+      ],
+      "missing_fields": [
+        "salary",
+        "experience"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "8853c99b62ce98d6e6717d5d2d216e2cf44c5140a53af3a27bfce01d35ddab45",
+      "collected_at": "2026-10-23T07:21:14.683Z",
+      "verified_at": "2026-10-23T10:00:02.584Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "联影医疗",
+        "region": "湖北省武汉市",
+        "medical_department": "研发",
+        "evidence_locator": "软件算法工程师（大模型方向）(J16997) · 该岗位详情在该页点击展开 · 页面无独立岗位 URL"
+      }
+    },
+    {
+      "id": "recruitment-ui-clinicalapp-guide-devices",
+      "source_id": "ui-clinicalapp",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "联影医疗招聘岗位：技术支持工程师（放射治疗）",
+      "summary": "联影医疗公开招聘「技术支持工程师（放射治疗）」，工作地点上海市（售后）。（同一官方来源共 4 条原文事实，字段：job_title、education、experience、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次在招岗位名称与地点；薪资未写。",
+      "relation": "direct",
+      "tags": [
+        "联影",
+        "技术支持",
+        "放射治疗",
+        "硕士",
+        "生物医学工程",
+        "医学物理",
+        "影像设备",
+        "放疗科",
+        "TPS",
+        "QA设备",
+        "经验",
+        "工作职责",
+        "剂量学",
+        "放疗"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "技术支持工程师（放射治疗）(J17128)",
+          "quote": "技术支持工程师（放射治疗）(J17128)",
+          "start": 633,
+          "end": 654
+        },
+        {
+          "field": "education",
+          "value": "1. 硕士及以上学历，生物医学工程、机械、电子电气、影像设备、医学物理、核物理、核技术等专业。",
+          "quote": "1. 硕士及以上学历，生物医学工程、机械、电子电气、影像设备、医学物理、核物理、核技术等专业。",
+          "start": 1052,
+          "end": 1099
+        },
+        {
+          "field": "experience",
+          "value": "8. 具备放疗科实习经验，熟悉Pinnacle、Eclipse、Monaco等TPS，熟悉三维水箱、静电剂量计、电离室、二维/三维矩阵等QA设备者优先。",
+          "quote": "8. 具备放疗科实习经验，熟悉Pinnacle、Eclipse、Monaco等TPS，熟悉三维水箱、静电剂量计、电离室、二维/三维矩阵等QA设备者优先。",
+          "start": 1324,
+          "end": 1400
+        },
+        {
+          "field": "technical_requirements",
+          "value": "工作职责 1. 在线处理各类客户服务请求，完成技术澄清及远程支持，识别潜在的客户抱怨或者风险并上报； 2. 协调资源解决现场服务工程师升级上来的技术/产品/放射物理学相关问题，必要时进行现场支持，提升现场对疑难问题解决的效率； 3. 协助跟踪及处理客户抱怨，商务支持，研发支持等内部需求； 4. 对接放疗研发团队，完成对新产品、工具、手册、FCO、物理师建模等需求、验证、评审及移交。并及时传递相关信息到现场服务团队； 5. 反馈产品问题及客户需求，与研发合作推动产品的稳定性和可服务性的迭代提升。 6. 开发并实施各产品的中英文服务培训课程，使学员掌握相应的专业服务技能；维护培训设备； 7. 主导构建并验证治疗计划系统（TPS）的剂量学模型与物理模型（涵盖PDD、Profile、输出因子等核心参数），确保临床端到端验收流程的圆满完成。",
+          "quote": "工作职责 1. 在线处理各类客户服务请求，完成技术澄清及远程支持，识别潜在的客户抱怨或者风险并上报； 2. 协调资源解决现场服务工程师升级上来的技术/产品/放射物理学相关问题，必要时进行现场支持，提升现场对疑难问题解决的效率； 3. 协助跟踪及处理客户抱怨，商务支持，研发支持等内部需求； 4. 对接放疗研发团队，完成对新产品、工具、手册、FCO、物理师建模等需求、验证、评审及移交。并及时传递相关信息到现场服务团队； 5. 反馈产品问题及客户需求，与研发合作推动产品的稳定性和可服务性的迭代提升。 6. 开发并实施各产品的中英文服务培训课程，使学员掌握相应的专业服务技能；维护培训设备； 7. 主导构建并验证治疗计划系统（TPS）的剂量学模型与物理模型（涵盖PDD、Profile、输出因子等核心参数），确保临床端到端验收流程的圆满完成。",
+          "start": 676,
+          "end": 1046
+        }
+      ],
+      "missing_fields": [
+        "salary",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "761c811ae4be3873277cb5e8d74841efc2c7fbbaf8751b959b94a6333720b335",
+      "collected_at": "2026-10-23T07:21:14.691Z",
+      "verified_at": "2026-10-23T10:00:02.588Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "联影医疗",
+        "region": "上海市",
+        "medical_department": "售后",
+        "evidence_locator": "技术支持工程师（放射治疗）(J17128) · 该岗位详情在该页点击展开 · 页面无独立岗位 URL"
+      }
+    },
+    {
+      "id": "recruitment-deepwise-join-medicine-guide",
+      "source_id": "deepwise-join",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "深睿医疗在招岗位：产品/前端/后端/测试/交互/销售/医学知识专家等",
+      "summary": "深睿医疗官网「加入我们」页列出在招方向：产品经理、前端开发、后端开发、测试工程师、交互设计师、销售主管、医学知识专家等。",
+      "applicability": "岗位方向清单（未逐岗给学历/专业/薪资明细）；反映含「医学知识专家」等医学相关岗。",
+      "relation": "related",
+      "tags": [
+        "深睿",
+        "招聘",
+        "医学知识专家",
+        "产品经理"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "火热招募 产品经理、前端开发、后端开发、测试工程师、交互设计师、销售主管、医学知识专家等。",
+          "quote": "火热招募 产品经理、前端开发、后端开发、测试工程师、交互设计师、销售主管、医学知识专家等。",
+          "start": 258,
+          "end": 303
+        }
+      ],
+      "missing_fields": [
+        "salary",
+        "education",
+        "major_restrictions",
+        "experience"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "13e181a721046d2dac838e02d6a50c2c37839fbbccc75dfd0f29068c65b4cd4d",
+      "collected_at": "2026-10-23T07:21:14.721Z",
+      "verified_at": "2026-10-23T10:00:02.592Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深睿医疗",
+        "region": "北京市、上海市、浙江省杭州市",
+        "evidence_locator": "深睿医疗官网「Join us/加入我们」页面正文"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "mindray-medaffair",
+      "url": "https://mindray.zhiye.com/social/jobs",
+      "at": "2026-10-23T07:21:14.642Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "major_restrictions",
+        "job_type"
+      ]
+    },
+    {
+      "source_id": "mindray-medaffair",
+      "url": "https://mindray.zhiye.com/social/jobs",
+      "at": "2026-10-23T07:21:14.657Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "education"
+      ]
+    },
+    {
+      "source_id": "ui-clinicalapp",
+      "url": "https://united-imaging.zhiye.com/social/jobs",
+      "at": "2026-10-23T07:21:14.683Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "experience"
+      ]
+    },
+    {
+      "source_id": "ui-clinicalapp",
+      "url": "https://united-imaging.zhiye.com/social/jobs",
+      "at": "2026-10-23T07:21:14.691Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "deepwise-join",
+      "url": "https://www.deepwise.com/join",
+      "at": "2026-10-23T07:21:14.721Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "education",
+        "major_restrictions",
+        "experience"
+      ]
+    }
+  ]
+}

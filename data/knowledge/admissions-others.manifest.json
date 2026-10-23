@@ -1,0 +1,282 @@
+[
+  {
+    "source": {
+      "id": "njmu-2026-catalog",
+      "url": "https://yjs.njmu.edu.cn/",
+      "organization": "南京医科大学研究生院",
+      "title": "南京医科大学2026年全日制硕士研究生招生专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF正文未标注发布日期；按2026招生年度使用，发布日期保持未知。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-others/njmu-2026-catalog-pdf.pdf",
+      "sha256": "135a0e2fbcbadf557bdc337897388b0db73552d5e4d1b1afb82cc95e4ce17562",
+      "captured_at": "2026-10-23T03:39:50.961Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-admissions-others/njmu-2026-catalog-pdf.txt",
+      "extracted_sha256": "a581ca4c2d7cb2ba90e87b4e1b8ac3c3aaa1b4b889b031a0e41d5d23a7704e1e"
+    },
+    "record": {
+      "id": "adm-njmu-2026-catalog-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "南京医科大学2026年硕士招生：内科学（100201）初试科目",
+      "summary": "以下为官方专业目录原文行；标题与标签为 LIMEN 编辑索引，不构成报考建议。",
+      "applicability": "仅适用于南京医科大学2026年该专业代码所列初试科目；个人报考资格、复试细则与跨专业限制须核对当年章程与院系公告。",
+      "relation": "related",
+      "tags": [
+        "内科学",
+        "100201",
+        "南京医科大学",
+        "2026",
+        "江苏"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学",
+        "program": "100201 内科学",
+        "admission_year": 2026,
+        "region": "江苏"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "100201（学术学位）内科学 ①101思想政治理论 ②201英语（一） ③306临床医学综合能力（西医） ④--无 01 心血管病的基础与"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions",
+      "admission_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "njmu-2026-catalog",
+      "url": "https://yjs.njmu.edu.cn/",
+      "organization": "南京医科大学研究生院",
+      "title": "南京医科大学2026年全日制硕士研究生招生专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF正文未标注发布日期；按2026招生年度使用，发布日期保持未知。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-others/njmu-2026-catalog-pdf.pdf",
+      "sha256": "135a0e2fbcbadf557bdc337897388b0db73552d5e4d1b1afb82cc95e4ce17562",
+      "captured_at": "2026-10-23T03:39:50.961Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-admissions-others/njmu-2026-catalog-pdf.txt",
+      "extracted_sha256": "a581ca4c2d7cb2ba90e87b4e1b8ac3c3aaa1b4b889b031a0e41d5d23a7704e1e"
+    },
+    "record": {
+      "id": "adm-njmu-2026-catalog-guide-imaging-eng",
+      "role_id": "guide_imaging_eng",
+      "category": "admissions",
+      "title": "南京医科大学2026年硕士招生：影像医学与核医学（100207）初试科目",
+      "summary": "以下为官方专业目录原文行；标题与标签为 LIMEN 编辑索引，不构成报考建议。",
+      "applicability": "仅适用于南京医科大学2026年该专业代码所列初试科目；个人报考资格、复试细则与跨专业限制须核对当年章程与院系公告。",
+      "relation": "related",
+      "tags": [
+        "影像医学与核医学",
+        "100207",
+        "南京医科大学",
+        "2026",
+        "江苏"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学",
+        "program": "100207 影像医学与核医学",
+        "admission_year": 2026,
+        "region": "江苏"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "100207（学术学位）影像医学与核医学 ①101思想政治理论 ②201英语（一） ③306临床医学综合能力（西医） ④--无 01 影像医学与核医学"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions",
+      "admission_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "njmu-2026-catalog",
+      "url": "https://yjs.njmu.edu.cn/",
+      "organization": "南京医科大学研究生院",
+      "title": "南京医科大学2026年全日制硕士研究生招生专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF正文未标注发布日期；按2026招生年度使用，发布日期保持未知。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-others/njmu-2026-catalog-pdf.pdf",
+      "sha256": "135a0e2fbcbadf557bdc337897388b0db73552d5e4d1b1afb82cc95e4ce17562",
+      "captured_at": "2026-10-23T03:39:50.961Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-admissions-others/njmu-2026-catalog-pdf.txt",
+      "extracted_sha256": "a581ca4c2d7cb2ba90e87b4e1b8ac3c3aaa1b4b889b031a0e41d5d23a7704e1e"
+    },
+    "record": {
+      "id": "adm-njmu-2026-catalog-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "南京医科大学2026年硕士招生：临床检验诊断学（100208）初试科目",
+      "summary": "以下为官方专业目录原文行；标题与标签为 LIMEN 编辑索引，不构成报考建议。",
+      "applicability": "仅适用于南京医科大学2026年该专业代码所列初试科目；个人报考资格、复试细则与跨专业限制须核对当年章程与院系公告。",
+      "relation": "related",
+      "tags": [
+        "临床检验诊断学",
+        "100208",
+        "南京医科大学",
+        "2026",
+        "江苏"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学",
+        "program": "100208 临床检验诊断学",
+        "admission_year": 2026,
+        "region": "江苏"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "100208（学术学位）临床检验诊断学 ①101思想政治理论 ②201英语（一） ③306临床医学综合能力（西医） ④--无 01 临床检验诊断学的"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions",
+      "admission_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2026-catalog",
+      "url": "https://grs.zju.edu.cn/",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2026年硕士研究生招生专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF正文未标注发布日期；按2026招生年度使用，发布日期保持未知。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-others/zju-catalog.pdf",
+      "sha256": "29ed583c58a097e5e01d9c6f54e1e52804cf791032dd03aea4246577f7eea8a2",
+      "captured_at": "2026-10-23T03:38:14.533Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-admissions-others/zju-catalog.txt",
+      "extracted_sha256": "2d644fef4896fe4b38820a228e55b881b34f3aee8fd17aae6ae8faa0719a21f1"
+    },
+    "record": {
+      "id": "adm-zju-2026-catalog-guide-devices",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "浙江大学2026年硕士招生：仪器仪表工程（085203）初试科目",
+      "summary": "以下为官方专业目录原文行；标题与标签为 LIMEN 编辑索引，不构成报考建议。",
+      "applicability": "仅适用于浙江大学2026年该专业代码所列初试科目；个人报考资格、复试细则与跨专业限制须核对当年章程与院系公告。",
+      "relation": "related",
+      "tags": [
+        "仪器仪表工程",
+        "085203",
+        "浙江大学",
+        "2026",
+        "浙江"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085203 仪器仪表工程",
+        "admission_year": 2026,
+        "region": "浙江"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085203 仪器仪表工程 不区分研究方向 ①101政治 ②201英语一 ③301数学一 ④任选以下一门： 857模拟与数字电子技术"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions",
+      "admission_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2026-catalog",
+      "url": "https://grs.zju.edu.cn/",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2026年硕士研究生招生专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF正文未标注发布日期；按2026招生年度使用，发布日期保持未知。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-others/zju-catalog.pdf",
+      "sha256": "29ed583c58a097e5e01d9c6f54e1e52804cf791032dd03aea4246577f7eea8a2",
+      "captured_at": "2026-10-23T03:38:14.533Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-admissions-others/zju-catalog.txt",
+      "extracted_sha256": "2d644fef4896fe4b38820a228e55b881b34f3aee8fd17aae6ae8faa0719a21f1"
+    },
+    "record": {
+      "id": "adm-zju-2026-catalog-guide-signals",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "浙江大学2026年硕士招生：生物医学工程（085230）初试科目",
+      "summary": "以下为官方专业目录原文行；标题与标签为 LIMEN 编辑索引，不构成报考建议。",
+      "applicability": "仅适用于浙江大学2026年该专业代码所列初试科目；个人报考资格、复试细则与跨专业限制须核对当年章程与院系公告。",
+      "relation": "related",
+      "tags": [
+        "生物医学工程",
+        "085230",
+        "浙江大学",
+        "2026",
+        "浙江"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085230 生物医学工程",
+        "admission_year": 2026,
+        "region": "浙江"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085230 生物医学工程 不区分研究方向 ①101政治 ②201英语一或203日或241德 ③301数学一 ④883生物医学工程综"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions",
+      "admission_requirements"
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "schema_version": "role-alias-1",
+  "note": "LIMEN 编辑性角色等价映射。把 App 面向用户的职业 id 映射到知识库中实际承载事实的角色 id。用于解决 match catalog 与 knowledge manifest 之间 role_id 对不上的问题。不属于 O*NET 或任何官方职业分类结论。",
+  "updated_at": "2026-10-23",
+  "aliases": {
+    "medical_ai_pm": {
+      "canonical_name": "医学 AI 产品经理",
+      "knowledge_role_ids": ["medical_ai_pm", "guide_health_systems"],
+      "basis": "App catalog 的 medical_ai_pm 直接对应知识库同名角色；guide_health_systems 覆盖医院信息系统/健康系统方向的任务与岗位事实。"
+    },
+    "clinical_data_analyst": {
+      "canonical_name": "临床数据分析师",
+      "knowledge_role_ids": ["guide_clinical_data", "guide_med_nlp_kg"],
+      "basis": "App catalog 使用 clinical_data_analyst，但知识库事实全部挂在 guide_clinical_data（临床数据方向）。guide_med_nlp_kg 提供医学文本/知识图谱相关补充。此为编辑性等价，不是官方职业等同。"
+    },
+    "medical_ml_engineer": {
+      "canonical_name": "医学机器学习工程师",
+      "knowledge_role_ids": ["guide_ml_cv", "guide_llm_agent", "guide_software"],
+      "basis": "App catalog 使用 medical_ml_engineer，知识库事实挂在 guide_ml_cv（机器学习与计算机视觉）。guide_llm_agent / guide_software 提供工程与大模型补充。此为编辑性等价。"
+    }
+  },
+  "unmapped_knowledge_roles": [
+    "guide_devices",
+    "guide_signals",
+    "guide_imaging_eng",
+    "medicine_guide"
+  ],
+  "unmapped_note": "这四个角色在 App 当前 3 个匹配职业中没有对应项，其事实（医疗器械、信号处理、影像工程、医学通识）暂只作为方向资料使用，不进入匹配计算。若要进入，需在 catalog 中新增对应职业。"
+}

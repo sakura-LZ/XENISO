@@ -1,0 +1,54 @@
+{
+  "origin": "http://127.0.0.1:3210",
+  "time": "2026-10-23T00:46:40.802Z",
+  "checks": [
+    {
+      "name": "home 375: no horizontal overflow",
+      "pass": true,
+      "width": 375,
+      "scrollWidth": 375,
+      "scrollY": 0,
+      "main": {
+        "x": 0,
+        "y": 73,
+        "width": 375,
+        "height": 6020.078125,
+        "top": 73,
+        "right": 375,
+        "bottom": 6093.078125,
+        "left": 0
+      },
+      "h1": "XENISO 异域同构",
+      "h1Size": "46px"
+    },
+    {
+      "name": "home 375: one start action",
+      "pass": true
+    },
+    {
+      "name": "home 375: next real heading visible",
+      "pass": true,
+      "heading": {
+        "x": 20,
+        "y": 536,
+        "width": 335,
+        "height": 88
+      },
+      "viewportHeight": 667
+    },
+    {
+      "name": "home 375: capabilities have no links",
+      "pass": true
+    },
+    {
+      "name": "home 375: linear process available",
+      "pass": true
+    },
+    {
+      "name": "home 375: marquee pauses",
+      "pass": true
+    }
+  ],
+  "findings": [],
+  "error": "page.waitForURL: Timeout 30000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation to \"**/profile\" until \"load\"\n  navigated to \"http://127.0.0.1:3210/\"\n  navigated to \"http://127.0.0.1:3210/\"\n  navigated to \"http://127.0.0.1:3210/\"\n============================================================\n    at D:\\医学生跨考平台\\limen_project_files\\work\\careerexplorer-implementation\\independent-audit.mjs:35:66"
+}

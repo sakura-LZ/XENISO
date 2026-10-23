@@ -50,6 +50,7 @@ function PresenterPanel({ presenter = "medicine", role = "职业体验导师", c
   const [message, setMessage] = useState("");
   const [text, setText] = useState("");
   const [caption, setCaption] = useState("");
+  const [conversation, setConversation] = useState<{ speaker: "user" | "assistant"; text: string }[]>([]);
   const [listening, setListening] = useState(false);
   const [busy, setBusy] = useState(false);
   const [sending, setSending] = useState(false);
@@ -137,6 +138,7 @@ function PresenterPanel({ presenter = "medicine", role = "职业体验导师", c
     setBusy(true);
     setState("connecting");
     setCaption("");
+    setConversation([]);
     sentContext.current = "";
     setMessage("正在连接职业导师…");
     let current: Agent | null = null;
@@ -172,6 +174,7 @@ function PresenterPanel({ presenter = "medicine", role = "职业体验导师", c
           onASRResult: (result: { text: string; isFinal: boolean }) => {
             if (isCurrent() && result.isFinal && result.text) {
               setCaption(result.text);
+              setConversation(previous => [...previous.slice(-59), { speaker: "user", text: result.text }]);
               transcriptCallback.current?.({ speaker: "user", text: result.text });
             }
           },
@@ -189,7 +192,8 @@ function PresenterPanel({ presenter = "medicine", role = "职业体验导师", c
             if (reply.current) setCaption(reply.current);
             if (event.event === "done") {
               const answer = reply.current;
-              if (answer) transcriptCallback.current?.({ speaker: "assistant", text: answer });
+              if (answer) { setConversation(previous => [...previous.slice(-59), { speaker: "assistant", text: answer }]); transcriptCallback.current?.({ speaker: "assistant", text: answer }); }
+              setCaption("");
               reply.current = "";
               finishReply();
               setMessage(answer ? "导师已回复。" : "导师未返回文字，可重新提问。");
@@ -243,6 +247,7 @@ function PresenterPanel({ presenter = "medicine", role = "职业体验导师", c
       await current.ask(avatarDialogue(role, context, { kind: "question", text: value }));
       if (!alive.current || run !== generation.current) return;
       transcriptCallback.current?.({ speaker: "user", text: value });
+      setConversation(previous => [...previous.slice(-59), { speaker: "user", text: value }]);
       setText("");
       if (replyPending.current) setMessage("消息已发送，等待导师回复…");
     } catch {
@@ -272,15 +277,15 @@ function PresenterPanel({ presenter = "medicine", role = "职业体验导师", c
   }
 
   const active = connected || busy || state === "reconnecting";
-  return <section className="space-y-4 rounded-xl border border-slate-200 bg-white p-5" aria-label="数字人职业导师">
+  return <section className="avatar-panel space-y-4 rounded-xl border border-slate-200 bg-white p-5" aria-label="数字人职业导师" data-motion="M-E08 M-E11">
     <div className="flex items-start justify-between gap-3"><div><p className="eyebrow">职业对话</p><h2 className="mt-1 text-lg font-semibold text-slate-900">{role}</h2></div><span className={`mt-1 inline-flex items-center gap-1.5 text-xs ${connected ? "text-emerald-700" : busy ? "text-blue-700" : "text-slate-500"}`}><span aria-hidden="true" className={`h-1.5 w-1.5 rounded-full ${connected ? "bg-emerald-600" : busy ? "bg-blue-600" : "bg-slate-400"}`} />{connected ? "已连接" : busy ? state === "stopping" ? "结束中" : "连接中" : state === "reconnecting" ? "重连中" : "未连接"}</span></div>
-    <div className={`relative overflow-hidden rounded-lg ${active ? "h-72 bg-slate-50" : "border-y border-slate-100 py-6"}`}>
-      <div id={containerId} className={active ? "h-full w-full" : "h-0"} />
+    <div className={`avatar-viewport relative overflow-hidden rounded-lg ${active ? "is-active bg-slate-50" : "border-y border-slate-100"}`}>
+      <div id={containerId} className={active ? "avatar-sdk-container h-full w-full" : "avatar-sdk-container h-0"} />
       {!active && <div className="flex items-start gap-4"><div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blue-50 text-blue-700" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 11a8 8 0 0 1 16 0v5a2 2 0 0 1-2 2h-2v-6h4M4 12h4v6H6a2 2 0 0 1-2-2v-4Zm12 8h-4" /><circle cx="11" cy="20" r="1" /></svg></div><div><p className="font-medium text-slate-800">和导师聊聊当前任务</p><p className="mt-2 text-sm leading-6 text-slate-500">用文字或语音梳理想法，练习面试与项目表达。</p><p className="mt-1 text-xs leading-6 text-slate-500">连接后同步当前任务，个人画像不会自动发送。</p></div></div>}
       {busy && <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-slate-50"><span className="h-6 w-6 animate-spin rounded-full border-2 border-slate-200 border-t-blue-600 motion-reduce:animate-none" aria-hidden="true" /><span className="text-sm text-slate-600">{state === "stopping" ? "正在释放会话" : "准备连接职业导师"}</span></div>}
     </div>
     {message && <p className="text-sm leading-6 text-slate-600" role="status">{message}</p>}
-    {caption && <div className="max-h-44 overflow-auto rounded-lg border-l-2 border-blue-200 bg-slate-50 p-3"><p className="mb-1 text-xs text-slate-500">对话字幕</p><p className="whitespace-pre-wrap text-sm leading-6 text-slate-800" aria-live="polite">{caption}</p></div>}
+    {(conversation.length > 0 || caption) && <div className="avatar-conversation" aria-label="当前会话"><ol>{conversation.map((entry, i) => <li className={`avatar-message is-${entry.speaker}`} key={i}><p className="task-source">{entry.speaker === "user" ? "我" : "导师"}</p><p className="whitespace-pre-wrap">{entry.text}</p></li>)}</ol>{caption && <p className="avatar-live-caption whitespace-pre-wrap" aria-live="polite">{caption}</p>}</div>}
     {!active && <div className="flex flex-wrap gap-3"><button type="button" className="button" disabled={hasSession} onClick={() => void start()}>连接导师</button>{hasSession && <button type="button" className="button secondary" onClick={() => void stop()}>结束会话</button>}</div>}
     {connected && !busy && <>
       <div className="flex gap-2"><input aria-label="向导师发送消息" className="field min-w-0 flex-1" value={text} maxLength={2000} onChange={e => setText(e.target.value)} onKeyDown={e => { if (e.key === "Enter" && !e.nativeEvent.isComposing) { e.preventDefault(); void send(); } }} placeholder="想问导师什么？" /><button type="button" onClick={() => void send()} disabled={!text.trim() || sending || listening} className="button shrink-0">{sending ? "等待回复…" : "发送"}</button></div>

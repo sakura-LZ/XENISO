@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-22T01:31:25.195Z",
+  "simulation": true,
+  "scope": "Real Supabase synthetic identities/RLS/RPC; no provider sessions",
+  "passed": true,
+  "checks": [
+    {
+      "name": "unauthenticated_reservation_denied",
+      "passed": true
+    },
+    {
+      "name": "synthetic_identity_0_created",
+      "passed": true
+    },
+    {
+      "name": "synthetic_identity_1_created",
+      "passed": true
+    },
+    {
+      "name": "server_adapter_reservation",
+      "passed": true
+    },
+    {
+      "name": "other_user_cannot_read",
+      "passed": true
+    },
+    {
+      "name": "other_user_cannot_bind_even_with_capability",
+      "passed": true
+    },
+    {
+      "name": "wrong_capability_cannot_bind",
+      "passed": true
+    },
+    {
+      "name": "direct_update_denied",
+      "passed": true
+    },
+    {
+      "name": "direct_insert_denied",
+      "passed": true
+    },
+    {
+      "name": "same_owner_parallel_reservation_denied",
+      "passed": true
+    },
+    {
+      "name": "owner_can_bind",
+      "passed": true
+    },
+    {
+      "name": "new_instance_recovers_session",
+      "passed": true
+    },
+    {
+      "name": "cross_user_close_denied",
+      "passed": true
+    },
+    {
+      "name": "wrong_capability_cannot_close",
+      "passed": true
+    },
+    {
+      "name": "new_instance_closes_owned_session",
+      "passed": true
+    },
+    {
+      "name": "shared_per_user_rate_limit",
+      "passed": true
+    },
+    {
+      "name": "account_deletion_blocked_until_session_closed",
+      "passed": true
+    },
+    {
+      "name": "synthetic_owner_deletion",
+      "passed": true
+    },
+    {
+      "name": "deleted_identity_has_no_visible_session",
+      "passed": true
+    }
+  ],
+  "failure": null,
+  "cleanupFailures": 0
+}

@@ -1,3 +1,7 @@
+## 2026-10-22 · CareerExplorer 对标规格第二次修订，待实施
+
+根据用户对第一版MD的逐段反馈重写 [逐页改版规格](XENISO_CAREEREXPLORER_REDESIGN.md)：保留首页输入框和单一开始操作，能力/流程介绍不再跳过主线；首次画像与回访状态分开；画像、问卷、初评、项目/面试/成果、规划条件/结果、文库/阅读/比较、社区/账户等分别确定构图。新增81项具体动效记录、13条用户要求及逐页验收映射，核实Storyset Pana六个条目和许可、unDraw许可；三张录屏参考图保留。已检查文档编号与本地链接；尚未下载最终素材、制作高保真稿、修改应用或实施动效，未运行应用测试和重新部署。此规格替代第一版冲突内容与此前“首页七段功能汇总”，正式部署状态仍见下文。
+
 ## 2026-10-22 · 新版 Next.js 正式部署完成
 
 GitHub `main` 应用提交 `49910b7` 已推送；Vercel `sakura-lzs-projects/xeniso` 部署 `dpl_9VpCUquLMayc2to4JERQjkyhybPm` 已成功 promote，https://xeniso-platform.vercel.app 已指向新版，READY。Production 四组数字人配置已同步，未改数据库结构。独立 HTML 原型仍不是正式入口。

@@ -1,0 +1,1036 @@
+[
+  {
+    "source": {
+      "id": "mohrss-survey-2025",
+      "url": "https://www.mohrss.gov.cn/SYrlzyhshbzb/laodongguanxi_/fwyd/202607/t20260708_579822.html",
+      "organization": "人力资源和社会保障部",
+      "title": "企业薪酬调查信息（2025年）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-08",
+      "publication_date_note": "原文页面「发布日期：2026-07-08」逐字可见。"
+    },
+    "publication_pattern": "2026-07-08",
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/mohrss-survey-2025-browser.raw",
+      "sha256": "eb7afd4f034bea7df73bb24a2a5bd62ee63c523fe4f9955f63887fc9e824c2e0",
+      "captured_at": "2026-10-23T05:23:31.251Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-mohrss-survey-2025-medical-ai-pm",
+      "role_id": "medical_ai_pm",
+      "category": "industry",
+      "title": "人社部全国口径：分位值、企业从业人员、工资价位、职业的官方定义",
+      "summary": "人社部《企业薪酬调查信息（2025年）》附注给出的全国统一口径：分位值是把数据由低到高排序后处于相应百分比位置的数值，表示有相应比例的数据低于或等于该数值；企业从业人员指在本企业工作并取得劳动报酬的人员；工资价位指企业从业人员在报告期内的工资水平，包括基本工资、奖金、津贴补贴、加班加点工资和特殊情况下支付的工资等。这是引用全国及各地工资价位数字时最权威的口径依据。（同一官方来源共 2 条原文事实，字段：statistical_definition、salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于解释人社部及各地人社部门发布的工资价位、分位值数字。不适用于税后到手收入、单位人工成本口径。",
+      "relation": "direct",
+      "tags": [
+        "分位值",
+        "工资价位",
+        "统计口径",
+        "人社部",
+        "全国",
+        "数字经济",
+        "核心产业",
+        "重点产业"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "人社部2025年企业薪酬调查（全国），单位万元/年，5列为10%/25%/50%/75%/90%分位值"
+      }
+    },
+    "extracts": [
+      {
+        "field": "statistical_definition",
+        "pattern": "分位值 是指将数据由低到高排序，在数列中处于相应百分比位置的数据。它表示有相应比例的数据低于或等于该数值。 企业从业人员 是指在本企业工作并取得劳动报酬的人员。 工资价位 是指企业从业人员在报告期内的工资水平，包括基本工资、奖金、津贴补贴、加班加点工资和特殊情况下支付的工资等。它在一定程度上体现了劳动力市场价格水平。"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "经济领域 核心产业 分 位 值 25% 50% 75% 数字经济 数字产品制造业 6\\.71 9\\.60 13\\.41 数字技术应用业 6\\.21 9\\.64 14\\.83 数字要素驱动业 4\\.88 6\\.84 10\\.34"
+      }
+    ],
+    "expected_fields": [
+      "statistical_definition",
+      "平均值",
+      "税后收入",
+      "分岗位个体offer",
+      "salary_statistics",
+      "10%与90%分位",
+      "医疗AI专属产业分类"
+    ]
+  },
+  {
+    "source": {
+      "id": "mohrss-survey-2025",
+      "url": "https://www.mohrss.gov.cn/SYrlzyhshbzb/laodongguanxi_/fwyd/202607/t20260708_579822.html",
+      "organization": "人力资源和社会保障部",
+      "title": "企业薪酬调查信息（2025年）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-08",
+      "publication_date_note": "原文页面「发布日期：2026-07-08」逐字可见。"
+    },
+    "publication_pattern": "2026-07-08",
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/mohrss-survey-2025-browser.raw",
+      "sha256": "eb7afd4f034bea7df73bb24a2a5bd62ee63c523fe4f9955f63887fc9e824c2e0",
+      "captured_at": "2026-10-23T05:23:31.251Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-mohrss-survey-2025-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "人社部全国薪酬调查的抽样方法与汇总口径",
+      "summary": "官方说明：调查以全国为总体，采用分层PPS抽样，以地区和行业门类为层，层内样本按与企业从业人员人数成比例的概率抽取；各地区按统一制度方法收集数据，使用统一信息系统录入审核后传输至人社部统一汇总计算。说明全国数字是抽样推算结果，不是全量普查。",
+      "applicability": "适用于说明全国工资价位数据的抽样属性与可比性边界。不适用于推断单个企业或单个地区的精确值。",
+      "relation": "direct",
+      "tags": [
+        "抽样方法",
+        "PPS",
+        "统计口径",
+        "人社部",
+        "全国"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "人社部2025年企业薪酬调查（全国），单位万元/年，5列为10%/25%/50%/75%/90%分位值"
+      }
+    },
+    "extracts": [
+      {
+        "field": "coverage_limit",
+        "pattern": "2\\. 调查方法 调查以全国为总体，采用分层PPS抽样方法，以地区和行业门类为层，层内样本按照与企业从业人员人数成比例的概率抽取。 各地区按照统一的制度方法组织收集调查企业从业人员工资报酬等数据，使用统一的信息系统对数据进行录入、审核，然后传输至人社部进行统一汇总计算。"
+      }
+    ],
+    "expected_fields": [
+      "coverage_limit",
+      "全量普查数据",
+      "企业级数据"
+    ]
+  },
+  {
+    "source": {
+      "id": "mohrss-survey-2025",
+      "url": "https://www.mohrss.gov.cn/SYrlzyhshbzb/laodongguanxi_/fwyd/202607/t20260708_579822.html",
+      "organization": "人力资源和社会保障部",
+      "title": "企业薪酬调查信息（2025年）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-08",
+      "publication_date_note": "原文页面「发布日期：2026-07-08」逐字可见。"
+    },
+    "publication_pattern": "2026-07-08",
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/mohrss-survey-2025-browser.raw",
+      "sha256": "eb7afd4f034bea7df73bb24a2a5bd62ee63c523fe4f9955f63887fc9e824c2e0",
+      "captured_at": "2026-10-23T05:23:31.251Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-mohrss-survey-2025-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "全国 2025 年分职业中类工资价位：卫生专业技术人员 3.60/4.74/6.56/9.73/14.87 万元/年",
+      "summary": "人社部表1-1 全国 分职业中类 工资价位（万元/年，10%/25%/50%/75%/90%）：卫生专业技术人员 3.60/4.74/6.56/9.73/14.87；同表工程技术人员 4.20/5.52/7.95/12.37/19.23；企业单位负责人 4.80/6.45/10.05/17.88/31.35。这是全国口径的卫生技术人员分位水平。",
+      "applicability": "适用于引用全国卫生专业技术人员（职业中类205）年度工资分位区间。属职业中类口径且为全国合并值，不区分医院等级与地区；不是月薪。",
+      "relation": "direct",
+      "tags": [
+        "卫生专业技术人员",
+        "职业中类",
+        "分位值",
+        "人社部",
+        "全国"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "人社部2025年企业薪酬调查（全国），单位万元/年，5列为10%/25%/50%/75%/90%分位值"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "职业代码 职业名称 分 位 值 10% 25% 50% 75% 90% 106 企业单位负责人 \\* 4\\.80 6\\.45 10\\.05 17\\.88 31\\.35 202 工程技术人员 4\\.20 5\\.52 7\\.95 12\\.37 19\\.23 203 农业技术人员 2\\.94 3\\.93 5\\.34 7\\.30 10\\.84 205 卫生专业技术人员 3\\.60 4\\.74 6\\.56 9\\.73 14\\.87"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "分地区分位值",
+      "月薪口径",
+      "具体医院薪资"
+    ]
+  },
+  {
+    "source": {
+      "id": "mohrss-survey-2025",
+      "url": "https://www.mohrss.gov.cn/SYrlzyhshbzb/laodongguanxi_/fwyd/202607/t20260708_579822.html",
+      "organization": "人力资源和社会保障部",
+      "title": "企业薪酬调查信息（2025年）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-08",
+      "publication_date_note": "原文页面「发布日期：2026-07-08」逐字可见。"
+    },
+    "publication_pattern": "2026-07-08",
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/mohrss-survey-2025-browser.raw",
+      "sha256": "eb7afd4f034bea7df73bb24a2a5bd62ee63c523fe4f9955f63887fc9e824c2e0",
+      "captured_at": "2026-10-23T05:23:31.251Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-mohrss-survey-2025-guide-software",
+      "role_id": "guide_software",
+      "category": "industry",
+      "title": "全国 2025 年「信息传输、软件和信息技术服务人员」工资价位 4.56/6.43/9.60/15.35/23.67 万元/年",
+      "summary": "人社部表1-1 全国口径：信息传输、软件和信息技术服务人员（职业中类404）为 4.56/6.43/9.60/15.35/23.67 万元/年（10%/25%/50%/75%/90%），中位数约为卫生专业技术人员（6.56）的1.5倍量级，可用于对照软件方向与卫生方向的全国分位差。（同一官方来源共 2 条原文事实，字段：salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于引用全国该职业中类年度工资分位。属职业中类+全国口径，不区分岗位与城市；不是月薪。",
+      "relation": "direct",
+      "tags": [
+        "信息传输",
+        "软件和信息技术服务人员",
+        "分位值",
+        "人社部",
+        "全国",
+        "数字职业",
+        "计算机软件工程技术人员"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "人社部2025年企业薪酬调查（全国），单位万元/年，5列为10%/25%/50%/75%/90%分位值"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "404 信息传输、软件和信息技术服务人员 4\\.56 6\\.43 9\\.60 15\\.35 23\\.67 405 金融服务人员 5\\.76 8\\.73 13\\.12 18\\.92 27\\.43"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "1- 3 数字职业 企业 从业人员工资价位 （ 20 25 年 ） 单位：万元 /年 职业代码 职业名称 分 位 值 10% 25% 50% 75% 90% 2020202 工程测量工程技术人员 3\\.91 5\\.43 7\\.54 11\\.44 16\\.86 2021003 计算机软件工程技术人员 5\\.85 9\\.00 14\\.33 22\\.01 33\\.13"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "分城市分位值",
+      "具体岗位薪资",
+      "医疗AI岗位专属数据"
+    ]
+  },
+  {
+    "source": {
+      "id": "nbs-avg-wage-2025",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202605/t20260515_1963707.html",
+      "organization": "国家统计局",
+      "title": "2025年城镇单位就业人员年平均工资情况",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-05-15",
+      "publication_date_note": "原文页面正文顶端「2026/05/15 16:00」逐字可见。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?5\\D{0,6}0?15",
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/stats-avg-wage-2025.raw",
+      "sha256": "156b4bf36bbd948fd544aefbbd873630330fa27f3121bdd1110ed17876405c30",
+      "captured_at": "2026-10-23T05:17:46.036Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-nbs-avg-wage-2025-medical-ai-pm",
+      "role_id": "medical_ai_pm",
+      "category": "industry",
+      "title": "2025 年全国城镇单位年平均工资总览：非私营 129441 元、私营 71590 元、规模以上企业 106080 元",
+      "summary": "国家统计局2025年数据：全国城镇非私营单位就业人员年平均工资 129441 元，私营单位 71590 元；规模以上企业 106080 元，其中中层及以上管理人员 210016 元、专业技术人员 155491 元、办事人员和有关人员 94936 元、社会生产服务和生活服务人员 79857 元、生产制造及有关人员 80739 元。",
+      "applicability": "适用于引用2025年全国城镇单位年平均工资总量与岗位大类水平。属单位口径（法人单位发放的工资总额/就业人员），不是个人到手收入；不适用于分城市或分职业细类。",
+      "relation": "direct",
+      "tags": [
+        "年平均工资",
+        "城镇单位",
+        "非私营",
+        "私营",
+        "国家统计局"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "国家统计局2025年城镇单位年平均工资，单位元/年"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "2025 年全国城镇非私营单位和私营单位就业人员年平均工资分别为 129441 元和 71590 元；规模以上企业就业人员年平均工资为 106080 元，其中，中层及以上管理人员 210016 元，专业技术人员 155491 元，办事人员和有关人员 94936 元，社会生产服务和生活服务人员 79857 元，生产制造及有关人员 80739 元。"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "分职业细类工资",
+      "到手收入"
+    ]
+  },
+  {
+    "source": {
+      "id": "nbs-avg-wage-2025",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202605/t20260515_1963707.html",
+      "organization": "国家统计局",
+      "title": "2025年城镇单位就业人员年平均工资情况",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-05-15",
+      "publication_date_note": "原文页面正文顶端「2026/05/15 16:00」逐字可见。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?5\\D{0,6}0?15",
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/stats-avg-wage-2025.raw",
+      "sha256": "156b4bf36bbd948fd544aefbbd873630330fa27f3121bdd1110ed17876405c30",
+      "captured_at": "2026-10-23T05:17:46.036Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-nbs-avg-wage-2025-guide-software",
+      "role_id": "guide_software",
+      "category": "industry",
+      "title": "2025 年城镇非私营单位分行业：信息传输、软件和信息技术服务业 248752 元/年（同比+4.1%）",
+      "summary": "国家统计局表2（城镇非私营单位分行业门类，元/年）：信息传输、软件和信息技术服务业 2025 年 248752 元、2024 年 238966 元，名义增长 4.1%；全行业合计 129441 元（2024 年 124110 元，增长 4.3%）。该行业是全国平均工资最高的行业门类。",
+      "applicability": "适用于比较全国行业门类平均工资水平（城镇非私营单位口径）。不适用于私营单位、不适用于分职业、不适用于单一城市。",
+      "relation": "direct",
+      "tags": [
+        "行业门类",
+        "信息传输软件和信息技术服务业",
+        "年平均工资",
+        "国家统计局"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "国家统计局2025年城镇单位年平均工资，单位元/年"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "表 2 2025 年城镇非私营单位分行业门类就业人员年平均工资及增速 单位：元， % 行 业 2025 年 2024 年 名义增长率 合 计 129441 124110 4\\.3 农、林、牧、渔业 74424 67475 10\\.3 采矿业 143361 140706 1\\.9 制造业 113594 107987 5\\.2 电力、热力、燃气及水生产和供应业 160897 150285 7\\.1 建筑业 92036 89519 2\\.8 批发和零售业 135749 129658 4\\.7 交通运输、仓储和邮政业 133981 127889 4\\.8 住宿和餐饮业 62461 60240 3\\.7 信息传输、软件和信息技术服务业 248752 238966 4\\.1"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "私营单位同行业数据",
+      "分职业数据"
+    ]
+  },
+  {
+    "source": {
+      "id": "nbs-avg-wage-2025",
+      "url": "https://www.stats.gov.cn/sj/zxfbhjd/202605/t20260515_1963707.html",
+      "organization": "国家统计局",
+      "title": "2025年城镇单位就业人员年平均工资情况",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-05-15",
+      "publication_date_note": "原文页面正文顶端「2026/05/15 16:00」逐字可见。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?5\\D{0,6}0?15",
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/stats-avg-wage-2025.raw",
+      "sha256": "156b4bf36bbd948fd544aefbbd873630330fa27f3121bdd1110ed17876405c30",
+      "captured_at": "2026-10-23T05:17:46.036Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-nbs-avg-wage-2025-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "2025 年城镇非私营单位「卫生和社会工作」行业年平均工资 146266 元（同比+2.2%）",
+      "summary": "国家统计局表2：卫生和社会工作行业 2025 年城镇非私营单位年平均工资 146266 元、2024 年 143173 元、名义增长 2.2%；相邻行显示教育 133539 元、公共管理社会保障和社会组织 119465 元。卫生行业高于全行业合计（129441 元）。（同一官方来源共 2 条原文事实，字段：salary_statistics、coverage_limit；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于引用全国卫生和社会工作行业门类平均工资。属行业门类+城镇非私营单位口径；与私营单位同行业数字（75631 元）差异很大，不可混用。",
+      "relation": "direct",
+      "tags": [
+        "卫生和社会工作",
+        "行业门类",
+        "年平均工资",
+        "国家统计局",
+        "统计范围",
+        "法人单位",
+        "私营",
+        "非私营"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "国家统计局2025年城镇单位年平均工资，单位元/年"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "卫生和社会工作 146266 143173 2\\.2 文化、体育和娱乐业 129447 126040 2\\.7 公共管理、社会保障和社会组织 119465 114840 4\\.0"
+      },
+      {
+        "field": "coverage_limit",
+        "pattern": "2\\. 统计范围 城镇单位指城镇地域内就业人数在 5 人及以上的法人单位， 2025 年纳入统计的单位共计 306\\.2 万家。调查对象不包括个体工商户和自由职业者等。"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "分职业数据",
+      "私营单位同行业数据引用",
+      "coverage_limit",
+      "个体工商户收入",
+      "自由职业者收入",
+      "灵活就业收入"
+    ]
+  },
+  {
+    "source": {
+      "id": "bj-salary-report-2025q3",
+      "url": "https://rsj.beijing.gov.cn/weimenhu/wmtgz/202510/t20251028_4242284.html",
+      "organization": "北京市人力资源和社会保障局",
+      "title": "北京发布最新人力资源市场薪酬报告！这些岗位收入高",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-10-28",
+      "publication_date_note": "原文正文首行日期「2025-10-28」逐字可见。"
+    },
+    "publication_pattern": "2025-10-28",
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/bj-salary-report-2025q.raw",
+      "sha256": "90d8333b042e04d699152bcbb0b102a4f13079a8e6cb08ac4b535613c1201cee",
+      "captured_at": "2026-10-23T05:17:00.566Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-bj-salary-report-2025q3-medical-ai-pm",
+      "role_id": "medical_ai_pm",
+      "category": "industry",
+      "title": "北京 2025 年三季度前沿技术岗薪酬中位值：VR/AR开发工程师 33157 元/月",
+      "summary": "北京市人社局《2025年北京市人力资源市场薪酬数据报告（三季度）》：VR/AR开发工程师薪酬中位值达 33157 元/月；文旅IP运营经理等复合型人才薪酬中位值 23517 元/月。这是官方按月发布的岗位级中位值。（同一官方来源共 2 条原文事实，字段：salary_statistics、statistical_definition；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于引用北京2025年三季度上述岗位的月薪中位值。属岗位/报告口径的单时点数据，不代表全年或全国；不是年薪。",
+      "relation": "direct",
+      "tags": [
+        "北京",
+        "薪酬报告",
+        "中位值",
+        "月薪",
+        "VR/AR",
+        "岗位薪资",
+        "统计口径",
+        "税前应发",
+        "季度报告"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "北京市人社局2025年三季度人力资源市场薪酬数据报告，单位元/月，口径为税前应发工资"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "VR/AR开发工程师凭借前沿技术属性，薪酬中位值达33157元/月，文旅IP运营经理等复合型人才需求旺盛，薪酬中位值达23517元/月。"
+      },
+      {
+        "field": "statistical_definition",
+        "pattern": "《报告》中的薪酬水平统计口径均为2025年三季度各月份税前应发工资总额（包含基本工资、绩效工资、奖金、销售提成及相关津贴福利待遇）进行算术平均，不包含年终奖金、股权激励及分红等。"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "年薪口径",
+      "全国数据",
+      "分位数全区间",
+      "statistical_definition",
+      "年度总包",
+      "税后收入",
+      "年终奖与股权"
+    ]
+  },
+  {
+    "source": {
+      "id": "bj-salary-report-2025q3",
+      "url": "https://rsj.beijing.gov.cn/weimenhu/wmtgz/202510/t20251028_4242284.html",
+      "organization": "北京市人力资源和社会保障局",
+      "title": "北京发布最新人力资源市场薪酬报告！这些岗位收入高",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-10-28",
+      "publication_date_note": "原文正文首行日期「2025-10-28」逐字可见。"
+    },
+    "publication_pattern": "2025-10-28",
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/bj-salary-report-2025q.raw",
+      "sha256": "90d8333b042e04d699152bcbb0b102a4f13079a8e6cb08ac4b535613c1201cee",
+      "captured_at": "2026-10-23T05:17:00.566Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-bj-salary-report-2025q3-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "北京 2025Q3：专业/技术人才月薪中位值 13073 元；AI 大模型架构师等岗位超 42000 元/月",
+      "summary": "北京市人社局2025年三季度报告：专业/技术人才月平均薪酬中位值达 13073 元/月；AI大模型架构师、深度学习研究员、自然语言处理工程师等高端技术岗位薪酬中位值均超 42000 元/月；智能/高端制造行业机器人系统工程师、航天系统工程师薪酬中位值均超 27000 元/月。注意「均超」是原文给的下限表述，不是精确值。（同一官方来源共 2 条原文事实，字段：salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于引用北京2025年三季度专业/技术人才与AI高端岗位的月薪中位值（含「均超」下限口径）。不可把「均超42000」写成精确数字，也不可换算为年薪。",
+      "relation": "direct",
+      "tags": [
+        "北京",
+        "AI岗位",
+        "大模型架构师",
+        "深度学习",
+        "NLP",
+        "中位值",
+        "月薪",
+        "高技能人才",
+        "技能等级"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "北京市人社局2025年三季度人力资源市场薪酬数据报告，单位元/月，口径为税前应发工资"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "在人才群体方面，专业/技术人才薪酬延续稳步增长态势，月平均薪酬中位值达13073元/月。在“人工智能\\+”政策深化落地与高精尖产业扩张的双重驱动下，高端技术人才薪酬水平保持稳健增长态势。AI大模型架构师、深度学习研究员、自然语言处理工程师等高端技术岗位薪酬走高，薪酬中位值均超42000元/月。智能/高端制造行业机器人系统工程师、航天系统工程师薪酬中位值均超27000元/月。"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "另外，高技能人才技能溢价效应持续扩大，高级技师、技师、高级技能人才月平均薪酬中位值分别为13087元/月、11853元/月、11462元/月。"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "精确均值",
+      "年薪口径",
+      "医疗AI岗位单独数据",
+      "职业口径",
+      "其他城市"
+    ]
+  },
+  {
+    "source": {
+      "id": "sh-highskill-talent-wage-2025",
+      "url": "https://rsj.sh.gov.cn/t01_17887/20261019/t0035_1444243.html",
+      "organization": "上海市人力资源和社会保障局",
+      "title": "2025年上海高技能人才年薪中位数 18.23万元，同比增长8.3%",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-17",
+      "publication_date_note": "原文页面「发布日期：2026-10-17」逐字可见。"
+    },
+    "publication_pattern": "2026-10-17",
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/sh-skill-talent-2025.raw",
+      "sha256": "d79e839279d58dcf323e8be92d2b66b2995599a336d3ff286de9c65816f97cb6",
+      "captured_at": "2026-10-23T05:16:19.057Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-sh-highskill-talent-wage-2025-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "上海 2025 年高技能人才年薪中位数 18.23 万元（同比+8.3%）",
+      "summary": "上海市人社局：企业薪酬调查数据显示，2025年上海市高技能人才年薪中位数达到18.23万元，同比增长8.3%，薪酬水平和增幅均为近五年最高，比当年全市年平均工资高3.14万元。（同一官方来源共 3 条原文事实，字段：salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于引用上海2025年高技能人才年薪中位数及与全市平均工资的差额。属高技能人才（高级工及以上）口径，不是全部就业人员，也不是具体职业口径。",
+      "relation": "direct",
+      "tags": [
+        "上海",
+        "高技能人才",
+        "年薪中位数",
+        "企业薪酬调查",
+        "技能等级",
+        "技师",
+        "年薪高位数",
+        "90%分位"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "上海市人社局2026年发布，2025年数据，单位万元/年（原文：工资单位除特别说明外均为万元/年）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "企业薪酬调查数据显示，2025年，上海市高技能人才年薪中位数达到18\\.23万元，同比增长8\\.3%，薪酬水平和增幅均为近五年最高，比当年全市年平均工资高3\\.14万元。"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "首席及特级技师、高级技师、技师、高级工年薪中位数分别为38\\.89万元、20\\.57万元、20\\.14万元和17\\.73万元。其中，首席及特级技师年薪中位数是高级工的2\\.2倍。"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "首席及特级技师、高级技师、技师、高级工年薪高位数分别达到60\\.33万元、38\\.77万元、37\\.40万元和29\\.22万元。"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "全部就业人员年薪",
+      "分职业数据",
+      "月薪口径",
+      "职业口径",
+      "其他城市",
+      "均值",
+      "中位数"
+    ]
+  },
+  {
+    "source": {
+      "id": "sh-highskill-talent-wage-2025",
+      "url": "https://rsj.sh.gov.cn/t01_17887/20261019/t0035_1444243.html",
+      "organization": "上海市人力资源和社会保障局",
+      "title": "2025年上海高技能人才年薪中位数 18.23万元，同比增长8.3%",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-17",
+      "publication_date_note": "原文页面「发布日期：2026-10-17」逐字可见。"
+    },
+    "publication_pattern": "2026-10-17",
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/sh-skill-talent-2025.raw",
+      "sha256": "d79e839279d58dcf323e8be92d2b66b2995599a336d3ff286de9c65816f97cb6",
+      "captured_at": "2026-10-23T05:16:19.057Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-sh-highskill-talent-wage-2025-medical-ai-pm",
+      "role_id": "medical_ai_pm",
+      "category": "industry",
+      "title": "上海薪酬数据的口径：年薪构成、单位、中位数与高位数的定义",
+      "summary": "官方备注给出完整口径：从业人员年薪包括基本工资、绩效工资、奖金、津贴补贴和加班工资等全部工资性收入；工资单位除特别说明外均为万元/年；中位数是将工资由低到高排序后处于50%位置的数值，高位数为处于90%位置的数值；薪酬水平反映相关从业人员总体工资价位，不对应某一具体企业或个人的实际薪酬水平。",
+      "applicability": "适用于解释上海该发布中所有数字的口径与单位（万元/年、90%分位=高位数）。不可把「高位数」当作平均数，也不可外推为企业或个人实际薪酬。",
+      "relation": "direct",
+      "tags": [
+        "统计口径",
+        "年薪",
+        "中位数",
+        "高位数",
+        "上海"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "上海市人社局2026年发布，2025年数据，单位万元/年（原文：工资单位除特别说明外均为万元/年）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "statistical_definition",
+        "pattern": "从业人员年薪包括基本工资、绩效工资、奖金、津贴补贴和加班工资等全部工资性收入。工资单位除特别说明外均为万元/年。中位数是将工资由低到高排序后处于50%位置的数值，高位数为处于90%位置的数值。薪酬水平反映相关从业人员总体工资价位，不对应某一具体企业或个人的实际薪酬水平。"
+      }
+    ],
+    "expected_fields": [
+      "statistical_definition",
+      "平均值",
+      "个人到手收入",
+      "企业实际薪酬"
+    ]
+  },
+  {
+    "source": {
+      "id": "hz-salary-survey-2024",
+      "url": "https://hrss.hangzhou.gov.cn/api-gateway/jpaas-web-server/front/document/download?fileUrl=YW5UzzlvCwcM%2FNHHX%2FtT6DgXI75PfpK5owtnanQUGNl%2BqLVcDRVbXEfL%2FDC3NEl%2BNq6lsY%2BcGVPgWQbk%2BgooakfrpoqzGO%2BqLlI23yNzgaXIbwfSGBF6aziuJ%2FRkWtrSP0K73nNXgOX1TylJld8%2BYdTLZh4MF8m3P1xAn1huCjE%3D&fileName=%E6%9D%AD%E5%B7%9E%E5%B8%822024%E5%B9%B4%E4%BC%81%E4%B8%9A%E8%96%AA%E9%85%AC%E8%B0%83%E6%9F%A5%E4%BF%A1%E6%81%AF10.20%E5%8F%91%E5%B8%83%E7%89%88.pdf",
+      "organization": "杭州市人力资源和社会保障局",
+      "title": "杭州市2024年企业薪酬调查信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未出现发布日期（仅有「2024 年」数据年份）；发布页 https://hrss.hangzhou.gov.cn/col/col1618938/art/2025/art_b4da094ef60649cd906aa7f486569eb5.html 亦只标「2024年企业薪酬调查信息」，无可引日期，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/hz-salary-2024.pdf",
+      "sha256": "8a1bedcc33cacc9f74adb671ac333a3f594ea5b6ea940b16304fc0ca3ec95324",
+      "captured_at": "2026-10-23T05:19:09.205Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary2/hz-salary-2024.txt",
+      "extracted_sha256": "e4dad22a53427c6e7fa17a85987e45cb91e038f62aa54d1268854500cbb979bd"
+    },
+    "record": {
+      "id": "industry-hz-salary-survey-2024-medical-ai-pm",
+      "role_id": "medical_ai_pm",
+      "category": "industry",
+      "title": "杭州薪酬调查口径：10%/50%/90% 分位值分别对应低位数/中位数/高位数",
+      "summary": "杭州市人社局口径：分位值表示有相应比例的数据低于或等于该数值；其中10%分位值（即低位数）表示数据中有10%小于此数值，反映市场的较低水平；50%分位值（即中位数）表示有50%小于此数值，反映中等水平；90%分位值（即高位数）表示有90%小于此数值，反映较高水平。",
+      "applicability": "适用于解释杭州企业薪酬调查信息中的分位值列。不适用于其他城市定义不同时的换算，也不代表平均值。",
+      "relation": "direct",
+      "tags": [
+        "分位值",
+        "中位数",
+        "低位数",
+        "高位数",
+        "杭州",
+        "统计口径"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "杭州市2024年企业薪酬调查信息，单位元/年，5列为10%/25%/50%/75%/90%分位值"
+      }
+    },
+    "extracts": [
+      {
+        "field": "statistical_definition",
+        "pattern": "10%分位值（即低位数）表示数据中有 10%的 数据小于此数值，反映市场的较低水平；50%分位值（即中 位数）表示数据中有 50%的数据小于此数值，反映市场的中 等水平；90%分位值（即高位数）表示数据中有 90%的数据 小于此数值，反映市场的较高水平。"
+      }
+    ],
+    "expected_fields": [
+      "statistical_definition",
+      "平均值",
+      "月薪口径"
+    ]
+  },
+  {
+    "source": {
+      "id": "hz-salary-survey-2024",
+      "url": "https://hrss.hangzhou.gov.cn/api-gateway/jpaas-web-server/front/document/download?fileUrl=YW5UzzlvCwcM%2FNHHX%2FtT6DgXI75PfpK5owtnanQUGNl%2BqLVcDRVbXEfL%2FDC3NEl%2BNq6lsY%2BcGVPgWQbk%2BgooakfrpoqzGO%2BqLlI23yNzgaXIbwfSGBF6aziuJ%2FRkWtrSP0K73nNXgOX1TylJld8%2BYdTLZh4MF8m3P1xAn1huCjE%3D&fileName=%E6%9D%AD%E5%B7%9E%E5%B8%822024%E5%B9%B4%E4%BC%81%E4%B8%9A%E8%96%AA%E9%85%AC%E8%B0%83%E6%9F%A5%E4%BF%A1%E6%81%AF10.20%E5%8F%91%E5%B8%83%E7%89%88.pdf",
+      "organization": "杭州市人力资源和社会保障局",
+      "title": "杭州市2024年企业薪酬调查信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未出现发布日期（仅有「2024 年」数据年份）；发布页 https://hrss.hangzhou.gov.cn/col/col1618938/art/2025/art_b4da094ef60649cd906aa7f486569eb5.html 亦只标「2024年企业薪酬调查信息」，无可引日期，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/hz-salary-2024.pdf",
+      "sha256": "8a1bedcc33cacc9f74adb671ac333a3f594ea5b6ea940b16304fc0ca3ec95324",
+      "captured_at": "2026-10-23T05:19:09.205Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary2/hz-salary-2024.txt",
+      "extracted_sha256": "e4dad22a53427c6e7fa17a85987e45cb91e038f62aa54d1268854500cbb979bd"
+    },
+    "record": {
+      "id": "industry-hz-salary-survey-2024-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "杭州 2024 年分职业小类工资价位：医学研究人员 85042/109969/167931/243725/312450 元/年",
+      "summary": "杭州市2024年企业薪酬调查信息「不同职业小类企业从业人员工资价位（2024年）」（元/年，10%/25%/50%/75%/90%）：企业负责人 74600/113710/205967/357732/509500；医学研究人员 85042/109969/167931/243725/312450。（同一官方来源共 2 条原文事实，字段：salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于引用杭州2024年该表职业小类的年度工资分位。属职业小类口径、全市企业口径；不适用于其他城市或未上市年份。",
+      "relation": "direct",
+      "tags": [
+        "杭州",
+        "职业小类",
+        "医学研究人员",
+        "分位值",
+        "元/年",
+        "临床和口腔医师",
+        "中医医师",
+        "医疗卫生技术人员",
+        "护理人员"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "杭州市2024年企业薪酬调查信息，单位元/年，5列为10%/25%/50%/75%/90%分位值"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "不同职业小类企业从业人员工资价位 （2024 年） 单位：元/年 序号 职业小类 分位值 10% 25% 50% 75% 90% 1 企业负责人 74600 113710 205967 357732 509500 2 自然科学和地球科学研究人员 101221 124123 169790 230509 343257 3 农业科学研究人员 86851 104656 129891 170438 216631 4 医学研究人员 85042 109969 167931 243725 312450"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "39 临床和口腔医师 83613 124779 188385 268164 384767 40 中医医师 58992 80100 101350 144746 227651 41 中西医结合医师 96703 112000 132109 216294 268715 42 药学技术人员 61197 72000 88020 108731 131000 43 医疗卫生技术人员 60951 80560 103707 137048 173318 44 护理人员 53932 69000 94175 151785 200368 45 其他卫生专业技术人员 45600 60547 88475 120380 163227"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "月薪",
+      "其他城市",
+      "医院编制工资制度",
+      "编制内工资制度"
+    ]
+  },
+  {
+    "source": {
+      "id": "hz-salary-survey-2024",
+      "url": "https://hrss.hangzhou.gov.cn/api-gateway/jpaas-web-server/front/document/download?fileUrl=YW5UzzlvCwcM%2FNHHX%2FtT6DgXI75PfpK5owtnanQUGNl%2BqLVcDRVbXEfL%2FDC3NEl%2BNq6lsY%2BcGVPgWQbk%2BgooakfrpoqzGO%2BqLlI23yNzgaXIbwfSGBF6aziuJ%2FRkWtrSP0K73nNXgOX1TylJld8%2BYdTLZh4MF8m3P1xAn1huCjE%3D&fileName=%E6%9D%AD%E5%B7%9E%E5%B8%822024%E5%B9%B4%E4%BC%81%E4%B8%9A%E8%96%AA%E9%85%AC%E8%B0%83%E6%9F%A5%E4%BF%A1%E6%81%AF10.20%E5%8F%91%E5%B8%83%E7%89%88.pdf",
+      "organization": "杭州市人力资源和社会保障局",
+      "title": "杭州市2024年企业薪酬调查信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未出现发布日期（仅有「2024 年」数据年份）；发布页 https://hrss.hangzhou.gov.cn/col/col1618938/art/2025/art_b4da094ef60649cd906aa7f486569eb5.html 亦只标「2024年企业薪酬调查信息」，无可引日期，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/hz-salary-2024.pdf",
+      "sha256": "8a1bedcc33cacc9f74adb671ac333a3f594ea5b6ea940b16304fc0ca3ec95324",
+      "captured_at": "2026-10-23T05:19:09.205Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary2/hz-salary-2024.txt",
+      "extracted_sha256": "e4dad22a53427c6e7fa17a85987e45cb91e038f62aa54d1268854500cbb979bd"
+    },
+    "record": {
+      "id": "industry-hz-salary-survey-2024-guide-software",
+      "role_id": "guide_software",
+      "category": "industry",
+      "title": "杭州 2024 年「软件和信息技术服务人员」工资价位 62550/90049/221227/376017/557783 元/年",
+      "summary": "杭州2024年分职业小类表：软件和信息技术服务人员 62550/90049/221227/376017/557783 元/年（10%/25%/50%/75%/90%）；信息通信网络维护人员 65248/91031/105430/126510/156481。注意该职业的50%分位（221227）显著高于中位数邻近分布，引用时应原样给出五个分位。",
+      "applicability": "适用于引用杭州2024年软件和信息技术服务人员的年度工资分位。属职业小类口径；不适用于具体岗位或公司。",
+      "relation": "direct",
+      "tags": [
+        "杭州",
+        "软件和信息技术服务人员",
+        "分位值",
+        "元/年"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "杭州市2024年企业薪酬调查信息，单位元/年，5列为10%/25%/50%/75%/90%分位值"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "100 软件和信息技术服务人员 62550 90049 221227 376017 557783 101 其他信息传输、软件和信息技术 服务人员 52055 69898 112381 158130 222786"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "月薪",
+      "具体公司薪资"
+    ]
+  },
+  {
+    "source": {
+      "id": "hz-salary-survey-2024",
+      "url": "https://hrss.hangzhou.gov.cn/api-gateway/jpaas-web-server/front/document/download?fileUrl=YW5UzzlvCwcM%2FNHHX%2FtT6DgXI75PfpK5owtnanQUGNl%2BqLVcDRVbXEfL%2FDC3NEl%2BNq6lsY%2BcGVPgWQbk%2BgooakfrpoqzGO%2BqLlI23yNzgaXIbwfSGBF6aziuJ%2FRkWtrSP0K73nNXgOX1TylJld8%2BYdTLZh4MF8m3P1xAn1huCjE%3D&fileName=%E6%9D%AD%E5%B7%9E%E5%B8%822024%E5%B9%B4%E4%BC%81%E4%B8%9A%E8%96%AA%E9%85%AC%E8%B0%83%E6%9F%A5%E4%BF%A1%E6%81%AF10.20%E5%8F%91%E5%B8%83%E7%89%88.pdf",
+      "organization": "杭州市人力资源和社会保障局",
+      "title": "杭州市2024年企业薪酬调查信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未出现发布日期（仅有「2024 年」数据年份）；发布页 https://hrss.hangzhou.gov.cn/col/col1618938/art/2025/art_b4da094ef60649cd906aa7f486569eb5.html 亦只标「2024年企业薪酬调查信息」，无可引日期，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/hz-salary-2024.pdf",
+      "sha256": "8a1bedcc33cacc9f74adb671ac333a3f594ea5b6ea940b16304fc0ca3ec95324",
+      "captured_at": "2026-10-23T05:19:09.205Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary2/hz-salary-2024.txt",
+      "extracted_sha256": "e4dad22a53427c6e7fa17a85987e45cb91e038f62aa54d1268854500cbb979bd"
+    },
+    "record": {
+      "id": "industry-hz-salary-survey-2024-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "industry",
+      "title": "杭州 2024 年数字职业：商务数据分析师（S）50028/79215/109724/216840/307863 元/年",
+      "summary": "杭州2024年「数字职业」表（职业分类大典标识S，元/年，10%/25%/50%/75%/90%）：商务数据分析师S 50028/79215/109724/216840/307863；工程测量员S 78000/125683/202083/263000/336792。杭州未单列「数据分析处理工程技术人员」细类，最接近的官方数字职业口径即此表。",
+      "applicability": "适用于引用杭州2024年数字职业表中数据类职业的年度工资分位。属数字职业口径，非医疗行业专属；不可替代「数据分析处理工程技术人员」的职业细类数据。",
+      "relation": "direct",
+      "tags": [
+        "杭州",
+        "数字职业",
+        "商务数据分析师",
+        "数据分析",
+        "分位值"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "杭州市2024年企业薪酬调查信息，单位元/年，5列为10%/25%/50%/75%/90%分位值"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "31 商务数据分析师 S 50028 79215 109724 216840 307863 32 工程测量员 S 78000 125683 202083 263000 336792"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "数据分析处理工程技术人员单列数据",
+      "医疗行业口径"
+    ]
+  },
+  {
+    "source": {
+      "id": "cd-salary-survey-2024",
+      "url": "https://cdhrss.chengdu.gov.cn/cdrsj/c152160/2025-11/25/1a6936e681dc435c920cb1137117a4e7/files/e10e3952f4364be0825ec9c8a3764c1f.pdf",
+      "organization": "成都市人力资源和社会保障局",
+      "title": "成都市2024年人力资源市场工资价位和行业人工成本信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文「发布说明」未出现发布日期，仅有数据年份 2024；URL 路径含 2025-11 但属链接元数据而非原文日期，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/cd-salary-2024.pdf",
+      "sha256": "e193cd58761591f6755d3ea6a96a81a4c4404bdc123c56db3d7a3c54d85025b0",
+      "captured_at": "2026-10-23T05:21:19.675Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary2/cd-salary-2024.txt",
+      "extracted_sha256": "d92b3f0c43c8290e2d584f90a8fb709ca86c481e71ab4629fba2bfde5450a157"
+    },
+    "record": {
+      "id": "industry-cd-salary-survey-2024-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "成都工资价位的样本与调查期：3436 户企业、18 个行业门类、55 万余名职工",
+      "summary": "成都市人社局发布说明：以地区、行业为分层依据，按企业人数采用PPS抽样抽取企业样本，并对样本企业的全部职工进行调查，共调查全市18个行业门类的3436户企业、涉及职工55万余人；调查时期指标为2024年1月1日至12月31日。（同一官方来源共 2 条原文事实，字段：coverage_limit、salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于界定成都2024年工资价位数据的样本范围与时期。不适用于其他年份或其他城市；不覆盖未纳入抽样框的单位。",
+      "relation": "direct",
+      "tags": [
+        "成都",
+        "抽样方法",
+        "样本量",
+        "调查期",
+        "数据边界",
+        "卫生和社会工作",
+        "行业门类",
+        "万元/年",
+        "分位值"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "成都市2024年人力资源市场工资价位，单位万元/年（注意与深圳/杭州的元/年不同）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "coverage_limit",
+        "pattern": "本信息是在企业薪酬调查的基础上形成的。该调查项目以地 区、行业为分层依据，按照企业人数采用 PPS 抽样方法抽取企业 样本，并对样本企业的全部职工进行调查，共调查全市 18 个行业 门类的 3436 户企业，涉及职工 55 万余人。调查的时期指标为 2024 年 1 月 1 日至 12 月 31 日。"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "65 卫生和社会工作 4\\.21 5\\.44 7\\.67 11\\.35 17\\.12 66 文化、体育和娱乐业 3\\.79 4\\.91 8\\.00 12\\.19 17\\.52"
+      }
+    ],
+    "expected_fields": [
+      "coverage_limit",
+      "2025年度数据",
+      "机关事业单位工资",
+      "salary_statistics",
+      "职业口径",
+      "元/年 口径"
+    ]
+  },
+  {
+    "source": {
+      "id": "cd-salary-survey-2024",
+      "url": "https://cdhrss.chengdu.gov.cn/cdrsj/c152160/2025-11/25/1a6936e681dc435c920cb1137117a4e7/files/e10e3952f4364be0825ec9c8a3764c1f.pdf",
+      "organization": "成都市人力资源和社会保障局",
+      "title": "成都市2024年人力资源市场工资价位和行业人工成本信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文「发布说明」未出现发布日期，仅有数据年份 2024；URL 路径含 2025-11 但属链接元数据而非原文日期，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/cd-salary-2024.pdf",
+      "sha256": "e193cd58761591f6755d3ea6a96a81a4c4404bdc123c56db3d7a3c54d85025b0",
+      "captured_at": "2026-10-23T05:21:19.675Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary2/cd-salary-2024.txt",
+      "extracted_sha256": "d92b3f0c43c8290e2d584f90a8fb709ca86c481e71ab4629fba2bfde5450a157"
+    },
+    "record": {
+      "id": "industry-cd-salary-survey-2024-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "成都 2024 年分职业工资价位：卫生专业技术人员 4.26/5.41/6.84/10.19/14.17 万元/年",
+      "summary": "成都市2024年「三、分职业的工资价位」（万元/年，10%/25%/50%/75%/90%）：卫生专业技术人员 4.26/5.41/6.84/10.19/14.17；临床和口腔医师 5.03/7.23/10.31/15.59/22.42；中医医师 5.41/6.69/8.96/10.94/14.50；中西医结合医师 7.70/8.92/12.56/14.89/19.07；药学技术人员 4.22/4.58/6.31/8.35/11.38。",
+      "applicability": "适用于引用成都2024年卫生类职业的年度工资分位（万元/年）。属全市企业调查职业口径；因单位为万元/年，跨城市比较前须先统一单位。",
+      "relation": "direct",
+      "tags": [
+        "成都",
+        "卫生专业技术人员",
+        "临床和口腔医师",
+        "中西医结合医师",
+        "万元/年"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "成都市2024年人力资源市场工资价位，单位万元/年（注意与深圳/杭州的元/年不同）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "48 卫生专业技术人员 4\\.26 5\\.41 6\\.84 10\\.19 14\\.17 49 临床和口腔医师 5\\.03 7\\.23 10\\.31 15\\.59 22\\.42 50 中医医师 5\\.41 6\\.69 8\\.96 10\\.94 14\\.50 51 中西医结合医师 7\\.70 8\\.92 12\\.56 14\\.89 19\\.07 52 药学技术人员 4\\.22 4\\.58 6\\.31 8\\.35 11\\.38"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "元/年 口径",
+      "医院编制工资制度",
+      "月薪"
+    ]
+  },
+  {
+    "source": {
+      "id": "cd-salary-survey-2024",
+      "url": "https://cdhrss.chengdu.gov.cn/cdrsj/c152160/2025-11/25/1a6936e681dc435c920cb1137117a4e7/files/e10e3952f4364be0825ec9c8a3764c1f.pdf",
+      "organization": "成都市人力资源和社会保障局",
+      "title": "成都市2024年人力资源市场工资价位和行业人工成本信息",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文「发布说明」未出现发布日期，仅有数据年份 2024；URL 路径含 2025-11 但属链接元数据而非原文日期，故置 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-salary2/cd-salary-2024.pdf",
+      "sha256": "e193cd58761591f6755d3ea6a96a81a4c4404bdc123c56db3d7a3c54d85025b0",
+      "captured_at": "2026-10-23T05:21:19.675Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-salary2/cd-salary-2024.txt",
+      "extracted_sha256": "d92b3f0c43c8290e2d584f90a8fb709ca86c481e71ab4629fba2bfde5450a157"
+    },
+    "record": {
+      "id": "industry-cd-salary-survey-2024-guide-software",
+      "role_id": "guide_software",
+      "category": "industry",
+      "title": "成都 2024 年「软件和信息技术服务人员」工资价位 7.05/9.25/12.18/17.27/25.20 万元/年",
+      "summary": "成都市2024年「三、分职业的工资价位」：软件和信息技术服务人员 7.05/9.25/12.18/17.27/25.20 万元/年（10%/25%/50%/75%/90%）；信息通信网络运行管理人员 6.38/8.63/9.80/11.80/13.90。成都未单列「计算机软件工程技术人员」工程技术人员细类。",
+      "applicability": "适用于引用成都2024年软件和信息技术服务人员的年度工资分位（万元/年）。属职业中类口径，不区分具体技术方向；不适用于其他城市。",
+      "relation": "direct",
+      "tags": [
+        "成都",
+        "软件和信息技术服务人员",
+        "万元/年",
+        "分位值"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "statistic_scope": "成都市2024年人力资源市场工资价位，单位万元/年（注意与深圳/杭州的元/年不同）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "122 软件和信息技术服务人员 7\\.05 9\\.25 12\\.18 17\\.27 25\\.20 123 其他信息传输、软件和信息技术 服务人员 6\\.22 6\\.47 8\\.50 10\\.89 14\\.54"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "计算机软件工程技术人员细类",
+      "月薪"
+    ]
+  }
+]

@@ -1,0 +1,1102 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T04:52:19.957Z",
+  "sources": [
+    {
+      "id": "sysu-2027-major-catalog",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "organization": "中山大学研究生招生办公室",
+      "title": "中山大学2027年硕士研究生招生学科专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面为2026-10目录下载链接；PDF正文未标注发布日期，按“2027年招生年度”使用，发布日期保持未知。"
+    },
+    {
+      "id": "sysu-2027-charter",
+      "url": "https://graduate.sysu.edu.cn/zsw/node/541",
+      "organization": "中山大学研究生招生办公室",
+      "title": "中山大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "章程页未标注正文发布日期，链接目录为2026-09/2026-10，故发布日期保持未知。"
+    },
+    {
+      "id": "scu-2027-charter",
+      "url": "https://yz.scu.edu.cn/zsxx/Details/a9e04641-aa5f-401f-892e-f069c0f8ecb2",
+      "organization": "四川大学研究生院招生办公室",
+      "title": "四川大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "章程页未在正文标注发布日期；按2027招生年度使用，发布日期保持未知。"
+    },
+    {
+      "id": "uestc-2027-charter",
+      "url": "https://yz.uestc.edu.cn/info/1081/5968.htm",
+      "organization": "电子科技大学研究生招生办公室",
+      "title": "电子科技大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面发布时间2026-10-08（页面呈现）；正文未标注目录日期，发布日期保持未知。"
+    },
+    {
+      "id": "seu-2027-catalog-pdf",
+      "url": "https://yzb.seu.edu.cn/_upload/article/files/6a/83/e8812ecd4b64a03ae869029eae5b/e43d7759-7d78-4c84-a698-ceb01d3f7566.pdf",
+      "organization": "东南大学研究生院招生办公室",
+      "title": "东南大学2027年硕士研究生招生专业目录（含接收标注）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF正文未标注发布日期；按2027招生年度使用，发布日期保持未知。"
+    },
+    {
+      "id": "xjtu-2027-charter",
+      "url": "https://yz.xjtu.edu.cn/__local/E/87/9A/3FDEF75C038EF21BE144434C44A_C2E45EA5_45827.pdf",
+      "organization": "西安交通大学研究生招生办公室",
+      "title": "西安交通大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "章程PDF未标注发布日期；正文报名时间为2026-10-15至24，对应2027招生年度，发布日期保持未知。"
+    },
+    {
+      "id": "sjtu-2027-master-charter",
+      "url": "https://yzb.sjtu.edu.cn/post/3784",
+      "organization": "上海交通大学研究生院招生办公室",
+      "title": "上海交通大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "章程页面未在正文标注发布日期；按2027招生年度使用，发布日期保持未知。"
+    }
+  ],
+  "records": [
+    {
+      "id": "adm-sysu-2027-major-catalog-guide-ml-cv",
+      "source_id": "sysu-2027-major-catalog",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "中山大学2027年硕士招生：人工智能（085410）初试科目",
+      "summary": "以下为官方专业目录原文行；标题与标签为 LIMEN 编辑索引，不构成报考建议。",
+      "applicability": "仅适用于中山大学2027年该专业代码所列初试科目；个人报考资格、复试细则与专项计划需另行核对当年章程与院系公告。",
+      "relation": "related",
+      "tags": [
+        "人工智能",
+        "085410",
+        "中山大学",
+        "2027",
+        "人工智能",
+        "计算机学科专业基础",
+        "数学（一）"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085410 人工智能 33 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础",
+          "quote": "085410 人工智能 33 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础",
+          "start": 23399,
+          "end": 23462
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f",
+      "collected_at": "2026-10-23T03:01:41.599Z",
+      "verified_at": "2026-10-23T04:52:19.752Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "program": "085410 人工智能",
+        "admission_year": 2027,
+        "region": "广东",
+        "evidence_locator": "专业目录 偏移 23399"
+      }
+    },
+    {
+      "id": "adm-sysu-2027-major-catalog-guide-signals",
+      "source_id": "sysu-2027-major-catalog",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "中山大学2027年硕士招生：电子信息（085400）初试科目",
+      "summary": "以下为官方专业目录原文行；标题与标签为 LIMEN 编辑索引，不构成报考建议。",
+      "applicability": "仅适用于中山大学2027年该专业代码所列初试科目；个人报考资格、复试细则与专项计划需另行核对当年章程与院系公告。",
+      "relation": "related",
+      "tags": [
+        "电子信息",
+        "085400",
+        "中山大学",
+        "2027",
+        "电子信息",
+        "信号与系统"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085400 电子信息 90 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④884 信号与系统",
+          "quote": "085400 电子信息 90 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④884 信号与系统",
+          "start": 28151,
+          "end": 28210
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f",
+      "collected_at": "2026-10-23T03:01:41.599Z",
+      "verified_at": "2026-10-23T04:52:19.770Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "program": "085400 电子信息",
+        "admission_year": 2027,
+        "region": "广东",
+        "evidence_locator": "专业目录 偏移 28151"
+      }
+    },
+    {
+      "id": "adm-sysu-2027-major-catalog-guide-imaging-eng",
+      "source_id": "sysu-2027-major-catalog",
+      "role_id": "guide_imaging_eng",
+      "category": "admissions",
+      "title": "中山大学2027年硕士招生：医学技术（105800）初试科目",
+      "summary": "以下为官方专业目录原文行；标题与标签为 LIMEN 编辑索引，不构成报考建议。",
+      "applicability": "仅适用于中山大学2027年该专业代码所列初试科目；个人报考资格、复试细则与专项计划需另行核对当年章程与院系公告。",
+      "relation": "related",
+      "tags": [
+        "医学技术",
+        "105800",
+        "中山大学",
+        "2027",
+        "医学技术",
+        "医学影像技术",
+        "医学技术基础"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "105800 医学技术 12 ①101 思想政治理论 ②201 英语（一） ③660 医学技术基础（综合） 81 医学影像技术（附属第七医院培养）",
+          "quote": "105800 医学技术 12 ①101 思想政治理论 ②201 英语（一） ③660 医学技术基础（综合） 81 医学影像技术（附属第七医院培养）",
+          "start": 20281,
+          "end": 20354
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f",
+      "collected_at": "2026-10-23T03:01:41.599Z",
+      "verified_at": "2026-10-23T04:52:19.787Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "program": "105800 医学技术",
+        "admission_year": 2027,
+        "region": "广东",
+        "evidence_locator": "专业目录 偏移 20281"
+      }
+    },
+    {
+      "id": "adm-sysu-2027-major-catalog-guide-devices",
+      "source_id": "sysu-2027-major-catalog",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "中山大学2027年硕士招生：医学技术（105800）初试科目",
+      "summary": "以下为官方专业目录原文行；标题与标签为 LIMEN 编辑索引，不构成报考建议。",
+      "applicability": "仅适用于中山大学2027年该专业代码所列初试科目；个人报考资格、复试细则与专项计划需另行核对当年章程与院系公告。",
+      "relation": "related",
+      "tags": [
+        "医学技术",
+        "105800",
+        "中山大学",
+        "2027",
+        "医学技术",
+        "核物理与技术",
+        "工程物理"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "105800 医学技术 10 ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④866 工程物理",
+          "quote": "105800 医学技术 10 ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④866 工程物理",
+          "start": 14344,
+          "end": 14402
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f",
+      "collected_at": "2026-10-23T03:01:41.599Z",
+      "verified_at": "2026-10-23T04:52:19.798Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "program": "105800 医学技术",
+        "admission_year": 2027,
+        "region": "广东",
+        "evidence_locator": "专业目录 偏移 14344"
+      }
+    },
+    {
+      "id": "adm-sysu-2027-major-catalog-guide-health-systems",
+      "source_id": "sysu-2027-major-catalog",
+      "role_id": "guide_health_systems",
+      "category": "admissions",
+      "title": "中山大学2027年硕士招生：社会医学与卫生事业管理（107401）初试科目",
+      "summary": "以下为官方专业目录原文行；标题与标签为 LIMEN 编辑索引，不构成报考建议。",
+      "applicability": "仅适用于中山大学2027年该专业代码所列初试科目；个人报考资格、复试细则与专项计划需另行核对当年章程与院系公告。",
+      "relation": "related",
+      "tags": [
+        "社会医学与卫生事业管理",
+        "107401",
+        "中山大学",
+        "2027",
+        "社会医学与卫生事业管理",
+        "卫生综合"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "107401 社会医学与卫生事业管理 5 ①101 思想政治理论 ②201 英语（一） ③353 卫生综合",
+          "quote": "107401 社会医学与卫生事业管理 5 ①101 思想政治理论 ②201 英语（一） ③353 卫生综合",
+          "start": 14626,
+          "end": 14679
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f",
+      "collected_at": "2026-10-23T03:01:41.599Z",
+      "verified_at": "2026-10-23T04:52:19.806Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "program": "107401 社会医学与卫生事业管理",
+        "admission_year": 2027,
+        "region": "广东",
+        "evidence_locator": "专业目录 偏移 14626"
+      }
+    },
+    {
+      "id": "adm-sysu-2027-major-catalog-medicine-guide",
+      "source_id": "sysu-2027-major-catalog",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "中山大学2027年硕士招生：外科学（100210）初试科目",
+      "summary": "以下为官方专业目录原文行；标题与标签为 LIMEN 编辑索引，不构成报考建议。",
+      "applicability": "仅适用于中山大学2027年该专业代码所列初试科目；个人报考资格、复试细则与专项计划需另行核对当年章程与院系公告。",
+      "relation": "related",
+      "tags": [
+        "外科学",
+        "100210",
+        "中山大学",
+        "2027",
+        "外科学",
+        "生物医学综合"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "100210 外科学 18 ①101 思想政治理论 ②201 英语（一） ③648 生物医学综合",
+          "quote": "100210 外科学 18 ①101 思想政治理论 ②201 英语（一） ③648 生物医学综合",
+          "start": 17782,
+          "end": 17830
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f",
+      "collected_at": "2026-10-23T03:01:41.599Z",
+      "verified_at": "2026-10-23T04:52:19.815Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "program": "100210 外科学",
+        "admission_year": 2027,
+        "region": "广东",
+        "evidence_locator": "专业目录 偏移 17782"
+      }
+    },
+    {
+      "id": "adm-sysu-2027-charter-medicine-guide",
+      "source_id": "sysu-2027-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "中山大学2027年硕士研究生报考条件（官方章程原文）",
+      "summary": "章程原文列出学历与身份条件；本条只摘录条件本身，不判断个人是否符合。",
+      "applicability": "适用于报名参加全国硕士研究生招生考试者；专项计划、推免与院系附加要求不在本条范围内。",
+      "relation": "related",
+      "tags": [
+        "报考条件",
+        "中山大学",
+        "2027",
+        "招生章程"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "报考条件 （一）报名参加全国硕士研究生招生考试的人员，须符合下列条件： 1. 拥护中国共产党的领导，遵守中华人民共和国宪法和法律，诚实守信。 2. 身体健康状况符合国家和中山大学规定的体检要求。 3. 考生学业水平须符合下列条件之一： （1）国家承认学历的应届本科毕业生（含普通高校、成人高校、普通高校举办的成人高等学历教育等应届本科毕业生）及自学考试和网络教育届时可毕业本科生。考生录取当年入学前必须取得国家承认的国（境）内高校本科毕业证书或经相关专业机构认证的国（境）外教育机构合法学历学位证书。 （2）具有国家承认的本科毕业学历的人员。 （3）获得国家承认的高职（专科）毕业学历后满2年及以上人员（毕业后到录取当年入学前，下同）或国家承认学历的本科结业生，按本科毕业同等学力身份报考。以同等学力身份（以报考时学历为准）报考我校的考生，须有国家考试机构或高校教务部门出具的所报考专业8门以上本科主干课程成绩证明，并具备一定的科研能力，报考前须经报考单位审核通过，除复试外还须加试两门本科专业基础课，部分专业还将加试实验等科目。 （4）已获硕士、博士研究生学历或学位的人员。",
+          "quote": "报考条件 （一）报名参加全国硕士研究生招生考试的人员，须符合下列条件： 1. 拥护中国共产党的领导，遵守中华人民共和国宪法和法律，诚实守信。 2. 身体健康状况符合国家和中山大学规定的体检要求。 3. 考生学业水平须符合下列条件之一： （1）国家承认学历的应届本科毕业生（含普通高校、成人高校、普通高校举办的成人高等学历教育等应届本科毕业生）及自学考试和网络教育届时可毕业本科生。考生录取当年入学前必须取得国家承认的国（境）内高校本科毕业证书或经相关专业机构认证的国（境）外教育机构合法学历学位证书。 （2）具有国家承认的本科毕业学历的人员。 （3）获得国家承认的高职（专科）毕业学历后满2年及以上人员（毕业后到录取当年入学前，下同）或国家承认学历的本科结业生，按本科毕业同等学力身份报考。以同等学力身份（以报考时学历为准）报考我校的考生，须有国家考试机构或高校教务部门出具的所报考专业8门以上本科主干课程成绩证明，并具备一定的科研能力，报考前须经报考单位审核通过，除复试外还须加试两门本科专业基础课，部分专业还将加试实验等科目。 （4）已获硕士、博士研究生学历或学位的人员。",
+          "start": 312,
+          "end": 800
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "3f0dc7b5e74aa2bb9333df167cabeb7f97a39b5c8cdb4d0dc892c6a3d1f1a5ac",
+      "collected_at": "2026-10-23T03:00:57.954Z",
+      "verified_at": "2026-10-23T04:52:19.820Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "admission_year": 2027,
+        "region": "广东"
+      }
+    },
+    {
+      "id": "adm-sysu-2027-charter-guide-clinical-data",
+      "source_id": "sysu-2027-charter",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "中山大学2027年章程：同等学力考生须加试两门本科专业基础课",
+      "summary": "章程对同等学力身份给出加试要求；跨专业要求并未在本段出现，故不推断。",
+      "applicability": "仅适用于章程所指同等学力考生；普通本科应届/往届毕业生的跨专业限制需见院系细则。",
+      "relation": "related",
+      "tags": [
+        "加试",
+        "同等学力",
+        "中山大学",
+        "2027"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "高校教务部门出具的所报考专业8门以上本科主干课程成绩证明，并具备一定的科研能力，报考前须经报考单位审核通过，除复试外还须加试两门本科专业基础课",
+          "quote": "高校教务部门出具的所报考专业8门以上本科主干课程成绩证明，并具备一定的科研能力，报考前须经报考单位审核通过，除复试外还须加试两门本科专业基础课",
+          "start": 691,
+          "end": 762
+        }
+      ],
+      "missing_fields": [
+        "admission_requirements"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "3f0dc7b5e74aa2bb9333df167cabeb7f97a39b5c8cdb4d0dc892c6a3d1f1a5ac",
+      "collected_at": "2026-10-23T03:00:57.954Z",
+      "verified_at": "2026-10-23T04:52:19.833Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "admission_year": 2027,
+        "region": "广东"
+      }
+    },
+    {
+      "id": "adm-sysu-2027-charter-medical-ai-pm",
+      "source_id": "sysu-2027-charter",
+      "role_id": "medical_ai_pm",
+      "category": "admissions",
+      "title": "中山大学2027年章程：医学等门类与相关专业学位初试为三个单元",
+      "summary": "章程原文说明这类学科初试科目单元与分值结构，用于理解考试科目构成。",
+      "applicability": "仅描述初试单元设置与分值，不代表具体专业考试科目，具体科目仍以专业目录为准。",
+      "relation": "related",
+      "tags": [
+        "初试科目",
+        "医学类",
+        "中山大学",
+        "2027"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "教育学、历史学、医学等3个门类学术学位，及体育、应用心理、博物馆、临床医学、口腔医学、公共卫生、护理、药学、中药、中医、医学技术、针灸等12个专业学位，初试设置三个单元考试科目，即思想政治理论、外国语、专业基础综合，满分分别为100分、100分、300分。",
+          "quote": "教育学、历史学、医学等3个门类学术学位，及体育、应用心理、博物馆、临床医学、口腔医学、公共卫生、护理、药学、中药、中医、医学技术、针灸等12个专业学位，初试设置三个单元考试科目，即思想政治理论、外国语、专业基础综合，满分分别为100分、100分、300分。",
+          "start": 4558,
+          "end": 4686
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "3f0dc7b5e74aa2bb9333df167cabeb7f97a39b5c8cdb4d0dc892c6a3d1f1a5ac",
+      "collected_at": "2026-10-23T03:00:57.954Z",
+      "verified_at": "2026-10-23T04:52:19.840Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "admission_year": 2027,
+        "region": "广东"
+      }
+    },
+    {
+      "id": "adm-scu-2027-charter-medicine-guide",
+      "source_id": "scu-2027-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "四川大学2027年硕士研究生报考条件（官方章程原文）",
+      "summary": "章程原文列出学历与身份条件；本条只摘录条件本身，不判断个人是否符合。",
+      "applicability": "适用于报名参加全国硕士研究生招生考试者；专项计划与院系附加要求不在本条范围内。",
+      "relation": "related",
+      "tags": [
+        "报考条件",
+        "四川大学",
+        "2027",
+        "招生章程"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "二、报考条件 （一）报名参加全国硕士研究生招生考试的人员，须符合下列条件： 1. 拥护中国共产党的领导，遵守中华人民共和国宪法和法律，诚实守信。 2. 身体健康状况符合国家和招生院系规定的体检要求。 3. 考生学业水平必须符合下列条件之一： （1）国家承认学历的应届本科毕业生（含普通高校、成人高校、普通高校举办的成人高等学历教育等应届本科毕业生）及自学考试和网络教育届时可毕业本科生。 （2）具有国家承认的本科毕业学历的人员。 （3）获得国家承认的高职高专毕业学历后满2年（毕业后到录取当年入学前，下同）或2年以上，以及国家承认学历的本科结业生，按本科毕业生同等学力身份报考，须同时满足以下条件：①达到全国大学英语（CET四级或六级）425分以上或通过在职人员申请学士学位外语考试；②在核心及以上期刊至少有一篇以第一作者身份发表的与报考专业相关的论文；③提供国家考试机构或高校教务部门开具的与报考相关专业本科的8门及以上专业课程成绩单。并在报名时间截止3日前提交相关材料的电子版至四川大学研招办邮箱（scuyz@scu.edu.cn）进行审核，经学校审核同意后方可参加考试。复试时应交验学历证书、外语成绩证明、发表论文、主干课程成绩单等同等学力证明材料原件。初试合格后须经资格复审，审核通过后方可参加复试。 （4）已获硕士、博士研究生学历或学位的人员。",
+          "quote": "二、报考条件 （一）报名参加全国硕士研究生招生考试的人员，须符合下列条件： 1. 拥护中国共产党的领导，遵守中华人民共和国宪法和法律，诚实守信。 2. 身体健康状况符合国家和招生院系规定的体检要求。 3. 考生学业水平必须符合下列条件之一： （1）国家承认学历的应届本科毕业生（含普通高校、成人高校、普通高校举办的成人高等学历教育等应届本科毕业生）及自学考试和网络教育届时可毕业本科生。 （2）具有国家承认的本科毕业学历的人员。 （3）获得国家承认的高职高专毕业学历后满2年（毕业后到录取当年入学前，下同）或2年以上，以及国家承认学历的本科结业生，按本科毕业生同等学力身份报考，须同时满足以下条件：①达到全国大学英语（CET四级或六级）425分以上或通过在职人员申请学士学位外语考试；②在核心及以上期刊至少有一篇以第一作者身份发表的与报考专业相关的论文；③提供国家考试机构或高校教务部门开具的与报考相关专业本科的8门及以上专业课程成绩单。并在报名时间截止3日前提交相关材料的电子版至四川大学研招办邮箱（scuyz@scu.edu.cn）进行审核，经学校审核同意后方可参加考试。复试时应交验学历证书、外语成绩证明、发表论文、主干课程成绩单等同等学力证明材料原件。初试合格后须经资格复审，审核通过后方可参加复试。 （4）已获硕士、博士研究生学历或学位的人员。",
+          "start": 679,
+          "end": 1256
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "0a99a45b77e9a68518f0c7ebb9a984f1aefa2081c7eefc8f6d0ffa2048ae384e",
+      "collected_at": "2026-10-23T03:55:51.026Z",
+      "verified_at": "2026-10-23T04:52:19.848Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "admission_year": 2027,
+        "region": "四川"
+      }
+    },
+    {
+      "id": "adm-scu-2027-charter-guide-clinical-data",
+      "source_id": "scu-2027-charter",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "四川大学2027年章程：同等学力考生复试须加试至少两门本科主干课程",
+      "summary": "章程对同等学力身份给出加试要求；普通本科毕业生的跨专业限制需见院系细则。",
+      "applicability": "仅适用于以同等学力身份报考并参加复试的考生；不等于对所有跨专业考生的限制。",
+      "relation": "related",
+      "tags": [
+        "加试",
+        "同等学力",
+        "四川大学",
+        "2027"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "以同等学力身份报考并参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程。加试方式为笔试，加试科目不得与初试科目相同，加试不合格者不予录取。",
+          "quote": "以同等学力身份报考并参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程。加试方式为笔试，加试科目不得与初试科目相同，加试不合格者不予录取。",
+          "start": 4569,
+          "end": 4646
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "0a99a45b77e9a68518f0c7ebb9a984f1aefa2081c7eefc8f6d0ffa2048ae384e",
+      "collected_at": "2026-10-23T03:55:51.026Z",
+      "verified_at": "2026-10-23T04:52:19.853Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "admission_year": 2027,
+        "region": "四川"
+      }
+    },
+    {
+      "id": "adm-scu-2027-charter-medical-ai-pm",
+      "source_id": "scu-2027-charter",
+      "role_id": "medical_ai_pm",
+      "category": "admissions",
+      "title": "四川大学2027年章程：全国统考科目清单与命题单位",
+      "summary": "章程说明哪些科目由教育部考试中心统一命题；具体专业考哪些科目仍以专业目录为准。",
+      "applicability": "仅说明统考科目的命题来源，不代表任一具体专业的科目组合。",
+      "relation": "related",
+      "tags": [
+        "初试科目",
+        "统一命题",
+        "四川大学",
+        "2027"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "考试科目中的101-思想政治理论、199-管理类综合能力、201-英语（一）、202-俄语、203-日语、204-英语（二）、 301-数学（一）、302-数学（二）、303-数学（三）、306-临床医学综合能力（西医）、307-临床医学综合能力（中医）、313-历史学专业基础、397-法律硕士专业基础（法学）、398-法律硕士专业基础（非法学）、408-计算机学科专业基础、497-法律硕士综合（法学）、498-法律硕士综合（非法学）均由教育部考试中心统一命题。",
+          "quote": "考试科目中的101-思想政治理论、199-管理类综合能力、201-英语（一）、202-俄语、203-日语、204-英语（二）、 301-数学（一）、302-数学（二）、303-数学（三）、306-临床医学综合能力（西医）、307-临床医学综合能力（中医）、313-历史学专业基础、397-法律硕士专业基础（法学）、398-法律硕士专业基础（非法学）、408-计算机学科专业基础、497-法律硕士综合（法学）、498-法律硕士综合（非法学）均由教育部考试中心统一命题。",
+          "start": 4086,
+          "end": 4319
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "0a99a45b77e9a68518f0c7ebb9a984f1aefa2081c7eefc8f6d0ffa2048ae384e",
+      "collected_at": "2026-10-23T03:55:51.026Z",
+      "verified_at": "2026-10-23T04:52:19.865Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "admission_year": 2027,
+        "region": "四川"
+      }
+    },
+    {
+      "id": "adm-uestc-2027-charter-medicine-guide",
+      "source_id": "uestc-2027-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "电子科技大学2027年硕士研究生报考条件（官方章程原文）",
+      "summary": "章程原文列出全国统一考试的学历与身份条件；本条只摘录条件本身。",
+      "applicability": "适用于参加全国统一考试的考生；专项计划与院系附加要求不在本条范围内。",
+      "relation": "related",
+      "tags": [
+        "报考条件",
+        "电子科技大学",
+        "2027",
+        "招生章程"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "报考条件 （一）全国统一考试 1.拥护中国共产党的领导，遵守中华人民共和国宪法和法律，诚实守信。 2.身体健康状况符合国家和我校规定的体检要求。 3.考生学业水平必须符合下列条件之一： （1）国家承认学历的应届本科毕业生",
+          "quote": "报考条件 （一）全国统一考试 1.拥护中国共产党的领导，遵守中华人民共和国宪法和法律，诚实守信。 2.身体健康状况符合国家和我校规定的体检要求。 3.考生学业水平必须符合下列条件之一： （1）国家承认学历的应届本科毕业生",
+          "start": 991,
+          "end": 1101
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "b523679945a0908c10fb9dfd810ba3391f29dd6f67547e51951f714d6f4f7720",
+      "collected_at": "2026-10-22T06:44:23.744Z",
+      "verified_at": "2026-10-23T04:52:19.870Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "电子科技大学",
+        "admission_year": 2027,
+        "region": "四川"
+      }
+    },
+    {
+      "id": "adm-seu-2027-catalog-pdf-guide-devices",
+      "source_id": "seu-2027-catalog-pdf",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "东南大学2027年目录：生物医学工程（083100）与接收标注",
+      "summary": "原文摘录该专业代码所在行与“接收”标注；考试科目未在本文出现，故不推断。",
+      "applicability": "仅说明该目录中存在该专业代码及其“接收”标注；不代表录取标准或个人资格。",
+      "relation": "related",
+      "tags": [
+        "生物医学工程",
+        "东南大学",
+        "2027",
+        "专业目录"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "011 生物科学与医学工程学院 083100 生物医学工程 接收 接收",
+          "quote": "011 生物科学与医学工程学院 083100 生物医学工程 接收 接收",
+          "start": 1285,
+          "end": 1320
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "9f3934e00cb186a07fc2e80a8ff1a3eb2ba008f0c9c6bbeceade62c68be64ae4",
+      "collected_at": "2026-10-23T03:09:28.029Z",
+      "verified_at": "2026-10-23T04:52:19.885Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "program": "083100 生物医学工程",
+        "admission_year": 2027,
+        "region": "江苏"
+      }
+    },
+    {
+      "id": "adm-seu-2027-catalog-pdf-guide-imaging-eng",
+      "source_id": "seu-2027-catalog-pdf",
+      "role_id": "guide_imaging_eng",
+      "category": "admissions",
+      "title": "东南大学2027年目录：影像医学与核医学（100207）与接收标注",
+      "summary": "原文摘录该专业代码所在行与“接收”标注；考试科目未在本文出现，故不推断。",
+      "applicability": "仅说明该目录中存在该专业代码及其“接收”标注；不代表录取标准或个人资格。",
+      "relation": "related",
+      "tags": [
+        "影像医学与核医学",
+        "东南大学",
+        "2027",
+        "专业目录"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "044 医学院 100207 影像医学与核医学 接收 接收",
+          "quote": "044 医学院 100207 影像医学与核医学 接收 接收",
+          "start": 2668,
+          "end": 2697
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "9f3934e00cb186a07fc2e80a8ff1a3eb2ba008f0c9c6bbeceade62c68be64ae4",
+      "collected_at": "2026-10-23T03:09:28.029Z",
+      "verified_at": "2026-10-23T04:52:19.895Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "program": "100207 影像医学与核医学",
+        "admission_year": 2027,
+        "region": "江苏"
+      }
+    },
+    {
+      "id": "adm-xjtu-2027-charter-medicine-guide",
+      "source_id": "xjtu-2027-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "西安交通大学2027年章程：临床医学专业学位（1051）仅限西医临床医学类本科",
+      "summary": "章程原文对临床医学专业学位给出本科专业限制，这是明确的跨考限制而非建议。",
+      "applicability": "适用于报考1051临床医学专业学位者；学术学位与其他专业学位不受本条约束。",
+      "relation": "direct",
+      "tags": [
+        "跨考限制",
+        "临床医学",
+        "专业学位",
+        "西安交通大学",
+        "2027"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "（十）报考攻读临床医学专业学位（专业代码 1051）硕士 研究生，仅限全日制本科西医临床医学类专业毕业并获得学士学 位，且须符合国家执业医师资格考试及住院医师规范化培训报考 条件的应届或往届本科毕业生；",
+          "quote": "（十）报考攻读临床医学专业学位（专业代码 1051）硕士 研究生，仅限全日制本科西医临床医学类专业毕业并获得学士学 位，且须符合国家执业医师资格考试及住院医师规范化培训报考 条件的应届或往届本科毕业生；",
+          "start": 2266,
+          "end": 2367
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "ac4c8b8802f71a1b88c452ba98bc75a93eba84e870f488fcf01d81981fc4edbe",
+      "collected_at": "2026-10-23T03:13:17.564Z",
+      "verified_at": "2026-10-23T04:52:19.905Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安交通大学",
+        "program": "1051 临床医学（专业学位）",
+        "admission_year": 2027,
+        "region": "陕西"
+      }
+    },
+    {
+      "id": "adm-xjtu-2027-charter-guide-clinical-data",
+      "source_id": "xjtu-2027-charter",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "西安交通大学2027年章程：口腔医学专业学位限制与规培证人员的报考限制",
+      "summary": "章程原文说明口腔医学专业学位的本科专业要求，以及已取得规培合格证书人员原则上不得报考临床医学/口腔医学专业学位。",
+      "applicability": "仅适用于口腔医学专业学位(1052)与已获规培合格证书者；其他专业不适用。",
+      "relation": "direct",
+      "tags": [
+        "跨考限制",
+        "口腔医学",
+        "住院医师规范化培训",
+        "西安交通大学",
+        "2027"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "报考攻读口腔医学专业学位（专 业代码 1052）硕士研究生，仅限全日制本科口腔医学专业毕业 并获得学士学位，且须符合国家执业医师资格考试及住院医师规 范化培训报考条件的应届或往届本科毕业生。",
+          "quote": "报考攻读口腔医学专业学位（专 业代码 1052）硕士研究生，仅限全日制本科口腔医学专业毕业 并获得学士学位，且须符合国家执业医师资格考试及住院医师规 范化培训报考条件的应届或往届本科毕业生。",
+          "start": 2367,
+          "end": 2462
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "对于已经获得住院 6 / 17 医师规范化培训合格证书人员原则上不得报考临床医学∕口腔 医学专业学位硕士研究生。",
+          "quote": "对于已经获得住院 6 / 17 医师规范化培训合格证书人员原则上不得报考临床医学∕口腔 医学专业学位硕士研究生。",
+          "start": 2462,
+          "end": 2518
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "ac4c8b8802f71a1b88c452ba98bc75a93eba84e870f488fcf01d81981fc4edbe",
+      "collected_at": "2026-10-23T03:13:17.564Z",
+      "verified_at": "2026-10-23T04:52:19.915Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安交通大学",
+        "program": "口腔医学（专业学位）",
+        "admission_year": 2027,
+        "region": "陕西",
+        "medical_topic": "规培与学位衔接口径"
+      }
+    },
+    {
+      "id": "adm-xjtu-2027-charter-medical-ai-pm",
+      "source_id": "xjtu-2027-charter",
+      "role_id": "medical_ai_pm",
+      "category": "admissions",
+      "title": "西安交通大学2027年章程：报考条件中的学业水平要求",
+      "summary": "章程原文列出报考条件的前三项学业水平要求；本条只摘录条件本身。",
+      "applicability": "适用于本章程所列考生；专项计划与学院附加条件见其他条款。",
+      "relation": "related",
+      "tags": [
+        "报考条件",
+        "西安交通大学",
+        "2027",
+        "招生章程"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "第十条 报考条件 （一）拥护中国共产党的领导，遵守中华人民共和国宪法和 法律，诚实守信； （二）身体健康状况符合国家和学校规定的体检要求； （三）考生学业水平必须符合下列条件之一： 1．国家承认学历的应届本科毕业生（含普通高校、成人 高校、普通高校举办的成人高等学历教育等应届本科毕业生）， 自学考试和网络教育届时可毕业本科生。 2．具有国家承认的大学本科毕业学历的人员。 3．同等学力的人员须符合下列条件：",
+          "quote": "第十条 报考条件 （一）拥护中国共产党的领导，遵守中华人民共和国宪法和 法律，诚实守信； （二）身体健康状况符合国家和学校规定的体检要求； （三）考生学业水平必须符合下列条件之一： 1．国家承认学历的应届本科毕业生（含普通高校、成人 高校、普通高校举办的成人高等学历教育等应届本科毕业生）， 自学考试和网络教育届时可毕业本科生。 2．具有国家承认的大学本科毕业学历的人员。 3．同等学力的人员须符合下列条件：",
+          "start": 1150,
+          "end": 1354
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "ac4c8b8802f71a1b88c452ba98bc75a93eba84e870f488fcf01d81981fc4edbe",
+      "collected_at": "2026-10-23T03:13:17.564Z",
+      "verified_at": "2026-10-23T04:52:19.923Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安交通大学",
+        "admission_year": 2027,
+        "region": "陕西"
+      }
+    },
+    {
+      "id": "adm-xjtu-2027-charter-guide-health-systems",
+      "source_id": "xjtu-2027-charter",
+      "role_id": "guide_health_systems",
+      "category": "admissions",
+      "title": "西安交通大学2027年章程：自考/网络教育考生须加试两门本科专业基础课",
+      "summary": "章程原文给出加试对象与加试科目确定方式，并说明不合格不予录取。",
+      "applicability": "仅适用于成人教育应届本科毕业生及复试时未取得本科毕业证的自考、网络教育考生。",
+      "relation": "related",
+      "tags": [
+        "加试",
+        "自考",
+        "网络教育",
+        "西安交通大学",
+        "2027"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "教育应届本科毕业生及复 试时尚未取得本科毕业证书的自考和网络教育考生初试成绩达 到复试基本分数线后须加试两门本科专业基础课，加试科目按所 报考的学科门类确定，加试安排另行通知。加试不合格者不予录 取。",
+          "quote": "教育应届本科毕业生及复 试时尚未取得本科毕业证书的自考和网络教育考生初试成绩达 到复试基本分数线后须加试两门本科专业基础课，加试科目按所 报考的学科门类确定，加试安排另行通知。加试不合格者不予录 取。",
+          "start": 4609,
+          "end": 4709
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "ac4c8b8802f71a1b88c452ba98bc75a93eba84e870f488fcf01d81981fc4edbe",
+      "collected_at": "2026-10-23T03:13:17.564Z",
+      "verified_at": "2026-10-23T04:52:19.938Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安交通大学",
+        "admission_year": 2027,
+        "region": "陕西"
+      }
+    },
+    {
+      "id": "adm-sjtu-2027-master-charter-medicine-guide",
+      "source_id": "sjtu-2027-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "上海交通大学2027年章程：跨专业报考须审核并加试两门本科专业基础主干课程",
+      "summary": "章程原文直接规定跨专业报考的前置审核与加试要求，是明确的跨考限制而非建议。",
+      "applicability": "仅适用于章程所指跨专业报考情形；具体专业是否接收跨考以院系公告为准。",
+      "relation": "direct",
+      "tags": [
+        "跨考限制",
+        "加试",
+        "上海交通大学",
+        "2027"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "跨专业报考。报考前须经上海交通大学研招办审核通过，初试成绩合格后，除复试外还须加试两门与报考专业相关的本科专业基础主干课程，具体加试科目将在复试前通知。",
+          "quote": "跨专业报考。报考前须经上海交通大学研招办审核通过，初试成绩合格后，除复试外还须加试两门与报考专业相关的本科专业基础主干课程，具体加试科目将在复试前通知。",
+          "start": 1802,
+          "end": 1878
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "454354800a101298723a576c8b83f8288a020fe7b6822d095dc2dcf132dcc1d3",
+      "collected_at": "2026-10-22T03:39:27.570Z",
+      "verified_at": "2026-10-23T04:52:19.949Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "admission_year": 2027,
+        "region": "上海"
+      }
+    },
+    {
+      "id": "adm-sjtu-2027-master-charter-medical-ai-pm",
+      "source_id": "sjtu-2027-master-charter",
+      "role_id": "medical_ai_pm",
+      "category": "admissions",
+      "title": "上海交通大学2027年章程：报考条件中的学业水平要求",
+      "summary": "章程原文列出报考条件与学业水平要求；本条只摘录条件本身，不判断个人是否符合。",
+      "applicability": "适用于报名参加全国硕士研究生招生考试者；专项计划与院系附加条件见其他条款。",
+      "relation": "related",
+      "tags": [
+        "报考条件",
+        "上海交通大学",
+        "2027",
+        "招生章程"
+      ],
+      "facts": [
+        {
+          "field": "admission_requirements",
+          "value": "报考条件 第十条 报名参加全国硕士研究生招生考试的人员，须符合下列条件： （一） 拥护中国共产党的领导，遵守中华人民共和国宪法和法律，诚实守信。 （二） 身体健康状况符合国家和招生单位规定的体检要求。 （三） 考生学业水平须符合下列条件之一： 1. 国家承认学历的应届本科毕业生（含普通高校、成人高校、普通高校举办的成人高等学历教育等应届本科毕业生）及自学考试和网络教育届时可毕业本科生。 在录取当年入学前（ 具体期限由上海交通大学规定 ）须取得国家承认的国（境）内高校本科毕业证书 和学士学位证书 或经 相 关 专业机构认 证的国（境）外教育机构合法学历学位证书 。 否则录取资格无效。 2. 具有国家承认的本科毕业学历的人员。 3. 获得国家承认的高职（专科）毕业学历后满 2年及以上人员（从毕业后到录取当年入学前 ，下同 ）或国家承认学历的本科结业生，且 符合上海交通大学根据培养目标对考生提出的具体学业要求的，按本科毕业同等学力身份报考。按同等学力身份（以报考时学历为准）报考上海交通大学的考生须满足以下条件：通过大学英语四级（或 TOEFL、IELTS等相当），提供大学教务部门开具的所报考专业8门以上本科主干课程成绩证明。不得跨专业报考。报考前须经上海交通大学研招办审核通过，初试成绩合格后，除复试外还须加试两门与报考专业相关的本科专业基础主干课程，具体加试科目将在复试前通知。 4. 已获硕士、博士研究生学历或学位的人员。",
+          "quote": "报考条件 第十条 报名参加全国硕士研究生招生考试的人员，须符合下列条件： （一） 拥护中国共产党的领导，遵守中华人民共和国宪法和法律，诚实守信。 （二） 身体健康状况符合国家和招生单位规定的体检要求。 （三） 考生学业水平须符合下列条件之一： 1. 国家承认学历的应届本科毕业生（含普通高校、成人高校、普通高校举办的成人高等学历教育等应届本科毕业生）及自学考试和网络教育届时可毕业本科生。 在录取当年入学前（ 具体期限由上海交通大学规定 ）须取得国家承认的国（境）内高校本科毕业证书 和学士学位证书 或经 相 关 专业机构认 证的国（境）外教育机构合法学历学位证书 。 否则录取资格无效。 2. 具有国家承认的本科毕业学历的人员。 3. 获得国家承认的高职（专科）毕业学历后满 2年及以上人员（从毕业后到录取当年入学前 ，下同 ）或国家承认学历的本科结业生，且 符合上海交通大学根据培养目标对考生提出的具体学业要求的，按本科毕业同等学力身份报考。按同等学力身份（以报考时学历为准）报考上海交通大学的考生须满足以下条件：通过大学英语四级（或 TOEFL、IELTS等相当），提供大学教务部门开具的所报考专业8门以上本科主干课程成绩证明。不得跨专业报考。报考前须经上海交通大学研招办审核通过，初试成绩合格后，除复试外还须加试两门与报考专业相关的本科专业基础主干课程，具体加试科目将在复试前通知。 4. 已获硕士、博士研究生学历或学位的人员。",
+          "start": 1283,
+          "end": 1901
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "454354800a101298723a576c8b83f8288a020fe7b6822d095dc2dcf132dcc1d3",
+      "collected_at": "2026-10-22T03:39:27.570Z",
+      "verified_at": "2026-10-23T04:52:19.957Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "admission_year": 2027,
+        "region": "上海"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "sysu-2027-major-catalog",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T03:01:41.599Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-major-catalog",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T03:01:41.599Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-major-catalog",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T03:01:41.599Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-major-catalog",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T03:01:41.599Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-major-catalog",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T03:01:41.599Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-major-catalog",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "at": "2026-10-23T03:01:41.599Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-charter",
+      "url": "https://graduate.sysu.edu.cn/zsw/node/541",
+      "at": "2026-10-23T03:00:57.954Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-charter",
+      "url": "https://graduate.sysu.edu.cn/zsw/node/541",
+      "at": "2026-10-23T03:00:57.954Z",
+      "status": "collected",
+      "missing_fields": [
+        "admission_requirements"
+      ]
+    },
+    {
+      "source_id": "sysu-2027-charter",
+      "url": "https://graduate.sysu.edu.cn/zsw/node/541",
+      "at": "2026-10-23T03:00:57.954Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "scu-2027-charter",
+      "url": "https://yz.scu.edu.cn/zsxx/Details/a9e04641-aa5f-401f-892e-f069c0f8ecb2",
+      "at": "2026-10-23T03:55:51.026Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "scu-2027-charter",
+      "url": "https://yz.scu.edu.cn/zsxx/Details/a9e04641-aa5f-401f-892e-f069c0f8ecb2",
+      "at": "2026-10-23T03:55:51.026Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "scu-2027-charter",
+      "url": "https://yz.scu.edu.cn/zsxx/Details/a9e04641-aa5f-401f-892e-f069c0f8ecb2",
+      "at": "2026-10-23T03:55:51.026Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "uestc-2027-charter",
+      "url": "https://yz.uestc.edu.cn/info/1081/5968.htm",
+      "at": "2026-10-22T06:44:23.744Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "seu-2027-catalog-pdf",
+      "url": "https://yzb.seu.edu.cn/_upload/article/files/6a/83/e8812ecd4b64a03ae869029eae5b/e43d7759-7d78-4c84-a698-ceb01d3f7566.pdf",
+      "at": "2026-10-23T03:09:28.029Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "seu-2027-catalog-pdf",
+      "url": "https://yzb.seu.edu.cn/_upload/article/files/6a/83/e8812ecd4b64a03ae869029eae5b/e43d7759-7d78-4c84-a698-ceb01d3f7566.pdf",
+      "at": "2026-10-23T03:09:28.029Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "xjtu-2027-charter",
+      "url": "https://yz.xjtu.edu.cn/__local/E/87/9A/3FDEF75C038EF21BE144434C44A_C2E45EA5_45827.pdf",
+      "at": "2026-10-23T03:13:17.564Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "xjtu-2027-charter",
+      "url": "https://yz.xjtu.edu.cn/__local/E/87/9A/3FDEF75C038EF21BE144434C44A_C2E45EA5_45827.pdf",
+      "at": "2026-10-23T03:13:17.564Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "xjtu-2027-charter",
+      "url": "https://yz.xjtu.edu.cn/__local/E/87/9A/3FDEF75C038EF21BE144434C44A_C2E45EA5_45827.pdf",
+      "at": "2026-10-23T03:13:17.564Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "xjtu-2027-charter",
+      "url": "https://yz.xjtu.edu.cn/__local/E/87/9A/3FDEF75C038EF21BE144434C44A_C2E45EA5_45827.pdf",
+      "at": "2026-10-23T03:13:17.564Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "sjtu-2027-master-charter",
+      "url": "https://yzb.sjtu.edu.cn/post/3784",
+      "at": "2026-10-22T03:39:27.570Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "sjtu-2027-master-charter",
+      "url": "https://yzb.sjtu.edu.cn/post/3784",
+      "at": "2026-10-22T03:39:27.570Z",
+      "status": "collected",
+      "missing_fields": []
+    }
+  ]
+}

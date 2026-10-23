@@ -1,0 +1,8 @@
+{
+  "simulation": true,
+  "checks": [
+    "P1首次无继续/已保存/假兴趣分数"
+  ],
+  "errors": [],
+  "error": "Error: locator.isVisible: Error: strict mode violation: getByRole('alert') resolved to 2 elements:\n    1) <div role=\"alert\" class=\"xn-error\">…</div> aka getByText('simulation：资料读取失败重新读取')\n    2) <div role=\"alert\" aria-live=\"assertive\" id=\"__next-route-announcer__\"></div> aka locator('[id=\"__next-route-announcer__\"]')\n\nCall log:\n\u001b[2m    - checking visibility of getByRole('alert')\u001b[22m\n"
+}

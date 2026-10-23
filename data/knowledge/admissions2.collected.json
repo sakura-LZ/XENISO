@@ -1,0 +1,823 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T04:53:55.395Z",
+  "sources": [
+    {
+      "id": "njmu-2026-master-charter",
+      "url": "https://yjszs.njmu.edu.cn/_upload/article/files/18/b0/514c4cd2438ab71d85070ceac823/162e1caf-0fd1-4318-883f-572703143afc.pdf",
+      "organization": "南京医科大学研究生院",
+      "title": "南京医科大学2026年攻读硕士学位研究生招生简章及招生专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未印发布日期；该文件由南京医科大学研究生招生网「2026年硕士研究生招生专题」页面链接提供（页面 URL 路径段为 2025/1009），无法在原文中逐字确认发布日，故记为 null。"
+    },
+    {
+      "id": "njmu-2026-catalog-updated",
+      "url": "https://yjszs.njmu.edu.cn/_upload/article/files/18/b0/514c4cd2438ab71d85070ceac823/06e63b40-d621-421a-a5e4-7e5173fb05c5.pdf",
+      "organization": "南京医科大学研究生院",
+      "title": "南京医科大学2026年攻读硕士学位研究生招生简章及招生专业目录（10月21日更新）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未印发布日期；页面链接文字为「2026年攻读硕士学位研究生招生简章及招生专业目录（10月21日更新）.pdf」，更新日期仅见于 HTML 链接文字，PDF 内无逐字日期，故记为 null。"
+    },
+    {
+      "id": "tju-2026-master-catalog",
+      "url": "https://yzb.tju.edu.cn/xwzx/tkss_xw/202510/P020251009534901751039.pdf",
+      "organization": "天津大学研究生招生办公室",
+      "title": "天津大学2026年硕士学位研究生招生专业目录",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未印发布日期；该附件由天津大学研究生招生网通知页（路径 202510）提供，页面正文亦未逐字给出日期，故记为 null。"
+    },
+    {
+      "id": "fudan-2027-master-charter",
+      "url": "https://gsao.fudan.edu.cn/_upload/article/files/85/71/c1aed55c40e9a7b9326d320c6fa6/e65c1c4b-109a-4277-8e66-99546ac66bfb.pdf",
+      "organization": "复旦大学研究生院",
+      "title": "复旦大学 2027 年招收攻读硕士学位研究生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 内仅印「复旦大学 2027 年招收攻读硕士学位研究生章程」标题，无发布日；列表页显示 2026-09-30 但在 PDF 原文中不可逐字核验，故记为 null。"
+    },
+    {
+      "id": "ccmu-2026-master-charter",
+      "url": "https://yjsh.ccmu.edu.cn/docs/2025-10/594ed82f212d4ae88a0d866db2c61448.pdf",
+      "organization": "首都医科大学研究生院",
+      "title": "首都医科大学2026年攻读硕士学位研究生招生简章",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 本身未印日期；其官方发布页（https://yjsh.ccmu.edu.cn/zsgz/zsjz/9d60ff4a34af4964ac1b090b2ec2d2f1.htm ，同站同批次，已另行抓取为 ccmu-2026-notice）正文逐字含「发布时间：2025-10-09」，据此填写。"
+    }
+  ],
+  "records": [
+    {
+      "id": "admissions-njmu-2026-master-charter-medicine-guide",
+      "source_id": "njmu-2026-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "南医大：医学类（10 开头专业代码）不接收同等学力考生报考",
+      "summary": "南京医科大学2026年招生简章「（二）我校部分专业的其他报考条件」第1条：专业代码以 10 开头的医学相关专业不接收同等学力考生报考。（同一官方来源共 5 条原文事实，字段：cross_major_restrictions、admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于报考南京医科大学专业代码 10 开头（医学门类）专业的考生；原文只限定同等学力身份，未提及其他跨专业限制情形。不适用于非医学门类专业。",
+      "relation": "direct",
+      "tags": [
+        "南京医科大学",
+        "同等学力",
+        "报考条件",
+        "医学门类",
+        "临床医学专业学位",
+        "跨专业限制",
+        "本科专业限定",
+        "学制要求",
+        "口腔医学",
+        "规培合格证",
+        "医师资格考试",
+        "中西医结合",
+        "100600",
+        "章节定位"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "1.我校医学相关专业（即专业代码为 10 开头的相关专业）不接收同等学力考生 报考。",
+          "quote": "1.我校医学相关专业（即专业代码为 10 开头的相关专业）不接收同等学力考生 报考。",
+          "start": 2887,
+          "end": 2929
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "2.我校临床医学专业学位各领域的报考条件： 临床医学专业学位（除精神病与精神卫生学、放射影像学、超声医学、核医学、 — 3 — 临床检验诊断学、眼科学、麻醉学、儿科学、儿外科学和放射肿瘤学以外）各领域只 接收全日制本科为五年及以上学制西医临床医学专业的考生报考； 105102 儿科学、105112 儿外科学均只接受收全日制本科为五年及以上学制西医 临床医学和儿科学（医学学位）专业的考生报考； 105105 精神病与精神卫生学只接收全日制本科为五年及以上学制西医临床医 学和精神医学（医学学位）专业的考生报考； 105116 眼科学只接收全日制本科为五年及以上学制西医临床医学和眼视光医 学（医学学位）专业的考生报考； 105118 麻醉学只接收全日制本科为五年及以上学制西医临床医学和麻醉学（医 学学位）专业的考生报考； 105120 临床检验诊断学只接收全日制本科为五年及以上学制西医临床医学和 医学检验（医学学位）专业的考生报考； 105122 放射肿瘤学只接收全日制本科为五年及以上学制西医临床医学和放射 医学（医学学位）专业的考生报考； 105123 放射影像学、105124 超声医学、105125 核医学均只接收全日制本科为 五年及以上学制西医临床医学和医学影像学（医学学位）专业的考生报考。",
+          "quote": "2.我校临床医学专业学位各领域的报考条件： 临床医学专业学位（除精神病与精神卫生学、放射影像学、超声医学、核医学、 — 3 — 临床检验诊断学、眼科学、麻醉学、儿科学、儿外科学和放射肿瘤学以外）各领域只 接收全日制本科为五年及以上学制西医临床医学专业的考生报考； 105102 儿科学、105112 儿外科学均只接受收全日制本科为五年及以上学制西医 临床医学和儿科学（医学学位）专业的考生报考； 105105 精神病与精神卫生学只接收全日制本科为五年及以上学制西医临床医 学和精神医学（医学学位）专业的考生报考； 105116 眼科学只接收全日制本科为五年及以上学制西医临床医学和眼视光医 学（医学学位）专业的考生报考； 105118 麻醉学只接收全日制本科为五年及以上学制西医临床医学和麻醉学（医 学学位）专业的考生报考； 105120 临床检验诊断学只接收全日制本科为五年及以上学制西医临床医学和 医学检验（医学学位）专业的考生报考； 105122 放射肿瘤学只接收全日制本科为五年及以上学制西医临床医学和放射 医学（医学学位）专业的考生报考； 105123 放射影像学、105124 超声医学、105125 核医学均只接收全日制本科为 五年及以上学制西医临床医学和医学影像学（医学学位）专业的考生报考。",
+          "start": 2930,
+          "end": 3484
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "3.我校口腔医学各专业只接收全日制本科为五年制口腔医学专业的考生报考。 4.我校临床（口腔）医学专业学位硕士研究生招生对象为符合医师资格考试报 考条件规定专业的应届或往届本科毕业生。对于已经获得临床（口腔）住院医师规范 化培训合格证书人员原则上不得报考临床（口腔）医学专业学位硕士研究生。",
+          "quote": "3.我校口腔医学各专业只接收全日制本科为五年制口腔医学专业的考生报考。 4.我校临床（口腔）医学专业学位硕士研究生招生对象为符合医师资格考试报 考条件规定专业的应届或往届本科毕业生。对于已经获得临床（口腔）住院医师规范 化培训合格证书人员原则上不得报考临床（口腔）医学专业学位硕士研究生。",
+          "start": 3485,
+          "end": 3629
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "6.我校 100600 中西医结合专业限中医、针灸学、中药学、中西医结合、临床医 学相关专业、基础医学、公共卫生、药学、护理专业本科生报考。",
+          "quote": "6.我校 100600 中西医结合专业限中医、针灸学、中药学、中西医结合、临床医 学相关专业、基础医学、公共卫生、药学、护理专业本科生报考。",
+          "start": 3798,
+          "end": 3868
+        },
+        {
+          "field": "admission_requirements",
+          "value": "（二）我校部分专业的其他报考条件 1.我校医学相关专业（即专业代码为 10 开头的相关专业）不接收同等学力考生 报考。",
+          "quote": "（二）我校部分专业的其他报考条件 1.我校医学相关专业（即专业代码为 10 开头的相关专业）不接收同等学力考生 报考。",
+          "start": 2870,
+          "end": 2929
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects",
+        "training_direction"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "d8d7881cfc4cbc09ce2b0c5b2a7a9208834d2f7e3c60ae41ffa182cad4c18ef1",
+      "collected_at": "2026-10-23T03:39:23.514Z",
+      "verified_at": "2026-10-23T04:53:55.277Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学",
+        "program": "100600 中西医结合",
+        "admission_year": 2026,
+        "region": "江苏南京",
+        "department_type": "clinical"
+      }
+    },
+    {
+      "id": "admissions-njmu-2026-catalog-updated-guide-imaging-eng",
+      "source_id": "njmu-2026-catalog-updated",
+      "role_id": "guide_imaging_eng",
+      "category": "admissions",
+      "title": "南医大2026：100207 影像医学与核医学 学术学位初试考 101/201/306",
+      "summary": "专业目录中 100207（学术学位）影像医学与核医学的初试科目为 ①101思想政治理论 ②201英语（一） ③306临床医学综合能力（西医） ④--无（即不设第四科）。原文该行未在专业名称后直接给出招生人数。",
+      "applicability": "适用于南京医科大学 100207 影像医学与核医学学术学位；306 为临床医学综合能力（西医），属统考科目。不适用于专业学位影像方向或其他院校。",
+      "relation": "related",
+      "tags": [
+        "南京医科大学",
+        "影像医学与核医学",
+        "100207",
+        "初试科目"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "100207（学术学位）影像医学与核医学 ①101思想政治理论 ②201英语（一） ③306临床医学综合能力（西医） ④--无",
+          "quote": "100207（学术学位）影像医学与核医学 ①101思想政治理论 ②201英语（一） ③306临床医学综合能力（西医） ④--无",
+          "start": 11325,
+          "end": 11388
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions",
+        "training_direction"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "a581ca4c2d7cb2ba90e87b4e1b8ac3c3aaa1b4b889b031a0e41d5d23a7704e1e",
+      "collected_at": "2026-10-23T03:39:50.961Z",
+      "verified_at": "2026-10-23T04:53:55.304Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学",
+        "program": "100207 影像医学与核医学",
+        "admission_year": 2026,
+        "region": "江苏南京",
+        "medical_department": "医学影像",
+        "department_type": "medical_technology"
+      }
+    },
+    {
+      "id": "admissions-njmu-2026-catalog-updated-guide-clinical-data",
+      "source_id": "njmu-2026-catalog-updated",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "南医大2026：100401 流行病与卫生统计学 拟招 28 人，初试 101/201/353 卫生综合",
+      "summary": "专业目录 103 公共卫生学院（一）下 100401（学术学位）流行病与卫生统计学，招生人数 28，初试科目 ①101思想政治理论 ②201英语（一） ③353卫生综合 ④--无；研究方向含肿瘤流行病学、心脑血管病流行病学、分子与遗传流行病学等。",
+      "applicability": "适用于南京医科大学 100401 学术学位；353 卫生综合为学校自命题科目。招生人数为目录所列计划数（含推免，原文未在此行说明构成）。不适用于专业学位公共卫生（105300）。",
+      "relation": "related",
+      "tags": [
+        "南京医科大学",
+        "流行病与卫生统计学",
+        "100401",
+        "353卫生综合",
+        "招生人数"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "100401（学术学位）流行病与卫生统计学 28 ①101思想政治理论 ②201英语（一） ③353卫生综合 ④--无",
+          "quote": "100401（学术学位）流行病与卫生统计学 28 ①101思想政治理论 ②201英语（一） ③353卫生综合 ④--无",
+          "start": 31089,
+          "end": 31148
+        }
+      ],
+      "missing_fields": [
+        "program",
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "a581ca4c2d7cb2ba90e87b4e1b8ac3c3aaa1b4b889b031a0e41d5d23a7704e1e",
+      "collected_at": "2026-10-23T03:39:50.961Z",
+      "verified_at": "2026-10-23T04:53:55.316Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学",
+        "college": "公共卫生学院（一）",
+        "program": "100401 流行病与卫生统计学",
+        "admission_year": 2026,
+        "region": "江苏南京"
+      }
+    },
+    {
+      "id": "admissions-njmu-2026-catalog-updated-guide-devices",
+      "source_id": "njmu-2026-catalog-updated",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "南医大2026：086000 生物与医药 拟招 46 人，方向含智能医学仪器与系统，初试 338 生物化学 + 810 数据结构与算法",
+      "summary": "专业目录 132 生物医学工程与信息学院下 086000（专业学位）生物与医药，招生人数 46，初试 ①101思想政治理论 ②201英语（一） ③338生物化学 ④810数据结构与算法，研究方向 01 为「智能医学仪器与系统」。",
+      "applicability": "适用于南京医科大学 086000 生物与医药专业学位；原文注明该方向招生名额含常州医学中心-第三附属医院。第四科为 810 数据结构与算法（自命题），与 408 统考不同。不适用于其他院校同名专业。",
+      "relation": "related",
+      "tags": [
+        "南京医科大学",
+        "生物与医药",
+        "086000",
+        "智能医学仪器",
+        "810数据结构与算法"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "086000（专业学位）生物与医药 46 ①101思想政治理论 ②201英语（一） ③338生物化学 ④810数据结构与算法 01 智能医学仪器与系统",
+          "quote": "086000（专业学位）生物与医药 46 ①101思想政治理论 ②201英语（一） ③338生物化学 ④810数据结构与算法 01 智能医学仪器与系统",
+          "start": 35761,
+          "end": 35836
+        }
+      ],
+      "missing_fields": [
+        "program",
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "a581ca4c2d7cb2ba90e87b4e1b8ac3c3aaa1b4b889b031a0e41d5d23a7704e1e",
+      "collected_at": "2026-10-23T03:39:50.961Z",
+      "verified_at": "2026-10-23T04:53:55.326Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学",
+        "college": "生物医学工程与信息学院",
+        "program": "086000 生物与医药（01 智能医学仪器与系统）",
+        "admission_year": 2026,
+        "region": "江苏南京"
+      }
+    },
+    {
+      "id": "admissions-njmu-2026-catalog-updated-medicine-guide",
+      "source_id": "njmu-2026-catalog-updated",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "南医大2026：105101 内科学 专业学位初试考 101/201/306 临床医学综合能力（西医）",
+      "summary": "专业目录 105101（专业学位）内科学初试科目为 ①101思想政治理论 ②201英语（一） ③306临床医学综合能力（西医） ④--无；其后按研究方向分别列出心血管病、血液病、呼吸系病、消化系病等及各培养单位名额。（同一官方来源共 2 条原文事实，字段：exam_subjects；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于南京医科大学 105101 内科学专业学位；306 为全国统考科目。原文该行专业名称后未直接印招生人数。不适用于外科学等其他领域。",
+      "relation": "direct",
+      "tags": [
+        "南京医科大学",
+        "内科学",
+        "105101",
+        "306临床医学综合能力",
+        "中西医结合",
+        "100600",
+        "307临床医学综合能力（中医）"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "105101（专业学位）内科学 ①101思想政治理论 ②201英语（一） ③306临床医学综合能力（西医） ④--无",
+          "quote": "105101（专业学位）内科学 ①101思想政治理论 ②201英语（一） ③306临床医学综合能力（西医） ④--无",
+          "start": 14173,
+          "end": 14231
+        },
+        {
+          "field": "exam_subjects",
+          "value": "100600（学术学位）中西医结合 8 ①101思想政治理论 ②201英语（一） ③307临床医学综合能力（中医） ④--无",
+          "quote": "100600（学术学位）中西医结合 8 ①101思想政治理论 ②201英语（一） ③307临床医学综合能力（中医） ④--无",
+          "start": 30851,
+          "end": 30913
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions",
+        "training_direction"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "a581ca4c2d7cb2ba90e87b4e1b8ac3c3aaa1b4b889b031a0e41d5d23a7704e1e",
+      "collected_at": "2026-10-23T03:39:50.961Z",
+      "verified_at": "2026-10-23T04:53:55.337Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京医科大学",
+        "college": "第一临床医学院",
+        "program": "100600 中西医结合",
+        "admission_year": 2026,
+        "region": "江苏南京",
+        "department_type": "clinical"
+      }
+    },
+    {
+      "id": "admissions-tju-2026-master-catalog-guide-devices",
+      "source_id": "tju-2026-master-catalog",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "天津大学2026：医学院 083100 生物医学工程三个方向分别为 810 生物医学工程基础 / 811 电路 / 815 信号与系统",
+      "summary": "专业目录 255 医学院下 083100 生物医学工程：方向一考 ①101思想政治理论②201英语（一）③301数学（一）④810生物医学工程基础，复试科目「医用电子学及微机应用」；方向二考 811 电路；方向三考 815 信号与系统（本条 literal 覆盖方向一及方向二/三的科目起首与方向一复试科目）。",
+      "applicability": "适用于天津大学 255 医学院 083100 生物医学工程学术学位；数学为 301 数学（一）。原文未在此行给出分方向招生人数。不适用于 085400 电子信息或专业学位。",
+      "relation": "direct",
+      "tags": [
+        "天津大学",
+        "生物医学工程",
+        "083100",
+        "810生物医学工程基础",
+        "复试科目"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "083100生物医 学工程 01研究方向一 (1)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④810生物医学工程 基础 复试科目：医用电子学 及微机应用",
+          "quote": "083100生物医 学工程 01研究方向一 (1)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④810生物医学工程 基础 复试科目：医用电子学 及微机应用",
+          "start": 22406,
+          "end": 22495
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "d134a05a38bd45185e834a415d1e2e8c6a4fc5aeca99279ab23a2ed4aa8b89de",
+      "collected_at": "2026-10-23T03:36:47.220Z",
+      "verified_at": "2026-10-23T04:53:55.342Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "天津大学",
+        "college": "医学院",
+        "program": "083100 生物医学工程",
+        "admission_year": 2026,
+        "region": "天津"
+      }
+    },
+    {
+      "id": "admissions-tju-2026-master-catalog-guide-ml-cv",
+      "source_id": "tju-2026-master-catalog",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "天津大学2026：医学院 0831Z2 智能医学工程 方向一考 408 计算机学科专业基础",
+      "summary": "专业目录 255 医学院下 0831Z2 智能医学工程：01 研究方向一考 ①101思想政治理论②201英语（一）③301数学（一）④408计算机学科专业基础，复试科目「医学科学与工程基础」；02 研究方向二考 815 信号与系统；另设 00 单考方向（非全日制）。",
+      "applicability": "适用于天津大学 0831Z2 智能医学工程学术学位。408 为全国统考计算机学科专业基础，方向二则考 815 信号与系统。不适用于 085400 电子信息。",
+      "relation": "direct",
+      "tags": [
+        "天津大学",
+        "智能医学工程",
+        "0831Z2",
+        "408计算机学科专业基础"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "0831Z2智能医 学工程 01研究方向一 (1)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④408计算机学科专 业基础 复试科目：医学科学与 工程基础",
+          "quote": "0831Z2智能医 学工程 01研究方向一 (1)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④408计算机学科专 业基础 复试科目：医学科学与 工程基础",
+          "start": 22603,
+          "end": 22692
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "d134a05a38bd45185e834a415d1e2e8c6a4fc5aeca99279ab23a2ed4aa8b89de",
+      "collected_at": "2026-10-23T03:36:47.220Z",
+      "verified_at": "2026-10-23T04:53:55.349Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "天津大学",
+        "college": "医学院",
+        "program": "0831Z2 智能医学工程",
+        "admission_year": 2026,
+        "region": "天津"
+      }
+    },
+    {
+      "id": "admissions-tju-2026-master-catalog-guide-signals",
+      "source_id": "tju-2026-master-catalog",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "天津大学2026：医学院 085400 电子信息四个生物医学工程方向分别为 810/811/815/408",
+      "summary": "专业目录 255 医学院下 085400 电子信息（专硕）分四个生物医学工程方向：方向一考 810 生物医学工程基础（复试科目「医用电子学及微机应用或医学科学与工程基础（二选一）」），方向二考 811 电路，方向三考 815 信号与系统，方向四考 408 计算机学科专业基础。",
+      "applicability": "适用于天津大学 255 医学院 085400 电子信息专业学位（生物医学工程方向）。方向四为 408，方向三为 815 信号与系统。不适用于 083100 学术学位。",
+      "relation": "direct",
+      "tags": [
+        "天津大学",
+        "电子信息",
+        "085400",
+        "815信号与系统",
+        "专业学位"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "085400电子信 息 01生物医学工程方 向一 (1)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④810生物医学工程 基础 复试科目：医用电子学 及微机应用或医学科学 与工程基础（二选一）",
+          "quote": "085400电子信 息 01生物医学工程方 向一 (1)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④810生物医学工程 基础 复试科目：医用电子学 及微机应用或医学科学 与工程基础（二选一）",
+          "start": 22836,
+          "end": 22944
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "d134a05a38bd45185e834a415d1e2e8c6a4fc5aeca99279ab23a2ed4aa8b89de",
+      "collected_at": "2026-10-23T03:36:47.220Z",
+      "verified_at": "2026-10-23T04:53:55.356Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "天津大学",
+        "college": "医学院",
+        "program": "085400 电子信息（生物医学工程方向）",
+        "admission_year": 2026,
+        "region": "天津"
+      }
+    },
+    {
+      "id": "admissions-tju-2026-master-catalog-medicine-guide",
+      "source_id": "tju-2026-master-catalog",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "天津大学2026：105100 临床医学 专业学位 考 306 临床医学综合能力（西医），④--无",
+      "summary": "专业目录 255 医学院下 105100 临床医学（专业学位）01 不区分研究方向，学习方式全日制，初试 ①101思想政治理论②201英语（一）③306临床医学综合能力（西医）④--无（不设第四科）。同页 100200 临床医学学术学位科目相同；同页 100200 行后印有「复试科目：内科学与外科学」。",
+      "applicability": "适用于天津大学 255 医学院 105100 临床医学专业学位；306 为统考科目，④--无 表示无第四科。原文未给出该专业招生人数。不适用于其他院校临床医学。",
+      "relation": "direct",
+      "tags": [
+        "天津大学",
+        "临床医学",
+        "105100",
+        "306临床医学综合能力"
+      ],
+      "facts": [
+        {
+          "field": "exam_subjects",
+          "value": "105100临床医 学 01不区分研究方向 (1)全日制 ①101思想政治理论②201 英语（一）③306临床医学 综合能力（西医）④--无",
+          "quote": "105100临床医 学 01不区分研究方向 (1)全日制 ①101思想政治理论②201 英语（一）③306临床医学 综合能力（西医）④--无",
+          "start": 23299,
+          "end": 23369
+        }
+      ],
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "d134a05a38bd45185e834a415d1e2e8c6a4fc5aeca99279ab23a2ed4aa8b89de",
+      "collected_at": "2026-10-23T03:36:47.220Z",
+      "verified_at": "2026-10-23T04:53:55.362Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "天津大学",
+        "college": "医学院",
+        "program": "105100 临床医学",
+        "admission_year": 2026,
+        "region": "天津",
+        "department_type": "clinical"
+      }
+    },
+    {
+      "id": "admissions-fudan-2027-master-charter-medicine-guide",
+      "source_id": "fudan-2027-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "复旦2027：报考临床医学/口腔医学硕士专业学位须为全日制医学专业本科学历且专业符合医师资格与住院医师规培报考规定",
+      "summary": "章程说明临床医学/口腔医学专业学位自 2016 年起实行「四证合一」培养：报考者应为具有全日制医学专业本科学历、专业符合医师资格考试报名资格规定和上海市住院医师规范化培训报考条件规定的应届或往届毕业生；报考时须符合「非定向就业」条件并选择该类别。（同一官方来源共 2 条原文事实，字段：cross_major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于复旦大学临床医学/口腔医学硕士专业学位（「四证合一」培养）；原文以「全日制医学专业本科学历」+「专业符合医师资格考试报名资格规定」双重限定，即非医学本科不在此范围。不适用于学术学位与其他专业学位。",
+      "relation": "direct",
+      "tags": [
+        "复旦大学",
+        "临床医学专业学位",
+        "口腔医学",
+        "四证合一",
+        "跨专业限制",
+        "住院医师规范化培训",
+        "规培合格证"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "根据“四证合一”研究生招生培养要求， 报考临床医学/口 腔医学硕士专业学位者应为具有全日制医学专业本科学历、 专业符合医师资格考试报名资格规定和上海市住院医师规 范化培训报考条件规定的应届或往届毕业生。",
+          "quote": "根据“四证合一”研究生招生培养要求， 报考临床医学/口 腔医学硕士专业学位者应为具有全日制医学专业本科学历、 专业符合医师资格考试报名资格规定和上海市住院医师规 范化培训报考条件规定的应届或往届毕业生。",
+          "start": 6052,
+          "end": 6153
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "已获得住院医师规范化培训合格证书者不得报考临床医学 / 口腔医学专业学位硕士研究生。",
+          "quote": "已获得住院医师规范化培训合格证书者不得报考临床医学 / 口腔医学专业学位硕士研究生。",
+          "start": 6189,
+          "end": 6231
+        }
+      ],
+      "missing_fields": [
+        "training_direction",
+        "exam_subjects",
+        "admission_requirements"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "83e2bc20b59469a9bb34d46671fdc0d8234b522b7e3b975a6265778b6fc18da8",
+      "collected_at": "2026-10-23T03:41:44.109Z",
+      "verified_at": "2026-10-23T04:53:55.372Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "复旦大学",
+        "program": "临床医学/口腔医学硕士专业学位",
+        "admission_year": 2027,
+        "region": "上海",
+        "department_type": "clinical"
+      }
+    },
+    {
+      "id": "admissions-ccmu-2026-master-charter-medicine-guide",
+      "source_id": "ccmu-2026-master-charter",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "首医大2026：临床/口腔/中医专业学位按本科专业一一对应，不接收其他本科专业跨报",
+      "summary": "简章「（五）本科所学专业要求」第1条：符合以本科学历报考执业医师资格考试规定专业的本科毕业生，所学专业为临床医学可报临床医学硕士专业学位，口腔医学可报口腔医学专业学位，中医学或中西医结合可报中医硕士专业学位。（同一官方来源共 3 条原文事实，字段：cross_major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于首都医科大学临床医学、口腔医学、中医三类硕士专业学位；原文按「所学专业」一一对应，未列出的本科专业无对应报考资格。「（五）」节其余条款（影像/麻醉/眼视光等细分专业、成人学历、专升本、规培证、同等学力）另见同源其它条目。",
+      "relation": "direct",
+      "tags": [
+        "首都医科大学",
+        "临床医学专业学位",
+        "口腔医学",
+        "中医学",
+        "跨专业限制",
+        "执业医师资格",
+        "规培合格证",
+        "同等学力",
+        "护理学",
+        "临床药学",
+        "105500"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "（五）本科所学专业要求 1.报考临床医学、口腔医学、中医专业的专业学位硕士研究生者，要求 如下： （1）符合以本科学历报考执业医师资格考试规定专业的本科毕业生，所 学专业为临床医学，可报考临床医学硕士专业学位；所学专业为口腔医学， 可报考口腔医学硕士专业学位；所学专业为中医学或中西医结合，可报考中 医硕士专业学位。",
+          "quote": "（五）本科所学专业要求 1.报考临床医学、口腔医学、中医专业的专业学位硕士研究生者，要求 如下： （1）符合以本科学历报考执业医师资格考试规定专业的本科毕业生，所 学专业为临床医学，可报考临床医学硕士专业学位；所学专业为口腔医学， 可报考口腔医学硕士专业学位；所学专业为中医学或中西医结合，可报考中 医硕士专业学位。",
+          "start": 2082,
+          "end": 2240
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "（5）已取得《住院医师规范化培训合格证书》或正在参加住院医师规范 化培训的考生不得报考临床医学、口腔医学、中医硕士专业学位研究生。 （6）以本科毕业同等学力身份报考人员不能报考临床医学、口腔医学、 中医专业的专业学位硕士研究生。",
+          "quote": "（5）已取得《住院医师规范化培训合格证书》或正在参加住院医师规范 化培训的考生不得报考临床医学、口腔医学、中医硕士专业学位研究生。 （6）以本科毕业同等学力身份报考人员不能报考临床医学、口腔医学、 中医专业的专业学位硕士研究生。",
+          "start": 2660,
+          "end": 2774
+        },
+        {
+          "field": "cross_major_restrictions",
+          "value": "3.报考护理学专业（专业代码：101100，105400）硕士研究生者，须为 护理学或助产学本科专业，且入学前须通过护士执业资格考试。 4.报考临床药学系（学院代码：030）药学专业学位（专业代码：105500） 硕士研究生者，仅限五年制临床药学专业本科生。",
+          "quote": "3.报考护理学专业（专业代码：101100，105400）硕士研究生者，须为 护理学或助产学本科专业，且入学前须通过护士执业资格考试。 4.报考临床药学系（学院代码：030）药学专业学位（专业代码：105500） 硕士研究生者，仅限五年制临床药学专业本科生。",
+          "start": 3138,
+          "end": 3267
+        }
+      ],
+      "missing_fields": [
+        "admission_requirements",
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "09ec5291d646d759fdd8e10942ff3d1dd0cd305f7cfcfb2be67ed3cfaa2a1c77",
+      "collected_at": "2026-10-23T04:46:08.185Z",
+      "verified_at": "2026-10-23T04:53:55.379Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "首都医科大学",
+        "program": "护理学 / 药学专业学位（临床药学）",
+        "admission_year": 2026,
+        "region": "北京",
+        "department_type": "clinical"
+      }
+    },
+    {
+      "id": "admissions-ccmu-2026-master-charter-guide-imaging-eng",
+      "source_id": "ccmu-2026-master-charter",
+      "role_id": "guide_imaging_eng",
+      "category": "admissions",
+      "title": "首医大2026：105800 医学技术 五个方向各自限定可报本科专业（影像技术方向含智能影像工程、生物医学工程）",
+      "summary": "简章第2条：医学技术专业学位（105800，学期间不参加住院医师规范化培训）本科须为医学及相关专业，并逐方向限定：医学检验技术要求医学检验技术/临床医学（检验医师培养试验班）/临床医学；医学影像技术要求医学影像技术、智能影像工程、生物医学工程、医学影像学或临床医学；康复治疗技术要求康复治疗学等相关专业或临床医学；眼视光学要求眼视光学或眼视光医学；健康数据科学要求医学技术类相关专业、临床医学、公共卫生与预防医学、信息管理与信息系统、生物医学工程或公共事业管理。",
+      "applicability": "适用于报考首都医科大学 105800 医学技术专业学位的考生。这是本批资料中唯一明确把「智能影像工程」「生物医学工程」「信息管理与信息系统」列为可报本科专业的条目，但仅限 105800 医学技术各方向，不得外推到临床医学专业学位或其它院校。",
+      "relation": "direct",
+      "tags": [
+        "首都医科大学",
+        "医学技术",
+        "105800",
+        "医学影像技术",
+        "智能影像工程",
+        "生物医学工程",
+        "跨专业限制"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "2.报考医学技术专业（专业代码：105800）专业学位硕士研究生者（注： 医学技术类专业学位硕士在学期间不参加住院医师规范化培训），本科须为 医学及相关专业，具体要求如下： （1）报考医学检验技术方向者，本科专业须为医学检验技术、临床医学 （检验医师培养试验班）或临床医学； （2）报考医学影像技术方向者，本科专业须为医学影像技术、智能影像 工程、生物医学工程、医学影像学或临床医学； （3）报考康复治疗技术方向者，本科专业须为康复治疗学、康复物理治 疗、康复作业治疗、听力与言语康复学、运动康复或临床医学； （4）报考眼视光学方向者，本科专业须为眼视光学或眼视光医学； （5）报考健康数据科学研究方向者，本科专业须为医学技术类相关专业、 临床医学、公共卫生与预防医学、信息管理与信息系统、生物医学工程或公 共事业管理。",
+          "quote": "2.报考医学技术专业（专业代码：105800）专业学位硕士研究生者（注： 医学技术类专业学位硕士在学期间不参加住院医师规范化培训），本科须为 医学及相关专业，具体要求如下： （1）报考医学检验技术方向者，本科专业须为医学检验技术、临床医学 （检验医师培养试验班）或临床医学； （2）报考医学影像技术方向者，本科专业须为医学影像技术、智能影像 工程、生物医学工程、医学影像学或临床医学； （3）报考康复治疗技术方向者，本科专业须为康复治疗学、康复物理治 疗、康复作业治疗、听力与言语康复学、运动康复或临床医学； （4）报考眼视光学方向者，本科专业须为眼视光学或眼视光医学； （5）报考健康数据科学研究方向者，本科专业须为医学技术类相关专业、 临床医学、公共卫生与预防医学、信息管理与信息系统、生物医学工程或公 共事业管理。",
+          "start": 2777,
+          "end": 3137
+        }
+      ],
+      "missing_fields": [
+        "admission_requirements",
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "09ec5291d646d759fdd8e10942ff3d1dd0cd305f7cfcfb2be67ed3cfaa2a1c77",
+      "collected_at": "2026-10-23T04:46:08.185Z",
+      "verified_at": "2026-10-23T04:53:55.388Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "首都医科大学",
+        "program": "105800 医学技术（医学影像技术方向）",
+        "admission_year": 2026,
+        "region": "北京",
+        "medical_department": "医学技术",
+        "department_type": "medical_technology"
+      }
+    },
+    {
+      "id": "admissions-ccmu-2026-master-charter-guide-clinical-data",
+      "source_id": "ccmu-2026-master-charter",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "首医大2026：医学技术「健康数据科学」方向可接受信息管理与信息系统、生物医学工程、公共事业管理本科",
+      "summary": "简章第2条第(5)项：报考医学技术专业学位健康数据科学研究方向者，本科专业须为医学技术类相关专业、临床医学、公共卫生与预防医学、信息管理与信息系统、生物医学工程或公共事业管理。",
+      "applicability": "仅适用于首都医科大学 105800 医学技术专业学位的「健康数据科学」研究方向；原文以「须为」正面列举，未列专业不在范围内。不适用于流行病与卫生统计学等其它统计类学位。",
+      "relation": "direct",
+      "tags": [
+        "首都医科大学",
+        "健康数据科学",
+        "医学技术",
+        "信息管理与信息系统",
+        "生物医学工程",
+        "跨专业限制"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "（5）报考健康数据科学研究方向者，本科专业须为医学技术类相关专业、 临床医学、公共卫生与预防医学、信息管理与信息系统、生物医学工程或公 共事业管理。",
+          "quote": "（5）报考健康数据科学研究方向者，本科专业须为医学技术类相关专业、 临床医学、公共卫生与预防医学、信息管理与信息系统、生物医学工程或公 共事业管理。",
+          "start": 3063,
+          "end": 3137
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "09ec5291d646d759fdd8e10942ff3d1dd0cd305f7cfcfb2be67ed3cfaa2a1c77",
+      "collected_at": "2026-10-23T04:46:08.185Z",
+      "verified_at": "2026-10-23T04:53:55.395Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "首都医科大学",
+        "program": "105800 医学技术（健康数据科学研究方向）",
+        "admission_year": 2026,
+        "region": "北京",
+        "medical_department": "医学技术",
+        "department_type": "medical_technology"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "njmu-2026-master-charter",
+      "url": "https://yjszs.njmu.edu.cn/_upload/article/files/18/b0/514c4cd2438ab71d85070ceac823/162e1caf-0fd1-4318-883f-572703143afc.pdf",
+      "at": "2026-10-23T03:39:23.514Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects",
+        "training_direction"
+      ]
+    },
+    {
+      "source_id": "njmu-2026-catalog-updated",
+      "url": "https://yjszs.njmu.edu.cn/_upload/article/files/18/b0/514c4cd2438ab71d85070ceac823/06e63b40-d621-421a-a5e4-7e5173fb05c5.pdf",
+      "at": "2026-10-23T03:39:50.961Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions",
+        "training_direction"
+      ]
+    },
+    {
+      "source_id": "njmu-2026-catalog-updated",
+      "url": "https://yjszs.njmu.edu.cn/_upload/article/files/18/b0/514c4cd2438ab71d85070ceac823/06e63b40-d621-421a-a5e4-7e5173fb05c5.pdf",
+      "at": "2026-10-23T03:39:50.961Z",
+      "status": "collected",
+      "missing_fields": [
+        "program",
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "njmu-2026-catalog-updated",
+      "url": "https://yjszs.njmu.edu.cn/_upload/article/files/18/b0/514c4cd2438ab71d85070ceac823/06e63b40-d621-421a-a5e4-7e5173fb05c5.pdf",
+      "at": "2026-10-23T03:39:50.961Z",
+      "status": "collected",
+      "missing_fields": [
+        "program",
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "njmu-2026-catalog-updated",
+      "url": "https://yjszs.njmu.edu.cn/_upload/article/files/18/b0/514c4cd2438ab71d85070ceac823/06e63b40-d621-421a-a5e4-7e5173fb05c5.pdf",
+      "at": "2026-10-23T03:39:50.961Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions",
+        "training_direction"
+      ]
+    },
+    {
+      "source_id": "tju-2026-master-catalog",
+      "url": "https://yzb.tju.edu.cn/xwzx/tkss_xw/202510/P020251009534901751039.pdf",
+      "at": "2026-10-23T03:36:47.220Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "tju-2026-master-catalog",
+      "url": "https://yzb.tju.edu.cn/xwzx/tkss_xw/202510/P020251009534901751039.pdf",
+      "at": "2026-10-23T03:36:47.220Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "tju-2026-master-catalog",
+      "url": "https://yzb.tju.edu.cn/xwzx/tkss_xw/202510/P020251009534901751039.pdf",
+      "at": "2026-10-23T03:36:47.220Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions"
+      ]
+    },
+    {
+      "source_id": "tju-2026-master-catalog",
+      "url": "https://yzb.tju.edu.cn/xwzx/tkss_xw/202510/P020251009534901751039.pdf",
+      "at": "2026-10-23T03:36:47.220Z",
+      "status": "collected",
+      "missing_fields": [
+        "cross_major_restrictions",
+        "admission_requirements"
+      ]
+    },
+    {
+      "source_id": "fudan-2027-master-charter",
+      "url": "https://gsao.fudan.edu.cn/_upload/article/files/85/71/c1aed55c40e9a7b9326d320c6fa6/e65c1c4b-109a-4277-8e66-99546ac66bfb.pdf",
+      "at": "2026-10-23T03:41:44.109Z",
+      "status": "collected",
+      "missing_fields": [
+        "training_direction",
+        "exam_subjects",
+        "admission_requirements"
+      ]
+    },
+    {
+      "source_id": "ccmu-2026-master-charter",
+      "url": "https://yjsh.ccmu.edu.cn/docs/2025-10/594ed82f212d4ae88a0d866db2c61448.pdf",
+      "at": "2026-10-23T04:46:08.185Z",
+      "status": "collected",
+      "missing_fields": [
+        "admission_requirements",
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "ccmu-2026-master-charter",
+      "url": "https://yjsh.ccmu.edu.cn/docs/2025-10/594ed82f212d4ae88a0d866db2c61448.pdf",
+      "at": "2026-10-23T04:46:08.185Z",
+      "status": "collected",
+      "missing_fields": [
+        "admission_requirements",
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "ccmu-2026-master-charter",
+      "url": "https://yjsh.ccmu.edu.cn/docs/2025-10/594ed82f212d4ae88a0d866db2c61448.pdf",
+      "at": "2026-10-23T04:46:08.185Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    }
+  ]
+}

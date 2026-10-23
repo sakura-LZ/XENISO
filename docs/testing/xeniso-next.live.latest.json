@@ -1,0 +1,236 @@
+{
+  "checked_at": "2026-10-22T09:54:21.319Z",
+  "origin": "https://limen-pzsjwjr55-sakura-lzs-projects.vercel.app",
+  "mock": false,
+  "inputs": "Explicit synthetic profiles and answers; all business results obtained from actual APIs",
+  "checks": [
+    {
+      "name": "Page /assessment",
+      "passed": true,
+      "duration_ms": 6689
+    },
+    {
+      "name": "Page /profile",
+      "passed": true,
+      "duration_ms": 6813
+    },
+    {
+      "name": "Page /profile/basics",
+      "passed": true,
+      "duration_ms": 6934
+    },
+    {
+      "name": "Page /experience",
+      "passed": true,
+      "duration_ms": 9489
+    },
+    {
+      "name": "Page /",
+      "passed": true,
+      "duration_ms": 9759
+    },
+    {
+      "name": "Page /explore",
+      "passed": true,
+      "duration_ms": 11077
+    },
+    {
+      "name": "Page /report/plan",
+      "passed": true,
+      "duration_ms": 7933
+    },
+    {
+      "name": "Page /report/initial",
+      "passed": true,
+      "duration_ms": 8285
+    },
+    {
+      "name": "Page /community",
+      "passed": true,
+      "duration_ms": 8241
+    },
+    {
+      "name": "Page /account",
+      "passed": true,
+      "duration_ms": 8463
+    },
+    {
+      "name": "Asset /brand/profile-basics.webp",
+      "passed": true,
+      "duration_ms": 5699
+    },
+    {
+      "name": "Asset /brand/profile-interests.webp",
+      "passed": true,
+      "duration_ms": 6386
+    },
+    {
+      "name": "Asset /brand/xeniso-mark.svg",
+      "passed": true,
+      "duration_ms": 9146
+    },
+    {
+      "name": "Anonymous protection /api/profile",
+      "passed": true,
+      "duration_ms": 7116
+    },
+    {
+      "name": "Anonymous protection /api/assessment",
+      "passed": true,
+      "duration_ms": 5419
+    },
+    {
+      "name": "Anonymous protection /api/reports?kind=R1",
+      "passed": true,
+      "duration_ms": 6158
+    },
+    {
+      "name": "Cross-origin mutation blocked",
+      "passed": true,
+      "duration_ms": 6618
+    },
+    {
+      "name": "Reference HTML excluded from Preview",
+      "passed": true,
+      "duration_ms": 5780
+    },
+    {
+      "name": "Real knowledge retrieval retained",
+      "passed": true,
+      "duration_ms": 6728,
+      "source": "supabase_live"
+    },
+    {
+      "name": "Community keeps login requirement",
+      "passed": true,
+      "duration_ms": 8639
+    },
+    {
+      "name": "Create isolated synthetic visitor",
+      "passed": true,
+      "duration_ms": 6419
+    },
+    {
+      "name": "Anonymous visitor cannot read member community posts",
+      "passed": true,
+      "duration_ms": 4935
+    },
+    {
+      "name": "Empty hub cannot generate a report",
+      "passed": true,
+      "duration_ms": 6316
+    },
+    {
+      "name": "Avatar configuration medicine",
+      "passed": true,
+      "duration_ms": 5939
+    },
+    {
+      "name": "Avatar configuration biomed_eng",
+      "passed": true,
+      "duration_ms": 6440
+    },
+    {
+      "name": "Avatar configuration cs_ai",
+      "passed": true,
+      "duration_ms": 7200
+    },
+    {
+      "name": "Avatar configuration med_informatics",
+      "passed": true,
+      "duration_ms": 6736
+    },
+    {
+      "name": "Profile saved by existing API",
+      "passed": true,
+      "duration_ms": 5749
+    },
+    {
+      "name": "Profile restored and validated; interest incomplete",
+      "passed": true,
+      "duration_ms": 6675
+    },
+    {
+      "name": "Second visitor cannot read first visitor records",
+      "passed": true,
+      "duration_ms": 23986
+    },
+    {
+      "name": "Official O*NET 30 questions",
+      "passed": true,
+      "duration_ms": 5870,
+      "source": "onet_live",
+      "version": "O*NET 31.0",
+      "api_version": "2.0.0"
+    },
+    {
+      "name": "Real O*NET scores saved for synthetic answers",
+      "passed": true,
+      "duration_ms": 6098,
+      "source": "onet_live",
+      "questions": 30,
+      "dimensions": 6
+    },
+    {
+      "name": "Hub enables report only after real saved inputs",
+      "passed": true,
+      "duration_ms": 6633
+    },
+    {
+      "name": "Three-stage teaching experience privately saved",
+      "passed": true,
+      "duration_ms": 6700
+    },
+    {
+      "name": "Three-stage experience restored from server",
+      "passed": true,
+      "duration_ms": 5347
+    },
+    {
+      "name": "Real R1 generation and private save",
+      "passed": true,
+      "duration_ms": 21072,
+      "source": "llm_live",
+      "explanation_count": 3,
+      "evidence_count": 8
+    },
+    {
+      "name": "R1 restored with valid evidence and exportable data",
+      "passed": true,
+      "duration_ms": 8598
+    },
+    {
+      "name": "Changed profile invalidates prior R1",
+      "passed": true,
+      "duration_ms": 13223
+    },
+    {
+      "name": "Delete synthetic visitor 1 and all own records",
+      "passed": true,
+      "duration_ms": 7479
+    },
+    {
+      "name": "Deleted visitor 1 cannot read private records",
+      "passed": true,
+      "duration_ms": 7718
+    },
+    {
+      "name": "Delete synthetic visitor 2 and all own records",
+      "passed": true,
+      "duration_ms": 6679
+    },
+    {
+      "name": "Deleted visitor 2 cannot read private records",
+      "passed": true,
+      "duration_ms": 7086
+    }
+  ],
+  "synthetic_accounts_created": 2,
+  "synthetic_accounts_deleted": 2,
+  "failure": null,
+  "limitations": [
+    "No avatar media session or community writes performed",
+    "Preview shares existing Supabase; Vercel login protection preserved",
+    "Official CLI authenticated access used for HTTP checks"
+  ]
+}

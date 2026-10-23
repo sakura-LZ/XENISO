@@ -1,0 +1,482 @@
+[
+  {
+    "source": {
+      "id": "pku-ss-2027-ei-notice",
+      "url": "https://ss.pku.edu.cn/zsxx/zstz/56b3c3a23adf41d493db0e9f9bb91647.htm",
+      "organization": "北京大学软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年电子信息专业硕士研究生招生说明",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-12",
+      "publication_date_note": "页面正文逐字含「发布时间：2026-10-12」，为 2027 年招生年度最新版。"
+    },
+    "publication_pattern": "2026-10-12",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng/pku-ss-2027-ei-notice.raw",
+      "sha256": "87a17de2c8b29fbd677b7772bf20e65df74adfd594c2ed34ef84ad420468d5f9",
+      "captured_at": "2026-10-23T07:59:56.259Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-pku-ss-2027-ei-notice-guide-software-bfb05f42",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "北大软微2027：085400 电子信息 01 软件工程 / 02 人工智能，均考 101/201/301/408 计算机学科专业基础",
+      "summary": "北大软微 2027 招生说明「一、招生专业、方向和考试科目」表：085400 电子信息，01 软件工程（推免 9／总 90）、02 人工智能（推免 0／总 135），考试科目均为 ①思想政治理论 ②英语（一）③数学（一）④计算机学科专业基础（408）；备注「01-02 方向统考科目相同，统一划定统考分数线，统一排名，择优录取」。",
+      "applicability": "适用于报考北大软微 085400 的 01 软件工程、02 人工智能方向的考生：第三科考**数学（一）**、第四科**408**——408 含数据结构、计算机组成原理、操作系统、计算机网络，是医学本科生需要补课量最大的一门。该行未出现任何本科专业限制表述（限制在校本部章程与专业目录备注）。",
+      "relation": "direct",
+      "tags": [
+        "北京大学",
+        "软件与微电子学院",
+        "085400",
+        "软件工程",
+        "人工智能",
+        "408",
+        "数学一",
+        "初试科目"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学",
+        "program": "085400 电子信息（01 软件工程 / 02 人工智能）",
+        "admission_year": 2027,
+        "region": "北京大兴",
+        "college": "软件与微电子学院",
+        "evidence_locator": "「一、招生专业、方向和考试科目」表 085400 第 01、02 行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085400 电子信息 01 软件工程 9 90 ① 思想政治理论 ② 英语（一） ③ 数学（一） ④ 计算机学科专业基础（408） 01-02方向统考科目相同"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "admission_year",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "pku-ss-2027-ei-notice",
+      "url": "https://ss.pku.edu.cn/zsxx/zstz/56b3c3a23adf41d493db0e9f9bb91647.htm",
+      "organization": "北京大学软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年电子信息专业硕士研究生招生说明",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-12",
+      "publication_date_note": "页面正文逐字含「发布时间：2026-10-12」，为 2027 年招生年度最新版。"
+    },
+    "publication_pattern": "2026-10-12",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng/pku-ss-2027-ei-notice.raw",
+      "sha256": "87a17de2c8b29fbd677b7772bf20e65df74adfd594c2ed34ef84ad420468d5f9",
+      "captured_at": "2026-10-23T07:59:56.259Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-pku-ss-2027-ei-notice-guide-software-c6a41231",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "北大软微2027：085400 03 集成电路工程考 数学（一）+ 电子信息基础（非 408）",
+      "summary": "同一张表：085400 电子信息 03 集成电路工程（推免 0／总 50），考试科目 ①思想政治理论 ②英语（一）③数学（一）④电子信息基础——第四科不是 408，而是学院自命题「电子信息基础」。",
+      "applicability": "适用于想避开 408 的考生：**同一专业代码 085400 下，03 集成电路工程方向的第四科是「电子信息基础」而非 408**，第三科仍是数学（一）。这印证「同代码不同方向科目完全不同」——报志愿必须按方向定科目。",
+      "relation": "direct",
+      "tags": [
+        "北京大学",
+        "软件与微电子学院",
+        "085400",
+        "集成电路工程",
+        "电子信息基础",
+        "方向差异"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学",
+        "program": "085400 电子信息（03 集成电路工程）",
+        "admission_year": 2027,
+        "region": "北京大兴",
+        "college": "软件与微电子学院",
+        "evidence_locator": "「一、招生专业、方向和考试科目」表 085400 第 03 行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "03集成电路工程 0 50 ① 思想政治理论 ② 英语（一） ③ 数学（一） ④ 电子信息基础 04 金融科技 38 100"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "pku-ss-2027-ei-notice",
+      "url": "https://ss.pku.edu.cn/zsxx/zstz/56b3c3a23adf41d493db0e9f9bb91647.htm",
+      "organization": "北京大学软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年电子信息专业硕士研究生招生说明",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-12",
+      "publication_date_note": "页面正文逐字含「发布时间：2026-10-12」，为 2027 年招生年度最新版。"
+    },
+    "publication_pattern": "2026-10-12",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng/pku-ss-2027-ei-notice.raw",
+      "sha256": "87a17de2c8b29fbd677b7772bf20e65df74adfd594c2ed34ef84ad420468d5f9",
+      "captured_at": "2026-10-23T07:59:56.259Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-pku-ss-2027-ei-notice-guide-software-b4f45d16",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "北大软微2027：085400 04 金融科技考 数学（二）+ 经济学综合（与 01/02/03 完全不同）",
+      "summary": "同一张表：085400 电子信息 04 金融科技（推免 38／总 100），考试科目 ①思想政治理论 ②英语（一）③**数学（二）**④**经济学综合**。",
+      "applicability": "适用于数学基础较弱、想规避 408 与数（一）的考生：04 金融科技方向是软微 085400 里唯一考**数学（二）+ 经济学综合**的方向——同专业代码、同学院，科目组合与 01/02（数一+408）、03（数一+电子信息基础）都不同。",
+      "relation": "direct",
+      "tags": [
+        "北京大学",
+        "软件与微电子学院",
+        "085400",
+        "金融科技",
+        "数学二",
+        "经济学综合",
+        "方向差异"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学",
+        "program": "085400 电子信息（04 金融科技）",
+        "admission_year": 2027,
+        "region": "北京大兴",
+        "college": "软件与微电子学院",
+        "evidence_locator": "「一、招生专业、方向和考试科目」表 085400 第 04 行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "04 金融科技 38 100 ① 思想政治理论 ② 英语（一） ③ 数学（二） ④ 经济学综合 05 网络与信息安全"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "pku-ss-2027-ei-notice",
+      "url": "https://ss.pku.edu.cn/zsxx/zstz/56b3c3a23adf41d493db0e9f9bb91647.htm",
+      "organization": "北京大学软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年电子信息专业硕士研究生招生说明",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-12",
+      "publication_date_note": "页面正文逐字含「发布时间：2026-10-12」，为 2027 年招生年度最新版。"
+    },
+    "publication_pattern": "2026-10-12",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng/pku-ss-2027-ei-notice.raw",
+      "sha256": "87a17de2c8b29fbd677b7772bf20e65df74adfd594c2ed34ef84ad420468d5f9",
+      "captured_at": "2026-10-23T07:59:56.259Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-pku-ss-2027-ei-notice-guide-software-b892d8ee",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "北大软微2027：085400 的 05 网络与信息安全 / 06 关键软件 / 07 高端芯片「只招收推免生」",
+      "summary": "同一张表：085400 电子信息 05 网络与信息安全（40/40）、06 关键软件（98/98）、07 高端芯片（70/70），三行备注均为「只招收推免生」；正文另述「05、06、07 方向只招收推荐免试研究生」。",
+      "applicability": "适用于无推免资格的统考生：软微 085400 的 05/06/07 三个方向**只招推免**，统考生实际只能在 01 软件工程、02 人工智能、03 集成电路工程、04 金融科技 四个方向中选择。这是渠道限制（不是本科专业限制）。",
+      "relation": "direct",
+      "tags": [
+        "北京大学",
+        "软件与微电子学院",
+        "085400",
+        "只招收推免生",
+        "网络与信息安全",
+        "关键软件",
+        "高端芯片"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学",
+        "program": "085400 电子信息（05 网络与信息安全 / 06 关键软件 / 07 高端芯片）",
+        "admission_year": 2027,
+        "region": "北京大兴",
+        "college": "软件与微电子学院",
+        "evidence_locator": "「一、招生专业、方向和考试科目」表 085400 第 05–07 行备注栏"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "05 网络与信息安全 40 40 只招收推免生 06 关键软件 98 98 只招收推免生 07 高端芯片 70 70 只招收推免生"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions",
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "pku-ss-2027-ei-notice",
+      "url": "https://ss.pku.edu.cn/zsxx/zstz/56b3c3a23adf41d493db0e9f9bb91647.htm",
+      "organization": "北京大学软件与微电子学院",
+      "title": "北京大学软件与微电子学院2027年电子信息专业硕士研究生招生说明",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-12",
+      "publication_date_note": "页面正文逐字含「发布时间：2026-10-12」，为 2027 年招生年度最新版。"
+    },
+    "publication_pattern": "2026-10-12",
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng/pku-ss-2027-ei-notice.raw",
+      "sha256": "87a17de2c8b29fbd677b7772bf20e65df74adfd594c2ed34ef84ad420468d5f9",
+      "captured_at": "2026-10-23T07:59:56.259Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-pku-ss-2027-ei-notice-guide-software-e4a9b967",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "北大软微2027：电子信息专硕计划招生 583 名，其中拟接收推免 255 名；上课地点大兴校区",
+      "summary": "招生说明开篇：软微 2027 年计划招收全日制电子信息专业硕士研究生 583 名，其中拟接收推免生 255 名；各研究方向最终录取人数根据生源确定，应试生招生人数以招生计划减去实际接收的推免生人数为准；推免与报考的具体要求见《北京大学2027年硕士研究生招生简章（校本部）》和《北京大学2027年硕士研究生招生专业目录（校本部）》。",
+      "applicability": "适用于评估软微 085400 的统考名额：583 总名额中含推免 255，统考实际约 328。同时明确**报考条件以北大校本部简章/专业目录为准**——软微页面本身不设本科专业限制，跨考限制须回到校本部章程查询。",
+      "relation": "related",
+      "tags": [
+        "北京大学",
+        "软件与微电子学院",
+        "085400",
+        "招生规模",
+        "推免",
+        "大兴校区"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学",
+        "program": "085400 电子信息（软微全日制）",
+        "admission_year": 2027,
+        "region": "北京大兴",
+        "college": "软件与微电子学院",
+        "evidence_locator": "招生说明开篇第 1–2 段"
+      }
+    },
+    "extracts": [
+      {
+        "field": "admission_requirements",
+        "pattern": "2027年计划招收全日制电子信息专业硕士研究生583名，其中拟接收推免生255名。各研究方向的最终录取人数将根据生源情况确定，应试生招生人数以招生计划减去实际接收的推荐免试生人数为准。 关于申请推荐免试和报考研究生的具体要求请见《北京大学2027年硕士研究生招生简章（校本部）》和《北京大学2027年硕士研究生招生专业目录（校本部）》。以下内容为我院招生说明。"
+      }
+    ],
+    "expected_fields": [
+      "admission_requirements",
+      "admission_year",
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "ustc-2026-sse-085405",
+      "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+      "organization": "中国科学技术大学研究生院招生处",
+      "title": "中国科学技术大学2026年硕士研究生招生简章·225软件学院（软件工程 085405）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该学院简章页正文未印单独发布日期（整页为「中国科学技术大学研究生招生在线—招生简章」栏目页），故记 null；招生年度由站点栏目 sszs_2026 与页面标题「2026招生专业一览」确定为 2026 年版（2027 版截至抓取时未发布）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng/ustc-idx9.raw",
+      "sha256": "83509ce5290ea719bc40d34bfa43e5a79d80d1101171d3fc3f49419d9af79469",
+      "captured_at": "2026-10-23T07:58:31.904Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-ustc-2026-sse-085405-guide-software-110aef42",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "科软2026：085405 软件工程报考说明限定「软件工程、计算机及其相关专业」，且常规班仅招统考、特色班仅接收推免",
+      "summary": "中科大软件学院（科软）学院简章：学科专业名称「软件工程」（专业代码 **085405**），一、报考说明原文「1、常规班仅招收统考生；特色化创新试点班仅接收推免生。2、软件工程、计算机及其相关专业。」",
+      "applicability": "**这是用户点名要的科软原文，也是医学本科生最直接的否决条款**：报考说明第二句把生源限定为「软件工程、计算机及其相关专业」，医学门类（临床/护理/药学/医学技术）均不属此范围。另外常规班只招统考生、特色化创新试点班只接收推免——两条渠道互斥。注意专业代码是 085405 **软件工程**，不是 085400 电子信息。",
+      "relation": "direct",
+      "tags": [
+        "中国科学技术大学",
+        "软件学院",
+        "科软",
+        "085405",
+        "软件工程",
+        "本科专业限制",
+        "仅招收统考生"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中国科学技术大学",
+        "program": "085405 软件工程（常规班 / 特色化创新试点班）",
+        "admission_year": 2026,
+        "region": "安徽合肥",
+        "college": "软件学院",
+        "evidence_locator": "「学科专业名称：软件工程 （专业代码 085405）」下的「一、报考说明」"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions",
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "ustc-2026-sse-085405",
+      "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+      "organization": "中国科学技术大学研究生院招生处",
+      "title": "中国科学技术大学2026年硕士研究生招生简章·225软件学院（软件工程 085405）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该学院简章页正文未印单独发布日期（整页为「中国科学技术大学研究生招生在线—招生简章」栏目页），故记 null；招生年度由站点栏目 sszs_2026 与页面标题「2026招生专业一览」确定为 2026 年版（2027 版截至抓取时未发布）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng/ustc-idx9.raw",
+      "sha256": "83509ce5290ea719bc40d34bfa43e5a79d80d1101171d3fc3f49419d9af79469",
+      "captured_at": "2026-10-23T07:58:31.904Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-ustc-2026-sse-085405-guide-software-201d2bb2",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "科软2026：085405 常规班初试 101/204 英语（二）/302 数学（二）/408 计算机学科专业基础",
+      "summary": "科软 085405「四、考试内容、形式、录取」表：1、常规班（注：仅招收统考生）初试科目 101 思想政治理论、204 英语（二）、302 数学（二）、408 计算机学科专业基础；2、特色化创新试点班仅接收推免生。（同一官方来源共 3 条原文事实，字段：exam_subjects、admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于报考科软常规班的考生：与北大软微（英语一 + 数学一 + 408）不同，科软考**英语（二）+ 数学（二）**，难度低一档但 408 相同。同表明确特色化创新试点班只有推免，统考生无此选项。",
+      "relation": "direct",
+      "tags": [
+        "中国科学技术大学",
+        "软件学院",
+        "科软",
+        "085405",
+        "408",
+        "数学二",
+        "英语二",
+        "初试科目",
+        "复试",
+        "上机",
+        "编程",
+        "数据结构",
+        "补课依据",
+        "学制",
+        "培养方式",
+        "企业实习"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中国科学技术大学",
+        "program": "085405 软件工程（常规班）",
+        "admission_year": 2026,
+        "region": "安徽合肥",
+        "college": "软件学院",
+        "evidence_locator": "「三、培养方式」第 1 项（常规班）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "1、常规班（注：仅招收统考生） 101思想政治理论 204英语（二） 302数学（二） 408计算机学科专业基础"
+      },
+      {
+        "field": "admission_requirements",
+        "pattern": "五、复试形式： 面试\\+上机。 六、复试内容： 1、专业基础测评（上机100分）：专业基础测评主要考察考生有关编程和数据结构的基础知识及基本运用能力。 2、英语综合面试（满分25分）：重点考核考生的英语听说能力。 3、专业综合面试（满分100分）：主要考察考生对本学科（专业）理论知识和应用技能的掌握程度，包括考生对本专业基础知识的掌握和理解程度，综合应用所学知识解决实际问题的能力；"
+      },
+      {
+        "field": "admission_requirements",
+        "pattern": "为了切实做好软件人才的培养，该专业方向的培养模式为：学制三年，第一年以课程讲授为主，后两年实习实践主要依托行业企业设置的实习实践基地开展，并完成毕业论文。"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions",
+      "admission_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "tsinghua-2027-cs-catalog",
+      "url": "https://yzbm.tsinghua.edu.cn/publish/s02/s0203/detail/c0fb8664-255f-4d6f-bf40-a5893e3343ec?yxsdm=024&ksfs=",
+      "organization": "清华大学研究生招生办公室",
+      "title": "清华大学2027年硕士研究生招生专业目录_统招(含招生人数)·024 计算机科学与技术系",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该专业目录详情页正文未印发布日期，故记 null；为 2027 年招生年度版本（页面标题「清华大学2027年硕士研究生招生专业目录_统招(含招生人数)」）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng/tsinghua-2027-cs-catalog.raw",
+      "sha256": "50fc19e2c530e2d4ec4f8449c31cb1d400f216614bf5d089ab3962e4dfdaff52",
+      "captured_at": "2026-10-23T08:04:36.543Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-tsinghua-2027-cs-catalog-guide-software-b2ae56be",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "清华2027：024 计算机系 085400 电子信息（计算机科学与技术专业硕士）初试 101/201/301 数学（一）/408",
+      "summary": "清华 2027 专业目录 024 计算机科学与技术系：085400（专业学位）电子信息，01（全日制）计算机科学与技术专业硕士（招生计划 13），初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④408 计算机学科专业基础；同系另有 03（全日制）强军计划，科目与统考相同。",
+      "applicability": "适用于报考清华计算机系 085400 的考生：第三科数学（一）、第四科 408，与北大软微 01/02、浙大计算机学院 085400 完全相同（408 是全国统考）。**注意：该系 2027 目录中已无 081200 计算机科学与技术学术学位条目**——学硕渠道在统考目录里不存在（需以推免等其他方式核实）。",
+      "relation": "direct",
+      "tags": [
+        "清华大学",
+        "计算机科学与技术系",
+        "085400",
+        "408",
+        "数学一",
+        "初试科目",
+        "081200取消"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "program": "085400 电子信息（01 计算机科学与技术专业硕士）",
+        "admission_year": 2027,
+        "region": "北京",
+        "college": "计算机科学与技术系",
+        "evidence_locator": "目录 024 计算机科学与技术系 085400 的 01 行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085400 （专业学位） 电子信息 13 01（全日制）计算机科学与技术专业硕士 13 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  }
+]

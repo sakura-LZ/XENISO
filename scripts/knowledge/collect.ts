@@ -11,10 +11,10 @@ const manifestSchema = z.array(z.object({
   extracts: z.array(z.object({ field: z.string(), pattern: z.string().min(10).max(2000) })).min(1),
   expected_fields: z.array(z.string()), publication_pattern: z.string().min(8).optional(),
   browser_capture: z.object({ path: z.string().startsWith("data/knowledge/captures/"), captured_at: z.iso.datetime(), sha256: z.string().regex(/^[a-f0-9]{64}$/), method: z.literal("browser_visible_excerpt") }).optional(),
-  artifact_capture: z.object({ path: z.string().startsWith("work/knowledge-"), sha256: z.string().regex(/^[a-f0-9]{64}$/), captured_at: z.iso.datetime(), content_type: z.enum(["text/html", "application/pdf"]), extracted_path: z.string().startsWith("work/knowledge-").optional(), extracted_sha256: z.string().regex(/^[a-f0-9]{64}$/).optional(), method: z.enum(["downloaded_html", "pypdf_page_text"]) }).optional(),
+  artifact_capture: z.object({ path: z.string().startsWith("work/knowledge-"), sha256: z.string().regex(/^[a-f0-9]{64}$/), captured_at: z.iso.datetime(), content_type: z.enum(["text/html", "application/pdf", "text/plain"]), extracted_path: z.string().startsWith("work/knowledge-").optional(), extracted_sha256: z.string().regex(/^[a-f0-9]{64}$/).optional(), method: z.enum(["downloaded_html", "pypdf_page_text", "downloaded_text"]) }).optional(),
 }).refine(item => item.source.published_at === null || Boolean(item.publication_pattern), "Known publication date requires raw metadata evidence"));
 const name = process.argv[2] ?? "pilot";
-if (!["pilot", "expansion"].includes(name)) throw new Error("Unknown collection manifest");
+if (!/^[a-z0-9-]{2,40}$/.test(name)) throw new Error("Invalid collection manifest name");
 const manifest = manifestSchema.parse(JSON.parse(readFileSync(`data/knowledge/${name}.manifest.json`, "utf8")));
 const dir = `work/knowledge-${name}`;
 mkdirSync(dir, { recursive: true });
@@ -26,7 +26,9 @@ const seenUrls = new Set<string>(), seenContent = new Set<string>();
 const seenEntries = new Set<string>();
 for (const item of manifest) {
   const at = item.artifact_capture?.captured_at ?? item.browser_capture?.captured_at ?? new Date().toISOString(), url = normalizeSourceUrl(item.source.url);
-  const entryKey = `${url}:${item.record.role_id}:${item.record.category}`;
+  // 去重键必须与 merge-handoff.ts 一致，把 program（专业代码/方向）算进去。
+  // 否则同一 URL 下不同专业会被误判为重复而丢弃（实测：北大软微 7 个方向只入 1 个）。
+  const entryKey = `${url}:${item.record.role_id}:${item.record.category}:${item.record.context?.program ?? ""}`;
   if (seenEntries.has(entryKey)) { attempts.push({ source_id: item.source.id, url, at, status: "duplicate_url_category" }); continue; }
   seenEntries.add(entryKey);
   let httpStatus: number | undefined;
@@ -52,10 +54,20 @@ for (const item of manifest) {
     if (artifact?.method === "pypdf_page_text" && (!extracted || hash(extracted) !== artifact.extracted_sha256 || !raw.subarray(0, 5).equals(Buffer.from("%PDF-")))) throw new Error("pdf_extraction_hash_mismatch");
     const decoded = extracted ? extracted.toString("utf8") : new TextDecoder(charset).decode(raw);
     if (item.publication_pattern && !new RegExp(item.publication_pattern, "iu").test(decoded)) throw new Error("publication_date_unverified");
-    const text = /html/i.test(contentType) ? htmlText(decoded) : decoded.replace(/\s+/g, " ").trim();
+    // 控制字符清洗：部分 PDF 抽取器会产出 \u0000 等控制字节（UTF-16 误读），
+    // Postgres 的 text 类型无法存储 NUL，会导致整批导入失败。
+    // 这些字符对证据文本无意义，在计算 content_hash 之前就剔除，
+    // 保证「hash = 实际入库文本的 hash」，避免校验错位。
+    const sanitize = (value: string) => value.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "");
+    const text = sanitize(/html/i.test(contentType) ? htmlText(decoded) : decoded.replace(/\s+/g, " ").trim());
     const contentHash = hash(text);
-    writeFileSync(`${dir}/${item.source.id}.raw`, raw);
-    writeFileSync(`${dir}/${item.source.id}.txt`, text);
+    // 注意：绝不能回写到 work/<清单>/<source>.raw|.txt 的原始位置。
+    // 那些文件是调研线的证据原件，覆盖会导致下游 literal 全部失配
+    // （实测：JD 正文被 htmlText 截断，原文丢失）。
+    // 快照已完整存进 bundle.json 的 base64，这里只落一份到 captures/ 子目录便于人工核对。
+    mkdirSync(`${dir}/captures`, { recursive: true });
+    writeFileSync(`${dir}/captures/${item.source.id}.raw`, raw);
+    writeFileSync(`${dir}/captures/${item.source.id}.txt`, text);
     if (!cachedSnapshot && seenContent.has(contentHash)) { attempts.push({ source_id: item.source.id, url, at, status: "duplicate_content", http_status: httpStatus }); continue; }
     const facts = item.extracts.flatMap(extract => {
       const match = new RegExp(extract.pattern, "iu").exec(text);

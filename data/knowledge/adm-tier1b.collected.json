@@ -1,0 +1,202 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T10:20:20.274Z",
+  "sources": [
+    {
+      "id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（全日制·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用，正文由查询结果动态渲染，页面本身未印发布日，故 published_at 记 null；招生年度由标题「2027年」与查询条件确定，为最新版本。artifact 为 ego 浏览器真实点击（学习方式=全日制 → 学院 → 专业 → 查询）后渲染的 DOM 文本。"
+    }
+  ],
+  "records": [
+    {
+      "id": "admissions-zju-2027-catalog-085400-bme-medicine-guide-af115b77",
+      "source_id": "zju-2027-catalog-085400-bme",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "浙大2027：105100 临床医学专硕「仅招收临床医学专业（本科专业代码100201K，不包括中西医结合临床医学）」",
+      "summary": "浙大 2027 专业目录：医学院·临床医学(105100) 专业学位各方向（105101 内科学-浙一/浙二/邵医等）备注原文「仅招收临床医学专业（普通高等学校本科专业代码100201K，不包括中西医结合临床医学）考生。对于已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学硕士专业学位研究生。」",
+      "applicability": "适用于报考浙大临床医学专硕（105100）的考生：限制精确到**教育部本科专业代码 100201K**，且明确**排除中西医结合临床医学**——护理、药学、医学技术、预防医学、中西医结合临床均不在范围内。已获规培证者原则上不得报考。不适用于学术学位 100200（另条）。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "临床医学专业学位",
+        "105100",
+        "100201K",
+        "中西医结合临床医学",
+        "规培合格证",
+        "跨专业限制"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "仅招收临床医学专业（普通高等学校本科专业代码100201K，不包括中西医结合临床医学）考生。对于已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学硕士专业学位研究生。",
+          "quote": "仅招收临床医学专业（普通高等学校本科专业代码100201K，不包括中西医结合临床医学）考生。对于已经获得住院医师规范化培训合格证书人员原则上不得报考临床医学硕士专业学位研究生。",
+          "start": 851,
+          "end": 939
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "5dac7e632d9d3e97f76acdae1e942a0a3c93b6245e69f4d516001534ed536663",
+      "collected_at": "2026-10-23T07:38:35.046Z",
+      "verified_at": "2026-10-23T10:20:20.250Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "college": "医学院",
+        "program": "105100 临床医学（专业学位）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "department_type": "clinical",
+        "evidence_locator": "专业目录查询结果表·临床医学(105100) 105101内科学-浙一(01) 行备注栏"
+      }
+    },
+    {
+      "id": "admissions-zju-2027-catalog-085400-bme-medicine-guide-cc3de00d",
+      "source_id": "zju-2027-catalog-085400-bme",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "浙大2027：105200 口腔医学专硕「仅招收口腔医学专业毕业的考生」",
+      "summary": "浙大 2027 专业目录：医学院·口腔医学(105200)（拟招 6 人，初试 ③352 口腔综合）备注原文「仅招收口腔医学专业毕业的考生。对于已经获得口腔相关住院医师规范化培训合格证书人员原则上不得报考口腔医学硕士专业学位研究生。」",
+      "applicability": "适用于报考浙大口腔医学专硕（105200）的考生：仅口腔医学本科可报，临床医学本科亦被排除（与 105100 互为封闭）。已获口腔相关规培证者原则上不得报考。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "口腔医学",
+        "105200",
+        "352口腔综合",
+        "规培合格证",
+        "跨专业限制"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "仅招收口腔医学专业毕业的考生。对于已经获得口腔相关住院医师规范化培训合格证书人员原则上不得报考口腔医学硕士专业学位研究生。",
+          "quote": "仅招收口腔医学专业毕业的考生。对于已经获得口腔相关住院医师规范化培训合格证书人员原则上不得报考口腔医学硕士专业学位研究生。",
+          "start": 804,
+          "end": 865
+        }
+      ],
+      "missing_fields": [],
+      "verification": "quote_verified",
+      "content_hash": "2d70bbf133cf2dffb663ca6c12e92ae314ff9510a134db442b44da060abded48",
+      "collected_at": "2026-10-23T07:36:07.061Z",
+      "verified_at": "2026-10-23T10:20:20.261Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "college": "医学院",
+        "program": "105200 口腔医学（专业学位）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "department_type": "clinical",
+        "evidence_locator": "专业目录查询结果表·口腔医学(105200) 不区分研究方向(01) 行备注栏"
+      }
+    },
+    {
+      "id": "admissions-zju-2027-catalog-085400-bme-medicine-guide-63211134",
+      "source_id": "zju-2027-catalog-085400-bme",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "浙大2027：105400 护理专硕「仅招收护理学及护理学相关专业考生」，初试 308 护理综合",
+      "summary": "浙大 2027 专业目录：医学院·护理(105400)（统考名额 10，初试 ①101 ②201 英语（一）③308 护理综合）备注原文「仅招收护理学及护理学相关专业考生。初试参考书见《护理综合考试大纲》，中国学位与研究生教育学会医药科工作委员会编写。」",
+      "applicability": "适用于报考浙大护理专硕（105400）的考生：限定「护理学及护理学相关专业」，医学门类中临床/药学/医学技术等非护理专业是否属「相关专业」原文未列举，需向学院确认；初试第三科为 308 护理综合（护理本科课程）。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "护理",
+        "105400",
+        "308护理综合",
+        "跨专业限制"
+      ],
+      "facts": [
+        {
+          "field": "cross_major_restrictions",
+          "value": "仅招收护理学及护理学相关专业考生。初试参考书见《护理综合考试大纲》，中国学位与研究生教育学会医药科工作委员会编写。",
+          "quote": "仅招收护理学及护理学相关专业考生。初试参考书见《护理综合考试大纲》，中国学位与研究生教育学会医药科工作委员会编写。",
+          "start": 769,
+          "end": 826
+        }
+      ],
+      "missing_fields": [
+        "exam_subjects"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "1a4423057e0887ec3028f115c236f19c4306d0433e3bab60769107b602e14959",
+      "collected_at": "2026-10-23T07:38:51.159Z",
+      "verified_at": "2026-10-23T10:20:20.266Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "college": "医学院",
+        "program": "105400 护理（专业学位）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "department_type": "clinical",
+        "evidence_locator": "专业目录查询结果表·护理(105400) 105400护理(01) 行备注栏"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:32:28.071Z",
+      "status": "failed",
+      "reason": "no_evidence_matched"
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:32:28.071Z",
+      "status": "failed",
+      "reason": "no_evidence_matched"
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:38:35.046Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:36:07.061Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:38:51.159Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:39:07.099Z",
+      "status": "failed",
+      "reason": "no_evidence_matched"
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:35:51.745Z",
+      "status": "failed",
+      "reason": "no_evidence_matched"
+    }
+  ]
+}

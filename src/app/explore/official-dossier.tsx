@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import type { KnowledgeHit } from "@/lib/knowledge";
 
 const labels: Record<string, string> = { occupation: "专业与职业", recruitment: "真实招聘", admissions: "院校招生", industry: "行业与就业统计", learning: "课程与实践" };
@@ -8,7 +8,8 @@ const missingLabels: Record<string, string> = { personal_eligibility: "个人资
 Object.assign(missingLabels, { application_deadline: "招聘截止日", education: "学历要求", knowledge_graph_requirements: "知识图谱岗位要求", medicine_major_eligibility: "医学专业是否适用" });
 type Result = { hits: KnowledgeHit[]; total: number; has_more: boolean; facets: { institutions: string[]; admission_years: number[] }; coverage: { records: number; sources: number; by_category: Record<string, number> }; missing_categories: string[] };
 
-export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, initialCategory = "" }: { directionId?: string; medicalTopic?: string; medicalDepartment?: string; initialCategory?: string }) {
+export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, initialCategory = "", chapterMode = false }: { directionId?: string; medicalTopic?: string; medicalDepartment?: string; initialCategory?: string; chapterMode?: boolean }) {
+  const titleId = useId();
   const [category, setCategory] = useState(initialCategory);
   const [school, setSchool] = useState("");
   const [year, setYear] = useState("");
@@ -41,23 +42,27 @@ export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, 
     const url = URL.createObjectURL(new Blob([`# LIMEN 来源资料摘录（当前结果页）\n\n${text}`], { type: "text/markdown;charset=utf-8" }));
     const link = document.createElement("a"); link.href = url; link.download = "LIMEN-来源资料摘录.md"; link.click(); URL.revokeObjectURL(url);
   }
-  return <section className="mt-7 border-y border-slate-200 py-6" aria-labelledby="official-dossier">
-    <div className="flex flex-wrap items-center justify-between gap-3"><h3 id="official-dossier" className="text-xl font-semibold">来源资料</h3><button className="button secondary text-sm" onClick={exportResult} disabled={!result?.hits.length}>导出当前资料页</button></div>
+  return <section className="xn-official-dossier mt-7 border-y border-slate-200 py-6" aria-labelledby={titleId}>
+    <div className="flex flex-wrap items-center justify-between gap-3"><h3 id={titleId} className="text-xl font-semibold">{chapterMode ? labels[initialCategory] : "来源资料"}</h3><button className="button secondary text-sm" onClick={exportResult} disabled={!result?.hits.length}>导出当前资料页</button></div>
     <details className="mt-3 text-xs muted"><summary>资料来源与适用范围</summary><p className="mt-2 leading-7">引文摘自所列来源原文；院校、年份、统计对象分别核对。标题与方向关联为编辑索引，非来源原文。</p></details>
-    <div className="mt-4 flex flex-wrap gap-2" aria-label="资料分类">{[["", "全部资料"], ...Object.entries(labels)].map(([value, label]) => <button key={value} aria-pressed={category === value} className={`rounded-md border px-3 py-2 text-sm ${category === value ? "border-blue-600 bg-blue-50 text-blue-900" : "border-slate-200"}`} onClick={() => change(() => setCategory(value))}>{label}{value && result?.coverage ? ` ${result.coverage.by_category[value] ?? 0}` : ""}</button>)}</div>
+    {!chapterMode && <div className="mt-4 flex flex-wrap gap-2" aria-label="资料分类">{[["", "全部资料"], ...Object.entries(labels)].map(([value, label]) => <button key={value} aria-pressed={category === value} className={`rounded-md border px-3 py-2 text-sm ${category === value ? "border-blue-600 bg-blue-50 text-blue-900" : "border-slate-200"}`} onClick={() => change(() => setCategory(value))}>{label}{value && result?.coverage ? ` ${result.coverage.by_category[value] ?? 0}` : ""}</button>)}</div>}
     <form className="mt-4 grid gap-3 sm:grid-cols-2" onSubmit={event => { event.preventDefault(); change(() => setQuery(draft)); }}>
       <label className="text-sm">检索原文<input className="mt-1 w-full rounded border border-slate-300 px-3 py-2" value={draft} maxLength={160} placeholder="如 408、硕士、Python" onChange={event => setDraft(event.target.value)} /></label>
       <label className="text-sm">院校 / 机构<select className="mt-1 w-full rounded border border-slate-300 px-3 py-2" value={school} onChange={event => change(() => setSchool(event.target.value))}><option value="">全部</option>{result?.facets?.institutions.map(item => <option key={item}>{item}</option>)}{school && !result?.facets?.institutions.includes(school) && <option>{school}</option>}</select></label>
       <label className="text-sm">招生年份<select className="mt-1 w-full rounded border border-slate-300 px-3 py-2" value={year} onChange={event => change(() => setYear(event.target.value))}><option value="">全部</option>{result?.facets?.admission_years.map(item => <option key={item}>{item}</option>)}{year && !result?.facets?.admission_years.includes(Number(year)) && <option>{year}</option>}</select></label>
-      <div className="flex items-end gap-3"><button className="button" type="submit">检索</button><button type="button" className="button secondary" onClick={() => change(() => { setDraft(""); setQuery(""); setSchool(""); setYear(""); setCategory(""); })}>清除筛选</button></div>
+      <div className="flex items-end gap-3"><button className="button" type="submit">检索</button><button type="button" className="button secondary" onClick={() => change(() => { setDraft(""); setQuery(""); setSchool(""); setYear(""); setCategory(chapterMode ? initialCategory : ""); setHistorical(false); })}>清除筛选</button></div>
     </form>
     <label className="mt-4 flex items-center gap-2 text-sm"><input type="checkbox" checked={historical} onChange={event => change(() => setHistorical(event.target.checked))} />包含往年 / 待复查资料（仅作参考）</label>
     <div role="status" className="mt-4 text-sm muted">{status === "loading" ? "正在读取来源资料…" : status === "error" ? "资料暂时读取失败，请重试。" : `命中 ${result?.total ?? 0} 条；本主题共 ${result?.coverage?.records ?? 0} 条资料、${result?.coverage?.sources ?? 0} 个独立来源。`}</div>
     {status === "error" && <button className="button secondary mt-3" onClick={() => { setStatus("loading"); setRetry(retry + 1); }}>重新读取</button>}
     {status === "ready" && result?.missing_categories.length ? <p className="mt-3 text-sm leading-7 text-amber-800">尚缺：{result.missing_categories.map(value => labels[value]).join("、")}。未用生成内容补齐。</p> : null}
     {status === "ready" && !result?.hits.length && <p className="mt-4 rounded border border-slate-200 p-4 text-sm leading-7">当前条件无核验资料；未命中不代表不存在该专业或岗位。</p>}
-    <div className="mt-5 divide-y divide-slate-200">{result?.hits.map(hit => <details key={hit.citation} className="py-4" open={category !== "" || query !== ""}>
-      <summary className="cursor-pointer leading-7"><span className="mr-2 text-xs muted">{labels[hit.category]}</span><span className="font-medium">{hit.title}</span>{hit.historical && <span className="ml-2 text-xs text-amber-800">往年 / 待复查</span>}<p className="mt-1 text-xs muted">{[hit.context?.institution, hit.context?.college, hit.context?.program, hit.context?.admission_year ? `${hit.context.admission_year}年招生` : ""].filter(Boolean).join(" · ") || hit.source.organization}</p></summary>
+    {category === "admissions" && !!result?.hits.length && <div className="xn-admissions-table"><table><caption className="sr-only">当前招生来源中的院校、项目、年份与专业要求</caption><thead><tr><th>学校与项目</th><th>招生年份</th><th>专业与报考要求</th><th>来源</th></tr></thead><tbody>{result.hits.map(hit => <tr key={hit.citation}><td data-label="学校与项目">{hit.context?.institution ?? hit.source.organization}<p>{hit.context?.program ?? "具体项目待核验"}</p></td><td data-label="招生年份">{hit.context?.admission_year ?? "未公开"}</td><td data-label="专业与报考要求">{hit.facts.find(fact => fact.field === "cross_major_restrictions" || fact.field === "admission_requirements")?.quote ?? "此条资料未明确个人报考资格"}</td><td data-label="来源"><a href={hit.source.url} target="_blank" rel="noreferrer">{hit.title} ↗</a></td></tr>)}</tbody></table></div>}
+    <div className="xn-dossier-results mt-5 divide-y divide-slate-200" key={`${query}:${school}:${year}:${category}:${offset}`}>{result?.hits.map(hit => <article key={hit.citation} className="xn-source-record py-4">
+      <h4><a href={hit.source.url} target="_blank" rel="noreferrer">{hit.title} ↗</a></h4>
+      <p className="mt-1 text-xs muted">{[hit.context?.institution, hit.context?.college, hit.context?.program, hit.context?.admission_year ? `${hit.context.admission_year}年招生` : ""].filter(Boolean).join(" · ") || hit.source.organization} · 发布：{hit.source.published_at ?? "未公开"}</p>
+      {hit.historical && <p className="text-xs text-amber-800">往年 / 待复查</p>}
+      <details><summary className="cursor-pointer leading-7">展开原文摘录与适用范围</summary>
       <div className="mt-4 space-y-4 text-sm leading-7">
         {hit.context?.statistic_scope && <p className="rounded border border-amber-200 bg-amber-50 p-3">统计口径：{hit.context.statistic_scope}</p>}
         {hit.facts.map((fact, index) => <div key={`${fact.field}-${index}`}><p className="font-medium">{fields[fact.field] ?? "来源引文"}</p><blockquote className="mt-1 whitespace-pre-wrap border-l-2 border-blue-200 pl-4 text-slate-700">{fact.quote}</blockquote></div>)}
@@ -65,7 +70,7 @@ export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, 
         {hit.missing_fields.length > 0 && <p className="text-amber-800">未取得：{hit.missing_fields.map(field => missingLabels[field] ?? "其他待核实信息").join("、")}</p>}
         <div className="border-t border-slate-100 pt-3"><a className="font-medium underline break-words" href={hit.source.url} target="_blank" rel="noreferrer">{hit.source.organization} · 查看原始资料 ↗</a><p className="mt-1 text-xs muted">发布：{hit.source.published_at ?? "未公开"} · 采集：{hit.collected_at.slice(0, 10)} · 核实：{hit.verified_at.slice(0, 10)}（原文片段匹配）</p><p className="text-xs muted">{hit.source.publication_date_note} {hit.context?.evidence_locator}</p></div>
       </div>
-    </details>)}</div>
+    </details></article>)}</div>
     {result && result.total > 12 && <div className="mt-5 flex items-center gap-4"><button className="button secondary" disabled={offset === 0} onClick={() => { setOffset(Math.max(0, offset - 12)); setStatus("loading"); setResult(null); }}>上一页</button><span className="text-sm">第 {Math.floor(offset / 12) + 1} 页</span><button className="button secondary" disabled={!result.has_more} onClick={() => { setOffset(offset + 12); setStatus("loading"); setResult(null); }}>下一页</button></div>}
   </section>;
 }

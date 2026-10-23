@@ -1,0 +1,1239 @@
+[
+  {
+    "source": {
+      "id": "thu-bme-plan",
+      "url": "https://www.tsinghua.edu.cn/jxjywj/bksjywj/80-shengyi.pdf",
+      "organization": "清华大学（教务处培养方案汇编）",
+      "title": "清华大学本科培养方案 医学院 生物医学工程专业本科培养方案",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未标注发布日期与年级标题；文中引用《2019 级学生手册》，具体年份无法从原文确证，按非最新处理。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/thu-bme-plan.pdf",
+      "sha256": "f6ac073089d466df2b53398fefcc1da201f620105f75f835773e0c167455f127",
+      "captured_at": "2026-10-23T06:57:58.936Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/thu-bme-plan.txt",
+      "extracted_sha256": "911b768b915090e2507fee0a34115dea2e0cbce420ac67143e9d0967b84264e7"
+    },
+    "record": {
+      "id": "learning-thu-bme-plan-guide-devices-39f618c5",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "清华大学生物医学工程专业培养目标（原文）",
+      "summary": "清华大学医学院生物医学工程专业培养方案「一、培养目标」原文：说明该专业以工程学与生命科学、医学交叉为定位，并区分学术精英与产业领军人才两类培养方向。（同一官方来源共 3 条原文事实，字段：training、learning_hours、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于该专业本科培养方案的培养目标表述；不构成对任何考生报考资格、录取标准的说明，也不表示医学本科背景可直接报考。",
+      "relation": "context",
+      "tags": [
+        "清华大学",
+        "生物医学工程",
+        "培养目标",
+        "本科培养方案",
+        "学分",
+        "学时",
+        "培养方案",
+        "专业必修课程",
+        "核心课程"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "college": "医学院",
+        "program": "生物医学工程",
+        "evidence_locator": "PDF 第 1 页 五、课程设置与学分分布 2.（2）3）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "一、培养目标 生物医学工程是工程学与生命科学、医学深入交叉融合的学科，致力于研制用于预防、诊断、治 疗疾病及促进人类健康的创新型医疗设备、生物制剂、生物材料、生物过程、植入设备等。本专业既 培养能够推进工程学与生命科学、医学交叉领域前沿创新的学术精英，也培养能够推进相关产业创新 的领军人才"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "四、基本学分学时 本科培养要求总学分不少于 161。其中校级通识教育课程及环节 46学分，专业培养课程及环节 115学分（包括基础课程 37学分，专业主修课程 53学分，实践环节和夏季学期课程 10学分，综合 论文训练 15学分）。"
+      },
+      {
+        "field": "topics",
+        "pattern": "3） 生物医学工程专业必修课程 16学分 44000434 人体解剖与生理学 4学分 44000534 信息与生命 4学分 34030064 生物医学电子学 4学分 44000444 生物医学检测原理与传感技术 4学分"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "prerequisites",
+      "access_requirement",
+      "learning_hours",
+      "topics"
+    ]
+  },
+  {
+    "source": {
+      "id": "thu-bme-plan",
+      "url": "https://www.tsinghua.edu.cn/jxjywj/bksjywj/80-shengyi.pdf",
+      "organization": "清华大学（教务处培养方案汇编）",
+      "title": "清华大学本科培养方案 医学院 生物医学工程专业本科培养方案",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文未标注发布日期与年级标题；文中引用《2019 级学生手册》，具体年份无法从原文确证，按非最新处理。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/thu-bme-plan.pdf",
+      "sha256": "f6ac073089d466df2b53398fefcc1da201f620105f75f835773e0c167455f127",
+      "captured_at": "2026-10-23T06:57:58.936Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/thu-bme-plan.txt",
+      "extracted_sha256": "911b768b915090e2507fee0a34115dea2e0cbce420ac67143e9d0967b84264e7"
+    },
+    "record": {
+      "id": "learning-thu-bme-plan-guide-imaging-eng-39f618c5",
+      "role_id": "guide_imaging_eng",
+      "category": "learning",
+      "title": "清华大学生物医学工程专业方向课程清单（原文）",
+      "summary": "培养方案「4）生物医学工程专业方向课程 限选，不少于4门、12学分」原文，列出生物医学材料基础、组织工程学原理、生物芯片技术、神经科学及神经工程、医学影像（1）（2）、医学图像等方向课与学分。",
+      "applicability": "仅描述该专业本科方向选修课的开设清单与选课门数要求；不表示这些课程对其他院校学生开放，也不构成报考条件。",
+      "relation": "related",
+      "tags": [
+        "清华大学",
+        "生物医学工程",
+        "方向课程",
+        "医学影像",
+        "神经工程"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "college": "医学院",
+        "program": "生物医学工程",
+        "evidence_locator": "PDF 第 1 页 五、课程设置与学分分布 2.（2）4）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "4） 生物医学工程专业方向课程 限选，不少于4门、12学分 34000533 生物医学材料基础 3学分 44000233 组织工程学原理 3学分 34000343 生物芯片技术及其应用 3学分 34000353 神经科学及神经工程基础 3学分 44030263 系统与计算神经科学 3学分 44000423 神经建模与数据分析 3学分 44000183 医学影像（1）-物理基础 3学分 34000503 医学影像（2）-成像系统 3学分 44030214 医学图像 4学分"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "prerequisites",
+      "access_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-bme-courses",
+      "url": "https://bme.sjtu.edu.cn/Upload/Files/2021-04-13-11-03-30-500000.pdf",
+      "organization": "上海交通大学生物医学工程学院",
+      "title": "2018年级生物医学工程专业课程设置一览表（含培养目标）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文标题为「2018年级生物医学工程专业课程设置一览表」，无发布日期；文件上传时间 2021-04-13 仅见于 URL 文件名，不作为发布日期。属 2018 级，非最新。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/sjtu-bme-courses.pdf",
+      "sha256": "673620402d606505dfe699d74cc88c2502affb5cb9a3e7553359f10b9bee7f1b",
+      "captured_at": "2026-10-23T06:58:36.862Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/sjtu-bme-courses.txt",
+      "extracted_sha256": "19b174488764ac02b4417f6062d809890a734bf158e87d90dd3b99b825a33caa"
+    },
+    "record": {
+      "id": "learning-sjtu-bme-courses-guide-signals-39f618c5",
+      "role_id": "guide_signals",
+      "category": "learning",
+      "title": "上海交大生物医学工程专业培养目标（2018 级原文）",
+      "summary": "上海交通大学 2018 年级生物医学工程专业课程设置表开头的培养目标原文，表述该专业为学生提供生物医学工程教育及对毕业生的期望。（同一官方来源共 2 条原文事实，字段：training、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于上海交大生物医学工程专业 2018 级培养方案的培养目标表述；不涉及报考资格、跨专业限制或录取要求。",
+      "relation": "context",
+      "tags": [
+        "上海交通大学",
+        "生物医学工程",
+        "培养目标",
+        "2018级",
+        "学分",
+        "课程设置"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "college": "生物医学工程学院",
+        "program": "生物医学工程",
+        "evidence_locator": "PDF 2. 专业教育课程"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "2018 年级培养目标（Program educational objectives ） 上海交通大学生物医学工程专业的目标是为学生提供优质的生物医学工程教育。 我 们期望本专业的毕业生： ➢ 在工程领域或其他专业领域获得成功 ➢ 成为具有国际化视野的学术界、工业界、商业界的领军人才"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "2\\. 专业教育课程 要求最低学分：93 学分 \\(1\\) 基础类 要求最低学分：50 学分 1\\) 必修 要求最低学分：50 学分 须修满全部"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "prerequisites",
+      "access_requirement",
+      "learning_hours"
+    ]
+  },
+  {
+    "source": {
+      "id": "sjtu-bme-courses",
+      "url": "https://bme.sjtu.edu.cn/Upload/Files/2021-04-13-11-03-30-500000.pdf",
+      "organization": "上海交通大学生物医学工程学院",
+      "title": "2018年级生物医学工程专业课程设置一览表（含培养目标）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文标题为「2018年级生物医学工程专业课程设置一览表」，无发布日期；文件上传时间 2021-04-13 仅见于 URL 文件名，不作为发布日期。属 2018 级，非最新。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/sjtu-bme-courses.pdf",
+      "sha256": "673620402d606505dfe699d74cc88c2502affb5cb9a3e7553359f10b9bee7f1b",
+      "captured_at": "2026-10-23T06:58:36.862Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/sjtu-bme-courses.txt",
+      "extracted_sha256": "19b174488764ac02b4417f6062d809890a734bf158e87d90dd3b99b825a33caa"
+    },
+    "record": {
+      "id": "learning-sjtu-bme-courses-guide-clinical-data-39f618c5",
+      "role_id": "guide_clinical_data",
+      "category": "learning",
+      "title": "上海交大生物医学工程专业必修课程与学时（原文）",
+      "summary": "课程设置表专业类必修课程原文，逐门列出课程代码、课程名、学分、总学时/理论学时/实践学时，含生物医学统计概论、细胞生物学、生物医学信号与系统（1）（2）、解剖与生理、生物医学图像处理（1）。",
+      "applicability": "适用于该专业 2018 级课程设置的专业必修课清单；表内数字为学分与学时字段的原始排版，不作换算解读，也不代表其他学校。",
+      "relation": "direct",
+      "tags": [
+        "上海交通大学",
+        "生物医学工程",
+        "专业必修课",
+        "学分",
+        "学时",
+        "医学统计",
+        "医学图像处理"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学",
+        "college": "生物医学工程学院",
+        "program": "生物医学工程",
+        "evidence_locator": "PDF 2.(2) 专业类 1) 必修 课程表"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "BI148 生物医学统计概论 2\\.03232 0 二 2 必修 B1,B2 Introduction of Biomedical Statistics BI277 细胞生物学 2\\.03232 0 二 2 必修 A4,A3B2,B1C5,C3 D4 Cell Biology BM251 生物医学信号与系统 （1） 2\\.03232 0 二 2 必修 A3 B2,B4,B1C3 Biomedical Signals and System BI120 生物学导论 2\\.03232 0 二 2 必修 A1,A3 Introduction to Biology BI124 解剖与生理（1） 2\\.03224 8 三 1 必修 A3,A1B2,B3,B4C3,C5 Anatomy and Physiology I BI908 生物医学图像处理\\(1\\)2\\.03224 8 三 1 必修 A3,A5,A2B2,B3C2,C3 D3 Biomedical Image Processing BM253 生物医学信号与系统 （2） 2\\.03226 6 三 1 必修 A1,A3,A4B2,B4C3,C2,C5D2,D1 Biomedical Signals and System BI122 解剖与生理（2） 2\\.03230 2 三 2 必修 B3,B1,B2,B 4 Anatomy and Physiology II 总 16\\.025623224"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "learning_hours",
+      "prerequisites",
+      "access_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "pku-bme-plan",
+      "url": "https://dean.pku.edu.cn/userfiles/upload/ckeditor/202404111544575571.pdf",
+      "organization": "北京大学教务部",
+      "title": "北京大学本科专业（方向）设置申请表：生物科学（生物医学工程方向）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-02-25",
+      "publication_date_note": "日期取自正文「申请时间： 2024 年 2月 25 日」，为专业设置申请时间，非网页发布日期。"
+    },
+    "publication_pattern": "2024\\s*年\\s*2\\s*月\\s*25\\s*日",
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/pku-bme-plan.pdf",
+      "sha256": "f49640ca676d30dc475ea96c5427d5b3c028a1c63c6f87d928cac1a30f07be6c",
+      "captured_at": "2026-10-23T06:59:08.763Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/pku-bme-plan.txt",
+      "extracted_sha256": "3f0216f38e780aa69060b128ee0f2af264fcc9c2bcf53d2067f6793a5dbe1c8f"
+    },
+    "record": {
+      "id": "learning-pku-bme-plan-guide-imaging-eng-7e3c5aff",
+      "role_id": "guide_imaging_eng",
+      "category": "learning",
+      "title": "北大生物科学（生物医学工程方向）培养目标（原文）",
+      "summary": "北京大学本科专业（方向）设置申请表内「一、培养目标及培养要求」原文，说明该方向培养复合型人才、跨学科训练要求与毕业去向。（同一官方来源共 2 条原文事实，字段：training、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于北京大学「生物科学（生物医学工程方向）」这一新设专业方向的培养目标；该方向专业代码为 071001、授理学学士，不等同于工科生物医学工程专业。",
+      "relation": "context",
+      "tags": [
+        "北京大学",
+        "生物医学工程",
+        "生物科学",
+        "培养目标",
+        "2024",
+        "学分",
+        "毕业要求"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学",
+        "college": "工学院、未来技术学院",
+        "program": "生物科学（生物医学工程方向）",
+        "evidence_locator": "PDF 二、毕业要求及授予学位类型 第 1 条"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "一、 培养目标及培养要求 本专业培养掌握生物医学工程及相关领域扎实的理论基础和专业知识、具有良好的 综合能力和创新能力，受到自然科学、工程科学与生物和医学领域的跨学科训练，具备 全面的文化素质和国际化视野，能运用理论分析、实验研究和数值模拟等手段解决复杂 问题的高素质、引领性的复合型人才。毕业生能在生物医学工程及相关学科从事科学研 究和教学工作，能继续攻读生物医学工程及相关交叉学科的研究生学位，也可以到工程 技术、咨询服务或管理等部门从事应用研究、技术开发或管理工作。"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "二、 毕业要求及授予学位类型 1\\. 本科阶段四年制共 136-142 学分（包括毕业论文 6 学分）， 分为必修课程及选修 课程。学生在修满公共与基础课程和核心课程之后，其余学分可从本学院、工学学部 及其他学部课程中依据要求进行选择，以满足个性化培养的要求。"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "prerequisites",
+      "access_requirement",
+      "learning_hours"
+    ]
+  },
+  {
+    "source": {
+      "id": "pku-bme-plan",
+      "url": "https://dean.pku.edu.cn/userfiles/upload/ckeditor/202404111544575571.pdf",
+      "organization": "北京大学教务部",
+      "title": "北京大学本科专业（方向）设置申请表：生物科学（生物医学工程方向）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-02-25",
+      "publication_date_note": "日期取自正文「申请时间： 2024 年 2月 25 日」，为专业设置申请时间，非网页发布日期。"
+    },
+    "publication_pattern": "2024\\s*年\\s*2\\s*月\\s*25\\s*日",
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/pku-bme-plan.pdf",
+      "sha256": "f49640ca676d30dc475ea96c5427d5b3c028a1c63c6f87d928cac1a30f07be6c",
+      "captured_at": "2026-10-23T06:59:08.763Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/pku-bme-plan.txt",
+      "extracted_sha256": "3f0216f38e780aa69060b128ee0f2af264fcc9c2bcf53d2067f6793a5dbe1c8f"
+    },
+    "record": {
+      "id": "learning-pku-bme-plan-guide-devices-7e3c5aff",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "北大生物科学（生物医学工程方向）课程设置（原文）",
+      "summary": "培养方案「课程设置」原文：分通识教育课程、专业必修课（专业基础课程、专业核心课程、实习实践课程）、专业选修课三部分，并列出专业核心课程与三个选修模块（生物光电子、生物材料、生物大数据与人工智能）。",
+      "applicability": "适用于该专业方向的课程结构描述；原文只列课程名与模块名，未给每门课的学分学时，也不构成报考前置要求。",
+      "relation": "direct",
+      "tags": [
+        "北京大学",
+        "生物医学工程",
+        "专业核心课程",
+        "生物大数据",
+        "人工智能"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学",
+        "college": "工学院、未来技术学院",
+        "program": "生物科学（生物医学工程方向）",
+        "evidence_locator": "PDF 培养方案 → 课程设置"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "课程设置 1\\. 通识教育课程 结合北 京大学的综合优势，鼓励学生全方位学习，在数学与自然科学类、社会科学类、 哲学与心理学类、历史学类、语言学、文学、艺术与美育类、社会可持续发展类等大类 中均衡选课，提升科学、艺术与人文综合素养，了解人类文明和现代社会的发展。 2\\. 专 业必修课 专业基础课程 ，包括高等数学（B ）、普通化学（B ）、普通物理（I/II ）、有机化学 （B）等课程。学好这些最重要的数理化基础课程，可为专业学习做好准备。 专业核心课程，包括普通生物学（ B）、分子细胞生物学、人体解剖学、生物医学信号处 理、生物医学工程原理等课程。学生学好这些最重要的基础课程后，可具备专业基本素 质和解决问题的能力。 实习实践课程，包括《生物医学工程实习》、《生物医学工程设计 I 》、《生物医学工程 设计 II》和《生物医学工程综合实验》等课程。让学生在实践中培养自主学习、团队精 神和创新解决实际复杂问题的能力。 3\\. 专业选修课 在完成 专业基础课和专业核心课之后，学生可根据自己的研究兴趣和导师一起设计培养 方案，进入高年级的模块化学习阶段。学生可在生物光电子模块、生物材料模块、和生 物大数据与人工智能模块的基础上"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "learning_hours",
+      "prerequisites"
+    ]
+  },
+  {
+    "source": {
+      "id": "ustc-bme-2025",
+      "url": "https://gradschool.ustc.edu.cn/static/upload/article/ueditor/1758537540907-330714.pdf",
+      "organization": "中国科学技术大学研究生院",
+      "title": "中国科学技术大学 生物医学工程学科硕士研究生培养方案（2025 版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文仅标注「（2025 版）」，未给具体发布日期；按 2025 版处理。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/ustc-bme-2025.pdf",
+      "sha256": "5d36d81305f9468c7aee71e7cd7a47b1ebf7437857ecdedad52ddb1a5412e747",
+      "captured_at": "2026-10-23T07:00:14.306Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/ustc-bme-2025.txt",
+      "extracted_sha256": "e57df898482cc8ebe9840fa19dee2cf780fad3ff73b8b50b7918521334010f7b"
+    },
+    "record": {
+      "id": "learning-ustc-bme-2025-guide-imaging-eng-2ae6b1bc",
+      "role_id": "guide_imaging_eng",
+      "category": "learning",
+      "title": "中科大生物医学工程学科硕士培养目标（2025 版原文）",
+      "summary": "中国科学技术大学生物医学工程学科硕士研究生培养方案（2025 版）「一、培养目标」原文，说明该学科培养定位与基本要求开头。（同一官方来源共 2 条原文事实，字段：training、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于中科大生物医学工程学科硕士研究生（2025 版）培养目标；这是研究生层次培养方案，不等同于本科专业介绍，也不涉及考研报考条件。",
+      "relation": "context",
+      "tags": [
+        "中国科学技术大学",
+        "生物医学工程",
+        "硕士",
+        "培养目标",
+        "2025版",
+        "学分",
+        "课程设置"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中国科学技术大学",
+        "program": "生物医学工程（硕士）",
+        "evidence_locator": "PDF 四、课程设置及学分要求"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "一、培养目标 本学科旨在培养德、智、体、美、劳全面发展，具有坚 实系统的生物医学工程领域理论基础和专门知识、富有创新 精神、能够适应我国经济、科技、教育发展需要的高水平人 才。基本要求为："
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "四、课程设置及学分要求 课程学习是研究生掌握基础理论和专业知识，构建知识 结构的主要途径，课程学习应按照培养计划严格执行。 学术学位硕士研究生课程学习实行学分制，研究生在申 请硕士学位时，取得的学分不少于35学分，其中课程学习不 少于33学分，具体要求如下： 1\\. 公共课程（7学分） 包括：硕士政治课程3学分；硕士英语课程4学分。 2\\. 硕士学科基础课、硕士专业基础课、硕士专业选修课 （不少于23学分） 其中硕士学科基础课不少于6学分、硕士专业基础课不 少于6学分。"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "prerequisites",
+      "access_requirement",
+      "learning_hours"
+    ]
+  },
+  {
+    "source": {
+      "id": "ustc-bme-2025",
+      "url": "https://gradschool.ustc.edu.cn/static/upload/article/ueditor/1758537540907-330714.pdf",
+      "organization": "中国科学技术大学研究生院",
+      "title": "中国科学技术大学 生物医学工程学科硕士研究生培养方案（2025 版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文仅标注「（2025 版）」，未给具体发布日期；按 2025 版处理。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/ustc-bme-2025.pdf",
+      "sha256": "5d36d81305f9468c7aee71e7cd7a47b1ebf7437857ecdedad52ddb1a5412e747",
+      "captured_at": "2026-10-23T07:00:14.306Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/ustc-bme-2025.txt",
+      "extracted_sha256": "e57df898482cc8ebe9840fa19dee2cf780fad3ff73b8b50b7918521334010f7b"
+    },
+    "record": {
+      "id": "learning-ustc-bme-2025-guide-clinical-data-2ae6b1bc",
+      "role_id": "guide_clinical_data",
+      "category": "learning",
+      "title": "中科大生物医学工程硕士学科基础课与学时（2025 版原文）",
+      "summary": "课程设置表「硕士学科基础课」原文，逐门列出课程编号、课程名称、学时、学分与教学方式，含生物医学工程数学理论 I/II、生物医学工程技术基础 I/II、生物医学基础 I/II。",
+      "applicability": "适用于该学科硕士培养方案的学科基础课清单与学时学分；表中「讲授」为教学方式原文，不代表考核方式。",
+      "relation": "direct",
+      "tags": [
+        "中国科学技术大学",
+        "生物医学工程",
+        "学科基础课",
+        "学时",
+        "学分"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中国科学技术大学",
+        "program": "生物医学工程（硕士）",
+        "evidence_locator": "PDF 课程设置表 硕士学科基础课"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "硕士 学科 基础 课 / BMED6003P 生物医学工程数学理论I 40 2 讲授 学科基 础课不 低于 6 学分， 专业基 础课不 低于 6 BMED6004P 生物医学工程数学理论II 20 1 讲授 BMED6001P 生物医学工程技术基础I 40 2 讲授 BMED6002P 生物医学工程技术基础II 20 1 讲授 BMED6005P 生物医学基础I 40 2 讲授 BMED6006P 生物医学基础II 20 1 讲授"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "learning_hours",
+      "prerequisites",
+      "access_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "ustc-bme-2025",
+      "url": "https://gradschool.ustc.edu.cn/static/upload/article/ueditor/1758537540907-330714.pdf",
+      "organization": "中国科学技术大学研究生院",
+      "title": "中国科学技术大学 生物医学工程学科硕士研究生培养方案（2025 版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文仅标注「（2025 版）」，未给具体发布日期；按 2025 版处理。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/ustc-bme-2025.pdf",
+      "sha256": "5d36d81305f9468c7aee71e7cd7a47b1ebf7437857ecdedad52ddb1a5412e747",
+      "captured_at": "2026-10-23T07:00:14.306Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/ustc-bme-2025.txt",
+      "extracted_sha256": "e57df898482cc8ebe9840fa19dee2cf780fad3ff73b8b50b7918521334010f7b"
+    },
+    "record": {
+      "id": "learning-ustc-bme-2025-guide-llm-agent-2ae6b1bc",
+      "role_id": "guide_llm_agent",
+      "category": "learning",
+      "title": "中科大生物医学工程硕士专业基础课清单（2025 版原文）",
+      "summary": "课程设置表「硕士专业基础课」原文，列出系统生物学、生物医学传感技术与系统、先进生物医学材料、微无创诊疗技术与应用、医学大数据与人工智能、神经与康复工程、生物医学影像技术、BME 设计与管理、数字医学技术与应用、生物芯片技术与应用等课程与学时学分。",
+      "applicability": "适用于该学科硕士培养方案的专业基础课清单；课程是否面向外校或跨专业学生开放，原文未说明。",
+      "relation": "direct",
+      "tags": [
+        "中国科学技术大学",
+        "生物医学工程",
+        "专业基础课",
+        "医学大数据",
+        "人工智能",
+        "医学影像"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中国科学技术大学",
+        "program": "生物医学工程（硕士）",
+        "evidence_locator": "PDF 课程设置表 硕士专业基础课"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "硕士 专业 / BIOL5481P 系统生物学\\* 60 3 讲授 BMED6222P 生物医学传感技术与系统\\* 60 3 讲授 生物医学工程学科硕士研究生培养方案（2025 版） 4 学分基础 课 BMED6223P 先进生物医学材料\\* 60 3 讲授 BMED6224P 微无创诊疗技术与应用\\* 60 3 讲授 BMED6225P 医学大数据与人工智能\\* 60 3 讲授 BMED6226P 神经与康复工程\\* 40 2 讲授 BMED6227P 生物医学影像技术\\* 40 2 讲授 BMED6228P BME设计与管理\\* 60 3 讲授 BMED6229P 数字医学技术与应用\\* 60 3 讲授 BMED6230P 生物芯片技术与应用\\* 60 3 讲授"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "prerequisites",
+      "access_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "nju-bme-plan",
+      "url": "https://eng.nju.edu.cn/1e/f8/c4941a139000/pagem.htm",
+      "organization": "南京大学现代工程与应用科学学院 生物医学工程系",
+      "title": "生物医学工程系 本科人才培养方案",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2016-05-20",
+      "publication_date_note": "日期取自页面正文「发布时间：2016-05-20」。页面较旧，非最新版培养方案。"
+    },
+    "publication_pattern": "2016-05-20",
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/nju-bme-plan.raw",
+      "sha256": "ca6fdd7f212ff8815738e336c728918517a4dc5091c18d2c5e3a9f511e760a1f",
+      "captured_at": "2026-10-23T07:22:50.286Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-nju-bme-plan-guide-devices-39f618c5",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "南京大学生物医学工程专业培养目标（原文）",
+      "summary": "南京大学生物医学工程系本科人才培养方案「三、培养目标与思路」原文，说明该专业培养定位、跨学科训练范围与培养思路。（同一官方来源共 2 条原文事实，字段：training、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于南京大学该系本科人才培养方案的培养目标表述（页面发布于 2016 年）；不代表现行版本，也不涉及报考条件。",
+      "relation": "context",
+      "tags": [
+        "南京大学",
+        "生物医学工程",
+        "培养目标",
+        "2016",
+        "学分",
+        "周学时",
+        "课程体系"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京大学",
+        "college": "现代工程与应用科学学院",
+        "program": "生物医学工程",
+        "evidence_locator": "页面 五、课程体系 第一阶段"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "三、培养目标与思路 本专业的目标是培养具有扎实的理论基础和专业素质、良好的综合能力和创新意识的生物医学工程领域的高素质、引领型复合人才。毕业生受到自然科学、工程科学、生命科学、医学领域的跨学科训练，具备全面的文化素养、合理的知识结构、良好的国际化视野和竞争力，能够运用理论分析、实验研究和工程设计等手段解决生物医学工程领域的基础与应用问题。"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "第一阶段为通修通识课程，强化数学、计算机、英文训练。除政治与品德修养类课程外，还包括大学体育、大学数学及大学英语等课程，另外还包括不少于 14 个学分的文化素质选修课程。总学分为 59 ，总周学时 61 。"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "prerequisites",
+      "access_requirement",
+      "learning_hours"
+    ]
+  },
+  {
+    "source": {
+      "id": "nju-bme-plan",
+      "url": "https://eng.nju.edu.cn/1e/f8/c4941a139000/pagem.htm",
+      "organization": "南京大学现代工程与应用科学学院 生物医学工程系",
+      "title": "生物医学工程系 本科人才培养方案",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2016-05-20",
+      "publication_date_note": "日期取自页面正文「发布时间：2016-05-20」。页面较旧，非最新版培养方案。"
+    },
+    "publication_pattern": "2016-05-20",
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/nju-bme-plan.raw",
+      "sha256": "ca6fdd7f212ff8815738e336c728918517a4dc5091c18d2c5e3a9f511e760a1f",
+      "captured_at": "2026-10-23T07:22:50.286Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-nju-bme-plan-guide-imaging-eng-39f618c5",
+      "role_id": "guide_imaging_eng",
+      "category": "learning",
+      "title": "南京大学主干课程与专业核心课程（原文）",
+      "summary": "「五、课程体系」第二阶段原文：分学科平台课程与专业核心课程，主干课程设置包括模拟电路及模拟电路实验、生物医学导论、生物医学电子学、生物医学成像原理与仪器、生理学、解剖学，总学分 43、总周学时 54。",
+      "applicability": "适用于该系 2016 年本科培养方案的课程清单与学分；不构成对其他院校学生的先修要求。",
+      "relation": "direct",
+      "tags": [
+        "南京大学",
+        "生物医学工程",
+        "主干课程",
+        "生物医学成像",
+        "学分"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "南京大学",
+        "college": "现代工程与应用科学学院",
+        "program": "生物医学工程",
+        "evidence_locator": "页面 五、课程体系 第二阶段"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "第二阶段为学科专业课程，包括学科平台课程与专业核心课程两部分。本专业的课程设置上强调数理、工程、生命、医学等各学科的基础知识，重视材料学、工程设计、电子与信息技术、医学观察与实践、人文和医学伦理等学科的交汇融合，培养能综合应用数理和工程技术的基础知识和方法来创造性地满足现代医疗工程中的研究和应用需求的复合型人才。课程设置上强调数理、工程、材料学为基础；生命科学和医学为必备；理、工、医、文 \\( 伦理 \\) 相结合。主要包括： 科学与工程基础类课程：大学物理、电路分析与电路分析实验、概率论与随机过程等； 主干课程设置包括模拟电路及模拟电路实验，生物医学导论、生物医学电子学、生物医学成像原理与仪器、生理学、解剖学等课程。 总学分为 43 ，总周学时 54 。"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "learning_hours",
+      "prerequisites",
+      "access_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "fudan-bme-lab",
+      "url": "https://ee.fudan.edu.cn/Assets/userfiles/sys_eb538c1c-65ff-4e82-8e6a-a1ef01127fed/files/sykc/%E7%94%9F%E7%89%A9%E5%8C%BB%E5%AD%A6%E5%B7%A5%E7%A8%8B%E4%B8%93%E4%B8%9A%E5%AE%9E%E9%AA%8C(%E4%B8%8A).pdf",
+      "organization": "复旦大学 信息科学与工程学院",
+      "title": "复旦大学课程教学大纲：生物医学工程专业实验（上）（INFO130018）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文标注「编 写 时 间 2016 年 2 月」，仅有年月无日期，故 published_at 记为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/fudan-bme-lab.pdf",
+      "sha256": "79a90cf65367a2cbe24371d91f4487f3cfd2f83897709509bc4367d53f0f9693",
+      "captured_at": "2026-10-23T07:02:31.633Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/fudan-bme-lab.txt",
+      "extracted_sha256": "52f33dc00e76d53d0e7174a11bd5be4073bf932d8445fb2464197fd81fb9ca2f"
+    },
+    "record": {
+      "id": "learning-fudan-bme-lab-guide-signals-39f618c5",
+      "role_id": "guide_signals",
+      "category": "learning",
+      "title": "复旦大学生物医学工程专业实验（上）预修课程（原文）",
+      "summary": "复旦大学课程教学大纲原文列出该课程的预修课程：模拟电子线路、数字逻辑基础、高频电子线路、模拟与数字电路实验、工程生理学。这是本次七校材料中唯一逐字给出「预修课程」清单的页面。（同一官方来源共 4 条原文事实，字段：prerequisites、learning_hours、training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于复旦大学《生物医学工程专业实验（上）》这一门课的修读前提（2016 年大纲）；不是专业报考条件，也不代表医学本科背景考生必须补修的课程清单。",
+      "relation": "direct",
+      "tags": [
+        "复旦大学",
+        "生物医学工程",
+        "预修课程",
+        "先修",
+        "课程大纲",
+        "学分",
+        "周学时",
+        "教学目的",
+        "生理信号",
+        "医疗器械",
+        "48学时",
+        "教学安排"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "复旦大学",
+        "college": "信息科学与工程学院",
+        "program": "生物医学工程",
+        "evidence_locator": "PDF 第 2 页 教学内容安排"
+      }
+    },
+    "extracts": [
+      {
+        "field": "prerequisites",
+        "pattern": "预修课程 模拟电子线路；数字逻辑基础；高频电子线路；模拟与数字电路实验；工程生理 学"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "课程名称 生物医学工程专业实验（上） 英文名称 Experiments of Biomedical Engineering \\(Part I\\) 学 分 数 3 周学时 3 开课院系 信息科学与工程学院 任课老师 周国辉 预修课程 模拟电子线路；数字逻辑基础；高频电子线路；模拟与数字电路实验；工程生理 学 课程性质 理科专业实验"
+      },
+      {
+        "field": "training",
+        "pattern": "教学目的 通过专业实验教学，使学生能够应用电子学的方法，对生理信号进行处理； 对医疗器械（如心脏起搏器）进行检测，或对其功能的简单实现；认识神经电生 理信号，掌握基本测量方法；理解并实践高频电子线路基本知识。从而起到扩大 视野，提高动手能力和独立解决问题能力的作用。"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "教学内容安排 \\(按 48 学时共计 16 周\\): 第1周："
+      }
+    ],
+    "expected_fields": [
+      "prerequisites",
+      "access_requirement",
+      "learning_hours",
+      "training"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-bme-new-plan",
+      "url": "https://ugrs.zju.edu.cn/_upload/article/files/16/86/d00a10e34236ac2091a8f16db0be/fe3fe6b6-4c53-4d18-ba30-751eb3aaad3b.pdf",
+      "organization": "浙江大学 本科生院",
+      "title": "2019 级生物医学工程专业培养方案（浙江大学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文标题标注「2019 级」，无发布日期。属 2019 级，非最新（浙大 2021 级方案见其它研究线，本文件为不同 URL 的另一版本）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/zju-bme-new-plan.pdf",
+      "sha256": "bbf54b16e0c5a55b9ba3ea8d83cb5428f665316633228174bb48bb02ed1c6572",
+      "captured_at": "2026-10-23T07:00:31.732Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/zju-bme-new-plan.txt",
+      "extracted_sha256": "8b8bac0a010589e91eed08a8f008c54fc5619d6eb97ee5e6ed2c23bf1efd00b3"
+    },
+    "record": {
+      "id": "learning-zju-bme-new-plan-guide-imaging-eng-39f618c5",
+      "role_id": "guide_imaging_eng",
+      "category": "learning",
+      "title": "浙江大学生物医学工程专业培养目标（2019 级原文）",
+      "summary": "浙江大学 2019 级生物医学工程专业培养方案「培养目标」原文，以六个编号目标表述培养定位，强调生物医学、工程技术、信息科学基础与医工信交叉融合能力。（同一官方来源共 3 条原文事实，字段：training、topics、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于浙大该专业 2019 级培养方案的培养目标；2019 级非最新版本，不代表现行方案，也不涉及报考条件。",
+      "relation": "context",
+      "tags": [
+        "浙江大学",
+        "生物医学工程",
+        "培养目标",
+        "2019级",
+        "主干课程",
+        "数字信号处理",
+        "医学成像",
+        "学制",
+        "毕业学分",
+        "工学学士"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "生物医学工程",
+        "evidence_locator": "PDF 培养方案 推荐学制/最低毕业学分"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "培养目标 以习近平新时代中国特色社会主义思想为指导，围绕国家重大战略需求、立足学术前沿【目标 1】 ，注重学科 交叉和创新实践环节【目标 2】 ，培养德智体美劳全面发展【目标 3】 ，具有生物医学、工程技术、信息科学的基础 理论知识【目标 4】 ，以及医、工、信交叉融合的科研开发能力【目标 5】 ，具有全球竞争力的生物医学工程领域高 素质创新人才和领导者【目标 6】 。"
+      },
+      {
+        "field": "topics",
+        "pattern": "专业主干课程 数字信号处理 微机原理及应用 工程生理学 生物医学成像技术 传感技术与应用"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "推荐学制 4年 最低毕业学分 150\\+5\\.5\\+6\\+8 授予学位 工学学士 学科专业类别 生物医学工程类 支撑学科 生物医学工程"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "prerequisites",
+      "access_requirement",
+      "topics",
+      "learning_hours"
+    ]
+  },
+  {
+    "source": {
+      "id": "tongji-bme-2025",
+      "url": "https://med.tongji.edu.cn/__local/6/EB/0B/CD863418719B39A2AD1621E0C21_57A986C9_30B2C.pdf",
+      "organization": "同济大学医学院",
+      "title": "2025 级生物医学工程（083100）硕士研究生培养方案",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "正文标注「适用年级 2025」「2025 级」，无发布日期；为 2025 级方案。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/tongji-bme-2025.pdf",
+      "sha256": "0bda81fe5251f5da3967ab9214973d9f61ff3238ae63ce2dd1700f93119d48f9",
+      "captured_at": "2026-10-23T07:08:14.958Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/tongji-bme-2025.txt",
+      "extracted_sha256": "190fdb7f85a344a651737746e4d0dac375367a212dfa5557229e1b0820c123fa"
+    },
+    "record": {
+      "id": "learning-tongji-bme-2025-guide-imaging-eng-ca2bd60c",
+      "role_id": "guide_imaging_eng",
+      "category": "learning",
+      "title": "同济大学生物医学工程硕士培养定位及目标（2025 级原文）",
+      "summary": "同济大学 2025 级生物医学工程（083100）硕士培养方案「三、培养定位及目标」原文，说明培养定位、基本要求与人才规格。（同一官方来源共 3 条原文事实，字段：training、topics、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于同济大学该学科 2025 级学术学位硕士培养方案的培养目标；为研究生层次，不是本科专业介绍，也不涉及报考条件。",
+      "relation": "context",
+      "tags": [
+        "同济大学",
+        "生物医学工程",
+        "硕士",
+        "培养目标",
+        "2025级",
+        "培养方向",
+        "医学影像",
+        "智能康复",
+        "学分",
+        "补修课"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "同济大学",
+        "college": "医学院",
+        "program": "生物医学工程（083100）",
+        "evidence_locator": "PDF 八、课程设置与学分要求 学分表"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "三、培养定位及目标 将“数智化、绿色化、融合化”理念融入人才培养全过程，培养德智体美 劳全面发展的高层次创新人才，担当民族复兴大任的时代新人，培养生物医学 工程研究专门人才，应具有如下基本要求： 本专业培养应具有生物医学工程相关领域的理论基础，基本了解和掌握生 命健康领域建模、测试、制造和工程设计的方法和技术，初步具有独立从事生 物医学工程研究和解决实际问题的能力，科学态度严谨、了解并能基本满足学 术规范和科研伦理要求。掌握一门外语，能阅读本专业的外文资料。能承担一 定的科研教学、技术开发和应用转化管理工作的医学工程专业人才。"
+      },
+      {
+        "field": "topics",
+        "pattern": "四、培养方向 1\\.生物材料与催化医学：结合生物相容性材料设计与催化化学，开发用于 疾病治疗、组织工程或药物递送的功能性材料。 2\\.精准医学与系统生物学：通过多组学（基因组、蛋白质组等）数据整合 与系统建模，实现个体化诊疗。 3\\.生物医学影像工程：研发新型医学成像技术与图像处理方法，提升疾病 诊断与术中导航能力。 4\\.智能康复与医疗设备：结合智能硬件与康复医学，开发辅助诊疗或功能 代偿设备。"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "八、课程设置与学分要求 研究生课程包括公共必修课、专业必修课、专业选修课和必修环节。修读学分 要求如下： 课程类别 学分 公共必修课 6 公共选修课 0 专业必修课 12 专业选修课 8 必修环节 5 补修课 0 总计 31"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "prerequisites",
+      "access_requirement",
+      "topics",
+      "learning_hours"
+    ]
+  },
+  {
+    "source": {
+      "id": "buaa-bme-plan",
+      "url": "https://bme.buaa.edu.cn/UpFile/20190902172700.pdf",
+      "organization": "北京航空航天大学 生物与医学工程学院",
+      "title": "生物医学工程(083100) 生物与医学工程学院学术型硕士研究生培养方案",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 页脚可见「2019/8/29」，无正式发布说明；按 2019 年方案处理，非最新。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/buaa-bme-plan.pdf",
+      "sha256": "dc3056726d42f747b7f4c95ce81ae920a526603f4d4da2a4bfc10a96e3d94653",
+      "captured_at": "2026-10-23T07:09:03.042Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-cur-tier1/buaa-bme-plan.txt",
+      "extracted_sha256": "222c8bde505e6c4b2ec92329557a75d8822caa129f02f80845c604b170a738ab"
+    },
+    "record": {
+      "id": "learning-buaa-bme-plan-guide-devices-39f618c5",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "北航生物医学工程学科培养方向（原文）",
+      "summary": "北航学术型硕士培养方案「一、适用学科及培养方向」原文：适用学科含 083100、077700、107200，培养方向为生物力学、生物医学材料、细胞与组织工程、生物医学信息及仪器、人体行为工程与康复工程、生物技术、空间生命科学及生命保障技术、航空航天生物医学工程及人因工程。（同一官方来源共 3 条原文事实，字段：topics、training、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于北航该学科硕士培养方案的学科与方向表述；其中 107200 为医学门类下的生物医学工程代码，原文并列列出，未说明各代码对应的招生方式。",
+      "relation": "direct",
+      "tags": [
+        "北京航空航天大学",
+        "生物医学工程",
+        "培养方向",
+        "083100",
+        "107200",
+        "培养目标",
+        "硕士",
+        "学制",
+        "学分制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京航空航天大学",
+        "college": "生物与医学工程学院",
+        "program": "生物医学工程",
+        "evidence_locator": "PDF 三、培养模式及学习年限"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "一、适用学科及培养方向 生物医学工程（083100、077700、107200） 培养方向：生物力学 生物医学材料 细胞与组织工程 生物医学信息及仪器 人体行为工程与康复工程 生物技术 空间生命科学及生命保障技术 航空航天生物医学工程及人因工程"
+      },
+      {
+        "field": "training",
+        "pattern": "二、培养目标 北京航空航天大学生物医学工程学科学术型硕士研究生的培养目标是： 拥护中国共产党的领导，坚持党的基本路线，热爱祖国，遵纪守法，诚实守信，能积极 为民族复兴、国家富强、和科学发展贡献力量。掌握生物医学工程及其相关学科的基础理论 和生物学、医学、工程科学交叉融合的专业知识，具有在本学科及相关领域从事创新性科学 研究、技术研发及产品开发、教学、管理等工作的能力，并在生物力学、生物医学材料、细 胞与组织工程、生物医学信息及仪器、康复工程、生物技术、空间生命科学及生命保障技 术、航空航天生物医学工程及人因工程等方向上取得创新性研究成果；能熟练运用一门外国 语阅读本专业的外文文献和参与国际学术交流，具有较宽广的国际化视野；具备良好的人文 精神、科研道德、团队协作精神和社会责任感。"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "三、培养模式及学习年限 本学科全日制硕士研究生主要为一级学科内培养，结合国际联合培养及校企（医院等医 疗机构、研究所等）联合培养等模式。采用课程学习、实践训练和学位论文相结合的培养方 式。实行导师或联合导师负责制，负责制订研究生个人培养计划、指导科学研究和学位论 文。 遵照《北京航空航天大学研究生学籍管理规定》，本学科学术型硕士研究生学制为2\\.5 年，实行弹性学习年限。 硕士研究生实行学分制，要求研究生在攻读学位期间，依据培养方案，于申请学位论文 答辩前，获得知识能力结构中所规定的各部分学分及总学分。"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "learning_hours",
+      "prerequisites",
+      "training",
+      "access_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "csu-bme-intro",
+      "url": "https://jcyxy.csu.edu.cn/info/1061/6213.htm",
+      "organization": "中南大学 湘雅基础医学院",
+      "title": "生物医学工程专业简介",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-05-22",
+      "publication_date_note": "日期取自页面正文「2024年05月22日 16:50」，为网页发布时间。"
+    },
+    "publication_pattern": "2024\\D{0,6}0?5\\D{0,6}0?22",
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/csu-bme-intro.raw",
+      "sha256": "15bb24f520fb032cb27022f487a96e1e98db3d6deb6c3723ff590305c6ee5c56",
+      "captured_at": "2026-10-23T07:22:50.333Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-csu-bme-intro-guide-signals-39f618c5",
+      "role_id": "guide_signals",
+      "category": "learning",
+      "title": "中南大学生物医学工程专业简介与培养定位（原文）",
+      "summary": "中南大学湘雅基础医学院「生物医学工程专业简介」原文：专业 2002 年成立，为国家「双万计划」建设专业，建有医学电子、智能医学、医学成像、医学传感等教学实验室，并说明培养定位与毕业去向。（同一官方来源共 2 条原文事实，字段：training、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于中南大学该专业的官方简介表述；原文未给出培养方案学分结构与课程学时。",
+      "relation": "context",
+      "tags": [
+        "中南大学",
+        "生物医学工程",
+        "专业简介",
+        "双万计划",
+        "核心课程",
+        "信号与系统",
+        "医学图像处理"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中南大学",
+        "college": "湘雅基础医学院",
+        "program": "生物医学工程",
+        "evidence_locator": "页面 二、核心课程"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "一、 专业简介 中南大学生物医学工程专业成立于 2002年，根据学校建设世界一流大学和创新型大学的总体办学定位，面向国家和社会重大战略需求，以“健康中国”对生物医学工程专业的人才需求为导向，应用现代工程技术手段与方法，以实现疾病的早期诊断和精准化、个性化、微创化治疗为使命。 本专业是国家 “双万计划”建设专业，建设有医学电子、智能医学、医学成像、医学传感等高端教学实验室，拥有以国家级人才领衔的高水平师资队伍。依托湘雅医学院和中南大学雄厚的工科实力，通过数理化生医基础理论、电子与信息、计算机技术等多学科课程的交叉学习及丰富实践训练，注重与医疗卫生等行业深度交叉融合，培养具有扎实生物医学、工程技术理论知识及科研、技术开发能力的创新型、复合型高级工程技术人才。毕业生可以在医学仪器与信息处理、医疗器械与医学检测、电子与信息技术、生物技术、医疗卫生等生物医学工程相关领域从事科学研究、技术开发、教学及管理等工作。"
+      },
+      {
+        "field": "topics",
+        "pattern": "二、 核心课程 计算机程序设计、数字电子技术、电路与模拟电子技术、数据结构、信号与系统、嵌入式系统与智能仪器、生理学、系统解剖学、生物化学、生物医学信号处理、医学图像处理、医学仪器原理、医学成像原理、生物医学传感器等。"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "learning_hours",
+      "prerequisites",
+      "access_requirement",
+      "topics"
+    ]
+  },
+  {
+    "source": {
+      "id": "sdu-bme-report",
+      "url": "https://control.sdu.edu.cn/info/1018/7424.htm",
+      "organization": "山东大学 控制科学与工程学院",
+      "title": "2024年生物医学工程学位授权点建设年度报告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-08-07",
+      "publication_date_note": "日期取自页面正文「时间：2024-08-07」。"
+    },
+    "publication_pattern": "2024-08-07",
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/sdu-bme-report.raw",
+      "sha256": "85bc4106a741642e59f4fb3088f07dbf4ebefa6a3e4261e079eabf7c79ce85b1",
+      "captured_at": "2026-10-23T07:22:50.358Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-sdu-bme-report-guide-signals-39f618c5",
+      "role_id": "guide_signals",
+      "category": "learning",
+      "title": "山东大学生物医学工程主要研究方向（2024 年度报告原文）",
+      "summary": "山东大学 2024 年生物医学工程学位授权点建设年度报告「（一）主要研究方向」原文，列出生物医学仪器与影像、生物医学信号检测与分析、智能医学与医疗信息处理三个方向及各自研究内容。（同一官方来源共 2 条原文事实，字段：topics、training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于山东大学该学位点 2024 年度报告的研究方向表述；为学位点层面的方向，不是本科课程表。",
+      "relation": "direct",
+      "tags": [
+        "山东大学",
+        "生物医学工程",
+        "研究方向",
+        "医学影像",
+        "智能医学",
+        "培养目标",
+        "硕士"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "山东大学",
+        "college": "控制科学与工程学院",
+        "program": "生物医学工程",
+        "evidence_locator": "页面 一、（二）培养目标 2. 硕士研究生培养目标"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "（一）主要研究方向 1 、生物医学仪器与影像 致力于研究生物医学仪器与影像领域的新理论与新技术，研发满足医学发展需要的创新型医学仪器及影像系统。主要开展基于分子生物学、物理化学方法及信息技术的生物医学仪器与方法开发，包括具有显著行业影响力及前沿特性的新型临床诊断仪器，以及用于科学研究的重要科学仪器研发等。 2 \\. 生物医学信号检测与分析 主要研究生物医学信号的检测、处理与分析技术，涵盖生理信号、步态分析、运动学和动力学信号的采集、预处理、特征提取与深入分析。此外，还聚焦于健康状态监测、疾病检验与治疗，以及智能康复评估技术和相关设备的研发等。 3 \\. 智能医学与医疗信息处理 主要研究生物医学大数据处理与分析的理论和应用，涵盖人工智能在医学信息处理中的应用、生物医学模式识别与分类技术、生物信息学与机器学习、系统生物医学、生物医学大数据处理与分析方法、生物医学信息融合技术与系统，以及智能医学诊断技术的研发等。"
+      },
+      {
+        "field": "training",
+        "pattern": "2 \\. 硕士研究生培养目标 培养热爱祖国，拥护中国共产党的领导，思想政治素质高，德、智、体全面发展，在生物医学工程领域具有扎实的理论基础、系统的专业知识和熟练的实践技能，能够适应我国经济、科教、社会发展的需要，面向新世纪的科学研究、工程技术、高等教育以及医疗管理等方面的高层次人才。具备独立从事生物医学工程领域科研和技术开发工作的能力。注重理论联系实际，具有较强的创新意识，能够分析和解决社会发展和科学研究中涌现出的新课题。至少熟练掌握一门外语，具有健康的体格。"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "learning_hours",
+      "prerequisites",
+      "training",
+      "access_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "hit-med-intro",
+      "url": "https://med.hit.edu.cn/_t822/12988/list.htm",
+      "organization": "哈尔滨工业大学 医学与健康学院",
+      "title": "本科专业介绍（生物信息学 / 智能医学工程 / 生物医学科学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面正文无发布时间，仅见页脚版权年份「2020」；故 published_at 记为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/hit-med-intro.raw",
+      "sha256": "38941c0e405cff3a2d34910f0e52b0dbc3f47d847587264cc98dbd4efdcf16ca",
+      "captured_at": "2026-10-23T07:22:50.498Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-hit-med-intro-guide-ml-cv-41d3dc1b",
+      "role_id": "guide_ml_cv",
+      "category": "learning",
+      "title": "哈工大医学与健康学院大类招生培养定位（原文）",
+      "summary": "哈工大医学与健康学院本科专业介绍原文：本科生按大类招生【工科试验班（医学类 1）】，含生物信息学、智能医学工程、生物医学科学三个本科专业，并说明培养定位与人才规格。",
+      "applicability": "适用于哈工大医学与健康学院三个本科专业的官方介绍；原文未给出各专业学分学时。",
+      "relation": "context",
+      "tags": [
+        "哈尔滨工业大学",
+        "医学与健康学院",
+        "大类招生",
+        "智能医学工程",
+        "生物信息学"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "哈尔滨工业大学",
+        "college": "医学与健康学院",
+        "program": "工科试验班（医学类1）",
+        "evidence_locator": "页面 本科专业介绍 首段"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "医学与健康学院本科生实行大类招生【工科试验班（医学类 1）】，包含生物信息学、智能医学工程、生物医学科学三个本科专业。面向国际前沿和国家需求，培养具有社会责任感、专业使命感和国际视野，身心健康，勇于探索未知、迎接挑战，恪守工程与医学伦理道德，具备理论思维、实验思维与计算思维，并能够综合运用所学知识解决与新医学相关复杂问题的创新能力，具备学科交叉融合、团队合作与跨文化交流能力，能够在新医学科学与工程及相关领域引领未来发展、掌握（0-1）数字科技、（A-T-C-G）基因科技的创新人才，在服务人类健康的伟大事业中、能够在实现中华民族伟大复兴的征程中逐渐成长为学术大师、工程巨匠、业界领袖和治国栋梁。"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "learning_hours",
+      "prerequisites",
+      "access_requirement"
+    ]
+  },
+  {
+    "source": {
+      "id": "hit-med-intro",
+      "url": "https://med.hit.edu.cn/_t822/12988/list.htm",
+      "organization": "哈尔滨工业大学 医学与健康学院",
+      "title": "本科专业介绍（生物信息学 / 智能医学工程 / 生物医学科学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面正文无发布时间，仅见页脚版权年份「2020」；故 published_at 记为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/hit-med-intro.raw",
+      "sha256": "38941c0e405cff3a2d34910f0e52b0dbc3f47d847587264cc98dbd4efdcf16ca",
+      "captured_at": "2026-10-23T07:22:50.498Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-hit-med-intro-guide-clinical-data-41d3dc1b",
+      "role_id": "guide_clinical_data",
+      "category": "learning",
+      "title": "哈工大医学大类年级课程与二年级大类基础课（原文）",
+      "summary": "原文说明课程体系按年级组织：一年级公共基础课（数学类、物理类、化学类、计算类、医学类通识课）；二年级大类基础课包括数据结构与算法、生物化学与分子生物学、生物信息学、生物医学统计、生物信号处理、基因组学等。",
+      "applicability": "适用于哈工大该大类培养的课程组织方式与二年级基础课清单；原文未给学分学时，也未规定外校学生补修。",
+      "relation": "direct",
+      "tags": [
+        "哈尔滨工业大学",
+        "新医学",
+        "课程体系",
+        "生物信息学",
+        "生物医学统计",
+        "生物信号处理"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "哈尔滨工业大学",
+        "college": "医学与健康学院",
+        "program": "工科试验班（医学类1）",
+        "evidence_locator": "页面 课程体系段"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "医学与健康学院建立了与国际接轨、具有哈工大特点的厚基础、强实践、研过程、求创新的课程体系：一年级是公共基础课，包括数学类、物理类、化学类、计算类和医学类的通识教育课程； 二年级大类基础课包括数据结构与算法、生物化学与分子生物学、生物信息学、生物医学统计、生物信号处理、基因组学等"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "learning_hours",
+      "prerequisites"
+    ]
+  },
+  {
+    "source": {
+      "id": "hit-med-intro",
+      "url": "https://med.hit.edu.cn/_t822/12988/list.htm",
+      "organization": "哈尔滨工业大学 医学与健康学院",
+      "title": "本科专业介绍（生物信息学 / 智能医学工程 / 生物医学科学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面正文无发布时间，仅见页脚版权年份「2020」；故 published_at 记为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-cur-tier1/hit-med-intro.raw",
+      "sha256": "38941c0e405cff3a2d34910f0e52b0dbc3f47d847587264cc98dbd4efdcf16ca",
+      "captured_at": "2026-10-23T07:22:50.498Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-hit-med-intro-guide-ml-cv-5b422049",
+      "role_id": "guide_ml_cv",
+      "category": "learning",
+      "title": "哈工大智能医学工程专业主干课程（原文）",
+      "summary": "原文「智能医学工程专业」段列出其主干课程：《医学影像学》《模式识别与机器学习》《智能医疗仪器设计》《智能诊断学》，并另设《数字图像处理》《生物传感器》《精密测控》等支撑课。",
+      "applicability": "仅是该专业官方介绍列出的主干课程与支撑课程；原文未给学分学时，也不构成报考前置要求。",
+      "relation": "direct",
+      "tags": [
+        "哈尔滨工业大学",
+        "智能医学工程",
+        "主干课程",
+        "医学影像学",
+        "机器学习"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "哈尔滨工业大学",
+        "college": "医学与健康学院",
+        "program": "智能医学工程",
+        "evidence_locator": "页面 智能医学工程专业段"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "其主干课程包括《 医学影像学 》《 模式识别与 机器学习》《智能 医疗 仪器设计》《智能诊断学》。"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "learning_hours",
+      "prerequisites"
+    ]
+  }
+]

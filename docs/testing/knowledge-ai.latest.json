@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-22T05:20:57.934Z",
+  "passed": false,
+  "checks": [
+    {
+      "name": "real_ai_configuration_enabled",
+      "passed": true
+    },
+    {
+      "name": "synthetic_identity_created",
+      "passed": true
+    },
+    {
+      "name": "R1_live_knowledge_available",
+      "passed": true
+    },
+    {
+      "name": "R1_multiple_direction_sources_retained",
+      "passed": true
+    }
+  ],
+  "outputs": [],
+  "failure": "AI_NETWORK",
+  "cleanupFailures": 0,
+  "limitations": [
+    "Only public source evidence sent to real configured LLM",
+    "Synthetic private identity removed after test",
+    "Exercises both report knowledge adapters and real AI citation persistence; not the complete profile/O*NET/experience HTTP flow",
+    "Reference validity is checked automatically; semantic support still needs review"
+  ]
+}

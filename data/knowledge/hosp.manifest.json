@@ -1,0 +1,1175 @@
+[
+  {
+    "source": {
+      "id": "zj-zdyy-2026-zhaopin-scale",
+      "url": "https://rlsbt.zj.gov.cn/art/2025/11/20/art_1229743683_58943289.html",
+      "organization": "浙江大学医学院附属第一医院（浙江省人力资源和社会保障网发布）",
+      "title": "浙江大学医学院附属第一医院2026年公开招聘人员公告（102个岗位678人）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-11-20",
+      "publication_date_note": "页面「发布时间:2025-11-20」「信息来源:浙江省人力资源和社会保障网」，位于浙江省人社厅「专题专栏 > 事业单位公开招聘 > 招聘公告」。"
+    },
+    "publication_pattern": "2025-11-20",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/zj-gov-zdyy-2026-zhaopin.raw",
+      "sha256": "fc29d67d260433ad4fc9669dbffacaff295a93749706e1ea874baf0e2f10fa1e",
+      "captured_at": "2026-10-23T06:58:10.945Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-zj-zdyy-2026-zhaopin-scale-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "浙大一院2026年公开招聘：102个岗位678人，岗位表见附件",
+      "summary": "公告「二、招聘岗位、条件及待遇（一）需求计划」：此次公开招聘102个岗位678人，岗位名称、招聘人数及具体要求见招聘计划表（附件）。招聘岗位经限时集中报名、组织遴选并确定拟聘人员后，尚有空缺的医、药、技、护、科研等专业技术岗位，纳入浙江省省属事业单位特殊专业技术岗位招聘目录，在2026年度内继续招聘。",
+      "applicability": "适用于浙江大学医学院附属第一医院（浙江省第一医院）2026年公开招聘。三甲医院事业编招聘的规模与分类口径可直接参考；具体岗位名称、学历与专业要求在该公告附件的招聘计划表内，本页正文未逐岗列出，故不能据本条断定存在某个特定岗位。",
+      "relation": "direct",
+      "tags": [
+        "2026年招聘",
+        "浙大一院",
+        "102个岗位",
+        "678人",
+        "事业单位",
+        "三甲医院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学医学院附属第一医院",
+        "medical_topic": "医院公开招聘",
+        "region": "浙江省杭州市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "此次公开招聘102个岗位678人，岗位名称、招聘人数及具体要求见招聘计划表（附件）。招聘岗位经限时集中报名、组织遴选并确定拟聘人员后，尚有空缺的医、药、技、护、科研等专业技术岗位，纳入浙江省省属事业单位特殊专业技术岗位招聘目录，在2026年度内继续招聘。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "job_title（未逐岗列名，明细在附件招聘计划表）"
+    ]
+  },
+  {
+    "source": {
+      "id": "zj-zdyy-2026-zhaopin-scale",
+      "url": "https://rlsbt.zj.gov.cn/art/2025/11/20/art_1229743683_58943289.html",
+      "organization": "浙江大学医学院附属第一医院（浙江省人力资源和社会保障网发布）",
+      "title": "浙江大学医学院附属第一医院2026年公开招聘人员公告（102个岗位678人）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-11-20",
+      "publication_date_note": "页面「发布时间:2025-11-20」「信息来源:浙江省人力资源和社会保障网」，位于浙江省人社厅「专题专栏 > 事业单位公开招聘 > 招聘公告」。"
+    },
+    "publication_pattern": "2025-11-20",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/zj-gov-zdyy-2026-zhaopin.raw",
+      "sha256": "fc29d67d260433ad4fc9669dbffacaff295a93749706e1ea874baf0e2f10fa1e",
+      "captured_at": "2026-10-23T06:58:10.945Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-zj-zdyy-2026-zhaopin-scale-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "浙大一院2026年招聘岗位待遇：事业单位报备员额内用人，享受国家规定的事业单位工资福利待遇",
+      "summary": "公告「（四）岗位待遇」：招聘岗位性质为事业单位报备员额内用人，实行聘用制管理。受聘人员享受国家规定的事业单位工作人员相关工资福利待遇。全文未给出任何具体金额或区间。",
+      "applicability": "这是三甲医院事业编岗位薪资口径的典型写法：只写「按国家规定的事业单位工作人员工资福利待遇」，不给数字。可用于说明「公立医院编制岗位薪资不公开」，但**不能**据此推算任何具体收入；具体到手金额取决于岗位等级、工龄、绩效与所在地区。",
+      "relation": "direct",
+      "tags": [
+        "薪资格式",
+        "事业单位工资",
+        "报备员额",
+        "无具体金额",
+        "浙大一院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学医学院附属第一医院",
+        "medical_topic": "医院岗位薪资口径",
+        "region": "浙江省杭州市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary",
+        "pattern": "招聘岗位性质为事业单位报备员额内用人，实行聘用制管理。受聘人员享受国家规定的事业单位工作人员相关工资福利待遇。"
+      }
+    ],
+    "expected_fields": [
+      "salary",
+      "salary（官网未给任何金额/区间，仅给制度性表述）"
+    ]
+  },
+  {
+    "source": {
+      "id": "zj-zdyy-2026-zhaopin-scale",
+      "url": "https://rlsbt.zj.gov.cn/art/2025/11/20/art_1229743683_58943289.html",
+      "organization": "浙江大学医学院附属第一医院（浙江省人力资源和社会保障网发布）",
+      "title": "浙江大学医学院附属第一医院2026年公开招聘人员公告（102个岗位678人）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-11-20",
+      "publication_date_note": "页面「发布时间:2025-11-20」「信息来源:浙江省人力资源和社会保障网」，位于浙江省人社厅「专题专栏 > 事业单位公开招聘 > 招聘公告」。"
+    },
+    "publication_pattern": "2025-11-20",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/zj-gov-zdyy-2026-zhaopin.raw",
+      "sha256": "fc29d67d260433ad4fc9669dbffacaff295a93749706e1ea874baf0e2f10fa1e",
+      "captured_at": "2026-10-23T06:58:10.945Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-zj-zdyy-2026-zhaopin-scale-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "浙大一院2026年招聘：住培合格当年按应届对待，住培合格本科学历临床医师按专硕同等对待",
+      "summary": "「（二）招聘对象」：面向社会招收的医师如为普通高校应届毕业生的，其住培合格当年按应届毕业生同等对待；经住培合格的本科学历临床医师，按临床医学、口腔医学、中医专业学位硕士研究生同等对待。",
+      "applicability": "适用于浙大一院2026年公开招聘的学历/身份认定。这是「两个同等对待」在省级三甲医院招聘公告中的落地写法，说明住培合格证可替代部分学历门槛；但仅限该院该年度岗位，其他医院是否执行需另查其公告。",
+      "relation": "direct",
+      "tags": [
+        "两个同等对待",
+        "住培合格",
+        "本科学历",
+        "专硕同等",
+        "2026年招聘"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学医学院附属第一医院",
+        "medical_topic": "住培与招聘学历认定",
+        "region": "浙江省杭州市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "major_restrictions",
+        "pattern": "面向社会招收的医师如为普通高校应届毕业生的，其住培合格当年按应届毕业生同等对待。经住培合格的本科学历临床医师，按临床医学、口腔医学、中医专业学位硕士研究生同等对待。"
+      }
+    ],
+    "expected_fields": [
+      "major_restrictions",
+      "major_restrictions（未逐岗列专业限制）"
+    ]
+  },
+  {
+    "source": {
+      "id": "zs1-keji-38828-xinchou",
+      "url": "https://www.fahsysu.org.cn/article/38828",
+      "organization": "中山大学附属第一医院（李锋课题组）",
+      "title": "中山大学附属第一医院李锋课题组专职科研人员招聘：薪酬按医院规定执行、合同聘用",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面未印明确发布日期，正文亦无日期字样；属该院课题组长期挂网的招聘启事，故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/zhongshanyi-keji-38828.raw",
+      "sha256": "0807d121704b826b798c32dd82b6c40a9a7eacd687e91ace91d2b09435ce7b48",
+      "captured_at": "2026-10-23T06:59:24.864Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-zs1-keji-38828-xinchou-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "中山一院专职科研岗：薪酬按医院相关岗位管理规定执行，购买社保与公积金（无具体金额）",
+      "summary": "招聘启事「【 薪酬待遇 】」段：薪酬按医院相关岗位的管理规定执行，并根据规定购买社会保险及住房公积金。全文未给薪资数字或区间。",
+      "applicability": "适用于中山大学附属第一医院课题组专职科研人员（合同聘用）岗位的薪酬口径。属「不公开数字」类型，可用于说明医院官网科研岗普遍不写薪资；不可据此估算收入。",
+      "relation": "direct",
+      "tags": [
+        "薪酬待遇",
+        "无具体金额",
+        "专职科研",
+        "中山一院",
+        "社保公积金"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学附属第一医院",
+        "medical_topic": "医院岗位薪资口径",
+        "region": "广东省广州市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary",
+        "pattern": "【 薪酬待遇 】 薪酬按医院相关岗位的管理规定执行，并根据规定购买社会保险及住房公积金。 【 用工形式 】"
+      }
+    ],
+    "expected_fields": [
+      "salary",
+      "salary（仅制度性表述，未给金额）"
+    ]
+  },
+  {
+    "source": {
+      "id": "zs1-keji-38828-xinchou",
+      "url": "https://www.fahsysu.org.cn/article/38828",
+      "organization": "中山大学附属第一医院（李锋课题组）",
+      "title": "中山大学附属第一医院李锋课题组专职科研人员招聘：薪酬按医院规定执行、合同聘用",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面未印明确发布日期，正文亦无日期字样；属该院课题组长期挂网的招聘启事，故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/zhongshanyi-keji-38828.raw",
+      "sha256": "0807d121704b826b798c32dd82b6c40a9a7eacd687e91ace91d2b09435ce7b48",
+      "captured_at": "2026-10-23T06:59:24.864Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-zs1-keji-38828-xinchou-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "中山一院专职科研岗用工形式：按医院相关管理规定合同聘用",
+      "summary": "「【 用工形式 】」段：按中山大学附属第一医院相关管理规定合同聘用。",
+      "applicability": "用于确认该岗为合同聘用制（非事业编）。同一医院不同岗位用工形式可能不同，本条不代表中山一院所有岗位。",
+      "relation": "direct",
+      "tags": [
+        "用工形式",
+        "合同聘用",
+        "专职科研",
+        "中山一院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学附属第一医院",
+        "medical_topic": "医院用工形式",
+        "region": "广东省广州市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_type",
+        "pattern": "【 用工形式 】 按中山大学附属第一医院相关管理规定合同聘用。 【 应聘材料 】"
+      }
+    ],
+    "expected_fields": [
+      "job_type"
+    ]
+  },
+  {
+    "source": {
+      "id": "zs1-boshihou-38526-tiaojian",
+      "url": "https://www.fahsysu.org.cn/article/38526",
+      "organization": "中山大学附属第一医院（肾内科周怡课题组）",
+      "title": "中山大学附属第一医院周怡课题组科研博士后招聘：近三年博士、年龄不超过35周岁、生物信息学等专业背景",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面未印明确发布日期，正文无日期字样，故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/zhongshanyi-boshihou-38526.raw",
+      "sha256": "87f913a22dc4ae96d366005a75994ed4f2852e0225bf0f1c213f0d746c3fea5f",
+      "captured_at": "2026-10-23T07:04:30.598Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-zs1-boshihou-38526-tiaojian-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "中山一院科研博士后要求：近三年博士、≤35周岁、临床医学/免疫学/分子生物学/生物信息学背景",
+      "summary": "岗位要求：近三年获得博士学位；年龄原则上不超过35周岁；专业背景为临床医学、免疫学、分子生物学、生物信息学等相关专业；具备科研工作经历、熟练掌握相关实验技能，能在PI指导下独立开展研究工作；具有良好英文写作与交流能力，以一作或通讯作者发表高质量论文者优先；专项能力突出或既往业绩优异者可适当放宽。",
+      "applicability": "适用于中山一院周怡课题组科研博士后岗位（名额2-3名）。可见「生物信息学」被列为与临床医学并列的合格专业背景——这是医学/生物背景转数据方向的一条实际入口；但学历门槛是博士学位，本科/硕士不适用。",
+      "relation": "direct",
+      "tags": [
+        "科研博士后",
+        "35周岁",
+        "生物信息学",
+        "临床医学",
+        "学历要求",
+        "中山一院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学附属第一医院",
+        "medical_topic": "医院博士后招聘条件",
+        "region": "广东省广州市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "education",
+        "pattern": "近三年获得博士学位； （ 2）年龄原则上不超过35周岁； （ 3）专业背景：临床医学、免疫学、分子生物学、生物信息学等相关专业； （ 4）具备科研工作经历，熟练掌握相关实验技能，能在PI指导下独立开展研究工作； （ 5）具有良好的英文写作与交流能力，以第一作者或者通讯作者发表过高质量论文者优先； （ 6）专项能力突出或既往业绩优异者，可适当放宽条件。"
+      }
+    ],
+    "expected_fields": [
+      "education",
+      "major_restrictions",
+      "experience",
+      "salary（薪酬按医院规定执行，未给金额）"
+    ]
+  },
+  {
+    "source": {
+      "id": "huashan-boshihou-2026-tiaojian",
+      "url": "https://www.huashan.org.cn/edu/article/detail/15574.html",
+      "organization": "复旦大学附属华山医院（教育处/研究生科）",
+      "title": "华山医院2026年临床医学博士后招收简章：住培并轨、35周岁以下、英语六级、培养周期4年（3+1）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-10-23",
+      "publication_date_note": "页面「日期：[ 2025-10-23 ]」「来源：研究生科」，位于华山医院教育处「新闻公告」。"
+    },
+    "publication_pattern": "2025-10-23",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/huashan-boshihou-2026.raw",
+      "sha256": "664676b444f2c2b6b67772e2957d418482ea870b4d624965a7ca6270bd32066d",
+      "captured_at": "2026-10-23T06:59:16.157Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huashan-boshihou-2026-tiaojian-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "华山医院2026临床医学博士后：须已被住培基地录取、35周岁以下、应届博士、通过英语六级",
+      "summary": "招录要求需同时满足：已被医院住院医师规范化培训基地录取并签订「就业（意向）协议书」；遵纪守法品行端正；身心健康能胜任住培和科研要求；年龄35周岁（含）以下；已获医师资格证书的应届博士毕业生优先、按期获得博士学历学位；通过国家英语六级考试。",
+      "applicability": "仅适用于华山医院2026年临床医学博士后招收（2025-10-23发布）。关键点：该岗位**前置条件是已被住培基地录取**，即「先规培、再叠加博士后」，不是独立的就业入口；且要求博士学位。",
+      "relation": "direct",
+      "tags": [
+        "临床医学博士后",
+        "住培并轨",
+        "35周岁",
+        "英语六级",
+        "华山医院",
+        "2026年"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "复旦大学附属华山医院",
+        "medical_topic": "医院博士后招收条件",
+        "region": "上海市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "education",
+        "pattern": "需同时满足下列基本条件 （一） 已被医院住院医师规范化培训基地录取并签订了“就业（意向）协议书”。 （二） 遵纪守法，品学兼优，责任感强，具有团队精神，医德医风良好，恪守学术道德。 （三） 身心健康，能胜任住院医师规范化培训和科研工作要求。 （四） 年龄35周岁（含）以下。 （五） 已获得医师资格证书的应届博士毕业生优先，按期获得博士研究生学历和学位证书。 （六） 通过国家英语六级考试"
+      }
+    ],
+    "expected_fields": [
+      "education",
+      "access_requirement",
+      "salary（简章未列薪酬数字）"
+    ]
+  },
+  {
+    "source": {
+      "id": "huashan-boshihou-2026-tiaojian",
+      "url": "https://www.huashan.org.cn/edu/article/detail/15574.html",
+      "organization": "复旦大学附属华山医院（教育处/研究生科）",
+      "title": "华山医院2026年临床医学博士后招收简章：住培并轨、35周岁以下、英语六级、培养周期4年（3+1）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-10-23",
+      "publication_date_note": "页面「日期：[ 2025-10-23 ]」「来源：研究生科」，位于华山医院教育处「新闻公告」。"
+    },
+    "publication_pattern": "2025-10-23",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/huashan-boshihou-2026.raw",
+      "sha256": "664676b444f2c2b6b67772e2957d418482ea870b4d624965a7ca6270bd32066d",
+      "captured_at": "2026-10-23T06:59:16.157Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huashan-boshihou-2026-tiaojian-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "华山医院临床医学博士后培养周期4年（3+1年）：前3年与住培并轨，第4年调整培养计划",
+      "summary": "「（一）培养方案说明」：培养周期共4年（3+1年），前3年与住培阶段并轨，住培最后一年上半年的10-11月进行阶段考核，综合考核结果及出基地留院面试结果调整第4年的培养计划安排。",
+      "applicability": "适用于华山医院临床医学博士后项目的培养周期与并轨安排。可用于理解「3年规培 + 1年博士后延伸」的实际年限结构；其他医院的博士后培养周期可能不同。",
+      "relation": "related",
+      "tags": [
+        "培养周期",
+        "3+1年",
+        "住培并轨",
+        "阶段考核",
+        "华山医院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "复旦大学附属华山医院",
+        "medical_topic": "博士后培养周期",
+        "region": "上海市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "experience",
+        "pattern": "培养周期共4年（3\\+1年），前3年与住培阶段并轨，住培最后一年上半年的10-11月进行阶段考核，综合考核结果及出基地留院面试结果调整第4年的培养计划安排。"
+      }
+    ],
+    "expected_fields": [
+      "experience"
+    ]
+  },
+  {
+    "source": {
+      "id": "bdrm-boshihou-2026-xinzi",
+      "url": "https://www.pkuph.cn/rczpqs_details/29269.html",
+      "organization": "北京大学人民医院",
+      "title": "北京大学人民医院2026年博士后招聘启事：普通博士后税前年收入28-38万元",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面「2026-09-03」发布日期，位于该院「风湿消息 > 详情」栏目；标题为「北京大学人民医院2026年博士后招聘启事」。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/bdrm-boshihou-2026.raw",
+      "sha256": "d7df2e344041079895e2be2179d88ad69410524a91ad10c348d8ea8d2f3cad4b",
+      "captured_at": "2026-10-23T07:09:21.833Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-bdrm-boshihou-2026-xinzi-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "北大人民医院2026博士后薪酬：普通博士后税前年收入28-38万元，博雅博士后37-47万元，博新计划48-58万元",
+      "summary": "「相关待遇 1 年薪范围：全面提升博士后薪酬待遇」：普通博士后税前年收入28-38万元；入选「北京大学医学部博雅博士后」项目税前年收入37-47万元；入选「国家博士后创新人才支持计划」税前年收入48-58万元。",
+      "applicability": "**这是医院官网明确写出的薪资数字**，可直接引用。但限定：①对象是博士后（需博士学位），非本科/硕士岗位；②口径为税前年收入、区间制，不代表到手；③仅北京大学人民医院2026年博士后，不外推到其他医院、其他岗位或其他年份。",
+      "relation": "direct",
+      "tags": [
+        "博士后薪资",
+        "税前年收入",
+        "28-38万元",
+        "博雅博士后",
+        "博新计划",
+        "2026年"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学人民医院",
+        "medical_topic": "博士后薪酬",
+        "region": "北京市",
+        "statistic_scope": "2026年博士后招聘税前年收入区间"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary",
+        "pattern": "年薪范围：全面提升博士后薪酬待遇； 普通博士后税前年收入 28-38万元； 入选 “北京大学医学部博雅博士后”项目税前年收入37-47万元； 入选 “国家博士后创新人才支持计划”税前年收入48-58万元"
+      }
+    ],
+    "expected_fields": [
+      "salary",
+      "salary（仅博士后岗位，未覆盖医师/技术岗）"
+    ]
+  },
+  {
+    "source": {
+      "id": "bdrm-boshihou-2026-xinzi",
+      "url": "https://www.pkuph.cn/rczpqs_details/29269.html",
+      "organization": "北京大学人民医院",
+      "title": "北京大学人民医院2026年博士后招聘启事：普通博士后税前年收入28-38万元",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面「2026-09-03」发布日期，位于该院「风湿消息 > 详情」栏目；标题为「北京大学人民医院2026年博士后招聘启事」。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/bdrm-boshihou-2026.raw",
+      "sha256": "d7df2e344041079895e2be2179d88ad69410524a91ad10c348d8ea8d2f3cad4b",
+      "captured_at": "2026-10-23T07:09:21.833Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-bdrm-boshihou-2026-xinzi-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "北大人民医院2026博士后论文要求：SCI二区论著2篇或指定期刊1篇",
+      "summary": "选拔条件之一：在本学科指定学术期刊上发表或被正式接收论著1篇，或者在本学科SCI二区学术期刊上发表或被正式接收论著2篇；并需符合北京大学医学部有关博士后管理规定。",
+      "applicability": "适用于北京大学人民医院2026年博士后选拔的科研业绩门槛。用于说明三甲医院科研岗对论文的硬性要求；不适用于医师岗或技术岗，也不代表其他医院的标准。",
+      "relation": "direct",
+      "tags": [
+        "SCI二区",
+        "论文要求",
+        "博士后选拔",
+        "科研业绩",
+        "北大人民医院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学人民医院",
+        "medical_topic": "博士后科研业绩要求",
+        "region": "北京市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "technical_requirements",
+        "pattern": "在本学科SCI二区学术期刊上发表或被正式接收论著2篇。 4\\.符合北京大学医学部有关博士后管理规定"
+      }
+    ],
+    "expected_fields": [
+      "technical_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "qilu-2026-dashuju-gangwei",
+      "url": "https://www.qiluhospital.cn/info/1042/1367.htm",
+      "organization": "山东大学齐鲁医院",
+      "title": "山东大学齐鲁医院2026年事业编招聘：大数据中心专职科研岗招人工智能、智能科学与技术",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面正文未印可逐字确认的发布日期；标题为「山东大学齐鲁医院2026年事业编招聘启事」，按标题年份判定为2026年度招聘，故 published_at 为 null 并以此说明。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/qilu-2026-shiyebian.raw",
+      "sha256": "3b15ddf0cf99522f3ca4ed711f36da77529bcf7c1d4f75fc69eeb1f545d80113",
+      "captured_at": "2026-10-23T07:03:16.664Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-qilu-2026-dashuju-gangwei-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "齐鲁医院2026事业编岗位表：大数据中心专职科研（人工智能、智能科学与技术）、临床流行病学研究室（流行病与卫生统计学）",
+      "summary": "招聘岗位表节选：临床流行病学研究室专职科研（流行病与卫生统计学）；线粒体研究转化中心专职科研（海洋生物学、细胞生物学）；**大数据中心专职科研（人工智能、智能科学与技术，2人）**；零磁医学研究院专职科研（零磁医学、重症医学、急诊医学、仪器科学与技术）；前沿技术创新转化中心专职科研（药剂学、生物化学与分子生物学、免疫学）。",
+      "applicability": "适用于山东大学齐鲁医院2026年事业编招聘的科研岗。可见三甲医院设有**大数据中心**并以「人工智能、智能科学与技术」招人——这是医学背景转数据/智能方向的真实岗位入口之一；但岗位写的是「专职科研」，学历与论文要求见同表其他列，本段未包含。",
+      "relation": "direct",
+      "tags": [
+        "齐鲁医院",
+        "2026年",
+        "事业编",
+        "大数据中心",
+        "人工智能",
+        "专职科研",
+        "医学工程"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "山东大学齐鲁医院",
+        "medical_department": "大数据中心",
+        "medical_topic": "医院科研岗招聘",
+        "region": "山东省济南市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "临床流行病学研究室 专职科研 流行病与卫生统计学 1 线粒体研究转化中心 专职科研 海洋生物学、细胞生物学 1 大数据中心 专职科研 人工智能、智能科学与技术 2 零磁医学研究院、零磁医学联合研究中心 专职科研 零磁医学、重症医学、急诊医学、仪器科学与技术 2 前沿技术创新转化中心 专职科研 药剂学、生物化学与分子生物学、免疫学 1"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "education（本段岗位表未含学历列）"
+    ]
+  },
+  {
+    "source": {
+      "id": "qilu-2026-dashuju-gangwei",
+      "url": "https://www.qiluhospital.cn/info/1042/1367.htm",
+      "organization": "山东大学齐鲁医院",
+      "title": "山东大学齐鲁医院2026年事业编招聘：大数据中心专职科研岗招人工智能、智能科学与技术",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面正文未印可逐字确认的发布日期；标题为「山东大学齐鲁医院2026年事业编招聘启事」，按标题年份判定为2026年度招聘，故 published_at 为 null 并以此说明。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/qilu-2026-shiyebian.raw",
+      "sha256": "3b15ddf0cf99522f3ca4ed711f36da77529bcf7c1d4f75fc69eeb1f545d80113",
+      "captured_at": "2026-10-23T07:03:16.664Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-qilu-2026-dashuju-gangwei-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "齐鲁医院青年人才绿色通道：研究员/副研究员引进项目5年聘期，入院即可享受高级职称待遇",
+      "summary": "「医院打造了支持有潜力青年人才快速成长的绿色通道，设有研究员、副研究员引进项目，5年聘期制管理，入院即可享受高级职称待遇，符合条件者可在参加当年度事业编招聘时同步申报」，具体条件与待遇指向该院常年引才公告。",
+      "applicability": "适用于齐鲁医院高层次青年人才的职称与聘期安排。原文给的是**职称待遇**（高级职称）而非金额；具体薪酬须看其常引才公告，本条不给任何数字。不可据此推算工资。",
+      "relation": "related",
+      "tags": [
+        "绿色通道",
+        "研究员",
+        "副研究员",
+        "5年聘期",
+        "高级职称待遇",
+        "齐鲁医院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "山东大学齐鲁医院",
+        "medical_topic": "医院人才引进待遇",
+        "region": "山东省济南市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary",
+        "pattern": "医院打造了支持有潜力青年人才快速成长的绿色通道，设有研究员、副研究员引进项目， 5 年聘期制管理，入院即可享受高级职称待遇，符合条件者可在参加当年度事业编招聘时同步申报，具体条件与待遇参见山东大学齐鲁医院常年引才公告"
+      }
+    ],
+    "expected_fields": [
+      "salary",
+      "salary（仅职称待遇表述，无金额）"
+    ]
+  },
+  {
+    "source": {
+      "id": "zs1-keji-38828-xinchou",
+      "url": "https://www.fahsysu.org.cn/article/38828",
+      "organization": "中山大学附属第一医院（李锋课题组）",
+      "title": "中山大学附属第一医院李锋课题组专职科研人员招聘：薪酬按医院规定执行、合同聘用",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面未印明确发布日期，正文亦无日期字样；属该院课题组长期挂网的招聘启事，故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/zhongshanyi-keji-38828.raw",
+      "sha256": "0807d121704b826b798c32dd82b6c40a9a7eacd687e91ace91d2b09435ce7b48",
+      "captured_at": "2026-10-23T06:59:24.864Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "occupation-zs1-keji-38828-xinchou-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "occupation",
+      "title": "中山一院专职科研岗职业出口：业绩突出者可获推荐攻读本校博士",
+      "summary": "岗位要求第（5）（6）项：工作态度认真严谨，具有高度的工作责任感；业绩突出者，推荐攻读本校博士；专项能力、既往业绩突出者可适当放宽应聘要求。",
+      "applicability": "适用于中山一院课题组专职科研人员岗位的发展路径描述。原文只写「推荐攻读本校博士」这一出口，未承诺录取；实际能否读博仍取决于招生考试与导师接收，不可理解为保证升学。",
+      "relation": "related",
+      "tags": [
+        "职业出口",
+        "推荐攻博",
+        "专职科研",
+        "中山一院",
+        "课题组"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学附属第一医院",
+        "medical_topic": "医院科研岗职业发展",
+        "region": "广东省广州市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "career_path",
+        "pattern": "业绩突出者，推荐攻读本校博士。 （ 6）专项能力、既往业绩突出者可适当放宽应聘要求。"
+      }
+    ],
+    "expected_fields": [
+      "career_path",
+      "career_path（未给具体岗位晋升路径）"
+    ]
+  },
+  {
+    "source": {
+      "id": "gd-hrss-2025-wage-overall",
+      "url": "https://hrss.gd.gov.cn/gkmlpt/content/4/4871/post_4871322.html",
+      "organization": "广东省人力资源和社会保障厅",
+      "title": "2025年全省人力资源市场工资价位及行业人工成本信息（专业技术人员中位数9.89万元/年）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-03-18",
+      "publication_date_note": "页面「成文日期：2026-03-18」「发布日期：2026-03-18」，索引号 553612461/2026-00187；发布的是 2025 年度工资价位（基于 2024 年企业职工工资数据）。"
+    },
+    "publication_pattern": "2026-03-18",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/gd-hrss-wage-2025.raw",
+      "sha256": "5c39ea921bd31ef86e6158b1283b412b1ebb5ce7a695b7d3189b5a7a380eb057",
+      "captured_at": "2026-10-23T07:00:12.403Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-gd-hrss-2025-wage-overall-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "广东2025工资价位：六个职业大类中位数——专业技术人员9.89万元/年，单位负责人12.40万元/年",
+      "summary": "广东省人社厅发布：六个职业大类中，单位负责人工资水平最高，中位数12.40万元/年；专业技术人员第二，中位数9.89万元/年；其余依次为办事人员和有关人员7.70万元/年、生产制造及有关人员6.56万元/年、社会生产服务和生活服务人员6.53万元/年、农林牧渔业生产及辅助人员5.64万元/年。（同一官方来源共 2 条原文事实，字段：salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "**重要限定**：该调查「对全省21个地市样本**企业**的人工成本情况和在岗职工工资报酬情况进行调查，调查对象涵盖…18个行业门类的**企业**和由调查企业支付工资的劳动者」——即口径为**企业**，不含公立医院等事业单位。因此这些数字不能直接当作公立医院编制岗位薪资，只反映企业侧（含民营医院、医药与医疗器械企业）水平。",
+      "relation": "direct",
+      "tags": [
+        "工资价位",
+        "中位数",
+        "专业技术人员",
+        "9.89万元",
+        "广东省",
+        "2025年",
+        "学历工资",
+        "博士33.37万元",
+        "硕士23.12万元",
+        "本科13.02万元"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "广东省人力资源和社会保障厅",
+        "medical_topic": "学历与工资水平",
+        "region": "广东省",
+        "statistic_scope": "2025年广东省企业职工按学历中位数（万元/年）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "从职业来看，六个职业大类中，单位负责人工资水平最高，中位数为12\\.40万元/年；专业技术人员第二，中位数为9\\.89万元/年；其余依次为办事人员和有关人员7\\.70万元/年、生产制造及有关人员6\\.56万元/年、社会生产服务和生活服务人员6\\.53万元/年、农林牧渔业生产及辅助人员5\\.64万元/年。"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "从学历来看，学历越高，工资水平越高。博士研究生工资水平最高，工资水平中位数为33\\.37万元/年，其次为硕士研究生23\\.12万元/年、大学本科13\\.02万元/年、大学专科8\\.11万元/年。"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "salary_statistics（职业大类口径，非医院具体岗位）"
+    ]
+  },
+  {
+    "source": {
+      "id": "gd-hrss-2025-pdf-weisheng",
+      "url": "https://hrss.gd.gov.cn/attachment/0/608/608923/4871322.pdf",
+      "organization": "广东省人力资源和社会保障厅",
+      "title": "2025年广东省人力资源市场工资价位及行业人工成本信息（PDF）：卫生专业技术人员9.14万元/年",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 封面标注「广东省人力资源和社会保障厅 2025 年 12 月」，仅到月份；网页发布日为 2026-03-18。故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/gd-hrss-wage-2025-pdf.pdf",
+      "sha256": "73860a30e73861eaab8953b0f27e95664b08417a362d1e70d3f4b0a41f94ec1f",
+      "captured_at": "2026-10-23T07:00:57.603Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-hosp/gd-hrss-wage-2025-pdf.txt",
+      "extracted_sha256": "3f587587d611d88195de7fa3f0f3e5b393446a300c3444fdbfabe9c8378c909f"
+    },
+    "record": {
+      "id": "industry-gd-hrss-2025-pdf-weisheng-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "广东2025工资价位：卫生专业技术人员中位9.14万，临床和口腔医师18.76万；放射科14.16万、超声科18.47万",
+      "summary": "「2.专业技术人员」分职业细类（万元/年，10%/25%/50%/75%/90% 五分位）：卫生专业技术人员 4.57/6.16/**9.14**/14.03/22.74；临床和口腔医师 6.84/10.89/**18.76**/30.19/45.71；内科医师中位15.59；外科医师19.20；儿科医师22.73；麻醉科医师19.62；**放射科医师14.16**；**超声科医师18.47**；临床检验科医师6.17；全科医师13.59；重症医学科医师18.62。",
+      "applicability": "**这是目前能拿到的唯一「分卫生职业」的官方工资价位，且有中位数与四分位**。但必须注意：①口径为**企业**（广东省人社厅企业薪酬调查，不含公立医院等事业单位）；②单位万元/年、税前应发；③为职业细类统计值，不对应任何具体医院或岗位级别。",
+      "relation": "direct",
+      "tags": [
+        "卫生专业技术人员",
+        "9.14万元",
+        "临床和口腔医师",
+        "放射科医师",
+        "超声科医师",
+        "分位值"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "广东省人力资源和社会保障厅",
+        "medical_topic": "卫生职业工资价位",
+        "medical_department": "放射科/超声科/内科/外科",
+        "region": "广东省",
+        "statistic_scope": "2025年广东省企业职工卫生职业细类工资价位（万元/年，10/25/50/75/90分位）",
+        "evidence_locator": "第一部分 一（五）2.专业技术人员 序号176-191"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "176 卫生专业技术人员 4\\.57 6\\.16 9\\.14 14\\.03 22\\.74 177 临床和口腔医师 6\\.84 10\\.89 18\\.76 30\\.19 45\\.71 178 内科医师 5\\.56 9\\.33 15\\.59 21\\.27 27\\.91 179 外科医师 7\\.82 11\\.74 19\\.20 28\\.97 48\\.19 180 儿科医师 4\\.10 12\\.91 22\\.73 31\\.00 31\\.98 181 妇产科医师 6\\.96 11\\.11 17\\.57 24\\.12 32\\.27 182 眼科医师 7\\.27 9\\.64 15\\.86 23\\.84 46\\.27 183 耳鼻咽喉科医师 7\\.78 12\\.69 13\\.09 15\\.98 26\\.51 184 口腔科医师 8\\.31 13\\.25 28\\.94 42\\.24 76\\.14 185 皮肤科医师 5\\.70 6\\.31 13\\.05 22\\.79 43\\.87 186 精神科医师 6\\.39 10\\.68 17\\.04 24\\.00 25\\.83 187 急诊科医师 8\\.99 14\\.21 21\\.89 25\\.21 35\\.61 188 康复科医师 5\\.42 8\\.17 14\\.50 30\\.57 31\\.93 189 麻醉科医师 8\\.28 9\\.60 19\\.62 28\\.21 36\\.43 190 放射科医师 7\\.14 10\\.63 14\\.16 26\\.97 32\\.10 191 超声科医师 6\\.70 10\\.80 18\\.47 25\\.83 31\\.94"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "salary_statistics（企业口径，不含事业单位/公立医院）"
+    ]
+  },
+  {
+    "source": {
+      "id": "gd-hrss-2025-pdf-weisheng",
+      "url": "https://hrss.gd.gov.cn/attachment/0/608/608923/4871322.pdf",
+      "organization": "广东省人力资源和社会保障厅",
+      "title": "2025年广东省人力资源市场工资价位及行业人工成本信息（PDF）：卫生专业技术人员9.14万元/年",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 封面标注「广东省人力资源和社会保障厅 2025 年 12 月」，仅到月份；网页发布日为 2026-03-18。故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/gd-hrss-wage-2025-pdf.pdf",
+      "sha256": "73860a30e73861eaab8953b0f27e95664b08417a362d1e70d3f4b0a41f94ec1f",
+      "captured_at": "2026-10-23T07:00:57.603Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-hosp/gd-hrss-wage-2025-pdf.txt",
+      "extracted_sha256": "3f587587d611d88195de7fa3f0f3e5b393446a300c3444fdbfabe9c8378c909f"
+    },
+    "record": {
+      "id": "industry-gd-hrss-2025-pdf-weisheng-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "industry",
+      "title": "广东2025工资价位：病案信息技师中位8.57万元/年（医疗卫生技术人员9.52万、影像技师9.60万、临床检验技师9.60万）",
+      "summary": "分职业细类（万元/年，五分位）：医疗卫生技术人员 5.28/6.97/**9.52**/12.74/16.88；影像技师 5.10/7.02/**9.60**/12.76/14.62；口腔医学技师中位12.98；临床检验技师 5.88/7.29/**9.60**/12.71/18.36；康复技师中位8.66；**病案信息技师 5.71/6.93/8.57/10.57/14.35**。",
+      "applicability": "**病案信息技师是医学/病案背景转医院数据岗最直接的职业代码**，此处给出其官方工资价位。限定：企业口径、税前、全省中位数，不含公立医院事业单位；实际医院病案科岗位通常按事业单位工资制度执行，数字会有差异。",
+      "relation": "direct",
+      "tags": [
+        "病案信息技师",
+        "8.57万元",
+        "医疗卫生技术人员",
+        "影像技师",
+        "临床检验技师",
+        "医院数据岗"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "广东省人力资源和社会保障厅",
+        "medical_topic": "医院技术岗工资价位",
+        "medical_department": "病案科/影像科/检验科",
+        "region": "广东省",
+        "statistic_scope": "2025年广东省企业职工医疗卫生技术类职业工资价位（万元/年）",
+        "evidence_locator": "第一部分 一（五）2.专业技术人员 序号212-217"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "212 医疗卫生技术人员 5\\.28 6\\.97 9\\.52 12\\.74 16\\.88 213 影像技师 5\\.10 7\\.02 9\\.60 12\\.76 14\\.62 214 口腔医学技师 10\\.00 10\\.49 12\\.98 21\\.15 22\\.76 215 临床检验技师 5\\.88 7\\.29 9\\.60 12\\.71 18\\.36 216 康复技师 4\\.85 6\\.68 8\\.66 11\\.71 15\\.63 217 病案信息技师 5\\.71 6\\.93 8\\.57 10\\.57 14\\.35"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "salary_statistics（企业口径，不含公立医院）"
+    ]
+  },
+  {
+    "source": {
+      "id": "gd-hrss-2025-pdf-weisheng",
+      "url": "https://hrss.gd.gov.cn/attachment/0/608/608923/4871322.pdf",
+      "organization": "广东省人力资源和社会保障厅",
+      "title": "2025年广东省人力资源市场工资价位及行业人工成本信息（PDF）：卫生专业技术人员9.14万元/年",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 封面标注「广东省人力资源和社会保障厅 2025 年 12 月」，仅到月份；网页发布日为 2026-03-18。故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/gd-hrss-wage-2025-pdf.pdf",
+      "sha256": "73860a30e73861eaab8953b0f27e95664b08417a362d1e70d3f4b0a41f94ec1f",
+      "captured_at": "2026-10-23T07:00:57.603Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-hosp/gd-hrss-wage-2025-pdf.txt",
+      "extracted_sha256": "3f587587d611d88195de7fa3f0f3e5b393446a300c3444fdbfabe9c8378c909f"
+    },
+    "record": {
+      "id": "industry-gd-hrss-2025-pdf-weisheng-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "广东2025工资价位：行业门类「卫生和社会工作」4.74/5.88/8.96/14.75/24.07 万元/年",
+      "summary": "「（一）分行业门类的工资价位」（万元/年，10%/25%/50%/75%/90%）：第17类「卫生和社会工作」4.74/5.88/**8.96**/14.75/24.07；对照第16类「教育」3.73/5.05/6.77/10.18/16.89、第18类「文化、体育和娱乐业」3.48/4.89/6.91/11.21/19.27。（同一官方来源共 2 条原文事实，字段：salary_statistics、statistical_definition；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "广东省级口径下「卫生和社会工作」行业门类的工资价位，可与国家统计局同行业口径互补（国家局为全国、非私营/私营分开；本表为广东、企业调查、五分位）。仍是**企业**口径，不含公立医院事业单位，不能当作医生收入。",
+      "relation": "direct",
+      "tags": [
+        "卫生和社会工作",
+        "8.96万元",
+        "行业门类",
+        "分位值",
+        "广东省",
+        "统计口径",
+        "企业薪酬调查",
+        "调查范围",
+        "不含事业单位",
+        "2024年数据"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "广东省人力资源和社会保障厅",
+        "medical_topic": "工资价位统计口径",
+        "region": "广东省",
+        "statistic_scope": "2025年广东省人力资源市场工资价位调查范围与时期",
+        "evidence_locator": "说明 一、调查范围"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "17 卫生和社会工作 4\\.74 5\\.88 8\\.96 14\\.75 24\\.07 18 文化、体育和娱乐业 3\\.48 4\\.89 6\\.91 11\\.21 19\\.27"
+      },
+      {
+        "field": "statistical_definition",
+        "pattern": "一、调查范围 本次薪酬调查采用指定样本的调查方式，依托人力资源社会保障部企业工资分配管 理综合软件系统，对全省 21 个地市样本企业的人工成本情况和在岗职工工资报酬情况 进行调查，调查对象涵盖农、林、牧、渔业，采矿业，制造业，电力、热力、燃气及水 生产和供应业等 18 个行业门类的企业和由调查企业支付工资的劳动者。调查的时期指 标为 2024 年 1 月 1 日至 12 月 31 日的数据。"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "statistical_definition"
+    ]
+  },
+  {
+    "source": {
+      "id": "gd-hrss-2025-pdf-weisheng",
+      "url": "https://hrss.gd.gov.cn/attachment/0/608/608923/4871322.pdf",
+      "organization": "广东省人力资源和社会保障厅",
+      "title": "2025年广东省人力资源市场工资价位及行业人工成本信息（PDF）：卫生专业技术人员9.14万元/年",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 封面标注「广东省人力资源和社会保障厅 2025 年 12 月」，仅到月份；网页发布日为 2026-03-18。故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/gd-hrss-wage-2025-pdf.pdf",
+      "sha256": "73860a30e73861eaab8953b0f27e95664b08417a362d1e70d3f4b0a41f94ec1f",
+      "captured_at": "2026-10-23T07:00:57.603Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-hosp/gd-hrss-wage-2025-pdf.txt",
+      "extracted_sha256": "3f587587d611d88195de7fa3f0f3e5b393446a300c3444fdbfabe9c8378c909f"
+    },
+    "record": {
+      "id": "industry-gd-hrss-2025-pdf-weisheng-guide-devices",
+      "role_id": "guide_devices",
+      "category": "industry",
+      "title": "广东2025工资价位：药学技术人员中位7.30万元/年，药师7.15万，中药师7.57万",
+      "summary": "分职业细类（万元/年，五分位）：药学技术人员 4.13/5.52/**7.30**/9.34/11.60；药师 3.94/5.11/**7.15**/9.24/11.83；中药师 4.92/6.82/**7.57**/9.40/11.09。（同一官方来源共 2 条原文事实，字段：salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于广东省企业口径药学类岗位工资价位。可用于说明药学（含临床药学）本科就业的企业侧收入量级；公立医院药剂科按事业单位工资制度，数字不同。",
+      "relation": "direct",
+      "tags": [
+        "药学技术人员",
+        "药师",
+        "7.15万元",
+        "中药师",
+        "广东省",
+        "影像技师",
+        "临床检验技师",
+        "口腔医学技师",
+        "医学技术类",
+        "9.60万元"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "广东省人力资源和社会保障厅",
+        "medical_topic": "医学技术类岗位工资价位",
+        "medical_department": "影像科/检验科/口腔科",
+        "region": "广东省",
+        "statistic_scope": "2025年广东省企业职工医学技术类职业工资价位（万元/年）",
+        "evidence_locator": "第一部分 一（五）2.专业技术人员 序号213-215"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "209 药学技术人员 4\\.13 5\\.52 7\\.30 9\\.34 11\\.60 12 序号 职业 工资水平（万元/年） 10% 25% 50% 75% 90% 210 药师 3\\.94 5\\.11 7\\.15 9\\.24 11\\.83 211 中药师 4\\.92 6\\.82 7\\.57 9\\.40 11\\.09"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "213 影像技师 5\\.10 7\\.02 9\\.60 12\\.76 14\\.62 214 口腔医学技师 10\\.00 10\\.49 12\\.98 21\\.15 22\\.76 215 临床检验技师 5\\.88 7\\.29 9\\.60 12\\.71 18\\.36"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "salary_statistics（企业口径，不含公立医院药剂科）",
+      "salary_statistics（企业口径，不含公立医院医技科）"
+    ]
+  },
+  {
+    "source": {
+      "id": "bdrm-2026-round2-gangwei",
+      "url": "https://www.pkuph.cn/rczpqs_details/29515.html",
+      "organization": "北京大学人民医院",
+      "title": "北京大学人民医院2026年招聘启事-第二轮：临床医师岗21科室、医疗技术岗5科室、工程岗（医学信息中心）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-02-11",
+      "publication_date_note": "页面标注「[ 2026-02-11 10:54 ]」，位于「医护团队 > 人才招聘 > 招聘启事」。"
+    },
+    "publication_pattern": "2026-02-11",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/bdrm-zhaopin-2026.raw",
+      "sha256": "5cce87ff711d8d09190bf9a228619e9d86f224fbc45a85d2ae6ad0e1ffa5020c",
+      "captured_at": "2026-10-23T07:09:48.134Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-bdrm-2026-round2-gangwei-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "北大人民医院2026第二轮招聘岗位：临床医师岗21个科室、医疗技术岗5个科室、工程岗为「医学信息中心」",
+      "summary": "「二、招聘岗位」：（一）临床医师岗（21个科室）：高血压科、肾内科、血液科、胃肠外科、乳腺外科、心外科、神经外科、骨肿瘤二科、医疗美容科/整形外科、麻醉科、妇产科、儿科、皮科、急诊内科、急诊外科、康复医学科、核医学科、检验科、病理科、临床试验机构、医学心理科；（二）医疗技术岗（5个科室）：血液科、内分泌科、康复医学科、放疗科、介入诊疗中心；（三）工程岗（1个科室）：医学信息中心。（同一官方来源共 2 条原文事实，字段：job_title、experience；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "**「工程岗」明确落在「医学信息中心」**——这是三甲医院把信息/数据类岗位单列为工程岗的直接证据，是医学背景转医院信息化的现实入口之一。仅适用于北大人民医院2026年第二轮招聘；该公告未列各岗位学历与专业要求，须进其招聘系统查看。",
+      "relation": "direct",
+      "tags": [
+        "医学信息中心",
+        "工程岗",
+        "2026年招聘",
+        "岗位分类",
+        "北大人民医院",
+        "医院信息科",
+        "招聘流程",
+        "网申",
+        "时间线",
+        "2026年",
+        "已过期"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学人民医院",
+        "medical_department": "医学信息中心",
+        "medical_topic": "医院招聘流程",
+        "region": "北京市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "二、招聘岗位 （一）临床医师岗（ 21个科室） 高血压科、肾内科、血液科、胃肠外科、乳腺外科、心外科、神经外科、骨肿瘤二科、医疗美容科 /整形外科、麻醉科、妇产科、儿科、皮科、急诊内科、急诊外科、康复医学科、核医学科、检验科、病理科、临床试验机构、医学心理科。 （二）医疗技术岗（ 5个科室） 血液科、内分泌科、康复医学科、放疗科、介入诊疗中心。 （三）工程岗（ 1个科室） 医学信息中心。"
+      },
+      {
+        "field": "experience",
+        "pattern": "三、招聘工作安排 1、2026年2月11日起，开通招聘网申系统，请在线投递简历； 2、报名方式 招聘网站入口：电脑登录北京大学人民医院官方招聘网站 https://pkuph\\.hotjob\\.cn/ 微信扫描二维码进入招聘系统： 3、2026年3月，科室初筛简历并组织面试； 4、2026年3月下旬-4月，医院组织考核及面试；"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "education（本页未列学历要求）",
+      "salary（未给薪资）",
+      "experience",
+      "valid_through（原文只给月份节点，未给具体截止日）"
+    ]
+  },
+  {
+    "source": {
+      "id": "bdrm-2026-round2-gangwei",
+      "url": "https://www.pkuph.cn/rczpqs_details/29515.html",
+      "organization": "北京大学人民医院",
+      "title": "北京大学人民医院2026年招聘启事-第二轮：临床医师岗21科室、医疗技术岗5科室、工程岗（医学信息中心）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-02-11",
+      "publication_date_note": "页面标注「[ 2026-02-11 10:54 ]」，位于「医护团队 > 人才招聘 > 招聘启事」。"
+    },
+    "publication_pattern": "2026-02-11",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/bdrm-zhaopin-2026.raw",
+      "sha256": "5cce87ff711d8d09190bf9a228619e9d86f224fbc45a85d2ae6ad0e1ffa5020c",
+      "captured_at": "2026-10-23T07:09:48.134Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "occupation-bdrm-2026-round2-gangwei-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "occupation",
+      "title": "北大人民医院科室与平台构成：47个临床科室、14个医技科室、6个科研平台、27个行政职能处室",
+      "summary": "医院现已成为集医疗、教学、科研、保健为一体的现代化综合性三级甲等医院，设有47个临床科室、14个医技科室、6个科研平台、27个行政职能处室；并拥有1个国家临床医学研究中心、1个国家医学中心、3个院士团队、26个国家卫生健康委临床重点专科等。",
+      "applicability": "三甲综合医院科室规模的**具体实例**（47临床/14医技/27行政），可与《三级医院评审标准（2025年版）》的前置科室要求（儿科、感染性疾病科、病理科、老年医学科、公共卫生科等）配合理解「应设科室」与「实际科室数」的关系。仅代表北大人民医院，不代表全国三甲平均水平。",
+      "relation": "related",
+      "tags": [
+        "科室构成",
+        "临床科室",
+        "医技科室",
+        "行政职能处室",
+        "三甲医院",
+        "北大人民医院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学人民医院",
+        "medical_topic": "医院科室构成",
+        "region": "北京市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "departments",
+        "pattern": "经过一个多世纪的发展，医院现已成为集医疗、教学、科研、保健为一体的现代化综合性三级甲等医院。设有 47个临床科室，14个医技科室，6个科研平台，27个行政职能处室。"
+      }
+    ],
+    "expected_fields": [
+      "departments",
+      "departments（未逐科列名医技科室）"
+    ]
+  },
+  {
+    "source": {
+      "id": "bdrm-2026-round2-gangwei",
+      "url": "https://www.pkuph.cn/rczpqs_details/29515.html",
+      "organization": "北京大学人民医院",
+      "title": "北京大学人民医院2026年招聘启事-第二轮：临床医师岗21科室、医疗技术岗5科室、工程岗（医学信息中心）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-02-11",
+      "publication_date_note": "页面标注「[ 2026-02-11 10:54 ]」，位于「医护团队 > 人才招聘 > 招聘启事」。"
+    },
+    "publication_pattern": "2026-02-11",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp/bdrm-zhaopin-2026.raw",
+      "sha256": "5cce87ff711d8d09190bf9a228619e9d86f224fbc45a85d2ae6ad0e1ffa5020c",
+      "captured_at": "2026-10-23T07:09:48.134Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-bdrm-2026-round2-gangwei-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "北大人民医院2026招聘：全面贯彻落实住培「两个同等对待」政策要求",
+      "summary": "招聘启事说明：根据总体发展和建设需要，公开招聘临床医师、医技等人员；我院在招聘过程中全面贯彻落实国家关于住院医师规范化培训「两个同等对待」的政策要求，竭诚欢迎各类人才加入。",
+      "applicability": "用于佐证「两个同等对待」在2026年三甲医院招聘中的实际落地表述（与浙大一院、北京协和互为印证）。原文只作政策宣示，未列具体认定细则；实际能否以住培合格证替代学历仍以医院审核为准。",
+      "relation": "direct",
+      "tags": [
+        "两个同等对待",
+        "住培",
+        "2026年招聘",
+        "政策落实",
+        "北大人民医院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学人民医院",
+        "medical_topic": "住培与招聘学历认定",
+        "region": "北京市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "major_restrictions",
+        "pattern": "我院在招聘过程中全面贯彻落实国家关于住院医师规范化培训 “两个同等对待”的政策要求，竭诚欢迎各类人才加入我们，共铸辉煌。"
+      }
+    ],
+    "expected_fields": [
+      "major_restrictions"
+    ]
+  }
+]

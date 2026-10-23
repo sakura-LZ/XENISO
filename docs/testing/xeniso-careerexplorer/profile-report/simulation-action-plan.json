@@ -1,0 +1,429 @@
+{
+  "version": "limen-r2-rules-v2",
+  "direction": {
+    "id": "clinical_data",
+    "name": "临床数据科学",
+    "onet": [
+      {
+        "code": "15-2051.02",
+        "name": "Clinical Data Managers",
+        "relationship": "direct"
+      },
+      {
+        "code": "15-2041.01",
+        "name": "Biostatisticians",
+        "relationship": "direct"
+      }
+    ],
+    "work_tasks": [
+      "定义临床数据字典",
+      "数据质量检查与统计建模",
+      "进行可重复的数据分析"
+    ],
+    "skills": [
+      "R或Python",
+      "统计",
+      "SQL",
+      "数据质量控制",
+      "研究设计"
+    ],
+    "courses": [
+      "概率统计",
+      "数据库",
+      "R/Python数据分析",
+      "流行病学",
+      "临床研究方法"
+    ],
+    "medical_transfer": [
+      "临床术语理解",
+      "病历数据结构",
+      "临床研究经验"
+    ],
+    "group_id": "med_informatics",
+    "group_name": "医学信息学"
+  },
+  "gaps": [
+    {
+      "skill": "R或Python",
+      "status": "已自述/待核实",
+      "evidence_refs": [
+        "user_profile.tech_skills[0]"
+      ],
+      "note": "名称匹配仅用于整理证据，不代表已掌握。"
+    },
+    {
+      "skill": "统计",
+      "status": "信息不足/待了解",
+      "evidence_refs": [],
+      "note": "尚未获得相关证据，不推断学习潜力。"
+    },
+    {
+      "skill": "SQL",
+      "status": "信息不足/待了解",
+      "evidence_refs": [],
+      "note": "尚未获得相关证据，不推断学习潜力。"
+    },
+    {
+      "skill": "数据质量控制",
+      "status": "信息不足/待了解",
+      "evidence_refs": [],
+      "note": "尚未获得相关证据，不推断学习潜力。"
+    },
+    {
+      "skill": "研究设计",
+      "status": "信息不足/待了解",
+      "evidence_refs": [],
+      "note": "尚未获得相关证据，不推断学习潜力。"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "course-1",
+      "title": "了解与练习：概率统计",
+      "why": "对应 临床数据科学 的编辑性课程路径，具体先修要求需核验。",
+      "source": "limen_direction_map:clinical_data",
+      "deliverable": "概率统计 的概念笔记与一个可复现练习",
+      "dependencies": [],
+      "priority": "基础准备",
+      "estimated_effort_range": null,
+      "stage": "学习阶段 1"
+    },
+    {
+      "id": "course-2",
+      "title": "了解与练习：数据库",
+      "why": "对应 临床数据科学 的编辑性课程路径，具体先修要求需核验。",
+      "source": "limen_direction_map:clinical_data",
+      "deliverable": "数据库 的概念笔记与一个可复现练习",
+      "dependencies": [
+        "course-1"
+      ],
+      "priority": "基础准备",
+      "estimated_effort_range": null,
+      "stage": "学习阶段 2"
+    },
+    {
+      "id": "course-3",
+      "title": "了解与练习：R/Python数据分析",
+      "why": "对应 临床数据科学 的编辑性课程路径，具体先修要求需核验。",
+      "source": "limen_direction_map:clinical_data",
+      "deliverable": "R/Python数据分析 的概念笔记与一个可复现练习",
+      "dependencies": [
+        "course-2"
+      ],
+      "priority": "基础准备",
+      "estimated_effort_range": null,
+      "stage": "学习阶段 3"
+    },
+    {
+      "id": "course-4",
+      "title": "了解与练习：流行病学",
+      "why": "对应 临床数据科学 的编辑性课程路径，具体先修要求需核验。",
+      "source": "limen_direction_map:clinical_data",
+      "deliverable": "流行病学 的概念笔记与一个可复现练习",
+      "dependencies": [
+        "course-3"
+      ],
+      "priority": "基础准备",
+      "estimated_effort_range": null,
+      "stage": "学习阶段 4"
+    },
+    {
+      "id": "course-5",
+      "title": "了解与练习：临床研究方法",
+      "why": "对应 临床数据科学 的编辑性课程路径，具体先修要求需核验。",
+      "source": "limen_direction_map:clinical_data",
+      "deliverable": "临床研究方法 的概念笔记与一个可复现练习",
+      "dependencies": [
+        "course-4"
+      ],
+      "priority": "基础准备",
+      "estimated_effort_range": null,
+      "stage": "学习阶段 5"
+    },
+    {
+      "id": "research",
+      "title": "设计一个小型研究复现",
+      "why": "通过实际活动了解“定义临床数据字典”是否愿意继续做。",
+      "source": "limen_direction_map:clinical_data",
+      "deliverable": "研究问题、公开或合成数据来源、方法、局限与可复现结果",
+      "dependencies": [
+        "course-5"
+      ],
+      "priority": "实践探索",
+      "estimated_effort_range": null,
+      "stage": "项目阶段"
+    },
+    {
+      "id": "admissions",
+      "title": "核验目标年份与路径的官方招生条件",
+      "why": "当前没有已核验招生条目，不能确认报考资格或统一考试科目。",
+      "source": "verifiedAdmissions:empty",
+      "deliverable": "官方 URL、招生年份、专业代码、资格要求、考试科目与核验日期",
+      "dependencies": [],
+      "priority": "并行核验",
+      "estimated_effort_range": null,
+      "stage": "现在开始"
+    },
+    {
+      "source": "limen_pathway_checklist:v1:统考",
+      "estimated_effort_range": null,
+      "stage": "升学准备（官方要求待核验）",
+      "id": "path-eligibility",
+      "title": "统考专属：核验专业资格与考试科目",
+      "why": "先确认目标项目当年的跨专业资格与科目，再决定备考内容；不统一假设408。",
+      "deliverable": "目标年份、专业代码、考试科目、跨专业资格和复试要求的官方链接核验表；未知项留空",
+      "dependencies": [
+        "admissions"
+      ],
+      "priority": "优先核验"
+    },
+    {
+      "source": "limen_pathway_checklist:v1:统考",
+      "estimated_effort_range": null,
+      "stage": "升学准备（官方要求待核验）",
+      "id": "path-materials",
+      "title": "统考专属：整理报名与复试准备清单",
+      "why": "准备内容以项目官方要求为准，已有课程和项目只能作为材料线索。",
+      "deliverable": "已核验的报名与复试材料清单、待补证据及个人准备任务",
+      "dependencies": [
+        "path-eligibility"
+      ],
+      "priority": "按官方要求准备"
+    },
+    {
+      "source": "limen_pathway_checklist:v1:统考",
+      "estimated_effort_range": null,
+      "stage": "升学准备（官方要求待核验）",
+      "id": "path-window",
+      "title": "统考专属：核验报名与考核窗口",
+      "why": "没有官方时间不能倒排具体月份，也不能保证赶上目标年份。",
+      "deliverable": "报名、确认、考试与复试的官方时间及来源；未公布项目标待核验",
+      "dependencies": [
+        "admissions"
+      ],
+      "priority": "现在开始"
+    }
+  ],
+  "experience": {
+    "favorite_operation": "simulation：检查重复记录",
+    "least_favorite_operation": "simulation：暂无",
+    "willingness_for_3_hours": 3,
+    "followup_question": "simulation：怎样跟进核对？"
+  },
+  "planning_input": null,
+  "alternative_directions": [],
+  "interest": {
+    "source": "onet_live",
+    "scores": [
+      {
+        "code": "realistic",
+        "title": "realistic",
+        "score": 10
+      },
+      {
+        "code": "investigative",
+        "title": "investigative",
+        "score": 12
+      },
+      {
+        "code": "artistic",
+        "title": "artistic",
+        "score": 14
+      },
+      {
+        "code": "social",
+        "title": "social",
+        "score": 16
+      },
+      {
+        "code": "enterprising",
+        "title": "enterprising",
+        "score": 18
+      },
+      {
+        "code": "conventional",
+        "title": "conventional",
+        "score": 20
+      }
+    ],
+    "onet_version": "mock=true-audit",
+    "api_version": "mock=true-audit",
+    "returned_at": "2026-10-22T00:00:00Z"
+  },
+  "experience_relevance": "本次为临床数据分析师的项目练习，仅覆盖部分教学活动；不能据此判断整个方向的适配性或执业资格。",
+  "planning_ready": true,
+  "formal_ready": false,
+  "planning": {
+    "target_year": 2028,
+    "weekly_hours": 4,
+    "pathway": "统考",
+    "official_deadlines_verified": false,
+    "milestones": [
+      {
+        "stage": "现在开始",
+        "task_ids": [
+          "admissions",
+          "path-eligibility",
+          "path-window"
+        ],
+        "exit_condition": "记录已核实来源与未知项；若资格或窗口不满足，先调整目标或路径"
+      },
+      {
+        "stage": "基础准备",
+        "task_ids": [
+          "course-1",
+          "course-2",
+          "course-3",
+          "course-4",
+          "course-5"
+        ],
+        "exit_condition": "按依赖完成概念笔记与可复现练习，用实际耗时调整预算"
+      },
+      {
+        "stage": "实践与复盘",
+        "task_ids": [
+          "research"
+        ],
+        "exit_condition": "提交小型复现成果、方法局限与继续探索意愿"
+      },
+      {
+        "stage": "申报准备",
+        "task_ids": [
+          "path-materials"
+        ],
+        "exit_condition": "逐项对照官方材料与截止时间；未核验时不视为已具备申请资格"
+      }
+    ],
+    "weekly_budget": [
+      "将本人可用时间分成基础学习、一次可交付练习和复盘；比例由本人调整",
+      "每周记录实际耗时，再决定是否推进到下一依赖阶段"
+    ],
+    "horizon": "目标年份为 2028；当前年份为 2026。具体招生日期未核验，暂不倒排到月份。"
+  },
+  "risks": [
+    "课程缺少经验证的工作量范围，无法判断是否能在目标年份前完成；不承诺进度"
+  ],
+  "simulation": false,
+  "status": "rule_based_draft_not_formal_ai_report",
+  "selected_by": "user_explicit_choice",
+  "profile_planning": {
+    "transition_year": 2028,
+    "weekly_hours": 4,
+    "pathway": "统考"
+  },
+  "weekly_allocation_by_user": {
+    "foundation": 2,
+    "practice": 1,
+    "review": 1
+  },
+  "alternatives": [],
+  "experience_card": {
+    "version": "3.0",
+    "simulation": true,
+    "scenario_id": "direction_workbench",
+    "template_id": "clinical_data",
+    "template_version": "e1-1",
+    "source": "curated_template",
+    "direction_id": "clinical_data",
+    "role": "临床数据分析师",
+    "mode": "project",
+    "choices": [
+      "1",
+      "1",
+      "1"
+    ],
+    "outputs": [
+      "simulation：第一步已经核对来源和操作结果。",
+      "simulation：第二步记录实际结果与取舍。",
+      "simulation：第三步需要进一步核查未知事项。"
+    ],
+    "reflection": {
+      "favorite_operation": "simulation：检查重复记录",
+      "least_favorite_operation": "simulation：暂无",
+      "willingness_for_3_hours": 3,
+      "followup_question": "simulation：怎样跟进核对？"
+    },
+    "completed_at": "2026-10-22T00:00:00Z",
+    "transcript": [],
+    "results": [
+      {
+        "metrics": {
+          "记录数": 6,
+          "非缺失数": 4,
+          "缺失数": 2,
+          "均值": 6
+        },
+        "details": [
+          "处理重复记录：每个 ID 保留第一条",
+          "01 / A / 4",
+          "02 / A / 缺失",
+          "03 / B / 10",
+          "04 / B / 8",
+          "05 / B / 缺失",
+          "06 / A / 2"
+        ]
+      },
+      {
+        "metrics": {
+          "记录数": 4,
+          "非缺失数": 4,
+          "缺失数": 0,
+          "均值": 6
+        },
+        "details": [
+          "处理重复记录：每个 ID 保留第一条",
+          "处理缺失值：仅保留完整记录",
+          "01 / A / 4",
+          "03 / B / 10",
+          "04 / B / 8",
+          "06 / A / 2"
+        ]
+      },
+      {
+        "metrics": {
+          "记录数": 2,
+          "非缺失数": 2,
+          "缺失数": 0,
+          "均值": 3
+        },
+        "details": [
+          "处理重复记录：每个 ID 保留第一条",
+          "处理缺失值：仅保留完整记录",
+          "选择统计范围：A 组",
+          "01 / A / 4",
+          "06 / A / 2"
+        ]
+      }
+    ],
+    "feedback": [
+      {
+        "stage": "处理重复记录",
+        "evidence": "simulation：第一步已经核对来源和操作结果。",
+        "suggestion": "对照操作结果核查解释，说明哪些内容仍需验证。"
+      },
+      {
+        "stage": "处理缺失值",
+        "evidence": "simulation：第二步记录实际结果与取舍。",
+        "suggestion": "对照操作结果核查解释，说明哪些内容仍需验证。"
+      },
+      {
+        "stage": "选择统计范围",
+        "evidence": "simulation：第三步需要进一步核查未知事项。",
+        "suggestion": "对照操作结果核查解释，说明哪些内容仍需验证。"
+      }
+    ],
+    "limitation": "simulation教学操作，不评定专业能力或临床资格。"
+  },
+  "sources": [
+    "user_profile",
+    "limen_direction_map",
+    "experience_feedback",
+    "onet_mini_ip",
+    "limen_pathway_checklist:v1:统考"
+  ],
+  "limitations": [
+    "AI 未生成",
+    "招生数据为空，均需核验",
+    "升学任务为编辑性核验清单，不是官方招生要求"
+  ]
+}

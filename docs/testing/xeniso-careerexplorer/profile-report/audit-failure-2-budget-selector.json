@@ -1,0 +1,22 @@
+{
+  "simulation": true,
+  "checks": [
+    "P1首次无继续/已保存/假兴趣分数",
+    "P1读取失败显式错误",
+    "P1重试后真实状态标签",
+    "P2删除后焦点回到相邻输入",
+    "P2保存发送当前字段",
+    "P2保存后恢复",
+    "P3返回上一组答案保持",
+    "P3切换焦点至组标题",
+    "P3提交失败保留30题",
+    "P3保存确认后才显示结果入口",
+    "R1六维为实际样本分数",
+    "R1方向为具体图而非编号占位",
+    "R1桌面无整页溢出",
+    "R1保留AI失败",
+    "R2展示实际保存操作结果"
+  ],
+  "errors": [],
+  "error": "Error: locator.fill: Error: strict mode violation: getByLabel('基础学习') resolved to 3 elements:\n    1) <input min=\"0\" max=\"168\" value=\"0\" step=\"0.5\" class=\"field\" type=\"number\"/> aka getByRole('spinbutton', { name: '基础学习 小时' })\n    2) <div role=\"img\" class=\"pr-budget-track\" aria-label=\"每周分配：基础学习0小时，小型练习0小时，复盘与核验0小时；可用4小时\">…</div> aka locator('#plan-conditions').getByRole('img', { name: '每周分配：基础学习0小时，小型练习0小时，复盘与核验0' })\n    3) <div role=\"img\" class=\"pr-budget-track\" aria-label=\"每周分配：基础学习0小时，小型练习0小时，复盘与核验0小时；可用4小时\">…</div> aka locator('#plan-budget').getByRole('img', { name: '每周分配：基础学习0小时，小型练习0小时，复盘与核验0' })\n\nCall log:\n\u001b[2m  - waiting for getByLabel('基础学习')\u001b[22m\n"
+}

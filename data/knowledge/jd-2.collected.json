@@ -1,0 +1,668 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T10:20:06.130Z",
+  "sources": [
+    {
+      "id": "mindray-product-ivd",
+      "url": "https://mindray.zhiye.com/social/jobs",
+      "organization": "迈瑞医疗（深圳迈瑞生物医疗电子股份有限公司）",
+      "title": "高级产品市场专员（体外诊断产品）(J19038)",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-01",
+      "publication_date_note": "列表页该岗位行逐字显示「2026-09-01 发布」；抓取时为在招状态。"
+    },
+    {
+      "id": "ui-product-mr",
+      "url": "https://united-imaging.zhiye.com/social/jobs",
+      "organization": "联影医疗（上海联影医疗科技股份有限公司）",
+      "title": "磁共振上游产品市场-YQ25-033(J17308)",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-06-30",
+      "publication_date_note": "列表页该岗位行逐字显示「2025-06-30 发布」；抓取时为在招状态。"
+    },
+    {
+      "id": "zsy-ai-center-39515",
+      "url": "https://www.fahsysu.org.cn/article/39515",
+      "organization": "中山大学附属第一医院（医疗大数据与人工智能研究中心）",
+      "title": "中山大学附属第一医院医疗大数据与人工智能研究中心专职科研人员招聘启事",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-03",
+      "publication_date_note": "正文逐字显示「2026-09-03」。"
+    },
+    {
+      "id": "huaxi-info-84106",
+      "url": "https://www.cd120.com/public/notice/recruit/84106.html",
+      "organization": "四川大学华西医院（信息中心）",
+      "title": "华西医院信息中心招聘启事",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-12-26",
+      "publication_date_note": "正文逐字显示「2024.12.26」。"
+    },
+    {
+      "id": "huaxi-bingan-71906",
+      "url": "https://www.cd120.com/public/notice/recruit/71906.html",
+      "organization": "四川大学华西医院（医务部病案科）",
+      "title": "医务部病案科招聘公告（病案疾病编码岗）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2023-02-13",
+      "publication_date_note": "正文逐字显示「2023.02.13」。"
+    },
+    {
+      "id": "rjh-74667",
+      "url": "https://www.rjh.com.cn/2018RJPortal/doc/2026/10/16/74667.shtml",
+      "organization": "上海交通大学医学院附属瑞金医院",
+      "title": "瑞金医院医疗、科研、医技岗位招聘启事",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-16",
+      "publication_date_note": "正文逐字显示「发布时间： 2026-10-16」及落款「2026年 10 月 16 日」。"
+    }
+  ],
+  "records": [
+    {
+      "id": "recruitment-mindray-product-ivd-medical-ai-pm",
+      "source_id": "mindray-product-ivd",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "迈瑞医疗招聘岗位：高级产品市场专员（体外诊断产品）",
+      "summary": "迈瑞医疗公开招聘「高级产品市场专员（体外诊断产品）」，工作地点辽宁省沈阳市。（同一官方来源共 7 条原文事实，字段：job_title、education、experience、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次在招岗位名称与地点；薪资原文未写。",
+      "relation": "direct",
+      "tags": [
+        "迈瑞",
+        "产品市场专员",
+        "体外诊断",
+        "本科",
+        "医学类",
+        "医学检验技术",
+        "专业优先",
+        "5年",
+        "经验",
+        "工作职责",
+        "营销策略",
+        "专家平台",
+        "培训",
+        "国际产品市场",
+        "3年",
+        "医疗器械",
+        "市场经验",
+        "产品管理",
+        "需求管理",
+        "推广"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "高级产品市场专员（体外诊断产品）(J19038)",
+          "quote": "高级产品市场专员（体外诊断产品）(J19038)",
+          "start": 959,
+          "end": 983
+        },
+        {
+          "field": "job_title",
+          "value": "国际产品市场专员(J18915)",
+          "quote": "国际产品市场专员(J18915)",
+          "start": 1014,
+          "end": 1030
+        },
+        {
+          "field": "education",
+          "value": "1. 3年以上工作经验，本科及以上学历，医疗器械行业销售/市场经验优先，有除颤、按压机销售或市场背景优先。",
+          "quote": "1. 3年以上工作经验，本科及以上学历，医疗器械行业销售/市场经验优先，有除颤、按压机销售或市场背景优先。",
+          "start": 1259,
+          "end": 1312
+        },
+        {
+          "field": "technical_requirements",
+          "value": "工作职责 1. 参与除颤、按压机、心电产品管理，包括但不限于业务分析、上市推广、内部外市场动态收集与整理、竞争分析等 2. 与研发部门协调，有效进行需求管理，收集和分析市场信息，满足客户需求，保持产品竞争力 3. 与分公司及大区市场进行业务沟通，确保产品推广策略在区域市场的落地，为区域销售和分销商提供技术支持和培训。 4. 组织并参加展会、研讨会，并就区域市场产品推广材料提供建议。",
+          "quote": "工作职责 1. 参与除颤、按压机、心电产品管理，包括但不限于业务分析、上市推广、内部外市场动态收集与整理、竞争分析等 2. 与研发部门协调，有效进行需求管理，收集和分析市场信息，满足客户需求，保持产品竞争力 3. 与分公司及大区市场进行业务沟通，确保产品推广策略在区域市场的落地，为区域销售和分销商提供技术支持和培训。 4. 组织并参加展会、研讨会，并就区域市场产品推广材料提供建议。",
+          "start": 1061,
+          "end": 1253
+        }
+      ],
+      "missing_fields": [
+        "salary",
+        "major_restrictions",
+        "experience"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "df4f5deeaddd4efc07b03a45fd23b7e5b08159b67bffe5177f670c9cb5c5b0a3",
+      "collected_at": "2026-10-23T07:05:41.701Z",
+      "verified_at": "2026-10-23T10:20:06.086Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "迈瑞医疗",
+        "region": "广东省深圳市",
+        "medical_department": "产品市场",
+        "evidence_locator": "国际产品市场专员(J18915) · 该岗位详情在该页点击展开 · 页面无独立岗位 URL"
+      }
+    },
+    {
+      "id": "recruitment-ui-product-mr-medical-ai-pm",
+      "source_id": "ui-product-mr",
+      "role_id": "medical_ai_pm",
+      "category": "recruitment",
+      "title": "联影医疗招聘岗位：磁共振上游产品市场",
+      "summary": "联影医疗公开招聘「磁共振上游产品市场」，工作地点上海市（研发）。（同一官方来源共 7 条原文事实，字段：job_title、major_restrictions、technical_requirements、education、experience；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次在招岗位名称与地点；薪资原文未写。",
+      "relation": "direct",
+      "tags": [
+        "联影",
+        "磁共振",
+        "产品市场",
+        "硕士",
+        "临床医学",
+        "专业优先",
+        "MR",
+        "工作职责",
+        "临床优势",
+        "临床应用",
+        "市场策略",
+        "产品专家",
+        "售前",
+        "本科",
+        "影像学",
+        "核医学",
+        "生物医学",
+        "3年",
+        "医院影像科",
+        "经验",
+        "投标",
+        "展点医院"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "磁共振上游产品市场-YQ25-033(J17308)",
+          "quote": "磁共振上游产品市场-YQ25-033(J17308)",
+          "start": 585,
+          "end": 611
+        },
+        {
+          "field": "job_title",
+          "value": "产品专家（重庆/云南）-G25-001(J16803)",
+          "quote": "产品专家（重庆/云南）-G25-001(J16803)",
+          "start": 951,
+          "end": 978
+        },
+        {
+          "field": "education",
+          "value": "1.学历专业：本科及以上学历，影像学/核医学/生物医学相关专业优先；",
+          "quote": "1.学历专业：本科及以上学历，影像学/核医学/生物医学相关专业优先；",
+          "start": 1275,
+          "end": 1309
+        },
+        {
+          "field": "experience",
+          "value": "2.工作经验：三年以上医院影像科或影像设备公司的工作经验；",
+          "quote": "2.工作经验：三年以上医院影像科或影像设备公司的工作经验；",
+          "start": 1310,
+          "end": 1339
+        },
+        {
+          "field": "technical_requirements",
+          "value": "工作职责 1. 提供售前产品支持（演讲，制作资料，制作标书，参与投标等），与销售同事配合，促进产品销量和市场份额，完成年度销售目标； 2. 发掘潜在客户和潜在项目，追踪、支持项目进展，维护与重点客户的良好关系； 3. 收集、分析市场信息，参与制定、执行市场策略； 4. 支持各种市场推广活动，如展览会，讨论会和研讨会等； 5. 为销售同事提供产品知识和市场策略等培训； 6. 制作市场材料、销售工具等，支持销售同事； 7. 与临床应用、销售和客服同事合作，建设和管理展点医院。与销售、临床应用同事配合，接待潜在客户来公司或展点医院参观；",
+          "quote": "工作职责 1. 提供售前产品支持（演讲，制作资料，制作标书，参与投标等），与销售同事配合，促进产品销量和市场份额，完成年度销售目标； 2. 发掘潜在客户和潜在项目，追踪、支持项目进展，维护与重点客户的良好关系； 3. 收集、分析市场信息，参与制定、执行市场策略； 4. 支持各种市场推广活动，如展览会，讨论会和研讨会等； 5. 为销售同事提供产品知识和市场策略等培训； 6. 制作市场材料、销售工具等，支持销售同事； 7. 与临床应用、销售和客服同事合作，建设和管理展点医院。与销售、临床应用同事配合，接待潜在客户来公司或展点医院参观；",
+          "start": 1001,
+          "end": 1269
+        }
+      ],
+      "missing_fields": [
+        "salary",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "19bce8312d8c65a62ac51197c725160cc0223640ee92f8b6ac0f071a229590f9",
+      "collected_at": "2026-10-23T07:05:41.706Z",
+      "verified_at": "2026-10-23T10:20:06.098Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "联影医疗",
+        "region": "重庆市、云南省",
+        "medical_department": "产品/售前",
+        "evidence_locator": "产品专家（重庆/云南）-G25-001(J16803) · 该岗位详情在该页点击展开 · 页面无独立岗位 URL"
+      }
+    },
+    {
+      "id": "recruitment-ui-product-mr-guide-devices",
+      "source_id": "ui-product-mr",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "联影医疗招聘岗位：技术支持工程师",
+      "summary": "联影医疗公开招聘「技术支持工程师」，工作地点北京市、上海市。（同一官方来源共 3 条原文事实，字段：job_title、education、experience；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次在招岗位名称与地点；薪资原文未写。",
+      "relation": "direct",
+      "tags": [
+        "联影",
+        "技术支持工程师",
+        "本科",
+        "电气工程",
+        "自动化",
+        "专业",
+        "3年",
+        "电源行业",
+        "经验"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "技术支持工程师(J19493)",
+          "quote": "技术支持工程师(J19493)",
+          "start": 177,
+          "end": 192
+        },
+        {
+          "field": "education",
+          "value": "1、本科及以上学历，电气工程/电力电子与电力传动/自动化等相关专业；",
+          "quote": "1、本科及以上学历，电气工程/电力电子与电力传动/自动化等相关专业；",
+          "start": 513,
+          "end": 547
+        },
+        {
+          "field": "experience",
+          "value": "2、至少3年电源行业相关工作经验，有半导体行业经验的优先；",
+          "quote": "2、至少3年电源行业相关工作经验，有半导体行业经验的优先；",
+          "start": 548,
+          "end": 577
+        }
+      ],
+      "missing_fields": [
+        "salary",
+        "major_restrictions"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "bc981fd4f388711ccb18da2a7973e1a3004f045d3f49feef4ae757b29fcacdd9",
+      "collected_at": "2026-10-23T07:05:41.711Z",
+      "verified_at": "2026-10-23T10:20:06.102Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "联影医疗",
+        "region": "北京市、上海市",
+        "medical_department": "售后",
+        "evidence_locator": "技术支持工程师(J19493) · 该岗位详情在该页点击展开 · 页面无独立岗位 URL"
+      }
+    },
+    {
+      "id": "recruitment-zsy-ai-center-39515-guide-clinical-data",
+      "source_id": "zsy-ai-center-39515",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "中山大学附属第一医院医疗大数据与人工智能研究中心招聘专职科研人员",
+      "summary": "中山大学附属第一医院医疗大数据与人工智能研究中心公开诚聘专职科研人员，含信息安全、科研、行政、数据处理四类岗位。（同一官方来源共 11 条原文事实，字段：job_title、major_restrictions、technical_requirements、experience、salary、job_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该公告的招聘主体与岗位大类；薪资见同页薪酬条款（无具体金额）。",
+      "relation": "direct",
+      "tags": [
+        "中山一院",
+        "医疗大数据",
+        "人工智能",
+        "科研人员",
+        "研究助理",
+        "科研方向",
+        "医学",
+        "硕士",
+        "数据科学",
+        "医学伦理",
+        "SAS",
+        "Python",
+        "统计工具",
+        "技能",
+        "科研申报",
+        "写作",
+        "基金",
+        "科研助手",
+        "数据处理",
+        "医学信息学",
+        "计算机",
+        "统计学",
+        "专业",
+        "SQL",
+        "数据清洗",
+        "算法",
+        "医疗信息化",
+        "HIS",
+        "病案统计",
+        "经验"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "中山大学附属第一医院医疗大数据与人工智能研究中心专职科研人员招聘启事",
+          "quote": "中山大学附属第一医院医疗大数据与人工智能研究中心专职科研人员招聘启事",
+          "start": 0,
+          "end": 34
+        },
+        {
+          "field": "job_title",
+          "value": "2、研究助理 （科研方向） ，名额： 1名，岗位要求如下：",
+          "quote": "2、研究助理 （科研方向） ，名额： 1名，岗位要求如下：",
+          "start": 1651,
+          "end": 1680
+        },
+        {
+          "field": "major_restrictions",
+          "value": "取得硕士及以上学位，英语、医学、统计学、公共卫生、流行病、数据科学、人工智能、医学伦理、医学人文等相关专业；",
+          "quote": "取得硕士及以上学位，英语、医学、统计学、公共卫生、流行病、数据科学、人工智能、医学伦理、医学人文等相关专业；",
+          "start": 1685,
+          "end": 1739
+        },
+        {
+          "field": "technical_requirements",
+          "value": "熟练掌握一种及以上统计分析工具，如SAS、Python等。",
+          "quote": "熟练掌握一种及以上统计分析工具，如SAS、Python等。",
+          "start": 1913,
+          "end": 1942
+        },
+        {
+          "field": "experience",
+          "value": "熟悉科研项目申报流程，具备较强的科研写作和文字表达能力",
+          "quote": "熟悉科研项目申报流程，具备较强的科研写作和文字表达能力",
+          "start": 1783,
+          "end": 1810
+        },
+        {
+          "field": "job_title",
+          "value": "4、科研助手（数据处理方向），名额：3名，岗位要求如下：",
+          "quote": "4、科研助手（数据处理方向），名额：3名，岗位要求如下：",
+          "start": 2201,
+          "end": 2229
+        },
+        {
+          "field": "major_restrictions",
+          "value": "计算机、统计学、医学信息学等相关专业；",
+          "quote": "计算机、统计学、医学信息学等相关专业；",
+          "start": 2249,
+          "end": 2268
+        },
+        {
+          "field": "technical_requirements",
+          "value": "精通SQL及Python，具备扎实的数据清洗与算法编写能力，熟练使用Excel/PPT；",
+          "quote": "精通SQL及Python，具备扎实的数据清洗与算法编写能力，熟练使用Excel/PPT；",
+          "start": 2273,
+          "end": 2317
+        },
+        {
+          "field": "experience",
+          "value": "有医疗信息化、HIS系统数据处理或病案统计经验者优先；",
+          "quote": "有医疗信息化、HIS系统数据处理或病案统计经验者优先；",
+          "start": 2322,
+          "end": 2349
+        },
+        {
+          "field": "salary",
+          "value": "薪酬按医院同类岗位标准执行，并按国家政策规定办理社会保险和住房公积金。",
+          "quote": "薪酬按医院同类岗位标准执行，并按国家政策规定办理社会保险和住房公积金。",
+          "start": 2414,
+          "end": 2449
+        },
+        {
+          "field": "job_type",
+          "value": "科研助手岗位按中山大学附属第一医院相关管理规定以劳务派遣方式聘用。",
+          "quote": "科研助手岗位按中山大学附属第一医院相关管理规定以劳务派遣方式聘用。",
+          "start": 2459,
+          "end": 2492
+        }
+      ],
+      "missing_fields": [
+        "salary（仅定性条款，无金额）",
+        "education",
+        "salary_amount（原文无金额）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "1224cc3ce19d18818c8e0a6066aa4ec3fcc0395387f48ea084485b806bf8e6c2",
+      "collected_at": "2026-10-23T07:10:15.678Z",
+      "verified_at": "2026-10-23T10:20:06.110Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学附属第一医院",
+        "region": "广东省广州市",
+        "medical_department": "医疗大数据与人工智能研究中心",
+        "evidence_locator": "医院官网招聘公告正文「【招聘岗位】」第1–4项与「【薪酬待遇】/【用工形式】」"
+      }
+    },
+    {
+      "id": "recruitment-huaxi-info-84106-guide-health-systems",
+      "source_id": "huaxi-info-84106",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "华西医院信息中心招聘3名工作人员",
+      "summary": "四川大学华西医院信息中心因发展需要，面向社会公开招聘工作人员3名。（同一官方来源共 3 条原文事实，字段：employer、education、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该次招聘的用人单位与人数。",
+      "relation": "direct",
+      "tags": [
+        "华西",
+        "信息中心",
+        "3名",
+        "硕士",
+        "学历",
+        "AI工程师",
+        "临床医学",
+        "软件开发",
+        "数据统计",
+        "专业"
+      ],
+      "facts": [
+        {
+          "field": "employer",
+          "value": "因发展需要，四川大学华西医院信息中心面向社会招聘以下工作人员3名。详情如下：",
+          "quote": "因发展需要，四川大学华西医院信息中心面向社会招聘以下工作人员3名。详情如下：",
+          "start": 398,
+          "end": 436
+        },
+        {
+          "field": "education",
+          "value": "6. 具有硕士以上学位，政治立场坚定",
+          "quote": "6. 具有硕士以上学位，政治立场坚定",
+          "start": 795,
+          "end": 813
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1.专业背景要求：软件开发相关、数据统计相关、临床医学相关。三类之一均可。",
+          "quote": "1.专业背景要求：软件开发相关、数据统计相关、临床医学相关。三类之一均可。",
+          "start": 1073,
+          "end": 1110
+        }
+      ],
+      "missing_fields": [
+        "salary",
+        "city（原文未逐字写城市）"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "d709517d5fb0eb747609d312b59b9b7581313897ba013fac79032ad1f3410d67",
+      "collected_at": "2026-10-23T07:10:15.690Z",
+      "verified_at": "2026-10-23T10:20:06.115Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "region": "四川省成都市",
+        "medical_department": "信息中心",
+        "evidence_locator": "招聘启事正文：岗位表与「医学信息工程师」应聘要求"
+      }
+    },
+    {
+      "id": "recruitment-huaxi-bingan-71906-guide-clinical-data",
+      "source_id": "huaxi-bingan-71906",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "华西病案科招聘岗位：病案疾病编码岗",
+      "summary": "华西医院医务部病案科招聘「病案疾病编码岗」，职责为通过数字化扫描病案完成病案首页诊疗信息编码、病历首页审核、疾病分类培训与字典库维护。（同一官方来源共 2 条原文事实，字段：job_title、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该岗位名称与职责概要；病案数据岗是医学背景可进入的数据方向。",
+      "relation": "direct",
+      "tags": [
+        "病案科",
+        "疾病编码",
+        "病案首页",
+        "硕士",
+        "医学背景",
+        "英语六级",
+        "数据库"
+      ],
+      "facts": [
+        {
+          "field": "job_title",
+          "value": "病案疾病编码岗 病案科 1. 每日通过调取数字化扫描病案完成病案首页诊疗信息的编码工作，尽可能做到准确无误，不断提高编码正确率",
+          "quote": "病案疾病编码岗 病案科 1. 每日通过调取数字化扫描病案完成病案首页诊疗信息的编码工作，尽可能做到准确无误，不断提高编码正确率",
+          "start": 420,
+          "end": 483
+        },
+        {
+          "field": "education",
+          "value": "1.硕士及以上学历，有良好的医学背景； 2.熟练掌握各类办公软件及数据库管理软件； 3.具良好的英文读写能力，通过国家英语六级考试；",
+          "quote": "1.硕士及以上学历，有良好的医学背景； 2.熟练掌握各类办公软件及数据库管理软件； 3.具良好的英文读写能力，通过国家英语六级考试；",
+          "start": 674,
+          "end": 740
+        }
+      ],
+      "missing_fields": [
+        "salary",
+        "city",
+        "technical_requirements"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "e4f86c8a5c2778946ff9a307828379737c8d63ce52da2928d04edbdf31b7ef05",
+      "collected_at": "2026-10-23T07:10:15.695Z",
+      "verified_at": "2026-10-23T10:20:06.123Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "medical_department": "医务部病案科",
+        "evidence_locator": "公告正文：岗位职责表与「应聘要求」"
+      }
+    },
+    {
+      "id": "recruitment-rjh-74667-guide-devices",
+      "source_id": "rjh-74667",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "瑞金医院实验室技术员：硕士及以上，生物学/临床工程技术等专业",
+      "summary": "伤骨科研究所实验室技术员要求硕士及以上学历，生物学、临床工程技术等相关专业。（同一官方来源共 2 条原文事实，字段：education、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "学历与专业范围；含「临床工程技术」这一医工交叉专业。",
+      "relation": "related",
+      "tags": [
+        "硕士",
+        "临床工程技术",
+        "生物学",
+        "实验室技术员",
+        "博士",
+        "生物医学工程",
+        "科研助理"
+      ],
+      "facts": [
+        {
+          "field": "education",
+          "value": "上海市 伤骨科研究所 实验室技术员 嘉定院区 1、 硕士 及以上学历；生物学、临床工程技术等相关专业；",
+          "quote": "上海市 伤骨科研究所 实验室技术员 嘉定院区 1、 硕士 及以上学历；生物学、临床工程技术等相关专业；",
+          "start": 1032,
+          "end": 1083
+        },
+        {
+          "field": "major_restrictions",
+          "value": "1、博士 学历学位 ；遗传学、分子生物学、细胞生物学、生物化学、药学、生物医学工程、生物医用材料、感染学等相关专业；有博士后经历优先考虑；",
+          "quote": "1、博士 学历学位 ；遗传学、分子生物学、细胞生物学、生物化学、药学、生物医学工程、生物医用材料、感染学等相关专业；有博士后经历优先考虑；",
+          "start": 772,
+          "end": 841
+        }
+      ],
+      "missing_fields": [
+        "salary"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "641240d8d58abe7f5f5369929bf6021732e83d8ffcfc4860db77fd8c2854613f",
+      "collected_at": "2026-10-23T07:10:15.705Z",
+      "verified_at": "2026-10-23T10:20:06.128Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学医学院附属瑞金医院",
+        "region": "上海市",
+        "medical_department": "伤骨科研究所",
+        "evidence_locator": "正文（二）其他 岗位表：实验室技术员 / 科研助理（基础研究类）"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "mindray-product-ivd",
+      "url": "https://mindray.zhiye.com/social/jobs",
+      "at": "2026-10-23T07:05:41.701Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "major_restrictions",
+        "experience"
+      ]
+    },
+    {
+      "source_id": "ui-product-mr",
+      "url": "https://united-imaging.zhiye.com/social/jobs",
+      "at": "2026-10-23T07:05:41.706Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "ui-product-mr",
+      "url": "https://united-imaging.zhiye.com/social/jobs",
+      "at": "2026-10-23T07:05:41.711Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "major_restrictions"
+      ]
+    },
+    {
+      "source_id": "zsy-ai-center-39515",
+      "url": "https://www.fahsysu.org.cn/article/39515",
+      "at": "2026-10-23T07:10:15.678Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary（仅定性条款，无金额）",
+        "education",
+        "salary_amount（原文无金额）"
+      ]
+    },
+    {
+      "source_id": "huaxi-info-84106",
+      "url": "https://www.cd120.com/public/notice/recruit/84106.html",
+      "at": "2026-10-23T07:10:15.690Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "city（原文未逐字写城市）"
+      ]
+    },
+    {
+      "source_id": "huaxi-bingan-71906",
+      "url": "https://www.cd120.com/public/notice/recruit/71906.html",
+      "at": "2026-10-23T07:10:15.695Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary",
+        "city",
+        "technical_requirements"
+      ]
+    },
+    {
+      "source_id": "rjh-74667",
+      "url": "https://www.rjh.com.cn/2018RJPortal/doc/2026/10/16/74667.shtml",
+      "at": "2026-10-23T07:10:15.705Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary"
+      ]
+    }
+  ]
+}

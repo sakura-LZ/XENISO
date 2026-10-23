@@ -1,0 +1,482 @@
+[
+  {
+    "source": {
+      "id": "huaxi-yigong-82007",
+      "url": "https://www.cd120.com/public/notice/recruit/82007.html",
+      "organization": "四川大学华西医院（设备物资部医学工程科）",
+      "title": "设备物资部医学工程科招聘启事（医学装备管理）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2024-09-02",
+      "publication_date_note": "正文逐字显示「2024.09.02」。"
+    },
+    "publication_pattern": "2024\\D{0,6}0?9\\D{0,6}0?2",
+    "artifact_capture": {
+      "path": "work/knowledge-jd-3/huaxi-yigong-82007.raw",
+      "sha256": "2a2f35faaa1f4c210635089deb8694885012be3c6599f258c7a5ad0bb0158281",
+      "captured_at": "2026-10-23T07:23:24.905Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-yigong-82007-guide-devices",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "华西医学工程科招聘岗位：医学装备管理（专业技术岗，3人）",
+      "summary": "华西医院设备物资部医学工程科招聘「医学装备管理」岗位，岗位类型为专业技术，招聘 3 人。（同一官方来源共 4 条原文事实，字段：job_title、education、technical_requirements、job_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该岗位名称、类型与人数；薪资原文未写。",
+      "relation": "direct",
+      "tags": [
+        "华西",
+        "医学工程科",
+        "医学装备管理",
+        "医工科",
+        "硕士",
+        "生物医学工程",
+        "医学",
+        "管理",
+        "计算机",
+        "工作职责",
+        "设备全生命周期",
+        "物联网",
+        "计量质控",
+        "数据分析",
+        "聘用方式",
+        "劳动合同"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "region": "四川省成都市",
+        "evidence_locator": "医院官网招聘公告正文：岗位表（岗位名称/岗位类型/所属科室/聘用方式/岗位职责/招聘条件）",
+        "medical_department": "设备物资部医学工程科"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称 医学装备管理 岗位类型 专业技术 招聘人数 3 人"
+      },
+      {
+        "field": "education",
+        "pattern": "1、硕士研究生毕业及以上。 2、生物医学工程专业、生物电子、医学、管理等相关专业毕业。 3、有较强沟通能力。 4、熟练掌握计算机操作"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "岗位职责 参与医疗设备的全生命周期的管理（准入论证、安装验收、维护维修、使用培训、计量质控、报废鉴定等）、医疗设备物联网系统开发与管理、医疗设备开发与创新等工作。 包括： 1、 完成医疗设备的日常管理（专业设备维修维护、临床科室巡检）。 2、医疗设备需求论证、 安装验收、零配件采购、设备报废技术鉴定等方面工作。 3、执行医疗设备维保计划。 4、对临床医疗设备使用人员进行的医疗设备安全使用和操作培训。 5、对医疗设备进行计量质控管理；并对检测数据进行统计分析，完成报告撰写。 6、完成医疗设备物联网开放。 7、医疗设备开发与创新。"
+      },
+      {
+        "field": "job_type",
+        "pattern": "聘用方式 与医院签订劳动合同"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary",
+      "education",
+      "major_restrictions",
+      "technical_requirements",
+      "job_type"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-rwe-99045",
+      "url": "https://www.cd120.com/public/notice/recruit/99045.html",
+      "organization": "四川大学华西医院（临床流行病学与循证医学中心-医保真实世界研究与评价中心）",
+      "title": "临床流行病学与循证医学中心-医保真实世界研究与评价中心项目制科研助理招聘启事",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-08",
+      "publication_date_note": "正文逐字显示「2026.10.08」。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?10\\D{0,6}0?8",
+    "artifact_capture": {
+      "path": "work/knowledge-jd-3/huaxi-rwe-99045.raw",
+      "sha256": "26ea120cea142ba361b64d3238d60788a5721c4b05e051ab70db7f91f7daf8ad",
+      "captured_at": "2026-10-23T07:26:40.340Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-rwe-99045-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "华西医保真实世界研究与评价中心招聘：科研助理（数据方向）",
+      "summary": "华西医院临床流行病学与循证医学中心-医保真实世界研究与评价中心招聘项目制科研助理 1 名。（同一官方来源共 4 条原文事实，字段：job_title、education、technical_requirements、job_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该岗位名称与所属科室；薪资原文未写。",
+      "relation": "direct",
+      "tags": [
+        "华西",
+        "真实世界研究",
+        "科研助理",
+        "数据",
+        "硕士",
+        "预防医学",
+        "卫生统计学",
+        "临床医学",
+        "35岁",
+        "工作职责",
+        "数据治理",
+        "数据分析",
+        "科研项目管理",
+        "聘用方式",
+        "劳务派遣"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "evidence_locator": "医院官网招聘公告正文：岗位表（岗位名称/所属科室/岗位职责/招聘条件）",
+        "medical_department": "临床流行病学与循证医学中心-医保真实世界研究与评价中心"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称 科研助理 所属部门 /科室 临床流行病学与循证医学中心 -医保真实世界研究与评价中心"
+      },
+      {
+        "field": "education",
+        "pattern": "1\\. 35岁及以下，硕士及以上学历，具有预防医学、公共卫生、卫生经济学、卫生统计学、卫生事业管理、临床医学或卫生政策等医学相关专业背景；"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "1\\. 参与文献检索、数据提取、数据治理、数据分析、报告撰写等科研工作任务 ; 2\\. 参与中心运营管理、平台建设、协调和沟通工作，参与中心相关日常管理工作，完成中心领导交办的其他工作内容； 3\\. 参与科研项目过程管理，包括项目申报立项、组织实施、阶段性检查、结题验收、经费管理等，根据国家、学校和医院有关财务管理制度，协助开展项目科研经费管理工作； 4\\. 参与中心对外交流、项目研讨、学术会议等活动的组织策划。"
+      },
+      {
+        "field": "job_type",
+        "pattern": "聘用方式 与劳务派遣公司签订劳动合同"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary",
+      "education",
+      "major_restrictions",
+      "technical_requirements",
+      "job_type"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-bigdata-99044",
+      "url": "https://www.cd120.com/public/notice/recruit/99044.html",
+      "organization": "四川大学华西医院（生物医学大数据研究院 张伟教授课题组）",
+      "title": "生物医学大数据研究院张伟教授课题组项目制科研助理招聘启事（心理学项目行政科研助理）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-08",
+      "publication_date_note": "正文逐字显示「2026.10.08」。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?10\\D{0,6}0?8",
+    "artifact_capture": {
+      "path": "work/knowledge-jd-3/huaxi-bigdata-99044.raw",
+      "sha256": "b84e68ded5596d3cf242e5e467930334b906d259e5a50f6fa1f76ef717df8ae6",
+      "captured_at": "2026-10-23T07:26:29.545Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-bigdata-99044-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "华西生物医学大数据研究院招聘：心理学项目行政科研助理",
+      "summary": "华西医院生物医学大数据研究院张伟教授课题组招聘「心理学项目行政科研助理」1 名。（同一官方来源共 3 条原文事实，字段：job_title、education、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该岗位名称与所属科室；薪资原文未写。",
+      "relation": "related",
+      "tags": [
+        "华西",
+        "生物医学大数据研究院",
+        "科研助理",
+        "心理学",
+        "本科",
+        "行政运营",
+        "2年",
+        "工作职责",
+        "台账",
+        "归档",
+        "数据统计"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "evidence_locator": "医院官网招聘公告正文：岗位表（岗位名称/所属科室/岗位职责/招聘条件）",
+        "medical_department": "生物医学大数据研究院"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称 心理学项目行政科研助理 所属部门 /科室 生物医学大数据研究院"
+      },
+      {
+        "field": "education",
+        "pattern": "（ 3）本科及以上学历，心理学相关专业，具备2年及以上行政运营相关工作经验，熟悉心理健康服务机构日常管理流程。"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "（ 1）负责项目实施全过程资料收集、分类整理、台账建立、档案归档管理等。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary",
+      "education",
+      "major_restrictions",
+      "experience",
+      "technical_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "zsy-radio-39889",
+      "url": "https://www.fahsysu.org.cn/article/39889",
+      "organization": "中山大学附属第一医院（放射诊断科 李雪华研究员课题组）",
+      "title": "放射诊断科李雪华研究员科研助手招聘启事",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-10-22",
+      "publication_date_note": "正文逐字显示「2026-10-22」。"
+    },
+    "publication_pattern": "2026-10-22",
+    "artifact_capture": {
+      "path": "work/knowledge-jd-3/zsy-radio-39889.raw",
+      "sha256": "88e9ac3fcb8a6746bd4ffa6b0b76f6dfd6fbe4b855b0a27c52bbe13dc804da8e",
+      "captured_at": "2026-10-23T07:23:36.326Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-zsy-radio-39889-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "中山一院放射诊断科招聘：科研助手 1 名",
+      "summary": "中山一院放射诊断科李雪华研究员（IBD 影像学研究）课题组招聘科研助手 1 名。（同一官方来源共 5 条原文事实，字段：job_title、education、technical_requirements、salary、job_type；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该岗位名称与名额；薪资见同页薪酬条款（无金额）。",
+      "relation": "direct",
+      "tags": [
+        "中山一院",
+        "放射诊断科",
+        "科研助手",
+        "本科",
+        "医学",
+        "检验",
+        "生物医学工程",
+        "工作职责",
+        "标本整理",
+        "科研数据录入",
+        "辅助",
+        "薪酬待遇",
+        "五险一金",
+        "无金额",
+        "劳务派遣",
+        "用工形式"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学附属第一医院",
+        "region": "广东省广州市",
+        "evidence_locator": "医院官网招聘公告正文「【招聘岗位】/【薪酬待遇】/【用工形式】」",
+        "medical_department": "放射诊断科"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "科研助手，名额： 1名，岗位要求如下"
+      },
+      {
+        "field": "education",
+        "pattern": "（ 1）具有本科及以上学历； （ 2）医学、检验、生命科学、药学、生物医学工程等相关专业；"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "（ 4）负责材料 及 实验标本 整理 ， 录入、整理、核对科研数据，协助课题组开展科研项目管理与教学教务支持等工作，并完成团队交办的其他辅助性工作。"
+      },
+      {
+        "field": "salary",
+        "pattern": "薪酬按医院同类岗位标准执行，并按国家政策规定办理社会保险和住房公积金。"
+      },
+      {
+        "field": "job_type",
+        "pattern": "科研助手岗位按中山大学附属第一医院相关管理规定以劳务派遣方式聘用。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary",
+      "education",
+      "major_restrictions",
+      "technical_requirements",
+      "salary_amount（原文无金额）",
+      "job_type"
+    ]
+  },
+  {
+    "source": {
+      "id": "ui-scientist-petct",
+      "url": "https://united-imaging.zhiye.com/social/jobs",
+      "organization": "联影医疗（上海联影医疗科技股份有限公司）",
+      "title": "Scientist PETCT/MR - A25 - 015(J18221)",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-09-19",
+      "publication_date_note": "列表页该岗位行逐字显示「2025-09-19 发布」。"
+    },
+    "publication_pattern": "2025-09-19",
+    "artifact_capture": {
+      "path": "work/knowledge-jd-3/ui-ct-detector.raw",
+      "sha256": "fa10c2b8e0e38d43fd5b647ef2b208c5d37eb041d41dcba10451df3ee75ea3c6",
+      "captured_at": "2026-10-23T07:31:35.460Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-ui-scientist-petct-guide-imaging-eng",
+      "role_id": "guide_imaging_eng",
+      "category": "recruitment",
+      "title": "联影医疗招聘岗位：Scientist PETCT/MR",
+      "summary": "联影医疗公开招聘 PETCT/MR 方向 Scientist，工作地点巴西、墨西哥。（同一官方来源共 4 条原文事实，字段：job_title、major_restrictions、education；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "该岗位名称与地点；薪资原文未写。",
+      "relation": "direct",
+      "tags": [
+        "联影",
+        "Scientist",
+        "PETCT",
+        "MR",
+        "M.D.",
+        "Ph.D.",
+        "医学物理",
+        "生物医学工程",
+        "PET/CT",
+        "CT探测器",
+        "硕士",
+        "物理",
+        "核技术",
+        "光电子"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "联影医疗",
+        "region": "上海市",
+        "evidence_locator": "CT Detector Engineer/Scientist(IEEE)(J18330) · 该岗位详情在该页点击展开 · 页面无独立岗位 URL",
+        "medical_department": "研发"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "Scientist PETCT/MR - A25 - 015\\(J18221\\)"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "Ph\\.D\\. and/or M\\.D\\. in Medical Physics, Oncology Imaging, Biomedical Engineering, Electrical Engineering, or a related field"
+      },
+      {
+        "field": "job_title",
+        "pattern": "CT Detector Engineer/Scientist\\(IEEE\\)\\(J18330\\)"
+      },
+      {
+        "field": "education",
+        "pattern": "Master's degree or above in Physics, Nuclear Technology, Nuclear Electronics, Optoelectronics, or other related majors;"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary",
+      "education",
+      "major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-2027-graduates",
+      "url": "https://www.cd120.com/public/notice/recruit/99024.html",
+      "organization": "四川大学华西医院（华西临床医学院）",
+      "title": "四川大学华西临床医学院、华西医院2027年应届毕业生及出站博士后招聘公告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-09-30",
+      "publication_date_note": "正文逐字显示「2026.09.30」。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?9\\D{0,6}0?30",
+    "artifact_capture": {
+      "path": "work/knowledge-jd-3/huaxi-2027-graduates.raw",
+      "sha256": "f47faa3b11650f837b33367176544237c59f215704fa0c25a895918908f2457f",
+      "captured_at": "2026-10-23T07:32:45.365Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-2027-graduates-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "华西2027应届招聘岗位大类：医师、技师、药师、护理、管理培训生",
+      "summary": "华西医院 2027 年应届毕业生招聘的岗位包括医师、技师、药师、护理、管理培训生；具体岗位信息见附件【招聘计划】。（同一官方来源共 5 条原文事实，字段：job_title、education、experience、job_type、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "应届可投的岗位大类；「管理培训生」是不限临床执业的入口（公告未在网页列出各科明细）。",
+      "relation": "direct",
+      "tags": [
+        "华西",
+        "应届",
+        "管理培训生",
+        "技师",
+        "药师",
+        "本科",
+        "硕士",
+        "博士",
+        "年龄",
+        "35周岁",
+        "劳动合同",
+        "三年",
+        "留院",
+        "规培",
+        "本科学历",
+        "两个同等对待",
+        "临床医师"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "region": "四川省成都市",
+        "evidence_locator": "医院官网招聘公告正文：「一、招聘岗位」「二、招聘条件（二）招聘对象/（三）聘用方式/（四）其他说明」",
+        "medical_department": "人力资源部"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位包括医师、技师、药师、护理、管理培训生。"
+      },
+      {
+        "field": "education",
+        "pattern": "2\\. 2027年内毕业的博士、硕士及本科毕业生"
+      },
+      {
+        "field": "experience",
+        "pattern": "临床岗位原则上不超过35周岁（1992年1月1日及以后出生）"
+      },
+      {
+        "field": "job_type",
+        "pattern": "护理岗、管理培训生岗位与四川大学华西医院签订劳动合同。其中，“管理培训生项目”合同期限为三年，合同期满后，医院将统一组织留院面试，并结合轮转部门考核意见，择优录取。"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "对于住院医师规范化培训合格的本科学历临床医师执行“两个同等对待”政策。"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary",
+      "education",
+      "experience",
+      "job_type",
+      "major_restrictions"
+    ]
+  }
+]

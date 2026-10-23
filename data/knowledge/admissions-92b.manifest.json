@@ -1,0 +1,893 @@
+[
+  {
+    "source": {
+      "id": "tsinghua-2026-master-catalog-bme",
+      "url": "https://yzbm.tsinghua.edu.cn/publish/s02/s0203/detail/1d58a1e4-dc87-49f9-be0a-d000c060763f?yxsdm=502&ksfs=",
+      "organization": "清华大学研究生招生办公室",
+      "title": "清华大学2026年硕士研究生招生专业目录（502 生物医学工程学院·统招）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该专业目录详情页正文未印发布日期（页面为目录表格，无「发布时间」字样），故记 null；招生年度由页面标题与「2026年硕士研究生招生专业目录」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/tsinghua-2026-catalog-med.raw",
+      "sha256": "c3a9184e23d2be149ee38c53713308ee2c6dac1a1a06ca6e3a2d94b1fca1f8aa",
+      "captured_at": "2026-10-23T05:15:58.895Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-tsinghua-2026-master-catalog-bme-guide-signals-040bb01b",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "清华2026：502 生医工程学院 083100 生物医学工程（学术学位）初试 101/201/301/801 生物医学工程综合",
+      "summary": "清华大学 2026 年硕士专业目录 502 生物医学工程学院：083100（学术学位）生物医学工程，01（全日制）「清华-约翰霍普金斯」双硕士项目方向，初试科目 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④801 生物医学工程综合；页面注明 801 考试内容含数字信号处理、生物医学电子学。",
+      "applicability": "适用于报考清华大学 083100 生物医学工程学术学位的考生（502 学院）。原文该行未设任何本科专业限制，但第四科为 801 生物医学工程综合（数字信号处理+生物医学电子学），医学本科生需自补该部分。不适用于 085400 电子信息或其他院系。",
+      "relation": "direct",
+      "tags": [
+        "清华大学",
+        "生物医学工程",
+        "083100",
+        "801生物医学工程综合",
+        "生物医学工程学院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "program": "083100 生物医学工程",
+        "admission_year": 2026,
+        "region": "北京",
+        "college": "生物医学工程学院",
+        "evidence_locator": "专业目录 502 生物医学工程学院表体 083100 行（01 清华-约翰霍普金斯双硕士项目方向）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "083100 （学术学位） 生物医学工程 3 801生物医学工程综合考试内容：含数字信号处理、生物医学电子学。 01（全日制）“清华-约翰霍普金斯”双硕士项目 3 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④801 生物医学工程综合"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "tsinghua-2026-master-catalog-bme",
+      "url": "https://yzbm.tsinghua.edu.cn/publish/s02/s0203/detail/1d58a1e4-dc87-49f9-be0a-d000c060763f?yxsdm=502&ksfs=",
+      "organization": "清华大学研究生招生办公室",
+      "title": "清华大学2026年硕士研究生招生专业目录（502 生物医学工程学院·统招）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该专业目录详情页正文未印发布日期（页面为目录表格，无「发布时间」字样），故记 null；招生年度由页面标题与「2026年硕士研究生招生专业目录」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/tsinghua-2026-catalog-med.raw",
+      "sha256": "c3a9184e23d2be149ee38c53713308ee2c6dac1a1a06ca6e3a2d94b1fca1f8aa",
+      "captured_at": "2026-10-23T05:15:58.895Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-tsinghua-2026-master-catalog-bme-guide-devices-d02cf710",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "清华2026：085400 电子信息（专业学位）01 创新医疗器械，初试同为 801 生物医学工程综合",
+      "summary": "清华大学 2026 年硕士专业目录 502 生物医学工程学院：085400（专业学位）电子信息，01（全日制）创新医疗器械方向，初试科目 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④801 生物医学工程综合（考试内容含数字信号处理、生物医学电子学）。",
+      "applicability": "适用于报考清华 502 学院 085400 电子信息专业学位（创新医疗器械方向）的考生——这是清华最贴近「智能医疗器械」的专硕入口，044 第四科与 083100 学术学位完全相同。原文该行未设本科专业限制。不适用于其他院系的 085400。",
+      "relation": "direct",
+      "tags": [
+        "清华大学",
+        "电子信息",
+        "085400",
+        "创新医疗器械",
+        "801生物医学工程综合"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "清华大学",
+        "program": "085400 电子信息（01 创新医疗器械）",
+        "admission_year": 2026,
+        "region": "北京",
+        "college": "生物医学工程学院",
+        "evidence_locator": "专业目录 502 生物医学工程学院表体 085400 行（01 创新医疗器械方向）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085400 （专业学位） 电子信息 6 801生物医学工程综合考试内容：含数字信号处理、生物医学电子学。 01（全日制）创新医疗器械 6 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④801 生物医学工程综合"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "training_direction",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "ustc-2026-master-bme",
+      "url": "https://yz1.ustc.edu.cn/sszs_2026/index_35.shtml",
+      "organization": "中国科学技术大学研究生院",
+      "title": "中国科学技术大学2026年硕士研究生招生（生命科学与医学部·生物医学工程学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该院系招生页正文未印发布日期（无「发布时间」字样），故记 null；招生年度由站点栏目「sszs_2026」与正文「2026年」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/ustc-2026-index35.raw",
+      "sha256": "e89b287859a387e11213270ecd08c1b2babec80f5edc1c00e9ee4005e6b3117f",
+      "captured_at": "2026-10-23T05:16:26.461Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-ustc-2026-master-bme-guide-signals-040bb01b",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "中科大2026：083100 生物医学工程「仅接收推免生」，统考生不可报考",
+      "summary": "中国科学技术大学生命科学与医学部-生物医学工程学院 2026 年招生页：学科专业名称「生物医学工程」（专业代码 083100），一、报考说明为「仅接收推免生」。",
+      "applicability": "适用于 083100 生物医学工程学术学位：该校明确「仅接收推免生」，即统考（初试）考生不能报考该专业，医学本科生若无推免资格则无法通过该专业进入。同页 085400 电子信息另有统考方向（见另一条），不受此限。",
+      "relation": "direct",
+      "tags": [
+        "中国科学技术大学",
+        "生物医学工程",
+        "083100",
+        "仅接收推免生",
+        "报考限制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中国科学技术大学",
+        "program": "083100 生物医学工程",
+        "admission_year": 2026,
+        "region": "安徽合肥",
+        "college": "生命科学与医学部-生物医学工程学院",
+        "evidence_locator": "院系招生页「学科专业名称：生物医学工程 (专业代码 083100)」下的「一、报考说明」。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "学科专业名称：生物医学工程 \\(专业代码 083100 \\) 一、报考说明 仅接收推免生。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions",
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "ustc-2026-master-bme",
+      "url": "https://yz1.ustc.edu.cn/sszs_2026/index_35.shtml",
+      "organization": "中国科学技术大学研究生院",
+      "title": "中国科学技术大学2026年硕士研究生招生（生命科学与医学部·生物医学工程学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该院系招生页正文未印发布日期（无「发布时间」字样），故记 null；招生年度由站点栏目「sszs_2026」与正文「2026年」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/ustc-2026-index35.raw",
+      "sha256": "e89b287859a387e11213270ecd08c1b2babec80f5edc1c00e9ee4005e6b3117f",
+      "captured_at": "2026-10-23T05:16:26.461Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-ustc-2026-master-bme-guide-devices-fb00e401",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "中科大2026：085400 电子信息「主要招收与电子信息相关各专业应届本科毕业生」",
+      "summary": "同页 085400 电子信息（专业代码 085400）「一、报考说明」：接收推免生和统考生（注：仪器仪表工程方向仅招收统考生），主要招收与电子信息相关各专业应届本科毕业生和具有学士学位的往届本科生。",
+      "applicability": "适用于报考中科大生物医学工程学院 085400 电子信息的考生。原文限定「主要招收与电子信息相关各专业」——「主要」为原文措辞（非绝对禁止），医学本科生属非电子信息相关专业，属该表述下的边缘情形，需向院系确认。不适用于 083100（仅接收推免生）。",
+      "relation": "direct",
+      "tags": [
+        "中国科学技术大学",
+        "电子信息",
+        "085400",
+        "报考说明",
+        "本科专业限制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中国科学技术大学",
+        "program": "085400 电子信息",
+        "admission_year": 2026,
+        "region": "安徽合肥",
+        "college": "生命科学与医学部-生物医学工程学院",
+        "evidence_locator": "院系招生页「学科专业名称：电子信息 (专业代码 085400)」下的「一、报考说明」。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "接收推免生和统考生（注：仪器仪表工程方向仅招收统考生），主要招收与电子信息相关各专业应届本科毕业生和具有学士学位的往届本科生。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions",
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "ustc-2026-master-bme",
+      "url": "https://yz1.ustc.edu.cn/sszs_2026/index_35.shtml",
+      "organization": "中国科学技术大学研究生院",
+      "title": "中国科学技术大学2026年硕士研究生招生（生命科学与医学部·生物医学工程学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该院系招生页正文未印发布日期（无「发布时间」字样），故记 null；招生年度由站点栏目「sszs_2026」与正文「2026年」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/ustc-2026-index35.raw",
+      "sha256": "e89b287859a387e11213270ecd08c1b2babec80f5edc1c00e9ee4005e6b3117f",
+      "captured_at": "2026-10-23T05:16:26.461Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-ustc-2026-master-bme-guide-devices-159f792f",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "中科大2026：085400 电子信息「生物医学工程」方向初试 101/201/301/843 信号与系统",
+      "summary": "同页 085400 电子信息「四、研究方向及初试科目」表：1、生物医学工程方向初试 101 思想政治理论、201 英语（一）、301 数学（一）、843 信号与系统。",
+      "applicability": "适用于报考中科大生物医学工程学院 085400 电子信息、选择生物医学工程方向的考生；第四科为 843 信号与系统，医学本科生需自补。原文该表未对本科专业设硬性门槛（另见该专业「报考说明」条）。不适用于 083100。",
+      "relation": "direct",
+      "tags": [
+        "中国科学技术大学",
+        "电子信息",
+        "085400",
+        "843信号与系统",
+        "生物医学工程方向"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中国科学技术大学",
+        "program": "085400 电子信息（生物医学工程方向）",
+        "admission_year": 2026,
+        "region": "安徽合肥",
+        "college": "生命科学与医学部-生物医学工程学院",
+        "evidence_locator": "院系招生页 085400 电子信息「四、研究方向及初试科目」表第 1 行（生物医学工程方向）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "1、生物医学工程 101思想政治理论 201英语（一） 301数学（一） 843信号与系统"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "seu-2027-master-catalog-bme",
+      "url": "https://gsas.seu.edu.cn/ssmlcx2027/pages/index.html",
+      "organization": "东南大学研究生院",
+      "title": "东南大学2027年招收攻读硕士学位研究生专业目录（011 生物科学与医学工程学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "目录为 JS 查询应用，页面正文无发布日期（仅标题含「2027年」），故记 null。该校 2027 年招生章程页（https://yzb.seu.edu.cn/2026/1008/c6667a585158/page.htm）正文含「发布时间： 2026-10-08」，但不在本 artifact 内。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/seu-2027-catalog.raw",
+      "sha256": "5529797ab2b7b9d03ade0a7ab485c4da133faa4bcfdeff807d71265afcf03269",
+      "captured_at": "2026-10-23T05:19:15.114Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-seu-2027-master-catalog-bme-guide-signals-040bb01b",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "东南2027：011 生医学院 083100 生物医学工程按方向分考 838 普通生物学 / 837 生物信号处理",
+      "summary": "东南大学 2027 年硕士专业目录 011 生物科学与医学工程学院：083100（学术学位）生物医学工程，01/03/04/05/06/08/09/11 方向初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④838 普通生物学（复试 558 生物化学）；02/07/10 方向初试 ④837 生物信号处理（复试 559 微机在生物医学中的应用）。同专业另有强军计划行。",
+      "applicability": "适用于报考东南大学 083100 生物医学工程（BME 学科评估 A+）的考生。该专业第四科不考「信号与系统」而考 838 普通生物学或 837 生物信号处理，对医学/生物背景考生比工科院校的 844/859 信号与系统更友好；原文该行未设本科专业限制。不适用于 085409 专硕行。",
+      "relation": "direct",
+      "tags": [
+        "东南大学",
+        "生物医学工程",
+        "083100",
+        "837生物信号处理",
+        "838普通生物学",
+        "A+学科"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "program": "083100 生物医学工程",
+        "admission_year": 2027,
+        "region": "江苏南京",
+        "college": "生物科学与医学工程学院",
+        "evidence_locator": "目录 011 学院 083100 条目（按方向分列的初试/复试科目行）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "083100（学术学位）生物医学工程 01（全日制）、03（全日制）、04（全日制）、05（全日制）、06（全日制）、08（全日制）、09（全日制）、11（全日制）方向： ①101思想政治理论 ②201英语（一） ③301数学（一） ④838普通生物学 02（全日制）、07（全日制）、10（全日制）方向： ①101思想政治理论 ②201英语（一） ③301数学（一） ④837生物信号处理"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "seu-2027-master-catalog-bme",
+      "url": "https://gsas.seu.edu.cn/ssmlcx2027/pages/index.html",
+      "organization": "东南大学研究生院",
+      "title": "东南大学2027年招收攻读硕士学位研究生专业目录（011 生物科学与医学工程学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "目录为 JS 查询应用，页面正文无发布日期（仅标题含「2027年」），故记 null。该校 2027 年招生章程页（https://yzb.seu.edu.cn/2026/1008/c6667a585158/page.htm）正文含「发布时间： 2026-10-08」，但不在本 artifact 内。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/seu-2027-catalog.raw",
+      "sha256": "5529797ab2b7b9d03ade0a7ab485c4da133faa4bcfdeff807d71265afcf03269",
+      "captured_at": "2026-10-23T05:19:15.114Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-seu-2027-master-catalog-bme-guide-devices-e13b93ee",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "东南2027：085409 生物医学工程（专业学位）初试 101/201/301/837 生物信号处理",
+      "summary": "东南大学 2027 年硕士专业目录 011 学院：085409（专业学位）生物医学工程，初试科目 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④837 生物信号处理，复试科目 ①559 微机在生物医学中的应用；下设 01 生物信息技术、02 医学图像与医学电子学、03 医学信息学及工程、04 生物传感与生物电子学、05 生物光子技术、06 神经信息工程、07 脑科学与学习科学方向。",
+      "applicability": "适用于报考东南大学 085409 生物医学工程专业学位（BME A+ 学科）的考生；第四科单一固定为 837 生物信号处理（参考书为数字信号处理教材），不考 838 普通生物学。原文该行未设本科专业限制，但科目本身偏信号处理。不适用于 083100 学术学位。",
+      "relation": "direct",
+      "tags": [
+        "东南大学",
+        "生物医学工程专业学位",
+        "085409",
+        "837生物信号处理",
+        "医学图像"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "program": "085409 生物医学工程（专业学位）",
+        "admission_year": 2027,
+        "region": "江苏南京",
+        "college": "生物科学与医学工程学院",
+        "evidence_locator": "目录 011 学院 085409 条目（初试/复试科目与 7 个研究方向）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085409（专业学位）生物医学工程 ①101思想政治理论 ②201英语（一） ③301数学（一） ④837生物信号处理"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "training_direction",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "seu-2027-master-catalog-bme",
+      "url": "https://gsas.seu.edu.cn/ssmlcx2027/pages/index.html",
+      "organization": "东南大学研究生院",
+      "title": "东南大学2027年招收攻读硕士学位研究生专业目录（011 生物科学与医学工程学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "目录为 JS 查询应用，页面正文无发布日期（仅标题含「2027年」），故记 null。该校 2027 年招生章程页（https://yzb.seu.edu.cn/2026/1008/c6667a585158/page.htm）正文含「发布时间： 2026-10-08」，但不在本 artifact 内。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/seu-2027-catalog.raw",
+      "sha256": "5529797ab2b7b9d03ade0a7ab485c4da133faa4bcfdeff807d71265afcf03269",
+      "captured_at": "2026-10-23T05:19:15.114Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-seu-2027-master-catalog-bme-guide-clinical-data-61fc00c0",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "东南2027：086000 生物与医药（专业学位）初试 338 生物化学 + 838 普通生物学",
+      "summary": "东南大学 2027 年硕士专业目录 011 学院：086000（专业学位）生物与医药，初试科目 ①101 思想政治理论 ②201 英语（一）③338 生物化学 ④838 普通生物学，复试 523 生物技术及材料在医药中的应用；方向为 01 生物工程与技术、02 制药工程、03 生物医学材料与纳米技术。",
+      "applicability": "适用于报考东南大学 011 学院 086000 生物与医药专硕的考生；该专业两门专业课均为生物类（338 生物化学 + 838 普通生物学），不含数学（一）以外的工科科目，是医学/生物背景考生进入东南该学院的第二条通道。不适用于 083100/085409。",
+      "relation": "related",
+      "tags": [
+        "东南大学",
+        "生物与医药",
+        "086000",
+        "338生物化学",
+        "838普通生物学"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "program": "086000 生物与医药（专业学位）",
+        "admission_year": 2027,
+        "region": "江苏南京",
+        "college": "生物科学与医学工程学院",
+        "evidence_locator": "目录 011 学院 086000 条目（初试/复试科目与 3 个方向）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "086000（专业学位）生物与医药 ①101思想政治理论 ②201英语（一） ③338生物化学 ④838普通生物学"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "tju-2026-master-catalog-medical",
+      "url": "https://yzb.tju.edu.cn/info/1069/2354.htm",
+      "organization": "天津大学研究生招生办公室",
+      "title": "天津大学2026年硕士研究生招生专业目录（255 医学院等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该目录 PDF 正文未印发布日（页眉仅有页码与院系表头），故记 null；招生年度由正文「2026年」及目录标注确定。原发布页为天津大学研招网通知页，PDF 直链已由本项目其他流抓取并留存。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/tju-2026-catalog.pdf",
+      "sha256": "a0fa60f6035baaa9647b2fde801014aab7365351c7a6565fa9fdf473288e1e41",
+      "captured_at": "2026-10-23T03:36:47.220Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-admissions-92b/tju-2026-catalog.txt",
+      "extracted_sha256": "d134a05a38bd45185e834a415d1e2e8c6a4fc5aeca99279ab23a2ed4aa8b89de"
+    },
+    "record": {
+      "id": "admissions-tju-2026-master-catalog-medical-guide-devices-040bb01b",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "天大2026：255 医学院 083100 生物医学工程，三个方向分别考 810 生物医学工程基础 / 811 电路 / 815 信号与系统",
+      "summary": "天津大学 2026 年硕士专业目录 255 医学院（统考拟招全日制 137 人、非全日制 15 人）：083100 生物医学工程，01 研究方向一考 ④810 生物医学工程基础（复试 医用电子学及微机应用）、02 研究方向二考 ④811 电路、03 研究方向三考 ④815 信号与系统；前三科均为 101 思想政治理论、201 英语（一）、301 数学（一）。",
+      "applicability": "适用于报考天津大学 255 医学院 083100 生物医学工程的考生；同一专业三个方向可选择 810 生物医学工程基础（最贴近医学工程综合）、811 电路或 815 信号与系统。原文该行未设本科专业限制。不适用于 0831Z2 或 085400 行。",
+      "relation": "direct",
+      "tags": [
+        "天津大学",
+        "生物医学工程",
+        "083100",
+        "810生物医学工程基础",
+        "815信号与系统",
+        "医学院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "天津大学",
+        "program": "083100 生物医学工程",
+        "admission_year": 2026,
+        "region": "天津",
+        "college": "医学院",
+        "evidence_locator": "专业目录第 17 页 255 医学院 083100 行（01—03 研究方向）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "083100生物医 学工程 01研究方向一 \\(1\\)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④810生物医学工程 基础 复试科目：医用电子学 及微机应用 02研究方向二 \\(1\\)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④811电路 03研究方向三 \\(1\\)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④815信号与系统"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "tju-2026-master-catalog-medical",
+      "url": "https://yzb.tju.edu.cn/info/1069/2354.htm",
+      "organization": "天津大学研究生招生办公室",
+      "title": "天津大学2026年硕士研究生招生专业目录（255 医学院等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该目录 PDF 正文未印发布日（页眉仅有页码与院系表头），故记 null；招生年度由正文「2026年」及目录标注确定。原发布页为天津大学研招网通知页，PDF 直链已由本项目其他流抓取并留存。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/tju-2026-catalog.pdf",
+      "sha256": "a0fa60f6035baaa9647b2fde801014aab7365351c7a6565fa9fdf473288e1e41",
+      "captured_at": "2026-10-23T03:36:47.220Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-admissions-92b/tju-2026-catalog.txt",
+      "extracted_sha256": "d134a05a38bd45185e834a415d1e2e8c6a4fc5aeca99279ab23a2ed4aa8b89de"
+    },
+    "record": {
+      "id": "admissions-tju-2026-master-catalog-medical-guide-ml-cv-1cc6fb9b",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "天大2026：0831Z2 智能医学工程，01 方向考 408 计算机学科专业基础、02 方向考 815 信号与系统",
+      "summary": "天津大学 2026 年硕士专业目录 255 医学院：0831Z2 智能医学工程，01 研究方向一初试 ④408 计算机学科专业基础（复试 医学科学与工程基础）、02 研究方向二初试 ④815 信号与系统；另设 00 单考不区分研究方向（非全日制）行。",
+      "applicability": "适用于报考天津大学 255 医学院 0831Z2 智能医学工程（交叉学科）的考生；两个统考方向分别走「计算机 408」与「信号与系统 815」两条技术路线。原文该行未设本科专业限制，但 408 覆盖面大，医学本科生需自补计算机专业课。不适用于 083100。",
+      "relation": "direct",
+      "tags": [
+        "天津大学",
+        "智能医学工程",
+        "0831Z2",
+        "408计算机学科专业基础",
+        "815信号与系统"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "天津大学",
+        "program": "0831Z2 智能医学工程",
+        "admission_year": 2026,
+        "region": "天津",
+        "college": "医学院",
+        "evidence_locator": "专业目录第 17 页 255 医学院 0831Z2 行（01/02 研究方向 + 00 单考行）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "0831Z2智能医 学工程 01研究方向一 \\(1\\)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④408计算机学科专 业基础 复试科目：医学科学与 工程基础 02研究方向二 \\(1\\)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④815信号与系统"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "training_direction",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "tju-2026-master-catalog-medical",
+      "url": "https://yzb.tju.edu.cn/info/1069/2354.htm",
+      "organization": "天津大学研究生招生办公室",
+      "title": "天津大学2026年硕士研究生招生专业目录（255 医学院等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该目录 PDF 正文未印发布日（页眉仅有页码与院系表头），故记 null；招生年度由正文「2026年」及目录标注确定。原发布页为天津大学研招网通知页，PDF 直链已由本项目其他流抓取并留存。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/tju-2026-catalog.pdf",
+      "sha256": "a0fa60f6035baaa9647b2fde801014aab7365351c7a6565fa9fdf473288e1e41",
+      "captured_at": "2026-10-23T03:36:47.220Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-admissions-92b/tju-2026-catalog.txt",
+      "extracted_sha256": "d134a05a38bd45185e834a415d1e2e8c6a4fc5aeca99279ab23a2ed4aa8b89de"
+    },
+    "record": {
+      "id": "admissions-tju-2026-master-catalog-medical-guide-devices-159f792f",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "天大2026：085400 电子信息 01/02「生物医学工程方向」考 810 生物医学工程基础 / 811 电路",
+      "summary": "天津大学 2026 年硕士专业目录 255 医学院：085400 电子信息，01 生物医学工程方向一初试 ④810 生物医学工程基础、02 生物医学工程方向二初试 ④811 电路；复试科目为 医用电子学及微机应用 或 医学科学与工程基础（二选一）。",
+      "applicability": "适用于报考天津大学 255 医学院 085400 电子信息（生物医学工程方向）的考生；两个方向分别对应 810/811，均属医学工程类专业课，未考 408 或 844/815。原文该行未设本科专业限制。不适用于 083100/0831Z2 行。",
+      "relation": "direct",
+      "tags": [
+        "天津大学",
+        "电子信息",
+        "085400",
+        "生物医学工程方向",
+        "810生物医学工程基础"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "天津大学",
+        "program": "085400 电子信息（生物医学工程方向）",
+        "admission_year": 2026,
+        "region": "天津",
+        "college": "医学院",
+        "evidence_locator": "专业目录第 17 页 255 医学院 085400 行（01/02 生物医学工程方向）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085400电子信 息 01生物医学工程方 向一 \\(1\\)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④810生物医学工程 基础 复试科目：医用电子学 及微机应用或医学科学 与工程基础（二选一） 02生物医学工程方 向二 \\(1\\)全日制 ①101思想政治理论②201 英语（一）③301数学 （一）④811电路"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "tju-2026-master-catalog-medical",
+      "url": "https://yzb.tju.edu.cn/info/1069/2354.htm",
+      "organization": "天津大学研究生招生办公室",
+      "title": "天津大学2026年硕士研究生招生专业目录（255 医学院等）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该目录 PDF 正文未印发布日（页眉仅有页码与院系表头），故记 null；招生年度由正文「2026年」及目录标注确定。原发布页为天津大学研招网通知页，PDF 直链已由本项目其他流抓取并留存。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/tju-2026-catalog.pdf",
+      "sha256": "a0fa60f6035baaa9647b2fde801014aab7365351c7a6565fa9fdf473288e1e41",
+      "captured_at": "2026-10-23T03:36:47.220Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-admissions-92b/tju-2026-catalog.txt",
+      "extracted_sha256": "d134a05a38bd45185e834a415d1e2e8c6a4fc5aeca99279ab23a2ed4aa8b89de"
+    },
+    "record": {
+      "id": "admissions-tju-2026-master-catalog-medical-guide-clinical-data-b449913a",
+      "role_id": "guide_clinical_data",
+      "category": "admissions",
+      "title": "天大2026：089901 救援医学（交叉学科）考 302 数学（二）+ 810 生物医学工程基础",
+      "summary": "天津大学 2026 年硕士专业目录：089901 救援医学，01 不区分研究方向，初试 ①101 思想政治理论 ②201 英语（一）③302 数学（二）④810 生物医学工程基础，复试科目 救援医学装备。同页另有 109901 救援医学（考 736 医学科学与工程基础，④--无）与 089901（④869 细胞生物学基础）等相邻条目。",
+      "applicability": "适用于关注天津大学「救援医学」交叉学科的考生；089901 用 302 数学（二）降低数学难度、专业课为 810 生物医学工程基础。原文该行未设本科专业限制。注意同页存在多代码相邻条目（089901/109901），本条仅指 089901 且 ④ 为 810 的那一行。",
+      "relation": "related",
+      "tags": [
+        "天津大学",
+        "救援医学",
+        "089901",
+        "302数学二",
+        "810生物医学工程基础"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "天津大学",
+        "program": "089901 救援医学",
+        "admission_year": 2026,
+        "region": "天津",
+        "evidence_locator": "专业目录第 17 页 089901 救援医学行（④810 的那一条）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "089901救援医 学 01不区分研究方向 \\(1\\)全日制 ①101思想政治理论②201 英语（一）③302数学 （二）④810生物医学工程 基础 复试科目：救援医学装 备"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-2027-master-catalog-life",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "organization": "华中科技大学研究生招生办公室",
+      "title": "华中科技大学2027年硕士研究生招生专业目录（170 生命科学与技术学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该目录为 ASP.NET 查询页，查询结果正文无发布日期（页脚仅「Copyright © 2026 华中科技大学」），故记 null；招生年度由页面年度选择器「2027」与标题「2027年硕士研究生招生专业目录」确定。抓取时该页亦可经 http 同路径访问（ego 渲染在 http 端点完成），https 端点经二次取样内容一致。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/hust-2027-catalog.raw",
+      "sha256": "38e393ba191108cd7fd20387ae1673a9a7080c779a26b157f20c5fb52ea86954",
+      "captured_at": "2026-10-23T05:45:29.233Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-master-catalog-life-guide-signals-040bb01b",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "华科2027：170 生命学院 083100 生物医学工程（招 45）初试 101/201/301/890 普通物理，且不招收同等学力",
+      "summary": "华中科技大学 2027 年硕士专业目录 170 生命科学与技术学院：083100 生物医学工程（全日制）拟招 45 人，01 生物医学工程方向初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④890 普通物理；备注「01方向、03-04方向、06-09方向含武汉光电国家研究中心招生计划。不招收同等学力考生」，方向含生物医学光子学、医学成像技术与应用、生物医学图象处理与分析、脑网络成像与人工智能等。",
+      "applicability": "适用于报考华中科技大学（BME 学科评估 A+ 院校）170 生命科学与技术学院 083100 生物医学工程的考生：第四科为 890 普通物理（非信号与系统），并明确「不招收同等学力考生」——以同等学力身份报考者被排除。原文该行未设本科专业限制。不适用于 085409 专硕行。",
+      "relation": "direct",
+      "tags": [
+        "华中科技大学",
+        "生物医学工程",
+        "083100",
+        "890普通物理",
+        "不招收同等学力考生"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "program": "083100 生物医学工程",
+        "admission_year": 2027,
+        "region": "湖北武汉",
+        "college": "生命科学与技术学院",
+        "evidence_locator": "目录 170 学院表体 083100 行（含备注「不招收同等学力考生」）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "083100 生物医学工程（全日制） 45 01 生物医学工程 ① 101\\|思想政治理论 ② 201\\|英语（一） ③ 301\\|数学（一） ④ 890\\|普通物理 01方向、03-04方向、06-09方向含武汉光电国家研究中心招生计划。不招收同等学力考生"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-2027-master-catalog-life",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "organization": "华中科技大学研究生招生办公室",
+      "title": "华中科技大学2027年硕士研究生招生专业目录（170 生命科学与技术学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该目录为 ASP.NET 查询页，查询结果正文无发布日期（页脚仅「Copyright © 2026 华中科技大学」），故记 null；招生年度由页面年度选择器「2027」与标题「2027年硕士研究生招生专业目录」确定。抓取时该页亦可经 http 同路径访问（ego 渲染在 http 端点完成），https 端点经二次取样内容一致。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/hust-2027-catalog.raw",
+      "sha256": "38e393ba191108cd7fd20387ae1673a9a7080c779a26b157f20c5fb52ea86954",
+      "captured_at": "2026-10-23T05:45:29.233Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-master-catalog-life-guide-devices-e13b93ee",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "华科2027：085409 生物医学工程（专硕，招 40）初试 101/204/302/890 普通物理，且不招收同等学力",
+      "summary": "华中科技大学 2027 年硕士专业目录 170 生命科学与技术学院：085409 生物医学工程（全日制）拟招 40 人，00 不区分研究方向，初试 ①101 思想政治理论 ②204 英语（二）③302 数学（二）④890 普通物理；备注「含武汉光电国家研究中心招生计划、国家卓越工程师学院『卓越项目』计划。不招收同等学力考生」。",
+      "applicability": "适用于报考华科 085409 生物医学工程专业学位的考生：专业课 890 普通物理，英语考 204（二）、数学考 302（二），整体难度低于学术学位 083100（201/301）；同样不招收同等学力考生。原文该行未设本科专业限制。不适用于 083100。",
+      "relation": "direct",
+      "tags": [
+        "华中科技大学",
+        "生物医学工程专业学位",
+        "085409",
+        "890普通物理",
+        "302数学二",
+        "不招收同等学力考生"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "program": "085409 生物医学工程（专业学位）",
+        "admission_year": 2027,
+        "region": "湖北武汉",
+        "college": "生命科学与技术学院",
+        "evidence_locator": "目录 170 学院表体 085409 行（含备注「不招收同等学力考生」）。"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "085409 生物医学工程（全日制） 40 00 不区分研究方向 ① 101\\|思想政治理论 ② 204\\|英语（二） ③ 302\\|数学（二） ④ 890\\|普通物理 含武汉光电国家研究中心招生计划、国家卓越工程师学院“卓越项目”计划。不招收同等学力考生"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "buaa-bme-2027-syllabus-803",
+      "url": "https://bme.buaa.edu.cn/newsInfo.aspx?catID=13&subcatID=1014&curID=14746",
+      "organization": "北京航空航天大学生物与医学工程学院（医工交叉学科群）",
+      "title": "招收2027年硕士初试考试大纲 解剖生理学（科目代码803）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该大纲正文未印发布日期（页面仅栏目导航与标题），故记 null；招生年度由标题「招收2027年硕士初试考试大纲」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/buaa-bme-803.raw",
+      "sha256": "75b1a9e2b4146c6cc4b0b8d0435c2a37e68a629b6b4970230e73262482fbb712",
+      "captured_at": "2026-10-23T05:49:50.577Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-buaa-bme-2027-syllabus-803-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "北航2027：医工交叉学科群硕士初试自命题科目含 803 解剖生理学（考纲覆盖人体九大系统）",
+      "summary": "北京航空航天大学生物与医学工程学院（医工交叉学科群）公布的「招收2027年硕士初试考试大纲 解剖生理学（科目代码803）」，绪论部分要求掌握解剖学、生理学概念与解剖学术语，其后分人体基本组成、骨肌系统、循环系统、呼吸系统、消化系统、泌尿系统、神经系统、内分泌系统、感受器官十章。",
+      "applicability": "适用于报考北航医工交叉学科群（生物与医学工程学院）硕士、且初试选考 803 解剖生理学的考生；该科目内容与医学本科课程高度重合，是医学本科跨考医工方向时「专业课可用本行知识」的直接证据。本页为考试大纲，未涉及本科专业限制条款。不适用于其他院校或 701 科目。",
+      "relation": "direct",
+      "tags": [
+        "北京航空航天大学",
+        "医工交叉学科群",
+        "803解剖生理学",
+        "初试科目",
+        "医学本科"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京航空航天大学",
+        "admission_year": 2027,
+        "region": "北京",
+        "college": "生物与医学工程学院（医工交叉学科群）",
+        "evidence_locator": "页面「硕士招生专栏」→ 招收2027年硕士初试考试大纲解剖生理学（科目代码803）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "招收2027年硕士初试考试大纲解剖生理学（科目代码803） 一 \\. 绪论 1\\. 解剖学、生理学的概念，解剖学的相关术语。"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "buaa-bme-2027-syllabus-701",
+      "url": "https://bme.buaa.edu.cn/newsInfo.aspx?catID=13&subcatID=1014&curID=14745",
+      "organization": "北京航空航天大学生物与医学工程学院（医工交叉学科群）",
+      "title": "招收2027年硕士初试考试大纲 基础医学综合（科目代码701）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该大纲正文未印发布日期（页面仅栏目导航与标题），故记 null；招生年度由标题「招收2027年硕士初试考试大纲」确定。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-admissions-92b/buaa-bme-701.raw",
+      "sha256": "c8fabccc90c52e9fdb0311fbc144ba4db085ec2ec5fe19c364dc567de2017698",
+      "captured_at": "2026-10-23T05:50:32.744Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-buaa-bme-2027-syllabus-701-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "北航2027：医工交叉学科群硕士初试自命题 701 基础医学综合（生理/生化/细胞/微生物/免疫五部分）",
+      "summary": "北航医工交叉学科群「招收2027年硕士初试考试大纲 基础医学综合（科目代码701）」：考试内容包括生理学、生物化学、细胞生物学、微生物学和免疫学五部分，所占比例分别约为 25%、25%、25%、15% 和 10%。",
+      "applicability": "适用于报考北航医工交叉学科群硕士、初试选考 701 基础医学综合的考生：五部分全部是医学本科主干课程，医学本科生可用本行知识直接应考，无需改学信号与系统/大学物理。本页为考试大纲，未涉及本科专业限制条款。不适用于 803 科目或其他院校。",
+      "relation": "direct",
+      "tags": [
+        "北京航空航天大学",
+        "医工交叉学科群",
+        "701基础医学综合",
+        "生理学",
+        "生物化学",
+        "免疫学"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京航空航天大学",
+        "admission_year": 2027,
+        "region": "北京",
+        "college": "生物与医学工程学院（医工交叉学科群）",
+        "evidence_locator": "页面「硕士招生专栏」→ 招收2027年硕士初试考试大纲基础医学综合（科目代码701）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "招收2027年硕士初试考试大纲基础医学综合（科目代码701） 考试内容包括生理学、生物化学、细胞生物学、微生物学和免疫学五部分，所占比例分别约为 25%、25%、25%、15%和10%。"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  }
+]

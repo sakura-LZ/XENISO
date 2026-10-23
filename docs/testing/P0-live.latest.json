@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-21T11:23:28.283Z",
+  "checked_at": "2026-10-21T12:27:29.348Z",
   "mock": false,
   "synthetic_probe": true,
   "checks": [
@@ -10,8 +10,8 @@
     },
     {
       "name": "supabase_live",
-      "status": "FAIL",
-      "detail": "Anonymous Auth / schema / RLS / deletion check failed; see setup prerequisites; raw errors suppressed"
+      "status": "PASS",
+      "detail": "synthetic_probe=true; 2 anonymous identities; profiles/assessments/experiences/reports owner and cross-user RLS, public denial, refresh, self deletion, artifact cascade and token revocation verified"
     }
   ],
   "onet_requests": [
@@ -55,5 +55,5 @@
       ]
     }
   ],
-  "accepted": false
+  "accepted": true
 }

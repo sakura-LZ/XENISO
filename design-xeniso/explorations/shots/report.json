@@ -1,0 +1,80 @@
+[
+  {
+    "file": "direction-01-labmap.png",
+    "target": "D:\\医学生跨考平台\\limen_project_files\\design-xeniso\\explorations\\direction-01-labmap.html",
+    "name": "实验室地图桌",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "direction-02-pathreport.png",
+    "target": "D:\\医学生跨考平台\\limen_project_files\\design-xeniso\\explorations\\direction-02-pathreport.html",
+    "name": "病理报告标注",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "direction-03-kanban.png",
+    "target": "D:\\医学生跨考平台\\limen_project_files\\design-xeniso\\explorations\\direction-03-kanban.html",
+    "name": "科研项目看板",
+    "state": null,
+    "size": "1440x900",
+    "zoom": 1,
+    "thumb": true,
+    "animationWaitMs": 0,
+    "issues": [],
+    "lint": []
+  },
+  {
+    "file": "sheet.png",
+    "width": 2000,
+    "height": 480,
+    "columns": 3,
+    "items": [
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 24,
+        "y": 24,
+        "label": "实验室地图桌",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 680,
+        "y": 24,
+        "label": "病理报告标注",
+        "labelY": 432
+      },
+      {
+        "naturalWidth": 720,
+        "naturalHeight": 450,
+        "width": 640,
+        "height": 400,
+        "labelHeight": 32,
+        "x": 1336,
+        "y": 24,
+        "label": "科研项目看板",
+        "labelY": 432
+      }
+    ],
+    "issues": []
+  }
+]

@@ -1,0 +1,555 @@
+{
+  "model_edits_applied_verbatim": true,
+  "edits": 66,
+  "api": [
+    {
+      "role": "app",
+      "model": "claude-opus-5-5",
+      "stop_reason": "end_turn",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "inference_geo": "us",
+        "input_tokens": 24894,
+        "output_tokens": 8294,
+        "output_tokens_details": {
+          "thinking_tokens": 3860
+        },
+        "service_tier": "standard"
+      },
+      "edits": 29,
+      "status": "success"
+    },
+    {
+      "role": "library-community",
+      "model": "claude-opus-5-5",
+      "stop_reason": "end_turn",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "inference_geo": "us",
+        "input_tokens": 18970,
+        "output_tokens": 4718,
+        "output_tokens_details": {
+          "thinking_tokens": 1726
+        },
+        "service_tier": "standard"
+      },
+      "edits": 32,
+      "status": "success"
+    },
+    {
+      "role": "visual",
+      "model": "claude-opus-5-5",
+      "stop_reason": "end_turn",
+      "usage": {
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 0,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0,
+        "inference_geo": "us",
+        "input_tokens": 10718,
+        "output_tokens": 5298,
+        "output_tokens_details": {
+          "thinking_tokens": 1479
+        },
+        "service_tier": "standard"
+      },
+      "edits": 5,
+      "status": "success"
+    }
+  ],
+  "image_generation": [
+    {
+      "image": "xeniso-direct-basics.png",
+      "status": "success",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 2809288,
+      "returned_model": "gpt-image-2"
+    },
+    {
+      "image": "xeniso-direct-interests.png",
+      "status": "success",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 3140724,
+      "returned_model": "gpt-image-2"
+    },
+    {
+      "image": "xeniso-direct-work.png",
+      "status": "success",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 2665565,
+      "returned_model": "gpt-image-2"
+    },
+    {
+      "image": "xeniso-direct-interview.png",
+      "status": "success",
+      "size": [
+        1536,
+        1024
+      ],
+      "bytes": 2468550,
+      "returned_model": "gpt-image-2"
+    }
+  ],
+  "distinct_image_uses": {
+    "assets/xeniso-opus-profile.webp": 1,
+    "assets/xeniso-opus-evaluation.webp": 1,
+    "assets/xeniso-opus-experience.webp": 1,
+    "assets/xeniso-opus-planning.webp": 1,
+    "assets/xeniso-direct-basics.webp": 1,
+    "assets/xeniso-direct-interests.webp": 1,
+    "assets/xeniso-direct-work.webp": 1,
+    "assets/xeniso-direct-interview.webp": 1
+  },
+  "regression_passed": 44,
+  "simulated_exports": 35,
+  "browser": {
+    "records": [
+      {
+        "route": "/home",
+        "width": 1440,
+        "overflow": false,
+        "title": "Different Fields. Shared Potential. · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 262.5,
+          "y": 203.046875,
+          "width": 900,
+          "height": 213.515625,
+          "top": 203.046875,
+          "right": 1162.5,
+          "bottom": 416.5625,
+          "left": 262.5
+        },
+        "composer": {
+          "x": 382.5,
+          "y": 450.5625,
+          "width": 660,
+          "height": 156.390625,
+          "top": 450.5625,
+          "right": 1042.5,
+          "bottom": 606.953125,
+          "left": 382.5
+        }
+      },
+      {
+        "route": "/profile",
+        "width": 1440,
+        "overflow": false,
+        "title": "个人画像 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "route": "/experience",
+        "width": 1440,
+        "overflow": false,
+        "title": "职业体验 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "route": "/library",
+        "width": 1440,
+        "overflow": false,
+        "title": "信息文库 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "route": "/community",
+        "width": 1440,
+        "overflow": false,
+        "title": "交流社区 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "width": 1440,
+        "carouselButtonMoved": true
+      },
+      {
+        "route": "/home",
+        "width": 820,
+        "overflow": false,
+        "title": "Different Fields. Shared Potential. · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 28,
+          "y": 271.078125,
+          "width": 749,
+          "height": 155.453125,
+          "top": 271.078125,
+          "right": 777,
+          "bottom": 426.53125,
+          "left": 28
+        },
+        "composer": {
+          "x": 72.5,
+          "y": 460.53125,
+          "width": 660,
+          "height": 156.390625,
+          "top": 460.53125,
+          "right": 732.5,
+          "bottom": 616.921875,
+          "left": 72.5
+        }
+      },
+      {
+        "route": "/profile",
+        "width": 820,
+        "overflow": false,
+        "title": "个人画像 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "route": "/experience",
+        "width": 820,
+        "overflow": false,
+        "title": "职业体验 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "route": "/library",
+        "width": 820,
+        "overflow": false,
+        "title": "信息文库 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "route": "/community",
+        "width": 820,
+        "overflow": false,
+        "title": "交流社区 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "width": 820,
+        "carouselButtonMoved": true
+      },
+      {
+        "route": "/home",
+        "width": 390,
+        "overflow": false,
+        "title": "Different Fields. Shared Potential. · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 18,
+          "y": 179.4949951171875,
+          "width": 354,
+          "height": 127.25,
+          "top": 179.4949951171875,
+          "right": 372,
+          "bottom": 306.7449951171875,
+          "left": 18
+        },
+        "composer": {
+          "x": 18,
+          "y": 332.7449951171875,
+          "width": 354,
+          "height": 162,
+          "top": 332.7449951171875,
+          "right": 372,
+          "bottom": 494.7449951171875,
+          "left": 18
+        }
+      },
+      {
+        "route": "/profile",
+        "width": 390,
+        "overflow": false,
+        "title": "个人画像 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "route": "/experience",
+        "width": 390,
+        "overflow": false,
+        "title": "职业体验 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "route": "/library",
+        "width": 390,
+        "overflow": false,
+        "title": "信息文库 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "route": "/community",
+        "width": 390,
+        "overflow": false,
+        "title": "交流社区 · XENISO 异域同构",
+        "brokenImages": [],
+        "hero": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "composer": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      {
+        "width": 390,
+        "carouselButtonMoved": true
+      },
+      {
+        "reducedMotion": true
+      }
+    ],
+    "errors": []
+  },
+  "lint_exit": 0,
+  "isolated_build_exit": 0,
+  "credential_matches": 0,
+  "html_sha256": "cd3324fe5f6a9b8cdacf984789ca48899bb9e903cf87b79b96351c2a342410b9"
+}

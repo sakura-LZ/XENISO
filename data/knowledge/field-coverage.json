@@ -1,0 +1,4477 @@
+{
+  "schema_version": "field-coverage-1",
+  "generated_at": "2026-10-23T07:22:06.122Z",
+  "note": "每个职业 × category × field 的有值/缺值矩阵。present=true 表示该职业在该 category 至少有一条该 field 的事实。missing_fields 含 expected_fields 中从未采集到的字段（真实缺口）。malformed_fields 是采集器写进 field 的缺口说明或非 snake_case 名称，已归一/剔除，不进入矩阵。",
+  "category_order": [
+    "occupation",
+    "admissions",
+    "recruitment",
+    "industry",
+    "learning"
+  ],
+  "field_labels": {
+    "occupation": "职业概述",
+    "tasks": "工作任务",
+    "work_activities": "工作活动",
+    "skills": "技能",
+    "knowledge": "知识",
+    "abilities": "能力",
+    "tools": "工具",
+    "technology": "技术",
+    "education": "学历要求",
+    "certification": "证书/执照",
+    "work_context": "工作环境",
+    "work_styles": "工作风格",
+    "interests": "兴趣",
+    "job_zone": "Job Zone",
+    "role_summary": "角色概述",
+    "admission_requirements": "报考条件",
+    "cross_major_restrictions": "跨专业限制",
+    "exam_subjects": "初试科目",
+    "personal_eligibility": "个人报考资格",
+    "tuition": "学费",
+    "college_retest_rules": "复试规则",
+    "program": "专业/项目",
+    "institution": "院校",
+    "registration_window": "报名时间",
+    "career_path": "职业路径",
+    "employer": "雇主/去向",
+    "job_title": "岗位名称",
+    "responsibilities": "岗位职责",
+    "requirements": "任职要求",
+    "salary_statistics": "薪资统计",
+    "statistical_definition": "统计口径",
+    "coverage_limit": "覆盖范围",
+    "topics": "课程主题",
+    "training": "培养目标",
+    "learning_hours": "学分/学时",
+    "industry_context": "行业背景",
+    "employment_outlook": "就业前景",
+    "compensation": "薪酬",
+    "skills_required": "技能要求",
+    "duties": "职责",
+    "technical_requirements": "技术要求",
+    "major_restrictions": "专业限制",
+    "experience": "经验要求",
+    "occupation_definition": "职业定义",
+    "employment_directions": "就业去向",
+    "program_definition": "项目/专业定义",
+    "employment_statistics": "就业统计",
+    "access_requirement": "准入要求",
+    "policy_requirement": "政策要求",
+    "departments": "科室/院系",
+    "policy_goals": "政策目标",
+    "city": "城市",
+    "major_catalog": "专业目录",
+    "job_type": "岗位类型",
+    "design_constraints": "设计约束",
+    "scope": "适用范围",
+    "materials": "材料",
+    "china_legal_requirement": "中国法规要求",
+    "regional_limit": "地域限制",
+    "research_project": "研究项目",
+    "salary": "薪资",
+    "prerequisites": "先修要求",
+    "privacy_requirements": "隐私要求",
+    "preferred_background": "优先背景",
+    "governance_scope": "治理范围",
+    "resource_title": "资源标题"
+  },
+  "malformed_fields": [
+    {
+      "raw": "薪资",
+      "count": 15
+    },
+    {
+      "raw": "岗位招聘要求",
+      "count": 15
+    },
+    {
+      "raw": "学历与职称门槛（部分标准另列）",
+      "count": 15
+    },
+    {
+      "raw": "具体技能等级考核标准",
+      "count": 15
+    },
+    {
+      "raw": "薪酬",
+      "count": 15
+    },
+    {
+      "raw": "各等级对应薪酬",
+      "count": 15
+    },
+    {
+      "raw": "各等级对应职称",
+      "count": 15
+    },
+    {
+      "raw": "先修课程要求（原文未列）",
+      "count": 11
+    },
+    {
+      "raw": "其他城市",
+      "count": 8
+    },
+    {
+      "raw": "中国官方对应职业定义",
+      "count": 6
+    },
+    {
+      "raw": "中国岗位职责官方原文",
+      "count": 6
+    },
+    {
+      "raw": "required_level（技能等级要求）",
+      "count": 6
+    },
+    {
+      "raw": "中国技能等级认定",
+      "count": 6
+    },
+    {
+      "raw": "中国 RIASEC 职业常模",
+      "count": 6
+    },
+    {
+      "raw": "课程学分/学时（介绍页未列）",
+      "count": 5
+    },
+    {
+      "raw": "salary（未给薪资）",
+      "count": 5
+    },
+    {
+      "raw": "月薪",
+      "count": 5
+    },
+    {
+      "raw": "月薪口径",
+      "count": 4
+    },
+    {
+      "raw": "平均值",
+      "count": 4
+    },
+    {
+      "raw": "具体岗位薪资",
+      "count": 3
+    },
+    {
+      "raw": "分职业数据",
+      "count": 3
+    },
+    {
+      "raw": "职业口径",
+      "count": 3
+    },
+    {
+      "raw": "分专业本科专业限制（见招生专业目录）",
+      "count": 2
+    },
+    {
+      "raw": "课程学分/学时（本段未列）",
+      "count": 2
+    },
+    {
+      "raw": "major_restrictions（未逐岗列专业限制）",
+      "count": 2
+    },
+    {
+      "raw": "city（原文未逐字写城市）",
+      "count": 2
+    },
+    {
+      "raw": "city（页面正文未直接标注城市）",
+      "count": 2
+    },
+    {
+      "raw": "机关事业单位工资",
+      "count": 2
+    },
+    {
+      "raw": "具体公司薪资",
+      "count": 2
+    },
+    {
+      "raw": "税后收入",
+      "count": 2
+    },
+    {
+      "raw": "年薪口径",
+      "count": 2
+    },
+    {
+      "raw": "医院编制工资制度",
+      "count": 2
+    },
+    {
+      "raw": "元/年 口径",
+      "count": 2
+    },
+    {
+      "raw": "逐项工作内容（原文为表格，未逐条摘录）",
+      "count": 2
+    },
+    {
+      "raw": "分专业报考限制（见专业目录，简章未列）",
+      "count": 1
+    },
+    {
+      "raw": "医工交叉专业（0831/085409/1010/1405）的本科专业限制（本段未涉及）",
+      "count": 1
+    },
+    {
+      "raw": "分专业本科专业限制（见专业目录）",
+      "count": 1
+    },
+    {
+      "raw": "各专业自命题科目代码与参考书（简章未列，见专业目录）",
+      "count": 1
+    },
+    {
+      "raw": "0831/085409/1010 等医工交叉专业的本科限制（本章程未涉及）",
+      "count": 1
+    },
+    {
+      "raw": "分专业本科专业限制（见各学院招生目录）",
+      "count": 1
+    },
+    {
+      "raw": "各专业自命题科目代码与参考书（见学院招生目录）",
+      "count": 1
+    },
+    {
+      "raw": "各专业自命题科目代码（见招生目录）",
+      "count": 1
+    },
+    {
+      "raw": "各专业具体科目名称与代码（见招生专业目录）",
+      "count": 1
+    },
+    {
+      "raw": "各培养单位具体加试科目（在招生专业目录备注中，本章程未列）",
+      "count": 1
+    },
+    {
+      "raw": "分专业拟招人数（见招生专业目录）",
+      "count": 1
+    },
+    {
+      "raw": "890 普通物理参考书目/大纲（目录未列）",
+      "count": 1
+    },
+    {
+      "raw": "是否限制本科专业（备注未提，即未设本科专业白名单）",
+      "count": 1
+    },
+    {
+      "raw": "实际统考名额（目录未给，需查研招网）",
+      "count": 1
+    },
+    {
+      "raw": "学时明细（见课程体系表）",
+      "count": 1
+    },
+    {
+      "raw": "各专业本科专业白名单（需查2027专业目录，该系统为JS查询应用未抓取）",
+      "count": 1
+    },
+    {
+      "raw": "具体哪些专业不接收应届生（需查章程原文）",
+      "count": 1
+    },
+    {
+      "raw": "各门课程学分（分散在附表课程设置一览表中，本段未列）",
+      "count": 1
+    },
+    {
+      "raw": "上述特色课程的学分/学时（本段未列）",
+      "count": 1
+    },
+    {
+      "raw": "考研报考前置课程要求（本页不涉及）",
+      "count": 1
+    },
+    {
+      "raw": "学分换算（原文按学时计，未给学分）",
+      "count": 1
+    },
+    {
+      "raw": "先修课程要求（原文明确学科专业不限，未列先修课程）",
+      "count": 1
+    },
+    {
+      "raw": "中国官方统一课程目录",
+      "count": 1
+    },
+    {
+      "raw": "学时（原文按学分计）",
+      "count": 1
+    },
+    {
+      "raw": "教育部国标原文（本页仅引用名称，未附全文）",
+      "count": 1
+    },
+    {
+      "raw": "课程与毕业要求的支撑矩阵（原文未列）",
+      "count": 1
+    },
+    {
+      "raw": "job_title（未逐岗列名，明细在附件招聘计划表）",
+      "count": 1
+    },
+    {
+      "raw": "salary（官网未给任何金额/区间，仅给制度性表述）",
+      "count": 1
+    },
+    {
+      "raw": "salary（仅制度性表述，未给金额）",
+      "count": 1
+    },
+    {
+      "raw": "salary（薪酬按医院规定执行，未给金额）",
+      "count": 1
+    },
+    {
+      "raw": "salary（简章未列薪酬数字）",
+      "count": 1
+    },
+    {
+      "raw": "salary（仅博士后岗位，未覆盖医师/技术岗）",
+      "count": 1
+    },
+    {
+      "raw": "education（本段岗位表未含学历列）",
+      "count": 1
+    },
+    {
+      "raw": "salary（仅职称待遇表述，无金额）",
+      "count": 1
+    },
+    {
+      "raw": "career_path（未给具体岗位晋升路径）",
+      "count": 1
+    },
+    {
+      "raw": "salary_statistics（职业大类口径，非医院具体岗位）",
+      "count": 1
+    },
+    {
+      "raw": "salary_statistics（企业口径，不含事业单位/公立医院）",
+      "count": 1
+    },
+    {
+      "raw": "salary_statistics（企业口径，不含公立医院）",
+      "count": 1
+    },
+    {
+      "raw": "salary_statistics（企业口径，不含公立医院药剂科）",
+      "count": 1
+    },
+    {
+      "raw": "salary_statistics（企业口径，不含公立医院医技科）",
+      "count": 1
+    },
+    {
+      "raw": "education（本页未列学历要求）",
+      "count": 1
+    },
+    {
+      "raw": "valid_through（原文只给月份节点，未给具体截止日）",
+      "count": 1
+    },
+    {
+      "raw": "departments（未逐科列名医技科室）",
+      "count": 1
+    },
+    {
+      "raw": "salary（仅定性条款，无金额）",
+      "count": 1
+    },
+    {
+      "raw": "salary_amount（原文无金额）",
+      "count": 1
+    },
+    {
+      "raw": "access_requirement（未列各专业考核大纲差异）",
+      "count": 1
+    },
+    {
+      "raw": "training（未列各专业轮转细则内容）",
+      "count": 1
+    },
+    {
+      "raw": "training（未列各专业考核分值）",
+      "count": 1
+    },
+    {
+      "raw": "training（未给病种数具体下限）",
+      "count": 1
+    },
+    {
+      "raw": "training（未列政策依据文号）",
+      "count": 1
+    },
+    {
+      "raw": "training（未写学位申请年限与名额）",
+      "count": 1
+    },
+    {
+      "raw": "learning_hours（未给学时数，仅给3年与月数安排）",
+      "count": 1
+    },
+    {
+      "raw": "learning_hours（未给全科以外专业轮转月数）",
+      "count": 1
+    },
+    {
+      "raw": "policy_requirement（本页仅为印发通知，标准正文为附件）",
+      "count": 1
+    },
+    {
+      "raw": "departments（未列医技科室完整清单与人员数量下限）",
+      "count": 1
+    },
+    {
+      "raw": "departments（未给各科室单独配比）",
+      "count": 1
+    },
+    {
+      "raw": "departments（未给精神科床位数与医师配比下限）",
+      "count": 1
+    },
+    {
+      "raw": "policy_requirement（发布会实录未列409组明细，明细在通知附件）",
+      "count": 1
+    },
+    {
+      "raw": "policy_requirement（未列2025年后接续政策）",
+      "count": 1
+    },
+    {
+      "raw": "policy_goals（未给标准发布的具体时间表）",
+      "count": 1
+    },
+    {
+      "raw": "policy_goals（未列具体量化指标）",
+      "count": 1
+    },
+    {
+      "raw": "job_title（未在正文逐岗列名称，明细在附件岗位计划表）",
+      "count": 1
+    },
+    {
+      "raw": "job_type（未用全职/兼职等表述）",
+      "count": 1
+    },
+    {
+      "raw": "learning_hours（原文只给年限，未给学时或月度折算）",
+      "count": 1
+    },
+    {
+      "raw": "access_requirement（未列具体专业代码与外语要求）",
+      "count": 1
+    },
+    {
+      "raw": "training（未写结业考核具体分值或合格线）",
+      "count": 1
+    },
+    {
+      "raw": "prerequisites（未列基地数量与名单）",
+      "count": 1
+    },
+    {
+      "raw": "learning_hours（未给其他省份口径）",
+      "count": 1
+    },
+    {
+      "raw": "training（未给各专业细则内容）",
+      "count": 1
+    },
+    {
+      "raw": "training（未给各院校具体学制安排）",
+      "count": 1
+    },
+    {
+      "raw": "training（未写具体轮转科室与时长）",
+      "count": 1
+    },
+    {
+      "raw": "access_requirement（未列各专业基地名额与分数线）",
+      "count": 1
+    },
+    {
+      "raw": "access_requirement（未说明其他4年制理学专业的处理方式）",
+      "count": 1
+    },
+    {
+      "raw": "access_requirement（未给出退培认定的具体流程）",
+      "count": 1
+    },
+    {
+      "raw": "regional_limit（未列可送培单位名单）",
+      "count": 1
+    },
+    {
+      "raw": "access_requirement（未在本页列出各专业招收人数）",
+      "count": 1
+    },
+    {
+      "raw": "training（未写学位申请的具体年限与名额）",
+      "count": 1
+    },
+    {
+      "raw": "salary（未给出基本工资数额与月度总收入）",
+      "count": 1
+    },
+    {
+      "raw": "education（未按专业基地细分学历要求）",
+      "count": 1
+    },
+    {
+      "raw": "departments（未给每个专业基地的招收人数与人员配置）",
+      "count": 1
+    },
+    {
+      "raw": "salary（简章未给博士后具体薪资数额）",
+      "count": 1
+    },
+    {
+      "raw": "major_restrictions（未给各学科的具体招收名额）",
+      "count": 1
+    },
+    {
+      "raw": "technical_requirements（未写其他等效成果的认定口径）",
+      "count": 1
+    },
+    {
+      "raw": "departments（未规定信息科/数据中心等信息化科室）",
+      "count": 1
+    },
+    {
+      "raw": "departments（未单独规定信息/病案岗位人数）",
+      "count": 1
+    },
+    {
+      "raw": "departments（未规定人员数量分科细则）",
+      "count": 1
+    },
+    {
+      "raw": "china_legal_requirement（未列各省调整后的地方标准）",
+      "count": 1
+    },
+    {
+      "raw": "scope（未列各类机构完整标准表）",
+      "count": 1
+    },
+    {
+      "raw": "salary_statistics（无分岗位、分职称、分医院等级的细分值）",
+      "count": 1
+    },
+    {
+      "raw": "salary_statistics（无民营医院分岗位细分值）",
+      "count": 1
+    },
+    {
+      "raw": "salary_statistics（无医院等级或科室细分）",
+      "count": 1
+    },
+    {
+      "raw": "statistical_definition（未给中位数或分位数口径）",
+      "count": 1
+    },
+    {
+      "raw": "statistical_definition（未给税后折算方法）",
+      "count": 1
+    },
+    {
+      "raw": "salary（全文未给薪资数额）",
+      "count": 1
+    },
+    {
+      "raw": "job_type（未写全职/合同类型）",
+      "count": 1
+    },
+    {
+      "raw": "technical_requirements（未给技能考核方式）",
+      "count": 1
+    },
+    {
+      "raw": "technical_requirements（未给认证类硬性要求）",
+      "count": 1
+    },
+    {
+      "raw": "salary（公告未给薪资）",
+      "count": 1
+    },
+    {
+      "raw": "city（正文未直接标注城市）",
+      "count": 1
+    },
+    {
+      "raw": "experience（未写工作年限要求）",
+      "count": 1
+    },
+    {
+      "raw": "technical_requirements（未要求ICD编码证书）",
+      "count": 1
+    },
+    {
+      "raw": "training（未在本页给出补招的完整报考条件，需另看招收简章）",
+      "count": 1
+    },
+    {
+      "raw": "access_requirement（本页未列具体报考条件）",
+      "count": 1
+    },
+    {
+      "raw": "salary（原文未写薪资）",
+      "count": 1
+    },
+    {
+      "raw": "平均值/算术平均工资",
+      "count": 1
+    },
+    {
+      "raw": "分岗位到手收入",
+      "count": 1
+    },
+    {
+      "raw": "税后到手收入",
+      "count": 1
+    },
+    {
+      "raw": "单位人工成本分摊",
+      "count": 1
+    },
+    {
+      "raw": "个体经营者收入",
+      "count": 1
+    },
+    {
+      "raw": "2025年当年数据",
+      "count": 1
+    },
+    {
+      "raw": "医疗AI专属薪资",
+      "count": 1
+    },
+    {
+      "raw": "单纯职业口径",
+      "count": 1
+    },
+    {
+      "raw": "未达标职业的薪资数字",
+      "count": 1
+    },
+    {
+      "raw": "其他城市对比",
+      "count": 1
+    },
+    {
+      "raw": "其他城市卫生行业",
+      "count": 1
+    },
+    {
+      "raw": "公立医院薪酬制度",
+      "count": 1
+    },
+    {
+      "raw": "医疗行业内该职业的单独数字",
+      "count": 1
+    },
+    {
+      "raw": "公立医院编制内工资",
+      "count": 1
+    },
+    {
+      "raw": "绩效奖金单列口径",
+      "count": 1
+    },
+    {
+      "raw": "医院等级差异",
+      "count": 1
+    },
+    {
+      "raw": "分岗位个体offer",
+      "count": 1
+    },
+    {
+      "raw": "10%与90%分位",
+      "count": 1
+    },
+    {
+      "raw": "医疗AI专属产业分类",
+      "count": 1
+    },
+    {
+      "raw": "全量普查数据",
+      "count": 1
+    },
+    {
+      "raw": "企业级数据",
+      "count": 1
+    },
+    {
+      "raw": "分地区分位值",
+      "count": 1
+    },
+    {
+      "raw": "具体医院薪资",
+      "count": 1
+    },
+    {
+      "raw": "分城市分位值",
+      "count": 1
+    },
+    {
+      "raw": "医疗AI岗位专属数据",
+      "count": 1
+    },
+    {
+      "raw": "分职业细类工资",
+      "count": 1
+    },
+    {
+      "raw": "到手收入",
+      "count": 1
+    },
+    {
+      "raw": "私营单位同行业数据",
+      "count": 1
+    },
+    {
+      "raw": "私营单位同行业数据引用",
+      "count": 1
+    },
+    {
+      "raw": "个体工商户收入",
+      "count": 1
+    },
+    {
+      "raw": "自由职业者收入",
+      "count": 1
+    },
+    {
+      "raw": "灵活就业收入",
+      "count": 1
+    },
+    {
+      "raw": "全国数据",
+      "count": 1
+    },
+    {
+      "raw": "分位数全区间",
+      "count": 1
+    },
+    {
+      "raw": "年度总包",
+      "count": 1
+    },
+    {
+      "raw": "年终奖与股权",
+      "count": 1
+    },
+    {
+      "raw": "精确均值",
+      "count": 1
+    },
+    {
+      "raw": "医疗AI岗位单独数据",
+      "count": 1
+    },
+    {
+      "raw": "全部就业人员年薪",
+      "count": 1
+    },
+    {
+      "raw": "均值",
+      "count": 1
+    },
+    {
+      "raw": "中位数",
+      "count": 1
+    },
+    {
+      "raw": "个人到手收入",
+      "count": 1
+    },
+    {
+      "raw": "企业实际薪酬",
+      "count": 1
+    },
+    {
+      "raw": "编制内工资制度",
+      "count": 1
+    },
+    {
+      "raw": "数据分析处理工程技术人员单列数据",
+      "count": 1
+    },
+    {
+      "raw": "医疗行业口径",
+      "count": 1
+    },
+    {
+      "raw": "2025年度数据",
+      "count": 1
+    },
+    {
+      "raw": "计算机软件工程技术人员细类",
+      "count": 1
+    },
+    {
+      "raw": "医疗场景专项要求",
+      "count": 1
+    },
+    {
+      "raw": "required_level（分值/等级化技能要求）",
+      "count": 1
+    },
+    {
+      "raw": "临床数据专项要求",
+      "count": 1
+    },
+    {
+      "raw": "非临床技术岗位的执业门槛（通常无此类门槛）",
+      "count": 1
+    }
+  ],
+  "roles": {
+    "medical_ai_pm": {
+      "role_id": "medical_ai_pm",
+      "canonical_name": "医学 AI 产品经理",
+      "mapped_app_role": "medical_ai_pm",
+      "counts": {
+        "total": 158,
+        "by_category": {
+          "occupation": 31,
+          "admissions": 16,
+          "recruitment": 52,
+          "industry": 47,
+          "learning": 12
+        }
+      },
+      "coverage": {
+        "fields_total": 96,
+        "fields_with_value": 37,
+        "fields_missing": 59
+      },
+      "matrix": {
+        "occupation": {
+          "career_path": {
+            "present": true,
+            "count": 5
+          },
+          "career_promotion_path": {
+            "present": false,
+            "count": 0
+          },
+          "china_degree_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_data_role_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "department_training_path": {
+            "present": false,
+            "count": 0
+          },
+          "departments": {
+            "present": false,
+            "count": 0
+          },
+          "employment_directions": {
+            "present": false,
+            "count": 0
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "hard_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "industry_universal_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "interests": {
+            "present": true,
+            "count": 6
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "license_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "medical_specific_standard": {
+            "present": false,
+            "count": 0
+          },
+          "national_department_standard": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": true,
+            "count": 5
+          },
+          "privacy_requirements": {
+            "present": true,
+            "count": 1
+          },
+          "program_definition": {
+            "present": false,
+            "count": 0
+          },
+          "recruitment_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "responsibilities": {
+            "present": true,
+            "count": 5
+          },
+          "role_specific_career_path": {
+            "present": false,
+            "count": 0
+          },
+          "skills": {
+            "present": true,
+            "count": 9
+          }
+        },
+        "admissions": {
+          "admission_requirements": {
+            "present": true,
+            "count": 4
+          },
+          "college_retest_rules": {
+            "present": false,
+            "count": 0
+          },
+          "cross_major_restrictions": {
+            "present": true,
+            "count": 3
+          },
+          "current_program_capacity": {
+            "present": false,
+            "count": 0
+          },
+          "current_year_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "exam_subjects": {
+            "present": true,
+            "count": 5
+          },
+          "institution": {
+            "present": true,
+            "count": 2
+          },
+          "ordinary_bachelor_program_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "personal_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "program": {
+            "present": true,
+            "count": 1
+          },
+          "registration_window": {
+            "present": true,
+            "count": 1
+          },
+          "training_direction": {
+            "present": false,
+            "count": 0
+          },
+          "tuition": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "recruitment": {
+          "access_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "application_deadline": {
+            "present": false,
+            "count": 0
+          },
+          "city": {
+            "present": true,
+            "count": 1
+          },
+          "deadline": {
+            "present": false,
+            "count": 0
+          },
+          "education": {
+            "present": true,
+            "count": 10
+          },
+          "employer": {
+            "present": true,
+            "count": 4
+          },
+          "experience": {
+            "present": true,
+            "count": 8
+          },
+          "job_title": {
+            "present": true,
+            "count": 11
+          },
+          "job_type": {
+            "present": true,
+            "count": 2
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "major_restrictions": {
+            "present": true,
+            "count": 5
+          },
+          "medicine_major_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "preferred_background": {
+            "present": true,
+            "count": 1
+          },
+          "published_at": {
+            "present": false,
+            "count": 0
+          },
+          "salary": {
+            "present": true,
+            "count": 1
+          },
+          "technical_requirements": {
+            "present": true,
+            "count": 9
+          }
+        },
+        "industry": {
+          "average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "china_legal_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "china_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "coverage_limit": {
+            "present": true,
+            "count": 6
+          },
+          "current_product_classification": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "design_constraints": {
+            "present": true,
+            "count": 2
+          },
+          "direction_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "doctor_salary": {
+            "present": false,
+            "count": 0
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "employment_statistics": {
+            "present": true,
+            "count": 1
+          },
+          "full_guideline": {
+            "present": false,
+            "count": 0
+          },
+          "governance_scope": {
+            "present": true,
+            "count": 1
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_catalog": {
+            "present": false,
+            "count": 0
+          },
+          "major_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "major_graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "medical_major_salary": {
+            "present": false,
+            "count": 0
+          },
+          "observed_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "policy_goals": {
+            "present": true,
+            "count": 3
+          },
+          "policy_requirement": {
+            "present": true,
+            "count": 3
+          },
+          "regulatory_basis": {
+            "present": false,
+            "count": 0
+          },
+          "role_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "salary_statistics": {
+            "present": true,
+            "count": 19
+          },
+          "school_specific_admissions": {
+            "present": false,
+            "count": 0
+          },
+          "scope": {
+            "present": true,
+            "count": 2
+          },
+          "statistical_definition": {
+            "present": true,
+            "count": 10
+          },
+          "talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "total_graduates": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "learning": {
+          "access_requirement": {
+            "present": true,
+            "count": 1
+          },
+          "certificate": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_validation": {
+            "present": false,
+            "count": 0
+          },
+          "course_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "course_hours": {
+            "present": false,
+            "count": 0
+          },
+          "current_course_access": {
+            "present": false,
+            "count": 0
+          },
+          "current_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "engineering_prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "learning_hours": {
+            "present": false,
+            "count": 0
+          },
+          "materials": {
+            "present": true,
+            "count": 3
+          },
+          "occupation_definition": {
+            "present": false,
+            "count": 0
+          },
+          "personal_learning_hours": {
+            "present": false,
+            "count": 0
+          },
+          "prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "regional_limit": {
+            "present": true,
+            "count": 1
+          },
+          "research_project": {
+            "present": true,
+            "count": 1
+          },
+          "research_vacancy": {
+            "present": false,
+            "count": 0
+          },
+          "resource_title": {
+            "present": false,
+            "count": 0
+          },
+          "topics": {
+            "present": true,
+            "count": 4
+          },
+          "training": {
+            "present": true,
+            "count": 2
+          }
+        }
+      },
+      "missing_fields": [
+        "occupation.career_promotion_path",
+        "occupation.china_degree_requirement",
+        "occupation.clinical_data_role_requirements",
+        "occupation.department_salary",
+        "occupation.department_training_path",
+        "occupation.departments",
+        "occupation.employment_directions",
+        "occupation.employment_rate",
+        "occupation.graduate_salary",
+        "occupation.hard_requirements",
+        "occupation.industry_universal_requirements",
+        "occupation.knowledge_graph_requirements",
+        "occupation.license_eligibility",
+        "occupation.medical_specific_standard",
+        "occupation.national_department_standard",
+        "occupation.program_definition",
+        "occupation.recruitment_eligibility",
+        "occupation.role_specific_career_path",
+        "admissions.college_retest_rules",
+        "admissions.current_program_capacity",
+        "admissions.current_year_requirements",
+        "admissions.ordinary_bachelor_program_eligibility",
+        "admissions.personal_eligibility",
+        "admissions.training_direction",
+        "admissions.tuition",
+        "recruitment.access_requirement",
+        "recruitment.application_deadline",
+        "recruitment.deadline",
+        "recruitment.knowledge_graph_requirements",
+        "recruitment.medicine_major_eligibility",
+        "recruitment.published_at",
+        "industry.average_salary",
+        "industry.china_legal_requirement",
+        "industry.china_talent_demand",
+        "industry.current_product_classification",
+        "industry.department_salary",
+        "industry.direction_employment_rate",
+        "industry.doctor_salary",
+        "industry.employment_rate",
+        "industry.full_guideline",
+        "industry.graduate_salary",
+        "industry.major_average_salary",
+        "industry.major_catalog",
+        "industry.major_employment_rate",
+        "industry.major_graduate_salary",
+        "industry.medical_major_salary",
+        "industry.observed_talent_demand",
+        "industry.regulatory_basis",
+        "industry.role_average_salary",
+        "industry.school_specific_admissions",
+        "industry.talent_demand",
+        "industry.total_graduates",
+        "learning.certificate",
+        "learning.clinical_validation",
+        "learning.course_enrollment",
+        "learning.course_hours",
+        "learning.current_course_access",
+        "learning.current_enrollment",
+        "learning.engineering_prerequisites",
+        "learning.learning_hours",
+        "learning.occupation_definition",
+        "learning.personal_learning_hours",
+        "learning.prerequisites",
+        "learning.research_vacancy",
+        "learning.resource_title"
+      ]
+    },
+    "clinical_data_analyst": {
+      "role_id": "clinical_data_analyst",
+      "canonical_name": "临床数据分析师",
+      "mapped_app_role": "clinical_data_analyst",
+      "counts": {
+        "total": 109,
+        "by_category": {
+          "occupation": 35,
+          "admissions": 16,
+          "recruitment": 30,
+          "industry": 22,
+          "learning": 6
+        }
+      },
+      "coverage": {
+        "fields_total": 96,
+        "fields_with_value": 27,
+        "fields_missing": 69
+      },
+      "matrix": {
+        "occupation": {
+          "career_path": {
+            "present": true,
+            "count": 3
+          },
+          "career_promotion_path": {
+            "present": false,
+            "count": 0
+          },
+          "china_degree_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_data_role_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "department_training_path": {
+            "present": false,
+            "count": 0
+          },
+          "departments": {
+            "present": false,
+            "count": 0
+          },
+          "employment_directions": {
+            "present": true,
+            "count": 2
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "hard_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "industry_universal_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "interests": {
+            "present": true,
+            "count": 6
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "license_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "medical_specific_standard": {
+            "present": false,
+            "count": 0
+          },
+          "national_department_standard": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": true,
+            "count": 6
+          },
+          "privacy_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "program_definition": {
+            "present": true,
+            "count": 2
+          },
+          "recruitment_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "responsibilities": {
+            "present": true,
+            "count": 7
+          },
+          "role_specific_career_path": {
+            "present": false,
+            "count": 0
+          },
+          "skills": {
+            "present": true,
+            "count": 9
+          }
+        },
+        "admissions": {
+          "admission_requirements": {
+            "present": true,
+            "count": 2
+          },
+          "college_retest_rules": {
+            "present": false,
+            "count": 0
+          },
+          "cross_major_restrictions": {
+            "present": true,
+            "count": 7
+          },
+          "current_program_capacity": {
+            "present": false,
+            "count": 0
+          },
+          "current_year_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "exam_subjects": {
+            "present": true,
+            "count": 5
+          },
+          "institution": {
+            "present": false,
+            "count": 0
+          },
+          "ordinary_bachelor_program_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "personal_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "program": {
+            "present": true,
+            "count": 2
+          },
+          "registration_window": {
+            "present": false,
+            "count": 0
+          },
+          "training_direction": {
+            "present": false,
+            "count": 0
+          },
+          "tuition": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "recruitment": {
+          "access_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "application_deadline": {
+            "present": false,
+            "count": 0
+          },
+          "city": {
+            "present": false,
+            "count": 0
+          },
+          "deadline": {
+            "present": false,
+            "count": 0
+          },
+          "education": {
+            "present": true,
+            "count": 4
+          },
+          "employer": {
+            "present": true,
+            "count": 1
+          },
+          "experience": {
+            "present": true,
+            "count": 3
+          },
+          "job_title": {
+            "present": true,
+            "count": 9
+          },
+          "job_type": {
+            "present": true,
+            "count": 1
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "major_restrictions": {
+            "present": true,
+            "count": 5
+          },
+          "medicine_major_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "preferred_background": {
+            "present": false,
+            "count": 0
+          },
+          "published_at": {
+            "present": false,
+            "count": 0
+          },
+          "salary": {
+            "present": true,
+            "count": 1
+          },
+          "technical_requirements": {
+            "present": true,
+            "count": 6
+          }
+        },
+        "industry": {
+          "average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "china_legal_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "china_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "coverage_limit": {
+            "present": false,
+            "count": 0
+          },
+          "current_product_classification": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "design_constraints": {
+            "present": false,
+            "count": 0
+          },
+          "direction_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "doctor_salary": {
+            "present": false,
+            "count": 0
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "employment_statistics": {
+            "present": true,
+            "count": 2
+          },
+          "full_guideline": {
+            "present": false,
+            "count": 0
+          },
+          "governance_scope": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_catalog": {
+            "present": false,
+            "count": 0
+          },
+          "major_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "major_graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "medical_major_salary": {
+            "present": false,
+            "count": 0
+          },
+          "observed_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "policy_goals": {
+            "present": true,
+            "count": 1
+          },
+          "policy_requirement": {
+            "present": true,
+            "count": 2
+          },
+          "regulatory_basis": {
+            "present": false,
+            "count": 0
+          },
+          "role_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "salary_statistics": {
+            "present": true,
+            "count": 11
+          },
+          "school_specific_admissions": {
+            "present": false,
+            "count": 0
+          },
+          "scope": {
+            "present": false,
+            "count": 0
+          },
+          "statistical_definition": {
+            "present": true,
+            "count": 6
+          },
+          "talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "total_graduates": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "learning": {
+          "access_requirement": {
+            "present": true,
+            "count": 1
+          },
+          "certificate": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_validation": {
+            "present": false,
+            "count": 0
+          },
+          "course_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "course_hours": {
+            "present": false,
+            "count": 0
+          },
+          "current_course_access": {
+            "present": false,
+            "count": 0
+          },
+          "current_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "engineering_prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "learning_hours": {
+            "present": true,
+            "count": 1
+          },
+          "materials": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": false,
+            "count": 0
+          },
+          "personal_learning_hours": {
+            "present": false,
+            "count": 0
+          },
+          "prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "regional_limit": {
+            "present": false,
+            "count": 0
+          },
+          "research_project": {
+            "present": false,
+            "count": 0
+          },
+          "research_vacancy": {
+            "present": false,
+            "count": 0
+          },
+          "resource_title": {
+            "present": false,
+            "count": 0
+          },
+          "topics": {
+            "present": true,
+            "count": 4
+          },
+          "training": {
+            "present": false,
+            "count": 0
+          }
+        }
+      },
+      "missing_fields": [
+        "occupation.career_promotion_path",
+        "occupation.china_degree_requirement",
+        "occupation.clinical_data_role_requirements",
+        "occupation.department_salary",
+        "occupation.department_training_path",
+        "occupation.departments",
+        "occupation.employment_rate",
+        "occupation.graduate_salary",
+        "occupation.hard_requirements",
+        "occupation.industry_universal_requirements",
+        "occupation.knowledge_graph_requirements",
+        "occupation.license_eligibility",
+        "occupation.medical_specific_standard",
+        "occupation.national_department_standard",
+        "occupation.privacy_requirements",
+        "occupation.recruitment_eligibility",
+        "occupation.role_specific_career_path",
+        "admissions.college_retest_rules",
+        "admissions.current_program_capacity",
+        "admissions.current_year_requirements",
+        "admissions.institution",
+        "admissions.ordinary_bachelor_program_eligibility",
+        "admissions.personal_eligibility",
+        "admissions.registration_window",
+        "admissions.training_direction",
+        "admissions.tuition",
+        "recruitment.access_requirement",
+        "recruitment.application_deadline",
+        "recruitment.city",
+        "recruitment.deadline",
+        "recruitment.knowledge_graph_requirements",
+        "recruitment.medicine_major_eligibility",
+        "recruitment.preferred_background",
+        "recruitment.published_at",
+        "industry.average_salary",
+        "industry.china_legal_requirement",
+        "industry.china_talent_demand",
+        "industry.coverage_limit",
+        "industry.current_product_classification",
+        "industry.department_salary",
+        "industry.design_constraints",
+        "industry.direction_employment_rate",
+        "industry.doctor_salary",
+        "industry.employment_rate",
+        "industry.full_guideline",
+        "industry.governance_scope",
+        "industry.graduate_salary",
+        "industry.major_average_salary",
+        "industry.major_catalog",
+        "industry.major_employment_rate",
+        "industry.major_graduate_salary",
+        "industry.medical_major_salary",
+        "industry.observed_talent_demand",
+        "industry.regulatory_basis",
+        "industry.role_average_salary",
+        "industry.school_specific_admissions",
+        "industry.scope",
+        "industry.talent_demand",
+        "industry.total_graduates",
+        "learning.certificate",
+        "learning.clinical_validation",
+        "learning.course_enrollment",
+        "learning.course_hours",
+        "learning.current_course_access",
+        "learning.current_enrollment",
+        "learning.engineering_prerequisites",
+        "learning.materials",
+        "learning.occupation_definition",
+        "learning.personal_learning_hours",
+        "learning.prerequisites",
+        "learning.regional_limit",
+        "learning.research_project",
+        "learning.research_vacancy",
+        "learning.resource_title",
+        "learning.training"
+      ]
+    },
+    "medical_ml_engineer": {
+      "role_id": "medical_ml_engineer",
+      "canonical_name": "医学机器学习工程师",
+      "mapped_app_role": "medical_ml_engineer",
+      "counts": {
+        "total": 99,
+        "by_category": {
+          "occupation": 41,
+          "admissions": 11,
+          "recruitment": 6,
+          "industry": 30,
+          "learning": 11
+        }
+      },
+      "coverage": {
+        "fields_total": 96,
+        "fields_with_value": 17,
+        "fields_missing": 79
+      },
+      "matrix": {
+        "occupation": {
+          "career_path": {
+            "present": true,
+            "count": 4
+          },
+          "career_promotion_path": {
+            "present": false,
+            "count": 0
+          },
+          "china_degree_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_data_role_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "department_training_path": {
+            "present": false,
+            "count": 0
+          },
+          "departments": {
+            "present": false,
+            "count": 0
+          },
+          "employment_directions": {
+            "present": false,
+            "count": 0
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "hard_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "industry_universal_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "interests": {
+            "present": true,
+            "count": 6
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "license_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "medical_specific_standard": {
+            "present": false,
+            "count": 0
+          },
+          "national_department_standard": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": true,
+            "count": 10
+          },
+          "privacy_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "program_definition": {
+            "present": false,
+            "count": 0
+          },
+          "recruitment_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "responsibilities": {
+            "present": true,
+            "count": 6
+          },
+          "role_specific_career_path": {
+            "present": false,
+            "count": 0
+          },
+          "skills": {
+            "present": true,
+            "count": 15
+          }
+        },
+        "admissions": {
+          "admission_requirements": {
+            "present": true,
+            "count": 3
+          },
+          "college_retest_rules": {
+            "present": false,
+            "count": 0
+          },
+          "cross_major_restrictions": {
+            "present": true,
+            "count": 3
+          },
+          "current_program_capacity": {
+            "present": false,
+            "count": 0
+          },
+          "current_year_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "exam_subjects": {
+            "present": true,
+            "count": 5
+          },
+          "institution": {
+            "present": false,
+            "count": 0
+          },
+          "ordinary_bachelor_program_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "personal_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "program": {
+            "present": false,
+            "count": 0
+          },
+          "registration_window": {
+            "present": false,
+            "count": 0
+          },
+          "training_direction": {
+            "present": false,
+            "count": 0
+          },
+          "tuition": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "recruitment": {
+          "access_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "application_deadline": {
+            "present": false,
+            "count": 0
+          },
+          "city": {
+            "present": false,
+            "count": 0
+          },
+          "deadline": {
+            "present": false,
+            "count": 0
+          },
+          "education": {
+            "present": false,
+            "count": 0
+          },
+          "employer": {
+            "present": false,
+            "count": 0
+          },
+          "experience": {
+            "present": false,
+            "count": 0
+          },
+          "job_title": {
+            "present": true,
+            "count": 3
+          },
+          "job_type": {
+            "present": false,
+            "count": 0
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "major_restrictions": {
+            "present": false,
+            "count": 0
+          },
+          "medicine_major_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "preferred_background": {
+            "present": false,
+            "count": 0
+          },
+          "published_at": {
+            "present": false,
+            "count": 0
+          },
+          "salary": {
+            "present": false,
+            "count": 0
+          },
+          "technical_requirements": {
+            "present": true,
+            "count": 3
+          }
+        },
+        "industry": {
+          "average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "china_legal_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "china_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "coverage_limit": {
+            "present": false,
+            "count": 0
+          },
+          "current_product_classification": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "design_constraints": {
+            "present": false,
+            "count": 0
+          },
+          "direction_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "doctor_salary": {
+            "present": false,
+            "count": 0
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "employment_statistics": {
+            "present": true,
+            "count": 3
+          },
+          "full_guideline": {
+            "present": false,
+            "count": 0
+          },
+          "governance_scope": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_catalog": {
+            "present": false,
+            "count": 0
+          },
+          "major_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "major_graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "medical_major_salary": {
+            "present": false,
+            "count": 0
+          },
+          "observed_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "policy_goals": {
+            "present": false,
+            "count": 0
+          },
+          "policy_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "regulatory_basis": {
+            "present": false,
+            "count": 0
+          },
+          "role_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "salary_statistics": {
+            "present": true,
+            "count": 18
+          },
+          "school_specific_admissions": {
+            "present": false,
+            "count": 0
+          },
+          "scope": {
+            "present": false,
+            "count": 0
+          },
+          "statistical_definition": {
+            "present": true,
+            "count": 9
+          },
+          "talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "total_graduates": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "learning": {
+          "access_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "certificate": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_validation": {
+            "present": false,
+            "count": 0
+          },
+          "course_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "course_hours": {
+            "present": false,
+            "count": 0
+          },
+          "current_course_access": {
+            "present": false,
+            "count": 0
+          },
+          "current_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "engineering_prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "learning_hours": {
+            "present": true,
+            "count": 1
+          },
+          "materials": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": false,
+            "count": 0
+          },
+          "personal_learning_hours": {
+            "present": false,
+            "count": 0
+          },
+          "prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "regional_limit": {
+            "present": false,
+            "count": 0
+          },
+          "research_project": {
+            "present": true,
+            "count": 1
+          },
+          "research_vacancy": {
+            "present": false,
+            "count": 0
+          },
+          "resource_title": {
+            "present": false,
+            "count": 0
+          },
+          "topics": {
+            "present": true,
+            "count": 6
+          },
+          "training": {
+            "present": true,
+            "count": 3
+          }
+        }
+      },
+      "missing_fields": [
+        "occupation.career_promotion_path",
+        "occupation.china_degree_requirement",
+        "occupation.clinical_data_role_requirements",
+        "occupation.department_salary",
+        "occupation.department_training_path",
+        "occupation.departments",
+        "occupation.employment_directions",
+        "occupation.employment_rate",
+        "occupation.graduate_salary",
+        "occupation.hard_requirements",
+        "occupation.industry_universal_requirements",
+        "occupation.knowledge_graph_requirements",
+        "occupation.license_eligibility",
+        "occupation.medical_specific_standard",
+        "occupation.national_department_standard",
+        "occupation.privacy_requirements",
+        "occupation.program_definition",
+        "occupation.recruitment_eligibility",
+        "occupation.role_specific_career_path",
+        "admissions.college_retest_rules",
+        "admissions.current_program_capacity",
+        "admissions.current_year_requirements",
+        "admissions.institution",
+        "admissions.ordinary_bachelor_program_eligibility",
+        "admissions.personal_eligibility",
+        "admissions.program",
+        "admissions.registration_window",
+        "admissions.training_direction",
+        "admissions.tuition",
+        "recruitment.access_requirement",
+        "recruitment.application_deadline",
+        "recruitment.city",
+        "recruitment.deadline",
+        "recruitment.education",
+        "recruitment.employer",
+        "recruitment.experience",
+        "recruitment.job_type",
+        "recruitment.knowledge_graph_requirements",
+        "recruitment.major_restrictions",
+        "recruitment.medicine_major_eligibility",
+        "recruitment.preferred_background",
+        "recruitment.published_at",
+        "recruitment.salary",
+        "industry.average_salary",
+        "industry.china_legal_requirement",
+        "industry.china_talent_demand",
+        "industry.coverage_limit",
+        "industry.current_product_classification",
+        "industry.department_salary",
+        "industry.design_constraints",
+        "industry.direction_employment_rate",
+        "industry.doctor_salary",
+        "industry.employment_rate",
+        "industry.full_guideline",
+        "industry.governance_scope",
+        "industry.graduate_salary",
+        "industry.major_average_salary",
+        "industry.major_catalog",
+        "industry.major_employment_rate",
+        "industry.major_graduate_salary",
+        "industry.medical_major_salary",
+        "industry.observed_talent_demand",
+        "industry.policy_goals",
+        "industry.policy_requirement",
+        "industry.regulatory_basis",
+        "industry.role_average_salary",
+        "industry.school_specific_admissions",
+        "industry.scope",
+        "industry.talent_demand",
+        "industry.total_graduates",
+        "learning.access_requirement",
+        "learning.certificate",
+        "learning.clinical_validation",
+        "learning.course_enrollment",
+        "learning.course_hours",
+        "learning.current_course_access",
+        "learning.current_enrollment",
+        "learning.engineering_prerequisites",
+        "learning.materials",
+        "learning.occupation_definition",
+        "learning.personal_learning_hours",
+        "learning.prerequisites",
+        "learning.regional_limit",
+        "learning.research_vacancy",
+        "learning.resource_title"
+      ]
+    },
+    "guide_devices": {
+      "role_id": "guide_devices",
+      "canonical_name": "guide_devices",
+      "mapped_app_role": null,
+      "counts": {
+        "total": 98,
+        "by_category": {
+          "occupation": 16,
+          "admissions": 22,
+          "recruitment": 25,
+          "industry": 12,
+          "learning": 23
+        }
+      },
+      "coverage": {
+        "fields_total": 96,
+        "fields_with_value": 26,
+        "fields_missing": 70
+      },
+      "matrix": {
+        "occupation": {
+          "career_path": {
+            "present": true,
+            "count": 4
+          },
+          "career_promotion_path": {
+            "present": false,
+            "count": 0
+          },
+          "china_degree_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_data_role_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "department_training_path": {
+            "present": false,
+            "count": 0
+          },
+          "departments": {
+            "present": false,
+            "count": 0
+          },
+          "employment_directions": {
+            "present": true,
+            "count": 1
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "hard_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "industry_universal_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "interests": {
+            "present": false,
+            "count": 0
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "license_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "medical_specific_standard": {
+            "present": false,
+            "count": 0
+          },
+          "national_department_standard": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": true,
+            "count": 4
+          },
+          "privacy_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "program_definition": {
+            "present": true,
+            "count": 1
+          },
+          "recruitment_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "responsibilities": {
+            "present": true,
+            "count": 1
+          },
+          "role_specific_career_path": {
+            "present": false,
+            "count": 0
+          },
+          "skills": {
+            "present": true,
+            "count": 5
+          }
+        },
+        "admissions": {
+          "admission_requirements": {
+            "present": true,
+            "count": 6
+          },
+          "college_retest_rules": {
+            "present": false,
+            "count": 0
+          },
+          "cross_major_restrictions": {
+            "present": true,
+            "count": 3
+          },
+          "current_program_capacity": {
+            "present": false,
+            "count": 0
+          },
+          "current_year_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "exam_subjects": {
+            "present": true,
+            "count": 10
+          },
+          "institution": {
+            "present": false,
+            "count": 0
+          },
+          "ordinary_bachelor_program_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "personal_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "program": {
+            "present": true,
+            "count": 3
+          },
+          "registration_window": {
+            "present": false,
+            "count": 0
+          },
+          "training_direction": {
+            "present": false,
+            "count": 0
+          },
+          "tuition": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "recruitment": {
+          "access_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "application_deadline": {
+            "present": false,
+            "count": 0
+          },
+          "city": {
+            "present": false,
+            "count": 0
+          },
+          "deadline": {
+            "present": false,
+            "count": 0
+          },
+          "education": {
+            "present": true,
+            "count": 5
+          },
+          "employer": {
+            "present": false,
+            "count": 0
+          },
+          "experience": {
+            "present": true,
+            "count": 4
+          },
+          "job_title": {
+            "present": true,
+            "count": 7
+          },
+          "job_type": {
+            "present": true,
+            "count": 1
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "major_restrictions": {
+            "present": true,
+            "count": 3
+          },
+          "medicine_major_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "preferred_background": {
+            "present": false,
+            "count": 0
+          },
+          "published_at": {
+            "present": false,
+            "count": 0
+          },
+          "salary": {
+            "present": false,
+            "count": 0
+          },
+          "technical_requirements": {
+            "present": true,
+            "count": 5
+          }
+        },
+        "industry": {
+          "average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "china_legal_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "china_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "coverage_limit": {
+            "present": false,
+            "count": 0
+          },
+          "current_product_classification": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "design_constraints": {
+            "present": true,
+            "count": 1
+          },
+          "direction_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "doctor_salary": {
+            "present": false,
+            "count": 0
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "employment_statistics": {
+            "present": true,
+            "count": 1
+          },
+          "full_guideline": {
+            "present": false,
+            "count": 0
+          },
+          "governance_scope": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_catalog": {
+            "present": false,
+            "count": 0
+          },
+          "major_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "major_graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "medical_major_salary": {
+            "present": false,
+            "count": 0
+          },
+          "observed_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "policy_goals": {
+            "present": false,
+            "count": 0
+          },
+          "policy_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "regulatory_basis": {
+            "present": false,
+            "count": 0
+          },
+          "role_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "salary_statistics": {
+            "present": true,
+            "count": 7
+          },
+          "school_specific_admissions": {
+            "present": false,
+            "count": 0
+          },
+          "scope": {
+            "present": false,
+            "count": 0
+          },
+          "statistical_definition": {
+            "present": true,
+            "count": 3
+          },
+          "talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "total_graduates": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "learning": {
+          "access_requirement": {
+            "present": true,
+            "count": 1
+          },
+          "certificate": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_validation": {
+            "present": false,
+            "count": 0
+          },
+          "course_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "course_hours": {
+            "present": false,
+            "count": 0
+          },
+          "current_course_access": {
+            "present": false,
+            "count": 0
+          },
+          "current_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "engineering_prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "learning_hours": {
+            "present": true,
+            "count": 3
+          },
+          "materials": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": false,
+            "count": 0
+          },
+          "personal_learning_hours": {
+            "present": false,
+            "count": 0
+          },
+          "prerequisites": {
+            "present": true,
+            "count": 1
+          },
+          "regional_limit": {
+            "present": false,
+            "count": 0
+          },
+          "research_project": {
+            "present": false,
+            "count": 0
+          },
+          "research_vacancy": {
+            "present": false,
+            "count": 0
+          },
+          "resource_title": {
+            "present": true,
+            "count": 1
+          },
+          "topics": {
+            "present": true,
+            "count": 10
+          },
+          "training": {
+            "present": true,
+            "count": 7
+          }
+        }
+      },
+      "missing_fields": [
+        "occupation.career_promotion_path",
+        "occupation.china_degree_requirement",
+        "occupation.clinical_data_role_requirements",
+        "occupation.department_salary",
+        "occupation.department_training_path",
+        "occupation.departments",
+        "occupation.employment_rate",
+        "occupation.graduate_salary",
+        "occupation.hard_requirements",
+        "occupation.industry_universal_requirements",
+        "occupation.interests",
+        "occupation.knowledge_graph_requirements",
+        "occupation.license_eligibility",
+        "occupation.medical_specific_standard",
+        "occupation.national_department_standard",
+        "occupation.privacy_requirements",
+        "occupation.recruitment_eligibility",
+        "occupation.role_specific_career_path",
+        "admissions.college_retest_rules",
+        "admissions.current_program_capacity",
+        "admissions.current_year_requirements",
+        "admissions.institution",
+        "admissions.ordinary_bachelor_program_eligibility",
+        "admissions.personal_eligibility",
+        "admissions.registration_window",
+        "admissions.training_direction",
+        "admissions.tuition",
+        "recruitment.access_requirement",
+        "recruitment.application_deadline",
+        "recruitment.city",
+        "recruitment.deadline",
+        "recruitment.employer",
+        "recruitment.knowledge_graph_requirements",
+        "recruitment.medicine_major_eligibility",
+        "recruitment.preferred_background",
+        "recruitment.published_at",
+        "recruitment.salary",
+        "industry.average_salary",
+        "industry.china_legal_requirement",
+        "industry.china_talent_demand",
+        "industry.coverage_limit",
+        "industry.current_product_classification",
+        "industry.department_salary",
+        "industry.direction_employment_rate",
+        "industry.doctor_salary",
+        "industry.employment_rate",
+        "industry.full_guideline",
+        "industry.governance_scope",
+        "industry.graduate_salary",
+        "industry.major_average_salary",
+        "industry.major_catalog",
+        "industry.major_employment_rate",
+        "industry.major_graduate_salary",
+        "industry.medical_major_salary",
+        "industry.observed_talent_demand",
+        "industry.policy_goals",
+        "industry.policy_requirement",
+        "industry.regulatory_basis",
+        "industry.role_average_salary",
+        "industry.school_specific_admissions",
+        "industry.scope",
+        "industry.talent_demand",
+        "industry.total_graduates",
+        "learning.certificate",
+        "learning.clinical_validation",
+        "learning.course_enrollment",
+        "learning.course_hours",
+        "learning.current_course_access",
+        "learning.current_enrollment",
+        "learning.engineering_prerequisites",
+        "learning.materials",
+        "learning.occupation_definition",
+        "learning.personal_learning_hours",
+        "learning.regional_limit",
+        "learning.research_project",
+        "learning.research_vacancy"
+      ]
+    },
+    "guide_signals": {
+      "role_id": "guide_signals",
+      "canonical_name": "guide_signals",
+      "mapped_app_role": null,
+      "counts": {
+        "total": 34,
+        "by_category": {
+          "occupation": 4,
+          "admissions": 17,
+          "recruitment": 2,
+          "industry": 9,
+          "learning": 2
+        }
+      },
+      "coverage": {
+        "fields_total": 96,
+        "fields_with_value": 15,
+        "fields_missing": 81
+      },
+      "matrix": {
+        "occupation": {
+          "career_path": {
+            "present": false,
+            "count": 0
+          },
+          "career_promotion_path": {
+            "present": false,
+            "count": 0
+          },
+          "china_degree_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_data_role_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "department_training_path": {
+            "present": false,
+            "count": 0
+          },
+          "departments": {
+            "present": false,
+            "count": 0
+          },
+          "employment_directions": {
+            "present": true,
+            "count": 1
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "hard_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "industry_universal_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "interests": {
+            "present": false,
+            "count": 0
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "license_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "medical_specific_standard": {
+            "present": false,
+            "count": 0
+          },
+          "national_department_standard": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": false,
+            "count": 0
+          },
+          "privacy_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "program_definition": {
+            "present": true,
+            "count": 1
+          },
+          "recruitment_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "responsibilities": {
+            "present": true,
+            "count": 1
+          },
+          "role_specific_career_path": {
+            "present": false,
+            "count": 0
+          },
+          "skills": {
+            "present": true,
+            "count": 1
+          }
+        },
+        "admissions": {
+          "admission_requirements": {
+            "present": true,
+            "count": 4
+          },
+          "college_retest_rules": {
+            "present": false,
+            "count": 0
+          },
+          "cross_major_restrictions": {
+            "present": true,
+            "count": 2
+          },
+          "current_program_capacity": {
+            "present": false,
+            "count": 0
+          },
+          "current_year_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "exam_subjects": {
+            "present": true,
+            "count": 8
+          },
+          "institution": {
+            "present": false,
+            "count": 0
+          },
+          "ordinary_bachelor_program_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "personal_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "program": {
+            "present": true,
+            "count": 3
+          },
+          "registration_window": {
+            "present": false,
+            "count": 0
+          },
+          "training_direction": {
+            "present": false,
+            "count": 0
+          },
+          "tuition": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "recruitment": {
+          "access_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "application_deadline": {
+            "present": false,
+            "count": 0
+          },
+          "city": {
+            "present": false,
+            "count": 0
+          },
+          "deadline": {
+            "present": false,
+            "count": 0
+          },
+          "education": {
+            "present": false,
+            "count": 0
+          },
+          "employer": {
+            "present": false,
+            "count": 0
+          },
+          "experience": {
+            "present": false,
+            "count": 0
+          },
+          "job_title": {
+            "present": true,
+            "count": 1
+          },
+          "job_type": {
+            "present": false,
+            "count": 0
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "major_restrictions": {
+            "present": false,
+            "count": 0
+          },
+          "medicine_major_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "preferred_background": {
+            "present": false,
+            "count": 0
+          },
+          "published_at": {
+            "present": false,
+            "count": 0
+          },
+          "salary": {
+            "present": false,
+            "count": 0
+          },
+          "technical_requirements": {
+            "present": true,
+            "count": 1
+          }
+        },
+        "industry": {
+          "average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "china_legal_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "china_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "coverage_limit": {
+            "present": false,
+            "count": 0
+          },
+          "current_product_classification": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "design_constraints": {
+            "present": false,
+            "count": 0
+          },
+          "direction_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "doctor_salary": {
+            "present": false,
+            "count": 0
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "employment_statistics": {
+            "present": true,
+            "count": 1
+          },
+          "full_guideline": {
+            "present": false,
+            "count": 0
+          },
+          "governance_scope": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_catalog": {
+            "present": false,
+            "count": 0
+          },
+          "major_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "major_graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "medical_major_salary": {
+            "present": false,
+            "count": 0
+          },
+          "observed_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "policy_goals": {
+            "present": true,
+            "count": 1
+          },
+          "policy_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "regulatory_basis": {
+            "present": false,
+            "count": 0
+          },
+          "role_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "salary_statistics": {
+            "present": true,
+            "count": 4
+          },
+          "school_specific_admissions": {
+            "present": false,
+            "count": 0
+          },
+          "scope": {
+            "present": false,
+            "count": 0
+          },
+          "statistical_definition": {
+            "present": true,
+            "count": 3
+          },
+          "talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "total_graduates": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "learning": {
+          "access_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "certificate": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_validation": {
+            "present": false,
+            "count": 0
+          },
+          "course_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "course_hours": {
+            "present": false,
+            "count": 0
+          },
+          "current_course_access": {
+            "present": false,
+            "count": 0
+          },
+          "current_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "engineering_prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "learning_hours": {
+            "present": false,
+            "count": 0
+          },
+          "materials": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": false,
+            "count": 0
+          },
+          "personal_learning_hours": {
+            "present": false,
+            "count": 0
+          },
+          "prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "regional_limit": {
+            "present": false,
+            "count": 0
+          },
+          "research_project": {
+            "present": false,
+            "count": 0
+          },
+          "research_vacancy": {
+            "present": false,
+            "count": 0
+          },
+          "resource_title": {
+            "present": false,
+            "count": 0
+          },
+          "topics": {
+            "present": true,
+            "count": 2
+          },
+          "training": {
+            "present": false,
+            "count": 0
+          }
+        }
+      },
+      "missing_fields": [
+        "occupation.career_path",
+        "occupation.career_promotion_path",
+        "occupation.china_degree_requirement",
+        "occupation.clinical_data_role_requirements",
+        "occupation.department_salary",
+        "occupation.department_training_path",
+        "occupation.departments",
+        "occupation.employment_rate",
+        "occupation.graduate_salary",
+        "occupation.hard_requirements",
+        "occupation.industry_universal_requirements",
+        "occupation.interests",
+        "occupation.knowledge_graph_requirements",
+        "occupation.license_eligibility",
+        "occupation.medical_specific_standard",
+        "occupation.national_department_standard",
+        "occupation.occupation_definition",
+        "occupation.privacy_requirements",
+        "occupation.recruitment_eligibility",
+        "occupation.role_specific_career_path",
+        "admissions.college_retest_rules",
+        "admissions.current_program_capacity",
+        "admissions.current_year_requirements",
+        "admissions.institution",
+        "admissions.ordinary_bachelor_program_eligibility",
+        "admissions.personal_eligibility",
+        "admissions.registration_window",
+        "admissions.training_direction",
+        "admissions.tuition",
+        "recruitment.access_requirement",
+        "recruitment.application_deadline",
+        "recruitment.city",
+        "recruitment.deadline",
+        "recruitment.education",
+        "recruitment.employer",
+        "recruitment.experience",
+        "recruitment.job_type",
+        "recruitment.knowledge_graph_requirements",
+        "recruitment.major_restrictions",
+        "recruitment.medicine_major_eligibility",
+        "recruitment.preferred_background",
+        "recruitment.published_at",
+        "recruitment.salary",
+        "industry.average_salary",
+        "industry.china_legal_requirement",
+        "industry.china_talent_demand",
+        "industry.coverage_limit",
+        "industry.current_product_classification",
+        "industry.department_salary",
+        "industry.design_constraints",
+        "industry.direction_employment_rate",
+        "industry.doctor_salary",
+        "industry.employment_rate",
+        "industry.full_guideline",
+        "industry.governance_scope",
+        "industry.graduate_salary",
+        "industry.major_average_salary",
+        "industry.major_catalog",
+        "industry.major_employment_rate",
+        "industry.major_graduate_salary",
+        "industry.medical_major_salary",
+        "industry.observed_talent_demand",
+        "industry.policy_requirement",
+        "industry.regulatory_basis",
+        "industry.role_average_salary",
+        "industry.school_specific_admissions",
+        "industry.scope",
+        "industry.talent_demand",
+        "industry.total_graduates",
+        "learning.access_requirement",
+        "learning.certificate",
+        "learning.clinical_validation",
+        "learning.course_enrollment",
+        "learning.course_hours",
+        "learning.current_course_access",
+        "learning.current_enrollment",
+        "learning.engineering_prerequisites",
+        "learning.learning_hours",
+        "learning.materials",
+        "learning.occupation_definition",
+        "learning.personal_learning_hours",
+        "learning.prerequisites",
+        "learning.regional_limit",
+        "learning.research_project",
+        "learning.research_vacancy",
+        "learning.resource_title",
+        "learning.training"
+      ]
+    },
+    "guide_imaging_eng": {
+      "role_id": "guide_imaging_eng",
+      "canonical_name": "guide_imaging_eng",
+      "mapped_app_role": null,
+      "counts": {
+        "total": 59,
+        "by_category": {
+          "occupation": 7,
+          "admissions": 18,
+          "recruitment": 21,
+          "industry": 9,
+          "learning": 4
+        }
+      },
+      "coverage": {
+        "fields_total": 96,
+        "fields_with_value": 22,
+        "fields_missing": 74
+      },
+      "matrix": {
+        "occupation": {
+          "career_path": {
+            "present": true,
+            "count": 1
+          },
+          "career_promotion_path": {
+            "present": false,
+            "count": 0
+          },
+          "china_degree_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_data_role_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "department_training_path": {
+            "present": false,
+            "count": 0
+          },
+          "departments": {
+            "present": false,
+            "count": 0
+          },
+          "employment_directions": {
+            "present": true,
+            "count": 1
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "hard_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "industry_universal_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "interests": {
+            "present": false,
+            "count": 0
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "license_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "medical_specific_standard": {
+            "present": false,
+            "count": 0
+          },
+          "national_department_standard": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": true,
+            "count": 1
+          },
+          "privacy_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "program_definition": {
+            "present": true,
+            "count": 1
+          },
+          "recruitment_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "responsibilities": {
+            "present": true,
+            "count": 1
+          },
+          "role_specific_career_path": {
+            "present": false,
+            "count": 0
+          },
+          "skills": {
+            "present": true,
+            "count": 2
+          }
+        },
+        "admissions": {
+          "admission_requirements": {
+            "present": true,
+            "count": 5
+          },
+          "college_retest_rules": {
+            "present": false,
+            "count": 0
+          },
+          "cross_major_restrictions": {
+            "present": true,
+            "count": 3
+          },
+          "current_program_capacity": {
+            "present": false,
+            "count": 0
+          },
+          "current_year_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "exam_subjects": {
+            "present": true,
+            "count": 7
+          },
+          "institution": {
+            "present": false,
+            "count": 0
+          },
+          "ordinary_bachelor_program_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "personal_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "program": {
+            "present": true,
+            "count": 3
+          },
+          "registration_window": {
+            "present": false,
+            "count": 0
+          },
+          "training_direction": {
+            "present": false,
+            "count": 0
+          },
+          "tuition": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "recruitment": {
+          "access_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "application_deadline": {
+            "present": false,
+            "count": 0
+          },
+          "city": {
+            "present": true,
+            "count": 1
+          },
+          "deadline": {
+            "present": false,
+            "count": 0
+          },
+          "education": {
+            "present": true,
+            "count": 3
+          },
+          "employer": {
+            "present": false,
+            "count": 0
+          },
+          "experience": {
+            "present": true,
+            "count": 2
+          },
+          "job_title": {
+            "present": true,
+            "count": 5
+          },
+          "job_type": {
+            "present": false,
+            "count": 0
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "major_restrictions": {
+            "present": true,
+            "count": 4
+          },
+          "medicine_major_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "preferred_background": {
+            "present": false,
+            "count": 0
+          },
+          "published_at": {
+            "present": false,
+            "count": 0
+          },
+          "salary": {
+            "present": false,
+            "count": 0
+          },
+          "technical_requirements": {
+            "present": true,
+            "count": 6
+          }
+        },
+        "industry": {
+          "average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "china_legal_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "china_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "coverage_limit": {
+            "present": false,
+            "count": 0
+          },
+          "current_product_classification": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "design_constraints": {
+            "present": false,
+            "count": 0
+          },
+          "direction_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "doctor_salary": {
+            "present": false,
+            "count": 0
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "employment_statistics": {
+            "present": true,
+            "count": 1
+          },
+          "full_guideline": {
+            "present": false,
+            "count": 0
+          },
+          "governance_scope": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_catalog": {
+            "present": false,
+            "count": 0
+          },
+          "major_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "major_graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "medical_major_salary": {
+            "present": false,
+            "count": 0
+          },
+          "observed_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "policy_goals": {
+            "present": true,
+            "count": 1
+          },
+          "policy_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "regulatory_basis": {
+            "present": false,
+            "count": 0
+          },
+          "role_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "salary_statistics": {
+            "present": true,
+            "count": 4
+          },
+          "school_specific_admissions": {
+            "present": false,
+            "count": 0
+          },
+          "scope": {
+            "present": false,
+            "count": 0
+          },
+          "statistical_definition": {
+            "present": true,
+            "count": 3
+          },
+          "talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "total_graduates": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "learning": {
+          "access_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "certificate": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_validation": {
+            "present": false,
+            "count": 0
+          },
+          "course_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "course_hours": {
+            "present": false,
+            "count": 0
+          },
+          "current_course_access": {
+            "present": false,
+            "count": 0
+          },
+          "current_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "engineering_prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "learning_hours": {
+            "present": false,
+            "count": 0
+          },
+          "materials": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": false,
+            "count": 0
+          },
+          "personal_learning_hours": {
+            "present": false,
+            "count": 0
+          },
+          "prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "regional_limit": {
+            "present": false,
+            "count": 0
+          },
+          "research_project": {
+            "present": false,
+            "count": 0
+          },
+          "research_vacancy": {
+            "present": false,
+            "count": 0
+          },
+          "resource_title": {
+            "present": false,
+            "count": 0
+          },
+          "topics": {
+            "present": true,
+            "count": 3
+          },
+          "training": {
+            "present": true,
+            "count": 1
+          }
+        }
+      },
+      "missing_fields": [
+        "occupation.career_promotion_path",
+        "occupation.china_degree_requirement",
+        "occupation.clinical_data_role_requirements",
+        "occupation.department_salary",
+        "occupation.department_training_path",
+        "occupation.departments",
+        "occupation.employment_rate",
+        "occupation.graduate_salary",
+        "occupation.hard_requirements",
+        "occupation.industry_universal_requirements",
+        "occupation.interests",
+        "occupation.knowledge_graph_requirements",
+        "occupation.license_eligibility",
+        "occupation.medical_specific_standard",
+        "occupation.national_department_standard",
+        "occupation.privacy_requirements",
+        "occupation.recruitment_eligibility",
+        "occupation.role_specific_career_path",
+        "admissions.college_retest_rules",
+        "admissions.current_program_capacity",
+        "admissions.current_year_requirements",
+        "admissions.institution",
+        "admissions.ordinary_bachelor_program_eligibility",
+        "admissions.personal_eligibility",
+        "admissions.registration_window",
+        "admissions.training_direction",
+        "admissions.tuition",
+        "recruitment.access_requirement",
+        "recruitment.application_deadline",
+        "recruitment.deadline",
+        "recruitment.employer",
+        "recruitment.job_type",
+        "recruitment.knowledge_graph_requirements",
+        "recruitment.medicine_major_eligibility",
+        "recruitment.preferred_background",
+        "recruitment.published_at",
+        "recruitment.salary",
+        "industry.average_salary",
+        "industry.china_legal_requirement",
+        "industry.china_talent_demand",
+        "industry.coverage_limit",
+        "industry.current_product_classification",
+        "industry.department_salary",
+        "industry.design_constraints",
+        "industry.direction_employment_rate",
+        "industry.doctor_salary",
+        "industry.employment_rate",
+        "industry.full_guideline",
+        "industry.governance_scope",
+        "industry.graduate_salary",
+        "industry.major_average_salary",
+        "industry.major_catalog",
+        "industry.major_employment_rate",
+        "industry.major_graduate_salary",
+        "industry.medical_major_salary",
+        "industry.observed_talent_demand",
+        "industry.policy_requirement",
+        "industry.regulatory_basis",
+        "industry.role_average_salary",
+        "industry.school_specific_admissions",
+        "industry.scope",
+        "industry.talent_demand",
+        "industry.total_graduates",
+        "learning.access_requirement",
+        "learning.certificate",
+        "learning.clinical_validation",
+        "learning.course_enrollment",
+        "learning.course_hours",
+        "learning.current_course_access",
+        "learning.current_enrollment",
+        "learning.engineering_prerequisites",
+        "learning.learning_hours",
+        "learning.materials",
+        "learning.occupation_definition",
+        "learning.personal_learning_hours",
+        "learning.prerequisites",
+        "learning.regional_limit",
+        "learning.research_project",
+        "learning.research_vacancy",
+        "learning.resource_title"
+      ]
+    },
+    "medicine_guide": {
+      "role_id": "medicine_guide",
+      "canonical_name": "medicine_guide",
+      "mapped_app_role": null,
+      "counts": {
+        "total": 188,
+        "by_category": {
+          "occupation": 40,
+          "admissions": 59,
+          "recruitment": 26,
+          "industry": 32,
+          "learning": 31
+        }
+      },
+      "coverage": {
+        "fields_total": 96,
+        "fields_with_value": 31,
+        "fields_missing": 65
+      },
+      "matrix": {
+        "occupation": {
+          "career_path": {
+            "present": true,
+            "count": 1
+          },
+          "career_promotion_path": {
+            "present": false,
+            "count": 0
+          },
+          "china_degree_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_data_role_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "department_training_path": {
+            "present": false,
+            "count": 0
+          },
+          "departments": {
+            "present": true,
+            "count": 10
+          },
+          "employment_directions": {
+            "present": true,
+            "count": 8
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "hard_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "industry_universal_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "interests": {
+            "present": false,
+            "count": 0
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "license_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "medical_specific_standard": {
+            "present": false,
+            "count": 0
+          },
+          "national_department_standard": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": true,
+            "count": 2
+          },
+          "privacy_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "program_definition": {
+            "present": true,
+            "count": 8
+          },
+          "recruitment_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "responsibilities": {
+            "present": true,
+            "count": 8
+          },
+          "role_specific_career_path": {
+            "present": false,
+            "count": 0
+          },
+          "skills": {
+            "present": true,
+            "count": 3
+          }
+        },
+        "admissions": {
+          "admission_requirements": {
+            "present": true,
+            "count": 26
+          },
+          "college_retest_rules": {
+            "present": false,
+            "count": 0
+          },
+          "cross_major_restrictions": {
+            "present": true,
+            "count": 24
+          },
+          "current_program_capacity": {
+            "present": false,
+            "count": 0
+          },
+          "current_year_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "exam_subjects": {
+            "present": true,
+            "count": 9
+          },
+          "institution": {
+            "present": false,
+            "count": 0
+          },
+          "ordinary_bachelor_program_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "personal_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "program": {
+            "present": false,
+            "count": 0
+          },
+          "registration_window": {
+            "present": false,
+            "count": 0
+          },
+          "training_direction": {
+            "present": false,
+            "count": 0
+          },
+          "tuition": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "recruitment": {
+          "access_requirement": {
+            "present": false,
+            "count": 0
+          },
+          "application_deadline": {
+            "present": false,
+            "count": 0
+          },
+          "city": {
+            "present": true,
+            "count": 3
+          },
+          "deadline": {
+            "present": false,
+            "count": 0
+          },
+          "education": {
+            "present": true,
+            "count": 5
+          },
+          "employer": {
+            "present": false,
+            "count": 0
+          },
+          "experience": {
+            "present": true,
+            "count": 2
+          },
+          "job_title": {
+            "present": true,
+            "count": 5
+          },
+          "job_type": {
+            "present": true,
+            "count": 1
+          },
+          "knowledge_graph_requirements": {
+            "present": false,
+            "count": 0
+          },
+          "major_restrictions": {
+            "present": true,
+            "count": 3
+          },
+          "medicine_major_eligibility": {
+            "present": false,
+            "count": 0
+          },
+          "preferred_background": {
+            "present": false,
+            "count": 0
+          },
+          "published_at": {
+            "present": false,
+            "count": 0
+          },
+          "salary": {
+            "present": true,
+            "count": 4
+          },
+          "technical_requirements": {
+            "present": true,
+            "count": 3
+          }
+        },
+        "industry": {
+          "average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "china_legal_requirement": {
+            "present": true,
+            "count": 3
+          },
+          "china_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "coverage_limit": {
+            "present": false,
+            "count": 0
+          },
+          "current_product_classification": {
+            "present": false,
+            "count": 0
+          },
+          "department_salary": {
+            "present": false,
+            "count": 0
+          },
+          "design_constraints": {
+            "present": false,
+            "count": 0
+          },
+          "direction_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "doctor_salary": {
+            "present": false,
+            "count": 0
+          },
+          "employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "employment_statistics": {
+            "present": true,
+            "count": 1
+          },
+          "full_guideline": {
+            "present": false,
+            "count": 0
+          },
+          "governance_scope": {
+            "present": false,
+            "count": 0
+          },
+          "graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "major_catalog": {
+            "present": true,
+            "count": 5
+          },
+          "major_employment_rate": {
+            "present": false,
+            "count": 0
+          },
+          "major_graduate_salary": {
+            "present": false,
+            "count": 0
+          },
+          "medical_major_salary": {
+            "present": false,
+            "count": 0
+          },
+          "observed_talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "policy_goals": {
+            "present": false,
+            "count": 0
+          },
+          "policy_requirement": {
+            "present": true,
+            "count": 4
+          },
+          "regulatory_basis": {
+            "present": false,
+            "count": 0
+          },
+          "role_average_salary": {
+            "present": false,
+            "count": 0
+          },
+          "salary_statistics": {
+            "present": true,
+            "count": 14
+          },
+          "school_specific_admissions": {
+            "present": false,
+            "count": 0
+          },
+          "scope": {
+            "present": true,
+            "count": 1
+          },
+          "statistical_definition": {
+            "present": true,
+            "count": 4
+          },
+          "talent_demand": {
+            "present": false,
+            "count": 0
+          },
+          "total_graduates": {
+            "present": false,
+            "count": 0
+          }
+        },
+        "learning": {
+          "access_requirement": {
+            "present": true,
+            "count": 7
+          },
+          "certificate": {
+            "present": false,
+            "count": 0
+          },
+          "clinical_validation": {
+            "present": false,
+            "count": 0
+          },
+          "course_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "course_hours": {
+            "present": false,
+            "count": 0
+          },
+          "current_course_access": {
+            "present": false,
+            "count": 0
+          },
+          "current_enrollment": {
+            "present": false,
+            "count": 0
+          },
+          "engineering_prerequisites": {
+            "present": false,
+            "count": 0
+          },
+          "learning_hours": {
+            "present": true,
+            "count": 2
+          },
+          "materials": {
+            "present": false,
+            "count": 0
+          },
+          "occupation_definition": {
+            "present": false,
+            "count": 0
+          },
+          "personal_learning_hours": {
+            "present": false,
+            "count": 0
+          },
+          "prerequisites": {
+            "present": true,
+            "count": 1
+          },
+          "regional_limit": {
+            "present": true,
+            "count": 1
+          },
+          "research_project": {
+            "present": false,
+            "count": 0
+          },
+          "research_vacancy": {
+            "present": false,
+            "count": 0
+          },
+          "resource_title": {
+            "present": false,
+            "count": 0
+          },
+          "topics": {
+            "present": true,
+            "count": 7
+          },
+          "training": {
+            "present": true,
+            "count": 13
+          }
+        }
+      },
+      "missing_fields": [
+        "occupation.career_promotion_path",
+        "occupation.china_degree_requirement",
+        "occupation.clinical_data_role_requirements",
+        "occupation.department_salary",
+        "occupation.department_training_path",
+        "occupation.employment_rate",
+        "occupation.graduate_salary",
+        "occupation.hard_requirements",
+        "occupation.industry_universal_requirements",
+        "occupation.interests",
+        "occupation.knowledge_graph_requirements",
+        "occupation.license_eligibility",
+        "occupation.medical_specific_standard",
+        "occupation.national_department_standard",
+        "occupation.privacy_requirements",
+        "occupation.recruitment_eligibility",
+        "occupation.role_specific_career_path",
+        "admissions.college_retest_rules",
+        "admissions.current_program_capacity",
+        "admissions.current_year_requirements",
+        "admissions.institution",
+        "admissions.ordinary_bachelor_program_eligibility",
+        "admissions.personal_eligibility",
+        "admissions.program",
+        "admissions.registration_window",
+        "admissions.training_direction",
+        "admissions.tuition",
+        "recruitment.access_requirement",
+        "recruitment.application_deadline",
+        "recruitment.deadline",
+        "recruitment.employer",
+        "recruitment.knowledge_graph_requirements",
+        "recruitment.medicine_major_eligibility",
+        "recruitment.preferred_background",
+        "recruitment.published_at",
+        "industry.average_salary",
+        "industry.china_talent_demand",
+        "industry.coverage_limit",
+        "industry.current_product_classification",
+        "industry.department_salary",
+        "industry.design_constraints",
+        "industry.direction_employment_rate",
+        "industry.doctor_salary",
+        "industry.employment_rate",
+        "industry.full_guideline",
+        "industry.governance_scope",
+        "industry.graduate_salary",
+        "industry.major_average_salary",
+        "industry.major_employment_rate",
+        "industry.major_graduate_salary",
+        "industry.medical_major_salary",
+        "industry.observed_talent_demand",
+        "industry.policy_goals",
+        "industry.regulatory_basis",
+        "industry.role_average_salary",
+        "industry.school_specific_admissions",
+        "industry.talent_demand",
+        "industry.total_graduates",
+        "learning.certificate",
+        "learning.clinical_validation",
+        "learning.course_enrollment",
+        "learning.course_hours",
+        "learning.current_course_access",
+        "learning.current_enrollment",
+        "learning.engineering_prerequisites",
+        "learning.materials",
+        "learning.occupation_definition",
+        "learning.personal_learning_hours",
+        "learning.research_project",
+        "learning.research_vacancy",
+        "learning.resource_title"
+      ]
+    }
+  }
+}

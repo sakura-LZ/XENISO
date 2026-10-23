@@ -1,0 +1,336 @@
+[
+  {
+    "source": {
+      "id": "szu-bme-2026-plan",
+      "url": "https://bme.szu.edu.cn/2026jishengwuyixuegongchengzhuxiupeiyangfangan-.pdf",
+      "organization": "深圳大学 医学部生物医学工程学院",
+      "title": "2026级生物医学工程主修培养方案（深圳大学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 内无日期；其所在网页 https://bme.szu.edu.cn/info/1071/3846.htm 标注「2026-05-28」。方案为 2026 级（最新年级）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-curriculum-2026/szu-bme-2026-plan.pdf",
+      "sha256": "17ed40be98a2c693e53d8537740e83e7455e50e04c686f627e725663ba6ca317",
+      "captured_at": "2026-10-23T05:17:41.775Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-curriculum-2026/szu-bme-2026-plan.txt",
+      "extracted_sha256": "a1edde0143aaf7b131cdd14b84f53a1b4952cba1210caed9fec163f162d8fede"
+    },
+    "record": {
+      "id": "learning-szu-bme-2026-plan-guide-devices",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "2026级生物医学工程专业核心课程（深圳大学）",
+      "summary": "核心课程原文：生物医学传感器及应用、模拟电路、数字电路、单片机原理与应用、C语言程序设计与编程实践、信号与系统、医学数字信号处理、生物医学工程基础、人体结构及医用物理、生理学。（同一官方来源共 4 条原文事实，字段：topics、training、resource_title；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于深圳大学 2026 级生物医学工程主修培养方案；为校级方案，不是教育部国标，也不代表其他院校或考研科目。",
+      "relation": "related",
+      "tags": [
+        "2026级",
+        "培养方案",
+        "核心课程",
+        "生物医学工程",
+        "深圳大学",
+        "学分构成",
+        "培养目标",
+        "特色课程",
+        "医工交叉"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳大学",
+        "program": "生物医学工程（082601）",
+        "region": "广东",
+        "admission_year": 2026,
+        "evidence_locator": "八、特色课程"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "七、核心课程 生物医学传感器及应用、模拟电路、数字电路、单片机原理与应用、C语言程序设计与编程实践、信号与系统、医学数字信号处理、生物医学 工程基础、人体结构及医用物理、生理学"
+      },
+      {
+        "field": "training",
+        "pattern": "六、毕业学分要求 课程类别 最低学分要求 比例 课程子类别 最低学分要求 备注 通识模块 39 24\\.5% 基本通识课 （必修） 29 基本通识课（英语 选修） 4 扩展通识选修课 6 包括公共选修课及非本专 业开设的专业课程，涵盖 人文艺术、社会科学、自 然科学、生命科学、创新 创业和中华文化六大类。 学生须自主选修不少于6 学分的扩展通识课，其中 公共艺术教育课程选修不 少于2学分， 思想政治理论 选择性必修课程不少于1 门。 专业模块 100 62\\.9% 大类平台课 34\\.5 专业核心课 41 专业选修课 24\\.5 实践模块 17 10\\.7% 实践类课程 17 创新创业模块 3 1\\.9% 创新创业（必修） 2 创新创业（选修） 1 通识模块\\+专业模块 139 总学分要求 159"
+      },
+      {
+        "field": "training",
+        "pattern": "四、培养目标 本专业培养热爱祖国、坚持社会主义道路、适应国家发展需要、德智体美劳全面发展、掌生物医学工程的基本理论和专业知识，获得工程师 良好训练，基础知识扎实、专业知识宽厚、实践能力突出，能胜任生物医学工程领域的科研、教学、设计、开发、管理和咨询等方面工作，具有 创新能力、 组织协调能力、团队精神、国际视野和终身学习能力的高级复合型专门人才。"
+      },
+      {
+        "field": "resource_title",
+        "pattern": "八、特色课程 上级示范课程（省级在线开放课程立项）：医学数字信号处理 校级重点课程（学校立项的创新创业短课）： 1、多中心智慧医疗影像前沿研究 2、少样本条件下的图像质量评价方法及其应用前沿探讨 3、R语言在生物信息实践中的应用 4、科技信息分析的获取、管理与分析 5、纳米生物传感器 院级特色课程（医工学科交叉课程）：大数据下的智慧医疗"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "各门课程学分（分散在附表课程设置一览表中，本段未列）",
+      "先修课程要求（原文未列）",
+      "training",
+      "resource_title",
+      "上述特色课程的学分/学时（本段未列）"
+    ]
+  },
+  {
+    "source": {
+      "id": "szu-bme-2026-minor",
+      "url": "https://bme.szu.edu.cn/2026jishengwuyixuegongchengfuxiupeiyangfangan.pdf",
+      "organization": "深圳大学 医学部生物医学工程学院",
+      "title": "2026级生物医学工程辅修培养方案（深圳大学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 内无日期；其所在网页 https://bme.szu.edu.cn/info/1071/3826.htm 标注「2026-05-28」，页面注明「含专业选修课和专业核心课」。方案为 2026 级（最新年级）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-curriculum-2026/szu-bme-2026-minor.pdf",
+      "sha256": "0c1aef4d868a3c0d41979c316a615f79fda3d942a1d744e83a693b300f596f0d",
+      "captured_at": "2026-10-23T05:19:56.243Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-curriculum-2026/szu-bme-2026-minor.txt",
+      "extracted_sha256": "eac36728db5854b6e4c82bfc7751c18adafa4580c3cae0a50476ae142059cbb1"
+    },
+    "record": {
+      "id": "learning-szu-bme-2026-minor-guide-devices",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "2026级生物医学工程辅修专业选修课清单（深圳大学）",
+      "summary": "辅修专业选修课 5 门及各自学分/周学时/总学时：人体结构及医用物理（2.5 学分/54 学时）、电路分析（3.5/72）、模拟电路（3.5/72）、面向对象程序设计（3/72）、生理学（2/36），合计 14.5 学分 / 306 学时。（同一官方来源共 2 条原文事实，字段：topics、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于深圳大学 2026 级生物医学工程辅修培养方案（面向外专业学生的辅修课程包），不是主修培养方案，也不代表其他院校。",
+      "relation": "related",
+      "tags": [
+        "2026级",
+        "辅修",
+        "课程清单",
+        "学时",
+        "深圳大学",
+        "跨专业补课",
+        "学分"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳大学",
+        "program": "生物医学工程辅修",
+        "region": "广东",
+        "admission_year": 2026,
+        "evidence_locator": "课程设置一览表 → 专业核心课"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "2026级生物医学工程辅修培养方案 专业选修课 专业代码： 序号 课程总号 课程名称 开课 单位 简写 学分 周学 时 总学 时 总学时分配 开课学期 建议 修读 学期 备注 课堂 讲授 学时 课内实践环节 秋季 开课 春季 开课 课程 设计 实验 实训 其他 1 2201990173 人体结构及医用物理 医学 2\\.5 2-1 54 36 0 9 0 9 √ 1 Human Anatomy and Medical Physics 2 2200210001 电路分析 医学 3\\.5 3-1 72 54 0 18 0 0 √ 2 Circuit Analysis 3 1301170002 模拟电路 医学 3\\.5 3-1 72 54 0 18 0 0 √ 3 Analog Circuits 4 1302440003 面向对象程序设计 医学 3 2-2 72 36 0 36 0 0 √ 3 Object-Oriented Programming 5 2202820001 生理学 医学 2 2-0 36 36 0 0 0 0 √ 3 Physiology 合计 14\\.5 / 306 216 0 81 0 9"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "2026级生物医学工程辅修培养方案 专业核心课 专业代码： 序号 课程总号 课程名称 开课 单位 简写 学分 周学 时 总学 时 总学时分配 开课学期 建议 修读 学期 备注 课堂 讲授 学时 课内实践环节 秋季 开课 春季 开课 课程 设计 实验 实训 其他 6 2200580001 生物医学工程基础 医学 3 3-0 54 54 0 0 0 0 √ 1 Basis of Biomedical Engineering 7 1300050003 C语言程序设计与编程 实践 医学 4 3-2 90 54 0 36 0 0 √ 2 C Language Programming 8 2200110001 数字电路 医学 3\\.5 3-1 72 54 0 18 0 0 √ 4 Digital Electronics 9 2200310001 生物医学传感器及应用 医学 2\\.5 2-1 54 36 0 18 0 0 √ 4 Biomedical Sensors and their Applications 10 2200370001 信号与系统 医学 3 3-0 54 54 0 0 0 0 √ 4 Signals and Systems 11 2200340002 单片机原理与应用 医学 4 3-2 90 54 0 36 0 0 √ 5 Principle and application of single-chip microcomputer 12 2201990041 医学数字信号处理 医学 4 3-2 90 54 0 36 0 0 √ 5 Medical Signal Processing 合计 24 / 504 360 0 144 0 0"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "learning_hours"
+    ]
+  },
+  {
+    "source": {
+      "id": "szu-bme-2026-minor-degree",
+      "url": "https://bme.szu.edu.cn/2026jishengwuyixuegongchengfuxiuxueshixueweipeiyangfangan.pdf",
+      "organization": "深圳大学 医学部生物医学工程学院",
+      "title": "2026级生物医学工程辅修学士学位培养方案（深圳大学）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 内无日期；其所在网页 https://bme.szu.edu.cn/info/1071/3836.htm 标注「2026-05-28」。方案为 2026 级（最新年级）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-curriculum-2026/szu-bme-2026-minor-degree.pdf",
+      "sha256": "c472a4d48a89f2c85f1c2e5d4bd7a7106d9655e3cc2a14b7618602e6f691c24e",
+      "captured_at": "2026-10-23T05:20:22.056Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-curriculum-2026/szu-bme-2026-minor-degree.txt",
+      "extracted_sha256": "7eafbd6d63a44c24c24f6f640d7da1273acf4246003469f222642f6c9f4c0a36"
+    },
+    "record": {
+      "id": "learning-szu-bme-2026-minor-degree-guide-devices",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "2026级生物医学工程辅修学士学位学分要求（深圳大学）",
+      "summary": "辅修学士学位毕业学分原文：专业模块 59.5（85.6%，含专业选修课 9 / 专业核心课 50.5）、实践模块 10（14.4%），总学分要求 69.5。（同一官方来源共 2 条原文事实，字段：training、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于深圳大学 2026 级生物医学工程辅修学士学位培养方案（面向外专业学生的第二专业学位），不是主修方案。",
+      "relation": "related",
+      "tags": [
+        "2026级",
+        "辅修学士学位",
+        "学分构成",
+        "深圳大学",
+        "核心课程"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "深圳大学",
+        "program": "生物医学工程辅修学士学位",
+        "region": "广东",
+        "admission_year": 2026,
+        "evidence_locator": "七、核心课程"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "六、毕业学分要求 课程类别 最低学分要求 比例 课程子类别 最低学分要求 备注 专业模块 59\\.5 85\\.6% 专业选修课 9 专业核心课 50\\.5 实践模块 10 14\\.4% 实践类课程 10 通识模块\\+专业模块 59\\.5 总学分要求 69\\.5"
+      },
+      {
+        "field": "topics",
+        "pattern": "七、核心课程 生物医学传感器及应用、模拟电路、数字电路、单片机原理与应用、C语言程序设计与编程实践、信号与系统、医学数字信号处理、生物医学 工程基础、人体解剖学、生理学"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "topics",
+      "先修课程要求（原文未列）"
+    ]
+  },
+  {
+    "source": {
+      "id": "usst-2026-zhuanzhuanye",
+      "url": "https://jiankang.usst.edu.cn/2026/0319/c17918a357672/page.htm",
+      "organization": "上海理工大学 健康科学与工程学院",
+      "title": "健康学院关于开展 2026 年本科生转专业工作的通知",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-03-19",
+      "publication_date_note": "页面可见「发布时间：2026-03-19」。"
+    },
+    "publication_pattern": "2026-03-19",
+    "artifact_capture": {
+      "path": "work/knowledge-curriculum-2026/usst-2026-zhuanzhuanye.raw",
+      "sha256": "231ad1e20fbc0bdb98cd0424a80b02434fbd6461d02c5897990cb77a25c6f597",
+      "captured_at": "2026-10-23T05:20:56.126Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-usst-2026-zhuanzhuanye-guide-devices",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "2024级转入生物医学工程/医学影像技术/医学信息工程/智能医学工程的课程门槛（上海理工大学 2026 年）",
+      "summary": "转入条件原文：累计平均绩点≥3.0；生物医学工程要求《高等数学》《大学物理》《工程制图》绩点 3.0 及以上；医学影像技术要求《高等数学》《大学物理》绩点 2.5 及以上；医学信息工程要求《高等数学》及计算机基础类课程绩点 2.5 及以上；智能医学工程要求《高等数学》与化学类课程或《工程制图》至少一门 3.0 及以上。（同一官方来源共 2 条原文事实，字段：access_requirement、prerequisites；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于上海理工大学健康科学与工程学院 2024 级本科生 2026 年转专业申请；是**校内转专业**的课程门槛，不等于考研报考条件，也不代表其他学校。",
+      "relation": "related",
+      "tags": [
+        "2026年",
+        "转专业",
+        "前置课程",
+        "绩点门槛",
+        "上海理工大学",
+        "准入要求",
+        "先修课程",
+        "成绩门槛"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海理工大学",
+        "college": "健康科学与工程学院",
+        "program": "生物医学工程/医学影像技术/医学信息工程/康复工程/智能医学工程",
+        "region": "上海",
+        "evidence_locator": "二、实施方案 → 2025级 → 转入条件"
+      }
+    },
+    "extracts": [
+      {
+        "field": "access_requirement",
+        "pattern": "能认真遵守《学生手册》中的各项规章制度，品学兼优，无任何违纪违规行为； 生物医学工程：累计平均绩点达到 3\\.0 （含）及以上，《高等数学》、《大学物理》、《工程制图》绩点 3\\.0 及以上。 食品科学与工程、食品质量与安全： 累计平均绩点达到 3\\.0 （含）及以上，化学类课程绩点 2\\.5 及以上 ，《大学物理》绩点 2\\.5 及以上。 医学影像技术：累计平均绩点达到 3\\.0 （含）及以上，《高等数学》、《大学物理》绩点 2\\.5 及以上。 医学信息工程：累计平均绩点达到 3\\.0 （含）及以上，《高等数学》及计算机基础类课程绩点 2\\.5 及以上。 康复工程：累计平均绩点达到 3\\.0 （含）及以上，《工程制图》、《大学物理》绩点 3\\.0 及以上。 智能医学工程：累计平均绩点达到 3\\.0 （含）及以上，《高等数学》、化学类课程或《工程制图》至少一门达到绩点 3\\.0 及以上。"
+      },
+      {
+        "field": "prerequisites",
+        "pattern": "①符合《上海理工大学全日制本科生转专业实施细则》文件要求； ②累计平均绩点达到3\\.0及以上，且每学期所获课程学分数不少于20学分； ③品学兼优，无违纪处分行为； ④无不及格课程（需考试一次通过）； ⑤食品科学与工程、食品质量与安全、生物技术：第一学期化学类或数学类课程（至少一门）成绩不低于 80 分。 ⑥生物医学工程、医学影像技术、医学信息工程、康复工程：第一学期工程制图或数学类课程（至少一门）成绩不低于 80 分。 ⑦ 智能医学工程：第一学期工程制图、数学类或化学类课程（至少一门）成绩不低于 80 分。"
+      }
+    ],
+    "expected_fields": [
+      "access_requirement",
+      "考研报考前置课程要求（本页不涉及）",
+      "prerequisites"
+    ]
+  },
+  {
+    "source": {
+      "id": "shsmu-ai-micro-major",
+      "url": "https://www.shsmu.edu.cn/xxgk/info/1118/11503.htm",
+      "organization": "上海交通大学医学院",
+      "title": "上海交通大学医学院“AI+数智检验”微专业招生简章",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-01-19",
+      "publication_date_note": "页面可见「时间：2026-01-19」；授课安排为 2026 年 3—12 月。"
+    },
+    "publication_pattern": "2026-01-19",
+    "artifact_capture": {
+      "path": "work/knowledge-curriculum-2026/shsmu-ai-micro-major.raw",
+      "sha256": "f7d4694f418978670ae3ec356dd8328aadd1bc68bcc991e23bd7f172341d68db",
+      "captured_at": "2026-10-23T05:25:26.938Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-shsmu-ai-micro-major-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "learning",
+      "title": "“AI+数智检验”微专业课程设置与学时（上海交通大学医学院 2026）",
+      "summary": "微专业课程设置原文（共 96 学时）：AI通识与医疗基础 19 学时、智慧化实验室中的AI应用 10 学时、数智化运营与实验室管理 11 学时、检验医学前沿技术与进展 16 学时、前沿论坛 24 学时、标杆访学与实地考察 16 学时。（同一官方来源共 3 条原文事实，字段：learning_hours、access_requirement、topics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于上海交通大学医学院 2026 年“AI+数智检验”微专业；属非学历继续教育项目的学时安排，不是本科培养方案或国家学分标准。",
+      "relation": "related",
+      "tags": [
+        "2026年",
+        "微专业",
+        "学时",
+        "数智检验",
+        "上海交通大学",
+        "跨专业补课",
+        "招生对象",
+        "准入要求",
+        "学科专业不限",
+        "课程内容",
+        "大模型"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学医学院",
+        "program": "“AI+数智检验”微专业",
+        "region": "上海",
+        "admission_year": 2026,
+        "evidence_locator": "课程简介 → 第一部分"
+      }
+    },
+    "extracts": [
+      {
+        "field": "learning_hours",
+        "pattern": "课程设置（共96学时） 1\\. AI通识与医疗基础 （19学时） 2\\. 智慧化实验室中的AI应用 （10学时） 3\\. 数智化运营与实验室管理 （11学时） 4\\. 检验医学前沿技术与进展 （16学时） 5\\. 前沿论坛 （24学时） 6\\. 标杆访学与实地考察 （16学时）"
+      },
+      {
+        "field": "access_requirement",
+        "pattern": "招生对象 1\\. 医疗检验相关从业者：从事医疗、检验相关工作的在职人员，含医生、医学研究者、生物医药企业从业人员等。 2\\. 在校学生：全日制普通高等学校各学科专业对人工智能技术与医学检验融合领域有兴趣的在读本科生、研究生。 3\\. 其他意向人员：企事业单位在职人员、教师等，对人工智能技术与医学检验融合领域有学习需求，学科专业不限。 4\\. 计划招生学员50名。"
+      },
+      {
+        "field": "topics",
+        "pattern": "第一部分：基础与AI入门（19学时） 本模块主要构建坚实的理论基石与前沿认知，从人工智能简史到AI大模型的历史演变，重点解析AI在医疗健康领域的技术特点与临床应用。课程将深入探讨大语言模型、医学多模态模型及医疗智能体等前沿技术，通过医学AI产品的技术脉络解析和医疗大模型评价规范的学习，帮助学员建立科学、严谨的技术评估能力。"
+      }
+    ],
+    "expected_fields": [
+      "learning_hours",
+      "学分换算（原文按学时计，未给学分）",
+      "access_requirement",
+      "先修课程要求（原文明确学科专业不限，未列先修课程）",
+      "topics"
+    ]
+  }
+]

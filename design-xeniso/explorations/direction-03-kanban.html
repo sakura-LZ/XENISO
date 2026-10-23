@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XENISO · 方向03：科研项目管理看板</title>
+<style>
+:root {
+  --bg-canvas: #FDFCFA;
+  --bg-card: white;
+  --border-light: #E6E4DF;
+  --border-accent: #1E9B6B;
+  --text-main: #2A2826;
+  --text-secondary: #6F6C68;
+  --text-tertiary: #9C9894;
+  --accent-primary: #1E9B6B;
+  --accent-secondary: #E8A04F;
+  --shadow-soft: rgba(0, 0, 0, 0.04);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  background: var(--bg-canvas);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* 顶部工作区头部 */
+.workspace-header {
+  background: white;
+  border-bottom: 1px solid var(--border-light);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.workspace-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  background: var(--accent-primary);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: white;
+  font-size: 16px;
+}
+
+.brand-name {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.workspace-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-item {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.nav-item:hover {
+  background: rgba(30, 155, 107, 0.08);
+  color: var(--accent-primary);
+}
+
+.nav-item.active {
+  background: rgba(30, 155, 107, 0.12);
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.header-action {
+  padding: 10px 20px;
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.header-action:hover {
+  opacity: 0.9;
+}
+
+/* 主内容区 - 看板式布局 */
+.board-container {
+  max-width: 1400px;
+  margin: 32px auto;
+  padding: 0 32px;
+}
+
+.board-title-row {
+  margin-bottom: 32px;
+}
+
+.board-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.board-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* 看板列 */
+.board-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.column {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 20px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-light);
+}
+
+.column-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-main);
+}
+
+.column-count {
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  background: var(--text-tertiary);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column.active .column-count {
+  background: var(--accent-primary);
+}
+
+.column-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+/* 卡片 - 像任务卡 */
+.card {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: 0 2px 8px var(--shadow-soft);
+}
+
+.card-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--accent-primary);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.card-meta {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.meta-tag {
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* 底部标语 */
+.board-footer {
+  text-align: center;
+  padding: 48px 32px 32px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+</style>
+</head>
+<body>
+
+<div class="workspace-header">
+  <div class="header-left">
+    <div class="workspace-brand">
+      <div class="brand-mark">X</div>
+      <div class="brand-name">XENISO 异域同构</div>
+    </div>
+    <nav class="workspace-nav">
+      <a href="#" class="nav-item active">首页</a>
+      <a href="#" class="nav-item">异域探索</a>
+      <a href="#" class="nav-item">信息文库</a>
+      <a href="#" class="nav-item">交流社区</a>
+    </nav>
+  </div>
+  <button class="header-action">开始探索</button>
+</div>
+
+<div class="board-container">
+  <div class="board-title-row">
+    <h1 class="board-title">异域同构：职业定位与行动规划</h1>
+    <div class="board-subtitle">Different Fields. Shared Potential.</div>
+  </div>
+
+  <div class="board-columns">
+    <!-- 第一列 -->
+    <div class="column">
+      <div class="column-header">
+        <div class="column-title">个人画像</div>
+        <div class="column-count">1</div>
+      </div>
+      <div class="column-cards">
+        <div class="card">
+          <div class="card-label">Profile</div>
+          <div class="card-title">建立你的初始档案</div>
+          <div class="card-desc">
+            填写学籍、科研经历和学业背景
+          </div>
+          <div class="card-meta">
+            <span class="meta-tag">必填</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第二列 -->
+    <div class="column active">
+      <div class="column-header">
+        <div class="column-title">初步评价</div>
+        <div class="column-count">2</div>
+      </div>
+      <div class="column-cards">
+        <div class="card">
+          <div class="card-label">Assessment</div>
+          <div class="card-title">O*NET Mini-IP 测评</div>
+          <div class="card-desc">
+            30题官方职业兴趣量表
+          </div>
+          <div class="card-meta">
+            <span class="meta-tag">15分钟</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">Report</div>
+          <div class="card-title">生成初步报告</div>
+          <div class="card-desc">
+            兴趣结构、能力证据和探索方向
+          </div>
+          <div class="card-meta">
+            <span class="meta-tag">R1</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第三列 -->
+    <div class="column">
+      <div class="column-header">
+        <div class="column-title">职业体验</div>
+        <div class="column-count">3</div>
+      </div>
+      <div class="column-cards">
+        <div class="card">
+          <div class="card-label">Experience</div>
+          <div class="card-title">真实任务模拟</div>
+          <div class="card-desc">
+            9+1个方向，14个体验模板
+          </div>
+          <div class="card-meta">
+            <span class="meta-tag">可选</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-label">Database</div>
+          <div class="card-title">信息文库</div>
+          <div class="card-desc">
+            127条官方资料和真实案例
+          </div>
+          <div class="card-meta">
+            <span class="meta-tag">公开</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第四列 -->
+    <div class="column">
+      <div class="column-header">
+        <div class="column-title">行动规划</div>
+        <div class="column-count">4</div>
+      </div>
+      <div class="column-cards">
+        <div class="card">
+          <div class="card-label">Plan</div>
+          <div class="card-title">定制行动计划</div>
+          <div class="card-desc">
+            技能缺口、院校清单和路径规划
+          </div>
+          <div class="card-meta">
+            <span class="meta-tag">R2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="board-footer">
+  Different Fields. Shared Potential.
+</div>
+
+</body>
+</html>

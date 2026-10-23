@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-23T10:20:20.274Z",
+  "sources": 1,
+  "records": 3,
+  "by_category": {
+    "occupation": 0,
+    "recruitment": 0,
+    "admissions": 3,
+    "industry": 0,
+    "learning": 0
+  },
+  "attempts": [
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:32:28.071Z",
+      "status": "failed",
+      "reason": "no_evidence_matched"
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:32:28.071Z",
+      "status": "failed",
+      "reason": "no_evidence_matched"
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:38:35.046Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:36:07.061Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:38:51.159Z",
+      "status": "collected",
+      "missing_fields": [
+        "exam_subjects"
+      ]
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:39:07.099Z",
+      "status": "failed",
+      "reason": "no_evidence_matched"
+    },
+    {
+      "source_id": "zju-2027-catalog-085400-bme",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "at": "2026-10-23T07:35:51.745Z",
+      "status": "failed",
+      "reason": "no_evidence_matched"
+    }
+  ]
+}

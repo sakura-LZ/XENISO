@@ -1461,7 +1461,7 @@ function particleBackground(className){
  return `<div class="${className} xeniso-particles" aria-hidden="true">${dots}</div>`;
 }
 function syncParticles(){
- const paused=motionPaused()||document.hidden;
+ const paused=Boolean(motionPaused()||document.hidden);
  $$('.xeniso-particles').forEach(el=>el.dataset.paused=String(paused));
 }
 function syncPathwayCarousel(){

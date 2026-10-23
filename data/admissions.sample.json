@@ -1,12 +1,196 @@
 {
   "version": "V3",
-  "status": "empty_until_verified",
+  "status": "partially_filled_from_verified_bundle",
   "rule": "只有官方招生来源且有招生年份、专业代码、招生方式、科目/资格校验结果才可用于报告事实。",
-  "items": [],
+  "updated_at": "2026-10-23T03:36:14.885Z",
+  "provenance": {
+    "generated_by": "scripts/knowledge/build-admissions-sample.ts",
+    "from": "work/knowledge-admissions/bundle.json",
+    "admission_year": 2027,
+    "note": "仅收录 bundle 中 quote_verified 且有 program/exam_subjects 的记录；章程类记录（无专业代码）不进入本文件。eligibility 一律指向 knowledge 记录，不在本文件内推断。",
+    "excluded": [
+      {
+        "id": "adm-sysu-2027-charter-medicine-guide",
+        "reason": "无 program（章程类记录）"
+      },
+      {
+        "id": "adm-sysu-2027-charter-guide-clinical-data",
+        "reason": "无 program（章程类记录）"
+      },
+      {
+        "id": "adm-sysu-2027-charter-medical-ai-pm",
+        "reason": "无 program（章程类记录）"
+      },
+      {
+        "id": "adm-scu-2027-charter-medicine-guide",
+        "reason": "无 program（章程类记录）"
+      },
+      {
+        "id": "adm-scu-2027-charter-guide-clinical-data",
+        "reason": "无 program（章程类记录）"
+      },
+      {
+        "id": "adm-scu-2027-charter-medical-ai-pm",
+        "reason": "无 program（章程类记录）"
+      },
+      {
+        "id": "adm-uestc-2027-charter-medicine-guide",
+        "reason": "无 program（章程类记录）"
+      },
+      {
+        "id": "adm-seu-2027-catalog-pdf-guide-devices",
+        "reason": "无 exam_subjects 原文"
+      },
+      {
+        "id": "adm-seu-2027-catalog-pdf-guide-imaging-eng",
+        "reason": "无 exam_subjects 原文"
+      },
+      {
+        "id": "adm-xjtu-2027-charter-medicine-guide",
+        "reason": "无 exam_subjects 原文"
+      },
+      {
+        "id": "adm-xjtu-2027-charter-guide-clinical-data",
+        "reason": "无 exam_subjects 原文"
+      },
+      {
+        "id": "adm-xjtu-2027-charter-medical-ai-pm",
+        "reason": "无 program（章程类记录）"
+      },
+      {
+        "id": "adm-xjtu-2027-charter-guide-health-systems",
+        "reason": "无 program（章程类记录）"
+      },
+      {
+        "id": "adm-sjtu-2027-master-charter-medicine-guide",
+        "reason": "无 program（章程类记录）"
+      },
+      {
+        "id": "adm-sjtu-2027-master-charter-medical-ai-pm",
+        "reason": "无 program（章程类记录）"
+      }
+    ]
+  },
+  "items": [
+    {
+      "id": "adm-sysu-2027-major-catalog-guide-ml-cv",
+      "university": "中山大学",
+      "college": null,
+      "year": 2027,
+      "major_code": "085410",
+      "major_name": "人工智能",
+      "research_direction": null,
+      "admission_path": "统考",
+      "exam_subjects": [
+        "085410 人工智能 33 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④408 计算机学科专业基础"
+      ],
+      "eligibility": "见 knowledge 记录 applicability；本文件不推断报考资格",
+      "source_official_url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "source_title": "中山大学2027年硕士研究生招生学科专业目录",
+      "verified_at": "2026-10-23",
+      "knowledge_record_id": "adm-sysu-2027-major-catalog-guide-ml-cv",
+      "evidence_locator": "专业目录 偏移 23399"
+    },
+    {
+      "id": "adm-sysu-2027-major-catalog-guide-signals",
+      "university": "中山大学",
+      "college": null,
+      "year": 2027,
+      "major_code": "085400",
+      "major_name": "电子信息",
+      "research_direction": null,
+      "admission_path": "统考",
+      "exam_subjects": [
+        "085400 电子信息 90 ①101 思想政治理论 ②201 英语（一） ③301 数学（一） ④884 信号与系统"
+      ],
+      "eligibility": "见 knowledge 记录 applicability；本文件不推断报考资格",
+      "source_official_url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "source_title": "中山大学2027年硕士研究生招生学科专业目录",
+      "verified_at": "2026-10-23",
+      "knowledge_record_id": "adm-sysu-2027-major-catalog-guide-signals",
+      "evidence_locator": "专业目录 偏移 28151"
+    },
+    {
+      "id": "adm-sysu-2027-major-catalog-guide-imaging-eng",
+      "university": "中山大学",
+      "college": null,
+      "year": 2027,
+      "major_code": "105800",
+      "major_name": "医学技术",
+      "research_direction": null,
+      "admission_path": "统考",
+      "exam_subjects": [
+        "105800 医学技术 12 ①101 思想政治理论 ②201 英语（一） ③660 医学技术基础（综合） 81 医学影像技术（附属第七医院培养）"
+      ],
+      "eligibility": "见 knowledge 记录 applicability；本文件不推断报考资格",
+      "source_official_url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "source_title": "中山大学2027年硕士研究生招生学科专业目录",
+      "verified_at": "2026-10-23",
+      "knowledge_record_id": "adm-sysu-2027-major-catalog-guide-imaging-eng",
+      "evidence_locator": "专业目录 偏移 20281"
+    },
+    {
+      "id": "adm-sysu-2027-major-catalog-guide-devices",
+      "university": "中山大学",
+      "college": null,
+      "year": 2027,
+      "major_code": "105800",
+      "major_name": "医学技术",
+      "research_direction": null,
+      "admission_path": "统考",
+      "exam_subjects": [
+        "105800 医学技术 10 ①101 思想政治理论 ②204 英语（二） ③302 数学（二） ④866 工程物理"
+      ],
+      "eligibility": "见 knowledge 记录 applicability；本文件不推断报考资格",
+      "source_official_url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "source_title": "中山大学2027年硕士研究生招生学科专业目录",
+      "verified_at": "2026-10-23",
+      "knowledge_record_id": "adm-sysu-2027-major-catalog-guide-devices",
+      "evidence_locator": "专业目录 偏移 14344"
+    },
+    {
+      "id": "adm-sysu-2027-major-catalog-guide-health-systems",
+      "university": "中山大学",
+      "college": null,
+      "year": 2027,
+      "major_code": "107401",
+      "major_name": "社会医学与卫生事业管理",
+      "research_direction": null,
+      "admission_path": "统考",
+      "exam_subjects": [
+        "107401 社会医学与卫生事业管理 5 ①101 思想政治理论 ②201 英语（一） ③353 卫生综合"
+      ],
+      "eligibility": "见 knowledge 记录 applicability；本文件不推断报考资格",
+      "source_official_url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "source_title": "中山大学2027年硕士研究生招生学科专业目录",
+      "verified_at": "2026-10-23",
+      "knowledge_record_id": "adm-sysu-2027-major-catalog-guide-health-systems",
+      "evidence_locator": "专业目录 偏移 14626"
+    },
+    {
+      "id": "adm-sysu-2027-major-catalog-medicine-guide",
+      "university": "中山大学",
+      "college": null,
+      "year": 2027,
+      "major_code": "100210",
+      "major_name": "外科学",
+      "research_direction": null,
+      "admission_path": "统考",
+      "exam_subjects": [
+        "100210 外科学 18 ①101 思想政治理论 ②201 英语（一） ③648 生物医学综合"
+      ],
+      "eligibility": "见 knowledge 记录 applicability；本文件不推断报考资格",
+      "source_official_url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+      "source_title": "中山大学2027年硕士研究生招生学科专业目录",
+      "verified_at": "2026-10-23",
+      "knowledge_record_id": "adm-sysu-2027-major-catalog-medicine-guide",
+      "evidence_locator": "专业目录 偏移 17782"
+    }
+  ],
   "item_schema": {
     "id": "string",
     "university": "string",
-    "college": "string",
+    "college": "string_or_null",
     "year": "integer",
     "major_code": "string",
     "major_name": "string",

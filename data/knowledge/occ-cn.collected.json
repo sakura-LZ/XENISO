@@ -1,0 +1,1530 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T10:08:07.291Z",
+  "sources": [
+    {
+      "id": "gov-ai-engineer-std",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/d9a82994c8bc4db2beb4a31b9d16e687.pdf",
+      "organization": "人力资源和社会保障部、工业和信息化部",
+      "title": "人工智能工程技术人员国家职业技术技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2021〕70号附件；PDF 正文无印发日期，标注为「2021 年版」。"
+    },
+    {
+      "id": "occ-b3-b",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-02/22/5588249/files/ef85f21b56d14772895125f8120ee392.pdf",
+      "organization": "人力资源和社会保障部、工业和信息化部",
+      "title": "大数据工程技术人员国家职业技术技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2021〕10号附件；PDF 正文无印发日期，标注为「2021 年版」。"
+    },
+    {
+      "id": "occ-datasec-engineer",
+      "url": "https://www.mohrss.gov.cn/xxgk2020/fdzdgknr/qt/gztz/202303/P020230327570509396537.pdf",
+      "organization": "人力资源和社会保障部、中央网络安全和信息化委员会办公室、工业和信息化部",
+      "title": "数据安全工程技术人员国家职业标准（2023年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2023〕9号附件；通知页发文日期 2023-03-20，但 PDF 正文未印日期，故按「2023 年版」标注。"
+    },
+    {
+      "id": "occ-digital-manager",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/ea6f59448a3d47beb4ba587003717e71.pdf",
+      "organization": "人力资源和社会保障部、工业和信息化部",
+      "title": "数字化管理师国家职业技术技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2021〕70号附件；PDF 正文无印发日期，标注为「2021 年版」。"
+    },
+    {
+      "id": "occ-iot-engineer",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/5082cc624063437e8a1a6de48c197088.pdf",
+      "organization": "人力资源和社会保障部、工业和信息化部",
+      "title": "物联网工程技术人员国家职业技术技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2021〕70号附件；PDF 正文无印发日期，标注为「2021 年版」。"
+    },
+    {
+      "id": "occ-cloud-engineer",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/3546e3a5ca144b25b7873d6fb26495ab.pdf",
+      "organization": "人力资源和社会保障部、工业和信息化部",
+      "title": "云计算工程技术人员国家职业技术技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2021〕70号附件；PDF 正文无印发日期，标注为「2021 年版」。"
+    },
+    {
+      "id": "occ-industrial-internet-engineer",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/fb76642341154512bb58e31815da4fa1.pdf",
+      "organization": "人力资源和社会保障部、工业和信息化部",
+      "title": "工业互联网工程技术人员国家职业技术技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2021〕70号附件；PDF 正文无印发日期，标注为「2021 年版」。"
+    },
+    {
+      "id": "occ-vr-engineer",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/8392b844052c41b182ee14bad392affa.pdf",
+      "organization": "人力资源和社会保障部、工业和信息化部",
+      "title": "虚拟现实工程技术人员国家职业技术技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2021〕70号附件；PDF 正文无印发日期，标注为「2021 年版」。"
+    },
+    {
+      "id": "occ-ic-engineer",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/e2a3e813db1d48099059b988414c2c88.pdf",
+      "organization": "人力资源和社会保障部、工业和信息化部",
+      "title": "集成电路工程技术人员国家职业技术技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2021〕70号附件；PDF 正文无印发日期，标注为「2021 年版」。"
+    },
+    {
+      "id": "occ-b3-a",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-02/22/5588249/files/452c5cd9a8ec44e0880e1e122d9e344b.pdf",
+      "organization": "人力资源和社会保障部、工业和信息化部",
+      "title": "智能制造工程技术人员国家职业技术技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2021〕10号附件；PDF 正文无印发日期，标注为「2021 年版」。"
+    },
+    {
+      "id": "occ-b3-c",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-02/22/5588249/files/e7419d3b412c4030819023412730ef1e.pdf",
+      "organization": "人力资源和社会保障部、工业和信息化部",
+      "title": "区块链工程技术人员国家职业技术技能标准（2021年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2021〕10号附件；PDF 正文无印发日期，标注为「2021 年版」。"
+    },
+    {
+      "id": "occ-health-manager",
+      "url": "https://www.osta.org.cn/api/sys/downloadFile/decrypt?fileName=4eNsZIOv3WFNDfbnldJHeA%2F2024%2F4%2F30%2Fe6423d19d94548a49685557793395421.pdf",
+      "organization": "人力资源和社会保障部",
+      "title": "健康管理师国家职业标准",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "来源于 osta.org.cn 国家职业标准库；PDF 正文未出现印发日期，故置 null。"
+    },
+    {
+      "id": "occ-long-term-care",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202402/P020240229500578654249.pdf",
+      "organization": "人力资源和社会保障部办公厅、国家医疗保障局办公室",
+      "title": "健康照护师（长期照护师）国家职业标准（2024年版）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "人社厅发〔2024〕号系列附件（国家医保局联合颁布）；PDF 正文仅标「2024 年版」，无印发日期。"
+    },
+    {
+      "id": "occ-device-assembler",
+      "url": "https://www.osta.org.cn/zcwj/123%E4%B8%AA%E5%9B%BD%E5%AE%B6%E8%81%8C%E4%B8%9A%E6%A0%87%E5%87%86/6-21-06-01%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E8%A3%85%E9%85%8D%E5%B7%A5-%E5%9B%BD%E5%AE%B6%E8%81%8C%E4%B8%9A%E6%A0%87%E5%87%86%E5%BE%81%E6%B1%82%E6%84%8F%E8%A7%81%E7%A8%BF.pdf",
+      "organization": "人力资源和社会保障部",
+      "title": "医疗器械装配工国家职业标准（征求意见稿）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "注意：该文件为 osta.org.cn 公示的「征求意见稿」，非正式颁布版；PDF 正文无日期。"
+    },
+    {
+      "id": "occ-drug-sales",
+      "url": "https://www.osta.org.cn/api/sys/downloadFile/decrypt?fileName=4eNsZIOv3WFNDfbnldJHeA%2F2024%2F4%2F29%2F92524829185145b7bc3b0280b893a1d7.pdf",
+      "organization": "人力资源和社会保障部",
+      "title": "医药商品购销员国家职业标准",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "来源于 osta.org.cn 国家职业标准库；PDF 正文未出现印发日期，故置 null。"
+    }
+  ],
+  "records": [
+    {
+      "id": "occupation-gov-ai-engineer-std-guide-ml-cv",
+      "source_id": "gov-ai-engineer-std",
+      "role_id": "guide_ml_cv",
+      "category": "occupation",
+      "title": "人工智能工程技术人员（2021年版）：官方职业定义",
+      "summary": "《人工智能工程技术人员国家职业技术技能标准（2021年版）》第 1 章「职业概况」给出的官方职业定义原文（职业 定义 从事与人工智能相关算法 、 深度学习等多种技术的分析 、 研究 、 开发 ， 并对 人工智能系统进行设计、优化、运维、管理和应用的工程技术人员 。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 2 条原文事实，字段：occupation_definition、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「人工智能工程技术人员（2021年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "人工智能工程技术人员（2021年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业 定义 从事与人工智能相关算法 、 深度学习等多种技术的分析 、 研究 、 开发 ， 并对 人工智能系统进行设计、优化、运维、管理和应用的工程技术人员 。",
+          "quote": "职业 定义 从事与人工智能相关算法 、 深度学习等多种技术的分析 、 研究 、 开发 ， 并对 人工智能系统进行设计、优化、运维、管理和应用的工程技术人员 。",
+          "start": 1669,
+          "end": 1748
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具有一定的学习 、 分析 、 推理和判断能力 ， 具有一定的表达能力 、 计算能力 。",
+          "quote": "职业能力特征 具有一定的学习 、 分析 、 推理和判断能力 ， 具有一定的表达能力 、 计算能力 。",
+          "start": 1900,
+          "end": 1950
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "bcc34b232a724b9d6b295c8fd7b9443b9da6b430d27132ec3d70f7c7f19e021f",
+      "collected_at": "2026-10-23T06:58:54.210Z",
+      "verified_at": "2026-10-23T10:08:07.149Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-gov-ai-engineer-std-medical-ai-pm",
+      "source_id": "gov-ai-engineer-std",
+      "role_id": "medical_ai_pm",
+      "category": "occupation",
+      "title": "人工智能工程技术人员（2021年版）：等级/职业方向设置",
+      "summary": "《人工智能工程技术人员国家职业技术技能标准（2021年版）》规定的等级与职业方向设置原文（专业技术等级 本职业共设三个等级，分别为初级、中级、高级 。 初级 、 中级 、 高级均设五个职业方向 ： 人工智能芯片产品实现 、 人工智能平 台产品实现 、 自然语言及语音处理产品实现 、 计算机视觉产品实现 、 人工智能应 用产品集成实现。…）。说明该职业的成长通道：分几个等级、每个等级设哪些职业方向，是判断「这个职业怎么往上走」的官方依据。",
+      "applicability": "适用于说明「人工智能工程技术人员（2021年版）」的等级划分与职业方向。属标准文本口径，不等于用人单位职级或薪酬带宽；不适用于其他职业。",
+      "relation": "direct",
+      "tags": [
+        "人工智能工程技术人员（2021年版）",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "国家职业标准"
+      ],
+      "facts": [
+        {
+          "field": "career_path",
+          "value": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级 。 初级 、 中级 、 高级均设五个职业方向 ： 人工智能芯片产品实现 、 人工智能平 台产品实现 、 自然语言及语音处理产品实现 、 计算机视觉产品实现 、 人工智能应 用产品集成实现。",
+          "quote": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级 。 初级 、 中级 、 高级均设五个职业方向 ： 人工智能芯片产品实现 、 人工智能平 台产品实现 、 自然语言及语音处理产品实现 、 计算机视觉产品实现 、 人工智能应 用产品集成实现。",
+          "start": 1753,
+          "end": 1876
+        }
+      ],
+      "missing_fields": [
+        "各等级对应薪酬",
+        "各等级对应职称"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "bcc34b232a724b9d6b295c8fd7b9443b9da6b430d27132ec3d70f7c7f19e021f",
+      "collected_at": "2026-10-23T06:58:54.210Z",
+      "verified_at": "2026-10-23T10:08:07.170Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 等级/职业方向"
+      }
+    },
+    {
+      "id": "occupation-occ-b3-b-guide-clinical-data",
+      "source_id": "occ-b3-b",
+      "role_id": "guide_clinical_data",
+      "category": "occupation",
+      "title": "大数据工程技术人员（2021年版）：官方职业定义",
+      "summary": "《大数据工程技术人员国家职业技术技能标准（2021年版）》第 1 章「职业概况」给出的官方职业定义原文（职业定义 从事大数据采集 、 清洗 、 分析 、 治理 、 挖掘等技术研究 ， 并加以利用 、 管理 、 维护和服务的工程技术人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 2 条原文事实，字段：occupation_definition、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「大数据工程技术人员（2021年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "大数据工程技术人员（2021年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 从事大数据采集 、 清洗 、 分析 、 治理 、 挖掘等技术研究 ， 并加以利用 、 管理 、 维护和服务的工程技术人员。",
+          "quote": "职业定义 从事大数据采集 、 清洗 、 分析 、 治理 、 挖掘等技术研究 ， 并加以利用 、 管理 、 维护和服务的工程技术人员。",
+          "start": 1322,
+          "end": 1388
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具有较强的学习能力、计算能力、表达能力及分析、推理和判断能力。",
+          "quote": "职业能力特征 具有较强的学习能力、计算能力、表达能力及分析、推理和判断能力。",
+          "start": 1488,
+          "end": 1526
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "cb4b8eb1fc2220da26070fa7bfbf4c4be12150f9af0e6e2d5e815eae1dfa2276",
+      "collected_at": "2026-10-23T07:03:16.516Z",
+      "verified_at": "2026-10-23T10:08:07.176Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-b3-b-medical-ai-pm",
+      "source_id": "occ-b3-b",
+      "role_id": "medical_ai_pm",
+      "category": "occupation",
+      "title": "大数据工程技术人员（2021年版）：等级/职业方向设置",
+      "summary": "《大数据工程技术人员国家职业技术技能标准（2021年版）》规定的等级与职业方向设置原文（专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级、中级分为三个职业方向：大数据处理、大数据分析、大数据管理。 高级不分职业方向。…）。说明该职业的成长通道：分几个等级、每个等级设哪些职业方向，是判断「这个职业怎么往上走」的官方依据。",
+      "applicability": "适用于说明「大数据工程技术人员（2021年版）」的等级划分与职业方向。属标准文本口径，不等于用人单位职级或薪酬带宽；不适用于其他职业。",
+      "relation": "direct",
+      "tags": [
+        "大数据工程技术人员（2021年版）",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "国家职业标准"
+      ],
+      "facts": [
+        {
+          "field": "career_path",
+          "value": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级、中级分为三个职业方向：大数据处理、大数据分析、大数据管理。 高级不分职业方向。",
+          "quote": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级、中级分为三个职业方向：大数据处理、大数据分析、大数据管理。 高级不分职业方向。",
+          "start": 1393,
+          "end": 1465
+        }
+      ],
+      "missing_fields": [
+        "各等级对应薪酬",
+        "各等级对应职称"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "cb4b8eb1fc2220da26070fa7bfbf4c4be12150f9af0e6e2d5e815eae1dfa2276",
+      "collected_at": "2026-10-23T07:03:16.516Z",
+      "verified_at": "2026-10-23T10:08:07.181Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 等级/职业方向"
+      }
+    },
+    {
+      "id": "occupation-occ-datasec-engineer-guide-clinical-data",
+      "source_id": "occ-datasec-engineer",
+      "role_id": "guide_clinical_data",
+      "category": "occupation",
+      "title": "数据安全工程技术人员（2023年版）：官方职业定义",
+      "summary": "《数据安全工程技术人员国家职业标准（2023年版）》第 1 章「职业概况」给出的官方职业定义原文（职业定义 从事数据安全需求分析挖掘、 技术方案设计、 项目实施、 运营管理等工作 的工程技术人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 3 条原文事实，字段：occupation_definition、career_path、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「数据安全工程技术人员（2023年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "数据安全工程技术人员（2023年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 从事数据安全需求分析挖掘、 技术方案设计、 项目实施、 运营管理等工作 的工程技术人员。",
+          "quote": "职业定义 从事数据安全需求分析挖掘、 技术方案设计、 项目实施、 运营管理等工作 的工程技术人员。",
+          "start": 1306,
+          "end": 1355
+        },
+        {
+          "field": "career_path",
+          "value": "专业技术等级 本职业共设三个等级, 分别为: 初级、 中级、 高级。",
+          "quote": "专业技术等级 本职业共设三个等级, 分别为: 初级、 中级、 高级。",
+          "start": 1361,
+          "end": 1395
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具有较强的学习能力、 计算能力、 表达能力及分析、 推理和判断能力。",
+          "quote": "职业能力特征 具有较强的学习能力、 计算能力、 表达能力及分析、 推理和判断能力。",
+          "start": 1421,
+          "end": 1462
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "cf40f300cffd9914d75f36f7a4753290afe899f2e007020d786fce3267caeadd",
+      "collected_at": "2026-10-23T07:05:12.996Z",
+      "verified_at": "2026-10-23T10:08:07.188Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-digital-manager-medical-ai-pm",
+      "source_id": "occ-digital-manager",
+      "role_id": "medical_ai_pm",
+      "category": "occupation",
+      "title": "数字化管理师（2021年版）：官方职业定义",
+      "summary": "《数字化管理师国家职业技术技能标准（2021年版）》第 1 章「职业概况」给出的官方职业定义原文（职业定义 使用数字化智能移动办公平台 ， 进行企业或组织的人员架构搭建 、 运营流程 维护 、 工作流协同 、 大数据决策分析 、 上下游在线化连接 ， 实现企业经营管理在 线化、数字化的人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 3 条原文事实，字段：occupation_definition、career_path、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「数字化管理师（2021年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "数字化管理师（2021年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 使用数字化智能移动办公平台 ， 进行企业或组织的人员架构搭建 、 运营流程 维护 、 工作流协同 、 大数据决策分析 、 上下游在线化连接 ， 实现企业经营管理在 线化、数字化的人员。",
+          "quote": "职业定义 使用数字化智能移动办公平台 ， 进行企业或组织的人员架构搭建 、 运营流程 维护 、 工作流协同 、 大数据决策分析 、 上下游在线化连接 ， 实现企业经营管理在 线化、数字化的人员。",
+          "start": 1348,
+          "end": 1445
+        },
+        {
+          "field": "career_path",
+          "value": "专业技术等级 本职业共设三个等级，分别为：初级、中级、高级。",
+          "quote": "专业技术等级 本职业共设三个等级，分别为：初级、中级、高级。",
+          "start": 1450,
+          "end": 1480
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具有一定的学习 能力 、 计算能力、表达能力及 分析、推理 和 判断能力。",
+          "quote": "职业能力特征 具有一定的学习 能力 、 计算能力、表达能力及 分析、推理 和 判断能力。",
+          "start": 1503,
+          "end": 1547
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "151312592220889b8b51e1e6fd259248e6397496164cc9eb4bd5bb26dcf28103",
+      "collected_at": "2026-10-23T07:02:28.529Z",
+      "verified_at": "2026-10-23T10:08:07.193Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-iot-engineer-guide-devices",
+      "source_id": "occ-iot-engineer",
+      "role_id": "guide_devices",
+      "category": "occupation",
+      "title": "物联网工程技术人员（2021年版）：官方职业定义",
+      "summary": "《物联网工程技术人员国家职业技术技能标准（2021年版）》第 1 章「职业概况」给出的官方职业定义原文（职业定义 从事物联网架构 、 平台 、 芯片 、 传感器 、 智能标签等技术的研究和开发 ， 以 及物联网工程的设计、测试、维护、管理和服务的工程技术人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 3 条原文事实，字段：occupation_definition、career_path、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「物联网工程技术人员（2021年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "物联网工程技术人员（2021年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 从事物联网架构 、 平台 、 芯片 、 传感器 、 智能标签等技术的研究和开发 ， 以 及物联网工程的设计、测试、维护、管理和服务的工程技术人员。",
+          "quote": "职业定义 从事物联网架构 、 平台 、 芯片 、 传感器 、 智能标签等技术的研究和开发 ， 以 及物联网工程的设计、测试、维护、管理和服务的工程技术人员。",
+          "start": 1685,
+          "end": 1763
+        },
+        {
+          "field": "career_path",
+          "value": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级 、 中级 均设 三个职业方向 ： 物联网嵌入式开发 、 物联网应用开发 、 物联 网系统集成与管理。 高级不分职业方向。",
+          "quote": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级 、 中级 均设 三个职业方向 ： 物联网嵌入式开发 、 物联网应用开发 、 物联 网系统集成与管理。 高级不分职业方向。",
+          "start": 1768,
+          "end": 1861
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具有较强的学习能力、计算能力、表达能力及分析、推理和判断能力。",
+          "quote": "职业能力特征 具有较强的学习能力、计算能力、表达能力及分析、推理和判断能力。",
+          "start": 1884,
+          "end": 1922
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "0bb173b040a60242f1a82ed928b867e00c85ef63abed92467e9762b336656349",
+      "collected_at": "2026-10-23T07:01:49.472Z",
+      "verified_at": "2026-10-23T10:08:07.199Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-cloud-engineer-guide-software",
+      "source_id": "occ-cloud-engineer",
+      "role_id": "guide_software",
+      "category": "occupation",
+      "title": "云计算工程技术人员（2021年版）：官方职业定义",
+      "summary": "《云计算工程技术人员国家职业技术技能标准（2021年版）》第 1 章「职业概况」给出的官方职业定义原文（职业定义 从事云计算技术研究，云系统构建、部署、运维，云资源管理、应用和服务 的工程技术人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 3 条原文事实，字段：occupation_definition、career_path、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「云计算工程技术人员（2021年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "云计算工程技术人员（2021年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 从事云计算技术研究，云系统构建、部署、运维，云资源管理、应用和服务 的工程技术人员。",
+          "quote": "职业定义 从事云计算技术研究，云系统构建、部署、运维，云资源管理、应用和服务 的工程技术人员。",
+          "start": 1189,
+          "end": 1236
+        },
+        {
+          "field": "career_path",
+          "value": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级、中级均设两个职业方向：云计算运维、云计算开发。 高级不分职业方向。",
+          "quote": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级、中级均设两个职业方向：云计算运维、云计算开发。 高级不分职业方向。",
+          "start": 1241,
+          "end": 1307
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具有较强的学习能力、计算能力、表达能力及分析、推理和判断能力。",
+          "quote": "职业能力特征 具有较强的学习能力、计算能力、表达能力及分析、推理和判断能力。",
+          "start": 1330,
+          "end": 1368
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "80a16d03dbc1e92a31c4f9197c50d536caf8ef5a8a700849329e47e405765bf6",
+      "collected_at": "2026-10-23T07:01:54.986Z",
+      "verified_at": "2026-10-23T10:08:07.205Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-industrial-internet-engineer-guide-software",
+      "source_id": "occ-industrial-internet-engineer",
+      "role_id": "guide_software",
+      "category": "occupation",
+      "title": "工业互联网工程技术人员（2021年版）：官方职业定义",
+      "summary": "《工业互联网工程技术人员国家职业技术技能标准（2021年版）》第 1 章「职业概况」给出的官方职业定义原文（职业定义 围绕工业互联网网络 、 平台 、 安全三大体系 ， 在网络互联 、 标识解析 、 平台 建设 、 数据服务 、 应用开发 、 安全防护等领域 ， 从事规划设计 、 技术研发 、 测试 验证、工程实施、运营管理和运维服务等工作的工程…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 3 条原文事实，字段：occupation_definition、career_path、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「工业互联网工程技术人员（2021年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "工业互联网工程技术人员（2021年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 围绕工业互联网网络 、 平台 、 安全三大体系 ， 在网络互联 、 标识解析 、 平台 建设 、 数据服务 、 应用开发 、 安全防护等领域 ， 从事规划设计 、 技术研发 、 测试 验证、工程实施、运营管理和运维服务等工作的工程技术人员。",
+          "quote": "职业定义 围绕工业互联网网络 、 平台 、 安全三大体系 ， 在网络互联 、 标识解析 、 平台 建设 、 数据服务 、 应用开发 、 安全防护等领域 ， 从事规划设计 、 技术研发 、 测试 验证、工程实施、运营管理和运维服务等工作的工程技术人员。",
+          "start": 1593,
+          "end": 1718
+        },
+        {
+          "field": "career_path",
+          "value": "专业技术等级 本职业共设三个等级 ， 分别为初级、中级、高级。 初级不分职业方向。 中级、高级均设两个职业方向：工程应用、设计开发。",
+          "quote": "专业技术等级 本职业共设三个等级 ， 分别为初级、中级、高级。 初级不分职业方向。 中级、高级均设两个职业方向：工程应用、设计开发。",
+          "start": 1723,
+          "end": 1789
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具有较强的学习能力、计算能力、表达能力、逻辑思维能力。",
+          "quote": "职业能力特征 具有较强的学习能力、计算能力、表达能力、逻辑思维能力。",
+          "start": 1828,
+          "end": 1862
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "ebeaf3273703e28d0f069812755742d5e4b932ae1c39488efddf8ab189001662",
+      "collected_at": "2026-10-23T07:02:01.484Z",
+      "verified_at": "2026-10-23T10:08:07.211Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-vr-engineer-guide-imaging-eng",
+      "source_id": "occ-vr-engineer",
+      "role_id": "guide_imaging_eng",
+      "category": "occupation",
+      "title": "虚拟现实工程技术人员（2021年版）：官方职业定义",
+      "summary": "《虚拟现实工程技术人员国家职业技术技能标准（2021年版）》第 1 章「职业概况」给出的官方职业定义原文（职业定义 使用虚拟现实引擎及相关工具，进行虚拟现实产品的策划、设计、编码、测 试、维护和服务的工程技术人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 3 条原文事实，字段：occupation_definition、career_path、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「虚拟现实工程技术人员（2021年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "虚拟现实工程技术人员（2021年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 使用虚拟现实引擎及相关工具，进行虚拟现实产品的策划、设计、编码、测 试、维护和服务的工程技术人员。",
+          "quote": "职业定义 使用虚拟现实引擎及相关工具，进行虚拟现实产品的策划、设计、编码、测 试、维护和服务的工程技术人员。",
+          "start": 1311,
+          "end": 1365
+        },
+        {
+          "field": "career_path",
+          "value": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级、中级、高级 均设两 个职业方向：虚拟现实应用开发、虚拟现实内容设 计。",
+          "quote": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级、中级、高级 均设两 个职业方向：虚拟现实应用开发、虚拟现实内容设 计。",
+          "start": 1370,
+          "end": 1438
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具有较强的学习能力、理解能力、沟通能力、分析能力、计算能力；具有较 好的空间感。",
+          "quote": "职业能力特征 具有较强的学习能力、理解能力、沟通能力、分析能力、计算能力；具有较 好的空间感。",
+          "start": 1463,
+          "end": 1510
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "52e38fcca2c98112834f0a97b22bc51b79f25df02b0b0a83392437974c109c7e",
+      "collected_at": "2026-10-23T07:02:21.279Z",
+      "verified_at": "2026-10-23T10:08:07.216Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-ic-engineer-guide-devices",
+      "source_id": "occ-ic-engineer",
+      "role_id": "guide_devices",
+      "category": "occupation",
+      "title": "集成电路工程技术人员（2021年版）：官方职业定义",
+      "summary": "《集成电路工程技术人员国家职业技术技能标准（2021年版）》第 1 章「职业概况」给出的官方职业定义原文（职业 定义 从事集成电路需求分析 、 集成电路架构设计 、 集成电路详细设计 、 测试验证 、 网表设计和版图设计的工程技术人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 3 条原文事实，字段：occupation_definition、career_path、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「集成电路工程技术人员（2021年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "集成电路工程技术人员（2021年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业 定义 从事集成电路需求分析 、 集成电路架构设计 、 集成电路详细设计 、 测试验证 、 网表设计和版图设计的工程技术人员。",
+          "quote": "职业 定义 从事集成电路需求分析 、 集成电路架构设计 、 集成电路详细设计 、 测试验证 、 网表设计和版图设计的工程技术人员。",
+          "start": 1354,
+          "end": 1419
+        },
+        {
+          "field": "career_path",
+          "value": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级 、 中级 、 高级均设三个职业方向 ： 集成电路 设计 、 集成电路工艺实现和 集成电路封测。",
+          "quote": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级。 初级 、 中级 、 高级均设三个职业方向 ： 集成电路 设计 、 集成电路工艺实现和 集成电路封测。",
+          "start": 1424,
+          "end": 1504
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具有较强的学习、分析、计算、表达、推理、判断能力 。",
+          "quote": "职业能力特征 具有较强的学习、分析、计算、表达、推理、判断能力 。",
+          "start": 1528,
+          "end": 1561
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "405306c784f512c8ff1f264f86233380552b9eeeebd088521b8fc30430a34512",
+      "collected_at": "2026-10-23T07:01:40.922Z",
+      "verified_at": "2026-10-23T10:08:07.222Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-b3-a-guide-devices",
+      "source_id": "occ-b3-a",
+      "role_id": "guide_devices",
+      "category": "occupation",
+      "title": "智能制造工程技术人员（2021年版）：官方职业定义",
+      "summary": "《智能制造工程技术人员国家职业技术技能标准（2021年版）》第 1 章「职业概况」给出的官方职业定义原文（职业定义 从事智能制造相关技术的研究、开发，对智能制造装备、生产线进行设计 、 安装、调试、管控和应用的工程技术人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 3 条原文事实，字段：occupation_definition、career_path、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「智能制造工程技术人员（2021年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "智能制造工程技术人员（2021年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 从事智能制造相关技术的研究、开发，对智能制造装备、生产线进行设计 、 安装、调试、管控和应用的工程技术人员。",
+          "quote": "职业定义 从事智能制造相关技术的研究、开发，对智能制造装备、生产线进行设计 、 安装、调试、管控和应用的工程技术人员。",
+          "start": 2089,
+          "end": 2148
+        },
+        {
+          "field": "career_path",
+          "value": "专业技术等级 本职业共设三个等级 , 分别为初级、中级和高级。 初级和中级分为四个职业方向 ： 智能装备与产线开发 、 智能装备与产线应用 、 智能生产管控、装备与产线智能运维。 高级分为五个职业方向 ： 智能制造系统架构构建 、 智能装备与产线开发 、 智 能装备与产线应用、智能生产管控、装备与产线智能运维。",
+          "quote": "专业技术等级 本职业共设三个等级 , 分别为初级、中级和高级。 初级和中级分为四个职业方向 ： 智能装备与产线开发 、 智能装备与产线应用 、 智能生产管控、装备与产线智能运维。 高级分为五个职业方向 ： 智能制造系统架构构建 、 智能装备与产线开发 、 智 能装备与产线应用、智能生产管控、装备与产线智能运维。",
+          "start": 2153,
+          "end": 2309
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具有一定的学习能力、计算能力、表达能力和空间感。",
+          "quote": "职业能力特征 具有一定的学习能力、计算能力、表达能力和空间感。",
+          "start": 2332,
+          "end": 2363
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "a53ef30e8752200e17764188076029b7f6e4e760e22a7ab447b4b16629fe2aeb",
+      "collected_at": "2026-10-23T07:03:10.598Z",
+      "verified_at": "2026-10-23T10:08:07.229Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-b3-c-guide-software",
+      "source_id": "occ-b3-c",
+      "role_id": "guide_software",
+      "category": "occupation",
+      "title": "区块链工程技术人员（2021年版）：官方职业定义",
+      "summary": "《区块链工程技术人员国家职业技术技能标准（2021年版）》第 1 章「职业概况」给出的官方职业定义原文（职业定义 从事区块链架构设计、底层技术、系统应用、系统测试、系统部署、运行 维护的工程技术人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 3 条原文事实，字段：occupation_definition、career_path、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「区块链工程技术人员（2021年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "区块链工程技术人员（2021年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 从事区块链架构设计、底层技术、系统应用、系统测试、系统部署、运行 维护的工程技术人员。",
+          "quote": "职业定义 从事区块链架构设计、底层技术、系统应用、系统测试、系统部署、运行 维护的工程技术人员。",
+          "start": 1349,
+          "end": 1397
+        },
+        {
+          "field": "career_path",
+          "value": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级 。",
+          "quote": "专业技术等级 本职业共设三个等级，分别为初级、中级、高级 。",
+          "start": 1402,
+          "end": 1432
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具有一定的学习 、 分析、推理和判断能力 ， 具有一定的表达能力、计算能 力。",
+          "quote": "职业能力特征 具有一定的学习 、 分析、推理和判断能力 ， 具有一定的表达能力、计算能 力。",
+          "start": 1455,
+          "end": 1501
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "b45cdada8b30df2ee86ec5bb0a257c8fa6ec6d5fdd858f4ee77bc357da2bfb39",
+      "collected_at": "2026-10-23T07:03:24.593Z",
+      "verified_at": "2026-10-23T10:08:07.235Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-health-manager-guide-health-systems",
+      "source_id": "occ-health-manager",
+      "role_id": "guide_health_systems",
+      "category": "occupation",
+      "title": "健康管理师：官方职业定义",
+      "summary": "《健康管理师国家职业标准》第 1 章「职业概况」给出的官方职业定义原文（职业定义 从事个体或群体健康的监测、分析、评估以及健康咨询、指导和健康危险因素干预等工 作的专业人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 2 条原文事实，字段：occupation_definition、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「健康管理师」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "健康管理师",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 从事个体或群体健康的监测、分析、评估以及健康咨询、指导和健康危险因素干预等工 作的专业人员。",
+          "quote": "职业定义 从事个体或群体健康的监测、分析、评估以及健康咨询、指导和健康危险因素干预等工 作的专业人员。",
+          "start": 68,
+          "end": 119
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 具备一定的观察、理解、表达、交流、协调、学习能力，以及信息的获取、使用和管理 能力。",
+          "quote": "职业能力特征 具备一定的观察、理解、表达、交流、协调、学习能力，以及信息的获取、使用和管理 能力。",
+          "start": 244,
+          "end": 293
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "c177c3304613d8d8e245685957201f8842abb20855adc799159de4e53e5de7a1",
+      "collected_at": "2026-10-23T07:05:19.060Z",
+      "verified_at": "2026-10-23T10:08:07.245Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-health-manager-medicine-guide",
+      "source_id": "occ-health-manager",
+      "role_id": "medicine_guide",
+      "category": "occupation",
+      "title": "健康管理师：等级/职业方向设置",
+      "summary": "《健康管理师国家职业标准》规定的等级与职业方向设置原文（职业等级 本职业共设三个等级，分别为：三级健康 管 理 师 （国 家 职 业 资 格 三 级）、 二 级 健 康 管 理 师 （国家职业资格二级）、一级健康管理师 （国家职业资格一级）。…）。说明该职业的成长通道：分几个等级、每个等级设哪些职业方向，是判断「这个职业怎么往上走」的官方依据。",
+      "applicability": "适用于说明「健康管理师」的等级划分与职业方向。属标准文本口径，不等于用人单位职级或薪酬带宽；不适用于其他职业。",
+      "relation": "direct",
+      "tags": [
+        "健康管理师",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "国家职业标准"
+      ],
+      "facts": [
+        {
+          "field": "career_path",
+          "value": "职业等级 本职业共设三个等级，分别为：三级健康 管 理 师 （国 家 职 业 资 格 三 级）、 二 级 健 康 管 理 师 （国家职业资格二级）、一级健康管理师 （国家职业资格一级）。",
+          "quote": "职业等级 本职业共设三个等级，分别为：三级健康 管 理 师 （国 家 职 业 资 格 三 级）、 二 级 健 康 管 理 师 （国家职业资格二级）、一级健康管理师 （国家职业资格一级）。",
+          "start": 126,
+          "end": 219
+        }
+      ],
+      "missing_fields": [
+        "各等级对应薪酬",
+        "各等级对应职称"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "c177c3304613d8d8e245685957201f8842abb20855adc799159de4e53e5de7a1",
+      "collected_at": "2026-10-23T07:05:19.060Z",
+      "verified_at": "2026-10-23T10:08:07.255Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 等级/职业方向"
+      }
+    },
+    {
+      "id": "occupation-occ-long-term-care-medicine-guide",
+      "source_id": "occ-long-term-care",
+      "role_id": "medicine_guide",
+      "category": "occupation",
+      "title": "健康照护师（长期照护师）（2024年版）：官方职业定义",
+      "summary": "《健康照护师（长期照护师）国家职业标准（2024年版）》第 1 章「职业概况」给出的官方职业定义原文（职业定义 健康照护师: 运用基本医学护理知识与技能, 从事家庭、 医院、 社区及长期护理服务机构等场所照护对象的健康照护及生活照料服 务的人员。 长期照护师: 运用基本生活照料及护理知识、 技能, 在家庭、 社区、 养老机构、 医疗机构等场…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 2 条原文事实，字段：occupation_definition、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「健康照护师（长期照护师）（2024年版）」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "健康照护师（长期照护师）（2024年版）",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 健康照护师: 运用基本医学护理知识与技能, 从事家庭、 医院、 社区及长期护理服务机构等场所照护对象的健康照护及生活照料服 务的人员。 长期照护师: 运用基本生活照料及护理知识、 技能, 在家庭、 社区、 养老机构、 医疗机构等场所, 为享受长期护理保险待遇人员 等人群提供基本生活照料及与之密切相关的医疗护理、 功能维护、 心理照护等服务的从业人员。",
+          "quote": "职业定义 健康照护师: 运用基本医学护理知识与技能, 从事家庭、 医院、 社区及长期护理服务机构等场所照护对象的健康照护及生活照料服 务的人员。 长期照护师: 运用基本生活照料及护理知识、 技能, 在家庭、 社区、 养老机构、 医疗机构等场所, 为享受长期护理保险待遇人员 等人群提供基本生活照料及与之密切相关的医疗护理、 功能维护、 心理照护等服务的从业人员。",
+          "start": 1634,
+          "end": 1815
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 身心健康, 具有 观 察、 学 习、 理 解、 分 析、 判 断 和 计 算 能 力, 具有语言表达能力、 沟通能力、 协调能力、 应变能力; 视觉、 听觉、 嗅觉、 色觉正常, 四肢灵活、 动作协调。",
+          "quote": "职业能力特征 身心健康, 具有 观 察、 学 习、 理 解、 分 析、 判 断 和 计 算 能 力, 具有语言表达能力、 沟通能力、 协调能力、 应变能力; 视觉、 听觉、 嗅觉、 色觉正常, 四肢灵活、 动作协调。",
+          "start": 1922,
+          "end": 2030
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6628a6adecd0c95c30f09aedf3e6e589eb0852fcabc13034f9ca699848cbc08",
+      "collected_at": "2026-10-23T07:07:13.706Z",
+      "verified_at": "2026-10-23T10:08:07.261Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-long-term-care-guide-health-systems",
+      "source_id": "occ-long-term-care",
+      "role_id": "guide_health_systems",
+      "category": "occupation",
+      "title": "健康照护师（长期照护师）（2024年版）：等级/职业方向设置",
+      "summary": "《健康照护师（长期照护师）国家职业标准（2024年版）》规定的等级与职业方向设置原文（职业技能等级 长期照护师工种共设三个等级, 分别为: 五级 / 初级工、 四级 / 中级工、 三级 / 高级工。…）。说明该职业的成长通道：分几个等级、每个等级设哪些职业方向，是判断「这个职业怎么往上走」的官方依据。",
+      "applicability": "适用于说明「健康照护师（长期照护师）（2024年版）」的等级划分与职业方向。属标准文本口径，不等于用人单位职级或薪酬带宽；不适用于其他职业。",
+      "relation": "direct",
+      "tags": [
+        "健康照护师（长期照护师）（2024年版）",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "国家职业标准"
+      ],
+      "facts": [
+        {
+          "field": "career_path",
+          "value": "职业技能等级 长期照护师工种共设三个等级, 分别为: 五级 / 初级工、 四级 / 中级工、 三级 / 高级工。",
+          "quote": "职业技能等级 长期照护师工种共设三个等级, 分别为: 五级 / 初级工、 四级 / 中级工、 三级 / 高级工。",
+          "start": 1821,
+          "end": 1877
+        }
+      ],
+      "missing_fields": [
+        "各等级对应薪酬",
+        "各等级对应职称"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "f6628a6adecd0c95c30f09aedf3e6e589eb0852fcabc13034f9ca699848cbc08",
+      "collected_at": "2026-10-23T07:07:13.706Z",
+      "verified_at": "2026-10-23T10:08:07.267Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 等级/职业方向"
+      }
+    },
+    {
+      "id": "occupation-occ-device-assembler-guide-devices",
+      "source_id": "occ-device-assembler",
+      "role_id": "guide_devices",
+      "category": "occupation",
+      "title": "医疗器械装配工：官方职业定义",
+      "summary": "《医疗器械装配工国家职业标准（征求意见稿）》第 1 章「职业概况」给出的官方职业定义原文（职业定义 使用工具、仪器仪表及设备，装配、调试医疗设备和器械的人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 3 条原文事实，字段：occupation_definition、career_path、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「医疗器械装配工」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "医疗器械装配工",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 使用工具、仪器仪表及设备，装配、调试医疗设备和器械的人员。",
+          "quote": "职业定义 使用工具、仪器仪表及设备，装配、调试医疗设备和器械的人员。",
+          "start": 75,
+          "end": 109
+        },
+        {
+          "field": "career_path",
+          "value": "职业技能等级 本职业暂设五个等级，分别为：五级/初级工、四级/中级工、三级/高级工、 二级/技师、一级/高级技师。",
+          "quote": "职业技能等级 本职业暂设五个等级，分别为：五级/初级工、四级/中级工、三级/高级工、 二级/技师、一级/高级技师。",
+          "start": 114,
+          "end": 171
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 身心健康、具有一定的学习理解能力、表达能力、逻辑思维能力和计算机操作 能力，视力、色觉、听力、嗅觉正常，具有空间感和形体直觉，手指、手臂灵活， 动作协调。",
+          "quote": "职业能力特征 身心健康、具有一定的学习理解能力、表达能力、逻辑思维能力和计算机操作 能力，视力、色觉、听力、嗅觉正常，具有空间感和形体直觉，手指、手臂灵活， 动作协调。",
+          "start": 221,
+          "end": 305
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "708ef934bc220fab5c897d2c7f8f1e437479b275529c7d061cbff3aab17a7dc1",
+      "collected_at": "2026-10-23T07:06:05.025Z",
+      "verified_at": "2026-10-23T10:08:07.274Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-drug-sales-medicine-guide",
+      "source_id": "occ-drug-sales",
+      "role_id": "medicine_guide",
+      "category": "occupation",
+      "title": "医药商品购销员：官方职业定义",
+      "summary": "《医药商品购销员国家职业标准》第 1 章「职业概况」给出的官方职业定义原文（职业定义 从事药品采购、销售及咨询服务的人员。…）。这是该职业在中国官方职业分类体系中的标准定义，可作为「这个职业到底做什么」的权威依据。（同一官方来源共 2 条原文事实，字段：occupation_definition、skills；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于说明「医药商品购销员」这一国家职业/职业技术技能标准所界定的职业内涵与从业范围。不适用于具体企业岗位职责、薪酬或职级要求；该定义为标准原文，不做外推。",
+      "relation": "direct",
+      "tags": [
+        "医药商品购销员",
+        "职业定义",
+        "国家职业标准",
+        "人社部",
+        "职业能力特征",
+        "能力要求"
+      ],
+      "facts": [
+        {
+          "field": "occupation_definition",
+          "value": "职业定义 从事药品采购、销售及咨询服务的人员。",
+          "quote": "职业定义 从事药品采购、销售及咨询服务的人员。",
+          "start": 74,
+          "end": 97
+        },
+        {
+          "field": "skills",
+          "value": "职业能力特征 手指、手 臂 灵 活， 色、 味、 嗅、 听 等 感 官 正 常， 具 有 一 定 的 观 察、 判 断、 理解、计算和表达能力。",
+          "quote": "职业能力特征 手指、手 臂 灵 活， 色、 味、 嗅、 听 等 感 官 正 常， 具 有 一 定 的 观 察、 判 断、 理解、计算和表达能力。",
+          "start": 202,
+          "end": 274
+        }
+      ],
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "具体技能等级考核标准",
+        "薪酬"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "2c73b9ecc104628d584318e53d5fd787b93643bd62deb3a7bd6ad72077ce0eef",
+      "collected_at": "2026-10-23T07:10:28.093Z",
+      "verified_at": "2026-10-23T10:08:07.282Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 职业能力特征"
+      }
+    },
+    {
+      "id": "occupation-occ-drug-sales-guide-health-systems",
+      "source_id": "occ-drug-sales",
+      "role_id": "guide_health_systems",
+      "category": "occupation",
+      "title": "医药商品购销员：等级/职业方向设置",
+      "summary": "《医药商品购销员国家职业标准》规定的等级与职业方向设置原文（职业等级 本职业共设三个等级，分别为：初级 （国 家 职 业 资 格 五 级）、 中 级 （国 家 职 业资格四级）、高级 （国家职业资格三级）。…）。说明该职业的成长通道：分几个等级、每个等级设哪些职业方向，是判断「这个职业怎么往上走」的官方依据。",
+      "applicability": "适用于说明「医药商品购销员」的等级划分与职业方向。属标准文本口径，不等于用人单位职级或薪酬带宽；不适用于其他职业。",
+      "relation": "direct",
+      "tags": [
+        "医药商品购销员",
+        "职业等级",
+        "职业方向",
+        "晋升通道",
+        "国家职业标准"
+      ],
+      "facts": [
+        {
+          "field": "career_path",
+          "value": "职业等级 本职业共设三个等级，分别为：初级 （国 家 职 业 资 格 五 级）、 中 级 （国 家 职 业资格四级）、高级 （国家职业资格三级）。",
+          "quote": "职业等级 本职业共设三个等级，分别为：初级 （国 家 职 业 资 格 五 级）、 中 级 （国 家 职 业资格四级）、高级 （国家职业资格三级）。",
+          "start": 104,
+          "end": 177
+        }
+      ],
+      "missing_fields": [
+        "各等级对应薪酬",
+        "各等级对应职称"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "2c73b9ecc104628d584318e53d5fd787b93643bd62deb3a7bd6ad72077ce0eef",
+      "collected_at": "2026-10-23T07:10:28.093Z",
+      "verified_at": "2026-10-23T10:08:07.291Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "人力资源和社会保障部",
+        "region": "全国",
+        "evidence_locator": "第1章 职业概况 · 等级/职业方向"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "gov-ai-engineer-std",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/d9a82994c8bc4db2beb4a31b9d16e687.pdf",
+      "at": "2026-10-23T06:58:54.210Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "gov-ai-engineer-std",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/d9a82994c8bc4db2beb4a31b9d16e687.pdf",
+      "at": "2026-10-23T06:58:54.210Z",
+      "status": "collected",
+      "missing_fields": [
+        "各等级对应薪酬",
+        "各等级对应职称"
+      ]
+    },
+    {
+      "source_id": "occ-b3-b",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-02/22/5588249/files/ef85f21b56d14772895125f8120ee392.pdf",
+      "at": "2026-10-23T07:03:16.516Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-b3-b",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-02/22/5588249/files/ef85f21b56d14772895125f8120ee392.pdf",
+      "at": "2026-10-23T07:03:16.516Z",
+      "status": "collected",
+      "missing_fields": [
+        "各等级对应薪酬",
+        "各等级对应职称"
+      ]
+    },
+    {
+      "source_id": "occ-datasec-engineer",
+      "url": "https://www.mohrss.gov.cn/xxgk2020/fdzdgknr/qt/gztz/202303/P020230327570509396537.pdf",
+      "at": "2026-10-23T07:05:12.996Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-digital-manager",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/ea6f59448a3d47beb4ba587003717e71.pdf",
+      "at": "2026-10-23T07:02:28.529Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-iot-engineer",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/5082cc624063437e8a1a6de48c197088.pdf",
+      "at": "2026-10-23T07:01:49.472Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-cloud-engineer",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/3546e3a5ca144b25b7873d6fb26495ab.pdf",
+      "at": "2026-10-23T07:01:54.986Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-industrial-internet-engineer",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/fb76642341154512bb58e31815da4fa1.pdf",
+      "at": "2026-10-23T07:02:01.484Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-vr-engineer",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/8392b844052c41b182ee14bad392affa.pdf",
+      "at": "2026-10-23T07:02:21.279Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-ic-engineer",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/e2a3e813db1d48099059b988414c2c88.pdf",
+      "at": "2026-10-23T07:01:40.922Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-b3-a",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-02/22/5588249/files/452c5cd9a8ec44e0880e1e122d9e344b.pdf",
+      "at": "2026-10-23T07:03:10.598Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-b3-c",
+      "url": "https://www.gov.cn/zhengce/zhengceku/2021-02/22/5588249/files/e7419d3b412c4030819023412730ef1e.pdf",
+      "at": "2026-10-23T07:03:24.593Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-health-manager",
+      "url": "https://www.osta.org.cn/api/sys/downloadFile/decrypt?fileName=4eNsZIOv3WFNDfbnldJHeA%2F2024%2F4%2F30%2Fe6423d19d94548a49685557793395421.pdf",
+      "at": "2026-10-23T07:05:19.060Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-health-manager",
+      "url": "https://www.osta.org.cn/api/sys/downloadFile/decrypt?fileName=4eNsZIOv3WFNDfbnldJHeA%2F2024%2F4%2F30%2Fe6423d19d94548a49685557793395421.pdf",
+      "at": "2026-10-23T07:05:19.060Z",
+      "status": "collected",
+      "missing_fields": [
+        "各等级对应薪酬",
+        "各等级对应职称"
+      ]
+    },
+    {
+      "source_id": "occ-long-term-care",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202402/P020240229500578654249.pdf",
+      "at": "2026-10-23T07:07:13.706Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-long-term-care",
+      "url": "https://www.gov.cn/zhengce/zhengceku/202402/P020240229500578654249.pdf",
+      "at": "2026-10-23T07:07:13.706Z",
+      "status": "collected",
+      "missing_fields": [
+        "各等级对应薪酬",
+        "各等级对应职称"
+      ]
+    },
+    {
+      "source_id": "occ-device-assembler",
+      "url": "https://www.osta.org.cn/zcwj/123%E4%B8%AA%E5%9B%BD%E5%AE%B6%E8%81%8C%E4%B8%9A%E6%A0%87%E5%87%86/6-21-06-01%E5%8C%BB%E7%96%97%E5%99%A8%E6%A2%B0%E8%A3%85%E9%85%8D%E5%B7%A5-%E5%9B%BD%E5%AE%B6%E8%81%8C%E4%B8%9A%E6%A0%87%E5%87%86%E5%BE%81%E6%B1%82%E6%84%8F%E8%A7%81%E7%A8%BF.pdf",
+      "at": "2026-10-23T07:06:05.025Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "各等级对应薪酬",
+        "各等级对应职称",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-drug-sales",
+      "url": "https://www.osta.org.cn/api/sys/downloadFile/decrypt?fileName=4eNsZIOv3WFNDfbnldJHeA%2F2024%2F4%2F29%2F92524829185145b7bc3b0280b893a1d7.pdf",
+      "at": "2026-10-23T07:10:28.093Z",
+      "status": "collected",
+      "missing_fields": [
+        "薪资",
+        "岗位招聘要求",
+        "学历与职称门槛（部分标准另列）",
+        "具体技能等级考核标准",
+        "薪酬"
+      ]
+    },
+    {
+      "source_id": "occ-drug-sales",
+      "url": "https://www.osta.org.cn/api/sys/downloadFile/decrypt?fileName=4eNsZIOv3WFNDfbnldJHeA%2F2024%2F4%2F29%2F92524829185145b7bc3b0280b893a1d7.pdf",
+      "at": "2026-10-23T07:10:28.093Z",
+      "status": "collected",
+      "missing_fields": [
+        "各等级对应薪酬",
+        "各等级对应职称"
+      ]
+    }
+  ]
+}

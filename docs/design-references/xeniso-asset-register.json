@@ -1,0 +1,747 @@
+{
+  "version": 1,
+  "checked_date": "2026-10-22",
+  "scope": "CareerExplorer改版：已采用Pana、原生任务/产品图、沿用桥景与字体",
+  "acceptance_note": "passed为null表示尚需最终版本的桌面/手机视觉与交互验收，不以文件存在或来源核实冒充最终通过。",
+  "assets": [
+    {
+      "asset_id": "pana-data-extraction",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=clinical_data 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "临床数据工作的数据屏幕、文件与设备",
+      "original_url": "https://storyset.com/illustration/data-extraction/pana",
+      "download_url": "https://stories.freepiklabs.com/storage/34566/Data-extraction-01.svg",
+      "series": "Storyset / Pana",
+      "author": "Storyset / Freepik Company, S.L.",
+      "license": {
+        "url": "https://storyset.com/terms",
+        "checked_date": "2026-10-22",
+        "detail_page_quote": "Free for personal and commercial purpose with attribution.",
+        "terms": "允许按条款用于项目及修改；免费使用需署名，禁止将素材本身再分发/转售。详情页未见Editorial标识，按本项目UI配图使用。",
+        "source_snapshot": "work/storyset-data-extraction.html",
+        "snapshot_sha256": "33a10614c1f83d0fd8f133dc23409f936831ddfcc4043341b5b508325b8febae"
+      },
+      "attribution": {
+        "label": "插画：Storyset · Pana 系列，已调色与简化。",
+        "url": "https://storyset.com/",
+        "component": "src/components/direction-art.tsx#StorysetAttribution",
+        "placement": "所有使用页底部或当前模块末尾"
+      },
+      "modifications": {
+        "removed_svg_groups": [
+          "background-complete",
+          "background-simple",
+          "Robot",
+          "Floor"
+        ],
+        "retained_svg_groups": [
+          "Data",
+          "Device",
+          "Server",
+          "Folder"
+        ],
+        "accent": "#739A83",
+        "view_box": "0 0 750 500",
+        "note": "仅删除背景/装饰组并替换强调色；保留主体路径。"
+      },
+      "file_path": "public/careerexplorer/data-extraction-pana.svg",
+      "sha256": "43d578eb903b3937b8861f0a2a92616d51eeb1e458874f2b280bdb933c28827a",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px (contain)",
+        "directory_mobile": "88 × 104 CSS px (contain)",
+        "reading_desktop": "320 × 240 CSS px (contain)",
+        "reading_mobile": "最多320 × 240 CSS px (contain)"
+      },
+      "checks": {
+        "local_file": true,
+        "source_and_license": true,
+        "attribution_in_code": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "pana-programming",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=software 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "软件开发者、代码窗口与设备",
+      "original_url": "https://storyset.com/illustration/programming/pana",
+      "download_url": "https://stories.freepiklabs.com/storage/15925/Programming-01.svg",
+      "series": "Storyset / Pana",
+      "author": "Storyset / Freepik Company, S.L.",
+      "license": {
+        "url": "https://storyset.com/terms",
+        "checked_date": "2026-10-22",
+        "detail_page_quote": "Free for personal and commercial purpose with attribution.",
+        "terms": "允许按条款用于项目及修改；免费使用需署名，禁止将素材本身再分发/转售。详情页未见Editorial标识，按本项目UI配图使用。",
+        "source_snapshot": "work/storyset-programming.html",
+        "snapshot_sha256": "7cd3ac7cf323ac3e3f24b3f56b9bddaa8b306a3f2082be0fe2edcfbd9eec3f3e"
+      },
+      "attribution": {
+        "label": "插画：Storyset · Pana 系列，已调色与简化。",
+        "url": "https://storyset.com/",
+        "component": "src/components/direction-art.tsx#StorysetAttribution",
+        "placement": "所有使用页底部或当前模块末尾"
+      },
+      "modifications": {
+        "removed_svg_groups": [
+          "background-complete",
+          "background-simple",
+          "Floor",
+          "Plant"
+        ],
+        "retained_svg_groups": [
+          "Screens",
+          "Character",
+          "Devices",
+          "Desk"
+        ],
+        "accent": "#739A83",
+        "view_box": "0 0 500 500",
+        "note": "仅删除背景/装饰组并替换强调色；保留主体路径。"
+      },
+      "file_path": "public/careerexplorer/programming-pana.svg",
+      "sha256": "95dba7ca57bd980947af8f6afe4648a427fe5be5562239f90b817ae15a48d2cf",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px (contain)",
+        "directory_mobile": "88 × 104 CSS px (contain)",
+        "reading_desktop": "320 × 240 CSS px (contain)",
+        "reading_mobile": "最多320 × 240 CSS px (contain)"
+      },
+      "checks": {
+        "local_file": true,
+        "source_and_license": true,
+        "attribution_in_code": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "pana-doctors",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=medicine 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "医务人员与工作记录",
+      "original_url": "https://storyset.com/illustration/doctors/pana",
+      "download_url": "https://stories.freepiklabs.com/storage/4688/Doctors-01.svg",
+      "series": "Storyset / Pana",
+      "author": "Storyset / Freepik Company, S.L.",
+      "license": {
+        "url": "https://storyset.com/terms",
+        "checked_date": "2026-10-22",
+        "detail_page_quote": "Free for personal and commercial purpose with attribution.",
+        "terms": "允许按条款用于项目及修改；免费使用需署名，禁止将素材本身再分发/转售。详情页未见Editorial标识，按本项目UI配图使用。",
+        "source_snapshot": "work/storyset-doctors.html",
+        "snapshot_sha256": "ac75d6db30d4e414374c798041e5b47087a54dd0062c3c64b2b7ffa5312c9e6e"
+      },
+      "attribution": {
+        "label": "插画：Storyset · Pana 系列，已调色与简化。",
+        "url": "https://storyset.com/",
+        "component": "src/components/direction-art.tsx#StorysetAttribution",
+        "placement": "所有使用页底部或当前模块末尾"
+      },
+      "modifications": {
+        "removed_svg_groups": [
+          "background-complete",
+          "background-simple"
+        ],
+        "retained_svg_groups": [
+          "Icons",
+          "character-3",
+          "character-1",
+          "character-2",
+          "Desk"
+        ],
+        "accent": "#739A83",
+        "view_box": "0 0 750 500",
+        "note": "仅删除背景/装饰组并替换强调色；保留主体路径。"
+      },
+      "file_path": "public/careerexplorer/doctors-pana.svg",
+      "sha256": "ae43b27171a47304158fa6c96283cdcde6e86dbcd7d6592685950ef87545e217",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px (contain)",
+        "directory_mobile": "88 × 104 CSS px (contain)",
+        "reading_desktop": "320 × 240 CSS px (contain)",
+        "reading_mobile": "最多320 × 240 CSS px (contain)"
+      },
+      "checks": {
+        "local_file": true,
+        "source_and_license": true,
+        "attribution_in_code": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "pana-server",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=health_systems 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "信息系统服务器与维护人员",
+      "original_url": "https://storyset.com/illustration/server/pana",
+      "download_url": "https://stories.freepiklabs.com/storage/1362/Server-01.svg",
+      "series": "Storyset / Pana",
+      "author": "Storyset / Freepik Company, S.L.",
+      "license": {
+        "url": "https://storyset.com/terms",
+        "checked_date": "2026-10-22",
+        "detail_page_quote": "Free for personal and commercial purpose with attribution.",
+        "terms": "允许按条款用于项目及修改；免费使用需署名，禁止将素材本身再分发/转售。详情页未见Editorial标识，按本项目UI配图使用。",
+        "source_snapshot": "work/storyset-server.html",
+        "snapshot_sha256": "d8ab8082cf06b4475038a86a237d3c7f66470fc8e175ae77410e7c5dc951e3a5"
+      },
+      "attribution": {
+        "label": "插画：Storyset · Pana 系列，已调色与简化。",
+        "url": "https://storyset.com/",
+        "component": "src/components/direction-art.tsx#StorysetAttribution",
+        "placement": "所有使用页底部或当前模块末尾"
+      },
+      "modifications": {
+        "removed_svg_groups": [
+          "background-complete",
+          "background-simple",
+          "Floor",
+          "Robot"
+        ],
+        "retained_svg_groups": [
+          "Server",
+          "Character"
+        ],
+        "accent": "#739A83",
+        "view_box": "0 0 750 500",
+        "note": "仅删除背景/装饰组并替换强调色；保留主体路径。"
+      },
+      "file_path": "public/careerexplorer/server-pana.svg",
+      "sha256": "fa5b92870be8c1ef3df599ff00b878b7dedbdc430a76d3dfee65ba618ded3c01",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px (contain)",
+        "directory_mobile": "88 × 104 CSS px (contain)",
+        "reading_desktop": "320 × 240 CSS px (contain)",
+        "reading_mobile": "最多320 × 240 CSS px (contain)"
+      },
+      "checks": {
+        "local_file": true,
+        "source_and_license": true,
+        "attribution_in_code": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "task-ml_cv",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=ml_cv 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "设备A/B在阈值0.5下的误报/漏报计数",
+      "original_url": null,
+      "series": "本站原生HTML/SVG教学任务图",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据；无需图库署名",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "基于工作台相同固定数据/计算逻辑绘制，所有图显示simulation；非真实用户或临床数据",
+      "file_path": "src/components/direction-art.tsx",
+      "data_source": "operationResult ml_cv [0,1,0] 与 [1,1,0]，stage 2",
+      "data_source_file": "src/lib/experience/operations.ts",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px",
+        "directory_mobile": "88 × 104 CSS px",
+        "reading": "320 × 240 CSS px"
+      },
+      "checks": {
+        "data_provenance": true,
+        "simulation_label": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "task-software",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=software 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "重复请求ID与返回已有结果流程",
+      "original_url": null,
+      "series": "本站原生HTML/SVG教学任务图",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据；无需图库署名",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "基于工作台相同固定数据/计算逻辑绘制，所有图显示simulation；非真实用户或临床数据",
+      "file_path": "src/components/direction-art.tsx",
+      "data_source": "software固定请求集中的重复请求1；结构预览，不展示性能",
+      "data_source_file": "src/lib/experience/operations.ts",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px",
+        "directory_mobile": "88 × 104 CSS px",
+        "reading": "320 × 240 CSS px"
+      },
+      "checks": {
+        "data_provenance": true,
+        "simulation_label": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "task-llm_agent",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=llm_agent 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "有依据、未知、人工三路处理结果",
+      "original_url": null,
+      "series": "本站原生HTML/SVG教学任务图",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据；无需图库署名",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "基于工作台相同固定数据/计算逻辑绘制，所有图显示simulation；非真实用户或临床数据",
+      "file_path": "src/components/direction-art.tsx",
+      "data_source": "operationResult llm_agent [1,1,1]，stage 2",
+      "data_source_file": "src/lib/experience/operations.ts",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px",
+        "directory_mobile": "88 × 104 CSS px",
+        "reading": "320 × 240 CSS px"
+      },
+      "checks": {
+        "data_provenance": true,
+        "simulation_label": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "task-devices",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=devices 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "采集、通信、测试组合与教学预算",
+      "original_url": null,
+      "series": "本站原生HTML/SVG教学任务图",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据；无需图库署名",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "基于工作台相同固定数据/计算逻辑绘制，所有图显示simulation；非真实用户或临床数据",
+      "file_path": "src/components/direction-art.tsx",
+      "data_source": "operationResult devices [0,1,2]，stage 2",
+      "data_source_file": "src/lib/experience/operations.ts",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px",
+        "directory_mobile": "88 × 104 CSS px",
+        "reading": "320 × 240 CSS px"
+      },
+      "checks": {
+        "data_provenance": true,
+        "simulation_label": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "task-signals",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=signals 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "2Hz教学波形的含噪与移动平均曲线",
+      "original_url": null,
+      "series": "本站原生HTML/SVG教学任务图",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据；无需图库署名",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "基于工作台相同固定数据/计算逻辑绘制，所有图显示simulation；非真实用户或临床数据",
+      "file_path": "src/components/direction-art.tsx",
+      "data_source": "operationResult signals [2,1,0]，stage 2；64Hz采样、3点窗口",
+      "data_source_file": "src/lib/experience/operations.ts",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px",
+        "directory_mobile": "88 × 104 CSS px",
+        "reading": "320 × 240 CSS px"
+      },
+      "checks": {
+        "data_provenance": true,
+        "simulation_label": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "task-imaging_eng",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=imaging_eng 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "16×16教学像素降噪前后对照",
+      "original_url": null,
+      "series": "本站原生HTML/SVG教学任务图",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据；无需图库署名",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "基于工作台相同固定数据/计算逻辑绘制，所有图显示simulation；非真实用户或临床数据",
+      "file_path": "src/components/direction-art.tsx",
+      "data_source": "operationResult imaging_eng [0,0,0] 与 [0,1,0]，stage 2",
+      "data_source_file": "src/lib/experience/operations.ts",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px",
+        "directory_mobile": "88 × 104 CSS px",
+        "reading": "320 × 240 CSS px"
+      },
+      "checks": {
+        "data_provenance": true,
+        "simulation_label": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "task-clinical_data",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=clinical_data 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "含重复与缺失的固定随访记录局部",
+      "original_url": null,
+      "series": "本站原生HTML/SVG教学任务图",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据；无需图库署名",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "基于工作台相同固定数据/计算逻辑绘制，所有图显示simulation；非真实用户或临床数据",
+      "file_path": "src/components/direction-art.tsx",
+      "data_source": "sampleRows.slice(1,5)，合成8条记录的局部",
+      "data_source_file": "src/lib/experience/operations.ts",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px",
+        "directory_mobile": "88 × 104 CSS px",
+        "reading": "320 × 240 CSS px"
+      },
+      "checks": {
+        "data_provenance": true,
+        "simulation_label": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "task-health_systems",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=health_systems 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "转诊流程核对/交接/待确认结果",
+      "original_url": null,
+      "series": "本站原生HTML/SVG教学任务图",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据；无需图库署名",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "基于工作台相同固定数据/计算逻辑绘制，所有图显示simulation；非真实用户或临床数据",
+      "file_path": "src/components/direction-art.tsx",
+      "data_source": "operationResult health_systems [1,1,1]，stage 2",
+      "data_source_file": "src/lib/experience/operations.ts",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px",
+        "directory_mobile": "88 × 104 CSS px",
+        "reading": "320 × 240 CSS px"
+      },
+      "checks": {
+        "data_provenance": true,
+        "simulation_label": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "task-med_nlp_kg",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=med_nlp_kg 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "否定及不确定医学文本标注",
+      "original_url": null,
+      "series": "本站原生HTML/SVG教学任务图",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据；无需图库署名",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "基于工作台相同固定数据/计算逻辑绘制，所有图显示simulation；非真实用户或临床数据",
+      "file_path": "src/components/direction-art.tsx",
+      "data_source": "operationResult med_nlp_kg固定教学句的无咳嗽/疑似发热；结构预览",
+      "data_source_file": "src/lib/experience/operations.ts",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px",
+        "directory_mobile": "88 × 104 CSS px",
+        "reading": "320 × 240 CSS px"
+      },
+      "checks": {
+        "data_provenance": true,
+        "simulation_label": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "task-medicine",
+      "pages": [
+        "/explore 目录",
+        "/explore?direction=medicine 阅读",
+        "/explore?view=compare 比较",
+        "/experience 方向选择",
+        "/report/initial 方向建议",
+        "/report/plan 条件摘要"
+      ],
+      "purpose": "本人表达、补充转述与待核对事项",
+      "original_url": null,
+      "series": "本站原生HTML/SVG教学任务图",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据；无需图库署名",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "基于工作台相同固定数据/计算逻辑绘制，所有图显示simulation；非真实用户或临床数据",
+      "file_path": "src/components/direction-art.tsx",
+      "data_source": "medicine_internal模板结构预览，不提供诊疗",
+      "data_source_file": "src/lib/experience/operations.ts",
+      "final_dimensions": {
+        "directory_desktop": "112 × 112 CSS px",
+        "directory_mobile": "88 × 104 CSS px",
+        "reading": "320 × 240 CSS px"
+      },
+      "checks": {
+        "data_provenance": true,
+        "simulation_label": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "G01",
+      "pages": [
+        "/ 首页H2能力介绍",
+        "/ 首页H3四步流程"
+      ],
+      "purpose": "医学经历与六项职业活动兴趣的关系",
+      "original_url": null,
+      "series": "本站原生产品局部预览",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "真实中文HTML文字、表格及CSS关系图，非生成图内文字",
+      "file_path": "src/components/home-experience.tsx",
+      "data_source": "RecordsPreview：课程、科研、实践与RIASEC六维；柱宽为明确标示simulation的示例",
+      "final_dimensions": "随能力列/流程图可用宽度响应式排版，最终浏览器尺寸见验收记录",
+      "checks": {
+        "data_provenance": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "G02",
+      "pages": [
+        "/ 首页H2能力介绍",
+        "/ 首页H3四步流程"
+      ],
+      "purpose": "记录处理和数据质量结果的关系",
+      "original_url": null,
+      "series": "本站原生产品局部预览",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "真实中文HTML文字、表格及CSS关系图，非生成图内文字",
+      "file_path": "src/components/home-experience.tsx",
+      "data_source": "DataPreview：sampleRows、operationResult clinical_data [1,1,0]，stage 2",
+      "final_dimensions": "随能力列/流程图可用宽度响应式排版，最终浏览器尺寸见验收记录",
+      "checks": {
+        "data_provenance": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "G03",
+      "pages": [
+        "/ 首页H2能力介绍",
+        "/ 首页H3四步流程"
+      ],
+      "purpose": "每周预算与阶段任务的关系",
+      "original_url": null,
+      "series": "本站原生产品局部预览",
+      "author": "LIMEN 项目",
+      "license": {
+        "kind": "项目既有代码与合成教学数据",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "真实中文HTML文字、表格及CSS关系图，非生成图内文字",
+      "file_path": "src/components/home-experience.tsx",
+      "data_source": "PlanPreview：示例4h预算：基础2h、实践1h、复盘1h；阶段语义来自src/lib/reports.ts",
+      "final_dimensions": "随能力列/流程图可用宽度响应式排版，最终浏览器尺寸见验收记录",
+      "checks": {
+        "data_provenance": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "H1-bridge-v6",
+      "pages": [
+        "/ 首页H1背景"
+      ],
+      "purpose": "连接医学与其他方向的桥景主题",
+      "original_url": null,
+      "series": "项目既有生成插画",
+      "author": "项目此前使用gpt-image-2生成",
+      "license": {
+        "kind": "沿用用户授权项目已有生成资产；生成记录见来源文档",
+        "checked_date": "2026-10-22"
+      },
+      "attribution": null,
+      "modifications": "本轮沿用WebP，CSS背景式裁切",
+      "file_path": "public/brand/limen-bridge-stylized-v6.webp",
+      "source_document": "docs/design-references/media-generation-brief.md",
+      "final_dimensions": "源生成2048×1152；首页100vw，object-fit cover",
+      "checks": {
+        "local_file": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    },
+    {
+      "asset_id": "font-noto-sans-sc",
+      "pages": [
+        "全站"
+      ],
+      "purpose": "统一中文正文字体与页面层级",
+      "original_url": "https://github.com/notofonts/noto-cjk",
+      "series": "Noto Sans SC",
+      "author": "Noto 字体项目",
+      "license": {
+        "kind": "SIL Open Font License 1.1",
+        "file_path": "public/fonts/OFL.txt",
+        "checked_date": "2026-10-22",
+        "copyright_notice": "public/fonts/FONT-NOTICE.txt"
+      },
+      "attribution": "随字体保留OFL.txt与FONT-NOTICE.txt（Copyright The Noto Project Authors）",
+      "modifications": "从本机NotoSansSC-VF.ttf按实际页面字符生成WOFF子集；脚本work/careerexplorer-implementation/font.py",
+      "file_path": "public/fonts/noto-sans-sc-subset.woff",
+      "final_dimensions": "可变字体，页面按规格字号加载",
+      "checks": {
+        "local_file": true,
+        "license_file": true,
+        "visual_desktop": null,
+        "visual_mobile": null
+      },
+      "passed": null
+    }
+  ]
+}

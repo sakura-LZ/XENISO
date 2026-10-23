@@ -2,7 +2,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 
 const name = process.argv[2];
-if (!["pilot", "expansion"].includes(name)) throw new Error("Expected pilot or expansion bundle");
+if (!/^[a-z0-9-]{2,40}$/.test(name)) throw new Error("Invalid bundle name");
 const root = `work/knowledge-${name}/import-parts`;
 const parts: string[] = JSON.parse(readFileSync(`${root}/files.json`, "utf8"));
 const batches: string[] = [];

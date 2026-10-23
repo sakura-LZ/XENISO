@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XENISO · 异域同构 · 解剖挂图式导航</title>
+<style>
+:root {
+  --paper-aged: #F5F1E8;
+  --ink-main: #2B2622;
+  --ink-faded: #78716C;
+  --line-red: #C73E1D;
+  --line-blue: #2563EB;
+  --accent-green: #1E9B6B;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Courier New', 'Courier', monospace;
+  background: var(--paper-aged);
+  color: var(--ink-main);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* 整页就是一张垂直挂图 */
+.anatomical-chart {
+  min-height: 100vh;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 80px;
+  position: relative;
+}
+
+/* 纸张边缘纹理 */
+.anatomical-chart::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(0,0,0,0.02) 50px, rgba(0,0,0,0.02) 51px);
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* 图钉固定在顶部 */
+.chart-pin {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle, #DC2626 0%, #991B1B 100%);
+  border-radius: 50%;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.3),
+    inset 0 -2px 4px rgba(0,0,0,0.2);
+}
+
+.chart-pin::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+}
+
+/* 左侧：主体图（用户画像） */
+.central-figure {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.figure-title {
+  font-family: 'Times New Roman', serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--ink-faded);
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--ink-main);
+  padding-bottom: 8px;
+}
+
+.figure-body {
+  border: 2px solid var(--ink-main);
+  padding: 32px 28px;
+  background: rgba(255,255,255,0.5);
+  position: relative;
+}
+
+.figure-body::before {
+  content: 'Fig. 01';
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  background: var(--paper-aged);
+  padding: 0 8px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--ink-faded);
+}
+
+.figure-label {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+  color: var(--ink-faded);
+}
+
+.figure-identity {
+  font-family: 'Georgia', serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--ink-main);
+}
+
+.figure-spec {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: 8px;
+  display: flex;
+  gap: 12px;
+}
+
+.spec-label {
+  color: var(--ink-faded);
+  min-width: 80px;
+}
+
+.spec-value {
+  font-weight: 600;
+  flex: 1;
+}
+
+.figure-input {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--ink-faded);
+}
+
+.figure-input input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--ink-main);
+  background: transparent;
+  padding: 10px 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 15px;
+  color: var(--ink-main);
+  margin-bottom: 16px;
+}
+
+.figure-input input:focus {
+  outline: none;
+  border-bottom-color: var(--accent-green);
+}
+
+.figure-input button {
+  width: 100%;
+  background: var(--ink-main);
+  color: var(--paper-aged);
+  border: none;
+  padding: 14px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.figure-input button:hover {
+  background: var(--accent-green);
+}
+
+/* 右侧：标注系统（职业方向） */
+.annotation-system {
+  padding-top: 0;
+}
+
+.chart-header {
+  margin-bottom: 60px;
+}
+
+.chart-title {
+  font-family: 'Georgia', serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  color: var(--ink-main);
+}
+
+.chart-subtitle {
+  font-family: 'Georgia', serif;
+  font-size: 20px;
+  font-style: italic;
+  color: var(--ink-faded);
+  margin-bottom: 20px;
+}
+
+.chart-meta {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--ink-faded);
+  padding-top: 16px;
+  border-top: 1px solid rgba(0,0,0,0.15);
+}
+
+/* 标注项 - 像解剖图的拉线标注 */
+.annotation-cluster {
+  margin-bottom: 80px;
+}
+
+.cluster-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--line-red);
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cluster-title::before {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: var(--line-red);
+}
+
+.annotation-item {
+  position: relative;
+  margin-bottom: 48px;
+  padding-left: 60px;
+}
+
+/* 标注线 */
+.annotation-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 45px;
+  height: 1px;
+  background: currentColor;
+}
+
+.annotation-item::after {
+  content: attr(data-index);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--paper-aged);
+}
+
+.annotation-item.red { color: var(--line-red); }
+.annotation-item.blue { color: var(--line-blue); }
+.annotation-item.green { color: var(--accent-green); }
+
+.annotation-latin {
+  font-family: 'Georgia', serif;
+  font-size: 22px;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 8px;
+  color: var(--ink-main);
+}
+
+.annotation-chinese {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--ink-main);
+  margin-bottom: 12px;
+}
+
+.annotation-meta {
+  font-size: 12px;
+  color: var(--ink-faded);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.meta-item::before {
+  content: '▸';
+  font-size: 10px;
+}
+
+/* Logo 在右上角，像印章 */
+.chart-stamp {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.85;
+}
+
+.stamp-mark {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--accent-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--accent-green);
+  font-family: 'Georgia', serif;
+}
+
+.stamp-text {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--ink-main);
+}
+
+.stamp-sub {
+  font-size: 11px;
+  color: var(--ink-faded);
+  letter-spacing: 0.5px;
+}
+
+/* 页脚注释 */
+.chart-footer {
+  margin-top: 100px;
+  padding-top: 40px;
+  border-top: 2px solid var(--ink-main);
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--ink-faded);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .anatomical-chart {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 40px 24px;
+  }
+
+  .central-figure {
+    position: relative;
+    top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="chart-pin"></div>
+
+<div class="chart-stamp">
+  <div class="stamp-mark">X</div>
+  <div>
+    <div class="stamp-text">XENISO</div>
+    <div class="stamp-sub">异域同构</div>
+  </div>
+</div>
+
+<div class="anatomical-chart">
+  <!-- 左侧：主体 -->
+  <div class="central-figure">
+    <div class="figure-title">Subject Profile / 主体画像</div>
+    <div class="figure-body">
+      <div class="figure-label">Specimen</div>
+      <div class="figure-identity">医学生个体<br>跨学科探索</div>
+
+      <div class="figure-spec">
+        <span class="spec-label">培养阶段</span>
+        <span class="spec-value">临床医学本科 / 研究生</span>
+      </div>
+      <div class="figure-spec">
+        <span class="spec-label">兴趣结构</span>
+        <span class="spec-value">待测评（O*NET Mini-IP）</span>
+      </div>
+      <div class="figure-spec">
+        <span class="spec-label">探索目标</span>
+        <span class="spec-value">9+1 跨学科方向定位</span>
+      </div>
+
+      <div class="figure-input">
+        <input type="text" placeholder="输入学籍信息或邮箱">
+        <button>Begin Examination / 开始检查</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 右侧：标注系统 -->
+  <div class="annotation-system">
+    <div class="chart-header">
+      <h1 class="chart-title">异域同构<br>职业方向定位图谱</h1>
+      <div class="chart-subtitle">Different Fields. Shared Potential.</div>
+      <div class="chart-meta">
+        Anatomical Chart of Career Pathways for Medical Students ·
+        Version 2026 ·
+        Based on O*NET Framework
+      </div>
+    </div>
+
+    <!-- 第一组：诊断流程 -->
+    <div class="annotation-cluster">
+      <div class="cluster-title">Section I · Diagnostic Procedure</div>
+
+      <div class="annotation-item red" data-index="1">
+        <div class="annotation-latin">Profilus Initialis</div>
+        <div class="annotation-chinese">
+          个人画像建立：梳理医学经历、科研项目、学业背景，形成初始档案
+        </div>
+        <div class="annotation-meta">
+          <span class="meta-item">必填项目</span>
+          <span class="meta-item">约10分钟</span>
+        </div>
+      </div>
+
+      <div class="annotation-item red" data-index="2">
+        <div class="annotation-latin">Evaluatio Primaria</div>
+        <div class="annotation-chinese">
+          初步评价：基于 O*NET Mini-IP 30题官方职业兴趣量表，生成 RIASEC 结构
+        </div>
+        <div class="annotation-meta">
+          <span class="meta-item">标准测评</span>
+          <span class="meta-item">约15分钟</span>
+          <span class="meta-item">生成报告 R1</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第二组：探索系统 -->
+    <div class="annotation-cluster">
+      <div class="cluster-title">Section II · Exploration System</div>
+
+      <div class="annotation-item blue" data-index="3">
+        <div class="annotation-latin">Experientia Professio</div>
+        <div class="annotation-chinese">
+          职业体验：进入9大跨学科方向+1个医学方向，14个真实任务模板，模拟实际工作场景
+        </div>
+        <div class="annotation-meta">
+          <span class="meta-item">可选步骤</span>
+          <span class="meta-item">127条官方资料</span>
+        </div>
+      </div>
+
+      <div class="annotation-item blue" data-index="4">
+        <div class="annotation-latin">Database Cognitio</div>
+        <div class="annotation-chinese">
+          信息文库：38个中国官方来源，覆盖职业、招聘、招生、行业和学习五类资料
+        </div>
+        <div class="annotation-meta">
+          <span class="meta-item">公开资源</span>
+          <span class="meta-item">270条事实实例</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 第三组：行动规划 -->
+    <div class="annotation-cluster">
+      <div class="cluster-title">Section III · Action Planning</div>
+
+      <div class="annotation-item green" data-index="5">
+        <div class="annotation-latin">Planum Actionis</div>
+        <div class="annotation-chinese">
+          行动规划：根据目标方向、计划年份和时间投入，生成技能缺口分析、院校清单和定制路径
+        </div>
+        <div class="annotation-meta">
+          <span class="meta-item">生成报告 R2</span>
+          <span class="meta-item">可导出</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-footer">
+      <p>
+        * 本图谱基于 O*NET Interest Profiler 官方框架，结合中国职业与升学实况绘制<br>
+        * 招生项目信息需官方核验，不提供录取概率推算<br>
+        * Different Fields. Shared Potential. · XENISO 异域同构 2026
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

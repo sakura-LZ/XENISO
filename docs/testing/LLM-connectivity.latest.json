@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-21T11:39:30.387Z",
+  "mock": false,
+  "synthetic_probe": true,
+  "requested_model": "gpt-6.1-sol",
+  "base_url": "https://api.zz-api.cc.cd/v1",
+  "http_status": 200,
+  "returned_model": "gpt-6.1-sol",
+  "finish_reason": "stop",
+  "content_verified": true,
+  "usage": {
+    "prompt_tokens": 20,
+    "completion_tokens": 8,
+    "total_tokens": 28
+  },
+  "adapter": {
+    "passed": true,
+    "source": "llm_live",
+    "explanation_count": 2,
+    "unknown_count": 1,
+    "evidence_contract_valid": true
+  },
+  "elapsed_ms": 11932
+}

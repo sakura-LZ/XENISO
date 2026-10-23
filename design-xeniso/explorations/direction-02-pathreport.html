@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XENISO · 方向02：病理报告标注系统</title>
+<style>
+:root {
+  --paper: #FAFAF8;
+  --paper-shadow: #E8E6E0;
+  --text-main: #1A1816;
+  --text-secondary: #6B6864;
+  --accent-green: #1E9B6B;
+  --accent-amber: #D4934F;
+  --line-subtle: rgba(26, 24, 22, 0.12);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Crimson Pro', Georgia, serif;
+  background: #F2F0EB;
+  color: var(--text-main);
+  line-height: 1.7;
+  min-height: 100vh;
+  padding: 40px 24px;
+}
+
+.document-wrapper {
+  max-width: 920px;
+  margin: 0 auto;
+  background: var(--paper);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+/* 页眉 - 像病理报告的抬头 */
+.document-header {
+  border-bottom: 2px solid var(--text-main);
+  padding: 32px 48px 24px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.header-logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.header-logo .brand {
+  display: block;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  letter-spacing: 0.3px;
+}
+
+.header-nav {
+  justify-self: end;
+  display: flex;
+  gap: 32px;
+  padding-top: 4px;
+}
+
+.header-nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  transition: color 0.2s;
+}
+
+.header-nav a:hover {
+  color: var(--accent-green);
+}
+
+/* 报告主体 */
+.document-body {
+  padding: 48px 48px 60px;
+}
+
+.report-title {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.report-subtitle {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+/* 标注块 - 像病理报告的标记方式 */
+.annotation-section {
+  background: white;
+  border-left: 3px solid var(--accent-green);
+  padding: 28px 32px;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.annotation-section::before {
+  content: attr(data-marker);
+  position: absolute;
+  left: -14px;
+  top: 22px;
+  width: 28px;
+  height: 28px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+}
+
+.annotation-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--accent-green);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.annotation-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.annotation-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* 行动框 */
+.action-box {
+  background: linear-gradient(135deg, var(--accent-green) 0%, #178A5D 100%);
+  padding: 40px;
+  margin-top: 48px;
+  color: white;
+  position: relative;
+}
+
+.action-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.03) 10px,
+      rgba(255, 255, 255, 0.03) 20px
+    );
+  pointer-events: none;
+}
+
+.action-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.action-input-group {
+  position: relative;
+  display: flex;
+  gap: 12px;
+}
+
+.action-input-group input {
+  flex: 1;
+  padding: 16px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-radius: 4px;
+}
+
+.action-input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.action-input-group input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.25);
+  border-color: white;
+}
+
+.action-input-group button {
+  padding: 16px 32px;
+  background: white;
+  color: var(--accent-green);
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 4px;
+  letter-spacing: 0.3px;
+  transition: transform 0.2s;
+}
+
+.action-input-group button:hover {
+  transform: translateY(-1px);
+}
+
+/* 页脚标签 */
+.document-footer {
+  border-top: 1px solid var(--line-subtle);
+  padding: 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.footer-id {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--accent-amber);
+  font-weight: 600;
+}
+
+.footer-tagline {
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+
+<div class="document-wrapper">
+  <div class="document-header">
+    <div class="header-logo">
+      XENISO
+      <span class="brand">异域同构</span>
+    </div>
+    <div class="header-nav">
+      <a href="#">首页</a>
+      <a href="#">异域探索</a>
+      <a href="#">信息文库</a>
+      <a href="#">交流社区</a>
+    </div>
+  </div>
+
+  <div class="document-body">
+    <h1 class="report-title">职业方向定位<br>和行动规划</h1>
+    <div class="report-subtitle">Different Fields. Shared Potential.</div>
+
+    <div class="annotation-section" data-marker="1">
+      <div class="annotation-label">第一步 · Profile</div>
+      <div class="annotation-title">个人画像</div>
+      <div class="annotation-desc">
+        梳理你的医学经历、科研资料和学业背景，建立初始档案
+      </div>
+    </div>
+
+    <div class="annotation-section" data-marker="2">
+      <div class="annotation-label">第二步 · Assessment</div>
+      <div class="annotation-title">初步评价</div>
+      <div class="annotation-desc">
+        基于 O*NET Mini-IP 30题测评，生成兴趣结构和能力证据
+      </div>
+    </div>
+
+    <div class="annotation-section" data-marker="3">
+      <div class="annotation-label">第三步 · Experience</div>
+      <div class="annotation-title">职业体验</div>
+      <div class="annotation-desc">
+        进入9+1个方向的真实职业任务，了解实际工作内容
+      </div>
+    </div>
+
+    <div class="annotation-section" data-marker="4">
+      <div class="annotation-label">第四步 · Plan</div>
+      <div class="annotation-title">行动规划</div>
+      <div class="annotation-desc">
+        根据目标方向生成技能缺口、院校清单和定制行动计划
+      </div>
+    </div>
+
+    <div class="action-box">
+      <div class="action-title">开始你的定位报告</div>
+      <div class="action-input-group">
+        <input type="text" placeholder="输入学籍信息或邮箱">
+        <button>进入探索</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="document-footer">
+    <div class="footer-id">DOC-2026-XENISO</div>
+    <div class="footer-tagline">Different Fields. Shared Potential.</div>
+  </div>
+</div>
+
+</body>
+</html>

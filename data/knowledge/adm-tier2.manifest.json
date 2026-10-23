@@ -1,0 +1,716 @@
+[
+  {
+    "source": {
+      "id": "sysu-2027-jianzhang",
+      "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/1.%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E5%B9%B4%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E7%AE%80%E7%AB%A0.pdf",
+      "organization": "中山大学 研究生院",
+      "title": "中山大学2027年硕士研究生招生简章",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文无发布日期；文件路径含「2026-10」，正文标题为「中山大学 2027 年」，属 2027 招生年度（最新）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2/sysu-2027-jianzhang.pdf",
+      "sha256": "a1f40fecc8b113c3bc8c59ace916072c439335de8f5ba1456d39f1775861de59",
+      "captured_at": "2026-10-23T06:58:10.770Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-tier2/sysu-2027-jianzhang.txt",
+      "extracted_sha256": "f09f25c0ba9e02bc0b1f3a055db6b2aa5c0efcc2bc74d909b1888547afbdd376"
+    },
+    "record": {
+      "id": "admissions-sysu-2027-jianzhang-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "中山大学2027年硕士报考条件（学业水平与同等学力要求）",
+      "summary": "报考条件原文：拥护党的领导、体检合格；学业水平须为应届本科/本科毕业/同等学力/已获硕博之一；以同等学力报考须有报考专业 8 门以上本科主干课程成绩证明与科研能力，并加试两门本科专业基础课。（同一官方来源共 3 条原文事实，字段：admission_requirements、cross_major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于中山大学 2027 年全部硕士招生专业；同等学力条款针对专科/本科结业考生，不等于「跨专业」限制。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "中山大学",
+        "报考条件",
+        "同等学力",
+        "跨专业限制",
+        "临床医学专硕",
+        "本科专业限定",
+        "报考限制",
+        "订单定向生"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中山大学",
+        "admission_year": 2027,
+        "region": "广东",
+        "evidence_locator": "一、报考条件（六）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "admission_requirements",
+        "pattern": "一、报考条件 （一）报名参加全国硕士研究生招生考试的人员，须符合下列 条件： 1\\. 拥护中国共产党的领导，遵守中华人民共和国宪法和法律， 诚实守信。 2\\. 身体健康状况符合国家和中山大学规定的体检要求。 3\\. 考生学业水平须符合下列条件之一： （1）国家承认学历的应届本科毕业生（含普通高校、成人高校、 普通高校举办的成人高等学历教育等应届本科毕业生）及自学考试 和网络教育届时可毕业本科生。考生录取当年入学前必须取得国家 承认的国（境）内高校本科毕业证书或经相关专业机构认证的国（境） 外教育机构合法学历学位证书。 （2）具有国家承认的本科毕业学历的人员。 （3）获得国家承认的高职（专科）毕业学历后满 2 年及以上人 员（毕业后到录取当年入学前，下同）或国家承认学历的本科结业 —2— 生，按本科毕业同等学力身份报考。以同等学力身份（以报考时学 历为准）报考我校的考生，须有国家考试机构或高校教务部门出具 的所报考专业 8 门以上本科主干课程成绩证明，并具备一定的科研 能力，报考前须经报考单位审核通过，除复试外还须加试两门本科 专业基础课，部分专业还将加试实验等科目。"
+      },
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "（二）报考下列医学学位的人员，须符合以下条件： 1\\. 报考医学学术学位（1002 临床医学、1003 口腔医学、1006 中西医结合）的人员，须符合下列条件： （1）符合上述（一）中的各项要求。 （2）只接受授予医学学位的毕业生（含应届本科毕业生）报考。 2\\. 报考医学专业学位（1051 临床医学、1052 口腔医学）的人 —3— 员，须符合下列条件： （1）符合上述（一）中各项要求。 （2）报考临床医学专业的，报考前所学专业须为 5 年及以上学 制的临床医学、麻醉学、精神医学、医学影像学、放射医学、眼视 光医学、儿科学等专业。 （3）报考口腔医学专业的，报考前所学专业须为 5 年制的口腔 医学专业。"
+      },
+      {
+        "field": "admission_requirements",
+        "pattern": "（六）我校不接收以下类型人员报考： 未按国家有关规定完成履约责任（含违约）的“农村订单定向生” “教育部直属师范院校公费师范生”等考生报考，一经查实，将取消 其申请资格、录取资格、入学资格，已入学的取消学籍。"
+      }
+    ],
+    "expected_fields": [
+      "admission_requirements",
+      "分专业报考限制（见专业目录，简章未列）",
+      "cross_major_restrictions",
+      "医工交叉专业（0831/085409/1010/1405）的本科专业限制（本段未涉及）"
+    ]
+  },
+  {
+    "source": {
+      "id": "scu-2027-zhangcheng",
+      "url": "https://yz.scu.edu.cn/zsxx/Details/a9e04641-aa5f-401f-892e-f069c0f8ecb2",
+      "organization": "四川大学 研究生招生办公室",
+      "title": "四川大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面未显示发布日期；标题为「2027 年」，属 2027 招生年度（最新）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2/scu-2027-zhangcheng.raw",
+      "sha256": "e6e257274a79da3a29dd63e44d6915911ac652be9b7c4c90f28ad3b1290a61ae",
+      "captured_at": "2026-10-23T07:00:12.482Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-scu-2027-zhangcheng-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "四川大学2027年硕士报考条件（含同等学力硬门槛）",
+      "summary": "报考条件原文：应届本科/本科毕业/同等学力/已获硕博；同等学力须同时满足 CET 四六级 425 分以上或通过学位外语考试、核心期刊第一作者论文、8 门及以上专业课程成绩单，并在报名截止 3 日前提交材料审核。（同一官方来源共 2 条原文事实，字段：admission_requirements、exam_subjects；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于四川大学 2027 年硕士招生；同等学力条款门槛较高，专科/本科结业考生需逐条满足。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "四川大学",
+        "报考条件",
+        "同等学力",
+        "考试科目",
+        "科目代码"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "admission_year": 2027,
+        "region": "四川",
+        "evidence_locator": "四、初试（二）考试科目"
+      }
+    },
+    "extracts": [
+      {
+        "field": "admission_requirements",
+        "pattern": "二、报考条件 （一）报名参加全国硕士研究生招生考试的人员，须符合下列条件： 1\\. 拥护中国共产党的领导，遵守中华人民共和国宪法和法律，诚实守信。 2\\. 身体健康状况符合国家和招生院系规定的体检要求。 3\\. 考生学业水平必须符合下列条件之一： （1）国家承认学历的应届本科毕业生（含普通高校、成人高校、普通高校举办的成人高等学历教育等应届本科毕业生）及自学考试和网络教育届时可毕业本科生。 （2）具有国家承认的本科毕业学历的人员。 （3）获得国家承认的高职高专毕业学历后满2年（毕业后到录取当年入学前，下同）或2年以上，以及国家承认学历的本科结业生，按本科毕业生同等学力身份报考，须同时满足以下条件：①达到全国大学英语（CET四级或六级）425分以上或通过在职人员申请学士学位外语考试；②在核心及以上期刊至少有一篇以第一作者身份发表的与报考专业相关的论文；③提供国家考试机构或高校教务部门开具的与报考相关专业本科的8门及以上专业课程成绩单。并在报名时间截止3日前提交相关材料的电子版至四川大学研招办邮箱（scuyz@scu\\.edu\\.cn）进行审核，经学校审核同意后方可参加考试。"
+      },
+      {
+        "field": "exam_subjects",
+        "pattern": "考试科目中的101-思想政治理论、199-管理类综合能力、201-英语（一）、202-俄语、203-日语、204-英语（二）、 301-数学（一）、302-数学（二）、303-数学（三）、306-临床医学综合能力（西医）、307-临床医学综合能力（中医）、313-历史学专业基础、397-法律硕士专业基础（法学）、398-法律硕士专业基础（非法学）、408-计算机学科专业基础、497-法律硕士综合（法学）、498-法律硕士综合（非法学）均由教育部考试中心统一命题。"
+      }
+    ],
+    "expected_fields": [
+      "admission_requirements",
+      "分专业本科专业限制（见专业目录）",
+      "exam_subjects",
+      "各专业自命题科目代码与参考书（简章未列，见专业目录）"
+    ]
+  },
+  {
+    "source": {
+      "id": "scu-bme-intro",
+      "url": "https://bme.scu.edu.cn/xydt1/bkszs/zyjs.htm",
+      "organization": "四川大学 生物医学工程学院",
+      "title": "四川大学生物医学工程学院 本科生招生 — 专业介绍",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面未显示发布日期与年级；为学院本科招生专业介绍栏目的说明性文字。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2/scu-bme-intro.raw",
+      "sha256": "f314ad342acc08ab634aa9e0e474dc55b0a11ff2eb9576d70ce7b5cd3a477821",
+      "captured_at": "2026-10-23T07:00:31.987Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-scu-bme-intro-guide-devices",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "四川大学生物医学工程专业核心课程与三方向主干课程",
+      "summary": "原文：专业核心课程为生物化学、系统解剖学、生理学、生物医学工程与人类健康、生物医学工程伦理及政策法规、生物医学统计学、现代仪器分析、生物医学工程产品设计；并列出生物医学材料、医学信息与仪器、医疗器械监管科学三方向的主干课程。（同一官方来源共 2 条原文事实，字段：topics、training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于四川大学生物医学工程本科专业（按一级学科招生，分三方向培养）；为学院介绍性列举，未给学分学时。",
+      "relation": "direct",
+      "tags": [
+        "四川大学",
+        "生物医学工程",
+        "核心课程",
+        "方向主干课程",
+        "培养目标"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学",
+        "college": "生物医学工程学院",
+        "program": "生物医学工程",
+        "region": "四川",
+        "evidence_locator": "专业介绍 → 培养目标段"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "专业核心课程：生物化学、系统解剖学、生理学、生物医学工程与人类健康、生物医学工程伦理及政策法规、生物医学统计学、现代仪器分析、生物医学工程产品设计。 方向主干课程：1）生物医学材料方向：材料科学基础、材料生物学、生物材料 制备与应用、生物材料评价、组织工程基础、植入器械与人工器官；2）医学信息与仪器方向：生物医学传感器及检测技术、医学信息系统、医学成像原理及系统、生物医学仪器及应用、医学图像处理、医学人工智能；3）医疗器械监管科学方向：医疗器械监管科学导论、医疗器械质量管理体系与法规、医疗器械临床试验模型与规范、NMPA医疗器械产品监管、注册法规及模拟申报。"
+      },
+      {
+        "field": "training",
+        "pattern": "培养具有坚定理想信念和深厚人文底蕴的建设者、具有强烈社会责任感和生物医学伦理观的仁爱之士、具有坚实生物医学理论基础和精湛产品设计及工程执行能力的技术精英、具有宽广国际视野和产业发展把控能力的行业骨干或管理人才、具有批判思维和创新精神并胜任国际竞争与前沿挑战的未来学科大师。"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "课程学分/学时（介绍页未列）",
+      "先修课程要求（原文未列）",
+      "training"
+    ]
+  },
+  {
+    "source": {
+      "id": "xjtu-2027-zhangcheng",
+      "url": "https://yz.xjtu.edu.cn/__local/E/87/9A/3FDEF75C038EF21BE144434C44A_C2E45EA5_45827.pdf",
+      "organization": "西安交通大学 研究生院",
+      "title": "西安交通大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 正文无发布日期；正文含「报名时间：2026 年 10 月 15 日—24 日」，为 2027 招生年度（最新）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2/xjtu-2027-zhangcheng.pdf",
+      "sha256": "ea1deb75469da42d811b7f4f7241583060396eabe8ccebd48e841c0862145fdf",
+      "captured_at": "2026-10-23T06:59:48.319Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-tier2/xjtu-2027-zhangcheng.txt",
+      "extracted_sha256": "ac4c8b8802f71a1b88c452ba98bc75a93eba84e870f488fcf01d81981fc4edbe"
+    },
+    "record": {
+      "id": "admissions-xjtu-2027-zhangcheng-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "西安交通大学1051/1052 的本科专业白名单（跨考关键）",
+      "summary": "原文：报考 1051 临床医学专业学位仅限全日制本科西医临床医学类专业毕业并获学士学位、且符合执业医师资格与规培报考条件；1052 口腔医学仅限全日制本科口腔医学专业；已获规培合格证书者原则上不得报考。（同一官方来源共 3 条原文事实，字段：cross_major_restrictions、admission_requirements、exam_subjects；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于西安交通大学 2027 年 1051/1052 专业学位；医学技术类、护理、药学等本科不能报考。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "西安交通大学",
+        "跨专业限制",
+        "临床医学专硕",
+        "本科专业限定",
+        "报考条件",
+        "同等学力",
+        "补修课程",
+        "考试科目",
+        "统考",
+        "自命题"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "西安交通大学",
+        "admission_year": 2027,
+        "region": "陕西",
+        "evidence_locator": "第十八条 初试科目"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "报考攻读临床医学专业学位（专业代码 1051）硕士 研究生，仅限全日制本科西医临床医学类专业毕业并获得学士学 位，且须符合国家执业医师资格考试及住院医师规范化培训报考 条件的应届或往届本科毕业生；报考攻读口腔医学专业学位（专 业代码 1052）硕士研究生，仅限全日制本科口腔医学专业毕业 并获得学士学位，且须符合国家执业医师资格考试及住院医师规 范化培训报考条件的应届或往届本科毕业生。对于已经获得住院 6 / 17 医师规范化培训合格证书人员原则上不得报考临床医学∕口腔 医学专业学位硕士研究生。"
+      },
+      {
+        "field": "admission_requirements",
+        "pattern": "第十条 报考条件 （一）拥护中国共产党的领导，遵守中华人民共和国宪法和 法律，诚实守信； （二）身体健康状况符合国家和学校规定的体检要求； （三）考生学业水平必须符合下列条件之一： 1．国家承认学历的应届本科毕业生（含普通高校、成人 高校、普通高校举办的成人高等学历教育等应届本科毕业生）， 自学考试和网络教育届时可毕业本科生。 2．具有国家承认的大学本科毕业学历的人员。 3．同等学力的人员须符合下列条件： 获得国家承认的高职高专毕业学历满 2 年（毕业后到录取当 年入学前）或 2 年以上的人员，以及国家承认学历的本科结业生， 符合下列条件：（1）以第一作者身份在所报考专业领域的核心 期刊上发表文章；（2）辅修过报考专业的本科全部主干课程（含 英语四级）且成绩优良。 4 / 17 4．已获硕士、博士研究生学历或学位的人员。 在读研究生报考须在报名前征得所在培养单位同意。"
+      },
+      {
+        "field": "exam_subjects",
+        "pattern": "第十八条 初试科目分全国统一命题科目和学校自命题科目， 全国统一命题科目为思想政治理论、英语（一）、英语（二）、 数学（一）、数学（二）、数学（三）、临床医学综合能力（西 医）、管理类综合能力、法律硕士专业基础（非法学）、法律硕 士综合（非法学）、法律硕士专业基础（法学）、法律硕士综合 （法学），单独考试（含强军计划）公共课采取全国统一命题科 9 / 17 目，其他考试科目为学校自命题科目。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions",
+      "0831/085409/1010 等医工交叉专业的本科限制（本章程未涉及）",
+      "admission_requirements",
+      "分专业本科专业限制（见各学院招生目录）",
+      "exam_subjects",
+      "各专业自命题科目代码与参考书（见学院招生目录）"
+    ]
+  },
+  {
+    "source": {
+      "id": "hit-2027-zhangcheng",
+      "url": "https://yzb.hit.edu.cn/2026/0930/c22272a402325/page.htm",
+      "organization": "哈尔滨工业大学 研究生招生办公室",
+      "title": "哈尔滨工业大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面 URL 含 2026/0930；标题为「2027 年」，属 2027 招生年度（最新），页面未显示具体发布日。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2/hit-2027-zhangcheng.raw",
+      "sha256": "006f4f3455714d39239c8946516e97bb9031fb7e054a3de5aaf0aeb385fed5ef",
+      "captured_at": "2026-10-23T07:01:31.114Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hit-2027-zhangcheng-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "哈尔滨工业大学2027年报考条件（同等学力需10门课程成绩单+论文）",
+      "summary": "报考条件原文：应届本科/本科毕业/同等学力/已获硕博；同等学力须提供 10 门专业课程成绩单（或自考 10 门以上合格成绩单）并以第一作者在核心期刊发表相关论文。（同一官方来源共 3 条原文事实，字段：admission_requirements、exam_subjects；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于哈尔滨工业大学 2027 年硕士招生（含深圳、威海校区）。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "哈尔滨工业大学",
+        "报考条件",
+        "同等学力",
+        "考试科目",
+        "初试",
+        "加试"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "哈尔滨工业大学",
+        "admission_year": 2027,
+        "region": "黑龙江",
+        "evidence_locator": "五、复试 3．加试"
+      }
+    },
+    "extracts": [
+      {
+        "field": "admission_requirements",
+        "pattern": "三、报考条件 （一）报名参加全国硕士研究生招生考试的人员须符合下列条件： 1 ．拥护中国共产党的领导， 遵守中华人民共和国宪法和法律，诚实守信。 2 ．身体健康状况符合国家和我校规定的体检要求。 3 ．考生学业水平必须符合下列条件之一： （ 1 ）国家承认学历的应届本科毕业生（含普通高校、成人高校、普通高校举办的成人高等学历教育等应届本科毕业生）及自学考试和网络教育届时可毕业本科生。 考生录取当年入学前必须取得国家承认的国（境）内高校本科毕业证书或经相关专业机构认证的国（境）外教育机构合法学历学位证书，否则录取资格无效。 （ 2 ）具有国家承认的本科毕业学历的人员。 （ 3 ）获得国家承认的高职（专科）毕业学历后满 2 年及以上人员（毕业后到录取当年入学前，下同）或国家承认学历的本科结业生，且符合以下要求的，按本科毕业同等学力身份报考： ① 提供大学教务部门开具的相应专业本科的 10 门专业课程成绩单，或提供与报考学科相关的高等教育自学考试全部或 10 门以上课程合格成绩单。 ② 提供核心期刊上已刊出的一篇与报考学科相关的学术论文（署名为第一作者）。 成绩单与学术论文在复试时提交审核，如复试前考生可提供国家承认的本科毕业证书，则等同于满足 ①② 项材料要求。"
+      },
+      {
+        "field": "exam_subjects",
+        "pattern": "初试科目详见招生目录中有关考试科目的设置。全国统一命题科目包括思想政治理论、英语（一）、英语（二）、俄语、日语、数学（一）、数学（二）、数学（三）、计算机学科专业基础、管理类综合能力。全国统一命题科目的命题工作由教育部教育考试院统一组织，全国统考科目的考试大纲由教育部统一公布。自命题科目的命题工作由我校组织，自命题科目的参考大纲由各学院、学部、校区（以下简称学院）公布。"
+      },
+      {
+        "field": "admission_requirements",
+        "pattern": "3 ．加试。以同等学力身份报考并参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程，具体科目由相关招生学院确定。加试方式为笔试，加试科目不得与初试科目相同，加试不合格者不予录取。"
+      }
+    ],
+    "expected_fields": [
+      "admission_requirements",
+      "分专业本科专业限制（见招生专业目录）",
+      "exam_subjects",
+      "各专业自命题科目代码（见招生目录）"
+    ]
+  },
+  {
+    "source": {
+      "id": "whu-2027-zhangcheng",
+      "url": "https://gs.whu.edu.cn/info/2571/108711.htm",
+      "organization": "武汉大学 研究生院",
+      "title": "武汉大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面未显示独立发布日期；标题为「2027 年」，属 2027 招生年度（最新）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2/whu-2027-zhangcheng.raw",
+      "sha256": "b90e4611928b6fd309662413d9269e480d14adb7a8099fe19c1321e067bbe837",
+      "captured_at": "2026-10-23T07:01:49.911Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-whu-2027-zhangcheng-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "武汉大学2027年报考条件（学业水平与在读研究生要求）",
+      "summary": "报考条件原文：应届本科/本科毕业/同等学力/已获硕博；同等学力须符合学校根据培养目标提出的具体学业要求；在读研究生须在报名前征得培养单位同意并上传证明材料。（同一官方来源共 3 条原文事实，字段：admission_requirements、exam_subjects、cross_major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于武汉大学 2027 年硕士招生。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "武汉大学",
+        "报考条件",
+        "考试科目",
+        "分值",
+        "跨专业",
+        "加试",
+        "培养单位自主"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "武汉大学",
+        "admission_year": 2027,
+        "region": "湖北",
+        "evidence_locator": "七、复试 3.同等学力与跨学科加试"
+      }
+    },
+    "extracts": [
+      {
+        "field": "admission_requirements",
+        "pattern": "四、报考条件 （一）报名参加全国硕士研究生招生考试的人员，须符合下列条件： 1 \\.拥护中国共产党的领导，遵守中华人民共和国宪法和法律，诚实守信。 2 \\.身体健康状况符合国家规定的体检要求及我校的相关规定。 3 \\.考生学业水平必须符合下列条件之一： （ 1）国家承认学历的应届本科毕业生（含普通高校、成人高校、普通高校举办的成人高等学历教育等应届本科毕业生）及自学考试和网络教育届时可毕业本科生。考生录取当年入学前（即我校规定的当年研究生新生报到日期前，下同）必须取得国家承认的国（境）内高校本科毕业证书或 经相关专业机构认证的国（境）外教育机构合法学历学位证书 ，否则录取资格无效。 （ 2）具有国家承认的本科毕业学历的人员。 （ 3）获得国家承认的高职高专毕业学历后满2年（毕业后到录取当年入学前，下同）或2年以上的人员，以及国家承认学历的本科结业生，符合我校根据培养目标对考生提出的具体学业要求的人员，按本科毕业生同等学力身份报考。 （ 4）已获硕士、博士研究生学历或学位的人员。"
+      },
+      {
+        "field": "exam_subjects",
+        "pattern": "（二）考试科目设置及分值 1\\.初试一般设置四个单元考试科目，即思想政治理论、外国语、业务课一和业务课二，满分分别为100分、100分、150分、150分。 2\\.历史学、医学等门类学术学位硕士研究生及心理学、博物馆、药学、临床医学、口腔医学、公共卫生、护理等专业学位硕士研究生初试设置三个单元考试科目，即思想政治理论、外国语、专业基础综合，满分分别为100分、100分、300分。 3\\.工商管理、公共管理、旅游管理、会计、图书情报和工程管理等专业学位硕士研究生初试设置两个单元考试科目，即外国语、管理类综合能力，满分分别为100分、200分。"
+      },
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "跨学科专业报考的考生是否需要加试，由培养单位自主确定。加试方式为笔试，加试科目不得与初试科目相同，加试不合格者不予录取。"
+      }
+    ],
+    "expected_fields": [
+      "admission_requirements",
+      "分专业本科专业限制（见招生专业目录）",
+      "exam_subjects",
+      "各专业具体科目名称与代码（见招生专业目录）",
+      "cross_major_restrictions",
+      "各培养单位具体加试科目（在招生专业目录备注中，本章程未列）"
+    ]
+  },
+  {
+    "source": {
+      "id": "seu-2027-zhangcheng",
+      "url": "https://yzb.seu.edu.cn/2026/1008/c6676a585158/page.htm",
+      "organization": "东南大学 研究生院",
+      "title": "东南大学2027年硕士研究生招生章程",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面 URL 含 2026/1008，列表页标注发布日期 2026-10-08；标题为「2027 年」，属 2027 招生年度（最新）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2/seu-2027-zhangcheng.raw",
+      "sha256": "a09c9315575043afa47651618effb27c6999b4296f7c2ca8cdacdd0fd1e801b4",
+      "captured_at": "2026-10-23T07:05:43.982Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-seu-2027-zhangcheng-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "东南大学2027年招生规模与就业类别规定",
+      "summary": "原文：2027 年拟招收全日制/非全日制硕士共 6700 名左右（含推免 3100 名左右）；学术学位各专业只招全日制；全日制原则上按「非定向就业」录取、非全日制按「定向就业」录取。（同一官方来源共 2 条原文事实，字段：admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于东南大学 2027 年硕士招生总体规模与就业类别，非分专业要求。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "东南大学",
+        "招生规模",
+        "就业类别",
+        "加试",
+        "同等学力"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "admission_year": 2027,
+        "region": "江苏",
+        "evidence_locator": "四、复试（五）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "admission_requirements",
+        "pattern": "原则上我校全日制硕士生均按“非定向就业”类别录取（部分专项计划除外）， 非全日制硕士生均按“定向就业”类别录取 。"
+      },
+      {
+        "field": "admission_requirements",
+        "pattern": "（五） 对以同等学力身份报考并参加复试的考生，在复试中须加试至少两门与报考专业相关的本科主干课程。加试方式为笔试，加试科目及要求将在复试录取工作细则中另行通知，加试不合格者不予录取。"
+      }
+    ],
+    "expected_fields": [
+      "admission_requirements",
+      "分专业拟招人数（见招生专业目录）"
+    ]
+  },
+  {
+    "source": {
+      "id": "seu-bme-intro",
+      "url": "https://bme.seu.edu.cn/424/list.htm",
+      "organization": "东南大学 生物医学工程学院",
+      "title": "东南大学生物医学工程学院 本科生培养 — 专业介绍",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "页面未显示发布日期与年级；为学院「本科生培养（旧）」栏目下的专业介绍。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2/seu-bme-intro.raw",
+      "sha256": "a69a3512b49a0394283d013deacd624b82902a8d8fe57c767672366ac5b4987b",
+      "captured_at": "2026-10-23T07:01:01.544Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-seu-bme-intro-guide-devices",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "东南大学生物医学工程课程体系（学科基础课 + 两个专业方向课）",
+      "summary": "原文：学科基础课含数学、物理、生物学、化学、医学、计算机、电子等基础课程；专业方向课分「医学电子学」（生理信号检测、生理信号处理、医学图像处理、医学成像原理、医学仪器设计与实现）与「现代生物技术」（生物医学材料、现代生物学、生物信息学、纳米科学与技术）。（同一官方来源共 2 条原文事实，字段：topics、training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于东南大学生物医学工程学院该专业介绍页；为介绍性文字，未给学分学时。",
+      "relation": "direct",
+      "tags": [
+        "东南大学",
+        "生物医学工程",
+        "课程体系",
+        "学科基础课",
+        "培养目标"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "东南大学",
+        "college": "生物医学工程学院",
+        "program": "生物医学工程",
+        "region": "江苏",
+        "evidence_locator": "一、生物医学工程 → 培养目标"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "课程体系 1、学科基础课 包括数学、物理、生物学、化学、医学、计算机、电子等基础课程。 2、专业方向课 医学电子学 ：主要课程内容包括生理信号检测，生理信号处理，医学图像处理、医学成像原理、医学仪器设计与实现等生物医学工程相关领域的原理和方法。 现代生物技术 ：主要课程内容包括生物医学材料、现代生物学、生物信息学、纳米科学与技术等生物医学工程前沿领域。"
+      },
+      {
+        "field": "training",
+        "pattern": "培养目标 培养掌握生物医学工程专业知识，掌握分析与健康相关的生物医学工程问题的方法，并具备综合应用所学知识和方法解决实际工程问题的能力，具备健全人格和远大理想的工医结合复合型优秀人才。"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "课程学分/学时（介绍页未列）",
+      "先修课程要求（原文未列）",
+      "training"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-2027-zsml",
+      "url": "https://yanzhao.hust.edu.cn/Master/Zsml_View.aspx",
+      "organization": "华中科技大学 研究生院",
+      "title": "华中科技大学 2027 年硕士研究生招生专业目录（生命科学与技术学院）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "ASP.NET 查询页渲染结果，页面顶部显示「2027年硕士研究生招生专业目录」，年度下拉框默认 2027（最新）；页面无发布日期。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2/hust-2027-zsml.raw",
+      "sha256": "c8ad1bbc087346f84eca278b7284196cd57dd17968adda20945a0be254832e2f",
+      "captured_at": "2026-10-23T07:04:28.320Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-hust-2027-zsml-guide-devices",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "华中科技大学083100 生物医学工程初试科目（2027）",
+      "summary": "原文：083100 生物医学工程（全日制）拟招 45 人，初试科目为 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④890 普通物理；含 9 个研究方向（生物医学工程、生物制药工程、生物医学光子学、生物信息技术、生物材料与组织工程、医学成像技术与应用、生物医学图象处理与分析、脑空间信息学、脑网络成像与人工智能）。（同一官方来源共 3 条原文事实，字段：exam_subjects、cross_major_restrictions、admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于华中科技大学 2027 年 083100 生物医学工程（学术型，生命科学与技术学院）；科目代码与自命题科目名称为该校设定，不可外推到其他学校。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "华中科技大学",
+        "考试科目",
+        "科目代码",
+        "生物医学工程",
+        "跨专业限制",
+        "同等学力",
+        "生物医学工程专硕",
+        "招生计划",
+        "推免"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "生命科学与技术学院",
+        "program": "085409 生物医学工程",
+        "admission_year": 2027,
+        "region": "湖北",
+        "evidence_locator": "2027 专业目录 → 170 行首"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "083100 生物医学工程（全日制） 45 01 生物医学工程 ① 101\\|思想政治理论 ② 201\\|英语（一） ③ 301\\|数学（一） ④ 890\\|普通物理"
+      },
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "085409 生物医学工程（全日制） 40 00 不区分研究方向 ① 101\\|思想政治理论 ② 204\\|英语（二） ③ 302\\|数学（二） ④ 890\\|普通物理 含武汉光电国家研究中心招生计划、国家卓越工程师学院“卓越项目”计划。不招收同等学力考生"
+      },
+      {
+        "field": "admission_requirements",
+        "pattern": "170 生命科学与技术学院 168 此处为拟招生计划总数（含推免生）。拟考试招生人数请以中国研招网“硕士专业目录”查询系统显示数据为参考。最终计划数以复试工作细则发布为准。"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "890 普通物理参考书目/大纲（目录未列）",
+      "cross_major_restrictions",
+      "是否限制本科专业（备注未提，即未设本科专业白名单）",
+      "admission_requirements",
+      "实际统考名额（目录未给，需查研招网）"
+    ]
+  },
+  {
+    "source": {
+      "id": "hust-bme-plan",
+      "url": "https://life.hust.edu.cn/__local/C/8E/85/BE4DABAF6EC1790DFA692328138_7DE17B2B_5A8D9.pdf",
+      "organization": "华中科技大学 生命科学与技术学院",
+      "title": "华中科技大学 2023 级生物医学工程专业本科培养计划",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 页眉标注「华中科技大学 2023 级本科专业培养计划」；为 2023 级版本，非最新年级（未见 2026/2027 级）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2/hust-bme-plan.pdf",
+      "sha256": "720f7cfa27578384eca5913b417bc346aff4ba0d38914c6486a464024ae4ffcc",
+      "captured_at": "2026-10-23T07:06:11.667Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-tier2/hust-bme-plan.txt",
+      "extracted_sha256": "0e4c527d594ac88c78f6f0178978e88eb91fed9d05a7783249e5793a5f2c787c"
+    },
+    "record": {
+      "id": "learning-hust-bme-plan-guide-devices",
+      "role_id": "guide_devices",
+      "category": "learning",
+      "title": "华中科技大学生物医学工程主要课程（2023 级）",
+      "summary": "主要课程原文（中英对照）：电路理论、模拟电子技术、数字电路与逻辑设计、应用光子学基础、微机原理与接口技术、生物医学传感检测与仪器、生物医学数字信号处理、生物医学光子学、医学影像系统原理、医学图像处理、生物材料学、纳米生物医学分析技术、细胞生物学、生物化学与分子生物学等。（同一官方来源共 2 条原文事实，字段：topics、learning_hours；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于华中科技大学 2023 级生物医学工程专业培养计划（旧版年级）。",
+      "relation": "direct",
+      "tags": [
+        "华中科技大学",
+        "生物医学工程",
+        "主要课程",
+        "2023级",
+        "学分"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "华中科技大学",
+        "college": "生命科学与技术学院",
+        "program": "生物医学工程",
+        "region": "湖北",
+        "evidence_locator": "六、学时与学分 Ⅵ"
+      }
+    },
+    "extracts": [
+      {
+        "field": "topics",
+        "pattern": "（一）主要课程 Main Courses 电路理论 Circuit Theory、模拟电子技术 Analogue Electronics、数字电路与逻辑设计 Digital Circuit and Logic Design 应用光子学基础 Fundamental of Applied Photonics、微机原理与接口技术 Principle of Microcomputer and Interface、生物医学传感检测与仪器 Biomedical Sensing, Testing and Instrumentation、生物医学数字信号处理 Biomedical Digital Signal Processing、生物医学光子学 Biomedical Photonics、医学影像系统原理 Medical Imaging System Principle、医学图像处理 Medical Image Processing、生物材料学 Biomaterials、纳米生物医学分析技术 Nano-biomedical Analytical Technology、细胞生物学 Cellular Biology、生物化学与分子生物学 Biochemistry"
+      },
+      {
+        "field": "learning_hours",
+        "pattern": "六、学时与学分 Ⅵ\\. Credits Hours and Units 完成学业最低课内学分（含课程体系与集中性实践教学环节）要求：162 学分。"
+      }
+    ],
+    "expected_fields": [
+      "topics",
+      "先修课程要求（原文未列）",
+      "learning_hours",
+      "学时明细（见课程体系表）"
+    ]
+  },
+  {
+    "source": {
+      "id": "tongji-2027-tixing",
+      "url": "https://yz.tongji.edu.cn/info/1012/4259.htm",
+      "organization": "同济大学 研究生院",
+      "title": "（10月21日更新）同济大学关于2027年报考我校硕士研究生考生及选择3103同济大学考点考生的重要提醒",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "列表页标注发布日期 2026-10-18，标题含「（10 月 21 日更新）」；属 2027 招生年度（最新）。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier2/tongji-2027-tixing.raw",
+      "sha256": "2f20862418c32f36dd0fd06754ef46f5da628543ce7615cd5accc3e3ff86add2",
+      "captured_at": "2026-10-23T07:09:46.718Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-tongji-2027-tixing-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "admissions",
+      "title": "同济大学2027年仅 6 类专业接收同等学力考生（医工类专业不接收）",
+      "summary": "原文：报考专业不接受同等学力考生——同济大学仅工商管理、公共管理、项目管理、工程管理、工业工程与管理、技术转移 6 个专业接收同等学力（本科结业、专科学历）考生。（同一官方来源共 3 条原文事实，字段：cross_major_restrictions、admission_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于同济大学 2027 年硕士招生；意味着除上述 6 个专业外（含生物医学工程/医学技术/电子信息等医工类专业），专科与本科结业考生不具备报考资格。",
+      "relation": "direct",
+      "tags": [
+        "2027",
+        "同济大学",
+        "跨专业限制",
+        "同等学力",
+        "报考资格",
+        "报考条件",
+        "全日制",
+        "定向就业",
+        "应届本科"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "同济大学",
+        "admission_year": 2027,
+        "region": "上海",
+        "evidence_locator": "一、不符合招生单位报考条件的情况 2）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "1）报考专业不接受同等学力考生：我校仅工商管理、公共管理、项目管理、工程管理、工业工程与管理、技术转移专业接收同等学力（本科结业、专科学历）考生。"
+      },
+      {
+        "field": "admission_requirements",
+        "pattern": "5）全日制专业不接受定向就业：报考学习方式为全日制的考生，报考类别应选择“11-非定向就业”（“少干计划”考生除外）。"
+      },
+      {
+        "field": "admission_requirements",
+        "pattern": "2）报考专业不接受应届本科毕业生：招生专业接收学生类型的具体要求详参我校《同济大学2027年招收攻读硕士学位研究生招生章程》。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions",
+      "各专业本科专业白名单（需查2027专业目录，该系统为JS查询应用未抓取）",
+      "admission_requirements",
+      "具体哪些专业不接收应届生（需查章程原文）"
+    ]
+  }
+]

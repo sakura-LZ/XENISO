@@ -1,0 +1,386 @@
+{
+  "date": "2026-10-22",
+  "target": "public/previews/xeniso-pathways.html",
+  "sha256": "e06c3d5e2072db8d740f2be68b3349ca6d3d4c0a4fdbae40c5e4cf62053be17f",
+  "originalUnchanged": true,
+  "originalSha256": "4a5d94ef1231958be889da2a4ca630cd26bc17c7cda26afdd4fc37477de1d0e7",
+  "tests": {
+    "method": "LinkeDOM + Node VM, stubbed SDK/API only; no rendered browser or live digital-human session",
+    "passed": 48,
+    "checks": [
+      {
+        "name": "original nine-direction data preserved exactly",
+        "pass": true
+      },
+      {
+        "name": "all 30 source questions, RIASEC, versions and answer codes preserved",
+        "pass": true
+      },
+      {
+        "name": "unified typography and XENISO tokens; no canvas, diagonal arrows or external font requests",
+        "pass": true
+      },
+      {
+        "name": "text palette has WCAG AA contrast on the actual flat surfaces",
+        "pass": true
+      },
+      {
+        "name": "homepage has a static bridge composer and one product overview",
+        "pass": true
+      },
+      {
+        "name": "profile starts with two independent entry panels and no premature generation",
+        "pass": true
+      },
+      {
+        "name": "basic form preserves optional sections and validates academic values before returning to hub",
+        "pass": true
+      },
+      {
+        "name": "questionnaire uses three intro blocks and five native labelled circles with preserved answer codes",
+        "pass": true
+      },
+      {
+        "name": "both inputs return independently to the hub and generation appears only when both complete",
+        "pass": true
+      },
+      {
+        "name": "generation displays XENISO while working, then a collapsed downloadable report",
+        "pass": true
+      },
+      {
+        "name": "completed report opens its own evaluation with selectable evidence sections",
+        "pass": true
+      },
+      {
+        "name": "editing basic data invalidates old report; regeneration uses updated values",
+        "pass": true
+      },
+      {
+        "name": "editing questionnaire invalidates report until the questionnaire is confirmed again",
+        "pass": true
+      },
+      {
+        "name": "failed report preparation preserves inputs and offers retry",
+        "pass": true
+      },
+      {
+        "name": "generation cannot overwrite a reset or edited profile from an older pending frame",
+        "pass": true
+      },
+      {
+        "name": "existing 14 templates and 28 paths retain usable independent drafts and exports",
+        "pass": true
+      },
+      {
+        "name": "user text remains escaped in report presentation and preserved in downloaded Markdown",
+        "pass": true
+      },
+      {
+        "name": "routes have unique IDs and correct active stages without a universal left sidebar",
+        "pass": true
+      },
+      {
+        "name": "reduced motion retains plant poster; bridge never plays",
+        "pass": true
+      },
+      {
+        "name": "reset clears both modules, generated snapshot, draft tasks and exports state",
+        "pass": true
+      },
+      {
+        "name": "profile entry artwork is generated, local and independently labelled",
+        "pass": true
+      },
+      {
+        "name": "library exposes six chapters for all ten directions and 60 independent detail routes",
+        "pass": true
+      },
+      {
+        "name": "library searches content, recovers from empty filters and includes medicine-specific sources",
+        "pass": true
+      },
+      {
+        "name": "community starts without fabricated posts, has decorative particles and internal navigation",
+        "pass": true
+      },
+      {
+        "name": "offline forum draft validates, preserves, escapes and exports without fake publication",
+        "pass": true
+      },
+      {
+        "name": "studio drawers expand independently and Escape restores the launching control",
+        "pass": true
+      },
+      {
+        "name": "all five interview exercises retain separate answers and appear in exports",
+        "pass": true
+      },
+      {
+        "name": "plan export uses a confirmed snapshot and flags changed or missing profiles",
+        "pass": true
+      },
+      {
+        "name": "file preview connection offers the formal platform without contacting an API",
+        "pass": true
+      },
+      {
+        "name": "same-origin avatar adapter connects only on request, routes presenter and sends no implicit profile",
+        "pass": true
+      },
+      {
+        "name": "typed text, microphone, interrupt and task-step changes preserve the actual stage mount",
+        "pass": true
+      },
+      {
+        "name": "fresh profile must be read and explicitly sent; stale profile cannot leak",
+        "pass": true
+      },
+      {
+        "name": "leaving the studio releases the session and ignores callbacks from the old session",
+        "pass": true
+      },
+      {
+        "name": "cancelled initial connection cannot attach itself after route navigation",
+        "pass": true
+      },
+      {
+        "name": "avatar API configuration failures remain visible and retryable",
+        "pass": true
+      },
+      {
+        "name": "community reads same-origin posts, filters and escapes all user content",
+        "pass": true
+      },
+      {
+        "name": "community authorization and network failure stay visible and can retry",
+        "pass": true
+      },
+      {
+        "name": "publish validates consent and keeps draft on login requirement or failure",
+        "pass": true
+      },
+      {
+        "name": "inline email login sends and verifies OTP only on explicit submission and preserves draft",
+        "pass": true
+      },
+      {
+        "name": "duplicate publication is blocked and successful response clears only the submitted draft",
+        "pass": true
+      },
+      {
+        "name": "own-post deletion requires second click; report uses allowed reason",
+        "pass": true
+      },
+      {
+        "name": "late community fetch cannot restore cleared state",
+        "pass": true
+      },
+      {
+        "name": "mobile navigation toggle and exploration active item survive routing",
+        "pass": true
+      },
+      {
+        "name": "XENISO brand, slogan and four distinct raster cards are present",
+        "pass": true
+      },
+      {
+        "name": "carousel buttons, keyboard, mouse drag and click suppression work with simulated geometry",
+        "pass": true
+      },
+      {
+        "name": "particles pause on reduced motion and hidden pages without external media requests",
+        "pass": true
+      },
+      {
+        "name": "new flat UI text colors meet WCAG AA and original preview is unchanged",
+        "pass": true
+      },
+      {
+        "name": "final reset clears new drafts and shared profile summaries",
+        "pass": true
+      }
+    ],
+    "downloads": [
+      {
+        "name": "XENISO-个人画像-simulation.md",
+        "chars": 2719
+      },
+      {
+        "name": "XENISO-探索记录-simulation.md",
+        "chars": 2719
+      },
+      {
+        "name": "XENISO-个人画像-simulation.md",
+        "chars": 2721
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 460
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 466
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 492
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 498
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 423
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 429
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 441
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 447
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 438
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 444
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 485
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 491
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 461
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 467
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 401
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 407
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 399
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 405
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 380
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 386
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 439
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 445
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 443
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 449
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 448
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 454
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 419
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 425
+      },
+      {
+        "name": "XENISO-行动规划-simulation.md",
+        "chars": 15265
+      },
+      {
+        "name": "XENISO-个人画像-simulation.md",
+        "chars": 2730
+      },
+      {
+        "name": "XENISO-社区草稿.md",
+        "chars": 80
+      },
+      {
+        "name": "XENISO-职业体验-simulation.md",
+        "chars": 662
+      }
+    ],
+    "visualVerification": false,
+    "liveAvatarVerified": false,
+    "liveCommunityVerified": false
+  },
+  "css": {
+    "parser": "PostCSS",
+    "topLevelNodes": 1135
+  },
+  "localAssets": 11,
+  "credentialScan": {
+    "files": 10,
+    "findings": 0
+  },
+  "images": {
+    "succeeded": 5,
+    "model": "gpt-image-2",
+    "webBytes": 488904,
+    "visualInspection": "All five generated images inspected; not webpage screenshots",
+    "initialAttempt": "Existing LLM group rejected 5 requests with HTTP 403; no images generated by that attempt",
+    "retry": "User-supplied image credential in process environment; all five requests succeeded"
+  },
+  "lint": {
+    "command": "npm run lint",
+    "exitCode": 0
+  },
+  "build": {
+    "command": "npm run build",
+    "cwd": "work/xeniso-redesign/build-app",
+    "exitCode": 0,
+    "staticPages": 14,
+    "warning": "Next.js multiple-lockfile workspace-root inference warning retained",
+    "finalStaticHtmlSynced": true,
+    "finalStaticHtmlSha256": "e06c3d5e2072db8d740f2be68b3349ca6d3d4c0a4fdbae40c5e4cf62053be17f"
+  },
+  "browser": {
+    "verified": false,
+    "reason": "Browser URL policy rejected file://; no workaround attempted"
+  },
+  "liveAvatarVerified": false,
+  "liveCommunityVerified": false
+}

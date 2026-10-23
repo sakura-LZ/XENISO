@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XENISO · 异域同构 · 显微视野定位</title>
+<style>
+:root {
+  --deep-black: #0A0C10;
+  --field-dark: #151820;
+  --stain-cyan: #22D3EE;
+  --stain-magenta: #EC4899;
+  --stain-yellow: #FBBF24;
+  --stain-green: #10B981;
+  --glass-glow: rgba(255,255,255,0.08);
+  --label-text: #94A3B8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--deep-black);
+  color: #E2E8F0;
+  overflow-x: hidden;
+}
+
+/* 显微镜圆形视野 */
+.microscope-viewport {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+}
+
+/* 暗场背景渐变 */
+.microscope-viewport::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(34, 211, 238, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(236, 72, 153, 0.02) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+/* 目镜圆形框架 */
+.eyepiece-frame {
+  position: relative;
+  width: clamp(600px, 80vw, 900px);
+  height: clamp(600px, 80vw, 900px);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, var(--field-dark) 0%, var(--deep-black) 100%);
+  border: 3px solid rgba(255,255,255,0.15);
+  box-shadow:
+    0 0 80px rgba(34, 211, 238, 0.15),
+    inset 0 0 100px rgba(0,0,0,0.5);
+  overflow: hidden;
+  animation: focus-pulse 4s ease-in-out infinite;
+}
+
+@keyframes focus-pulse {
+  0%, 100% { box-shadow: 0 0 80px rgba(34, 211, 238, 0.15), inset 0 0 100px rgba(0,0,0,0.5); }
+  50% { box-shadow: 0 0 120px rgba(34, 211, 238, 0.25), inset 0 0 100px rgba(0,0,0,0.5); }
+}
+
+/* 刻度圈 */
+.eyepiece-frame::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255,255,255,0.2);
+}
+
+/* 中央标本（用户画像） */
+.specimen-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 280px;
+  padding: 32px 28px;
+  background: rgba(255,255,255,0.03);
+  border: 2px solid var(--glass-glow);
+  border-radius: 16px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.specimen-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--label-text);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.specimen-label::before,
+.specimen-label::after {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: var(--label-text);
+}
+
+.specimen-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--stain-cyan);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.specimen-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #CBD5E1;
+  margin-bottom: 24px;
+}
+
+.specimen-input {
+  position: relative;
+}
+
+.specimen-input input {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #E2E8F0;
+  margin-bottom: 12px;
+  font-family: 'Inter', sans-serif;
+}
+
+.specimen-input input:focus {
+  outline: none;
+  border-color: var(--stain-cyan);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+.specimen-input button {
+  width: 100%;
+  background: linear-gradient(135deg, var(--stain-cyan), var(--stain-green));
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--deep-black);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.specimen-input button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(34, 211, 238, 0.4);
+}
+
+/* 周围的染色标记（职业方向） */
+.stain-marker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 标记点 */
+.marker-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 30px currentColor;
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* 标记文字 */
+.marker-label {
+  background: rgba(0,0,0,0.8);
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid currentColor;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: currentColor;
+  backdrop-filter: blur(4px);
+}
+
+.marker-sublabel {
+  font-size: 10px;
+  font-weight: 400;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+
+/* 各染色标记的位置 */
+.stain-marker:nth-child(2) { /* 个人画像 */
+  color: var(--stain-cyan);
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.stain-marker:nth-child(3) { /* 初步评价 */
+  color: var(--stain-magenta);
+  top: 30%;
+  right: 10%;
+}
+
+.stain-marker:nth-child(4) { /* 职业体验 */
+  color: var(--stain-yellow);
+  bottom: 30%;
+  right: 10%;
+}
+
+.stain-marker:nth-child(5) { /* 信息文库 */
+  color: var(--stain-green);
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.stain-marker:nth-child(6) { /* 行动规划 */
+  color: var(--stain-cyan);
+  bottom: 30%;
+  left: 10%;
+}
+
+.stain-marker:nth-child(7) { /* 进度追踪 */
+  color: var(--stain-magenta);
+  top: 30%;
+  left: 10%;
+}
+
+/* 连接线（像染色扩散） */
+.stain-marker::before {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(to right, currentColor, transparent);
+  opacity: 0.3;
+}
+
+.stain-marker:nth-child(2)::before { top: 8px; left: 100%; }
+.stain-marker:nth-child(3)::before { top: 8px; right: 100%; }
+.stain-marker:nth-child(4)::before { top: 8px; right: 100%; }
+.stain-marker:nth-child(5)::before { top: 8px; left: 100%; }
+.stain-marker:nth-child(6)::before { top: 8px; left: 100%; }
+.stain-marker:nth-child(7)::before { top: 8px; right: 100%; }
+
+/* 显微镜参数面板 */
+.microscope-controls {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  padding: 20px 32px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 999px;
+  backdrop-filter: blur(12px);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--label-text);
+}
+
+.control-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-value {
+  color: var(--stain-cyan);
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Logo 品牌 */
+.microscope-brand {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 48px;
+  height: 48px;
+  border: 3px solid var(--stain-cyan);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--stain-cyan);
+  font-family: 'Georgia', serif;
+  box-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
+}
+
+.brand-text {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #E2E8F0;
+}
+
+.brand-sub {
+  font-size: 12px;
+  color: var(--label-text);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .eyepiece-frame {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .specimen-center {
+    width: 240px;
+    padding: 24px 20px;
+  }
+
+  .stain-marker {
+    font-size: 10px;
+  }
+
+  .marker-label {
+    padding: 6px 10px;
+  }
+
+  .microscope-controls {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 24px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="microscope-brand">
+  <div class="brand-icon">X</div>
+  <div>
+    <div class="brand-text">XENISO</div>
+    <div class="brand-sub">异域同构</div>
+  </div>
+</div>
+
+<div class="microscope-viewport">
+  <div class="eyepiece-frame">
+    <!-- 中央标本 -->
+    <div class="specimen-center">
+      <div class="specimen-label">
+        Specimen
+      </div>
+      <div class="specimen-id">医学生个体</div>
+      <div class="specimen-desc">
+        医学背景 + 跨学科潜力<br>
+        职业方向定位与行动规划
+      </div>
+      <div class="specimen-input">
+        <input type="text" placeholder="输入邮箱或学籍信息">
+        <button>Begin Analysis</button>
+      </div>
+    </div>
+
+    <!-- 染色标记 -->
+    <div class="stain-marker">
+      <div class="marker-dot"></div>
+      <div class="marker-label">
+        个人画像
+        <div class="marker-sublabel">Profile</div>
+      </div>
+    </div>
+
+    <div class="stain-marker">
+      <div class="marker-dot"></div>
+      <div class="marker-label">
+        初步评价
+        <div class="marker-sublabel">O*NET IP</div>
+      </div>
+    </div>
+
+    <div class="stain-marker">
+      <div class="marker-dot"></div>
+      <div class="marker-label">
+        职业体验
+        <div class="marker-sublabel">9+1 Pathways</div>
+      </div>
+    </div>
+
+    <div class="stain-marker">
+      <div class="marker-dot"></div>
+      <div class="marker-label">
+        信息文库
+        <div class="marker-sublabel">127 Resources</div>
+      </div>
+    </div>
+
+    <div class="stain-marker">
+      <div class="marker-dot"></div>
+      <div class="marker-label">
+        行动规划
+        <div class="marker-sublabel">Action Plan</div>
+      </div>
+    </div>
+
+    <div class="stain-marker">
+      <div class="marker-dot"></div>
+      <div class="marker-label">
+        进度追踪
+        <div class="marker-sublabel">Progress</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="microscope-controls">
+  <div class="control-item">
+    <span>Magnification</span>
+    <span class="control-value">40X</span>
+  </div>
+  <div class="control-item">
+    <span>Field View</span>
+    <span class="control-value">Darkfield</span>
+  </div>
+  <div class="control-item">
+    <span>Stain</span>
+    <span class="control-value">Multi-Fluor</span>
+  </div>
+</div>
+
+</body>
+</html>

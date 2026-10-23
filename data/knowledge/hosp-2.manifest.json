@@ -1,0 +1,760 @@
+[
+  {
+    "source": {
+      "id": "ruijin-2026-shuju-zhili",
+      "url": "https://www.rjh.com.cn/2018RJPortal/doc/2026/07/10/74091.shtml",
+      "organization": "上海交通大学医学院附属瑞金医院（人力资源处）",
+      "title": "瑞金医院2026年招聘：医学基因组学国家重点实验室（白血病大数据组）设「数据治理工程师」岗",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-10",
+      "publication_date_note": "页面「发布时间：2026-07-10」「发布者：人力资源处」，依据《上海市事业单位公开招聘人员办法》【沪人社规（2019）15号】。"
+    },
+    "publication_pattern": "2026-07-10",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/ruijin-2026-zhaopin.raw",
+      "sha256": "da52ac5339c7649aa7d47b93eeadd834d423c47330c68e15b134dea146149dec",
+      "captured_at": "2026-10-23T07:27:12.131Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-ruijin-2026-shuju-zhili-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "瑞金医院设「数据治理工程师」岗：医学基因组学国家重点实验室（白血病大数据组），其他专技序列",
+      "summary": "瑞金医院2026年招聘岗位表中，「医学基因组学国家重点实验室（白血病大数据组）」在「其他专技」序列下设「数据治理工程师」，工作地点黄浦院区，与同组的「科研 PI」并列。（同一官方来源共 2 条原文事实，字段：job_title、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "**这是三甲医院把「数据治理」单列为正式岗位的直接证据**，且落在国家重点实验室而非信息科，说明医院数据岗有「临床科研数据」这条独立路径。仅适用瑞金医院2026年招聘；该岗要求硕士学位，本科不适用。",
+      "relation": "direct",
+      "tags": [
+        "数据治理工程师",
+        "瑞金医院",
+        "白血病大数据组",
+        "其他专技",
+        "2026年招聘",
+        "医院数据岗",
+        "医学信息学",
+        "数据科学",
+        "Python",
+        "SQL",
+        "ETL",
+        "Linux",
+        "硕士"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学医学院附属瑞金医院",
+        "medical_department": "医学基因组学国家重点实验室（白血病大数据组）",
+        "medical_topic": "医院数据岗技能要求",
+        "region": "上海市",
+        "evidence_locator": "招聘岗位表 数据治理工程师 行 · 任职要求 第1-3条"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "医学基因组学国家重点实验室 （白血病大数据组） 科研 PI 黄浦 院区 1\\.研究生学历，博士学位； 2\\.社会医学与卫生事业管理、流行病学与卫生统计学等公共卫生与预防医学相关专业； 3\\.具有副高及以上专业技术职务或海外人员达到相应水平； 4\\.具有肿瘤流行病学研究及人群健康疾病负担等研究经历，能够围绕白血病流行病学及临床诊疗结局，系统开展我国白血病流行病学、白血病卫生经济学研究； 5\\.具有多学科交叉研究背景，能够综合运用流行病学研究、卫生经济学研究、人群队列研究、多组学整合分析、系统生物学等方法开展科研工作； 6\\.具备大规模人群队列研究数据的设计、管理与统计分析能力，可以开展全国白血病大数据整合与长期疾病负担风险评估； 7\\.具有宏观卫生政策和生态学研究分析者优先； 8\\. 作为 第一作者 /通讯作者,在顶级期刊及其 子 刊上 有 发文记录 者优先； 在流行病学研究及卫生经济学等相关研究领域具有较扎实的学术积累和代表性成果，具有一定学术影响力。 医学基因组学国家重点实验室 （白血病大数据组） 其他专技 数据治理工程师 黄浦 院区 1\\.研究生学历，硕士及以上学位； 2\\.数据科学与大数据技术、计算机、信息管理、医学信息学或相关专业； 3\\.熟练使用R、Python软件，掌握常用数据分析软件包，熟悉Jupyter-lab和R-studio开发环境；熟悉Linux操作系统及常用命令行工具，了解Shell编程；掌握SQL，能在指导下完成数据对接与ETL开发"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "2\\.数据科学与大数据技术、计算机、信息管理、医学信息学或相关专业； 3\\.熟练使用R、Python软件，掌握常用数据分析软件包，熟悉Jupyter-lab和R-studio开发环境；熟悉Linux操作系统及常用命令行工具，了解Shell编程；掌握SQL，能在指导下完成数据对接与ETL开发"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary（本公告未列薪资）",
+      "education",
+      "technical_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "ruijin-2026-shuju-zhili",
+      "url": "https://www.rjh.com.cn/2018RJPortal/doc/2026/07/10/74091.shtml",
+      "organization": "上海交通大学医学院附属瑞金医院（人力资源处）",
+      "title": "瑞金医院2026年招聘：医学基因组学国家重点实验室（白血病大数据组）设「数据治理工程师」岗",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-10",
+      "publication_date_note": "页面「发布时间：2026-07-10」「发布者：人力资源处」，依据《上海市事业单位公开招聘人员办法》【沪人社规（2019）15号】。"
+    },
+    "publication_pattern": "2026-07-10",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/ruijin-2026-zhaopin.raw",
+      "sha256": "da52ac5339c7649aa7d47b93eeadd834d423c47330c68e15b134dea146149dec",
+      "captured_at": "2026-10-23T07:27:12.131Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-ruijin-2026-shuju-zhili-guide-devices",
+      "role_id": "guide_devices",
+      "category": "recruitment",
+      "title": "瑞金伽玛刀技术员：本科及以上，医学影像技术、生物医学工程、医学物理等专业",
+      "summary": "神经外科「医技—伽玛刀技术员」岗（跨院区统筹）：1.本科及以上学历，医学影像技术、生物医学工程、医学物理等相关专业；2.具有相关工作经验者优先。",
+      "applicability": "**「生物医学工程」与「医学物理」被列为医技岗认可专业**，是本轮最直接的「医工交叉本科可投」证据之一：本科即可，不必博士。注意要求相关工作经验优先，应届生需留意。",
+      "relation": "direct",
+      "tags": [
+        "伽玛刀技术员",
+        "生物医学工程",
+        "医学物理",
+        "本科及以上",
+        "医技岗",
+        "瑞金医院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学医学院附属瑞金医院",
+        "medical_department": "神经外科",
+        "medical_topic": "医技岗位学历与专业要求",
+        "region": "上海市",
+        "evidence_locator": "招聘岗位表「神经外科 · 医技 · 伽玛刀技术员」行 · 任职要求 第1-2条"
+      }
+    },
+    "extracts": [
+      {
+        "field": "education",
+        "pattern": "神经外科 医技 伽玛刀 技术员 跨院区统筹 1\\.本科及以上学历，医学影像技术、生物医学工程、医学物理等相关专业。 2\\.具有相关工作经验者优先。"
+      }
+    ],
+    "expected_fields": [
+      "education",
+      "major_restrictions",
+      "salary（未列薪资）"
+    ]
+  },
+  {
+    "source": {
+      "id": "ruijin-2026-shuju-zhili",
+      "url": "https://www.rjh.com.cn/2018RJPortal/doc/2026/07/10/74091.shtml",
+      "organization": "上海交通大学医学院附属瑞金医院（人力资源处）",
+      "title": "瑞金医院2026年招聘：医学基因组学国家重点实验室（白血病大数据组）设「数据治理工程师」岗",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-10",
+      "publication_date_note": "页面「发布时间：2026-07-10」「发布者：人力资源处」，依据《上海市事业单位公开招聘人员办法》【沪人社规（2019）15号】。"
+    },
+    "publication_pattern": "2026-07-10",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/ruijin-2026-zhaopin.raw",
+      "sha256": "da52ac5339c7649aa7d47b93eeadd834d423c47330c68e15b134dea146149dec",
+      "captured_at": "2026-10-23T07:27:12.131Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-ruijin-2026-shuju-zhili-guide-imaging-eng",
+      "role_id": "guide_imaging_eng",
+      "category": "recruitment",
+      "title": "瑞金核医学科技师：本科及以上，医学影像技术或核医学、临床医学专业，限应届毕业生",
+      "summary": "核医学科「医技—技术员」岗（金山院区）：1.本科及以上学历，医学影像技术或核医学、临床医学相关专业；2.应届毕业生。",
+      "applicability": "明确**限应届毕业生**的本科可投医技岗，是医学生本科毕业当年可直接对口的入口之一。仅瑞金医院2026年该岗；核医学岗位通常另有放射防护相关要求，本公告未展开。",
+      "relation": "direct",
+      "tags": [
+        "核医学技术员",
+        "应届毕业生",
+        "医学影像技术",
+        "本科及以上",
+        "瑞金医院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学医学院附属瑞金医院",
+        "medical_department": "核医学科",
+        "medical_topic": "医技岗位学历与专业要求",
+        "region": "上海市",
+        "evidence_locator": "招聘岗位表「核医学科 · 医技 · 技术员」行 · 任职要求 第1-2条"
+      }
+    },
+    "extracts": [
+      {
+        "field": "education",
+        "pattern": "核医学科 医技 技术员 金山院区 1\\. 本科及以上学历，医学影像技术或核医学、临床医学相关专业。 2\\. 应届毕业生。"
+      }
+    ],
+    "expected_fields": [
+      "education",
+      "experience",
+      "salary（未列薪资）"
+    ]
+  },
+  {
+    "source": {
+      "id": "ruijin-2026-shuju-zhili",
+      "url": "https://www.rjh.com.cn/2018RJPortal/doc/2026/07/10/74091.shtml",
+      "organization": "上海交通大学医学院附属瑞金医院（人力资源处）",
+      "title": "瑞金医院2026年招聘：医学基因组学国家重点实验室（白血病大数据组）设「数据治理工程师」岗",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-10",
+      "publication_date_note": "页面「发布时间：2026-07-10」「发布者：人力资源处」，依据《上海市事业单位公开招聘人员办法》【沪人社规（2019）15号】。"
+    },
+    "publication_pattern": "2026-07-10",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/ruijin-2026-zhaopin.raw",
+      "sha256": "da52ac5339c7649aa7d47b93eeadd834d423c47330c68e15b134dea146149dec",
+      "captured_at": "2026-10-23T07:27:12.131Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-ruijin-2026-shuju-zhili-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "瑞金医师岗门槛：研究生学历、博士学位，并通过住院医师规范化培训（重症/急诊/麻醉/内科/外科基地）",
+      "summary": "重症医学科「医疗—医师」岗（嘉定院区）：1.研究生学历、博士学位；2.通过住院医师规范化培训（重症、急诊、麻醉、内科、外科基地）或具有中级职称资格；3.具有与危重病相关专业学习或工作背景，熟悉危重病常见诊治、操作和生命支持技术；4.主持国家自然科学基金项目或发表JCR一区文章优先。",
+      "applicability": "**三甲医院临床医师岗的典型硬门槛：博士学位 + 住培合格**。这说明「本科临床医学 → 直接进瑞金当医师」不可行，须先完成硕博与规培。仅瑞金医院2026年该岗，不代表所有医院所有专科。",
+      "relation": "direct",
+      "tags": [
+        "临床医师",
+        "博士学位",
+        "住院医师规范化培训",
+        "三甲门槛",
+        "瑞金医院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "上海交通大学医学院附属瑞金医院",
+        "medical_department": "重症医学科",
+        "medical_topic": "临床医师岗学历与规培要求",
+        "region": "上海市",
+        "evidence_locator": "招聘岗位表「重症医学科 · 医疗 · 医师」行 · 任职要求 第1-2条"
+      }
+    },
+    "extracts": [
+      {
+        "field": "education",
+        "pattern": "重症医学科 医疗 医师 嘉定 院区 1\\.研究生学历、博士学位； 2\\.通过住院医师规范化培训"
+      }
+    ],
+    "expected_fields": [
+      "education",
+      "technical_requirements",
+      "salary（未列薪资）"
+    ]
+  },
+  {
+    "source": {
+      "id": "xiangya-2026-xuqiu-biao",
+      "url": "https://www.xiangya.com.cn/upload/files/2026/2/c8d9d6c89f7263e7.pdf",
+      "organization": "中南大学湘雅医院",
+      "title": "中南大学湘雅医院2026年度人员招聘需求：58个专科/亚专科及需求专业",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 为《中南大学湘雅医院2026年度人员招聘需求》需求表，文件路径含 upload/files/2026/2，但 PDF 内文未印发布日期，故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/xiangya-2026-xuqiu.pdf",
+      "sha256": "320de71c71d6a62032132ff4d168e220c929358c24660fa73df743d41184bab9",
+      "captured_at": "2026-10-23T07:27:27.473Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-hosp-2/xiangya-2026-xuqiu.txt",
+      "extracted_sha256": "b3a61959dbf3e94a3c4dd9bec5e2c0ec1b8d02ec41f0f0ad1684f3c5cfd38e9e"
+    },
+    "record": {
+      "id": "recruitment-xiangya-2026-xuqiu-biao-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "湘雅医院2026年招聘需求表：风湿免疫、呼吸、消化、心血管、血液、肾内等专科按亚专科细分需求专业",
+      "summary": "《中南大学湘雅医院2026年度人员招聘需求》按「专科/二级科室—亚专科/三级科室—需求专业」三列列出。前段示例：风湿免疫科→风湿免疫相关专业；呼吸与危重症医学科下设呼吸内科（呼吸病学）、呼吸内镜中心（呼吸病学）、呼吸重症监护专科（呼吸病学、重症医学）；消化内科、心血管内科、心血管重症监护专科、血液内科、肾病内科、内分泌科依次列出；胸外科、心脏大血管外科、烧伤与创面修复科、整形美容科、妇科、儿童医学中心、口腔医学中心等。",
+      "applicability": "湘雅医院按**亚专科**细化到「需求专业」的招聘需求表，是理解三甲医院临床岗专业匹配口径的实测样本（专业名称即岗位筛选条件）。该表为需求汇总，不含学历/薪资；全表约 58 个专科，本条仅覆盖前 22 项。",
+      "relation": "direct",
+      "tags": [
+        "湘雅医院",
+        "2026年招聘",
+        "专科需求",
+        "亚专科",
+        "需求专业"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中南大学湘雅医院",
+        "medical_topic": "医院招聘专科需求",
+        "region": "湖南省长沙市",
+        "evidence_locator": "需求表 序号1-22 行（专科/亚专科/需求专业三列）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "中南大学湘雅医院2026年度人员招聘需求 序号 专科/二级科室 亚专科/三级科室 需求专业 1 风湿免疫科 风湿免疫科 风湿免疫相关专业 2 呼吸与危重症医学科 呼吸内科 呼吸病学 3 呼吸内镜中心 呼吸病学 4 呼吸重症监护专科 呼吸病学、重症医学 5 消化内科 消化内科 消化内科学 6 心血管内科 心血管内科（综合组） 心血管内科学 7 心血管重症监护专科 心血管内科学、重症医学 8 血液内科 血液内科 血液病学 9 肾病内科 肾病内科 临床医学 10 内分泌科 内分泌科 内分泌学 序号 专科/二级科室 亚专科/三级科室 需求专业 11 胸外科 胸外科 外科学（胸外科方向） 12 心脏大血管外科 心脏大血管外科（综合） 外科学（心外科方向） 13 烧伤与创面修复科 烧伤与创面修复科 烧伤外科学、整形外科学、重症医 学 14 整形美容科 整形美容科 整形外科学 15 妇科 妇科 妇科学 16 儿童医学中心 新生儿科 儿科学、呼吸病学、神经内科学 17 口腔医学中心 口腔内科 口腔医学 18 口腔颌面外科 口腔医学 19 口腔修复与正畸科 口腔医学 20 口腔全科 口腔医学 21 皮肤病医院（皮肤科） 皮肤科 皮肤病与性病学 序号 专科/二级科室 亚专科/三级科室 需求专业 22 临床心理中心 临床心理中心 精神病与精神卫生学"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "education（需求表未列学历）",
+      "salary（未列薪资）"
+    ]
+  },
+  {
+    "source": {
+      "id": "xiangya-2026-xuqiu-biao",
+      "url": "https://www.xiangya.com.cn/upload/files/2026/2/c8d9d6c89f7263e7.pdf",
+      "organization": "中南大学湘雅医院",
+      "title": "中南大学湘雅医院2026年度人员招聘需求：58个专科/亚专科及需求专业",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 为《中南大学湘雅医院2026年度人员招聘需求》需求表，文件路径含 upload/files/2026/2，但 PDF 内文未印发布日期，故 published_at 为 null。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/xiangya-2026-xuqiu.pdf",
+      "sha256": "320de71c71d6a62032132ff4d168e220c929358c24660fa73df743d41184bab9",
+      "captured_at": "2026-10-23T07:27:27.473Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-hosp-2/xiangya-2026-xuqiu.txt",
+      "extracted_sha256": "b3a61959dbf3e94a3c4dd9bec5e2c0ec1b8d02ec41f0f0ad1684f3c5cfd38e9e"
+    },
+    "record": {
+      "id": "recruitment-xiangya-2026-xuqiu-biao-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "湘雅医院2026招聘需求：病理科要临床病理学（优先）/临床医学，药学部要临床药学/临床医学，放射科要医学影像学",
+      "summary": "需求表后段：病理科→临床病理学（优先）、临床医学；营养科→临床医学；重症医学科→重症医学；健康管理中心→临床医学；麻醉手术部→麻醉学；放射科→医学影像学；核医学科（PET中心）→核医学；药学部→临床药学、临床医学。",
+      "applicability": "可用于核对「想进某科室要什么专业」的实际口径：如放射科只收医学影像学、药学部收临床药学或临床医学。**注意病理科「临床病理学优先、临床医学亦可」**——这是临床医学背景可转入病理方向的原文证据。仅湘雅医院2026年。",
+      "relation": "direct",
+      "tags": [
+        "病理科",
+        "临床病理学",
+        "放射科",
+        "医学影像学",
+        "药学部",
+        "临床药学",
+        "湘雅医院"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "中南大学湘雅医院",
+        "medical_department": "病理科/放射科/药学部",
+        "medical_topic": "医院招聘专业要求",
+        "region": "湖南省长沙市",
+        "evidence_locator": "需求表 序号51-58 行（病理科至药学部）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "major_restrictions",
+        "pattern": "51 病理科 病理科 临床病理学（优先）、临床医学 52 营养科 营养科 临床医学 53 重症医学科 重症医学科 重症医学 54 健康管理中心 健康管理中心 临床医学 55 麻醉手术部 麻醉科 麻醉学 序号 专科/二级科室 亚专科/三级科室 需求专业 56 放射科 放射科 医学影像学 57 核医学科（PET中心） 核医学科 核医学 58 药学部 药学部 临床药学、临床医学"
+      }
+    ],
+    "expected_fields": [
+      "major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-bigdata-90898-fangxiang",
+      "url": "https://www.cd120.com/public/notice/recruit/90898.html",
+      "organization": "四川大学华西医院（生物医学大数据研究院 郭安源教授课题组）",
+      "title": "华西生物医学大数据研究院博士后招聘：方向一为生物信息学、医学人工智能学",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-03-13",
+      "publication_date_note": "页面标题下方标注「2026.03.13」，来源「人力资源部」，位于华西医院官网「通知公告 > 招聘」。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?3\\D{0,6}0?13",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/huaxi-bigdata-90898.raw",
+      "sha256": "f98e2b3dc204348d83d905d59f7f65fea58100b78ff1f0c9ca7a7c40edce3d73",
+      "captured_at": "2026-10-23T07:30:14.896Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-bigdata-90898-fangxiang-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "华西医学大数据研究院博士后方向一：生物信息学/深度学习/单细胞/多组学，须熟练Python、R、Linux",
+      "summary": "「（二）课题组招收方向」方向一：生物信息学、医学人工智能学。要求：热衷科学研究，善于交流合作；具有生物信息学、深度学习、单细胞数据分析、多组学数据整合分析、统计学、医学、遗传学、人工智能大数据挖掘等相关领域研究背景；熟练使用linux系统，具有较强的编程能力，熟练使用Python、R等编程语言。（同一官方来源共 2 条原文事实，字段：technical_requirements、experience；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "**「医学人工智能」「单细胞数据分析」「多组学」被写成正式招收方向**，是三甲医院科研岗面向数据/算法方向的直接证据。门槛为博士后（需博士学位）；本科/硕士无法直接投该岗。",
+      "relation": "direct",
+      "tags": [
+        "生物信息学",
+        "医学人工智能",
+        "单细胞",
+        "多组学",
+        "Python",
+        "R",
+        "华西",
+        "大数据研究院",
+        "福利待遇",
+        "博士后",
+        "报名通知",
+        "长期有效"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "medical_department": "生物医学大数据研究院（郭安源教授课题组）",
+        "medical_topic": "医院博士后待遇口径",
+        "region": "四川省成都市",
+        "evidence_locator": "四、福利待遇 至 五、材料递交 第3条"
+      }
+    },
+    "extracts": [
+      {
+        "field": "technical_requirements",
+        "pattern": "方向一： 生物信息学、医学人工智能学 1．热衷科学研究，善于交流与合作，工作细心，有责任心； 2．具有生物信息学、深度学习、单细胞数据分析、多组学数据整合分析、统计学、医学、遗传学、人工智能大数据挖掘等相关领域的研究背景； 3\\. 熟练使用linux系统，具有较强的编程能力，熟练使用Python，R等编程语言"
+      },
+      {
+        "field": "experience",
+        "pattern": "四、福利待遇 详见华西临床医学院 /华西医院博士后报名通知 https://www\\.cd120\\.com/public/notice/recruit/90405\\.html 五、材料递交 1、请 有意向者请将个人简历、研究工作经历、未来研究计划及研究兴趣及其它能证明本人能力的有关材料发送至邮箱 ∶guolab2023@163\\.com，邮件主题命名为“博后应聘\\+姓名”； 2、将对应聘者提交的所有材料严格保密，一经受理概不退回，请自行备份； 3、招聘有效期：长期。"
+      }
+    ],
+    "expected_fields": [
+      "education",
+      "technical_requirements",
+      "salary（待遇指向另一通知，本页无数字）",
+      "experience",
+      "salary（本页只给链接，未给金额）"
+    ]
+  },
+  {
+    "source": {
+      "id": "sd-wage-2025-weisheng",
+      "url": "https://hrss.shandong.gov.cn/resource/srst/att/202510/5343711d-d39e-4478-a909-35f4c4b37348.pdf",
+      "organization": "山东省人力资源和社会保障厅",
+      "title": "山东省2024年人力资源市场工资价位：卫生专业技术人员中位6.78万元/年",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 为《鲁人社字〔2025〕99号》，落款「山东省人力资源和社会保障厅 2025年10月15日」，正文可逐字确认该日期。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/sd-wage-2025.pdf",
+      "sha256": "76b6fa39936b153e59b080b1ab06f4ee57a8353b74a60ab78edd9ca4cc3b651d",
+      "captured_at": "2026-10-23T07:23:18.686Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-hosp-2/sd-wage-2025.txt",
+      "extracted_sha256": "7e9d832b2e0da63eb05d23d7fe8d3e694a4e386a4117af8fe6e4a2b71296a082"
+    },
+    "record": {
+      "id": "industry-sd-wage-2025-weisheng-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "山东2024工资价位：卫生专业技术人员 3.79/4.93/6.78/10.71/16.71 万元/年（中位6.78）",
+      "summary": "附件1「分职业中类企业从业人员工资价位（2024年）」，单位万元/年，五分位（10%/25%/50%/75%/90%）：卫生专业技术人员 3.79/4.93/**6.78**/10.71/16.71。相邻对照：工程技术人员 4.98/6.55/9.78/15.85/22.32；教学人员 3.10/3.96/5.50/8.84/13.83。",
+      "applicability": "**省级第二份独立样本**（与广东互为交叉验证）：山东卫生专业技术人员中位 6.78 万/年，明显低于广东 9.14 万，说明省际差异大，不能用单省数字代表全国。同样是**企业口径**（1.2 万户企业、175 万职工），不含公立医院事业单位。",
+      "relation": "direct",
+      "tags": [
+        "山东省",
+        "卫生专业技术人员",
+        "6.78万元",
+        "工资价位",
+        "2024年",
+        "省际差异"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "山东省人力资源和社会保障厅",
+        "medical_topic": "卫生职业工资价位",
+        "region": "山东省",
+        "statistic_scope": "2024年山东省企业分职业中类工资价位（万元/年，五分位）",
+        "evidence_locator": "附件1 分职业中类企业从业人员工资价位（2024年）序号5 卫生专业技术人员行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "5 卫生专业技术人员 3\\.79 4\\.93 6\\.78 10\\.71 16\\.71 6 经济和金融专业人员 4\\.32 5\\.70 9\\.20 14\\.66 21\\.11"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "salary_statistics（企业口径，不含公立医院；仅职业中类，无病案/影像技师细类）"
+    ]
+  },
+  {
+    "source": {
+      "id": "sd-wage-2025-weisheng",
+      "url": "https://hrss.shandong.gov.cn/resource/srst/att/202510/5343711d-d39e-4478-a909-35f4c4b37348.pdf",
+      "organization": "山东省人力资源和社会保障厅",
+      "title": "山东省2024年人力资源市场工资价位：卫生专业技术人员中位6.78万元/年",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 为《鲁人社字〔2025〕99号》，落款「山东省人力资源和社会保障厅 2025年10月15日」，正文可逐字确认该日期。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/sd-wage-2025.pdf",
+      "sha256": "76b6fa39936b153e59b080b1ab06f4ee57a8353b74a60ab78edd9ca4cc3b651d",
+      "captured_at": "2026-10-23T07:23:18.686Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-hosp-2/sd-wage-2025.txt",
+      "extracted_sha256": "7e9d832b2e0da63eb05d23d7fe8d3e694a4e386a4117af8fe6e4a2b71296a082"
+    },
+    "record": {
+      "id": "industry-sd-wage-2025-weisheng-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "industry",
+      "title": "山东2024分岗位等级工资价位：技术类初级职称中位7.92万、中级11.61万、副高17.46万、正高18.84万（万元/年）",
+      "summary": "附件3「分岗位等级企业从业人员工资价位（2024年）」，技术类按职称等级（万元/年，五分位）：正高级职称 10.56/14.24/**18.84**/26.03/38.28；副高级职称 8.05/11.58/**17.46**/24.80/32.86；中级职称 5.44/7.60/**11.61**/17.49/24.20；初级职称 4.30/5.58/**7.92**/12.77/18.26；没有取得专业技术职称 4.20/5.48/**7.94**/12.53/18.35。",
+      "applicability": "**这份「职称等级—工资」阶梯是本轮最可操作的薪资口径**：医学生入职后走初级→中级→副高→正高，可直接对照每个职称层级的中位值（7.92→11.61→17.46→18.84 万元/年）。限定：企业口径（非事业单位）、税前应发、全省中位数；且「没有取得职称」中位（7.94）与初级职称（7.92）几乎持平，说明该阶梯的溢价主要发生在中级以上。",
+      "relation": "direct",
+      "tags": [
+        "职称等级",
+        "初级职称",
+        "中级职称",
+        "副高级职称",
+        "正高级职称",
+        "薪资阶梯",
+        "山东省"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "山东省人力资源和社会保障厅",
+        "medical_topic": "职称等级与工资价位",
+        "region": "山东省",
+        "statistic_scope": "2024年山东省企业分岗位等级工资价位·技术类职称（万元/年，五分位）",
+        "evidence_locator": "附件3 分岗位等级企业从业人员工资价位（2024年）技术类 正高级至无职称 共5行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "技术类 正高级职称 10\\.56 14\\.24 18\\.84 26\\.03 38\\.28 副高级职称 8\\.05 11\\.58 17\\.46 24\\.80 32\\.86 中级职称 5\\.44 7\\.60 11\\.61 17\\.49 24\\.20 初级职称 4\\.30 5\\.58 7\\.92 12\\.77 18\\.26 没有取得专业技术职称 4\\.20 5\\.48 7\\.94 12\\.53 18\\.35"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "salary_statistics（企业口径，非事业单位职称工资）"
+    ]
+  },
+  {
+    "source": {
+      "id": "sd-wage-2025-weisheng",
+      "url": "https://hrss.shandong.gov.cn/resource/srst/att/202510/5343711d-d39e-4478-a909-35f4c4b37348.pdf",
+      "organization": "山东省人力资源和社会保障厅",
+      "title": "山东省2024年人力资源市场工资价位：卫生专业技术人员中位6.78万元/年",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 为《鲁人社字〔2025〕99号》，落款「山东省人力资源和社会保障厅 2025年10月15日」，正文可逐字确认该日期。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/sd-wage-2025.pdf",
+      "sha256": "76b6fa39936b153e59b080b1ab06f4ee57a8353b74a60ab78edd9ca4cc3b651d",
+      "captured_at": "2026-10-23T07:23:18.686Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-hosp-2/sd-wage-2025.txt",
+      "extracted_sha256": "7e9d832b2e0da63eb05d23d7fe8d3e694a4e386a4117af8fe6e4a2b71296a082"
+    },
+    "record": {
+      "id": "industry-sd-wage-2025-weisheng-guide-software",
+      "role_id": "guide_software",
+      "category": "industry",
+      "title": "山东2024数字职业工资价位：商务数据分析师中位6.19万、计算机程序设计员13.00万、网络与信息安全管理员7.75万",
+      "summary": "附件2「数字职业企业从业人员工资价位（2024年）」（万元/年，五分位）：商务数据分析师S 3.57/4.98/**6.19**/7.74/10.89；计算机程序设计员S 6.60/9.33/**13.00**/17.03/21.60；网络与信息安全管理员S 3.74/5.02/**7.75**/11.89/14.74；云计算工程技术人员S 12.62/16.64/20.71/26.28/32.61；数字化管理师S 7.51/9.24/12.00/14.62/18.77。",
+      "applicability": "医学生若转向医院数据岗/医疗 IT，这是对应的**数字职业薪资参照**：商务数据分析师中位 6.19 万，明显低于计算机程序设计员 13.00 万——说明「数据分析」与「软件开发」在市场上是两档收入。企业口径、税前、全省中位数。",
+      "relation": "related",
+      "tags": [
+        "数字职业",
+        "商务数据分析师",
+        "计算机程序设计员",
+        "网络安全",
+        "山东省",
+        "转行参照"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "山东省人力资源和社会保障厅",
+        "medical_topic": "数字职业工资价位",
+        "region": "山东省",
+        "statistic_scope": "2024年山东省企业数字职业（标识S）工资价位（万元/年，五分位）",
+        "evidence_locator": "附件2 数字职业企业从业人员工资价位（2024年）序号33 商务数据分析师至34 工程测量员"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "33 商务数据分析师S 3\\.57 4\\.98 6\\.19 7\\.74 10\\.89 34 工程测量员S 4\\.90 5\\.70 7\\.07 11\\.51 17\\.01"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics"
+    ]
+  },
+  {
+    "source": {
+      "id": "sd-wage-2025-weisheng",
+      "url": "https://hrss.shandong.gov.cn/resource/srst/att/202510/5343711d-d39e-4478-a909-35f4c4b37348.pdf",
+      "organization": "山东省人力资源和社会保障厅",
+      "title": "山东省2024年人力资源市场工资价位：卫生专业技术人员中位6.78万元/年",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "PDF 为《鲁人社字〔2025〕99号》，落款「山东省人力资源和社会保障厅 2025年10月15日」，正文可逐字确认该日期。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/sd-wage-2025.pdf",
+      "sha256": "76b6fa39936b153e59b080b1ab06f4ee57a8353b74a60ab78edd9ca4cc3b651d",
+      "captured_at": "2026-10-23T07:23:18.686Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-hosp-2/sd-wage-2025.txt",
+      "extracted_sha256": "7e9d832b2e0da63eb05d23d7fe8d3e694a4e386a4117af8fe6e4a2b71296a082"
+    },
+    "record": {
+      "id": "industry-sd-wage-2025-weisheng-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "统计口径：山东工资价位基于 11958 户企业、175 万名职工调查，发布 5 个分位值",
+      "summary": "通知正文：经过对2024年全省18个行业门类11958户企业、175万名职工的薪酬情况调查，并对调查数据进行分类整理，形成了2024年人力资源市场工资价位。工资价位包括57个职业中类、36个数字职业以及管理类、技术类、技能类岗位等级企业从业人员工资价位数据。分位值指将同类别所有数据按由低到高顺序排列、处于相应百分比位置的数据，每个单项同时发布10%、25%、50%、75%、90%等5个分位值。",
+      "applicability": "**解读山东全部薪资数字的前提**：调查对象是「企业」与「职工」，样本 11958 户企业、175 万职工，公立医院（事业单位）不在其中。与广东人社厅口径一致，可共同支撑「省级工资价位=企业口径」这一判断。",
+      "relation": "direct",
+      "tags": [
+        "统计口径",
+        "调查范围",
+        "企业薪酬调查",
+        "分位值",
+        "不含事业单位",
+        "山东省"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "山东省人力资源和社会保障厅",
+        "medical_topic": "工资价位统计口径",
+        "region": "山东省",
+        "statistic_scope": "2024年山东省人力资源市场工资价位调查范围与分位值定义",
+        "evidence_locator": "通知正文 第一段（11958户企业/175万名职工）及 第二条（分位值定义）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "statistical_definition",
+        "pattern": "经过对 2024 年全省18 个行业门类11958 户企业、175 万名 职工的薪酬情况调查，并对调查数据进行分类整理，形成了 2024 年人力资源市场工资价位，现予发布并就有关事项通知如 下： 一、2024 年人力资源市场工资价位包括57 个职业中类、36 个数字职业以及管理类、技术类、技能类岗位等级企业从业人员 工资价位数据。 二、分位值是指将同类别所有数据按由低到高顺序排列， 在数列中处于相应百分比位置的数据，它表示有相应比例的数据 低于或等于该数值。"
+      }
+    ],
+    "expected_fields": [
+      "statistical_definition"
+    ]
+  },
+  {
+    "source": {
+      "id": "js-wage-2025-koujing",
+      "url": "https://jshrss.jiangsu.gov.cn/art/2025/12/23/art_78504_11697821.html",
+      "organization": "江苏省人力资源和社会保障厅（劳动关系处）",
+      "title": "江苏2025年人力资源市场工资价位：企业口径、2024年度数据、5个分位值、按职业分类大典2022年版划分",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-12-23",
+      "publication_date_note": "页面「发布日期：2025-12-23」「来源：劳动关系处」，位于「资讯中心 > 服务公告」。"
+    },
+    "publication_pattern": "2025-12-23",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/js-wage-2025.raw",
+      "sha256": "318fb3dfd726d21c9aec1b0e6b43c67556cd2156641f226dc46c17845eb3507e",
+      "captured_at": "2026-10-23T07:23:40.139Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-js-wage-2025-koujing-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "江苏口径：工资价位基于2024年度企业职工数据，按10/25/50/75/90五个分位值发布，职业按大典2022年版划分",
+      "summary": "江苏人社厅说明：企业薪酬调查是以企业中不同职业从业人员工资报酬水平和不同行业企业人工成本状况为调查内容的抽样调查；本次发布的企业从业人员工资价位主要包括不同职业从业人员工资价位、不同行业技能人才工资价位、部分数字职业从业人员工资价位，数据基于2024年度企业职工工资数据，采用加权方法处理；工资价位按10%、25%、50%、75%、90%等五个分位值发布。调查以全省为总体，采用分层PPS抽样；本年度调查职业按《中华人民共和国职业分类大典（2022年版）》的职业划分和调整。",
+      "applicability": "第三份省级口径，与广东、山东互相印证：**均为企业抽样调查、均为 2024 年度数据、均为五分位值发布、均按职业分类大典 2022 年版划分**。含义：三省数字可横向比较，但都不能直接代表公立医院事业单位工资。本条只记口径，不含数字（该省附件 PDF 文本层数字错位，未引用）。",
+      "relation": "direct",
+      "tags": [
+        "江苏省",
+        "统计口径",
+        "分位值",
+        "PPS抽样",
+        "职业分类大典2022",
+        "企业口径"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "江苏省人力资源和社会保障厅",
+        "medical_topic": "工资价位统计口径",
+        "region": "江苏省",
+        "statistic_scope": "2025年江苏省人力资源市场工资价位调查方法与发布口径",
+        "evidence_locator": "正文 说明段（企业薪酬调查定义、2024年度数据、五档分位值）及 附注3 职业划分标准"
+      }
+    },
+    "extracts": [
+      {
+        "field": "statistical_definition",
+        "pattern": "企业薪酬调查是以企业中不同职业从业人员工资报酬水平和不同行业企业人工成本状况为调查内容的抽样调查，以期反映本地区劳动力市场价格状况。本次发布的企业从业人员工资价位主要包括不同职业从业人员工资价位、不同行业技能人才工资价位、部分数字职业从业人员工资价位，数据基于2024年度企业职工工资数据，采用加权方法处理。工资价位按10%、25%、50%、75%、90%等五个分位值发布。 附注： 1\\.主要统计指标解释 分位值 指将数据由低到高排序，在数列中处于相应百分比位置的数据。它表示有相应比例的数据低于或等于该数值。 企业从业人员 指在本企业工作并取得劳动报酬的人员。 工资价位 指企业从业人员在报告期内的工资水平，包括基本工资、奖金、津贴和补贴、加班加点工资和特殊情况下支付的工资等。它在一定程度上体现了劳动力市场价格水平。 职业 指从业人员为获取主要生活来源所从事的社会工作类别。 行业 指根据企业从事的社会经济活动性质对各类单位进行的分类。 技能类岗位等级 指按国家职业技能标准或行业企业评价规范设置的职业技能等级，包括高级技能及以上、中级技能、初级技能。 2\\.调查方法 调查以全省为总体，采用分层PPS抽样方法，以地区和行业门类为层，层内样本按照与企业从业人员人数成比例的概率抽取。 3\\.职业划分标准 本年度调查职业按《中华人民共和国职业分类大典（2022年版）》的职业划分和调整。"
+      }
+    ],
+    "expected_fields": [
+      "statistical_definition",
+      "salary_statistics（该省附件PDF文本层数字错位，未引用具体数值）"
+    ]
+  },
+  {
+    "source": {
+      "id": "sc-wage-2025-koujing",
+      "url": "https://rst.sc.gov.cn/rst/gsgg/2026/7/8/3da0a2df7be6488a83623cd392614c70.shtml?version=zzzq",
+      "organization": "四川省人力资源和社会保障厅（厅劳动关系处）",
+      "title": "四川省2025年人力资源市场工资价位：根据全省企业薪酬调查数据分析结果发布",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-08",
+      "publication_date_note": "页面「发布时间：2026-07-08」「来源：厅劳动关系处」，落款「四川省人力资源和社会保障厅 2026年7月8日」，位于「政府信息公开 > 公示公告」。"
+    },
+    "publication_pattern": "2026-07-08",
+    "artifact_capture": {
+      "path": "work/knowledge-hosp-2/sc-wage-2025.raw",
+      "sha256": "a445d6772ed1f20b3153eb7a04629939f857e5b9d8683065bdbdaaf0ab545e4b",
+      "captured_at": "2026-10-23T07:40:16.063Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-sc-wage-2025-koujing-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "四川口径：2025年人力资源市场工资价位依据「全省企业薪酬调查」数据分析结果发布",
+      "summary": "四川省人社厅通知：根据全省企业薪酬调查数据分析结果，现发布《四川省2025年人力资源市场工资价位和行业人工成本信息》，发文日期2026年7月8日，来源厅劳动关系处。",
+      "applicability": "**第四份省级独立口径**，与广东、山东、江苏一致地指向同一事实：省级「人力资源市场工资价位」均源自**企业薪酬调查**，因此都不覆盖公立医院等事业单位。四省口径一致，可作为「不能用省级工资价位代表公立医院医师收入」的交叉证据。本页正文不含具体数字（数值在未随文链接的附件内），故本条只记口径。",
+      "relation": "direct",
+      "tags": [
+        "四川省",
+        "统计口径",
+        "企业薪酬调查",
+        "不含事业单位",
+        "2025年工资价位"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川省人力资源和社会保障厅",
+        "medical_topic": "工资价位统计口径",
+        "region": "四川省",
+        "statistic_scope": "2025年四川省人力资源市场工资价位发布依据与范围",
+        "evidence_locator": "正文 通知第一句（根据全省企业薪酬调查数据分析结果）及落款"
+      }
+    },
+    "extracts": [
+      {
+        "field": "statistical_definition",
+        "pattern": "各市（州）人力资源和社会保障局： 根据全省企业薪酬调查数据分析结果，现发布《四川省 2025年人力资源市场工资价位和行业人工成本信息》。 四川省2025年人力资源市场工资价位和行业人工成本信息 &ensp; &ensp; &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 四川省人力资源和社会保障厅"
+      }
+    ],
+    "expected_fields": [
+      "statistical_definition",
+      "salary_statistics（正文未含数值，数值在未链接的附件中）"
+    ]
+  }
+]

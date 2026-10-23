@@ -1,0 +1,368 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-10-23T04:49:26.005Z",
+  "sources": [
+    {
+      "id": "gov-internet-healthcare-2018",
+      "url": "https://www.gov.cn/zhengce/content/2018-04/28/content_5286645.htm",
+      "organization": "国务院办公厅",
+      "title": "国务院办公厅关于促进“互联网+医疗健康”发展的意见（国办发〔2018〕26号）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2018-04-28",
+      "publication_date_note": "原文头部标注“发布日期：2018年04月28日”。"
+    },
+    {
+      "id": "nhsa-drg-dip-2021",
+      "url": "https://www.nhsa.gov.cn/art/2021/11/26/art_37_7406.html",
+      "organization": "国家医疗保障局",
+      "title": "国家医疗保障局关于印发DRG/DIP支付方式改革三年行动计划的通知（医保发〔2021〕48号）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2021-11-26",
+      "publication_date_note": "原文头部标注“发布日期：2021-11-26”；正文落款为2021年11月19日。"
+    },
+    {
+      "id": "nmpa-ai-software-en",
+      "url": "https://english.nmpa.gov.cn/2021-07/08/c_660267.htm",
+      "organization": "国家药品监督管理局（NMPA）",
+      "title": "NMPA Announcement on Guidance for the Classification Defining of AI-Based Medical Software Products",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2021-07-08",
+      "publication_date_note": "页面标注“Updated: 2021-07-08”。"
+    }
+  ],
+  "records": [
+    {
+      "id": "industry-gov-internet-healthcare-2018-guide-imaging-eng",
+      "source_id": "gov-internet-healthcare-2018",
+      "role_id": "guide_imaging_eng",
+      "category": "industry",
+      "title": "国办发〔2018〕26号：鼓励用人工智能面向基层提供远程影像诊断",
+      "summary": "政策原文明确鼓励医联体上级医院借助人工智能等技术提供远程会诊、远程心电诊断、远程影像诊断服务，并推动检查检验结果互认共享。",
+      "applicability": "描述国家政策层面对医学影像/心电 AI 的需求方向；不构成任何岗位、薪酬或录用结论。",
+      "relation": "related",
+      "tags": [
+        "互联网+医疗健康",
+        "人工智能",
+        "远程影像诊断",
+        "分级诊疗"
+      ],
+      "facts": [
+        {
+          "field": "policy_goals",
+          "value": "鼓励医疗联合体内上级医疗机构借助人工智能等技术手段，面向基层提供远程会诊、远程心电诊断、远程影像诊断等服务，促进医疗联合体内医疗机构间检查检验结果实时查阅、互认共享。",
+          "quote": "鼓励医疗联合体内上级医疗机构借助人工智能等技术手段，面向基层提供远程会诊、远程心电诊断、远程影像诊断等服务，促进医疗联合体内医疗机构间检查检验结果实时查阅、互认共享。",
+          "start": 1128,
+          "end": 1211
+        }
+      ],
+      "missing_fields": [
+        "employment_statistics",
+        "salary_statistics"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "9bf490e62587621d6bfe1471ac2e4dd98212b1183eb9b188eb88142d5672d378",
+      "collected_at": "2026-10-23T03:41:50.206Z",
+      "verified_at": "2026-10-23T04:49:25.955Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "evidence_locator": "国办发〔2018〕26号 正文条款"
+      }
+    },
+    {
+      "id": "industry-gov-internet-healthcare-2018-guide-health-systems",
+      "source_id": "gov-internet-healthcare-2018",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "国办发〔2018〕26号：互联网医院可作为第二名称、可在线复诊",
+      "summary": "政策原文允许医疗机构依托实体医院发展互联网医院，使用“互联网医院”作为第二名称，并允许在线开展部分常见病、慢性病复诊；医师掌握病历资料后可在线开具相应处方。",
+      "applicability": "描述互联网医院与在线复诊的制度边界；医疗信息系统设计与产品合规须以此为前提，不涉及具体技术选型结论。",
+      "relation": "related",
+      "tags": [
+        "互联网医院",
+        "在线复诊",
+        "医疗信息化",
+        "制度边界"
+      ],
+      "facts": [
+        {
+          "field": "design_constraints",
+          "value": "允许依托医疗机构发展互联网医院。医疗机构可以使用互联网医院作为第二名称，在实体医院基础上，运用互联网技术提供安全适宜的医疗服务，允许在线开展部分常见病、慢性病复诊。",
+          "quote": "允许依托医疗机构发展互联网医院。医疗机构可以使用互联网医院作为第二名称，在实体医院基础上，运用互联网技术提供安全适宜的医疗服务，允许在线开展部分常见病、慢性病复诊。",
+          "start": 811,
+          "end": 893
+        }
+      ],
+      "missing_fields": [
+        "employment_statistics"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "9bf490e62587621d6bfe1471ac2e4dd98212b1183eb9b188eb88142d5672d378",
+      "collected_at": "2026-10-23T03:41:50.206Z",
+      "verified_at": "2026-10-23T04:49:25.968Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "evidence_locator": "国办发〔2018〕26号 正文条款"
+      }
+    },
+    {
+      "id": "industry-gov-internet-healthcare-2018-guide-signals",
+      "source_id": "gov-internet-healthcare-2018",
+      "role_id": "guide_signals",
+      "category": "industry",
+      "title": "国办发〔2018〕26号：鼓励用可穿戴设备采集生命体征数据",
+      "summary": "政策原文鼓励利用可穿戴设备获取生命体征数据，为孕产妇提供健康监测与管理。",
+      "applicability": "描述生理信号采集类技术在公共卫生服务中的政策应用方向；不构成产品审批或岗位结论。",
+      "relation": "related",
+      "tags": [
+        "可穿戴设备",
+        "生命体征",
+        "健康监测"
+      ],
+      "facts": [
+        {
+          "field": "policy_goals",
+          "value": "鼓励利用可穿戴设备获取生命体征数据，为孕产妇提供健康监测与管理。",
+          "quote": "鼓励利用可穿戴设备获取生命体征数据，为孕产妇提供健康监测与管理。",
+          "start": 1420,
+          "end": 1452
+        }
+      ],
+      "missing_fields": [
+        "employment_statistics",
+        "salary_statistics"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "9bf490e62587621d6bfe1471ac2e4dd98212b1183eb9b188eb88142d5672d378",
+      "collected_at": "2026-10-23T03:41:50.206Z",
+      "verified_at": "2026-10-23T04:49:25.976Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "evidence_locator": "国办发〔2018〕26号 正文条款"
+      }
+    },
+    {
+      "id": "industry-gov-internet-healthcare-2018-guide-clinical-data",
+      "source_id": "gov-internet-healthcare-2018",
+      "role_id": "guide_clinical_data",
+      "category": "industry",
+      "title": "国办发〔2018〕26号：鼓励用大数据预测疾病流行趋势",
+      "summary": "政策原文鼓励探索运用人群流动、气候变化等大数据技术分析手段预测疾病流行趋势，加强传染病智能监测，提高重大疾病防控与突发公共卫生事件应对能力。",
+      "applicability": "描述公共卫生数据分析和智能监测的政策方向；不构成任何分析方法的有效性结论。",
+      "relation": "related",
+      "tags": [
+        "大数据",
+        "疾病预测",
+        "传染病监测",
+        "公共卫生"
+      ],
+      "facts": [
+        {
+          "field": "policy_goals",
+          "value": "探索运用人群流动、气候变化等大数据技术分析手段，预测疾病流行趋势，加强对传染病等疾病的智能监测，提高重大疾病防控和突发公共卫生事件应对能力。",
+          "quote": "探索运用人群流动、气候变化等大数据技术分析手段，预测疾病流行趋势，加强对传染病等疾病的智能监测，提高重大疾病防控和突发公共卫生事件应对能力。",
+          "start": 1528,
+          "end": 1598
+        }
+      ],
+      "missing_fields": [
+        "employment_statistics"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "9bf490e62587621d6bfe1471ac2e4dd98212b1183eb9b188eb88142d5672d378",
+      "collected_at": "2026-10-23T03:41:50.206Z",
+      "verified_at": "2026-10-23T04:49:25.982Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "evidence_locator": "国办发〔2018〕26号 正文条款"
+      }
+    },
+    {
+      "id": "industry-nhsa-drg-dip-2021-guide-clinical-data",
+      "source_id": "nhsa-drg-dip-2021",
+      "role_id": "guide_clinical_data",
+      "category": "industry",
+      "title": "医保发〔2021〕48号：DRG/DIP 改革时间表与覆盖目标",
+      "summary": "政策原文给出明确时间表：到2024年底全国所有统筹地区全部开展DRG/DIP付费；到2025年底覆盖所有符合条件的开展住院服务的医疗机构，基本实现病种、医保基金全覆盖。",
+      "applicability": "描述医保支付方式改革的国家时间表；这是医院病案、编码、临床数据类岗位需求的制度背景，但不构成岗位数量或薪资结论。",
+      "relation": "related",
+      "tags": [
+        "DRG",
+        "DIP",
+        "医保支付",
+        "病案编码",
+        "临床数据"
+      ],
+      "facts": [
+        {
+          "field": "policy_requirement",
+          "value": "到2024年底，全国所有统筹地区全部开展DRG/DIP付费方式改革工作，先期启动试点地区不断巩固改革成果；到2025年底，DRG/DIP支付方式覆盖所有符合条件的开展住院服务的医疗机构，基本实现病种、医保基金全覆盖。",
+          "quote": "到2024年底，全国所有统筹地区全部开展DRG/DIP付费方式改革工作，先期启动试点地区不断巩固改革成果；到2025年底，DRG/DIP支付方式覆盖所有符合条件的开展住院服务的医疗机构，基本实现病种、医保基金全覆盖。",
+          "start": 971,
+          "end": 1079
+        }
+      ],
+      "missing_fields": [
+        "employment_statistics",
+        "salary_statistics"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "1e194e4a345d01680005f771dd56e4bb836926f520c726cc1dc738d26cc0f43e",
+      "collected_at": "2026-10-23T04:44:49.558Z",
+      "verified_at": "2026-10-23T04:49:25.993Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "evidence_locator": "国办发〔2018〕26号 正文条款"
+      }
+    },
+    {
+      "id": "industry-nhsa-drg-dip-2021-guide-health-systems",
+      "source_id": "nhsa-drg-dip-2021",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "医保发〔2021〕48号：统筹区住院医保基金 DRG/DIP 支出占比须达70%",
+      "summary": "政策原文要求统筹地区启动改革后三年内，DRG/DIP付费医保基金支出占统筹区内住院医保基金支出达到70%，每年进度分别不低于30%、50%、70%；2024年启动地区须两年内完成，并鼓励超过70%。",
+      "applicability": "描述医院端医保结算与数据治理的硬性考核口径；不涉及任何技术方案或产品结论。",
+      "relation": "related",
+      "tags": [
+        "DRG",
+        "DIP",
+        "基金支出占比",
+        "医院考核"
+      ],
+      "facts": [
+        {
+          "field": "policy_requirement",
+          "value": "统筹地区启动DRG/DIP付费改革工作后，按三年安排实现符合条件的开展住院服务的医疗机构全面覆盖，每年进度应分别不低于40%、30%、30%，2024年启动地区须于两年内完成。 3.抓病种全面覆盖（原则上达到90%）。统筹地区启动DRG/DIP付费改革工作后，按三年安排实现DRG/DIP付费医疗机构病种全面覆盖，每年进度应分别不低于70%、80%、90%，2024年启动地区须于两年内完成。鼓励入组率达到90%以上。 4.抓医保基金全面覆盖（原则上达到70%）。统筹地区启动DRG/DIP付费改革工作后，按三年安排实现DRG/DIP付费医保基金支出占统筹区内住院医保基金支出达到70%，每年进度应分别不低于30%、50%、70%，2024年启动地区须于两年内完成。鼓励超过70%的基金总额预算覆盖率。",
+          "quote": "统筹地区启动DRG/DIP付费改革工作后，按三年安排实现符合条件的开展住院服务的医疗机构全面覆盖，每年进度应分别不低于40%、30%、30%，2024年启动地区须于两年内完成。 3.抓病种全面覆盖（原则上达到90%）。统筹地区启动DRG/DIP付费改革工作后，按三年安排实现DRG/DIP付费医疗机构病种全面覆盖，每年进度应分别不低于70%、80%、90%，2024年启动地区须于两年内完成。鼓励入组率达到90%以上。 4.抓医保基金全面覆盖（原则上达到70%）。统筹地区启动DRG/DIP付费改革工作后，按三年安排实现DRG/DIP付费医保基金支出占统筹区内住院医保基金支出达到70%，每年进度应分别不低于30%、50%、70%，2024年启动地区须于两年内完成。鼓励超过70%的基金总额预算覆盖率。",
+          "start": 1502,
+          "end": 1853
+        }
+      ],
+      "missing_fields": [
+        "employment_statistics"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "1e194e4a345d01680005f771dd56e4bb836926f520c726cc1dc738d26cc0f43e",
+      "collected_at": "2026-10-23T04:44:49.558Z",
+      "verified_at": "2026-10-23T04:49:25.997Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "evidence_locator": "国办发〔2018〕26号 正文条款"
+      }
+    },
+    {
+      "id": "industry-nmpa-ai-software-en-guide-devices",
+      "source_id": "nmpa-ai-software-en",
+      "role_id": "guide_devices",
+      "category": "industry",
+      "title": "NMPA：人工智能医用软件产品分类界定指导原则已于2021年7月1日发布",
+      "summary": "NMPA 官方英文公告确认已制定《人工智能医用软件产品分类界定指导原则》并于 2021 年 7 月 1 日发布，目的是加强对人工智能医用软件产品的监督管理。",
+      "applicability": "仅确认该指导原则的存在与发布日期。指导原则正文位于中文站（www.nmpa.gov.cn）且该站对本次抓取返回 HTTP 412，故本记录不含分类判定的具体条款。",
+      "relation": "related",
+      "tags": [
+        "NMPA",
+        "人工智能医用软件",
+        "分类界定",
+        "医疗器械监管"
+      ],
+      "facts": [
+        {
+          "field": "design_constraints",
+          "value": "In order to strengthen the supervision and administration of AI-based medical software products and promote the high-quality development of the industry, the NMPA has organized to formulate the Principles for the Classification Defining of AI-Based Medical Software Products , which was issued on July 1.",
+          "quote": "In order to strengthen the supervision and administration of AI-based medical software products and promote the high-quality development of the industry, the NMPA has organized to formulate the Principles for the Classification Defining of AI-Based Medical Software Products , which was issued on July 1.",
+          "start": 542,
+          "end": 846
+        }
+      ],
+      "missing_fields": [
+        "regulatory_basis"
+      ],
+      "verification": "quote_verified",
+      "content_hash": "0b0774b9300762db8d5195ed95c2bd8717647156f2cd9716c0a029da3deb2915",
+      "collected_at": "2026-10-23T04:46:04.875Z",
+      "verified_at": "2026-10-23T04:49:26.002Z",
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "evidence_locator": "国办发〔2018〕26号 正文条款"
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "source_id": "gov-internet-healthcare-2018",
+      "url": "https://www.gov.cn/zhengce/content/2018-04/28/content_5286645.htm",
+      "at": "2026-10-23T03:41:50.206Z",
+      "status": "collected",
+      "missing_fields": [
+        "employment_statistics",
+        "salary_statistics"
+      ]
+    },
+    {
+      "source_id": "gov-internet-healthcare-2018",
+      "url": "https://www.gov.cn/zhengce/content/2018-04/28/content_5286645.htm",
+      "at": "2026-10-23T03:41:50.206Z",
+      "status": "collected",
+      "missing_fields": [
+        "employment_statistics"
+      ]
+    },
+    {
+      "source_id": "gov-internet-healthcare-2018",
+      "url": "https://www.gov.cn/zhengce/content/2018-04/28/content_5286645.htm",
+      "at": "2026-10-23T03:41:50.206Z",
+      "status": "collected",
+      "missing_fields": [
+        "employment_statistics",
+        "salary_statistics"
+      ]
+    },
+    {
+      "source_id": "gov-internet-healthcare-2018",
+      "url": "https://www.gov.cn/zhengce/content/2018-04/28/content_5286645.htm",
+      "at": "2026-10-23T03:41:50.206Z",
+      "status": "collected",
+      "missing_fields": [
+        "employment_statistics"
+      ]
+    },
+    {
+      "source_id": "nhsa-drg-dip-2021",
+      "url": "https://www.nhsa.gov.cn/art/2021/11/26/art_37_7406.html",
+      "at": "2026-10-23T04:44:49.558Z",
+      "status": "collected",
+      "missing_fields": [
+        "employment_statistics",
+        "salary_statistics"
+      ]
+    },
+    {
+      "source_id": "nhsa-drg-dip-2021",
+      "url": "https://www.nhsa.gov.cn/art/2021/11/26/art_37_7406.html",
+      "at": "2026-10-23T04:44:49.558Z",
+      "status": "collected",
+      "missing_fields": [
+        "employment_statistics"
+      ]
+    },
+    {
+      "source_id": "nmpa-ai-software-en",
+      "url": "https://english.nmpa.gov.cn/2021-07/08/c_660267.htm",
+      "at": "2026-10-23T04:46:04.875Z",
+      "status": "collected",
+      "missing_fields": [
+        "regulatory_basis"
+      ]
+    }
+  ]
+}

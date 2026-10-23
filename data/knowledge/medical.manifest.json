@@ -1,0 +1,1120 @@
+[
+  {
+    "source": {
+      "id": "nhc-zhupei-banfa-2014-gongbao",
+      "url": "https://www.gov.cn/gongbao/content/2015/content_2806023.htm",
+      "organization": "国家卫生和计划生育委员会（《国务院公报》2015年第2号收录，中国政府网发布）",
+      "title": "卫生计生委关于印发住院医师规范化培训管理办法（试行）的通知（国卫科教发〔2014〕49号）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2014-08-22",
+      "publication_date_note": "取自国务院公报正文署名「卫生计生委 2014年8月22日」，为通知成文日期；收录于《国务院公报》2015年第2号，非网页首发日期。"
+    },
+    "publication_pattern": "2014\\s*年\\s*8\\s*月\\s*22\\s*日",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/guizheng-gongbao-2015.raw",
+      "sha256": "bb02709bfb804af75c2972c6380d97a866fd30c283da334868a03e56a2a15041",
+      "captured_at": "2026-10-23T03:36:32.866Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-nhc-zhupei-banfa-2014-gongbao-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "learning",
+      "title": "国家规培办法：培训年限一般为3年，顺延时间一般不超过3年",
+      "summary": "第二十五条规定住院医师规范化培训年限一般为3年；已具有医学类相应专业学位研究生学历的人员和已从事临床医疗工作的医师，由培训基地按其临床经历和诊疗能力确定实际培训时间及内容；未按期完成培训或考核不合格者可顺延，顺延时间一般不超过3年，顺延期间费用由个人承担。（同一官方来源共 4 条原文事实，字段：learning_hours、access_requirement、training、prerequisites；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于全国住院医师规范化培训年限的一般制度规定（国卫科教发〔2014〕49号，2014年）。不适用于专科医师规范化培训，也不等于任何具体培训基地当年度简章中的实际年限；个人实际培训时间以培训基地认定和当年招录简章为准。",
+      "relation": "direct",
+      "tags": [
+        "住院医师规范化培训",
+        "规培年限",
+        "3年",
+        "顺延",
+        "毕业后教育",
+        "规培报考条件",
+        "培训对象",
+        "学历要求",
+        "医学类本科",
+        "规培结业",
+        "结业考核",
+        "过程考核",
+        "医师资格考试",
+        "培训基地",
+        "三级甲等医院",
+        "基地认定",
+        "协同单位"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "全国（国家卫生健康行政部门）",
+        "medical_topic": "住院医师规范化培训",
+        "region": "CN"
+      }
+    },
+    "extracts": [
+      {
+        "field": "learning_hours",
+        "pattern": "第二十五条 培训年限一般为3年。已具有医学类相应专业学位研究生学历的人员和已从事临床医疗工作的医师参加培训，由培训基地根据其临床经历和诊疗能力确定接受培训的具体时间及内容。 在规定时间内未按照要求完成培训或考核不合格者，培训时间可顺延，顺延时间一般不超过3年。顺延期间费用由个人承担。"
+      },
+      {
+        "field": "access_requirement",
+        "pattern": "第三条 住院医师规范化培训对象为： （一）拟从事临床医疗工作的高等院校医学类相应专业（指临床医学类、口腔医学类、中医学类和中西医结合类，下同）本科及以上学历毕业生； （二）已从事临床医疗工作并获得执业医师资格，需要接受培训的人员； （三）其他需要接受培训的人员。"
+      },
+      {
+        "field": "training",
+        "pattern": "第二十八条 住院医师规范化培训考核包括过程考核和结业考核，以过程考核为重点。过程考核合格和通过医师资格考试是参加结业考核的必备条件。培训对象申请参加结业考核，须经培训基地初审合格并报省级卫生计生行政部门或其指定的行业组织、单位核准。"
+      },
+      {
+        "field": "prerequisites",
+        "pattern": "第九条 培训基地是承担住院医师规范化培训的医疗卫生机构。国务院卫生计生行政部门根据培训需求及各地的培训能力，统筹规划各地培训基地数量。培训基地应当具备以下基本条件： （一）为三级甲等医院； （二）达到《住院医师规范化培训基地认定标准（试行）》要求； （三）经所在地省级卫生计生行政部门组建的专家委员会或其指定的行业组织、单位认定合格。"
+      }
+    ],
+    "expected_fields": [
+      "learning_hours",
+      "training",
+      "learning_hours（原文只给年限，未给学时或月度折算）",
+      "access_requirement",
+      "access_requirement（未列具体专业代码与外语要求）",
+      "training（未写结业考核具体分值或合格线）",
+      "prerequisites",
+      "prerequisites（未列基地数量与名单）"
+    ]
+  },
+  {
+    "source": {
+      "id": "sichuan-wsjkw-zhupei-duration-2025",
+      "url": "https://wsjkw.sc.gov.cn/scwsjkw/c111967/2025/12/23/345bccdf90e84be486f720c6b469e952.shtml",
+      "organization": "四川省卫生健康委员会",
+      "title": "住院医师规范化培训要培训多久？",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-12-23",
+      "publication_date_note": "页面标注「发布时间：2025-12-23」「来源：省卫生健康委」，属政民互动常见问题知识库条目。"
+    },
+    "publication_pattern": "2025-12-23",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/sichuan-guizheng-duration.raw",
+      "sha256": "a2289cc67292cb147148815b7f3af833a7ecde138ff10cc7a5eb3b438de29c0b",
+      "captured_at": "2026-10-23T03:37:13.034Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-sichuan-wsjkw-zhupei-duration-2025-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "learning",
+      "title": "四川省卫健委：规培一般3年，硕士毕业不少于2年、博士毕业不少于1年",
+      "summary": "四川省卫健委答复：培训年限一般为3年；已具有医学类相应专业学位研究生学历的人员，由培训基地按国家相关标准和要求进行临床工作能力测评，据测评结果确定实际培训时间，原则上硕士研究生毕业人员培训时间不少于2年，博士研究生毕业人员培训时间不少于1年。（同一官方来源共 2 条原文事实，字段：learning_hours、training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于四川省卫生健康委对规培年限的公开答复口径（2025-12-23）。属省级解释性口径，可反映国家制度在地方执行中的年限折算做法；其他省份是否采用同一折算标准需另查该省文件。不构成对个人实际培训时长的确定。",
+      "relation": "direct",
+      "tags": [
+        "规培年限",
+        "四川省",
+        "硕士2年",
+        "博士1年",
+        "年限折算",
+        "专硕衔接",
+        "33个月",
+        "临床轮转",
+        "过程考核"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川省卫生健康委员会",
+        "medical_topic": "专业学位与规培衔接",
+        "region": "四川省"
+      }
+    },
+    "extracts": [
+      {
+        "field": "learning_hours",
+        "pattern": "培训年限一般为3年。已具有医学类相应专业学位研究生学历的人员参加培训，由培训基地按照国家相关标准和要求，对其进行临床工作能力测评，根据测评结果确定实际培训时间，原则上硕士研究生毕业人员培训时间不少于2年，博士研究生毕业人员培训时间不少于1年。"
+      },
+      {
+        "field": "training",
+        "pattern": "专硕研究生衔接住培人员的临床轮转按照国家相关标准和要求进行，临床实际培训时间不少于33个月，达到各专业培训标准细则的要求。临床能力考核严格按照住院医师规范化培训过程考核和结业考核进行。"
+      }
+    ],
+    "expected_fields": [
+      "learning_hours",
+      "learning_hours（未给其他省份口径）",
+      "training",
+      "training（未给各专业细则内容）"
+    ]
+  },
+  {
+    "source": {
+      "id": "moe-yijiaoxietong-2014",
+      "url": "https://hudong.moe.gov.cn/srcsite/A22/s7065/201407/t20140714_178832.html",
+      "organization": "教育部、国家卫生计生委等六部门",
+      "title": "教育部等六部门关于医教协同深化临床医学人才培养改革的意见（教研〔2014〕2号）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2014-07-14",
+      "publication_date_note": "教育部政府门户网站页面标注「生成日期：2014-07-14」「发文字号：教研〔2014〕2号」。"
+    },
+    "publication_pattern": "2014-07-14",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/moe-yijiaoxietong-2014.raw",
+      "sha256": "ee58533e65ff8f4f8e047ca00dc661cf7d6be2da354d0d900f165cf7bc18346b",
+      "captured_at": "2026-10-23T03:56:18.411Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-moe-yijiaoxietong-2014-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "learning",
+      "title": "教育部等六部门：以「5+3」为主体的临床医学人才培养体系",
+      "summary": "文件明确近期任务：加快构建以「5+3」（5年临床医学本科教育+3年住院医师规范化培训或3年临床医学硕士专业学位研究生教育）为主体、以「3+2」（3年临床医学专科教育+2年助理全科医生培训）为补充的临床医学人才培养体系。（同一官方来源共 2 条原文事实，字段：training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于国家层面对临床医学人才培养体系结构的表述（教研〔2014〕2号）。原文把「3年规培」与「3年临床医学硕士专业学位研究生教育」并列为「5+3」的两种实现路径，可用于理解专硕与规培的制度衔接来源；不是某一院校的招生简章，也不代表当前所有院校仍按同一结构执行。",
+      "relation": "direct",
+      "tags": [
+        "5+3",
+        "医教协同",
+        "临床医学",
+        "培养体系",
+        "3+2",
+        "专硕并轨",
+        "规培合格证书",
+        "执业医师资格",
+        "2015年起"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "教育部等六部门",
+        "medical_topic": "专业学位与规培衔接",
+        "region": "CN"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "近期任务，加快构建以“5\\+3”（5年临床医学本科教育\\+3年住院医师规范化培训或3年临床医学硕士专业学位研究生教育）为主体、以“3\\+2”（3年临床医学专科教育\\+2年助理全科医生培训）为补充的临床医学人才培养体系。"
+      },
+      {
+        "field": "training",
+        "pattern": "2015年起，所有新招收的临床医学硕士专业学位研究生，同时也是参加住院医师规范化培训的住院医师，其临床培养按照国家统一制定的住院医师规范化培训要求进行。入学前未取得《执业医师资格证书》的临床医学硕士专业学位研究生，在学期间可按照国家有关规定以相关本科学历报名参加国家医师资格考试。按照住院医师规范化培训标准内容进行培训并考核合格的临床医学硕士专业学位研究生，可取得《住院医师规范化培训合格证书》。"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "training（未给各院校具体学制安排）",
+      "training（未写具体轮转科室与时长）"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-zhupei-zhangshou-2026",
+      "url": "https://it.wchscu.cn/byh/contents/2464/953.html",
+      "organization": "四川大学华西医院毕业后培训部",
+      "title": "四川大学华西医院2026年住院医师规范化培训招收简章",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-01-15",
+      "publication_date_note": "页面标注「日期：2026-01-15」，位于「毕业后培训部门户网站 > 招收和就业 > 招收公告」。"
+    },
+    "publication_pattern": "2026-01-15",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/huaxi-byh-portal-953.raw",
+      "sha256": "d117fee1413355776413bb8b7e22632d1aa6cb05d7079eb74eca7cb0f95ac40b",
+      "captured_at": "2026-10-23T03:40:53.184Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-huaxi-zhupei-zhangshou-2026-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "learning",
+      "title": "华西医院2026规培：须有资格考取西医临床类执业医师执照、限四个毕业专业、英语四级",
+      "summary": "华西医院2026年规培招收简章报考条件：学历学位要求为有资格考取西医临床类国家执业医师执照的本科、硕士或博士研究生；毕业专业包括临床医学专业、麻醉学、医学影像专业、全科医学专业；须获得国家英语四级（或与之相当的英语水平测试）及以上等级证书。（同一官方来源共 4 条原文事实，字段：access_requirement、regional_limit；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于四川大学华西医院2026年度住院医师规范化培训招收（2026-01-15发布，报名期2026-01-15至2026-03-22）。原文只列四个毕业专业，不得外推到其他专业或其他年度；各专业基地另有放宽条件的，以原文列明者为准。不构成报考资格承诺。",
+      "relation": "direct",
+      "tags": [
+        "规培报考条件",
+        "华西医院",
+        "毕业专业",
+        "英语四级",
+        "执业医师资格",
+        "专业限制",
+        "检验医学科",
+        "4年制检验",
+        "康复医学科",
+        "退培",
+        "3年内不得报考",
+        "学籍注册",
+        "规培限制",
+        "外院委培",
+        "送培单位等级",
+        "二甲及以上",
+        "全科例外"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "medical_topic": "住院医师规范化培训",
+        "region": "四川省",
+        "medical_department": "检验医学科"
+      }
+    },
+    "extracts": [
+      {
+        "field": "access_requirement",
+        "pattern": "3\\.学历学位 要求 ： 有资格考取 西医临床类 国家 执业 医师执照的本科、硕士或博士研究生。 4 ．毕业专业包括：临床医学专业、 麻醉学、 医学影像专业、全科医学专业。 5 ． 获得国家英语四级（或与之相当的英语水平测试）及 以上等级 证书。"
+      },
+      {
+        "field": "access_requirement",
+        "pattern": "（ 4 ） 康复医学科 、 检验医学科只招收有资格报考 临床类 执业医师执照的学员 （ 4年制检验本科学历不能报考住院医师 ）"
+      },
+      {
+        "field": "access_requirement",
+        "pattern": "（ 1） 凡有住院医师退培经历 的， 3年内不允许报考住院医师（跨省份也不行，国家平台注册不了学籍）。"
+      },
+      {
+        "field": "regional_limit",
+        "pattern": "2． 外单位委托培养 （简称 “外院委培”）招考 ：针对 二甲及以上 医疗卫生机构人员，以 “外院委托培训”方式进行招考选拔。送培单位须 首先向 我院 递交 委托培训送培 函（附件 1 ） ，我院统一组织考试。不接收个人报名。"
+      }
+    ],
+    "expected_fields": [
+      "access_requirement",
+      "access_requirement（未列各专业基地名额与分数线）",
+      "access_requirement（未说明其他4年制理学专业的处理方式）",
+      "access_requirement（未给出退培认定的具体流程）",
+      "regional_limit",
+      "regional_limit（未列可送培单位名单）"
+    ]
+  },
+  {
+    "source": {
+      "id": "pumch-zhupei-zhaolu-2026",
+      "url": "https://www.pumch.cn/detail/46077.html",
+      "organization": "中国医学科学院北京协和医院（教育处）",
+      "title": "招录简章 | 中国医学科学院北京协和医院2026年北京市住院医师规范化培训招录启动",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-15",
+      "publication_date_note": "页面标注「时间：2026.07.15」「发布来源：本站原创」，位于「新闻中心 > 医院动态」。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?7\\D{0,6}0?15",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/pumch-guipei-2026.raw",
+      "sha256": "2fafe9e1e11e1eaab1506fa6b74b70a502c31a7fa79268bb9ed068a76d541446",
+      "captured_at": "2026-10-23T03:40:00.451Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-pumch-zhupei-zhaolu-2026-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "learning",
+      "title": "北京协和医院2026规培：招录对象限全日制医学专业（临床、口腔、中医）本科及以上",
+      "summary": "招录对象应为拟在北京地区从事临床医疗工作的全日制医学专业（临床、口腔、中医）本科及以上学历毕业生，或已从事临床医疗工作并取得《医师资格证书》需要接受培训的人员，包括委托培训人员和自主培训人员；报名时间7月15日9时至7月21日24时，经北京市毕业后医学教育管理系统报名。（同一官方来源共 2 条原文事实，字段：access_requirement、training；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于北京协和医院2026年北京市住院医师规范化培训招录（2026-07-15发布，报名截止2026-07-21）。原文限定「拟在北京地区从事临床医疗工作」与「全日制」医学专业，不得外推到非全日制学历或其他省份招录；具体招收计划需在原页面链接的市级系统内查看。",
+      "relation": "direct",
+      "tags": [
+        "规培招录",
+        "北京协和医院",
+        "北京市",
+        "全日制",
+        "临床口腔中医",
+        "医教协同",
+        "同等学力",
+        "专业学位",
+        "临床医学专硕",
+        "协和"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京协和医院",
+        "medical_topic": "专业学位与规培衔接",
+        "region": "北京市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "access_requirement",
+        "pattern": "招录对象应为拟在北京地区从事临床医疗工作的全日制医学专业（临床、口腔、中医）本科及以上学历的毕业生，或已从事临床医疗工作并取得《医师资格证书》，需要接受培训的人员，包括委托培训人员和自主培训人员。"
+      },
+      {
+        "field": "training",
+        "pattern": "通过“同等学力人员申请硕士学位外国语水平和学科综合水平全国统一考试” 的本科学历住院医师，可攻读北京协和医学院临床医学硕士专业学位研究生，达到毕业和学位授予要求，颁发北京协和医学院医学硕士（专业型）学位证书。"
+      }
+    ],
+    "expected_fields": [
+      "access_requirement",
+      "access_requirement（未在本页列出各专业招收人数）",
+      "training",
+      "training（未写学位申请的具体年限与名额）"
+    ]
+  },
+  {
+    "source": {
+      "id": "pumch-zhupei-zhaolu-2026",
+      "url": "https://www.pumch.cn/detail/46077.html",
+      "organization": "中国医学科学院北京协和医院（教育处）",
+      "title": "招录简章 | 中国医学科学院北京协和医院2026年北京市住院医师规范化培训招录启动",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-15",
+      "publication_date_note": "页面标注「时间：2026.07.15」「发布来源：本站原创」，位于「新闻中心 > 医院动态」。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?7\\D{0,6}0?15",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/pumch-guipei-2026.raw",
+      "sha256": "2fafe9e1e11e1eaab1506fa6b74b70a502c31a7fa79268bb9ed068a76d541446",
+      "captured_at": "2026-10-23T03:40:00.451Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-pumch-zhupei-zhaolu-2026-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "北京协和医院2026规培：住培岗位补贴第一年2500、第二年3000、第三年3500元/人/月",
+      "summary": "学员待遇保障段列明：医院岗位补助发放对象包括担任「住院医师岗位」的规培研究生与规培住院医师，与岗位职责、在培状态及考勤挂钩；住院医师住培岗位补贴发放标准为第一年2500元/人/月，第二年3000元/人/月，第三年3500元/人/月。基本劳动报酬（工资、保险及公积金）另按国家及北京市标准依学历、工龄发放。（同一官方来源共 3 条原文事实，字段：salary、education、city；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "这是北京协和医院2026年招录简章中「医院岗位补助」一项的标准，不是工资、年薪或总收入，也不含基本工资、五险一金、科室绩效、夜班费与紧缺专业补助等项目。不得把该数字当作规培住院医师总收入、卫生行业平均工资或任何其他医院的待遇。",
+      "relation": "direct",
+      "tags": [
+        "规培待遇",
+        "岗位补贴",
+        "2500元",
+        "3500元",
+        "北京协和医院",
+        "学历要求",
+        "本科及以上",
+        "规培招录",
+        "城市",
+        "北京",
+        "东单院区",
+        "地址"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京协和医院",
+        "medical_topic": "住院医师规范化培训",
+        "region": "北京市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary",
+        "pattern": "住院医师住培岗位补贴发放标准为第一年2500元/人/月，第二年3000元/人/月，第三年3500元/人/月。"
+      },
+      {
+        "field": "education",
+        "pattern": "招录对象应为拟在北京地区从事临床医疗工作的全日制医学专业（临床、口腔、中医）本科及以上学历的毕业生"
+      },
+      {
+        "field": "city",
+        "pattern": "（东单院区）北京市东城区帅府园一号，100730"
+      }
+    ],
+    "expected_fields": [
+      "salary",
+      "salary（未给出基本工资数额与月度总收入）",
+      "education",
+      "education（未按专业基地细分学历要求）",
+      "city"
+    ]
+  },
+  {
+    "source": {
+      "id": "pumch-zhupei-zhaolu-2026",
+      "url": "https://www.pumch.cn/detail/46077.html",
+      "organization": "中国医学科学院北京协和医院（教育处）",
+      "title": "招录简章 | 中国医学科学院北京协和医院2026年北京市住院医师规范化培训招录启动",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-15",
+      "publication_date_note": "页面标注「时间：2026.07.15」「发布来源：本站原创」，位于「新闻中心 > 医院动态」。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?7\\D{0,6}0?15",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/pumch-guipei-2026.raw",
+      "sha256": "2fafe9e1e11e1eaab1506fa6b74b70a502c31a7fa79268bb9ed068a76d541446",
+      "captured_at": "2026-10-23T03:40:00.451Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "occupation-pumch-zhupei-zhaolu-2026-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "occupation",
+      "title": "北京协和医院住培专业基地22个：含放射医学科、检验医学科、临床病理科等",
+      "summary": "北京协和医院作为国家住院医师规范化培训示范基地，拥有专业基地22个，原文列举为：内科、外科、妇产科、儿科、神经内科、全科医学科、眼科、耳鼻咽喉科、口腔全科、麻醉科、急诊科、皮肤科、超声医学科、放射医学科、核医学科、临床病理科、检验医学科、重症医学科、外科（神经外科方向）、骨科、检验医学科（技师）、住院药师；每年200余名住院医师和专业型硕士研究生在该院接受规培。",
+      "applicability": "这是北京协和医院自身培训基地的科室/专业基地设置清单（2026年招录简章），可作为「三甲医院影像/检验/病理等医技科室作为住培专业基地存在」的实例。不等于国家规定的医院最低科室设置标准，也不是全国统一的专业基地目录；其他医院的专业基地以各自认定名单为准。",
+      "relation": "direct",
+      "tags": [
+        "专业基地",
+        "科室设置",
+        "放射医学科",
+        "检验医学科",
+        "临床病理科",
+        "22个"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京协和医院",
+        "medical_department": "医学影像/检验/病理等医技科室",
+        "department_type": "medical_technology",
+        "medical_topic": "住院医师规范化培训专业基地",
+        "region": "北京市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "departments",
+        "pattern": "北京协和医院作为国家住院医师规范化培训示范基地，拥有专业基地22个（内科、外科、妇产科、儿科、神经内科、全科医学科、眼科、耳鼻咽喉科、口腔全科、麻醉科、急诊科、皮肤科、超声医学科、放射医学科、核医学科、临床病理科、检验医学科、重症医学科、外科（神经外科方向）、骨科、检验医学科（技师）、住院药师），每年200余名住院医师和专业型硕士研究生在我院接受住院医师规范化培训；"
+      }
+    ],
+    "expected_fields": [
+      "departments",
+      "departments（未给每个专业基地的招收人数与人员配置）"
+    ]
+  },
+  {
+    "source": {
+      "id": "pumch-postdoc-2026",
+      "url": "https://www.pumch.cn/detail/45419.html",
+      "organization": "中国医学科学院北京协和医院（人事处）",
+      "title": "北京协和医院2026年科研博士后招收简章",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-05-07",
+      "publication_date_note": "页面标注「时间：2026.05.07」「发布来源：本站原创」。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?5\\D{0,6}0?7",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/pumch-postdoc-2026.raw",
+      "sha256": "ac3dd1e52ae60d8ebbc0f9b762429583e73f84c09f549b3471ca1b354391d4c9",
+      "captured_at": "2026-10-23T03:56:18.430Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-pumch-postdoc-2026-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "recruitment",
+      "title": "北京协和医院2026科研博士后：年龄原则上不超过35岁且博士毕业不超过3年",
+      "summary": "申报条件第（四）项：原则上年龄不超过35岁（1991年1月1日及以后出生），取得博士研究生学历学位不超过3年。（同一官方来源共 3 条原文事实，字段：education、major_restrictions、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于北京协和医院2026年科研博士后招收（2026-05-07发布，简章「常年有效」）。这是博士后岗位的年龄与毕业年限门槛，不是规培报考条件，也不能外推到临床岗位或编制内招聘。",
+      "relation": "direct",
+      "tags": [
+        "科研博士后",
+        "年龄35岁",
+        "博士毕业3年内",
+        "协和医院",
+        "一级学科",
+        "同学科限制",
+        "医学技术",
+        "特种医学",
+        "博士后",
+        "SCI",
+        "中科院二区",
+        "一作",
+        "论文要求"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京协和医院",
+        "medical_topic": "科研博士后招聘",
+        "region": "北京市"
+      }
+    },
+    "extracts": [
+      {
+        "field": "education",
+        "pattern": "（四）原则上年龄不超过35岁（1991年1月1日及以后出生），取得博士研究生学历学位不超过3年；"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "2、同学科：医学相关的一级学科包括基础医学、临床医学、口腔医学、公共卫生与预防医学、中医学、中西医结合、药学、中药学、特种医学、医学技术、护理学，如博士阶段是基础医学专业，在博士后阶段可以选择基础医学以外的其他专业；"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "（七）在入站之前三年内，以独立一作或共同一作排名第一身份发表中科院分区二区及以上SCI论著≥1篇（2026年发表文章，沿用2025年版中科院分区）；"
+      }
+    ],
+    "expected_fields": [
+      "education",
+      "experience",
+      "salary（简章未给博士后具体薪资数额）",
+      "major_restrictions",
+      "major_restrictions（未给各学科的具体招收名额）",
+      "technical_requirements",
+      "technical_requirements（未写其他等效成果的认定口径）"
+    ]
+  },
+  {
+    "source": {
+      "id": "wuxi-yiliao-jigou-jiben-biaozhun",
+      "url": "https://wjw.wuxi.gov.cn/doc/2023/02/03/3875207.shtml",
+      "organization": "无锡市卫生健康委员会（转载卫生部《医疗机构基本标准（试行）》）",
+      "title": "医疗机构基本标准（试行）(1994)",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2023-02-03",
+      "publication_date_note": "页面标注「发布时间：2023-02-03」，为无锡市卫健委「法律法规/规章/部门规章」栏目转载页；正文为卫生部《医疗机构基本标准（试行）》（卫医发〔1994〕第30号），原文成文于1994年。"
+    },
+    "publication_pattern": "2023-02-03",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/wuxi-medical-institution-standard.raw",
+      "sha256": "af0a3521db8c4289d1ba93faa24bacac16461ec53349fe0fef29b9526ab605ed",
+      "captured_at": "2026-10-23T03:42:01.460Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "occupation-wuxi-yiliao-jigou-jiben-biaozhun-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "occupation",
+      "title": "三级综合医院最低科室设置：13个临床科室+药剂/检验/放射/病理/病案等医技科室",
+      "summary": "《医疗机构基本标准（试行）》三级综合医院部分：床位住院总数500张以上；临床科室至少设急诊科、内科、外科、妇产科、儿科、中医科、耳鼻喉科、口腔科、眼科、皮肤科、麻醉科、康复科、预防保健科；医技科室至少设药剂科、检验科、放射科、手术室、病理科、输血科、核医学科、理疗科（可与康复科合设）、消毒供应室、病案室、营养部和相应的临床功能检查室。（同一官方来源共 3 条原文事实，字段：departments；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "适用于三级综合医院执业必须达到的最低科室设置标准（1994年卫生部标准，现由地方卫健委规章库转载）。原文是「至少设有」的下限要求，不是某家医院的实设科室清单，也不代表科室规模与亚专科设置；专科医院、中医医院、中西医结合医院另有各自标准。",
+      "relation": "direct",
+      "tags": [
+        "科室设置",
+        "三级综合医院",
+        "医技科室",
+        "病案室",
+        "病理科",
+        "检验科",
+        "放射科",
+        "人员配置",
+        "每床卫生技术人员",
+        "护士配比",
+        "工程技术人员占比",
+        "副主任医师",
+        "二级综合医院",
+        "血库",
+        "合并建科"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "全国（卫生部标准）",
+        "medical_department": "临床科室与医技科室",
+        "department_type": "medical_technology",
+        "region": "CN"
+      }
+    },
+    "extracts": [
+      {
+        "field": "departments",
+        "pattern": "三级综合医院 一、床位： 住院床位总数５００张以上。 二、科室设置： （一） 临床科室：至少设有急诊科、内科、外科、妇产科、儿科、中医科、耳鼻喉科、口腔科、眼科、皮肤科、麻醉科、康复科、预防保健科； （二） 医技科室：至少设有药剂科、检验科、放射科、手术室、病理科、输血科、核医学科、理疗科（可与康复科合设）、消毒供应室、病案室、营养部和相应的临床功能检查室。"
+      },
+      {
+        "field": "departments",
+        "pattern": "三、人员： （一） 每床至少配备１．０３名卫生技术人员； （二） 每床至少配备０．４名护士； （三） 各专业科室的主任应具有副主任医师以上职称； （四） 临床营养师不少于２人； （五） 工程技术人员（技师、助理工程师及以上人员）占卫生技术人员总数的比例不低于１％。"
+      },
+      {
+        "field": "departments",
+        "pattern": "二级综合医院 一、床位： 住院床位总数１００至４９９张。 二、科室设置： （一） 临床科室：至少设有急诊科、内科、外科、妇产科、儿科、眼科、耳鼻喉科、口腔科、皮肤科、麻醉科、传染科、预防保健科，其中眼科、耳鼻喉科、口腔科可合并建科，皮肤科可并入内科或外科，附近已有传染病医院的，根据当地《医疗机构设置规划》可不设传染科； （二） 医技科室：至少设有药剂科、检验科、放射科、手术室、病理科、血库（可与检验科合设）、理疗科、消毒供应室、病案室。 三、人员："
+      }
+    ],
+    "expected_fields": [
+      "departments",
+      "departments（未规定信息科/数据中心等信息化科室）",
+      "departments（未单独规定信息/病案岗位人数）",
+      "departments（未规定人员数量分科细则）"
+    ]
+  },
+  {
+    "source": {
+      "id": "wuxi-yiliao-jigou-jiben-biaozhun",
+      "url": "https://wjw.wuxi.gov.cn/doc/2023/02/03/3875207.shtml",
+      "organization": "无锡市卫生健康委员会（转载卫生部《医疗机构基本标准（试行）》）",
+      "title": "医疗机构基本标准（试行）(1994)",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2023-02-03",
+      "publication_date_note": "页面标注「发布时间：2023-02-03」，为无锡市卫健委「法律法规/规章/部门规章」栏目转载页；正文为卫生部《医疗机构基本标准（试行）》（卫医发〔1994〕第30号），原文成文于1994年。"
+    },
+    "publication_pattern": "2023-02-03",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/wuxi-medical-institution-standard.raw",
+      "sha256": "af0a3521db8c4289d1ba93faa24bacac16461ec53349fe0fef29b9526ab605ed",
+      "captured_at": "2026-10-23T03:42:01.460Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-wuxi-yiliao-jigou-jiben-biaozhun-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "《医疗机构基本标准（试行）》是核发《医疗机构执业许可证》的依据",
+      "summary": "原文开篇：本标准为医疗机构执业必须达到的最低标准，是卫生行政部门核发《医疗机构执业许可证》的依据；少数地区执行确有困难的，可由省、自治区、直辖市卫生行政部门根据实际情况调整某些指标作为地方标准，报卫生部核准备案后施行。（同一官方来源共 2 条原文事实，字段：china_legal_requirement、scope；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "说明该标准在中国医疗机构管理中的法律地位：属「最低标准」与执业许可依据，省级可在报备后调整部分指标。因此各地实际要求可能高于本文所列下限；不得把本文数值直接当作某地现行强制标准，需另查地方标准。",
+      "relation": "direct",
+      "tags": [
+        "医疗机构执业许可证",
+        "最低标准",
+        "部门规章",
+        "地方标准",
+        "医院命名",
+        "床位门槛",
+        "20张",
+        "医疗机构分类"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "全国（卫生部标准）",
+        "statistic_scope": "医疗机构准入分类",
+        "region": "CN"
+      }
+    },
+    "extracts": [
+      {
+        "field": "china_legal_requirement",
+        "pattern": "本标准为医疗机构执业必须达到的最低标准，是卫生行政部门核发《医疗机构执业许可证》的依据。 少数地区执行本标准确有困难的，可由省、自治区、直辖市卫生行政部门根据实际情况调整某些指标，作为地方标准，报卫生部核准备案后施行。"
+      },
+      {
+        "field": "scope",
+        "pattern": "凡以“医院”命名的医疗机构，住院床位总数应在２０张以上。"
+      }
+    ],
+    "expected_fields": [
+      "china_legal_requirement",
+      "china_legal_requirement（未列各省调整后的地方标准）",
+      "scope",
+      "scope（未列各类机构完整标准表）"
+    ]
+  },
+  {
+    "source": {
+      "id": "stats-avgwage-2024",
+      "url": "https://www.stats.gov.cn/xxgk/sjfb/zxfb2020/202505/t20250516_1959826.html",
+      "organization": "国家统计局",
+      "title": "2024年城镇单位就业人员年平均工资情况",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-05-16",
+      "publication_date_note": "页面信息栏标注「发布机构 国家统计局」「成文日期 2025年05月16日」；索引号 410A04-0402-202505-0005。"
+    },
+    "publication_pattern": "2025\\D{0,6}0?5\\D{0,6}0?16",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/stats-avgwage-2024.raw",
+      "sha256": "25dc97adb7e0c6679c5b5a3f9959207fc1606639b6e5ddbe11cdbb549f2e6a4e",
+      "captured_at": "2026-10-23T03:56:18.509Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-stats-avgwage-2024-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "国家统计局：2024年城镇非私营单位「卫生和社会工作」年平均工资143173元",
+      "summary": "表2「2024年城镇非私营单位分行业门类就业人员年平均工资及增速」中，「卫生和社会工作」2024年为143173元、2023年为143818元、名义增长率-0.4%；同表合计为124110元。相邻行：教育126185元、文化体育和娱乐业126040元。（同一官方来源共 6 条原文事实，字段：salary_statistics、statistical_definition；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "这是「卫生和社会工作」行业门类（含卫生与社会工作）在城镇非私营单位口径下的年平均工资，是行业门类统计值，不是某家医院、某个岗位（如影像科技师、病案编码员）的薪资，也不是规培学员待遇。统计口径为税前工资总额口径，受单位覆盖范围与行业分类影响，不可当作个人期望薪资或招聘承诺。",
+      "relation": "direct",
+      "tags": [
+        "平均工资",
+        "卫生和社会工作",
+        "143173元",
+        "城镇非私营单位",
+        "行业门类",
+        "私营单位",
+        "75287元",
+        "分岗位工资",
+        "规模以上企业",
+        "专业技术人员112032元",
+        "五类岗位",
+        "统计口径",
+        "平均工资定义",
+        "计算公式",
+        "均值非中位数",
+        "工资总额",
+        "劳动报酬",
+        "实物支付",
+        "税前工资",
+        "到手收入",
+        "五险一金",
+        "不可当税后"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "国家统计局",
+        "statistic_scope": "工资统计指标解释",
+        "region": "全国"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "教育 126185 124067 1\\.7 卫生和社会工作 143173 143818 -0\\.4 文化、体育和娱乐业 126040 127334 -1\\.0"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "教育 60719 55775 8\\.9 卫生和社会工作 75287 74462 1\\.1 文化、体育和娱乐业 61669 59407 3\\.8"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "表 7 2024 年规模以上企业分行业门类分岗位就业人员年平均工资 单位：元 行 业 规模以上企业就业人员 中层及以上管理人员 专业技术 人员 办事人员和有关人员 社会生产服务和生活服务人员 生产制造及有关人员 合 计 102452 203014 148046 93189 77584 78561 采矿业 131864 249123 168042 140904 86298 118104 制造业 96139 191650 140536 99343 97572 76940 电力、热力、燃气及水生产和供应业 154839 253850 179605 128772 114435 140007 建筑业 78374 130730 93105 66919 62463 69199 批发和零售业 108356 202457 136449 94250 81075 70171 交通运输、仓储和邮政业 122673 230585 179801 101660 112883 97085 住宿和餐饮业 57911 108708 68646 56939 49997 48854 信息传输、软件和信息技术服务业 233793 461067 266974 152787 159796 103705 房地产业 85480 186931 114049 82225 55464 65673 租赁和商务服务业 92961 291329 146240 89527 66906 73186 科学研究和技术服务业 169200 312732 169318 119223 114695 106139 水利、环境和公共设施管理业 56476 179553 118484 71637 40110 61885 居民服务、修理和其他服务业 59457 126634 94584 69178 48642 57349 教育 111285 196577 117794 93560 90770 73691 卫生和社会工作 109674 192897 112032 84911 68841 81033"
+      },
+      {
+        "field": "statistical_definition",
+        "pattern": "（ 3 ）平均工资：是指在报告期内单位发放工资的人均水平。 计算公式为：从业人员平均工资 = 从业人员工资总额 / 从业人员平均人数"
+      },
+      {
+        "field": "statistical_definition",
+        "pattern": "（ 2 ）工资总额：根据《关于工资总额组成的规定》（详见官网 http://www\\.stats\\.gov\\.cn/xxgk/zcfggz/tjxzfg2020/201708/t20170803_1758101\\.html ），指本单位在报告期内直接支付给本单位全部从业人员的劳动报酬总额。不论是计入成本的还是不计入成本的，不论是以货币形式支付的还是以实物形式支付的，均应列入工资总额的计算范围。"
+      },
+      {
+        "field": "statistical_definition",
+        "pattern": "需要明确的是，工资总额是税前工资，包括单位从个人工资中直接为其代扣或代缴的个人所得税、社会保险基金和住房公积金等个人缴纳部分以及房费、水电费等，但不包括从单位工会经费或工会账户中发放的现金或实物"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "salary_statistics（无分岗位、分职称、分医院等级的细分值）",
+      "salary_statistics（无民营医院分岗位细分值）",
+      "employment_statistics",
+      "salary_statistics（无医院等级或科室细分）",
+      "statistical_definition",
+      "statistical_definition（未给中位数或分位数口径）",
+      "statistical_definition（未给税后折算方法）"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-itcenter-recruit-2023",
+      "url": "https://www.cd120.com/public/notice/recruit/74181.html",
+      "organization": "四川大学华西医院（人力资源部）",
+      "title": "华西医院信息中心招聘启事",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2023-06-16",
+      "publication_date_note": "页面标注「华西医院信息中心招聘启事 2023.06.16」，位于「通知公告 > 招聘 > 详细页」。"
+    },
+    "publication_pattern": "2023\\D{0,6}0?6\\D{0,6}0?16",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/huaxi-itcenter-recruit.raw",
+      "sha256": "88ad7e1cfbceecef9b2a9e6c2ef43fdcc422386b5c3fd7f8444c57d2692bdf30",
+      "captured_at": "2026-10-23T03:43:22.907Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-itcenter-recruit-2023-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "招聘单位：四川大学华西医院信息中心，面向社会招聘13名",
+      "summary": "启事开头：因发展需要，四川大学华西医院信息中心面向社会招聘以下工作人员13名。岗位表列出项目管理工程师、领办型医联体数据治理岗、全托管医联体数据治理岗、医技数据治理岗、临床数据治理岗、数据质量分析岗等岗位。（同一官方来源共 6 条原文事实，字段：employer、job_title、education、experience、technical_requirements、major_restrictions；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于四川大学华西医院信息中心2023年6月发布的社会招聘（报名与截止时间见原页面）。招聘人数13名为该次招聘合计，不等于当前仍开放的岗位；不构成对任何求职者的录用承诺。",
+      "relation": "direct",
+      "tags": [
+        "医院信息中心",
+        "招聘13名",
+        "华西医院",
+        "社会招聘",
+        "项目管理工程师",
+        "岗位职责",
+        "需求调研",
+        "医院信息化",
+        "学历要求",
+        "本科及以上",
+        "专业要求",
+        "统计学",
+        "软件工程",
+        "经验要求",
+        "35岁以下",
+        "工作年限",
+        "毕业年限",
+        "技术要求",
+        "医疗信息化",
+        "1年以上",
+        "集成平台",
+        "数据库",
+        "专业限制",
+        "数据治理",
+        "计算机"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "medical_department": "信息中心",
+        "department_type": "medical_technology"
+      }
+    },
+    "extracts": [
+      {
+        "field": "employer",
+        "pattern": "因发展需要，四川大学华西医院信息中心面向社会招聘以下工作人员 13名。"
+      },
+      {
+        "field": "job_title",
+        "pattern": "岗位名称 岗位职责 应聘要求 招聘人数 项目管理工程师"
+      },
+      {
+        "field": "education",
+        "pattern": "1\\.软件工程 、 计算机、数学、统计学相关专业本科及以上学历。"
+      },
+      {
+        "field": "experience",
+        "pattern": "2\\.年龄小于35岁，本科毕业5年以上或研究生毕业2年以上。"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "3\\. 熟悉医疗信息技术领域的基本理论和实践知识 ， 具 有 1年以上医疗 相关 软件开发经验 。"
+      },
+      {
+        "field": "major_restrictions",
+        "pattern": "1\\.本科及以上学历，计算机、软件工程等相关专业，年龄35岁以下"
+      }
+    ],
+    "expected_fields": [
+      "employer",
+      "city（页面正文未直接标注城市）",
+      "salary（全文未给薪资数额）",
+      "job_title",
+      "salary（未给薪资）",
+      "job_type（未写全职/合同类型）",
+      "education",
+      "major_restrictions",
+      "experience",
+      "technical_requirements",
+      "technical_requirements（未给技能考核方式）"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-it-engineer-2025",
+      "url": "https://www.cd120.com/public/notice/recruit/87197.html",
+      "organization": "四川大学华西医院（人力资源部）",
+      "title": "信息中心工程师招聘启事",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2025-07-09",
+      "publication_date_note": "页面标注「信息中心工程师招聘启事 2025.07.09」，位于「通知公告 > 招聘 > 详细页」。"
+    },
+    "publication_pattern": "2025\\D{0,6}0?7\\D{0,6}0?9",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/huaxi-it-engineer-recruit.raw",
+      "sha256": "4f32e60fbcd47a37486084bbc67e69e0a48b86d88bb9ddec32dd42c972368cb2",
+      "captured_at": "2026-10-23T03:43:15.449Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-it-engineer-2025-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "recruitment",
+      "title": "岗位名称：运维工程师与大数据开发工程师（华西医院信息中心，各1人）",
+      "summary": "启事面向社会招聘2名工作人员，岗位表列两个岗位：「一、运维工程师」与「二、大数据开发工程师」，各招聘1人。运维工程师负责多院区信息基础设施（服务器、存储、网络、虚拟化）管理及制度流程建设优化、系统运维监控平台建设、容灾备份与网络安全策略等。（同一官方来源共 4 条原文事实，字段：job_title、education、experience、technical_requirements；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于四川大学华西医院信息中心2025年7月发布的招聘（报名截止2025年8月20日24:00，通过该院人事信息管理平台提交）。岗位为医院信息中心技术岗，不是临床岗，也不等同于运维外包公司岗位。",
+      "relation": "direct",
+      "tags": [
+        "运维工程师",
+        "大数据开发工程师",
+        "医院信息中心",
+        "招聘2名",
+        "学历要求",
+        "硕士研究生",
+        "35岁以下",
+        "经验放宽",
+        "数据中心运维",
+        "经验要求",
+        "3年以上",
+        "三甲医院",
+        "公有云",
+        "虚拟化",
+        "技术要求",
+        "国产操作系统",
+        "KVM",
+        "信创"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "medical_department": "信息中心",
+        "department_type": "medical_technology"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "一、运维工程师 岗位名称 岗位职责 应聘要求 招聘人数 运维工程师"
+      },
+      {
+        "field": "education",
+        "pattern": "35岁以下， 硕士研究生及以上学历， 计算机、网络工程、软件工程等相关专业；具有 3年以上大型企业（ 主流公有云、大型 三甲医院）数据中心运维经验者，学历可适当放宽。"
+      },
+      {
+        "field": "experience",
+        "pattern": "具有 3年以上大型企业（ 主流公有云、大型 三甲医院）数据中心运维经验者"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "精通主流虚拟化平台（如 VMware 、 KVM、Openstack等 ）的规划、部署、运维、性能优化及高可用配置"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary（未给薪资）",
+      "city（页面正文未直接标注城市）",
+      "education",
+      "experience",
+      "technical_requirements",
+      "technical_requirements（未给认证类硬性要求）"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-binganke-2023",
+      "url": "https://www.cd120.com/public/notice/recruit/71906.html",
+      "organization": "四川大学华西医院（人力资源部）",
+      "title": "医务部病案科招聘公告",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2023-02-13",
+      "publication_date_note": "页面标注「医务部病案科招聘公告 2023.02.13」，位于「通知公告 > 招聘 > 详细页」。"
+    },
+    "publication_pattern": "2023\\D{0,6}0?2\\D{0,6}0?13",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/huaxi-binganke-recruit.raw",
+      "sha256": "66e55f17bbd9f384687772264328f6fb665754a35c14dd07a7c0d5d5d9bd3d0d",
+      "captured_at": "2026-10-23T03:44:25.991Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "recruitment-huaxi-binganke-2023-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "recruitment",
+      "title": "岗位名称：病案疾病编码岗（四川大学华西医院医务部病案科）",
+      "summary": "岗位表列「病案疾病编码岗」，所属科室为病案科，招聘1人。职责包括：每日调取数字化扫描病案完成病案首页诊疗信息编码、负责病历首页审核并在信息缺失时向科室核实补充、协助审核数字化扫描加工质量并按月出具问题报表、接待疾病相关查询与检索、负责国际疾病分类知识的临床科室推广与培训、创建及维护疾病诊断及手术字典库。（同一官方来源共 4 条原文事实，字段：job_title、education、technical_requirements、employer；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于四川大学华西医院医务部病案科2023年2月发布的招聘（报名截止2023年2月28日）。该岗属病案/编码技术岗，不是临床医师岗；职责涉及国际疾病分类（ICD）编码与病案首页质控，与「临床数据科学」中的数据治理有交叉但不对等。",
+      "relation": "direct",
+      "tags": [
+        "病案科",
+        "病案疾病编码岗",
+        "ICD编码",
+        "病案首页",
+        "招聘1人",
+        "学历要求",
+        "硕士及以上",
+        "医学背景",
+        "技术要求",
+        "数据库管理",
+        "英语六级",
+        "病案编码",
+        "招聘单位",
+        "华西医院",
+        "医务部病案科"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "medical_department": "病案科",
+        "department_type": "medical_technology"
+      }
+    },
+    "extracts": [
+      {
+        "field": "job_title",
+        "pattern": "岗位名称 所属 科室 岗位职责 应聘要求 招聘人数 病案疾病编码岗 病案科"
+      },
+      {
+        "field": "education",
+        "pattern": "1\\.硕士及以上学历，有良好的医学背景"
+      },
+      {
+        "field": "technical_requirements",
+        "pattern": "2\\.熟练掌握各类办公软件及数据库管理软件； 3\\.具良好的英文读写能力，通过国家英语六级考试"
+      },
+      {
+        "field": "employer",
+        "pattern": "医务部病案科招聘公告 - 四川大学华西医院 -"
+      }
+    ],
+    "expected_fields": [
+      "job_title",
+      "salary（公告未给薪资）",
+      "city（正文未直接标注城市）",
+      "experience（未写工作年限要求）",
+      "education",
+      "salary（未给薪资）",
+      "technical_requirements",
+      "technical_requirements（未要求ICD编码证书）",
+      "employer"
+    ]
+  },
+  {
+    "source": {
+      "id": "huaxi-zhupei-buzhao-2026",
+      "url": "https://www.cd120.com/public/notice/recruit/96340.html",
+      "organization": "四川大学华西医院（毕业后培训部）",
+      "title": "四川大学华西医院2026年住院医师及省级专科医师补招通知",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-04-15",
+      "publication_date_note": "页面标注「2026.04.15」，落款「毕业后培训部 2026 年 4 月 15 日」。"
+    },
+    "publication_pattern": "2026\\D{0,6}0?4\\D{0,6}0?15",
+    "artifact_capture": {
+      "path": "work/knowledge-medical/huaxi-guipei-2026.raw",
+      "sha256": "ce8bf3c69312c09e8ad15325c25cf2073e99c3f3bc431faaab543feecd7466e1",
+      "captured_at": "2026-10-23T03:40:23.180Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "learning-huaxi-zhupei-buzhao-2026-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "learning",
+      "title": "华西医院2026规培补招：15个专业基地补招合计70人（麻醉科30人最多）",
+      "summary": "补招通知列出住院医师补招专业及名额：急诊科4、麻醉科30、皮肤科1、临床病理科1、精神科3、检验医学科1、神经内科2、放射科8、全科5、超声医学科5、康复医学科1、核医学科2、儿外科2、重症医学科5，总计70人。通知另列省级专科医师补招专业及名额，总计36人。（同一官方来源共 2 条原文事实，字段：training、access_requirement；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "仅适用于四川大学华西医院2026年住院医师规范化培训的「补招」（2026-04-15发布，报名截止4月28日，笔试与综合能力测试在5月中旬）。补招名额为该次剩余指标，不等于全年招收计划；各专业名额不得外推到其他年度或其他医院。",
+      "relation": "direct",
+      "tags": [
+        "补招名额",
+        "华西医院",
+        "麻醉科30人",
+        "总计70",
+        "专业基地",
+        "报名时间",
+        "笔试",
+        "综合能力测试",
+        "补招流程",
+        "已过期"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "四川大学华西医院",
+        "medical_topic": "住院医师规范化培训",
+        "region": "四川省"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training",
+        "pattern": "一、 住院医师补招专业及名额 专业基地 补招名额 专业基地 补招名额 急诊科 4 麻醉科 30 皮肤科 1 临床病理科 1 精神科 3 检验医学科 1 神经内科 2 放射科 8 全科 5 超声医学科 5 康复医学科 1 核医学科 2 儿外科 2 重症医学科 5 总计 70"
+      },
+      {
+        "field": "access_requirement",
+        "pattern": "四、 报名及考试安排 1、 报名时间：即日起至 4 月 28 日 2、 考试安排 （1） 笔试： 5 月中旬 （2） 综合能力测试： 5 月中旬 3、 体检及录取另行通知"
+      }
+    ],
+    "expected_fields": [
+      "training",
+      "training（未在本页给出补招的完整报考条件，需另看招收简章）",
+      "access_requirement",
+      "access_requirement（本页未列具体报考条件）"
+    ]
+  }
+]

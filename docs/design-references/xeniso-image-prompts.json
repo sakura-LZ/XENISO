@@ -1,0 +1,108 @@
+{
+  "model": "gpt-image-2",
+  "method": "imagegen bundled CLI generate-batch; user-authorized API",
+  "api_base": "https://api.zz-api.cc.cd/v1",
+  "credential_handling": "generation process environment only; no key saved in project files",
+  "images": [
+    {
+      "out": "xeniso-profile.png",
+      "prompt": "Use case: ads-marketing. A premium editorial architectural photograph for XENISO, a medical student's interdisciplinary career exploration platform, feature image for personal profile. A serene contemporary university study room, a generous pale limestone desk close to camera, an open ivory notebook with absolutely blank pages, two translucent sage and slate-blue glass sheets, a graphite pencil, soft daylight through a tall window at left, green trees outside gently out of focus. Carefully composed tactile materials, natural shadows, architectural magazine quality, quiet cinematic realism. The objects feel used thoughtfully, not an icon arrangement. Unified series palette: chalk white, cool grey, muted eucalyptus green, subdued blue-grey. Landscape 3:2, large central subject, readable at card size, uncluttered edges, no people, no letters or numbers, no logos, no watermarks, no interface screenshots, no fake charts, no clipart, no vector illustration, no neon, no futuristic holograms.",
+      "model": "gpt-image-2",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "png",
+      "original": "output/imagegen/xeniso/xeniso-profile.png",
+      "web": "public/previews/assets/xeniso-profile.webp",
+      "web_size": [
+        1200,
+        800
+      ],
+      "original_size": [
+        1536,
+        1024
+      ],
+      "sha256": "e255738659f0e9a6999033198080e1ef6bb238366eb998af49286ed59792d734",
+      "bytes": 91804
+    },
+    {
+      "out": "xeniso-evaluation.png",
+      "prompt": "Use case: ads-marketing. A premium editorial architectural still-life photograph, matching a serene contemporary university study room series. Feature image about making sense of existing evidence. Three substantial sheets of lightly frosted pale blue-green architectural glass placed upright at different angles on a chalk-white limestone plinth. Sunlight passing through the layered glass creates three subtle overlapping geometric shadows on the stone, with a single blank cream archive folio in the foreground and a pale wall behind. The scene communicates different perspectives coming together through physical materials. Refined high-end architecture magazine art direction, tactile stone and glass, beautifully controlled natural daylight from left, realistic photography, spacious composition. Palette chalk white, cool grey, muted eucalyptus green, subdued slate blue. Landscape 3:2, strong central composition readable at card size. No people, text, numbers, logos, charts, UI, iconography, neon, glowing objects, holograms, vector illustration, watermark.",
+      "model": "gpt-image-2",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "png",
+      "original": "output/imagegen/xeniso/xeniso-evaluation.png",
+      "web": "public/previews/assets/xeniso-evaluation.webp",
+      "web_size": [
+        1200,
+        800
+      ],
+      "original_size": [
+        1536,
+        1024
+      ],
+      "sha256": "d3832939adfa375e5386fe99b98f99786dbc5419fb34dd5c2b7a2dee06a252b4",
+      "bytes": 62880
+    },
+    {
+      "out": "xeniso-experience.png",
+      "prompt": "Use case: ads-marketing. A premium editorial architectural photograph for a medical interdisciplinary career platform, feature image for experiencing professional work. A serene contemporary biomedical design studio, a white workbench in the foreground holding a compact elegant microscope in profile and a physical pale-grey wearable sensor prototype beside a small unlabelled blue-grey material sample. A blank notebook and a simple stool. Tall windows reveal softly focused green trees, translucent glass partitions and distant lab benches imply a real working environment without clutter. Carefully composed 50mm architectural magazine photograph, natural daylight from left, tactile materials and gentle photographic depth, cinematic but believable, no humans. Unified series palette: chalk white, cool grey, muted eucalyptus green, subdued slate blue. Landscape 3:2, centre-weighted subject, tidy crop. No text, numbers, logos, screens, fake UI, glow, neon, holograms, stock-photo handshakes, vector icons or watermarks.",
+      "model": "gpt-image-2",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "png",
+      "original": "output/imagegen/xeniso/xeniso-experience.png",
+      "web": "public/previews/assets/xeniso-experience.webp",
+      "web_size": [
+        1200,
+        800
+      ],
+      "original_size": [
+        1536,
+        1024
+      ],
+      "sha256": "afc7d6a197753fdef618fbe201ef3985a3e68e698a085847e8a12f28072cb985",
+      "bytes": 62704
+    },
+    {
+      "out": "xeniso-planning.png",
+      "prompt": "Use case: ads-marketing. A premium editorial architectural photograph, final image in a coherent contemporary university series, representing an actionable path forward. A beautiful broad shallow limestone staircase ascending gently from the lower left foreground into a quiet sunlit university garden courtyard, sculptural thin slate-blue metal handrail, a soft eucalyptus tree beside a chalk-white modern wall. Four visible broad steps, no impossible architecture, no people. Natural daylight from left, tactile white stone, tree shadow, understated cinematic realism, refined architecture magazine composition. The clear physical pathway is the subject, not a symbolic graphic. Palette chalk white, cool grey, muted eucalyptus green, subdued blue-grey. Landscape 3:2 with a strong composition readable at small card size. No text, labels, numbers, logos, watermarks, icons, UI, neon, glowing path, futuristic architecture or vector illustration.",
+      "model": "gpt-image-2",
+      "size": "1536x1024",
+      "quality": "medium",
+      "output_format": "png",
+      "original": "output/imagegen/xeniso/xeniso-planning.png",
+      "web": "public/previews/assets/xeniso-planning.webp",
+      "web_size": [
+        1200,
+        800
+      ],
+      "original_size": [
+        1536,
+        1024
+      ],
+      "sha256": "c3785fa16b862f81d149bcde2d51cfbbc8984b352e0d6fe555d598032f60990f",
+      "bytes": 234846
+    },
+    {
+      "out": "xeniso-community-reference.png",
+      "prompt": "Use case: stylized-concept. A restrained cinematic still frame to serve as an image-to-video reference for the background of a premium academic community website. Wide 16:9 frame. A continuous near-white cool ivory atmosphere, with fine sparse eucalyptus-green and slate-blue-grey dust-like translucent particles drifting at far left and far right edges. Very subtle optical depth: most tiny particles 1 to 3 pixels, a few 5 to 8 pixels softly out of focus, no large spheres. The central sixty percent of the image must be nearly empty light grey-white to remain readable behind an HTML forum list. Soft diffused daylight, delicate organic distribution and photographic grain, understated and calm. Particles must look like fine airborne motes, not glitter. No letters, text, logo, people, objects, interface, stars, constellations, glowing connection lines, neon, vivid gradients or lens flares. Fixed camera reference; no suggestion of zoom or tunnel.",
+      "model": "gpt-image-2",
+      "size": "2048x1152",
+      "quality": "medium",
+      "output_format": "png",
+      "original": "output/imagegen/xeniso/xeniso-community-reference.png",
+      "web": "public/previews/assets/xeniso-community-reference.webp",
+      "web_size": [
+        1600,
+        900
+      ],
+      "original_size": [
+        2048,
+        1152
+      ],
+      "sha256": "ea514727f18ae3a1194bd812b7fba4f1269814929cc2865ec955569cbcfed9cc",
+      "bytes": 36670
+    }
+  ]
+}

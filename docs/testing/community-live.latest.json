@@ -1,0 +1,103 @@
+{
+  "checked_at": "2026-10-21T15:47:23.110Z",
+  "mock": false,
+  "synthetic_probe": true,
+  "emails_sent": false,
+  "privileged_access": "synthetic account provisioning and cleanup only; assertions use anon/user JWT",
+  "checks": [
+    {
+      "name": "unauthenticated_list_denied",
+      "passed": true
+    },
+    {
+      "name": "synthetic_anonymous_created",
+      "passed": true
+    },
+    {
+      "name": "anonymous_auth_list_denied",
+      "passed": true
+    },
+    {
+      "name": "anonymous_auth_publish_denied",
+      "passed": true
+    },
+    {
+      "name": "verified_synthetic_account_0_created",
+      "passed": true
+    },
+    {
+      "name": "verified_account_0_signed_in",
+      "passed": true
+    },
+    {
+      "name": "verified_synthetic_account_1_created",
+      "passed": true
+    },
+    {
+      "name": "verified_account_1_signed_in",
+      "passed": true
+    },
+    {
+      "name": "community_posts_direct_read_denied",
+      "passed": true
+    },
+    {
+      "name": "community_flags_direct_read_denied",
+      "passed": true
+    },
+    {
+      "name": "verified_member_publish",
+      "passed": true
+    },
+    {
+      "name": "author_sees_own_post",
+      "passed": true
+    },
+    {
+      "name": "other_member_sees_anonymous_post",
+      "passed": true
+    },
+    {
+      "name": "public_rpc_excludes_identity",
+      "passed": true
+    },
+    {
+      "name": "cross_user_delete_rejected",
+      "passed": true
+    },
+    {
+      "name": "member_report_allowed",
+      "passed": true
+    },
+    {
+      "name": "report_update_idempotent",
+      "passed": true
+    },
+    {
+      "name": "anonymous_report_denied",
+      "passed": true
+    },
+    {
+      "name": "rapid_repeat_publish_denied",
+      "passed": true
+    },
+    {
+      "name": "author_delete_allowed",
+      "passed": true
+    },
+    {
+      "name": "deleted_post_no_longer_listed",
+      "passed": true
+    },
+    {
+      "name": "deleted_post_report_rejected",
+      "passed": true
+    }
+  ],
+  "failure": null,
+  "cleanup": {
+    "accounts_created": 3,
+    "failures": 0
+  },
+  "passed": true
+}
