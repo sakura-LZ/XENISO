@@ -38,7 +38,7 @@ export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, 
   function change(action: () => void) { action(); setOffset(0); setStatus("loading"); setResult(null); setRetry(value => value + 1); }
   function exportResult() {
     if (!result) return;
-    const text = result.hits.map(hit => `## ${hit.title}\n\n${hit.facts.map(fact => `> ${fact.quote}`).join("\n\n")}\n\n适用范围：${hit.applicability}\n${hit.context?.statistic_scope ?? ""}\n来源：${hit.source.organization} ${hit.source.url}\n发布：${hit.source.published_at ?? "没查到"}；采集：${hit.collected_at}\n没查到：${hit.missing_fields.map(field => missingLabels[field] ?? "其他待核实信息").join("、")}`).join("\n\n");
+    const text = result.hits.map(hit => `## ${hit.title}\n\n${hit.facts.map(fact => `> ${fact.quote}`).join("\n\n")}\n\n适用范围：${hit.applicability}\n${hit.context?.statistic_scope ?? ""}\n来源：${hit.source.organization} ${hit.source.url}\n发布日期：${hit.source.published_at ?? "来源未标注"}；采集日期：${hit.collected_at}\n没查到：${hit.missing_fields.map(field => missingLabels[field] ?? "其他待核实信息").join("、")}`).join("\n\n");
     const url = URL.createObjectURL(new Blob([`# LIMEN 来源资料摘录（当前结果页）\n\n${text}`], { type: "text/markdown;charset=utf-8" }));
     const link = document.createElement("a"); link.href = url; link.download = "LIMEN-来源资料摘录.md"; link.click(); URL.revokeObjectURL(url);
   }
@@ -77,7 +77,7 @@ export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, 
     </div>}
     <div key={`${query}:${school}:${year}:${category}:${offset}`}>{result?.hits.map(hit => <article key={hit.citation} className="xnlib-record">
       <h4><a href={hit.source.url} target="_blank" rel="noreferrer">{hit.title}</a></h4>
-      <p className="xnlib-record-meta">{[hit.context?.institution, hit.context?.college, hit.context?.program, hit.context?.admission_year ? `${hit.context.admission_year} 年招生` : ""].filter(Boolean).join(" · ") || hit.source.organization} · 发布 {hit.source.published_at ?? "没查到"} · 采集 {hit.collected_at.slice(0, 10)}</p>
+      <p className="xnlib-record-meta">{[hit.context?.institution, hit.context?.college, hit.context?.program, hit.context?.admission_year ? `${hit.context.admission_year} 年招生` : ""].filter(Boolean).join(" · ") || hit.source.organization} · 发布日期 {hit.source.published_at ?? "来源未标注"} · 采集日期 {hit.collected_at.slice(0, 10)}</p>
       <div className="xnlib-record-chips">
         <span className="atlas-chip" data-tone="ok">有出处</span>
         {hit.historical && <span className="atlas-chip" data-tone="gap">往年 / 待复查</span>}
@@ -92,8 +92,8 @@ export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, 
           {hit.missing_fields.length > 0 && <p className="xnlib-missing">没查到：{hit.missing_fields.map(field => missingLabels[field] ?? "其他待核实信息").join("、")}。这些字段来源没写，我们不做推测。</p>}
           <div className="xnlib-record-foot">
             <a href={hit.source.url} target="_blank" rel="noreferrer">{hit.source.organization} · 打开原始资料</a>
-            <span>采集 {hit.collected_at.slice(0, 10)}</span>
-            <span>核对 {hit.verified_at.slice(0, 10)}（原文片段逐字匹配）</span>
+            <span>采集日期 {hit.collected_at.slice(0, 10)}</span>
+            <span>核对日期 {hit.verified_at.slice(0, 10)}（原文片段逐字匹配）</span>
           </div>
           <p className="xnlib-disclosure">{hit.source.publication_date_note} {hit.context?.evidence_locator}</p>
         </div>
