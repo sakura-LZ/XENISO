@@ -1,5 +1,6 @@
 "use client";
 import type { Template } from "@/lib/experience/templates";
+import { IconPin, IconPulse } from "@/components/icons";
 import { operationResult, type ChoiceState, type OperationResult } from "@/lib/experience/operations";
 
 const seriesColors = ["var(--green)", "var(--ochre)", "var(--ink-3)"];
@@ -37,7 +38,7 @@ export function OperationPreview({ result }: { result: OperationResult }) {
   return (
     <div className="xd-result" aria-live="polite" data-motion="M-E06">
       <div className="xd-result-head">
-        <h4>这一步的结果</h4>
+        <h4><IconPulse aria-hidden="true" />这一步的结果</h4>
         <span className="simulation-tag">simulation · 固定教学数据</span>
       </div>
       {result.series && <SeriesChart series={result.series} />}
@@ -71,7 +72,7 @@ export function TaskWorkbench({ template, choices, step, onChange }: { template:
   return (
     <section className="atlas-sheet xd-tight" aria-label="任务操作台">
       <div className="xd-sheet-head">
-        <h3>先做决定</h3>
+        <h3><IconPin aria-hidden="true" />先做决定</h3>
         <p className="xd-sheet-note">单选项，可以随时改；改过之后，后面几步要重新确认</p>
       </div>
       <fieldset className="xd-options-set">

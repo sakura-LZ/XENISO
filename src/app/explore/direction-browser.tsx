@@ -194,10 +194,12 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
             </section>
             <section id="chapter-work" className="xnlib-chapter">
               <ChapterHead entry={chapters[1]} />
+              {/* 三格小标题是卡内的字段名，不是区块标题：用 h4 与字号阶梯对齐
+                  （原先是 h3，但在 390 下只有 15px，会和 h2 同尺寸、层级塌陷）。 */}
               <div className="xnlib-kv3">
-                <div><h3>输入</h3><p>{template.brief}</p></div>
-                <div><h3>处理</h3><p>{template.stages.map(stage => stage.title).join("，然后")}</p></div>
-                <div><h3>结果</h3><p>{template.deliverable}</p></div>
+                <div><h4>输入</h4><p>{template.brief}</p></div>
+                <div><h4>处理</h4><p>{template.stages.map(stage => stage.title).join("，然后")}</p></div>
+                <div><h4>结果</h4><p>{template.deliverable}</p></div>
               </div>
               <Fold label="一天里的三步" count={handbook.daily_work.length}>
                 <ol className="xnlib-steps">{handbook.daily_work.map((task, i) => <li key={task}><span>第 {i + 1} 步</span><p>{task}</p></li>)}</ol>
@@ -207,11 +209,13 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
               <ChapterHead entry={chapters[2]} />
               <div className="xnlib-skill-pair">
                 <div>
-                  <h3>医学经历可能提供的起点</h3>
+                  {/* 两列的小标题是卡内字段名，不是章节标题：用 h4 与阶梯对齐
+                      （原来是 h3 但 CSS 给到 16px，不在任何字号档上）。 */}
+                  <h4>医学经历可能提供的起点</h4>
                   <ul className="xnlib-plain-list">{current.medical_transfer.map(item => <li key={item}>{item}</li>)}</ul>
                 </div>
                 <div>
-                  <h3>这个方向要求、你可能没学过的</h3>
+                  <h4>这个方向要求、你可能没学过的</h4>
                   <p className="xnlib-chip-row">{current.skills.map(item => <span className="atlas-chip" data-tone="gap" key={item}>{item}</span>)}</p>
                   <p className="xnlib-sub-label">入门前先补的基础</p>
                   <ul className="xnlib-plain-list">{handbook.prerequisites.map(item => <li key={item}>{item}</li>)}</ul>
@@ -274,7 +278,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
     </header>
     <div className="xnlib-cabinet">
       <aside className="xnlib-rail">
-        <h3 className="xnlib-rail-title">方向分类</h3>
+        <p className="xnlib-rail-title">方向分类</p>
         <div className="xnlib-rail-list" role="group" aria-label="方向分类">
           <button className="xnlib-rail-btn" aria-pressed={state.group === "all"} onClick={() => navigate({ ...state, group: "all" }, false, true)}>全部方向<span className="xnlib-rail-count">{directions.length}</span></button>
           {groups.map(group => <button key={group.id} className="xnlib-rail-btn" aria-pressed={state.group === group.id} onClick={() => navigate({ ...state, group: group.id }, false, true)}>{group.name}<span className="xnlib-rail-count">{group.specializations.length}</span></button>)}
@@ -365,7 +369,7 @@ function DirectionComparison({ selected, onChange }: { selected: string[]; onCha
   const compared = selected.map(id => findDirection(id)!);
   const rows = [
     { title: "实际工作", render: (item: Direction) => <ul>{item.work_tasks.map(value => <li key={value}>{value}</li>)}</ul> },
-    { title: "能力基础", render: (item: Direction) => <><h3>医学经历可能提供的起点</h3><ul>{item.medical_transfer.map(value => <li key={value}>{value}</li>)}</ul><h3>要求、你可能没学过的</h3><ul>{item.skills.map(value => <li key={value}>{value}</li>)}</ul><span className="atlas-chip xnlib-compare-tag" data-tone="gap">要补基础</span></> },
+    { title: "能力基础", render: (item: Direction) => <><strong className="xnlib-cell-label">医学经历可能提供的起点</strong><ul>{item.medical_transfer.map(value => <li key={value}>{value}</li>)}</ul><strong className="xnlib-cell-label">要求、你可能没学过的</strong><ul>{item.skills.map(value => <li key={value}>{value}</li>)}</ul><span className="atlas-chip xnlib-compare-tag" data-tone="gap">要补基础</span></> },
     { title: "入门任务", render: (item: Direction) => <><p>{getTemplate(item.id).title}</p><p>做完拿到：{getTemplate(item.id).deliverable}</p><Link className="text-action" href={`/experience?direction=${item.id}`}>在职业体验里做一遍</Link></> },
     { title: "报考门槛", render: (item: Direction) => <><p>个人报考资格还没核定。院校、年份、专业限制和加试要求要逐项核对原文。</p><Link className="text-action" href={`/explore?direction=${item.id}#chapter-admissions`}>核对该方向的招生来源</Link><br /><span className="atlas-chip xnlib-compare-tag" data-tone="miss">没查到</span></> },
     { title: "来源", render: (item: Direction) => <><p>方向映射与入门任务为 LIMEN 编辑整理。</p><ul>{handbookEntries[item.id as HandbookDirectionId].sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a></li>)}</ul></> },

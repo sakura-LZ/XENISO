@@ -265,7 +265,10 @@
 .xnlib-sub-label { margin: 16px 0 0; font-size: var(--fs-small); font-weight: 600; color: var(--ink-3); }
 .xnlib-chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
 .xnlib-skill-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 28px; margin-top: 16px; }
-.xnlib-skill-pair > div > h3 { margin-top: 0; }
+.xnlib-skill-pair > div > :is(h4, h3) { margin-top: 0; }
+/* 对比表格单元格内的小标签：原来是 h3（16px，不在任何字号档上），改成 strong + 标签档 */
+.xnlib-cell-label { display: block; margin: 10px 0 4px; font-size: var(--fs-label); line-height: var(--lh-label); color: var(--ink-3); font-weight: 600; }
+.xnlib-cell-label:first-child { margin-top: 0; }
 
 /* 一句话规则：全页只出现一次，在页头 */
 .xnlib-file-rule {
@@ -322,7 +325,9 @@
   transition: transform 260ms var(--ease);
 }
 .xnlib-fold[open] > summary { color: var(--ink); }
-.xnlib-fold[open] > summary .xnlib-fold-chevron { transform: rotate(-135deg) translate(-1px, -1px); }
+.xnlib-fold[open] > summary .xnlib-fold-chevron,
+.xnlib-record-fold[open] > summary .xnlib-fold-chevron { transform: rotate(-135deg) translate(-1px, -1px); }
+.xnlib-record-fold[open] > summary { color: var(--ink); }
 .xnlib-fold-body { padding: 4px 0 6px; }
 .xnlib-fold-body > :first-child { margin-top: 0; }
 /* 展开反馈：只动 opacity + translateY，不碰布局高度，原生开合行为不变 */
@@ -408,7 +413,17 @@
   .xnlib-chapter-head { grid-template-columns: 28px minmax(0, 1fr); gap: 0 10px; }
   .xnlib-chapter-icon { width: 28px; height: 28px; }
   .xnlib-chapter-icon svg { width: 16px; height: 16px; }
-  .xnlib-chapter h2 { font-size: var(--fs-h3); line-height: var(--lh-h3); }
+  /* 窄屏章节标题保持 --fs-h2（clamp 已经收到 22px），不要降到 h3/lead 档：
+     那两档在 390 下都是 18px，会和下面的 h3 小节标题同尺寸，层级直接塌掉。 */
+  .xnlib-chapter h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); }
+  /* 窄屏标题最多两行，避免一条记录被长标题撑到三行 */
+  .xnlib-record h4 { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
+  .xnlib-record { padding: 12px 0 10px; }
+  .xnlib-record-fold > summary { padding: 3px 0; }
+  .xnlib-record-chips { margin-left: 6px; }
+  .xnlib-record-chips .atlas-chip { font-size: 12px; padding: 1px 7px; }
+  .xnlib-record-body { max-height: min(380px, 52vh); }
+  .xnlib-admissions { max-height: min(420px, 55vh); }
 }
 
 /* ---------- 对比表 ---------- */
@@ -477,13 +492,36 @@
 .xnlib-count.warn { color: #6f4f14; }
 .xnlib-count.error { color: var(--danger); }
 
-.xnlib-record { padding: 18px 0 16px; border-bottom: 1px solid var(--line-2); }
+.xnlib-record { padding: 14px 0 12px; border-bottom: 1px solid var(--line-2); }
 .xnlib-record:first-of-type { border-top: 1px solid var(--line-2); }
-.xnlib-record h4 { margin: 0; font-size: var(--fs-h3); line-height: var(--lh-h3); }
+/* 列表里的记录标题是行标签，不是章节标题：用正文级字号，避免一条记录被标题撑到三行 */
+.xnlib-record h4 { margin: 0; font-size: var(--fs-body); line-height: 1.45; }
 .xnlib-record h4 a { color: var(--ink); text-decoration: none; }
 .xnlib-record h4 a:hover { text-decoration: underline; text-underline-offset: 4px; }
-.xnlib-record-meta { margin: 4px 0 0; max-width: 52em; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-3); }
-.xnlib-record-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.xnlib-record-meta { margin: 4px 0 0; max-width: 40em; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-3); overflow-wrap: anywhere; }
+.xnlib-record-chips { display: inline-flex; flex-wrap: wrap; gap: 6px; margin-left: 8px; vertical-align: middle; }
+/* 每条记录的摘录折叠：summary 压成一行，展开后的正文限高内部滚动，
+   保证单条记录展开也不会把页面撑成一屏接一屏（原文一个字都不删）。 */
+.xnlib-record-fold { margin-top: 6px; border: 0; }
+.xnlib-record-fold > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  font-size: var(--fs-meta);
+  font-weight: 500;
+  color: var(--ink-2);
+  list-style: none;
+  cursor: pointer;
+}
+.xnlib-record-fold > summary::-webkit-details-marker { display: none; }
+.xnlib-record-fold > summary:hover { color: var(--green-deep); }
+.xnlib-record-body {
+  max-height: min(460px, 58vh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-right: 6px;
+}
 .xnlib-quote {
   margin: 10px 0 0;
   max-width: 40em;
@@ -494,18 +532,20 @@
   line-height: var(--lh-body);
   color: var(--ink-2);
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .xnlib-quote b { display: block; margin-bottom: 4px; font-family: var(--font-mono); font-size: var(--fs-label); font-weight: 500; letter-spacing: .06em; color: var(--ink-3); }
-.xnlib-scope { margin: 10px 0 0; padding: 10px 14px; border: 1px dashed var(--line-strong); font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-2); }
-.xnlib-record-foot { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 12px; font-family: var(--font-mono); font-size: var(--fs-label); line-height: var(--lh-small); color: var(--ink-3); }
+.xnlib-scope { margin: 10px 0 0; max-width: 40em; padding: 10px 14px; border: 1px dashed var(--line-strong); font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-2); overflow-wrap: anywhere; }
+.xnlib-record-foot { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 12px; font-family: var(--font-mono); font-size: var(--fs-label); line-height: var(--lh-small); color: var(--ink-3); overflow-wrap: anywhere; }
 .xnlib-record-foot a { color: var(--green); text-decoration: underline; text-underline-offset: 3px; }
-.xnlib-missing { margin: 10px 0 0; max-width: 52em; font-size: var(--fs-small); line-height: var(--lh-small); color: #6f4f14; }
-.xnlib-disclosure { margin: 12px 0 0; font-size: var(--fs-meta); line-height: var(--lh-small); color: var(--ink-3); }
+.xnlib-missing { margin: 10px 0 0; max-width: 52em; font-size: var(--fs-small); line-height: var(--lh-small); color: #6f4f14; overflow-wrap: anywhere; }
+.xnlib-disclosure { margin: 12px 0 0; max-width: 40em; font-size: var(--fs-meta); line-height: var(--lh-small); color: var(--ink-3); overflow-wrap: anywhere; }
 .xnlib-pager { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 20px; }
 .xnlib-pager span { font-family: var(--font-mono); font-size: var(--fs-meta); color: var(--ink-3); }
 
 /* 招生条目表 */
-.xnlib-admissions { margin-top: 18px; overflow-x: auto; }
+.xnlib-admissions { margin-top: 12px; overflow: auto; max-height: min(520px, 62vh); overscroll-behavior: contain; }
 .xnlib-admissions table { width: 100%; border-collapse: collapse; }
 .xnlib-admissions th,
 .xnlib-admissions td { padding: 12px 16px; border-bottom: 1px solid var(--line-2); text-align: left; vertical-align: top; font-size: var(--fs-small); line-height: var(--lh-body); }

@@ -7,6 +7,8 @@ const fields: Record<string, string> = { occupation_definition: "职业定义", 
 const missingLabels: Record<string, string> = { personal_eligibility: "个人资格", tuition: "学费", college_retest_rules: "院系复试细则", ordinary_bachelor_program_eligibility: "普通本科具体专业资格", salary: "岗位薪资", deadline: "招聘截止日", published_at: "发布日期", career_path: "职业晋升路径", career_promotion_path: "职业晋升路径", industry_universal_requirements: "行业通用要求", major_graduate_salary: "本专业毕业生薪资", role_average_salary: "本岗位平均薪资", major_employment_rate: "本专业就业率", employment_rate: "就业率", graduate_salary: "毕业生薪资", license_eligibility: "执业资格", current_year_requirements: "当年新要求", cross_major_restrictions: "跨专业限制", major_average_salary: "专业平均薪资", direction_employment_rate: "本方向就业率", medical_specific_standard: "医疗专门职业标准", role_specific_career_path: "本岗位晋升路径", course_enrollment: "课程开放情况", personal_learning_hours: "个人学习时长", engineering_prerequisites: "工程先修要求", clinical_data_role_requirements: "临床数据岗位要求", course_hours: "课程学时", current_course_access: "课程获取方式", school_specific_admissions: "具体院校招生要求", national_department_standard: "全国科室标准", department_training_path: "科室培养路径", recruitment_eligibility: "招聘资格", total_graduates: "毕业生总人数", average_salary: "平均薪资", medical_major_salary: "医学专业薪资", doctor_salary: "医生薪资", department_salary: "科室薪资", major_restrictions: "专业硬限制" };
 Object.assign(missingLabels, { application_deadline: "招聘截止日", education: "学历要求", knowledge_graph_requirements: "知识图谱岗位要求", medicine_major_eligibility: "医学专业是否适用" });
 type Result = { hits: KnowledgeHit[]; total: number; has_more: boolean; facets: { institutions: string[]; admission_years: number[] }; coverage: { records: number; sources: number; by_category: Record<string, number> }; missing_categories: string[] };
+/** 每页条数：一次只铺 5 条，配合折叠，单块展开不超过 1.5 屏（1440 与 390 都成立）。 */
+const PAGE = 5;
 
 export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, initialCategory = "", chapterMode = false }: { directionId?: string; medicalTopic?: string; medicalDepartment?: string; initialCategory?: string; chapterMode?: boolean }) {
   const titleId = useId();
@@ -22,7 +24,7 @@ export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, 
   const [retry, setRetry] = useState(0);
   useEffect(() => {
     const controller = new AbortController();
-    const params = new URLSearchParams({ limit: "12", offset: String(offset), q: query, include_historical: String(historical), domain: directionId ? "interdisciplinary" : "medicine" });
+    const params = new URLSearchParams({ limit: String(PAGE), offset: String(offset), q: query, include_historical: String(historical), domain: directionId ? "interdisciplinary" : "medicine" });
     if (directionId) params.set("direction_id", directionId);
     if (medicalTopic) params.set("medical_topic", medicalTopic);
     if (medicalDepartment) params.set("medical_department", medicalDepartment);
@@ -70,29 +72,35 @@ export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, 
     {status === "error" && <div className="xnlib-file-actions"><button className="button secondary small" onClick={() => { setStatus("loading"); setRetry(retry + 1); }}>重新读取</button></div>}
     {status === "ready" && !!result?.missing_categories.length && <p className="xnlib-count warn">还没查到的分类：{result.missing_categories.map(value => labels[value]).join("、")}。这些位置空着，没有用生成内容补齐。</p>}
     {status === "ready" && !result?.hits.length && <div className="xnlib-empty"><p>按当前条件没查到已核实的原文。没查到不等于不存在这个专业或岗位，可以放宽年份、换一所院校，或先看其他分类。</p></div>}
-    {category === "admissions" && !!result?.hits.length && <div className="xnlib-admissions">
-      <table>
-        <caption className="sr-only">当前招生来源里的院校、项目、年份与专业要求</caption>
-        <thead><tr><th scope="col">学校与项目</th><th scope="col">招生年份</th><th scope="col">专业与报考要求</th><th scope="col">来源</th></tr></thead>
-        <tbody>{result.hits.map(hit => <tr key={hit.citation}>
-          <td data-label="学校与项目">{hit.context?.institution ?? hit.source.organization}<p>{hit.context?.program ?? "具体项目待核验"}</p></td>
-          <td data-label="招生年份">{hit.context?.admission_year ?? "没查到"}</td>
-          <td data-label="专业与报考要求">{hit.facts.find(fact => fact.field === "cross_major_restrictions" || fact.field === "admission_requirements")?.quote ?? "这条资料没写个人报考资格，标「没查到」"}</td>
-          <td data-label="来源"><a href={hit.source.url} target="_blank" rel="noreferrer">{hit.title}</a></td>
-        </tr>)}</tbody>
-      </table>
-    </div>}
+    {category === "admissions" && !!result?.hits.length && <details className="xnlib-fold xnlib-fold-inline">
+      <summary>
+        <span className="xnlib-fold-label">按院校和年份看表格</span>
+        <span className="xnlib-fold-chevron" aria-hidden="true" />
+      </summary>
+      <div className="xnlib-fold-body xnlib-admissions">
+        <table>
+          <caption className="sr-only">当前招生来源里的院校、项目、年份与专业要求</caption>
+          <thead><tr><th scope="col">学校与项目</th><th scope="col">招生年份</th><th scope="col">专业与报考要求</th><th scope="col">来源</th></tr></thead>
+          <tbody>{result.hits.map(hit => <tr key={hit.citation}>
+            <td data-label="学校与项目">{hit.context?.institution ?? hit.source.organization}<p>{hit.context?.program ?? "具体项目待核验"}</p></td>
+            <td data-label="招生年份">{hit.context?.admission_year ?? "没查到"}</td>
+            <td data-label="专业与报考要求">{hit.facts.find(fact => fact.field === "cross_major_restrictions" || fact.field === "admission_requirements")?.quote ?? "这条资料没写个人报考资格，标「没查到」"}</td>
+            <td data-label="来源"><a href={hit.source.url} target="_blank" rel="noreferrer">{hit.title}</a></td>
+          </tr>)}</tbody>
+        </table>
+      </div>
+    </details>}
     <div key={`${query}:${school}:${year}:${category}:${offset}`}>{result?.hits.map(hit => <article key={hit.citation} className="xnlib-record">
       <h4><a href={hit.source.url} target="_blank" rel="noreferrer">{hit.title}</a></h4>
-      <p className="xnlib-record-meta">{[hit.context?.institution, hit.context?.college, hit.context?.program, hit.context?.admission_year ? `${hit.context.admission_year} 年招生` : ""].filter(Boolean).join(" · ") || hit.source.organization} · 发布日期 {hit.source.published_at ?? "来源未标注"} · 采集日期 {hit.collected_at.slice(0, 10)}</p>
-      <div className="xnlib-record-chips">
-        <span className="atlas-chip" data-tone="ok">有出处</span>
-        {hit.historical && <span className="atlas-chip" data-tone="gap">往年 / 待复查</span>}
-        {hit.missing_fields.length > 0 && <span className="atlas-chip" data-tone="miss">没查到 {hit.missing_fields.length} 项</span>}
-      </div>
-      <details>
-        <summary>展开原文摘录、适用范围与核对时间</summary>
-        <div>
+      <p className="xnlib-record-meta">{[hit.context?.institution, hit.context?.college, hit.context?.program, hit.context?.admission_year ? `${hit.context.admission_year} 年招生` : ""].filter(Boolean).join(" · ") || hit.source.organization}
+        <span className="xnlib-record-chips">
+          {hit.historical && <span className="atlas-chip" data-tone="gap">往年 / 待复查</span>}
+          {hit.missing_fields.length > 0 && <span className="atlas-chip" data-tone="miss">没查到 {hit.missing_fields.length} 项</span>}
+        </span>
+      </p>
+      <details className="xnlib-record-fold">
+        <summary><span>原文摘录 {hit.facts.length} 条、适用范围与核对时间</span><span className="xnlib-fold-chevron" aria-hidden="true" /></summary>
+        <div className="xnlib-record-body">
           {hit.context?.statistic_scope && <p className="xnlib-scope">统计口径：{hit.context.statistic_scope}</p>}
           {hit.facts.map((fact, index) => <blockquote className="xnlib-quote" key={`${fact.field}-${index}`}><b>{fields[fact.field] ?? "来源引文"}</b>{fact.quote}</blockquote>)}
           <p className="xnlib-record-meta">适用范围：{hit.applicability}</p>
@@ -106,10 +114,10 @@ export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, 
         </div>
       </details>
     </article>)}</div>
-    {result && result.total > 12 && <div className="xnlib-pager">
-      <button className="button secondary small" disabled={offset === 0} onClick={() => { setOffset(Math.max(0, offset - 12)); setStatus("loading"); setResult(null); }}>上一页</button>
-      <span>第 {Math.floor(offset / 12) + 1} 页</span>
-      <button className="button secondary small" disabled={!result.has_more} onClick={() => { setOffset(offset + 12); setStatus("loading"); setResult(null); }}>下一页</button>
+    {result && result.total > PAGE && <div className="xnlib-pager">
+      <button className="button secondary small" disabled={offset === 0} onClick={() => { setOffset(Math.max(0, offset - PAGE)); setStatus("loading"); setResult(null); }}>上一页</button>
+      <span>第 {Math.floor(offset / PAGE) + 1} 页 · 共 {result.total} 条</span>
+      <button className="button secondary small" disabled={!result.has_more} onClick={() => { setOffset(offset + PAGE); setStatus("loading"); setResult(null); }}>下一页</button>
     </div>}
   </section>;
 }

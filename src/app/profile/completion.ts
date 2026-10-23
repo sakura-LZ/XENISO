@@ -33,21 +33,21 @@ function sectionChecks(profile: Profile): ProfileCheck[][] {
       { label: "年级排名", filled: profile.rank !== null && profile.cohort_size !== null },
       { label: "英语考试记录", filled: hasText(english?.cet4) || hasText(english?.cet6) || hasText(english?.description) },
       { label: "课程成绩", filled: profile.courses.length > 0 },
-      { label: "英语使用经历", filled: hasText(english?.other) },
+      { label: "英语使用", filled: hasText(english?.other) },
     ],
     [
       { label: "研究方向", filled: hasList(profile.research_fields) },
       { label: "科研项目", filled: profile.research_projects.some(project => hasText(project.title)) },
-      { label: "论文或会议成果", filled: profile.papers.some(paper => hasText(paper.title)) },
+      { label: "论文/会议成果", filled: profile.papers.some(paper => hasText(paper.title)) },
       { label: "实验技能", filled: profile.wetlab_skills.some(skill => hasText(skill.skill)) },
-      { label: "数据与工具技能", filled: profile.tech_skills.some(skill => hasText(skill.skill)) },
+      { label: "数据与工具", filled: profile.tech_skills.some(skill => hasText(skill.skill)) },
     ],
     [
       { label: "日常兴趣", filled: hasList(profile.hobbies) },
-      { label: "喜欢的工作内容", filled: hasList(profile.work_preferences) },
+      { label: "喜欢的工作", filled: hasList(profile.work_preferences) },
       { label: "你看重什么", filled: hasList(profile.career_priorities) },
       { label: "想了解的方向", filled: hasList(profile.interest_directions) },
-      { label: "动机或自我评价", filled: hasText(profile.motivation) || hasText(profile.self_evaluation) },
+      { label: "动机或评价", filled: hasText(profile.motivation) || hasText(profile.self_evaluation) },
     ],
   ];
 }
@@ -56,10 +56,10 @@ export function profileSections(profile: Profile | null): ProfileSection[] {
   const empty: ProfileCheck[] = Array.from({ length: 5 }, (_, index) => ({ label: `第 ${index + 1} 项`, filled: false }));
   const rows = profile ? sectionChecks(profile) : [empty, empty, empty, empty];
   return [
-    { id: "basic", ordinal: "第一节", label: "基本信息", note: "先写清你是谁、在哪一段、这周能拿出几个小时。", checks: rows[0] },
-    { id: "study", ordinal: "第二节", label: "学业与英语", note: "成绩和英语按已有记录填；没有成绩单的课程可以先留空。", checks: rows[1] },
-    { id: "research", ordinal: "第三节", label: "科研与技能", note: "只写你真正上手的部分；在组里旁观不算做过。", checks: rows[2] },
-    { id: "goal", ordinal: "第四节", label: "偏好与目标", note: "这一节决定初步评价往哪个方向读，不确定也可以写不确定。", checks: rows[3] },
+    { id: "basic", ordinal: "第一节", label: "基本信息", note: "写清你是谁、读到哪一段。", checks: rows[0] },
+    { id: "study", ordinal: "第二节", label: "学业与英语", note: "按已有成绩单填，没成绩单的先留空。", checks: rows[1] },
+    { id: "research", ordinal: "第三节", label: "科研与技能", note: "只写真正上手做过的，旁观不算。", checks: rows[2] },
+    { id: "goal", ordinal: "第四节", label: "偏好与目标", note: "这一节决定初步评价的方向，不确定就写不确定。", checks: rows[3] },
   ];
 }
 

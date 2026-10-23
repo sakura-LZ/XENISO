@@ -360,6 +360,71 @@
 .xr-aside-target .xn-direction-art svg { display: block; width: 100%; height: auto; max-height: 100%; }
 .xr-direction .xn-direction-art figcaption,
 .xr-aside-target .xn-direction-art figcaption { font-size: 13px; line-height: 1.4; color: var(--ink-3); text-align: center; }
+/* 方向图形的内层排版：这两个上下文只有 76–108px，原先的排版表已随死文件删除，
+   内层退回裸块（17px 正文、190px 宽）会被外框裁成碎字，这里补最小一套。 */
+.xr-direction .xn-art-routing,
+.xr-direction .xn-art-data,
+.xr-aside-target .xn-art-routing,
+.xr-aside-target .xn-art-data { display: grid; gap: 2px; width: 100%; }
+.xr-direction .xn-art-routing > div,
+.xr-aside-target .xn-art-routing > div {
+  display: flex; justify-content: space-between; gap: 6px;
+  padding: 1px 0; border-bottom: 1px solid var(--line);
+  font-size: var(--fs-plate-caption); line-height: 1.4;
+}
+.xr-direction .xn-art-routing strong,
+.xr-aside-target .xn-art-routing strong { font-weight: 500; color: var(--green-deep); }
+.xr-direction .xn-art-data > div,
+.xr-aside-target .xn-art-data > div {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  padding: 1px 2px; border-bottom: 1px solid var(--line);
+  font-size: var(--fs-plate-caption); line-height: 1.4;
+}
+.xr-direction .xn-art-data > .is-marked,
+.xr-aside-target .xn-art-data > .is-marked { background: var(--green-wash); }
+.xr-direction .xn-art-annotation p,
+.xr-aside-target .xn-art-annotation p { margin: 2px 0; font-size: var(--fs-label); line-height: 1.35; }
+.xr-direction .xn-art-annotation span,
+.xr-aside-target .xn-art-annotation span { border-bottom: 2px solid var(--ink-3); }
+.xr-direction .xn-art-modules,
+.xr-aside-target .xn-art-modules {
+  display: flex; justify-content: space-between; gap: 4px;
+  margin-bottom: 8px; font-size: var(--fs-plate-caption); line-height: 1.3;
+}
+.xr-direction .xn-art-modules span,
+.xr-aside-target .xn-art-modules span { padding: 1px 2px; border: 1px solid var(--line); }
+.xr-direction .xn-art-budget,
+.xr-aside-target .xn-art-budget { height: 6px; background: var(--green-wash); }
+.xr-direction .xn-art-budget > span,
+.xr-aside-target .xn-art-budget > span { display: block; height: 100%; background: var(--green-deep); }
+.xr-direction .xn-art-label,
+.xr-aside-target .xn-art-label { margin: 4px 0 0; font-size: var(--fs-plate-caption); line-height: 1.3; color: var(--ink-3); text-align: center; }
+.xr-direction .xn-pixel-pair,
+.xr-aside-target .xn-pixel-pair { display: flex; gap: 6px; width: 100%; padding: 4px; box-sizing: border-box; }
+.xr-direction .xn-pixel-pair svg,
+.xr-aside-target .xn-pixel-pair svg { flex: 1; width: auto; aspect-ratio: 1; }
+.xr-direction .xn-art-routing,
+.xr-direction .xn-art-data,
+.xr-direction .xn-art-annotation,
+.xr-direction .xn-art-device,
+.xr-aside-target .xn-art-routing,
+.xr-aside-target .xn-art-data,
+.xr-aside-target .xn-art-annotation,
+.xr-aside-target .xn-art-device { flex: none; width: 100%; max-width: 100%; min-width: 0; }
+/* 外框是 row flex，内层会被压成 min-content；改成纵向，让图形铺满框宽 */
+.xr-direction .xn-direction-art,
+.xr-aside-target .xn-direction-art { flex-direction: column; }
+.xr-direction .xn-art-annotation p,
+.xr-aside-target .xn-art-annotation p { overflow-wrap: anywhere; }
+.xr-direction .xn-art-device,
+.xr-aside-target .xn-art-device { width: 100%; }
+.xr-direction .xn-art-routing > div,
+.xr-aside-target .xn-art-routing > div { min-width: 0; }
+.xr-direction .xn-art-routing > div > *,
+.xr-aside-target .xn-art-routing > div > * { min-width: 0; overflow-wrap: anywhere; }
+/* 76px 侧栏里，三格模块无法并排，换行比裁字更像图形 */
+.xr-direction .xn-art-modules,
+.xr-aside-target .xn-art-modules { flex-wrap: wrap; }
 .xn-storyset-attribution { margin: 14px 0 0; font-size: 14px; line-height: 1.6; color: var(--ink-3); }
 .xn-storyset-attribution a { color: var(--ink-2); text-underline-offset: 3px; }
 

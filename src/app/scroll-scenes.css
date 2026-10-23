@@ -31,7 +31,9 @@
   /* 手感按"动作 + 实物"取：盖章是砸落（刚度高、阻尼低），抽纸是滑入（阻尼大）。 */
   --xn-scene-stamp-dur: 460ms;
   --xn-scene-rule-dur: 420ms;
-  --xn-scene-ink-dur: 660ms;
+  /* 800ms 而不是 660ms：一次落好几条引用时，慢一点才像"铅笔划过去"，
+     不会几条线一起抢注意力。嫌不够明显再往回加。 */
+  --xn-scene-ink-dur: 800ms;
   --xn-scene-plate-dur: 720ms;
   --xn-scene-step: 44ms;          /* 同一组内相邻两项的间隔，40–80ms 一档 */
 }

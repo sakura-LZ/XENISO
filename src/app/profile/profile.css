@@ -156,7 +156,7 @@
 .xp-tick input:checked + .xp-tick-box { background: var(--green-deep); border-color: var(--green-deep); }
 .xp-tick input:checked + .xp-tick-box .xp-tick-num { color: var(--paper); }
 .xp-tick input:checked + .xp-tick-box .xp-tick-name { color: var(--green-soft); }
-.xp-tick input:focus-visible + .xp-tick-box { outline: 3px solid var(--blue); outline-offset: 2px; }
+.xp-tick input:focus-visible + .xp-tick-box { outline: 2px solid var(--green-deep); outline-offset: 2px; }
 .xp-scale-note { margin: 9px 0 0; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-2); }
 
 /* ---------- 底部动作 ---------- */
@@ -266,6 +266,17 @@
 }
 .xp-ink-fresh { animation: xp-ink-sweep 700ms var(--ease) both; }
 
+/* ---------- 图标：随字号缩放，与标题基线对齐 ---------- */
+.xp-head h1 svg,
+.xp-entry h2 svg,
+.xp-sec-head h2 svg,
+.xp-report-head h2 svg { display: inline-block; margin-right: 10px; vertical-align: -.12em; color: var(--green-deep); }
+.xp-crumb svg { flex: none; }
+.xp-sheet .button svg,
+.xp-actions svg { margin-right: 7px; }
+.xp-text-link svg { display: inline-block; margin-left: 5px; vertical-align: -.1em; }
+.xp-subsec > summary svg { margin-right: 7px; color: var(--green-deep); }
+
 /* ---------- 窄屏 ---------- */
 @media (max-width: 1100px) {
   .xp-head { grid-template-columns: minmax(0, 1fr); }
@@ -279,8 +290,6 @@
 }
 @media (max-width: 760px) {
   .xp-page { padding-block: 26px 64px; }
-  .xp-head h1 { }
-  .xp-head .xp-lede { }
   .xp-sheet { padding: 24px 18px 22px; }
   .xp-grid { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .xp-scale-row { grid-template-columns: repeat(3, minmax(0, 1fr)); }

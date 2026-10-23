@@ -76,6 +76,9 @@
 /* ---------- 左栏：阶段导航 ---------- */
 .xd-rail { position: sticky; top: calc(var(--header-h) + 20px); }
 .xd-rail-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
   margin: 0;
   font-family: var(--font-mono);
   font-size: var(--fs-label);
@@ -83,6 +86,7 @@
   color: var(--ink-3);
   line-height: var(--lh-label);
 }
+.xd-rail-label svg { flex: none; font-size: 1.25em; color: var(--green-deep); }
 .xd-stage { list-style: none; margin: 12px 0 0; padding: 0; border-top: 1px solid var(--line-strong); }
 .xd-stage li { border-bottom: 1px dashed var(--line); }
 .xd-stage-btn {
@@ -107,11 +111,32 @@
 button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px; }
 .xd-stage-btn:disabled { cursor: default; }
 .xd-stage-no { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: .1em; }
+.xd-stage-label { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 6px; }
+.xd-stage-tick { color: var(--green); font-size: var(--fs-label); }
 .xd-stage-mark {
   margin-left: 6px;
   font-size: var(--fs-label);
   color: var(--green);
   font-weight: 500;
+}
+/* 推进反馈：提交一步后，这条墨字盖章式地落下来 */
+.xd-step-done {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 9px 11px;
+  border: 1px dashed var(--green-mark);
+  background: var(--green-wash);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  color: var(--green-deep);
+  animation: xd-stamp-in 360ms var(--xn-spring) both;
+}
+.xd-step-done svg { flex: none; font-size: 1.25em; }
+@keyframes xd-stamp-in {
+  from { opacity: 0; transform: scale(.94) translateY(-4px); }
+  to { opacity: 1; transform: none; }
 }
 .xd-rail-foot { margin-top: 18px; display: grid; gap: 8px; }
 .xd-rail-foot p { margin: 0; }
@@ -152,6 +177,7 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
 /* ---------- 中栏 ---------- */
 .xd-main { min-width: 0; display: grid; gap: 20px; align-content: start; }
 .xd-main-head { display: grid; gap: 8px; }
+.xd-main-head h3 { margin: 0; font-size: var(--fs-h3); line-height: var(--lh-h3); }
 .xd-main-head h2 { margin: 0; font-size: var(--fs-h2); line-height: var(--lh-h2); }
 .xd-question {
   margin: 0;
@@ -170,6 +196,8 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   margin: 0 0 12px;
 }
 .xd-sheet-head h3 { margin: 0; font-family: var(--font-serif); font-size: var(--fs-h3); font-weight: 600; line-height: var(--lh-h3); }
+.xd-sheet-head h3, .xd-reason-head h3 { display: flex; align-items: center; gap: 8px; }
+.xd-sheet-head h3 svg, .xd-reason-head h3 svg { flex: none; font-size: .92em; color: var(--green-deep); }
 .xd-sheet-cap { margin: 0; font-family: var(--font-sans); font-size: var(--fs-label); line-height: var(--lh-label); font-weight: 600; letter-spacing: .04em; color: var(--ink-2); }
 .xd-sheet-note { margin: 0; font-size: var(--fs-meta); color: var(--ink-3); }
 /* 学科名称来源这类长说明别拉满整行，中文一行控制在 30 字上下 */
@@ -300,7 +328,7 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--line);
 }
-.xd-mentor-head h2 { margin: 6px 0 0; font-size: var(--fs-h3); line-height: var(--lh-h3); }
+.xd-mentor-head h3 { margin: 6px 0 0; font-size: var(--fs-h3); line-height: var(--lh-h3); }
 .xd-link-state {
   display: inline-flex;
   align-items: center;
@@ -431,8 +459,35 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
 .xd-task-mark { font-family: var(--font-mono); font-size: var(--fs-h3); color: var(--green); line-height: 1.2; }
 .xd-task-body { padding: 0 22px 20px; border-top: 1px dashed var(--line); }
 .xd-modes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
-.xd-mode { padding: 16px; border: 1px solid var(--line); background: var(--surface-2); display: grid; gap: 10px; align-content: start; }
-.xd-mode h4 { margin: 0; font-size: var(--fs-body); }
+.xd-mode {
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  transition: border-color 220ms var(--ease), transform 260ms var(--xn-spring-soft), box-shadow 260ms var(--ease);
+}
+.xd-mode:hover { border-color: var(--line-strong); box-shadow: var(--atlas-shadow-1); }
+/* 任务展开后先有一级 h3 区块标题，两个方式卡仍是卡内 h4：
+   h2 可做的任务 > h3 选一种做法开始 > h4 按项目做/按面试做，层级不再断档。 */
+.xd-modes-head {
+  margin: 0 0 12px;
+  font-family: var(--font-serif);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  font-weight: 600;
+  color: var(--ink);
+}
+.xd-mode h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: var(--fs-body);
+  line-height: var(--lh-small);
+}
+.xd-mode h4 svg { flex: none; font-size: 1.15em; color: var(--green-deep); }
 .xd-mode p { margin: 0; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-2); }
 .xd-mode .atlas-btn { justify-self: start; margin-top: 4px; }
 .xd-mode-preview { border: 1px dashed var(--line); background: var(--surface); padding: 12px; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-2); }
@@ -441,23 +496,37 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
 .xd-handbook { margin-top: 16px; font-size: var(--fs-small); }
 .xd-handbook a { color: var(--green-deep); text-decoration: underline; text-underline-offset: 4px; }
 
-/* 目录态：这一步会留下什么 */
+/* 三样留下的东西：一张纸片内部三等分，不再套三层卡片 */
 .xd-leaves { display: grid; gap: 14px; margin-top: 28px; }
 .xd-leaves-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; }
 .xd-leaves-head h3 { margin: 0; }
-.xd-leaves-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.xd-leaf { padding: 16px 18px 18px; display: grid; gap: 6px; align-content: start; }
-.xd-leaf-no { margin: 0; font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: .14em; color: var(--green-deep); }
-.xd-leaf h4 { margin: 0; font-size: var(--fs-body); line-height: 1.4; }
-.xd-leaf p { margin: 0; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-2); }
-
-/* 目录态：开始之前 */
-.xd-before { margin-top: 18px; }
-.xd-before-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 8px 32px; }
-.xd-before-grid h3 { margin: 0 0 8px; }
-.xd-before-grid p { margin: 0; font-size: var(--fs-small); line-height: var(--lh-meta); color: var(--ink-2); max-width: 32em; }
-.xd-before-grid ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
-.xd-before-grid li { font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-2); }
+.xd-leaves-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px 26px; }
+.xd-leaf { min-width: 0; display: grid; gap: 6px; align-content: start; padding-top: 12px; border-top: 1px solid var(--line); }
+.xd-leaf-no {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  letter-spacing: .12em;
+  color: var(--green-deep);
+}
+.xd-leaf-no svg { flex: none; font-size: 1.2em; }
+.xd-leaf-line { margin: 0; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-2); }
+.xd-before-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 4px 0 0;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  color: var(--ink-3);
+}
+.xd-before-note svg { flex: none; margin-top: 2px; font-size: 1.2em; color: var(--ochre); }
 
 .xd-resume { display: grid; gap: 8px; margin-top: 14px; }
 .xd-resume .atlas-btn { width: 100%; font-size: var(--fs-meta); padding-inline: 12px; }
@@ -484,9 +553,9 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
 .xd-export { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 
 .xd-saved { margin-top: 24px; }
-.xd-saved h2 { margin: 8px 0 0; font-size: var(--fs-h2); line-height: var(--lh-h2); }
 .xd-saved ol { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: var(--prose-gap); }
-.xd-saved h3 { margin: 0 0 6px; font-size: var(--fs-body); }
+.xd-saved h3 { margin: 8px 0 0; font-size: var(--fs-h3); line-height: var(--lh-h3); }
+.xd-saved ol h3 { margin: 0 0 6px; font-size: var(--fs-body); }
 .xd-saved p { margin: 0; font-size: var(--fs-small); line-height: var(--lh-body); white-space: pre-wrap; }
 
 /* ---------- 窄屏 ---------- */
@@ -522,7 +591,6 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   .xd-avatar-container { height: 240px; }
   .xd-avatar-stage { min-height: 0; }
   .xd-leaves-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .xd-before-grid { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (max-width: 760px) {
@@ -548,8 +616,10 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   .xd-portrait-photo svg { width: 96px; height: 112px; }
 }
 
-/* 降级：接通时的台灯与墨线改为瞬时到位，不再过渡 */
+/* 降级：接通时的台灯与墨线改为瞬时到位，不再过渡；本页新增的落章与勾选也直接到位 */
 @media (prefers-reduced-motion: reduce) {
   .xd-lamp, .xd-ink { transition: none; }
   .xd-avatar-busy i { animation: none; }
+  .xd-step-done { animation: none; }
+  .xd-mode { transition: none; }
 }

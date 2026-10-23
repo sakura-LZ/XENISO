@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { emptyProfile, educationStages, gradeOptions, profileMissing, profileSchema, simulationProfile, type Profile } from "@/lib/profile";
 import { TranscriptPreview } from "@/components/transcript-preview";
+import { IconAccount, IconBack, IconBook, IconCalendar, IconCompass, IconPulse, IconProfile, IconStamp } from "@/components/icons";
 import { profileProgress, PROFILE_GATE } from "./completion";
 import "./profile.css";
 
@@ -12,7 +13,7 @@ const storageKey = "limen:simulation:profile:v1";
 type StringKey = { [K in keyof Profile]: Profile[K] extends string ? K : never }[keyof Profile];
 type ListKey = "research_fields" | "competitions" | "self_study" | "hobbies" | "work_preferences" | "career_priorities" | "interest_directions" | "target_cities";
 type NumberKey = "gpa" | "gpa_scale" | "rank" | "cohort_size" | "transition_year" | "weekly_hours";
-const levels = ["刚接触", "在指导下完成", "可独立完成", "可指导他人"];
+const levels = ["刚接触", "在指导下", "独立", "指导他人"];
 /** 0–4 方格刻度：0 表示这一项还没填，1–4 对应原来的四档完成程度。 */
 const levelOptions = [{ value: "", label: "未填" }, ...levels.map(level => ({ value: level, label: level }))];
 
@@ -72,13 +73,13 @@ export function ProfileForm() {
           return value;
         };
         if (r.status === 401) { setProfile(applyQuestion(emptyProfile)); return; }
-        if (!r.ok) throw new Error(data.error?.message ?? "资料暂时无法读取，请稍后重试。");
-        if (!data || !("profile" in data)) throw new Error("资料返回不完整，请重新读取。");
+        if (!r.ok) throw new Error(data.error?.message ?? "资料暂时无法读取。");
+        if (!data || !("profile" in data)) throw new Error("资料返回不完整。");
         setProfile(applyQuestion(data.profile ? profileSchema.parse(data.profile) : emptyProfile));
       } catch (error) {
         if (!controller.signal.aborted || controller.signal.reason?.name === "TimeoutError") {
           setReadFailed(true);
-          setMessage(controller.signal.aborted ? "资料读取超时，请重新读取。" : error instanceof Error && error.name !== "ZodError" ? error.message : "资料未通过校验，请重新读取。");
+          setMessage(controller.signal.aborted ? "资料读取超时。" : error instanceof Error && error.name !== "ZodError" ? error.message : "资料未通过校验。");
         }
       } finally { clearTimeout(timeout); if (!controller.signal.aborted || controller.signal.reason?.name === "TimeoutError") setLoading(false); }
     })();
@@ -117,7 +118,6 @@ export function ProfileForm() {
           <span className="xp-tick-box"><span className="xp-tick-num">{index}</span><span className="xp-tick-name">{option.label}</span></span>
         </label>)}
       </div>
-      <p className="xp-scale-note">0 没填 · 1 刚接触 · 2 在指导下完成 · 3 可独立完成 · 4 可指导他人</p>
     </fieldset>;
   }
   async function save(advance = false) {
@@ -127,7 +127,7 @@ export function ProfileForm() {
     if (advance) {
       const gate = profileProgress(parsed.data);
       if (!gate.complete) {
-        setMessage(`还差 ${gate.remaining} 项才能进入第 2 步：${gate.missing.slice(0, 4).join("、")}。`);
+        setMessage(`还差 ${gate.remaining} 项：${gate.missing.slice(0, 4).join("、")}。`);
         return;
       }
     }
@@ -136,13 +136,13 @@ export function ProfileForm() {
     try {
       if (simulation) {
         localStorage.setItem(storageKey, JSON.stringify({ simulation: true, profile: parsed.data, saved_at: new Date().toISOString() }));
-        setMessage("合成示例已保存到本机。");
+        setMessage("合成示例已保存。");
       } else {
         const session = await fetch("/api/session", { method: "POST" });
         if (!session.ok) { const data = await session.json(); throw new Error(data.error?.message ?? "连接失败，请重试。"); }
         const response = await fetch("/api/profile", { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(parsed.data) });
         const data = await response.json();
-        if (!response.ok || data.saved !== true) throw new Error(data.error?.message ?? "未收到保存确认，请重试。");
+        if (!response.ok || data.saved !== true) throw new Error(data.error?.message ?? "未收到保存确认。");
         setMessage(advance ? "已保存，正在进入第 2 步。" : "已保存");
       }
       setDirty(false);
@@ -157,13 +157,13 @@ export function ProfileForm() {
   const english = profile.english ?? { description: "", cet4: "", cet6: "", other: "" };
   const remaining = progress.remaining;
   return <div className="container xp-narrow">
-    <Link href="/profile" className="xp-crumb">返回个人画像总览</Link>
+    <Link href="/profile" className="xp-crumb"><IconBack aria-hidden="true" />返回总览</Link>
 
     <header className="xp-head">
       <div>
-        <h1>填写个人画像</h1>
+        <h1><IconProfile aria-hidden="true" />填写个人画像</h1>
         <p className="xp-lede">
-          四节共 20 项，只记录你已经有的东西。每一项都会进你的<b>能力底册</b>（按课程、科研、实践和工具归档的经历清单），第 2 步的初步评价只读这份清单。
+          四节共 20 项，只记录你已经有的东西，填进<b>能力底册</b>。
           没有的部分留空即可，空着不会扣分，也不会被当成零分能力。
         </p>
       </div>
@@ -171,7 +171,7 @@ export function ProfileForm() {
         <div className="xp-meter-row"><span>当前页</span><strong>第 1 步 / 共 4 步</strong></div>
         <div className="xp-meter-row"><span>完成度</span><strong>{progress.done} / {progress.total} 项</strong></div>
         <div className="xp-bar" role="img" aria-label={`已填写 ${progress.done} 项，共 ${progress.total} 项`}><i style={{ width: `${progress.done / progress.total * 100}%` }} /></div>
-        <p className="xp-meter-foot">{remaining > 0 ? `还差 ${remaining} 项（20 项里填到 18 项即可）；随时保存，下次接着填。` : `已够 ${PROFILE_GATE} 项，可以保存并进入第 2 步。`}</p>
+        <p className="xp-meter-foot">{remaining > 0 ? `还差 ${remaining} 项（填到 18 项即可）。` : `已够 ${PROFILE_GATE} 项。`}</p>
       </aside>
     </header>
 
@@ -188,7 +188,7 @@ export function ProfileForm() {
         })}
         <div className="xp-aside">
           <span className="xp-aside-big">{progress.done} / {progress.total}</span>
-          每填完一项，左边的章会重新盖一次。20 项里填到 18 项，第 2 步的按钮就解除禁用。
+          每填完一项，左边的章会重新盖一次。
           <span key={stampPulse} className={`atlas-stamp ochre${stampPulse ? " xp-stamp-drop" : ""}`} aria-hidden="true">已填 {progress.done} 项</span>
         </div>
         <label className="xp-mobile-group form-label">当前分组
@@ -203,36 +203,36 @@ export function ProfileForm() {
           <span role="status" className={dirty ? "xp-dirty" : undefined}>{loading ? "正在读取…" : dirty ? "有未保存的修改" : "已同步"}</span>
         </div>
 
-        {readFailed && <div className="xp-error" role="alert"><p>资料尚未读取，填写暂不可用。</p><button type="button" onClick={() => { setReadFailed(false); setLoading(true); setMessage(""); setReadRevision(n => n + 1); }}>重新读取</button></div>}
+        {readFailed && <div className="xp-error" role="alert"><p>资料尚未读取。</p><button type="button" onClick={() => { setReadFailed(false); setLoading(true); setMessage(""); setReadRevision(n => n + 1); }}>重新读取</button></div>}
 
         <form ref={formRef} onClickCapture={event => { if (event.target instanceof Element) { const button = event.target.closest<HTMLElement>(".remove-link"); if (button) restoreFocusAfterRemove(button); } }} onSubmit={e => { e.preventDefault(); void save(); }} aria-label="个人画像" className="xp-form">
           <fieldset disabled={busy || loading || readFailed} className="xp-sections">
             <legend className="sr-only">医学经历与探索目标</legend>
 
             <section id="profile-group-0" className="xp-sec">
-              <div className="xp-sec-head"><span className="xp-mark">第一节</span><h2>基本信息</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[0].checks.filter(check => check.filled).length} / 5 项</span></div>
+              <div className="xp-sec-head"><span className="xp-mark">第一节</span><h2><IconAccount aria-hidden="true" />基本信息</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[0].checks.filter(check => check.filled).length} / 5 项</span></div>
               <p className="xp-sec-note">{progress.sections[0].note}</p>
               <div className="xp-grid">
-                {text("nickname", "昵称", "希望我们怎么称呼你")}
-                {text("school", "院校", "例如：就读或毕业院校")}
-                {text("major", "专业", "例如：临床医学、护理学")}
+                {text("nickname", "昵称", "怎么称呼你")}
+                {text("school", "院校", "就读或毕业院校")}
+                {text("major", "专业", "临床医学、护理学")}
                 {select("培养阶段", stage, educationStages, value => { setProfile(p => ({ ...p, education_stage: value as Profile["education_stage"], grade: value === "已毕业" ? "已毕业" : value === "其他" ? "其他" : "", grade_other: "", degree_track: "", degree_track_other: "" })); setDirty(true); })}
                 {stage !== "已毕业" && <>{select(stage === "规培" ? "规培年级" : "当前年级", profile.grade, yearOptions, value => change("grade", value as Profile["grade"]))}{profile.grade === "其他" && text("grade_other", "补充学习阶段 / 年级", "例如：研六、在职进修")}</>}
-                {stage !== "已毕业" && stage !== "其他" && <>{select("培养类型", degreeValue, degreeOptions, value => { change("degree_track", value); if (value !== "其他") change("degree_track_other", ""); })}{degreeValue === "其他" && text("degree_track_other", "补充培养类型", "例如：八年制临床医学、专博")}</>}
+                {stage !== "已毕业" && stage !== "其他" && <>{select("培养类型", degreeValue, degreeOptions, value => { change("degree_track", value); if (value !== "其他") change("degree_track_other", ""); })}{degreeValue === "其他" && text("degree_track_other", "补充培养类型", "八年制临床医学、专博")}</>}
               </div>
             </section>
 
             <section id="profile-group-1" className="xp-sec">
-              <div className="xp-sec-head"><span className="xp-mark">第二节</span><h2>学业与英语</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[1].checks.filter(check => check.filled).length} / 5 项</span></div>
+              <div className="xp-sec-head"><span className="xp-mark">第二节</span><h2><IconBook aria-hidden="true" />学业与英语</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[1].checks.filter(check => check.filled).length} / 5 项</span></div>
               <p className="xp-sec-note">{progress.sections[1].note}</p>
 
               <div className="xp-subsec">
                 <h3>学业表现</h3>
                 <div className="xp-grid">
-                  {number("gpa", "GPA", "例如：3.4")}
-                  {number("gpa_scale", "GPA 满分", "例如：4.0")}
-                  {number("rank", "年级排名", "例如：25")}
-                  {number("cohort_size", "年级总人数", "例如：180")}
+                  {number("gpa", "GPA", "")}
+                  {number("gpa_scale", "GPA 满分", "")}
+                  {number("rank", "年级排名", "")}
+                  {number("cohort_size", "年级总人数", "")}
                 </div>
               </div>
 
@@ -242,7 +242,7 @@ export function ProfileForm() {
                   {select("大学英语四级", english.cet4, ["未参加", "备考中", "未通过", "已通过", "不确定"], value => change("english", { ...english, cet4: value }))}
                   {select("大学英语六级", english.cet6, ["未参加", "备考中", "未通过", "已通过", "不确定"], value => change("english", { ...english, cet6: value }))}
                   <label className="form-label xp-full"><span>考试成绩</span><input className="field" placeholder="例如：CET-6 520；雅思 6.5" value={english.description} onChange={e => change("english", { ...english, description: e.target.value })} /></label>
-                  <label className="form-label xp-full"><span>语言使用经历</span><input className="field" placeholder="例如：读过 12 篇英文论文、做过英文病例汇报" value={english.other} onChange={e => change("english", { ...english, other: e.target.value })} /></label>
+                  <label className="form-label xp-full"><span>语言使用经历</span><input className="field" placeholder="读过 12 篇英文论文" value={english.other} onChange={e => change("english", { ...english, other: e.target.value })} /></label>
                 </div>
               </div>
 
@@ -252,21 +252,21 @@ export function ProfileForm() {
             </section>
 
             <section id="profile-group-2" className="xp-sec">
-              <div className="xp-sec-head"><span className="xp-mark">第三节</span><h2>科研与技能</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[2].checks.filter(check => check.filled).length} / 5 项</span></div>
+              <div className="xp-sec-head"><span className="xp-mark">第三节</span><h2><IconPulse aria-hidden="true" />科研与技能</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[2].checks.filter(check => check.filled).length} / 5 项</span></div>
               <p className="xp-sec-note">{progress.sections[2].note}</p>
 
               <div className="xp-subsec">
                 <h3>研究方向</h3>
-                <div className="xp-grid">{list("research_fields", "你接触过的研究方向", "例如：肿瘤免疫、医学影像、临床预测模型（一行一个）")}</div>
+                <div className="xp-grid">{list("research_fields", "接触过的研究方向", "肿瘤免疫、医学影像")}</div>
               </div>
 
               <div className="xp-subsec">
                 <h3>科研项目与成果</h3>
-                <p className="xp-hint">填写你实际参与的任务；没有可留空。第 2 步会按“承担的工作”判断哪些能力可以迁移，旁观和打杂要分清。</p>
+                <p className="xp-hint">只填你真正上手做过的；旁观和打杂不算。第 2 步按“承担的工作”判断迁移。</p>
                 {profile.research_projects.map((project, i) => <fieldset className="repeat-item xp-repeat" key={i}>
                   <legend>项目 {i + 1}</legend>
                   <div className="xp-grid">
-                    {([["title", "项目名称", "例如：肺结节辅助诊断研究"], ["topic", "研究问题", "希望解决什么问题"], ["responsibility", "你承担的工作", "例如：病例整理、实验设计、数据分析"], ["methods", "方法与工具", "例如：回归分析、细胞培养、Python"], ["outcomes", "阶段成果", "例如：数据集、论文初稿、汇报"], ["duration", "参与时间", "例如：2025.09—2026.06"]] as const).map(([key, label, placeholder]) => <label className={`form-label${["topic", "responsibility", "outcomes"].includes(key) ? " xp-full" : ""}`} key={key}><span>{label}</span>{["topic", "responsibility", "outcomes"].includes(key) ? <textarea className="field" rows={2} placeholder={placeholder} value={project[key as keyof typeof project]} onChange={e => change("research_projects", profile.research_projects.map((p, j) => j === i ? { ...p, [key]: e.target.value } : p))} /> : <input className="field" placeholder={placeholder} value={project[key as keyof typeof project]} onChange={e => change("research_projects", profile.research_projects.map((p, j) => j === i ? { ...p, [key]: e.target.value } : p))} />}</label>)}
+                    {([["title", "项目名称", "肺结节辅助诊断研究"], ["topic", "研究问题", "希望解决什么问题"], ["responsibility", "你承担的工作", "病例整理、实验设计"], ["methods", "方法与工具", "回归分析、细胞培养、Python"], ["outcomes", "阶段成果", "数据集、论文初稿"], ["duration", "参与时间", "例如：2025.09—2026.06"]] as const).map(([key, label, placeholder]) => <label className={`form-label${["topic", "responsibility", "outcomes"].includes(key) ? " xp-full" : ""}`} key={key}><span>{label}</span>{["topic", "responsibility", "outcomes"].includes(key) ? <textarea className="field" rows={2} placeholder={placeholder} value={project[key as keyof typeof project]} onChange={e => change("research_projects", profile.research_projects.map((p, j) => j === i ? { ...p, [key]: e.target.value } : p))} /> : <input className="field" placeholder={placeholder} value={project[key as keyof typeof project]} onChange={e => change("research_projects", profile.research_projects.map((p, j) => j === i ? { ...p, [key]: e.target.value } : p))} />}</label>)}
                   </div>
                   <div className="xp-repeat-actions"><button type="button" className="remove-link xp-remove" onClick={() => change("research_projects", profile.research_projects.filter((_, j) => j !== i))}>移除项目</button></div>
                 </fieldset>)}
@@ -277,8 +277,8 @@ export function ProfileForm() {
                   <div className="xp-grid">
                     {select("成果类型", paper.type, ["期刊论文", "会议壁报", "会议口头报告", "会议摘要", "其他"], value => change("papers", profile.papers.map((p, j) => j === i ? { ...p, type: value } : p)))}
                     {select("当前状态", paper.status, paper.type.startsWith("会议") ? ["准备中", "已投稿", "已接收", "已展示 / 发言"] : ["撰写中", "投稿中", "返修中", "已接收", "已见刊"], value => change("papers", profile.papers.map((p, j) => j === i ? { ...p, status: value } : p)))}
-                    {([["title", "题目", "论文或报告题目"], ["venue", "期刊 / 会议", "填写期刊或会议名称"], ["author_role", "作者身份", "例如：共同一作、第三作者"], ["quartile_if_known", "分区", "知道时填写即可"]] as const).map(([key, label, placeholder]) => <label className="form-label" key={key}><span>{label}</span><input className="field" placeholder={placeholder} value={paper[key as Exclude<keyof typeof paper, "year">]} onChange={e => change("papers", profile.papers.map((p, j) => j === i ? { ...p, [key]: e.target.value } : p))} /></label>)}
-                    <label className="form-label"><span>年份</span><input className="field" type="number" placeholder="例如：2026" value={paper.year ?? ""} onChange={e => change("papers", profile.papers.map((p, j) => j === i ? { ...p, year: e.target.value ? Number(e.target.value) : null } : p))} /></label>
+                    {([["title", "题目", "论文或报告题目"], ["venue", "期刊 / 会议", "期刊或会议名称"], ["author_role", "作者身份", "共同一作、第三作者"], ["quartile_if_known", "分区", "知道时填写即可"]] as const).map(([key, label, placeholder]) => <label className="form-label" key={key}><span>{label}</span><input className="field" placeholder={placeholder} value={paper[key as Exclude<keyof typeof paper, "year">]} onChange={e => change("papers", profile.papers.map((p, j) => j === i ? { ...p, [key]: e.target.value } : p))} /></label>)}
+                    <label className="form-label"><span>年份</span><input className="field" type="number" placeholder="" value={paper.year ?? ""} onChange={e => change("papers", profile.papers.map((p, j) => j === i ? { ...p, year: e.target.value ? Number(e.target.value) : null } : p))} /></label>
                   </div>
                   <div className="xp-repeat-actions"><button type="button" className="remove-link xp-remove" onClick={() => change("papers", profile.papers.filter((_, j) => j !== i))}>移除成果</button></div>
                 </fieldset>)}
@@ -291,7 +291,7 @@ export function ProfileForm() {
                 {profile.wetlab_skills.map((skill, i) => <div className="repeat-item xp-repeat" key={i}>
                   <div className="xp-grid">
                     <label className="form-label"><span>实验名称</span><input className="field" value={skill.skill} placeholder="例如：Western blot" onChange={e => change("wetlab_skills", profile.wetlab_skills.map((s, j) => j === i ? { ...s, skill: e.target.value } : s))} /></label>
-                    <label className="form-label"><span>相关经历</span><input className="field" placeholder="例如：在导师指导下完成两轮蛋白检测" value={skill.experience_evidence} onChange={e => change("wetlab_skills", profile.wetlab_skills.map((s, j) => j === i ? { ...s, experience_evidence: e.target.value } : s))} /></label>
+                    <label className="form-label"><span>相关经历</span><input className="field" placeholder="独立完成两轮蛋白检测" value={skill.experience_evidence} onChange={e => change("wetlab_skills", profile.wetlab_skills.map((s, j) => j === i ? { ...s, experience_evidence: e.target.value } : s))} /></label>
                   </div>
                   {levelScale(`wetlab-${i}`, "完成程度", skill.level, value => change("wetlab_skills", profile.wetlab_skills.map((s, j) => j === i ? { ...s, level: value } : s)))}
                   <div className="xp-repeat-actions"><button type="button" className="remove-link xp-remove" onClick={() => change("wetlab_skills", profile.wetlab_skills.filter((_, j) => j !== i))}>移除技能</button></div>
@@ -303,7 +303,7 @@ export function ProfileForm() {
                 <h3>数据与工具技能</h3>
                 {profile.tech_skills.map((skill, i) => <div className="repeat-item xp-repeat" key={i}>
                   <div className="xp-grid">
-                    {([["skill", "工具或方法", "例如：SPSS"], ["evidence", "实际使用经历", "例如：为课题完成描述统计"]] as const).map(([key, label, placeholder]) => <label className="form-label" key={key}><span>{label}</span><input className="field" placeholder={placeholder} value={skill[key]} onChange={e => change("tech_skills", profile.tech_skills.map((s, j) => j === i ? { ...s, [key]: e.target.value } : s))} /></label>)}
+                    {([["skill", "工具或方法", "例如：SPSS"], ["evidence", "实际使用经历", "为课题完成描述统计"]] as const).map(([key, label, placeholder]) => <label className="form-label" key={key}><span>{label}</span><input className="field" placeholder={placeholder} value={skill[key]} onChange={e => change("tech_skills", profile.tech_skills.map((s, j) => j === i ? { ...s, [key]: e.target.value } : s))} /></label>)}
                   </div>
                   {levelScale(`tech-${i}`, "使用程度", skill.self_reported_level, value => change("tech_skills", profile.tech_skills.map((s, j) => j === i ? { ...s, self_reported_level: value } : s)))}
                   <div className="xp-repeat-actions"><button type="button" className="remove-link xp-remove" onClick={() => change("tech_skills", profile.tech_skills.filter((_, j) => j !== i))}>移除技能</button></div>
@@ -314,33 +314,33 @@ export function ProfileForm() {
               <div className="xp-subsec">
                 <h3>竞赛与自学</h3>
                 <div className="xp-grid">
-                  {list("competitions", "竞赛经历", "例如：大学生创新训练项目、数学建模竞赛（一行一个）")}
-                  {list("self_study", "课程与独立练习", "例如：学过 Python 入门，做过一个数据可视化练习")}
+                  {list("competitions", "竞赛经历", "大创项目、数学建模")}
+                  {list("self_study", "课程与独立练习", "自学 Python，做过可视化练习")}
                 </div>
               </div>
             </section>
 
             <section id="profile-group-3" className="xp-sec">
-              <div className="xp-sec-head"><span className="xp-mark">第四节</span><h2>偏好与目标</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[3].checks.filter(check => check.filled).length} / 5 项</span></div>
+              <div className="xp-sec-head"><span className="xp-mark">第四节</span><h2><IconCompass aria-hidden="true" />偏好与目标</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[3].checks.filter(check => check.filled).length} / 5 项</span></div>
               <p className="xp-sec-note">{progress.sections[3].note}</p>
               <div className="xp-grid">
-                {list("hobbies", "日常兴趣", "例如：写作、编程、科普、组织活动")}
-                {list("work_preferences", "喜欢的工作内容", "例如：分析数据、与人交流、动手实验")}
-                {list("career_priorities", "你看重什么", "例如：稳定性、工作自主性、社会价值、收入、生活平衡")}
-                {list("interest_directions", "目前想了解的方向", "例如：医疗 AI、生物医学工程；还没想好或继续医学也可以")}
-                {text("motivation", "为什么想探索其他方向", "例如：更喜欢研究问题，希望了解医学与技术结合的工作。", true, true)}
-                {text("self_evaluation", "如何评价自己", "例如：善于整理信息，愿意尝试新工具；公开表达还需要练习。", true, true)}
-                {text("help_needed", "希望得到哪些帮助", "例如：了解真实岗位、找到入门项目、厘清升学路径。", true, true)}
+                {list("hobbies", "日常兴趣", "写作、编程、科普")}
+                {list("work_preferences", "喜欢的工作内容", "分析数据、与人交流")}
+                {list("career_priorities", "你看重什么", "稳定性、社会价值")}
+                {list("interest_directions", "目前想了解的方向", "医疗 AI、生物医学工程")}
+                {text("motivation", "为什么想换方向", "例如：更喜欢研究问题", true, true)}
+                {text("self_evaluation", "如何评价自己", "善于整理信息，愿意试新工具", true, true)}
+                {text("help_needed", "希望得到哪些帮助", "了解真实岗位、入门项目", true, true)}
               </div>
 
               <details className="xp-subsec xp-conditions">
-                <summary>时间与现实条件</summary>
+                <summary><IconCalendar aria-hidden="true" />时间与现实条件</summary>
                 <div className="xp-grid">
-                  <label className="form-label"><span>目标年份</span><input className="field" type="number" placeholder="例如：2028" step="1" min="2026" value={profile.transition_year ?? ""} onChange={e => change("transition_year", e.target.value === "" ? null : Number(e.target.value))} /></label>
-                  {number("weekly_hours", "每周可投入时间 / 小时", "例如：6")}
+                  <label className="form-label"><span>目标年份</span><input className="field" type="number" placeholder="" step="1" min="2026" value={profile.transition_year ?? ""} onChange={e => change("transition_year", e.target.value === "" ? null : Number(e.target.value))} /></label>
+                  {number("weekly_hours", "每周可投入（小时）", "")}
                   {select("升学路径", profile.pathway, ["统考", "推免", "申请制", "未决定"], value => change("pathway", value as Profile["pathway"]))}
                   {list("target_cities", "目标城市", "例如：上海、杭州")}
-                  {text("constraints", "需要兼顾的现实条件", "例如：实习排班、时间安排、经济预算。", true, true)}
+                  {text("constraints", "需要兼顾的条件", "实习排班、经济预算", true, true)}
                 </div>
               </details>
             </section>
@@ -351,7 +351,7 @@ export function ProfileForm() {
               保存只写进你自己的档案。20 项里填到 18 项，第 2 步的按钮就解除禁用；剩下那 2 项可以带着没想清楚的地方往下走，之后回来补。
             </p>
             <div className="xp-action-row">
-              <button type="submit" className="button secondary" disabled={busy || loading || readFailed}>{busy ? "保存中…" : "保存草稿"}</button>
+              <button type="submit" className="button secondary" disabled={busy || loading || readFailed}><IconStamp aria-hidden="true" />{busy ? "保存中…" : "保存草稿"}</button>
               <button type="button" className="button" disabled={busy || loading || readFailed || remaining > 0} aria-disabled={remaining > 0} onClick={() => void save(true)}>
                 {remaining > 0 ? `继续到第 2 步 · 还差 ${remaining} 项` : "继续到第 2 步"}
               </button>

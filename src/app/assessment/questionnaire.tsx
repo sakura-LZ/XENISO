@@ -2,6 +2,17 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  IconBook,
+  IconCalendar,
+  IconCompass,
+  IconDownload,
+  IconPin,
+  IconProfile,
+  IconPulse,
+  IconQuiz,
+  IconWarning,
+} from "@/components/icons";
 import { assessmentSchema, type AssessmentResult } from "@/lib/assessment";
 import type { Direction } from "@/lib/directions";
 import { download } from "@/lib/download";
@@ -127,6 +138,14 @@ export function Assessment() {
   const total = questionnaire?.questions.length ?? 30;
   const question = questionnaire?.questions[Math.min(index, total - 1)];
   const answeredCount = Object.keys(answers).length;
+  // 选项文字按 value 建索引，选中后在选项下方回显一句，不用再扫一遍数组。
+  const optionLabels = useMemo<Record<number, string>>(() => {
+    const map: Record<number, string> = {};
+    for (const option of questionnaire?.answer_options ?? []) {
+      map[option.value] = documentSnapshot.answer_options.find(item => item.value === option.value)?.name ?? option.name;
+    }
+    return map;
+  }, [questionnaire]);
 
   const load = useCallback(async () => {
     setBusy(true);
@@ -206,16 +225,15 @@ export function Assessment() {
   return (
     <main id="main" className="shell assessment-page">
       <header className="assessment-head" data-atlas-reveal>
-        <div>
+        <div className="assessment-head-main">
+          <p className="atlas-label">第 2 步 · 初步评价</p>
           <h1 className="t-title">初步评价</h1>
           <p className="t-lede">
-            先答 30 道兴趣题，再拿到一份初步评价报告（R1）。R1 = 初步评价报告，是异域探索第 2 步的产出：
-            它把你对 30 类工作活动的喜好，加上个人画像里已经填过的课程与项目，整理成四条线索，不替你决定去哪个专业。
+            答 30 道兴趣题，拿到初步评价报告 R1。它只整理你的分数和画像资料，不替你决定专业。
           </p>
         </div>
         <div className="assessment-head-tools">
           <span className="atlas-chip">第 2 步 / 共 4 步</span>
-          <span className="assessment-fact">O*NET Mini-IP · 30 题</span>
         </div>
       </header>
 
@@ -225,25 +243,45 @@ export function Assessment() {
         <R1Report assessment={result} profile={profile} onRestart={restart} />
       ) : questionnaire && question ? (
         <section className="assessment-stage" aria-labelledby="qn-heading" ref={stageRef}>
-          <div className="qn-meter">
+          {/* 进度条跟随滚动常驻：任何时候都能看到第几题、还剩多少、能不能回去改。 */}
+          <div className="qn-meter" data-sticky="1">
             <div className="qn-meter-top">
-              <strong>
-                第 {index + 1} 题 / 共 {total} 题
-              </strong>
-              <span>
-                已回答 {answeredCount} 题，还剩 {total - answeredCount} 题
+              <p className="qn-count">
+                <b>{String(index + 1).padStart(2, "0")}</b>
+                <span>/ {total}</span>
+              </p>
+              <p className="qn-left">
+                已回答 {answeredCount} · 还剩 {total - answeredCount}
+              </p>
+              <span className="atlas-chip" data-tone="ok">
+                <IconPin aria-hidden="true" />
+                点题号可回改
               </span>
             </div>
             {/* 本页主动效：答题进度像铅笔画在打孔纸上，一格一格往前走。 */}
-            <div className="qn-strip" aria-hidden="true">
-              {Array.from({ length: total }, (_, position) => (
-                <span className="qn-pin" key={position} data-done={answers[position + 1] !== undefined} data-current={position === index} />
-              ))}
+            <div className="qn-strip">
+              {Array.from({ length: total }, (_, position) => {
+                const done = answers[position + 1] !== undefined;
+                const current = position === index;
+                return (
+                  <button
+                    key={position}
+                    type="button"
+                    className="qn-pin"
+                    data-done={done}
+                    data-current={current}
+                    aria-label={`第 ${position + 1} 题${done ? "，已答，点这里回去改" : ""}`}
+                    aria-current={current ? "step" : undefined}
+                    disabled={!done || current || busy || saved}
+                    onClick={() => goTo(position)}
+                  />
+                );
+              })}
               <span className="qn-pencil" style={{ left: `${((index + 0.5) / total) * 100}%` }} />
             </div>
           </div>
 
-          <div className="qn-sheet">
+          <div className="qn-sheet swap-in" key={question.index}>
             <span className="atlas-tape mid" aria-hidden="true" />
             <div className="qn-sheet-top">
               <span className="qn-index">{String(question.index).padStart(2, "0")}</span>
@@ -261,7 +299,7 @@ export function Assessment() {
             </h2>
             <p className="qn-translation-note">
               {translatedQuestion(question)
-                ? `中文是本站独立译稿（${translation.version}，待人工复核），下方可展开 O*NET 原题。`
+                ? `中文是本站独立译稿（${translation.version}，待人工复核），可展开下方原题。`
                 : "这道题还没有核对通过的中文译稿，先显示 O*NET 英文原题。"}
             </p>
             <details className="qn-source">
@@ -304,6 +342,12 @@ export function Assessment() {
               })}
             </div>
 
+            <p className="qn-picked" role="status">
+              {answers[question.index] !== undefined
+                ? `已选「${optionLabels[answers[question.index]] ?? ""}」· 可以继续，也可以换一项`
+                : "选一项，再点下一题。"}
+            </p>
+
             <p className="atlas-hand qn-hand">按第一反应选，不用先想它以后有没有用。</p>
 
             <div className="qn-actions">
@@ -325,7 +369,7 @@ export function Assessment() {
               )}
             </div>
             <p className="qn-actions-note">
-              答案只保存在这一页，离开前请提交，否则需要重答。也可以先{" "}
+              答案只存在这一页，离开前要提交。也可以先{" "}
               <Link className="link" href="/profile/basics">
                 回个人画像补资料
               </Link>
@@ -353,47 +397,55 @@ export function Assessment() {
               <div className="assessment-paper">
                 <span className="atlas-tape mid" aria-hidden="true" />
                 <div className="atlas-sheet assessment-intro">
+                  <p className="atlas-label">问卷 · O*NET Mini-IP 2016</p>
                   <h2 className="t-block">职业兴趣问卷 · 30 项工作活动</h2>
                   <p className="t-body assessment-intro-lead">
-                    这套题来自 O*NET（美国劳工部维护的职业信息库）公开的 Mini-IP 兴趣量表：30 道题各描述一种工作活动，六类兴趣各 5 题。
-                    题目实时从 O*NET 服务读取，中文由本站独立译出，标注待人工复核。
+                    每题一种工作活动，六类各 5 题；同类活动会出现两次，这是量表设计。
                   </p>
-                  <dl className="atlas-kv">
+                  <dl className="as-spec">
                     <div>
-                      <dt>题量</dt>
-                      <dd>30 题，一次一题，可以返回修改</dd>
+                      <dt><IconQuiz aria-hidden="true" />题量</dt>
+                      <dd>30 题，一次一题</dd>
                     </div>
                     <div>
-                      <dt>选项</dt>
-                      <dd>五档，从「非常不喜欢」到「非常喜欢」，对应答案编码 1–5</dd>
+                      <dt><IconProfile aria-hidden="true" />选项</dt>
+                      <dd>五档，记 1–5</dd>
                     </div>
                     <div>
-                      <dt>用时</dt>
-                      <dd>多数人 4 到 6 分钟</dd>
+                      <dt><IconCalendar aria-hidden="true" />用时</dt>
+                      <dd>多数人 4–6 分钟</dd>
                     </div>
                     <div>
-                      <dt>边界</dt>
-                      <dd>只问喜不喜欢，不问会不会；兴趣分不代表能力，也不作为录取判断</dd>
+                      <dt><IconPin aria-hidden="true" />回改</dt>
+                      <dd>可回上一题，也可点题号跳回</dd>
                     </div>
                   </dl>
+                  <p className="as-limit">
+                    <IconWarning aria-hidden="true" />
+                    <span>
+                      只问喜不喜欢，不问会不会；兴趣分不代表能力，也不作录取判断。
+                      <br />
+                      按第一反应选；答案只在这一页，离开或刷新会丢。
+                    </span>
+                  </p>
                   <div className="assessment-intro-actions">
                     <button className="button" type="button" disabled={busy} onClick={load}>
-                      {busy ? "正在读取官方题目…" : "开始问卷"}
+                      {busy ? "正在读题…" : "开始问卷"}
                     </button>
                     <Link className="button secondary" href="/profile">
                       先补个人画像
                     </Link>
                   </div>
                   <p className="assessment-source">
-                    题目与职业信息来自{" "}
+                    题目来自{" "}
                     <a href="https://services.onetcenter.org/" target="_blank" rel="noreferrer">
                       O*NET Web Services
                     </a>
-                    （USDOL/ETA）；中文译稿依据{" "}
+                    （USDOL/ETA），译稿见{" "}
                     <a href={snapshotSource} target="_blank" rel="noreferrer">
                       Mini-IP 2016 附录 A
-                    </a>{" "}
-                    独立翻译，尚未经人工复核。
+                    </a>
+                    ，待人工复核。
                   </p>
                 </div>
               </div>
@@ -404,59 +456,25 @@ export function Assessment() {
             <div className="assessment-paper">
               <span className="atlas-tape tl" aria-hidden="true" />
               <div className="atlas-sheet">
-                <h2 className="assessment-fill-title">这份报告会给你什么</h2>
-                <p className="assessment-fill-lead">
-                  30 题答完会生成一份初步评价报告，代号 R1（R1 = 初步评价报告，第 2 步的产出）。它分四栏，
-                  每一栏的来源和用法都不一样，下面把边界一起写清楚。
-                </p>
-                <dl className="assessment-plan-list">
+                <h3 className="assessment-fill-title">答完给你四栏</h3>
+                <dl className="as-index">
                   <div>
-                    <dt>兴趣六维</dt>
-                    <dd>
-                      六类兴趣各 5 题，每题 1 到 5 分，按类加总。
-                      <span>不能拿它当能力测评，也换算不出适合度或排名。</span>
-                    </dd>
+                    <dt><IconPulse aria-hidden="true" />兴趣六维</dt>
+                    <dd>六类各 5 题按类加总，不换算百分位。</dd>
                   </div>
                   <div>
-                    <dt>能力迁移</dt>
-                    <dd>
-                      把你临床训练里做熟的动作，对应到目标方向的日常任务上；对应关系由本站编辑整理。
-                      <span>它不证明你已具备那项技术要求，只说明哪一段经验可以接着用。</span>
-                    </dd>
+                    <dt><IconCompass aria-hidden="true" />能力迁移</dt>
+                    <dd>临床做熟的动作，对应到目标方向的任务。</dd>
                   </div>
                   <div>
-                    <dt>知识缺口</dt>
-                    <dd>
-                      用方向手册给出的入门课程，减去你画像里已经填过的课程与技能。
-                      <span>没有记录不等于没有能力；缺口只用来决定先补哪一门。</span>
-                    </dd>
+                    <dt><IconBook aria-hidden="true" />知识缺口</dt>
+                    <dd>方向入门课减去画像里填过的。</dd>
                   </div>
                   <div>
-                    <dt>报考条件</dt>
-                    <dd>
-                      按常见的初试科目组合列出：101 思想政治理论、201 英语一、301 数学一。
-                      <span>没拿到招生目录原文时一律标「没查到」，不做报考资格判断。</span>
-                    </dd>
+                    <dt><IconWarning aria-hidden="true" />报考条件</dt>
+                    <dd>没拿到招生目录原文，一律标「没查到」。</dd>
                   </div>
                 </dl>
-              </div>
-            </div>
-
-            <div className="assessment-paper">
-              <span className="atlas-tape tr" aria-hidden="true" />
-              <div className="atlas-sheet">
-                <h2 className="assessment-fill-title">答题时怎么想</h2>
-                <ol className="assessment-howto">
-                  <li>按第一反应选。想的是「我愿不愿意做这件事」，不用先想它以后有没有用。</li>
-                  <li>同一类活动会出现两次，这是量表的设计，不是重复出题。</li>
-                  <li>六个维度各 5 题，中途改主意很正常，返回上一题就能改。</li>
-                  <li>答案只留在这一页。离开或刷新会丢，答完再一起提交。</li>
-                </ol>
-                <p className="assessment-next">
-                  答完之后：先看 R1 的四栏，再挑一个方向去{" "}
-                  <Link href="/experience">职业体验</Link>，最后做{" "}
-                  <Link href="/report/plan">行动规划</Link>。
-                </p>
               </div>
             </div>
           </div>
@@ -603,7 +621,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
       <div className="r1-doc">
         <div className="r1-cols" data-atlas-reveal data-atlas-stagger>
           <section className="r1-col" aria-labelledby="r1-interest">
-            <h3 id="r1-interest">兴趣六维</h3>
+            <h3 id="r1-interest"><IconPulse className="r1-col-icon" aria-hidden="true" />兴趣六维</h3>
             <p className="r1-note">
               六类兴趣各 5 题，每题 1–5 分，合计 5–25 分。分数只表示你对这类活动的喜好强度，不换算成百分位，也不代表能力。
             </p>
@@ -635,7 +653,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
           </section>
 
           <section className="r1-col" aria-labelledby="r1-transfer">
-            <h3 id="r1-transfer">能力迁移</h3>
+            <h3 id="r1-transfer"><IconCompass className="r1-col-icon" aria-hidden="true" />能力迁移</h3>
             <p className="r1-note">
               左边是临床训练里已经做熟的动作，右边是{topDirection ? `「${topDirection.name}」` : "目标方向"}里对应的任务。
               判断口径：医学侧带来的领域理解和评价习惯可以直接带入；要动手做出技术成果的部分，标为要补基础。
@@ -663,7 +681,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
           </section>
 
           <section className="r1-col" aria-labelledby="r1-gap">
-            <h3 id="r1-gap">知识缺口</h3>
+            <h3 id="r1-gap"><IconBook className="r1-col-icon" aria-hidden="true" />知识缺口</h3>
             <p className="r1-note">
               这里只列你在画像里没有记录、又确实用得上的技能。没有记录不等于没有能力，它只用来决定从哪里开始补。
             </p>
@@ -691,7 +709,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
           </section>
 
           <section className="r1-col" aria-labelledby="r1-admission">
-            <h3 id="r1-admission">报考条件</h3>
+            <h3 id="r1-admission"><IconWarning className="r1-col-icon" aria-hidden="true" />报考条件</h3>
             <p className="r1-note">
               常见初试组合如下。目标院校当年的招生目录原文我们还没拿到，所以每一项都标「没查到」，不判断你能不能报。
             </p>
@@ -747,6 +765,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
 
       <div className="r1-actions">
         <button className="button secondary" type="button" onClick={exportReport}>
+          <IconDownload aria-hidden="true" />
           导出这份报告
         </button>
         <Link className="button secondary" href="/report/initial">

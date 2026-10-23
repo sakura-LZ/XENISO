@@ -312,7 +312,9 @@ function PresenterPanel({ presenter = "medicine", role = "职业体验导师", c
   return <section className="atlas-sheet xd-mentor-panel" aria-label="导师数字人" data-link={linkState} data-motion="M-E08 M-E11">
     <div className="xd-mentor-head">
       <div>
-        <h2>{role}</h2>
+        {/* 这是导师面板内的角色标签，不是页面级标题：用 h3 与字号阶梯对齐
+            （h2 必须是 --fs-h2，而这里没有对应样式规则，会继承成正文档的 21px）。 */}
+        <h3>{role}</h3>
       </div>
       <span className="xd-link-state" data-state={linkState}>
         <span className="xd-link-dot" aria-hidden="true" />

@@ -18,8 +18,10 @@ import { usePathname } from "next/navigation";
  *     已经在视野里的元素一律不碰。JS 不跑 = 没有 data-xn-scenes 标记 = 起始态
  *     一条都匹配不上，正文原样可读。
  *  2. **一定放得出来。** 除了 IntersectionObserver，还有两道路径：滚动时用武装时
- *     缓存的 top 判断"已经滚过去了"（不读布局），以及只对"已经该被看见"的元素生效
- *     的巡检。巡检不搞"到点全部放行"——那样整页往下滚就再没有动效了。
+ *     缓存的 top 判断"顶边是否已进画面"（不读布局），以及 1200ms 一轮、只对
+ *     "已经该被看见"的元素生效的巡检。巡检不搞"到点全部放行"——那样整页往下滚
+ *     就再没有动效了；唯一的无条件放行是"已经滚到页面底部"，那时底下再没有可滚
+ *     的余量，还停着的必须立刻到位。
  *  3. **只播一次。** 播完即 unobserve，往回滚不重播、不闪。
  *
  * 性能：所有观察合并成一个 IntersectionObserver；滚动回调只排帧，帧里只写
@@ -309,6 +311,16 @@ function install(): () => void {
    * ------------------------------------------------------------------ */
   const arm = (el: HTMLElement) => {
     if (played.has(el) || el.dataset.sceneArm === "1") return;
+    /**
+     * 收起的 <details> 里的元素不武装。
+     * 它们在折叠态没有布局盒子，getBoundingClientRect 全是 0、IntersectionObserver
+     * 也永远不会报 intersecting，于是起始态（opacity 0 / clip 100%）会一直挂着；
+     * 用户把折叠展开时看到的是空白——这正是"内容停在透明"最隐蔽的一种成因。
+     * 实测 /explore 详情页有 6 个 <li>（"一天里的三步""练习的三步"）就是这样卡住的。
+     * 这里直接跳过：折叠展开后内容原样可见，宁可少一次入场动画，也不能让人看见空白。
+     * 展开时若想补动画，由下面的 toggle 监听把元素交给正常流程。
+     */
+    if (el.closest("details:not([open])")) return;
     const rect = el.getBoundingClientRect();
     // 已经在视野里：保持原样，不给它做入场（首屏和刚滚到的内容都不闪）
     if (rect.top < window.innerHeight * ARM_LINE) return;
@@ -428,10 +440,25 @@ function install(): () => void {
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onResize);
   window.addEventListener("pagehide", release);
+  /**
+   * 折叠展开时立即放行里面的场景元素。
+   * 收起的 <details> 里的元素不会被武装（见 arm 里的说明），但如果元素是在
+   * 折叠打开状态下被武装、之后折叠又被收起，它就会带着起始态被冻住。
+   * 这里兜一层：折叠一打开，把里面所有还挂着的场景元素直接放到终态。
+   */
+  const onToggle = (event: Event) => {
+    const node = event.target;
+    if (!(node instanceof HTMLDetailsElement) || !node.open) return;
+    for (const el of Array.from(node.querySelectorAll<HTMLElement>("[data-scene-kind][data-scene-arm='1']"))) {
+      play(el);
+    }
+  };
+  document.addEventListener("toggle", onToggle, true);
   cleanups.push(() => {
     window.removeEventListener("scroll", onScroll);
     window.removeEventListener("resize", onResize);
     window.removeEventListener("pagehide", release);
+    document.removeEventListener("toggle", onToggle, true);
   });
 
   scan();

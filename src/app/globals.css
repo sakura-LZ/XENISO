@@ -101,6 +101,12 @@
   h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); }
   h4, h5 { font-size: var(--fs-body); line-height: var(--lh-small); }
   p, li, dd { text-wrap: pretty; }
+  /* 标题里的图标必须是行内块。
+     Tailwind preflight 把 svg 设成 display:block，图标一旦放进普通块级标题就会独占一行、
+     把标题高度顶成两行（/profile 的 h1 曾从 54px 变成 100px）。目前有几处没出问题，
+     是因为那些标题自己恰好是 display:flex——安全来自父元素布局的巧合，不是图标本身。
+     这一行把陷阱消掉：以后谁把标题改成普通块级都不会崩。 */
+  h1 svg, h2 svg, h3 svg, h4 svg { display: inline-block; vertical-align: -0.14em; }
   main, article, section, aside { min-width: 0; }
   th, td { overflow-wrap: anywhere; }
   button, input, select, textarea { font: inherit; letter-spacing: 0; color: inherit; }
