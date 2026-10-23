@@ -61,9 +61,11 @@ export default function AccountPage() {
 
   return <main id="main" className="shell account-page">
     <header className="account-head">
-      <InkField className="page-ink" />
-      <h1>我的资料</h1>
-      <p>这一页说明三件事：现在的匿名身份是什么、资料存在哪儿、想删的时候怎么删干净。匿名不是隐藏，而是这份身份只跟这台浏览器绑定。</p>
+      <InkField className="page-ink" band />
+      {/* 这页原来 animation 元素数为 0（实测），页眉是硬切进去的。用已有的 xn-enter
+          错峰接上：h1 先到、说明文字 80ms 后到，不新增 keyframe。 */}
+      <h1 className="enter">我的资料</h1>
+      <p className="enter" style={{ "--d": 1 } as React.CSSProperties}>这一页说明三件事：现在的匿名身份是什么、资料存在哪儿、想删的时候怎么删干净。匿名不是隐藏，而是这份身份只跟这台浏览器绑定。</p>
     </header>
 
     <div className="with-toc">

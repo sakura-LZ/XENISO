@@ -16,7 +16,7 @@ import {
 import "./community.css";
 import "@/app/ambient-video.css";
 
-import { InkField } from "@/components/ink-field";
+
 type PostKind = "help" | "experience";
 type Filter = "all" | PostKind | "recruit";
 type ReportReason = "privacy" | "abuse" | "spam" | "other";
@@ -344,7 +344,9 @@ export function Community() {
 
   return <main id="main" className="shell community-page">
     <header className="community-head">
-      <InkField className="page-ink" />
+      {/* 这页不放墨迹场：.ambient-video 已用实底 rgb(221,209,182) 铺满页眉，墨迹画布
+          与它同为 z-index:-1 且 DOM 排在后面，实测关掉画布前后差 0.01/255 —— 等于
+          白开一个 WebGL 上下文。环境视频就是这页的主视觉。 */}
       <AmbientVideo src="/brand/community-background.mp4" ariaLabel="环境底纹" />
       <div>
         <h1 className="community-title"><IconPin className="community-title-icon" aria-hidden="true" />交流社区</h1>

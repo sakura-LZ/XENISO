@@ -103,8 +103,9 @@
   align-items: center;
   gap: 9px;
   font-family: var(--font-serif);
-  font-size: var(--fs-h3);
-  line-height: var(--lh-h3);
+  /* 与「方向清单」同为页面级 h2，字号必须同档，否则同页出现 21/27 两个 h2 尺寸 */
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
   font-weight: 600;
   color: var(--ink);
 }
@@ -128,8 +129,10 @@
   margin: 0;
   flex: 1 0 100%;
   font-family: var(--font-serif);
-  font-size: var(--fs-h3);
-  line-height: var(--lh-h3);
+  /* 这是本页唯一的二级标题，之前借用 --fs-h3 档（21px），于是同语义的 h2
+     在 /explore 是 21px、在其余内页是 27px。改成 --fs-h2，与全站一致。 */
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
   font-weight: 600;
   color: var(--ink);
 }

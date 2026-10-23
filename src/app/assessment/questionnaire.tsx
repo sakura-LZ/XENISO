@@ -226,15 +226,15 @@ export function Assessment() {
   return (
     <main id="main" className="shell assessment-page">
       <header className="assessment-head" data-atlas-reveal>
-      <InkField className="page-ink" />
+      <InkField className="page-ink" band />
         <div className="assessment-head-main">
-          <p className="atlas-label">第 2 步 · 初步评价</p>
-          <h1 className="t-title">初步评价</h1>
-          <p className="t-lede">
+          <p className="atlas-label enter">第 2 步 · 初步评价</p>
+          <h1 className="t-title enter" style={{ "--d": 1 } as React.CSSProperties}>初步评价</h1>
+          <p className="t-lede enter" style={{ "--d": 2 } as React.CSSProperties}>
             答 30 道兴趣题，拿到初步评价报告 R1。它只整理你的分数和画像资料，不替你决定专业。
           </p>
         </div>
-        <div className="assessment-head-tools">
+        <div className="assessment-head-tools enter" style={{ "--d": 3 } as React.CSSProperties}>
           <span className="atlas-chip">第 2 步 / 共 4 步</span>
         </div>
       </header>

@@ -20,8 +20,10 @@
 .xd-head h1 { margin: 0; font-size: var(--fs-display); line-height: var(--lh-display); }
 .xd-lede { margin: 14px 0 0; max-width: 46em; font-size: var(--fs-lead); line-height: var(--lh-lead); color: var(--ink-2); }
 .xd-head-meta { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; align-items: center; }
-/* 共享的合成数据标签在纸底上对比度只有 4.46:1，这里压深一档，并改成方角贴纸形制 */
-.xd-head .simulation-tag { color: #6b4a15; border-radius: 0; }
+/* 共享的合成数据标签在纸底上对比度只有 4.46:1，这里压深一档，并改成方角贴纸形制。
+   页眉现在压在墨迹场上面，最暗墨迹处 #6b4a15 只剩 3.48:1，再压深到 #4a3008：
+   纸底上约 8.4:1，最暗墨迹上约 5.2:1，仍是"赭石=还没确认"这一色义，不是纯黑。 */
+.xd-head .simulation-tag { color: #4a3008; border-radius: 0; }
 .xd-flash {
   margin: 18px 0 0;
   padding: 12px 16px;

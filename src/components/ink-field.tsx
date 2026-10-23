@@ -10,7 +10,7 @@ import { useEffect, useRef } from "react";
  * 3. 偏心暗角会让画面像被竖线切开 —— 改成同心收边。
  * prefers-reduced-motion 下只画一帧；离开视口或标签页隐藏时停帧。
  */
-export function InkField({ className }: { className?: string }) {
+export function InkField({ className, band = false }: { className?: string; band?: boolean }) {
   const ref = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -29,6 +29,7 @@ export function InkField({ className }: { className?: string }) {
       precision highp float;
       uniform vec2 uRes;
       uniform float uTime;
+      uniform float uBand;
 
       float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453123); }
 
@@ -64,15 +65,23 @@ export function InkField({ className }: { className?: string }) {
         vec3 moss  = vec3(0.290, 0.365, 0.227);
         vec3 ochre = vec3(0.561, 0.278, 0.149);
 
-        float m = smoothstep(0.44, 0.88, ink);
+        float m = smoothstep(mix(0.44, 0.30, uBand), mix(0.88, 0.72, uBand), ink);
         float o = smoothstep(0.66, 0.97, ink) * 0.5;
 
         vec3 col = paper;
-        col = mix(col, moss, m * 0.40);
+        /* 强度是按对比度反推的，不是拍脑袋：band 系数 0.66 时最暗墨迹落到亮度 137，
+           压在它上面的 --ink-2 正文只剩 4.08:1、--ink-3 眉标只剩 3.19:1，双双跌破
+           AA 4.5。收到 0.44 后最暗墨迹约 169、合成背景约 165，Δ 仍有约 70/255
+           （评审给的可见性门槛是 ≥60），--ink-2 回到 5.1:1。 */
+        col = mix(col, moss, m * mix(0.40, 0.44, uBand));
         col = mix(col, ochre, o * 0.26);
 
+        /* 暗角：p 是「以画布高度归一化」的坐标，所以宽扁画布（内页页眉 768×120）
+           的 p.x 跨度可达 ±3.2，几乎整片都落在暗角外 → 全被还原成纸色，实测合成后
+           只有 Δ1.7/255，等于没画。uBand=1 时把收边放到极宽，让整条带都保留墨色。
+           首页（uBand=0）的取值与原来完全一致，不受影响。 */
         float r = length(p * vec2(0.62, 0.95));
-        float vig = smoothstep(1.15, 0.28, r);
+        float vig = smoothstep(mix(1.15, 3.4, uBand), mix(0.28, 0.10, uBand), r);
         col = mix(paper, col, vig);
 
         col += (hash(gl_FragCoord.xy + fract(uTime)) - 0.5) * 0.012;
@@ -113,6 +122,8 @@ export function InkField({ className }: { className?: string }) {
 
     const uRes = gl.getUniformLocation(program, "uRes");
     const uTime = gl.getUniformLocation(program, "uTime");
+    const uBand = gl.getUniformLocation(program, "uBand");
+    gl.uniform1f(uBand, band ? 1 : 0);
     const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
 
     let frame = 0;
@@ -176,7 +187,7 @@ export function InkField({ className }: { className?: string }) {
       reduce.removeEventListener("change", onMotion);
       window.removeEventListener("load", resize);
     };
-  }, []);
+  }, [band]);
 
   return <canvas ref={ref} className={className} aria-hidden="true" />;
 }

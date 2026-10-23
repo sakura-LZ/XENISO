@@ -294,3 +294,11 @@ select.field { appearance: none; padding-right: 44px; background-image: url("dat
   /* 窄屏页眉矮、字挤，墨迹压到 .62 并收窄出血；实测文字对比度仍有 9:1 以上 */
   .page-ink { transform: scale(1.1); opacity: .62; }
 }
+/* 页眉里坐在墨迹上的小字要往上提一档。实测：最暗墨迹处 --ink-2 正文 5.1:1 刚过
+   AA，但 --ink-3 只有 4.0——而 .atlas-label（"第 2 步 · 初步评价"这类 13px 眉标）
+   全站默认就是 --ink-3。只在页眉范围内提到 --ink-2，页面其余位置不动。 */
+.xnlib-head .atlas-label,
+.assessment-head .atlas-label,
+.xd-head .atlas-label,
+.xp-head .atlas-label,
+.account-head .atlas-label { color: var(--ink-2); }

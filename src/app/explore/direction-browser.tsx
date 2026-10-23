@@ -268,7 +268,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
 
   return <>
     <header className="xnlib-head">
-      <InkField className="page-ink" />
+      <InkField className="page-ink" band />
       <div>
         <h1><IconBook aria-hidden="true" />信息文库</h1>
         <p className="xnlib-lede">这里收三样能查的东西：O*NET 的职业条目、公司招聘页上写的岗位要求、院系招生目录里的考试科目。每条资料都带来源和抓取时间；原文没写的，我们写「没查到」，不替它补。</p>
