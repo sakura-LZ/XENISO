@@ -3,7 +3,18 @@
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { type CommunityPost, postSchema } from "@/lib/community";
+import { AmbientVideo } from "@/components/ambient-video";
+import {
+  IconBook,
+  IconChat,
+  IconEmpty,
+  IconPin,
+  IconSpinner,
+  IconStamp,
+  IconWarning,
+} from "@/components/icons";
 import "./community.css";
+import "@/app/ambient-video.css";
 
 type PostKind = "help" | "experience";
 type Filter = "all" | PostKind | "recruit";
@@ -20,10 +31,10 @@ const FILTERS: { value: Filter; label: string }[] = [
 ];
 
 const REPORT_REASONS: { value: ReportReason; label: string }[] = [
-  { value: "privacy", label: "包含姓名、联系方式或患者信息" },
-  { value: "abuse", label: "攻击、骚扰，或贬低别人选的路线" },
+  { value: "privacy", label: "含姓名、联系方式或患者信息" },
+  { value: "abuse", label: "攻击、骚扰，或贬低别人的选择" },
   { value: "spam", label: "广告、招生中介或课程推销" },
-  { value: "other", label: "其他需要人工看的内容" },
+  { value: "other", label: "其他" },
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -60,7 +71,7 @@ const SAMPLE_POSTS: { kind: PostKind; label: string; title: string; body: string
   },
   {
     kind: "help",
-    label: "找同行",
+    label: "求助",
     title: "有没有一起做医学影像项目的大三同学",
     body: "我在准备一个肺结节分割的小项目，想找两三个同学一起读论文、轮流做标注，每周固定两小时线上碰一次。标注规范已经找带教老师确认过。",
   },
@@ -209,11 +220,11 @@ export function Community() {
       if (!response.ok) throw new Error(data.error?.message ?? "邮箱验证没走完，请再试一次。");
       if (data.verified) {
         setToken("");
-        setAuthFeedback({ tone: "ok", text: "邮箱验证完成，现在可以看墙上的纸条，也可以自己钉一张了。" });
+        setAuthFeedback({ tone: "ok", text: "邮箱验证完成，现在可以读写帖子了。" });
         await load();
       } else {
         setSent(true);
-        setAuthFeedback({ tone: "ok", text: "验证码发出去了，去邮箱看一眼。没收到就点「重新发送验证码」。" });
+        setAuthFeedback({ tone: "ok", text: "验证码已发出，去邮箱查收。" });
       }
     } catch (error) {
       setAuthFeedback({ tone: "error", text: error instanceof Error ? error.message : "邮箱验证没走完，请再试一次。" });
@@ -243,10 +254,10 @@ export function Community() {
     const cleanTitle = title.trim();
     const cleanBody = body.trim();
     const next: FieldErrors = {};
-    if (cleanTitle.length < 4) next.title = "标题至少 4 个字：写清你卡在哪一步，别只写「求指点」。";
-    else if (cleanTitle.length > 100) next.title = "标题最多 100 个字，把细节放进下面的内容里。";
-    if (cleanBody.length < 10) next.body = "内容至少 10 个字：补上背景、你已经试过的办法，或者做完之后哪件事变了。";
-    if (!consent) next.consent = "先勾选这一条：内容里没有姓名、联系方式或患者信息。";
+    if (cleanTitle.length < 4) next.title = "标题至少 4 个字，写清卡在哪一步。";
+    else if (cleanTitle.length > 100) next.title = "标题最多 100 个字，细节放进下面。";
+    if (cleanBody.length < 10) next.body = "内容至少 10 个字，补上背景和试过的办法。";
+    if (!consent) next.consent = "先勾选这一条。";
     setFieldErrors(next);
     if (Object.keys(next).length > 0) return false;
     return postSchema.safeParse({ kind, title: cleanTitle, body: cleanBody, public_consent: consent }).success;
@@ -272,7 +283,7 @@ export function Community() {
       // 回到「全部 + 清空搜索」，否则新纸条会被当前筛选挡在外面，看不到它落下。
       setFilter("all");
       setQuery("");
-      setFeedback({ tone: "ok", text: "纸条已经钉到墙上了。它只显示「匿名探索者」，你的邮箱不会出现在帖子里。" });
+      setFeedback({ tone: "ok", text: "已经发出，只显示「匿名探索者」。" });
       await load();
     } catch (error) {
       setFeedback({ tone: "error", text: error instanceof Error ? error.message : "发布没成功，请重试。" });
@@ -287,7 +298,7 @@ export function Community() {
     setBusy(false);
     if (done) {
       setReportId("");
-      setFeedback({ tone: "ok", text: "举报已经记下，会由人工复核。社区不会自动删帖，复核前这条帖子还在墙上。" });
+      setFeedback({ tone: "ok", text: "举报已记录，等人工复核。" });
       document.getElementById(`community-report-trigger-${id}`)?.focus();
     }
   }
@@ -298,7 +309,7 @@ export function Community() {
     setBusy(false);
     setDeleteId("");
     if (done) {
-      setFeedback({ tone: "ok", text: "这条帖子已经删掉了，墙上的位置也一起收走。" });
+      setFeedback({ tone: "ok", text: "已删除。" });
       await load();
     } else {
       document.getElementById(`community-delete-trigger-${id}`)?.focus();
@@ -313,53 +324,61 @@ export function Community() {
   const emptyCopy = useMemo(() => {
     const searched = query.trim();
     if (filter === "recruit") return {
-      title: "招募这一栏还空着",
-      text: "课题组、带教老师和实习的招募信息要等来源逐一核实后才放进社区，所以现在点进来只有这段说明。想先看院校和方向的公开资料，可以去信息文库；那里没查到原文的条目会直接标「没查到」。",
+      title: "招募栏还空着",
+      text: "招募信息要核实来源才放进来。院校和方向的公开资料可以看信息文库。",
     };
     if (searched) return {
       title: `没有搜到「${searched}」`,
-      text: "标题和内容里都没有这几个字。换个更短的说法试试，比如把「数学一怎么补」改成「数学一」。",
+      text: "标题和内容里都没有这几个字，换个说法试试。",
     };
     if (!posts.length) return {
-      title: "墙上还空着",
-      text: "第一批纸条通常是「我这条路还差什么」这种具体问题。你也可以钉第一张：写清背景、你已经试过的办法，以及希望别人回答哪一点。",
+      title: "还没有帖子",
+      text: "可以发第一条：写清背景、试过什么、想让人回答哪一点。",
     };
     return {
       title: "这一类还没有帖子",
-      text: "换个类型看看，或者把你自己的问题先钉上去。求助帖写得越具体，回答越可能用得上。",
+      text: "换个类型看看，或者发一条。",
     };
   }, [filter, posts.length, query]);
 
   return <main id="main" className="shell community-page">
     <header className="community-head">
+      <AmbientVideo src="/brand/community-background.mp4" ariaLabel="环境底纹" />
       <div>
-        <h1>交流社区</h1>
-        <p className="community-lede">这里是一面留言墙：有人把还没想明白的事钉上去，有人把做完一段体验后的复盘钉在旁边。帖子只有求助和经验两类，全部匿名展示；点开一张能看见举报入口，只有自己贴的那张才有删除按钮。</p>
+        <h1 className="community-title"><IconPin className="community-title-icon" aria-hidden="true" />交流社区</h1>
+        <p className="community-lede">只收求助与经验两类，全部匿名展示。</p>
       </div>
       <p className="community-head-meta">
         {member
-          ? <>墙上现有 <b>{counts.all}</b> 张纸条<br />求助 {counts.help} · 经验 {counts.experience}</>
-          : <>验证邮箱后才能读到墙上的纸条<br />帖子一律匿名展示</>}
+          ? <>{counts.all} 条帖子<br />求助 {counts.help} · 经验 {counts.experience}</>
+          : <>验证邮箱后可读写</>}
       </p>
     </header>
 
-    {feedback && <p className="community-notice" data-tone={feedback.tone} role="status" aria-live="polite">{feedback.text}</p>}
+    <p className="community-limits">
+      <IconWarning aria-hidden="true" />
+      <span>回复暂未开放 · 别人的帖子只能举报 · 只有自己发的能删</span>
+    </p>
+
+    {feedback && <p className="community-notice" data-tone={feedback.tone} key={feedback.text} role="status" aria-live="polite">
+      {feedback.tone === "ok" ? <IconStamp aria-hidden="true" /> : <IconWarning aria-hidden="true" />}
+      <span>{feedback.text}</span>
+    </p>}
     {loadError && <div className="community-notice" data-tone="error" role="alert">
+      <IconWarning aria-hidden="true" />
       <span>{loadError}</span>
-      <button type="button" className="community-link" onClick={() => void load()}>重试加载</button>
+      <button type="button" className="community-link" onClick={() => void load()}>重试</button>
     </div>}
 
     <div className="community-grid">
       <div className="community-wall">
-        {checkingSession ? <p className="community-wall-loading" role="status">正在读取留言墙…</p> : !member ? <>
-          <p className="community-preview-note">验证邮箱后可以看到全部帖子，也可以自己发帖（回复功能还没开放）。下面三张是这面墙上最常见的三种发言，都标了「示例」：由编辑按真实提问改写，不是真实用户写的。</p>
-
+        {checkingSession ? <p className="community-wall-loading" role="status"><IconSpinner className="community-spin" aria-hidden="true" /><span>正在读取帖子…</span></p> : !member ? <>
           <section className="community-compose atlas-sheet" aria-labelledby="gate-title">
           <span className="atlas-pin" aria-hidden="true" />
-          <h2 id="gate-title">先验证一次邮箱，再来看墙</h2>
-          <p className="community-note">社区只对验证过邮箱的人开放读写：有人发广告或招生中介时，我们得能找到发帖的人。你的邮箱不会出现在帖子里，别人看到的只有「匿名探索者」。</p>
+          <h2 id="gate-title">先验证邮箱，再看帖子</h2>
+          <p className="community-note">读写都要先验证邮箱：有人发广告时，我们要能找到发帖人。邮箱不公开，别人只看到「匿名探索者」。</p>
           <form onSubmit={event => { event.preventDefault(); void verifyEmail(); }}>
-            <label className="form-label" htmlFor="community-auth-mode">这个邮箱怎么用<span className="form-hint">第一次来选「绑定当前访客」，之前登录过就选「登录已有账号」。</span></label>
+            <label className="form-label" htmlFor="community-auth-mode">这个邮箱怎么用</label>
             <select
               id="community-auth-mode"
               className="field"
@@ -367,8 +386,8 @@ export function Community() {
               disabled={authBusy}
               onChange={event => { setAuthMode(event.target.value as AuthMode); setSent(false); setToken(""); }}
             >
-              <option value="link">绑定当前访客，保留浏览器里已存的私有资料</option>
-              <option value="login">登录已有账号，换成那个账号的资料</option>
+              <option value="link">绑定当前访客，保留已存资料</option>
+              <option value="login">登录已有账号</option>
             </select>
             <div className="community-field">
               <label className="form-label" htmlFor="community-email">邮箱</label>
@@ -405,26 +424,27 @@ export function Community() {
             </div>
           </form>
           <div className="community-publish-entry">
-            <span className="community-publish-label">在哪发帖</span>
-            <button type="button" className="button" disabled aria-describedby="community-publish-hint">钉一张新纸条</button>
-            <span className="community-publish-hint" id="community-publish-hint">验证邮箱后可用。发出去的纸条只显示「匿名探索者」。</span>
+            <button type="button" className="button" disabled aria-describedby="community-publish-hint">发一条新帖</button>
+            <span className="community-publish-hint" id="community-publish-hint">验证邮箱后可用</span>
           </div>
-          {authFeedback && <p className="community-notice" data-tone={authFeedback.tone} role="status" style={{ marginTop: 18, marginBottom: 0 }}>{authFeedback.text}</p>}
+          {authFeedback && <p className="community-notice" data-tone={authFeedback.tone} key={authFeedback.text} role="status" style={{ marginTop: 18, marginBottom: 0 }}>
+            {authFeedback.tone === "ok" ? <IconStamp aria-hidden="true" /> : <IconWarning aria-hidden="true" />}
+            <span>{authFeedback.text}</span>
+          </p>}
           </section>
 
           <section className="community-preview" aria-labelledby="preview-title">
             <div className="community-preview-head">
-              <h2 id="preview-title">墙上的三种发言 · 示例</h2>
-              <span className="atlas-stamp ochre">示例 · 非真实用户</span>
+              <h2 id="preview-title">两类帖子 · 示例</h2>
             </div>
-            <p className="community-note">这三张只作预览：不进真实帖子列表，也不能举报或删除。每条都标 simulation，表示内容是合成的，用来展示求助、经验和找同行分别长什么样。</p>
+            <p className="community-note">合成内容，不能举报或删除。</p>
             <ul className="community-preview-list">
               {SAMPLE_POSTS.map(sample => <li key={sample.title}>
-                <article className="community-slip atlas-sheet">
+                <article className="community-slip atlas-sheet" data-kind={sample.kind}>
                   <span className="atlas-pin" aria-hidden="true" />
                   <div className="community-slip-meta">
-                    <span className="community-kind" data-kind={sample.kind}>{sample.label}</span>
-                    <span className="community-sample-flag">示例，非真实用户发言</span>
+                    <span className="community-kind" data-kind={sample.kind}>{sample.kind === "help" ? <IconChat aria-hidden="true" /> : <IconBook aria-hidden="true" />}{sample.label}</span>
+                    <span className="community-sample-flag">示例</span>
                     <span className="sim-tag">simulation</span>
                   </div>
                   <h3 className="community-slip-title">{sample.title}</h3>
@@ -436,14 +456,18 @@ export function Community() {
         </> : <>
           <section className="community-compose atlas-sheet" aria-labelledby="compose-title">
             <span className="atlas-tape tr" aria-hidden="true" />
-            <h2 id="compose-title">钉一张新纸条</h2>
-            <p className="community-note">写清你卡在哪一步，或者做完一段体验后什么事变了。发出去只显示「匿名探索者」；你自己能看到「我的帖子」标记，也只有你能删掉它。</p>
+            <h2 id="compose-title">发一条新帖</h2>
+            <p className="community-note">写清卡在哪一步，或做完之后什么变了。发出后只显示「匿名探索者」。</p>
             <form onSubmit={event => { event.preventDefault(); void publish(); }} noValidate>
               <fieldset className="community-kinds">
-                <legend className="form-label">这张纸条是</legend>
+                <legend className="form-label">类型</legend>
                 <div className="community-kind-row">
-                  <button type="button" className="community-kind-btn" aria-pressed={kind === "help"} onClick={() => setKind("help")}>求助 · 还没弄明白的事</button>
-                  <button type="button" className="community-kind-btn" aria-pressed={kind === "experience"} onClick={() => setKind("experience")}>经验 · 做完之后的复盘</button>
+                  <button type="button" className="community-kind-btn" aria-pressed={kind === "help"} onClick={() => setKind("help")}>
+                    <IconChat aria-hidden="true" />求助
+                  </button>
+                  <button type="button" className="community-kind-btn" aria-pressed={kind === "experience"} onClick={() => setKind("experience")}>
+                    <IconBook aria-hidden="true" />经验
+                  </button>
                 </div>
               </fieldset>
               <div className="community-field">
@@ -476,26 +500,26 @@ export function Community() {
                   aria-invalid={!!fieldErrors.body}
                   aria-describedby={fieldErrors.body ? "community-body-error" : undefined}
                   placeholder={kind === "help"
-                    ? "背景是什么、你已经试过什么、希望别人回答哪一点。"
-                    : "你做了什么、花了多长时间、哪一步最难、还有什么没解决。"}
+                    ? "背景是什么、试过什么、想让人回答哪一点。"
+                    : "做了什么、花了多久、哪一步最难、还剩什么。"}
                   onChange={event => setBody(event.target.value)}
                 />
                 {fieldErrors.body && <p className="community-error" id="community-body-error">{fieldErrors.body}</p>}
               </div>
               <label className="community-consent">
                 <input type="checkbox" checked={consent} onChange={event => setConsent(event.target.checked)} />
-                <span>我确认这条内容里没有姓名、联系方式或患者信息，也没有替别人判断该不该走某条路。</span>
+                <span>我确认内容里没有姓名、联系方式或患者信息。</span>
               </label>
               {fieldErrors.consent && <p className="community-error">{fieldErrors.consent}</p>}
               <div className="community-form-actions" style={{ marginTop: 8 }}>
-                <button type="submit" className="button" disabled={publishing}>{publishing ? "正在往墙上钉…" : "匿名钉上墙"}</button>
-                <p className="community-form-note">发出去就公开了。写错可以先删掉再发；删除入口只在自己的那张纸条上。</p>
+                <button type="submit" className="button" disabled={publishing}>{publishing ? "正在发出…" : "匿名发出"}</button>
+                <p className="community-form-note">发出去就公开了，写错可以删掉重发。</p>
               </div>
             </form>
           </section>
 
           <div className="community-toolbar">
-            <div className="community-filters" role="group" aria-label="按类型筛选纸条">
+            <div className="community-filters" role="group" aria-label="按类型筛选帖子">
               {FILTERS.map(({ value, label }) => <button
                 key={value}
                 type="button"
@@ -507,27 +531,28 @@ export function Community() {
               </button>)}
             </div>
             <label className="community-query" htmlFor="community-query">
-              <span className="sr-only">搜索纸条标题和内容</span>
+              <span className="sr-only">搜索帖子标题和内容</span>
               <input
                 id="community-query"
                 className="field"
                 type="search"
                 value={query}
                 maxLength={160}
-                placeholder="搜标题或内容，比如「数学一」"
+                placeholder="搜标题或内容"
                 onChange={event => setQuery(event.target.value)}
               />
             </label>
           </div>
 
           {visiblePosts.length === 0 ? <section className="community-wall-empty atlas-sheet flat" aria-live="polite">
+            <IconEmpty className="community-empty-icon" aria-hidden="true" />
             <h2>{emptyCopy.title}</h2>
             <p>{emptyCopy.text}</p>
             {(posts.length > 0 || query.trim() || filter !== "all") && <button
               type="button"
               className="community-link"
               onClick={() => { setQuery(""); setFilter("all"); titleField.current?.focus(); }}
-            >清除筛选，看全部纸条</button>}
+            >看全部帖子</button>}
           </section> : <ol className="community-wall-list" data-atlas-reveal>
             {visiblePosts.map(post => {
               const isLong = post.body.length > 150;
@@ -535,14 +560,18 @@ export function Community() {
               return <li key={post.id}>
                 <article
                   className={`community-slip atlas-sheet atlas-lift${post.id === freshId ? " is-fresh" : ""}`}
+                  data-kind={post.kind}
                   aria-labelledby={`community-post-${post.id}-title`}
                 >
                   <span className="atlas-pin" aria-hidden="true" />
                   <div className="community-slip-meta">
-                    <span className="community-kind" data-kind={post.kind}>{KIND_LABEL[post.kind]}</span>
+                    <span className="community-kind" data-kind={post.kind}>
+                      {post.kind === "help" ? <IconChat aria-hidden="true" /> : <IconBook aria-hidden="true" />}
+                      {KIND_LABEL[post.kind]}
+                    </span>
                     <span>匿名探索者</span>
                     <time dateTime={post.created_at}>{timeLabel(post.created_at)}</time>
-                    {post.mine && <span className="community-mine">我的帖子 · 只有你能删</span>}
+                    {post.mine && <span className="community-mine">我的帖子</span>}
                   </div>
                   <h2 className="community-slip-title" id={`community-post-${post.id}-title`}>{post.title}</h2>
                   <p className="community-slip-body" data-clamped={isLong && !isOpen}>{post.body}</p>
@@ -567,12 +596,11 @@ export function Community() {
                       disabled={busy}
                       onClick={() => { setReportId(reportId === post.id ? "" : post.id); setDeleteId(""); }}
                     >举报</button>
-                    <span className="community-slip-hint">{post.mine ? "删帖只删自己发的，删完不能恢复。" : "举报后由人工复核，社区不会自动删帖。"}</span>
                   </div>
 
                   {deleteId === post.id && <div className="community-confirm" role="group" aria-labelledby={`community-delete-${post.id}-title`}>
-                    <h3 id={`community-delete-${post.id}-title`}>删掉这张纸条？</h3>
-                    <p>删除后不能恢复，别人也再看不到这段内容。想留个记录的话，先把自己需要的部分复制下来。</p>
+                    <h3 id={`community-delete-${post.id}-title`}>删除这条帖子？</h3>
+                    <p>删除后不能恢复。</p>
                     <div className="community-form-actions">
                       <button type="button" className="button danger small" disabled={busy} onClick={() => void removePost(post.id)}>{busy ? "正在删除…" : "确认删除"}</button>
                       <button type="button" className="button quiet" disabled={busy} onClick={() => setDeleteId("")}>留着</button>
@@ -580,7 +608,7 @@ export function Community() {
                   </div>}
 
                   {reportId === post.id && <div className="community-report-drawer" role="group" aria-labelledby={`community-report-${post.id}-title`}>
-                    <h3 id={`community-report-${post.id}-title`}>举报这张纸条</h3>
+                    <h3 id={`community-report-${post.id}-title`}>举报这条帖子</h3>
                     <label className="form-label" htmlFor={`community-reason-${post.id}`}>哪里有问题</label>
                     <select
                       ref={reportField}
@@ -595,7 +623,7 @@ export function Community() {
                       <button type="button" className="button secondary small" disabled={busy} onClick={() => void submitReport(post.id)}>提交举报</button>
                       <button type="button" className="button quiet" disabled={busy} onClick={() => closeReport(post.id)}>取消</button>
                     </div>
-                    <p className="community-note" style={{ marginTop: 12, marginBottom: 0 }}>举报会进入人工复核队列，社区不自动删帖，也不会告诉被举报的人是谁举报的。</p>
+                    <p className="community-note" style={{ marginTop: 12, marginBottom: 0 }}>人工复核，不自动删帖，不通知被举报的人。</p>
                   </div>}
                 </article>
               </li>;
@@ -607,29 +635,27 @@ export function Community() {
       <aside className="community-rail" aria-label="社区规则与说明">
         <section className="community-rail-card atlas-sheet">
           <span className="atlas-tape tl" aria-hidden="true" />
-          <h2>墙上只贴两种纸</h2>
+          <h2>两类帖子</h2>
           <dl className="community-rail-list">
-            <div><dt>求助</dt><dd>还没弄明白的具体问题：背景是什么、你试过什么、想让人回答哪一点。</dd></div>
-            <div><dt>经验</dt><dd>做完一段体验后的复盘：做了什么、花了多久、哪一步最难、还剩什么没解决。</dd></div>
+            <div><dt><IconChat aria-hidden="true" />求助</dt><dd>还没弄清楚的问题：背景、试过什么、想让人回答哪一点。</dd></div>
+            <div><dt><IconBook aria-hidden="true" />经验</dt><dd>做完一段体验的复盘：做了什么、多久、哪一步最难。</dd></div>
           </dl>
-          <p>广告、招生中介和课程推销不进来。带联系方式或报价的纸条会被人看，复核后删掉。</p>
-          <p>招募这一栏还在等：课题组、带教和实习的招募信息要核实来源，目前是空的。</p>
+          <p>广告、招生中介、课程推销不进来。</p>
         </section>
 
         <section className="community-rail-card atlas-sheet">
-          <h2>三条社区规则</h2>
+          <h2>三条规则</h2>
           <ol className="community-rules">
-            <li><b>只写确认过的事。</b>引用招生简章、导师回复这类内容要给出处；没查到官方原文就写「没查到」，别用推测把空补上。</li>
-            <li><b>不替别人下判断。</b>可以说自己怎么判断、依据是什么，不说「你适合」「你不适合」，也不给方向排名和录取概率。</li>
-            <li><b>对着内容提不同意见。</b>指出某条经验在哪种情况下不成立，比反驳发帖人有用。</li>
+            <li><b>只写确认过的事。</b>引用招生简章、导师回复要给出处；没查到就写「没查到」。</li>
+            <li><b>不替别人下判断。</b>说自己怎么判断、依据是什么，不说「你适合」，也不给排名和录取概率。</li>
+            <li><b>对内容提不同意见</b>，比反驳发帖人有用。</li>
           </ol>
         </section>
 
         <section className="community-rail-card atlas-sheet">
-          <h2>匿名身份与删除</h2>
-          <p>帖子只显示「匿名探索者」，邮箱不公开。验证邮箱是为了在有人发广告、招生中介时能找到发帖的人。</p>
-          <p>删帖只删自己发的；别人的纸条你只能举报，由人工复核后处理。</p>
-          <Link className="community-link" href="/account">到「我的资料」看身份与删除记录</Link>
+          <h2>匿名与删除</h2>
+          <p>帖子只显示「匿名探索者」，邮箱不公开。验证邮箱是为了在有人发广告时能找到发帖的人。</p>
+          <Link className="community-link" href="/account">到「我的资料」看删除记录</Link>
         </section>
       </aside>
     </div>

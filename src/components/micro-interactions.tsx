@@ -16,7 +16,7 @@ import { usePathname } from "next/navigation";
  *   6  装订线进度          滚动进度 → 孔位逐个点亮 + 穿线
  *   7  抽卡                悬停 .scene-card → 1.2% 放大 + ±1.8deg 随手摆动
  *   8  数字滚动            .scene-stamp 里的统计数随落章从 0 滚到目标值
- *   9  光标墨迹拖尾        桌面 8 个墨点、逐个淡出
+ *   9  笔形光标            CSS cursor（micro.css）；点到哪里墨点落在哪里
  *  10  盖章落下            首屏统计章砸落 + 尘点 + 纸面 0.5px 抖动（CSS 驱动）
  *  11  段落压痕            区块交界接近视口中线时出现一道压痕
  *  12  路由墨迹转场        在 template.tsx 里
@@ -37,7 +37,6 @@ const REDUCE = "(prefers-reduced-motion: reduce)";
 const STAMP_DELAY = 720;
 const ROLL_MS = 680;
 
-const TRAIL_DOTS = 8;
 const INK_DROPS = 4;
 const MAGNET_ZONE = 24;
 const MAGNET_PULL = 6;
@@ -163,7 +162,7 @@ function install(): () => void {
       const event = raw as PointerEvent;
       if (event.pointerType === "mouse" && event.button !== 0) return;
       if (!(event.target instanceof Element)) return;
-      const host = event.target.closest<HTMLElement>(".atlas-btn, .scene-card, .atlas-step");
+      const host = event.target.closest<HTMLElement>(".atlas-btn, .scene-card, .atlas-step, .fd-tab");
       if (!host) return;
       const drop = inkDrops[inkIndex];
       inkIndex = (inkIndex + 1) % inkDrops.length;
@@ -178,35 +177,6 @@ function install(): () => void {
     },
     { passive: true },
   );
-
-  /* ------------------------------------------------------------------ *
-   * 9. 光标墨迹拖尾（桌面精确指针）
-   * ------------------------------------------------------------------ */
-  const trailDots: HTMLElement[] = [];
-  let trailIndex = 0;
-  if (finePointer) {
-    const layer = document.createElement("div");
-    layer.className = "xn-trail-layer";
-    layer.setAttribute("aria-hidden", "true");
-    for (let index = 0; index < TRAIL_DOTS; index += 1) {
-      const dot = document.createElement("i");
-      dot.className = "xn-trail-dot";
-      layer.appendChild(dot);
-      trailDots.push(dot);
-    }
-    document.body.appendChild(layer);
-    cleanups.push(() => layer.remove());
-  }
-  const paintTrail = (x: number, y: number) => {
-    if (!trailDots.length) return;
-    const dot = trailDots[trailIndex];
-    trailIndex = (trailIndex + 1) % trailDots.length;
-    if (!dot) return;
-    dot.style.transform = `translate3d(${x}px, ${y}px, 0)`;
-    const next = dot.classList.contains("is-a") ? "is-b" : "is-a";
-    dot.classList.remove(next === "is-a" ? "is-b" : "is-a");
-    dot.classList.add(next);
-  };
 
   /* ------------------------------------------------------------------ *
    * 6. 装订线进度
@@ -362,7 +332,6 @@ function install(): () => void {
   function paintPointer() {
     const x = pointerX;
     const y = pointerY;
-    paintTrail(x, y);
 
     if (tiltSheet && tiltRect) {
       const nx = clamp(((x - tiltRect.left) / Math.max(tiltRect.width, 1)) * 2 - 1);

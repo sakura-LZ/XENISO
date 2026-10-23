@@ -124,7 +124,7 @@ export function ExperienceCard({ experience }: { experience: Experience }) {
   const range = result?.series?.flatMap((series) => series.values) ?? [];
   const minimum = Math.min(0, ...range);
   const maximum = Math.max(1, ...range);
-  const colors = ["var(--ink-3)", "var(--blue)", "var(--green)"];
+  const colors = ["var(--green)", "var(--ochre)", "var(--ink-3)"];
   return <figure className="xr-experience">
     <figcaption>{presentation.title} · simulation</figcaption>
     {result?.series && <>

@@ -1,0 +1,248 @@
+/*
+ * XENISO · 滚动场景层（scroll-scenes.css）
+ * ---------------------------------------------------------------------------
+ * 只做"动作"，不做视觉：纸色、印章、胶带仍在 atlas.css / home.css / report.css。
+ * 颜色、字体、缓动沿用 globals.css 与 motion.css 的 token，这里不新开色板。
+ *
+ * 为什么需要这一层：标题已经有荧光笔划线（micro.css），但标题以下的内容滚进来
+ * 只是"在那儿"，没有"被摆上去"的过程。所以每个场景都从内容本身的性质挑动作，
+ * 不套通用的淡入上移：
+ *
+ *   表格 / 对照 → 先用笔把每一行横线拉出来，字随后浮现（画表格线再填字）
+ *   列表 / 步骤 → 像盖章一样落到纸上：从小放大、过冲一次、回落到 1，带轻微下沉
+ *   数字        → 老式机械计数器：高位先停、末位后停，落定前轻微抖动
+ *   引用 / 手记 → 铅笔在关键句下面拉一道波浪线（按笔画逐步画出）
+ *   整段正文    → 铅字一行一行压上去：按行高切分成 N 段，不是整段淡入
+ *   图版 / 插图 → 从档案袋口抽出来：先只露一条边，再滑出到位并回正
+ *   章节标签    → 随翻阅做 ≤6px 的细微位移（滚动驱动，往回滚会倒放）
+ *
+ * 状态机（关键：默认可见，JS 只负责"把还没滚到的藏起来"）
+ *   [data-scene-kind="…"]    场景类型。由 JS 打；也接受作者手写 data-scene="…"
+ *   [data-scene-arm="1"]     起始态。只有 html[data-xn-scenes="1"] 时才生效
+ *   [data-scene-play="1"]    到位态
+ *   html[data-xn-scenes="1"] JS 已接管。没有这个标记，下面所有起始态一条都匹配
+ *                            不上——即使 HTML 里残留 data-scene-arm，正文也照样看得见。
+ *
+ * 三层兜底（reduced-motion / print / JS 异常）见 reading-craft.css。
+ * 一次性触发：JS 播完即 unobserve，往回滚不重播。
+ * ------------------------------------------------------------------------- */
+
+:root {
+  /* 手感按"动作 + 实物"取：盖章是砸落（刚度高、阻尼低），抽纸是滑入（阻尼大）。 */
+  --xn-scene-stamp-dur: 460ms;
+  --xn-scene-rule-dur: 420ms;
+  --xn-scene-ink-dur: 660ms;
+  --xn-scene-plate-dur: 720ms;
+  --xn-scene-step: 44ms;          /* 同一组内相邻两项的间隔，40–80ms 一档 */
+}
+
+/* ===========================================================================
+ * 1. 盖章落入（列表 / 步骤 / 目录条目）
+ *    容器打 data-scene-kind="stamp"，JS 给每个子项写 --xn-i 做错峰。
+ *    位移与缩放都只动 transform，不触发重排。
+ * ======================================================================== */
+@keyframes xn-scene-stamp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -9px, 0) scale(.94) rotate(-.5deg);
+  }
+  58% {
+    opacity: 1;
+    transform: translate3d(0, 1.5px, 0) scale(1.045) rotate(.12deg);
+  }
+  80% {
+    transform: translate3d(0, -.5px, 0) scale(.994) rotate(-.04deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+}
+
+html[data-xn-scenes="1"] [data-scene-kind="stamp"][data-scene-arm="1"] > * {
+  opacity: 0;
+  transform: translate3d(0, -9px, 0) scale(.94) rotate(-.5deg);
+}
+
+[data-scene-kind="stamp"][data-scene-play="1"] > * {
+  animation: xn-scene-stamp var(--xn-scene-stamp-dur) var(--xn-out) both;
+  animation-delay: calc(var(--xn-i, 0) * var(--xn-scene-step));
+}
+
+/* ===========================================================================
+ * 2. 画表格线再填字（表格 / 对照）
+ *    行线由 tr::after 从左侧拉出（笔只有起点，不从中间向两头推）；
+ *    字晚 90ms 浮现。行线画在 tr 上而不是单元格上，所以单元格淡入时
+ *    不会把正在画的线一起淡掉；tr::after 不被支持时只剩原本的边框，
+ *    退化成普通淡入，不会缺线。
+ * ======================================================================== */
+[data-scene-kind="rule"] tbody tr {
+  position: relative;
+}
+
+[data-scene-kind="rule"] tbody tr::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: var(--line-2);
+  transform: scaleX(1);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+html[data-xn-scenes="1"] [data-scene-kind="rule"][data-scene-arm="1"] tbody tr::after {
+  transform: scaleX(0);
+}
+
+[data-scene-kind="rule"][data-scene-play="1"] tbody tr::after {
+  transform: scaleX(1);
+  transition: transform var(--xn-scene-rule-dur) var(--xn-out);
+  transition-delay: calc(var(--xn-i, 0) * 70ms);
+}
+
+html[data-xn-scenes="1"] [data-scene-kind="rule"][data-scene-arm="1"] tbody tr > * {
+  opacity: 0;
+  transform: translate3d(0, 3px, 0);
+}
+
+[data-scene-kind="rule"][data-scene-play="1"] tbody tr > * {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 260ms var(--xn-out),
+    transform 300ms var(--xn-out);
+  transition-delay: calc(var(--xn-i, 0) * 70ms + 90ms);
+}
+
+/* ===========================================================================
+ * 3. 手绘波浪下划线（引用 / 手记）
+ *    用 mask 铺一条固定形状的波浪，再用 clip-path 从左往右揭开，
+ *    所以是"画出来"而不是"淡进来"，颜色随 currentColor 适配深浅纸面。
+ * ======================================================================== */
+[data-scene-kind="ink"] {
+  position: relative;
+}
+
+[data-scene-kind="ink"]::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  left: 0;
+  height: 8px;
+  background-color: var(--ochre);
+  opacity: .5;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 5.5Q5 2 10 5.5T20 5.5T30 5.5T40 5.5' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='8' viewBox='0 0 40 8'%3E%3Cpath d='M0 5.5Q5 2 10 5.5T20 5.5T30 5.5T40 5.5' fill='none' stroke='%23000' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-size: 40px 8px;
+  mask-size: 40px 8px;
+  -webkit-mask-position: 0 50%;
+  mask-position: 0 50%;
+  clip-path: inset(0 0 0 0);
+  pointer-events: none;
+}
+
+/* 引文块自带内边距，波浪线收进内边距里，不压在字上 */
+[data-scene-kind="ink"].xnlib-quote::after {
+  right: 16px;
+  bottom: 7px;
+  left: 16px;
+}
+
+html[data-xn-scenes="1"] [data-scene-kind="ink"][data-scene-arm="1"]::after {
+  clip-path: inset(0 100% 0 0);
+}
+
+[data-scene-kind="ink"][data-scene-play="1"]::after {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path var(--xn-scene-ink-dur) var(--xn-out) 100ms;
+}
+
+/* ===========================================================================
+ * 4. 逐行浮现（整段正文）
+ *    clip-path 从"底边内缩 100%"走到 0，配合 steps(N) 把连续揭开切成 N 段，
+ *    N 由 JS 按 高度 / 行高 量出来（reading-craft.css 里给了默认值）。
+ *    所以看起来是一行一行压上去，而不是整块淡入。
+ * ======================================================================== */
+html[data-xn-scenes="1"] [data-scene-kind="lines"][data-scene-arm="1"] {
+  clip-path: inset(0 0 100% 0);
+}
+
+[data-scene-kind="lines"][data-scene-play="1"] {
+  clip-path: inset(0 0 0 0);
+  transition: clip-path var(--xn-lines-dur, 760ms) steps(var(--xn-lines, 5), end);
+}
+
+/* ===========================================================================
+ * 5. 从档案袋抽出图版（插图 / 图表）
+ *    起始态只露出上沿 11px，并略微左倾、上移；到位时整张滑出、回正。
+ *    clip-path 与 transform 都只走合成层。
+ * ======================================================================== */
+html[data-xn-scenes="1"] [data-scene-kind="plate"][data-scene-arm="1"] {
+  clip-path: inset(0 0 calc(100% - 11px) 0);
+  transform: translate3d(0, -6px, 0) rotate(-.8deg);
+}
+
+[data-scene-kind="plate"][data-scene-play="1"] {
+  clip-path: inset(0 0 0 0);
+  transform: none;
+  transition:
+    clip-path var(--xn-scene-plate-dur) var(--xn-out),
+    transform var(--xn-scene-plate-dur) var(--xn-out);
+}
+
+/* ===========================================================================
+ * 6. 机械计数器（数字）
+ *    数字文本始终是真值，JS 只是在进视口时把它从 0 滚上来；
+ *    JS 没跑或 IO 没触发时，读者看到的就是最终数字，不存在"停在 0"。
+ *    等宽数字防止滚动时行宽跳动。
+ * ======================================================================== */
+[data-scene-kind="count"] {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+  transition: none;
+}
+
+/* ===========================================================================
+ * 7. 滚动驱动的细微位移（章节标签 / 编号游标）
+ *    幅度上限 6px（任务要求 ≤12px，这里再收一半），只用于装饰性标签，
+ *    不作用于正文、按钮和表单。
+ * ======================================================================== */
+[data-scene-kind="shift"] {
+  transform: translate3d(var(--xn-shift, 0px), 0, 0);
+}
+
+/* ===========================================================================
+ * 8. 本层自带的最小兜底（完整的保障见 reading-craft.css）
+ *    减少动态效果 / 打印时，所有场景直接到位。
+ * ======================================================================== */
+@media (prefers-reduced-motion: reduce), print {
+  [data-scene-kind="stamp"] > *,
+  [data-scene-kind="rule"] tbody tr > *,
+  [data-scene-kind="lines"],
+  [data-scene-kind="plate"] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    animation: none !important;
+  }
+
+  [data-scene-kind="rule"] tbody tr::after {
+    transform: scaleX(1) !important;
+    transition: none !important;
+  }
+
+  [data-scene-kind="ink"]::after {
+    clip-path: inset(0 0 0 0) !important;
+    transition: none !important;
+  }
+
+  [data-scene-kind="shift"] {
+    transform: none !important;
+  }
+}

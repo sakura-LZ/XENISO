@@ -19,7 +19,7 @@
  *   落章  = 砸落（1.15 → .93 → 1 过冲，纸面 0.5px 抖动，尘点飞散）
  *
  * 克制约定：同一屏同时运动的元素不超过三个；本层里只有落章（一次性）、
- * 光标墨迹（桌面、极淡）和滚动压痕会与既有入场动效同屏出现。
+ * 笔形光标（静态，不跟随）和滚动压痕会与既有入场动效同屏出现。
  * ------------------------------------------------------------------------- */
 
 :root {
@@ -330,40 +330,35 @@ h2.is-typing .xn-lead {
 }
 
 /* ===========================================================================
- * 9. 光标墨迹拖尾（ink trail）
- *    桌面精确指针下，光标后面留 8 个极淡的墨点，逐个淡出；触屏与减少动效关闭。
- *    位置只写 transform，淡出只动 opacity/scale。
+ * 9. 笔形光标（pen cursor）
+ *    指针本身就是那支笔：笔尖对准真实点击点（hotspot 2 29），
+ *    点到哪里，墨点就落在哪里，不再需要一串跟着跑的圆点。
+ *    只接管首页（含 .atlas-hero 的 main）；表单输入仍是文本光标。
+ *    :has() 不支持时整条规则不生效，退回系统指针，不影响可用性。
  * ========================================================================= */
-.xn-trail-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 36;
-  pointer-events: none;
-  overflow: hidden;
-  contain: paint;
+main:has(.atlas-hero) {
+  cursor: url("/cursor/pen.svg") 2 29, auto;
 }
-.xn-trail-dot {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 7px;
-  height: 7px;
-  margin: -3.5px 0 0 -3.5px;
-  border-radius: 50%;
-  background: var(--xn-m-ink);
-  opacity: 0;
-  transform: translate3d(0, 0, 0);
-  will-change: scale, opacity;
-}
-.xn-trail-dot.is-a { animation: xn-trail-a 620ms cubic-bezier(.2, .7, .3, 1) forwards; }
-.xn-trail-dot.is-b { animation: xn-trail-b 620ms cubic-bezier(.2, .7, .3, 1) forwards; }
-@keyframes xn-trail-a {
-  0%   { opacity: .34; scale: .95; }
-  100% { opacity: 0;   scale: .42; }
-}
-@keyframes xn-trail-b {
-  0%   { opacity: .34; scale: .95; }
-  100% { opacity: 0;   scale: .42; }
+/* 只在真有精确指针的设备上换光标：触屏没有指针可看，不必付这份风险 */
+@media (hover: hover) and (pointer: fine) {
+  main:has(.atlas-hero),
+  main:has(.atlas-hero) * {
+    cursor: url("/cursor/pen.svg") 2 29, auto;
+  }
+  /* 正文/标题保留 I-beam：笔形光标压在文字上会让人没法判断"这里能不能选字"，
+     读者要复制一段话时会找不到落点。笔只出现在纸面、卡片、按钮这些"能画的地方"。 */
+  main:has(.atlas-hero) :is(
+    p, h1, h2, h3, h4, h5, h6, li, dt, dd, blockquote, figcaption, time, b, strong, em, i, span, small, label, th, td
+  ) {
+    cursor: text;
+  }
+  /* 但这些容器内的可点元素仍然用笔 */
+  main:has(.atlas-hero) :is(a, button, summary, [role="button"]) {
+    cursor: url("/cursor/pen.svg") 2 29, auto;
+  }
+  main:has(.atlas-hero) :is(input, textarea, select, [contenteditable="true"]) {
+    cursor: text;
+  }
 }
 
 /* ===========================================================================
@@ -491,7 +486,6 @@ h2.is-typing .xn-lead {
  * ========================================================================= */
 @media (prefers-reduced-motion: reduce) {
   .xn-fx-layer,
-  .xn-trail-layer,
   .xn-binding,
   .xn-route-veil,
   .xn-route-veil.is-play { display: none !important; }
@@ -525,7 +519,6 @@ h2.is-typing .xn-lead {
 
 @media print {
   .xn-fx-layer,
-  .xn-trail-layer,
   .xn-binding,
   .xn-route-veil { display: none !important; }
 

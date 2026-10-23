@@ -47,18 +47,25 @@ export function OfficialDossier({ directionId, medicalTopic, medicalDepartment, 
       <h3 id={titleId}>{chapterMode ? labels[initialCategory] : "来源资料"}</h3>
       <button className="button secondary small" onClick={exportResult} disabled={!result?.hits.length}>导出这页资料</button>
     </div>
-    <p className="xnlib-dossier-lead">引文照抄来源原文，院校、年份和统计对象分别核对。标题和方向归属是站内编辑索引，不是来源原文；抓取不到或原文没写的，标「没查到」。</p>
     {!chapterMode && <div className="xnlib-facet-row" aria-label="资料分类">{[["", "全部资料"], ...Object.entries(labels)].map(([value, label]) => <button key={value} className="xnlib-facet" aria-pressed={category === value} onClick={() => change(() => setCategory(value))}>{label}{value && result?.coverage ? <b>{result.coverage.by_category[value] ?? 0}</b> : null}</button>)}</div>}
-    <form className="xnlib-form" onSubmit={event => { event.preventDefault(); change(() => setQuery(draft)); }}>
-      <label>检索原文<input className="field" value={draft} maxLength={160} placeholder="如 408、硕士、Python" onChange={event => setDraft(event.target.value)} /></label>
-      <label>院校 / 机构<select className="field" value={school} onChange={event => change(() => setSchool(event.target.value))}><option value="">全部</option>{result?.facets?.institutions.map(item => <option key={item}>{item}</option>)}{school && !result?.facets?.institutions.includes(school) && <option>{school}</option>}</select></label>
-      <label>招生年份<select className="field" value={year} onChange={event => change(() => setYear(event.target.value))}><option value="">全部</option>{result?.facets?.admission_years.map(item => <option key={item}>{item}</option>)}{year && !result?.facets?.admission_years.includes(Number(year)) && <option>{year}</option>}</select></label>
-      <div className="xnlib-form-actions">
-        <button className="button small" type="submit">检索</button>
-        <button type="button" className="button secondary small" onClick={() => change(() => { setDraft(""); setQuery(""); setSchool(""); setYear(""); setCategory(chapterMode ? initialCategory : ""); setHistorical(false); })}>清除筛选</button>
+    <details className="xnlib-fold xnlib-fold-inline">
+      <summary>
+        <span className="xnlib-fold-label">按院校、年份或关键词筛选</span>
+        <span className="xnlib-fold-chevron" aria-hidden="true" />
+      </summary>
+      <div className="xnlib-fold-body">
+        <form className="xnlib-form" onSubmit={event => { event.preventDefault(); change(() => setQuery(draft)); }}>
+          <label>检索原文<input className="field" value={draft} maxLength={160} placeholder="如 408、硕士、Python" onChange={event => setDraft(event.target.value)} /></label>
+          <label>院校 / 机构<select className="field" value={school} onChange={event => change(() => setSchool(event.target.value))}><option value="">全部</option>{result?.facets?.institutions.map(item => <option key={item}>{item}</option>)}{school && !result?.facets?.institutions.includes(school) && <option>{school}</option>}</select></label>
+          <label>招生年份<select className="field" value={year} onChange={event => change(() => setYear(event.target.value))}><option value="">全部</option>{result?.facets?.admission_years.map(item => <option key={item}>{item}</option>)}{year && !result?.facets?.admission_years.includes(Number(year)) && <option>{year}</option>}</select></label>
+          <div className="xnlib-form-actions">
+            <button className="button small" type="submit">检索</button>
+            <button type="button" className="button secondary small" onClick={() => change(() => { setDraft(""); setQuery(""); setSchool(""); setYear(""); setCategory(chapterMode ? initialCategory : ""); setHistorical(false); })}>清除筛选</button>
+          </div>
+        </form>
+        <label className="xnlib-check xnlib-after-form"><input type="checkbox" checked={historical} onChange={event => change(() => setHistorical(event.target.checked))} />把往年 / 待复查的资料也列出来（只作参考）</label>
       </div>
-    </form>
-    <label className="xnlib-check xnlib-after-form"><input type="checkbox" checked={historical} onChange={event => change(() => setHistorical(event.target.checked))} />把往年 / 待复查的资料也列出来（只作参考）</label>
+    </details>
     <p className={`xnlib-count${status === "error" ? " error" : ""}`} role="status">{status === "loading" ? "正在读来源资料…" : status === "error" ? "来源资料这次没读出来。可能是网络或资料库暂时不可用，可以重试。" : `命中 ${result?.total ?? 0} 条；这个主题一共收录 ${result?.coverage?.records ?? 0} 条资料、来自 ${result?.coverage?.sources ?? 0} 个独立来源。`}</p>
     {status === "error" && <div className="xnlib-file-actions"><button className="button secondary small" onClick={() => { setStatus("loading"); setRetry(retry + 1); }}>重新读取</button></div>}
     {status === "ready" && !!result?.missing_categories.length && <p className="xnlib-count warn">还没查到的分类：{result.missing_categories.map(value => labels[value]).join("、")}。这些位置空着，没有用生成内容补齐。</p>}

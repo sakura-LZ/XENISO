@@ -1,19 +1,21 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useMemo, useRef, useState, type MouseEvent, type ReactNode } from "react";
 import { handbookEntries, type HandbookDirectionId } from "@/lib/handbook";
 import { directions, findDirection, groups, occupationUrl, type Direction } from "@/lib/directions";
 import { getTemplate } from "@/lib/experience/templates";
+import { IconBook, IconCompass, IconFolder, IconPulse, IconProfile, IconQuote, IconStamp } from "@/components/icons";
 import { OfficialDossier } from "./official-dossier";
 import { MedicineBrowser } from "./medicine-browser";
 
+/** 六块内容：每块回答一个问题，问题写在标题下面，读者先知道"这块要不要看"。 */
 const chapters = [
-  { id: "overview", title: "专业特点", category: "occupation" },
-  { id: "work", title: "职业日常", category: "recruitment" },
-  { id: "skills", title: "能力基础", category: "learning" },
-  { id: "practice", title: "学习实践", category: "learning" },
-  { id: "admissions", title: "升学准备", category: "admissions" },
-  { id: "industry", title: "招聘与行业", category: "industry" },
+  { id: "overview", title: "专业特点", question: "实际在做什么", category: "occupation" },
+  { id: "work", title: "职业日常", question: "一天的工作长什么样", category: "recruitment" },
+  { id: "skills", title: "能力基础", question: "你已有的，和还要补的", category: "learning" },
+  { id: "practice", title: "学习实践", question: "先做一个什么练习", category: "learning" },
+  { id: "admissions", title: "升学准备", question: "能不能报，卡在哪一条", category: "admissions" },
+  { id: "industry", title: "招聘与行业", question: "招人时写的是什么要求", category: "industry" },
 ] as const;
 type ChapterId = (typeof chapters)[number]["id"];
 type LibraryState = { direction: string; view: "directory" | "reading" | "compare"; query: string; group: string; compare: string[] };
@@ -51,7 +53,6 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
   const [state, setState] = useState(() => parseState(initialParams));
   const [chapter, setChapter] = useState<ChapterId>("overview");
   const [message, setMessage] = useState("");
-  const [evidenceSide, setEvidenceSide] = useState<"medical" | "new">("medical");
   const scrollPositions = useRef(new Map<string, number>());
   const current = findDirection(state.direction);
   const visible = useMemo(() => directions.filter(item => (state.group === "all" || item.group_id === state.group) && (!state.query.trim() || searchText(item).includes(state.query.trim().toLowerCase()))), [state.group, state.query]);
@@ -126,7 +127,15 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
     setChapter(id);
   }
 
-  const chapterNav = <nav aria-label="方向章节"><ol className="xnlib-toc">{chapters.map((entry, i) => <li key={entry.id}><a href={`#chapter-${entry.id}`} aria-current={chapter === entry.id ? "location" : undefined} onClick={event => chapterLink(event, entry.id)}><span>第 {i + 1} 章</span>{entry.title}</a></li>)}</ol></nav>;
+  const chapterNav = <nav className="xnlib-chapter-nav" aria-label="本页六块内容">
+    <p className="xnlib-chapter-nav-label">本页六块</p>
+    <ol className="xnlib-toc">{chapters.map(entry => <li key={entry.id}>
+      <a href={`#chapter-${entry.id}`} aria-current={chapter === entry.id ? "location" : undefined} onClick={event => chapterLink(event, entry.id)}>
+        <span className="xnlib-toc-icon" aria-hidden="true">{chapterIcon(entry.id)}</span>
+        <span className="xnlib-toc-name">{entry.title}</span>
+      </a>
+    </li>)}</ol>
+  </nav>;
 
   if (state.view === "compare") return <>
     <Link href={directoryUrl} onClick={event => follow(event, directoryState)} className="xnlib-back">返回信息文库</Link>
@@ -156,6 +165,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
           <span className="atlas-chip" data-tone="ok">资料按来源逐条标注</span>
         </div>
         <p className="xnlib-file-lede">{handbook.overview}</p>
+        <p className="xnlib-file-rule"><span className="xnlib-file-rule-icon" aria-hidden="true"><IconQuote /></span><span>引文照抄来源原文，院校、年份和统计对象分别核对。标题和方向归属是站内编辑索引，不是来源原文；抓取不到或原文没写的，标「没查到」。</span></p>
         <div className="xnlib-file-actions">
           <Link className="button secondary" href={`/experience?direction=${current.id}`}>看这个方向的练习任务</Link>
           <label className="xnlib-check"><input type="checkbox" checked={state.compare.includes(current.id)} onChange={() => toggle(current.id)} />加入比较</label>
@@ -165,79 +175,87 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
       </header>
       <div className="xnlib-file-layout">
         <aside className="xnlib-file-aside">
-          <div className="atlas-sheet xnlib-cover">
-            <p className="xnlib-cover-name">{current.name}</p>
-            <dl className="atlas-kv">
-              <div><dt>分类</dt><dd>{current.group_name}</dd></div>
-              <div><dt>职业条目</dt><dd>{current.onet.length ? current.onet.map(item => item.code).join(" / ") : "不适用"}</dd></div>
-              <div><dt>来源</dt><dd>O*NET 与站内资料库，逐条标抓取时间</dd></div>
-            </dl>
-          </div>
           {chapterNav}
         </aside>
         <article className="xnlib-file-body">
-          <section id="chapter-overview" className="xnlib-file-section" data-atlas-reveal>
-            <h2>专业特点</h2>
-            <p>{handbook.overview}</p>
-            <ul className="xnlib-plain-list">{current.work_tasks.map(task => <li key={task}>{task}</li>)}</ul>
-            {medicine ? <p className="xnlib-note">医院科室、招生学科和岗位身份要分开核对。科室介绍不能证明个人的报考、执业或入职资格。</p> : <>
-              <h3>对应到哪些职业</h3>
-              <p className="xnlib-note">职业信息来自 O*NET；这些职业与国内研究方向怎么对应，是 LIMEN 编辑整理的，不是 O*NET 官方对中国考研专业的结论。</p>
-              <ul className="xnlib-sources">{current.onet.map(item => <li key={item.code}><a href={occupationUrl(item.code)} target="_blank" rel="noreferrer">{item.name}</a><span className="xnlib-source-code">SOC {item.code} · {relationshipLabel[item.relationship] ?? item.relationship}</span></li>)}</ul>
-              <OfficialDossier directionId={current.id} initialCategory="occupation" chapterMode />
-            </>}
-          </section>
-          <section id="chapter-work" className="xnlib-file-section" data-atlas-reveal>
-            <h2>职业日常</h2>
-            <ol className="xnlib-steps">{handbook.daily_work.map((task, i) => <li key={task}><span>第 {i + 1} 步</span><p>{task}</p></li>)}</ol>
-            <div className="xnlib-kv3">
-              <div><h3>输入</h3><p>{template.brief}</p></div>
-              <div><h3>处理</h3><p>{template.stages.map(stage => stage.title).join("，然后")}</p></div>
-              <div><h3>结果</h3><p>{template.deliverable}</p></div>
-            </div>
-          </section>
-          <section id="chapter-skills" className="xnlib-file-section" data-atlas-reveal>
-            <h2>能力基础</h2>
-            <p>医学训练给你的起点，和这个方向另外要补的东西，是两件事。下面分开列，别把前者当成后者的替代。</p>
-            <div className="xnlib-skill-switch" role="group" aria-label="能力对照">
-              <button aria-pressed={evidenceSide === "medical"} onClick={() => setEvidenceSide("medical")}>医学经历可能提供的起点</button>
-              <button aria-pressed={evidenceSide === "new"} onClick={() => setEvidenceSide("new")}>这个方向要求、你可能没学过的</button>
-            </div>
-            <div className="xnlib-skill-panel">
-              {evidenceSide === "medical"
-                ? <ul className="xnlib-plain-list">{current.medical_transfer.map(item => <li key={item}>{item}</li>)}</ul>
-                : <ul className="xnlib-gap-list">{current.skills.map(item => <li key={item}><span className="atlas-chip" data-tone="gap">要补基础</span>{item}</li>)}</ul>}
-            </div>
-            <h3>入门前先补的基础</h3>
-            <ul className="xnlib-gap-list">{handbook.prerequisites.map(item => <li key={item}><span className="atlas-chip" data-tone="gap">要补基础</span>{item}</li>)}</ul>
-            <p className="xnlib-note">这些是编辑整理的学习线索。具体一门课要补到什么程度，看目标院校当年的考试科目和岗位原文，不从「我是临床医学」直接推断。</p>
-          </section>
-          <section id="chapter-practice" className="xnlib-file-section" data-atlas-reveal>
-            <h2>学习实践</h2>
-            <p className="xnlib-note">LIMEN 编辑的入门练习，用虚构材料做，不接触真实病历。<span className="simulation-tag" style={{ marginLeft: 8 }}>simulation</span></p>
-            <div className="atlas-sheet xnlib-project">
-              <h3>{template.title}</h3>
-              <p>{template.brief}</p>
-              <ol className="xnlib-steps">{template.stages.map((item, i) => <li key={item.title}><span>第 {i + 1} 步</span><p><strong>{item.title}</strong>：{item.question}</p></li>)}</ol>
-              <p className="xnlib-note">做完应该拿到：{template.deliverable}</p>
-            </div>
-            <h3>可以作为起点的课程</h3>
-            <ul className="xnlib-plain-list">{current.courses.map(item => <li key={item}>{item}</li>)}</ul>
-            <h3>延伸阅读与实践资料</h3>
-            <ul className="xnlib-sources">{handbook.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a><p>{source.purpose}</p></li>)}</ul>
-            <div className="xnlib-file-actions"><Link className="button secondary" href={`/experience?direction=${current.id}`}>在职业体验里做一遍</Link></div>
-            {!medicine && <OfficialDossier directionId={current.id} initialCategory="learning" chapterMode />}
-          </section>
-          <section id="chapter-admissions" className="xnlib-file-section" data-atlas-reveal>
-            <h2>升学准备</h2>
-            <p>报考条件要按院校、项目和招生年份逐条核对。临床医学本科能不能报、要不要加试、当年计划多少，都以院校原文为准；没写清的地方，我们标「没查到」。</p>
-            {medicine ? <MedicineBrowser initialView="programs" initialCategory="admissions" /> : <OfficialDossier directionId={current.id} initialCategory="admissions" chapterMode />}
-          </section>
-          <section id="chapter-industry" className="xnlib-file-section" data-atlas-reveal>
-            <h2>招聘与行业</h2>
-            <p>看招聘原文时先看发布单位、发布日期和统计对象。一个岗位、一所院校或一年的样本，都不代表整个行业。</p>
-            {medicine ? <MedicineBrowser initialView="departments" /> : <><OfficialDossier directionId={current.id} initialCategory="recruitment" chapterMode /><OfficialDossier directionId={current.id} initialCategory="industry" chapterMode /></>}
-          </section>
+          <div className="xnlib-chapters">
+            <section id="chapter-overview" className="xnlib-chapter">
+              <ChapterHead entry={chapters[0]} index={0} />
+              <ul className="xnlib-plain-list">{current.work_tasks.map(task => <li key={task}>{task}</li>)}</ul>
+              {medicine ? <p className="xnlib-note">医院科室、招生学科和岗位身份要分开核对。科室介绍不能证明个人的报考、执业或入职资格。</p> : <>
+                <Fold label="对应到哪些职业" count={current.onet.length}>
+                  <p className="xnlib-note">职业来自 O*NET；与国内研究方向的对应由 LIMEN 编辑整理，不是 O*NET 的结论。</p>
+                  <ul className="xnlib-sources">{current.onet.map(item => <li key={item.code}><a href={occupationUrl(item.code)} target="_blank" rel="noreferrer">{item.name}</a><span className="xnlib-source-code">SOC {item.code} · {relationshipLabel[item.relationship] ?? item.relationship}</span></li>)}</ul>
+                </Fold>
+                <Fold label="来源资料与检索">
+                  <OfficialDossier directionId={current.id} initialCategory="occupation" chapterMode />
+                </Fold>
+              </>}
+            </section>
+            <section id="chapter-work" className="xnlib-chapter">
+              <ChapterHead entry={chapters[1]} index={1} />
+              <div className="xnlib-kv3">
+                <div><h3>输入</h3><p>{template.brief}</p></div>
+                <div><h3>处理</h3><p>{template.stages.map(stage => stage.title).join("，然后")}</p></div>
+                <div><h3>结果</h3><p>{template.deliverable}</p></div>
+              </div>
+              <Fold label="一天里的三步" count={handbook.daily_work.length}>
+                <ol className="xnlib-steps">{handbook.daily_work.map((task, i) => <li key={task}><span>第 {i + 1} 步</span><p>{task}</p></li>)}</ol>
+              </Fold>
+            </section>
+            <section id="chapter-skills" className="xnlib-chapter">
+              <ChapterHead entry={chapters[2]} index={2} />
+              <div className="xnlib-skill-pair">
+                <div>
+                  <h3>医学经历可能提供的起点</h3>
+                  <ul className="xnlib-plain-list">{current.medical_transfer.map(item => <li key={item}>{item}</li>)}</ul>
+                </div>
+                <div>
+                  <h3>这个方向要求、你可能没学过的</h3>
+                  <p className="xnlib-chip-row">{current.skills.map(item => <span className="atlas-chip" data-tone="gap" key={item}>{item}</span>)}</p>
+                  <p className="xnlib-sub-label">入门前先补的基础</p>
+                  <ul className="xnlib-plain-list">{handbook.prerequisites.map(item => <li key={item}>{item}</li>)}</ul>
+                </div>
+              </div>
+              <p className="xnlib-note">补到什么程度，看目标院校当年的考试科目；不从「我是临床医学」直接推断。</p>
+            </section>
+            <section id="chapter-practice" className="xnlib-chapter">
+              <ChapterHead entry={chapters[3]} index={3} />
+              <div className="atlas-sheet xnlib-project">
+                <h3>{template.title}</h3>
+                <p>{template.brief}</p>
+                <p className="xnlib-note">做完应该拿到：{template.deliverable}<span className="simulation-tag" style={{ marginLeft: 8 }}>simulation</span></p>
+              </div>
+              <Fold label="练习的三步" count={template.stages.length}>
+                <ol className="xnlib-steps">{template.stages.map((item, i) => <li key={item.title}><span>第 {i + 1} 步</span><p><strong>{item.title}</strong>：{item.question}</p></li>)}</ol>
+              </Fold>
+              <Fold label="可以作为起点的课程" count={current.courses.length}>
+                <ul className="xnlib-plain-list">{current.courses.map(item => <li key={item}>{item}</li>)}</ul>
+              </Fold>
+              <Fold label="延伸阅读与实践资料" count={handbook.sources.length}>
+                <ul className="xnlib-sources">{handbook.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a><p>{source.purpose}</p></li>)}</ul>
+              </Fold>
+              {!medicine && <Fold label="来源资料与检索">
+                <OfficialDossier directionId={current.id} initialCategory="learning" chapterMode />
+              </Fold>}
+              <div className="xnlib-file-actions"><Link className="button secondary" href={`/experience?direction=${current.id}`}>在职业体验里做一遍</Link></div>
+            </section>
+            <section id="chapter-admissions" className="xnlib-chapter">
+              <ChapterHead entry={chapters[4]} index={4} />
+              <p>报考条件按院校、项目和年份逐条核对：能不能报、要不要加试、当年计划多少，都以院校原文为准，没写清的标「没查到」。</p>
+              <Fold label={medicine ? "院校与科室资料" : "院校招生原文与检索"}>
+                {medicine ? <MedicineBrowser initialView="programs" initialCategory="admissions" /> : <OfficialDossier directionId={current.id} initialCategory="admissions" chapterMode />}
+              </Fold>
+            </section>
+            <section id="chapter-industry" className="xnlib-chapter">
+              <ChapterHead entry={chapters[5]} index={5} />
+              <p>看原文先看发布单位、发布日期和统计对象。一个岗位、一所院校或一年的样本，都不代表整个行业。</p>
+              {medicine ? <Fold label="科室与执业资料"><MedicineBrowser initialView="departments" /></Fold> : <>
+                <Fold label="招聘原文与检索"><OfficialDossier directionId={current.id} initialCategory="recruitment" chapterMode /></Fold>
+                <Fold label="行业与就业统计"><OfficialDossier directionId={current.id} initialCategory="industry" chapterMode /></Fold>
+              </>}
+            </section>
+          </div>
         </article>
       </div>
     </>;
@@ -307,6 +325,41 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
       </div>
     </div>
   </>;
+}
+
+function chapterIcon(id: ChapterId) {
+  switch (id) {
+    case "overview": return <IconCompass />;
+    case "work": return <IconPulse />;
+    case "skills": return <IconProfile />;
+    case "practice": return <IconBook />;
+    case "admissions": return <IconStamp />;
+    case "industry": return <IconFolder />;
+  }
+}
+
+/** 分区头：图标 + 编号 + 标题 + 一句话"这块回答什么"。编号走档案语言，不用"第 N 章"。 */
+function ChapterHead({ entry, index }: { entry: (typeof chapters)[number]; index: number }) {
+  return <header className="xnlib-chapter-head">
+    <span className="xnlib-chapter-icon" aria-hidden="true">{chapterIcon(entry.id)}</span>
+    <div className="xnlib-chapter-text">
+      <p className="xnlib-chapter-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</p>
+      <h2>{entry.title}</h2>
+      <p className="xnlib-chapter-q">{entry.question}</p>
+    </div>
+  </header>;
+}
+
+/** 需要时才展开：原生 details，不依赖 JS 也能开合、也能被检索到。 */
+function Fold({ label, count, children }: { label: string; count?: number; children: ReactNode }) {
+  return <details className="xnlib-fold">
+    <summary>
+      <span className="xnlib-fold-label">{label}</span>
+      {typeof count === "number" && <span className="xnlib-fold-count">{count}</span>}
+      <span className="xnlib-fold-chevron" aria-hidden="true" />
+    </summary>
+    <div className="xnlib-fold-body">{children}</div>
+  </details>;
 }
 
 function DirectionComparison({ selected, onChange }: { selected: string[]; onChange: (index: number, id: string) => void }) {

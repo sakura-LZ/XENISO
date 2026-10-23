@@ -19,7 +19,8 @@
   display: block;
   width: 100%;
   height: 100%;
-  opacity: .85;
+  /* 墨已经在着色器里定过浓淡，这里不再压透明度，否则纸上看起来只是块浅色 */
+  opacity: 1;
 }
 .chroma-band-inner {
   position: relative;
@@ -58,26 +59,36 @@
 }
 .chroma-legend {
   list-style: none;
-  margin: 20px 0 0;
+  margin: 22px 0 0;
   padding: 0;
   display: grid;
-  gap: 8px;
+  gap: 0;
+  border-top: 1px dashed color-mix(in srgb, var(--ink) 22%, transparent);
 }
+/* 四行就是四步：左边编号与墨迹形态同名，右边一句话说清它在做什么 */
 .chroma-legend li {
-  display: flex;
+  display: grid;
+  grid-template-columns: 8.5em minmax(0, 1fr);
   align-items: baseline;
   gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed color-mix(in srgb, var(--ink) 16%, transparent);
   font-size: var(--fs-meta);
   line-height: var(--lh-meta);
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 .chroma-legend b {
-  flex: 0 0 auto;
-  min-width: 3.2em;
   font-family: var(--font-mono);
   font-size: var(--fs-label);
-  letter-spacing: .1em;
-  color: var(--green-deep);
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--ochre);
+  white-space: nowrap;
+}
+.chroma-legend span { color: var(--ink-2); }
+
+@media (max-width: 760px) {
+  .chroma-legend li { grid-template-columns: minmax(0, 1fr); gap: 2px; }
 }
 
 @media (max-width: 1024px) {
@@ -87,8 +98,36 @@
 @media (max-width: 760px) {
   .chroma-band { padding: 40px 0 46px; }
   .chroma-copy { padding: 20px 18px; }
-  .chroma-legend li { }
 }
 @media (prefers-reduced-motion: reduce) {
-  .chroma-canvas { opacity: .7; }
+  .chroma-canvas { opacity: .95; }
+}
+
+/* 首屏向下的入口：色键墨迹那一屏在首屏之下，给一个明确的指引。
+   用虚线 + 轻微下浮，和文字滚动带区分开，不抢主按钮。 */
+.atlas-hero-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 18px;
+  padding-bottom: 3px;
+  border-bottom: 1px dashed color-mix(in srgb, var(--ink-3) 45%, transparent);
+  color: var(--ink-2);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  text-decoration: none;
+  transition: color 200ms var(--ease), border-color 200ms var(--ease), gap 240ms var(--ease);
+}
+.atlas-hero-jump span {
+  font-size: 1.1em;
+  color: var(--ochre);
+}
+.atlas-hero-jump:hover,
+.atlas-hero-jump:focus-visible {
+  color: var(--ink);
+  border-bottom-color: var(--ochre);
+  gap: 11px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-hero-jump { transition: none; }
 }

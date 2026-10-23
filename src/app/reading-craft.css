@@ -1,0 +1,147 @@
+/*
+ * XENISO · 阅读保障层（reading-craft.css）
+ * ---------------------------------------------------------------------------
+ * 动效层（scroll-scenes.css）负责"好看"，这一层只负责"不能不好看"：
+ * 无论 JS 有没有跑、IntersectionObserver 有没有触发、用户是不是开了
+ * 减少动态效果，正文都必须看得见、读得顺。
+ *
+ * 本项目此前栽过一次——内容停在 opacity: 0 等一个永远不来的回调。
+ * 所以这一层不写任何新的动效，只写四道兜底和三条阅读细节。
+ *
+ * 四道兜底，任意一道成立都足够：
+ *   A  JS 没接管        html 上没有 data-xn-scenes 标记 → 起始态全部失效
+ *   B  JS 中途抛错       html[data-xn-scenes="panic"] → 强制全部到位
+ *   C  减少动态效果      prefers-reduced-motion: reduce → 强制全部到位
+ *   D  打印 / 另存为 PDF  @media print → 强制全部到位
+ * 再加上 JS 侧的 2.6 秒兜底计时器与"滚过就放行"的缓存位置判断，
+ * 一共六道。任何一道生效，读者看到的都是排好版的静态页面。
+ * ------------------------------------------------------------------------- */
+
+/* ===========================================================================
+ * A. JS 没有接管：起始态一律失效
+ *    起始态规则本身已经用 html[data-xn-scenes="1"] 门控过一次，这里再兜一层，
+ *    防止以后有人新增了没门控的起始态，或者 HTML 里残留了手工写的 data-scene-arm。
+ * ======================================================================== */
+html:not([data-xn-scenes="1"]) [data-scene-arm] {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+}
+
+html:not([data-xn-scenes="1"]) [data-scene-kind="stamp"] > *,
+html:not([data-xn-scenes="1"]) [data-scene-kind="rule"] tbody tr > * {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+html:not([data-xn-scenes="1"]) [data-scene-kind="rule"] tbody tr::after {
+  transform: scaleX(1) !important;
+}
+
+html:not([data-xn-scenes="1"]) [data-scene-kind="ink"]::after {
+  clip-path: inset(0 0 0 0) !important;
+}
+
+/* ===========================================================================
+ * B. JS 中途抛错：scroll-scenes.tsx 会把标记改成 panic
+ * ======================================================================== */
+html[data-xn-scenes="panic"] [data-scene-arm],
+html[data-xn-scenes="panic"] [data-scene-kind="lines"],
+html[data-xn-scenes="panic"] [data-scene-kind="plate"] {
+  opacity: 1 !important;
+  transform: none !important;
+  clip-path: none !important;
+}
+
+html[data-xn-scenes="panic"] [data-scene-kind="stamp"] > *,
+html[data-xn-scenes="panic"] [data-scene-kind="rule"] tbody tr > * {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+html[data-xn-scenes="panic"] [data-scene-kind="rule"] tbody tr::after,
+html[data-xn-scenes="panic"] [data-scene-kind="ink"]::after {
+  transform: scaleX(1) !important;
+  clip-path: inset(0 0 0 0) !important;
+}
+
+html[data-xn-scenes="panic"] [data-scene-kind="shift"] {
+  transform: none !important;
+}
+
+/* ===========================================================================
+ * C. 减少动态效果：全部直接到位，内容一样不少
+ * ======================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  [data-scene-arm],
+  [data-scene-kind="lines"],
+  [data-scene-kind="plate"],
+  [data-scene-kind="stamp"] > *,
+  [data-scene-kind="rule"] tbody tr > * {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  [data-scene-kind="rule"] tbody tr::after,
+  [data-scene-kind="ink"]::after {
+    transform: scaleX(1) !important;
+    clip-path: inset(0 0 0 0) !important;
+    transition: none !important;
+  }
+
+  [data-scene-kind="shift"] {
+    transform: none !important;
+  }
+}
+
+/* ===========================================================================
+ * D. 打印 / 另存为 PDF
+ * ======================================================================== */
+@media print {
+  [data-scene-arm],
+  [data-scene-kind="lines"],
+  [data-scene-kind="plate"],
+  [data-scene-kind="stamp"] > *,
+  [data-scene-kind="rule"] tbody tr > * {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    animation: none !important;
+  }
+
+  [data-scene-kind="rule"] tbody tr::after,
+  [data-scene-kind="ink"]::after {
+    transform: scaleX(1) !important;
+    clip-path: inset(0 0 0 0) !important;
+  }
+
+  [data-scene-kind="shift"] {
+    transform: none !important;
+  }
+}
+
+/* ===========================================================================
+ * 阅读细节
+ * ======================================================================== */
+
+/* 逐行浮现的默认行数：JS 会按 高度 ÷ 行高 覆盖它。默认值取 5，
+   这样即使 JS 只跑到一半，也还是"分几行"而不是硬切一刀。 */
+[data-scene-kind="lines"] {
+  --xn-lines: 5;
+  --xn-lines-dur: 760ms;
+}
+
+/* 计数器滚动时数字宽度不变，行内文字不会左右跳 */
+[data-scene-kind="count"] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 波浪下划线要贴在块级元素底部；行内元素上会把整行框都划上，
+   所以 data-scene="ink" 只给 p / blockquote 这类块级元素用。 */
+[data-scene-kind="ink"] {
+  display: block;
+}

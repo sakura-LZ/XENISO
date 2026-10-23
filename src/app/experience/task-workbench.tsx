@@ -2,7 +2,7 @@
 import type { Template } from "@/lib/experience/templates";
 import { operationResult, type ChoiceState, type OperationResult } from "@/lib/experience/operations";
 
-const seriesColors = ["var(--green)", "var(--ochre)", "var(--blue)"];
+const seriesColors = ["var(--green)", "var(--ochre)", "var(--ink-3)"];
 const seriesLabels = ["参考曲线", "含噪曲线", "处理后曲线"];
 
 function SeriesChart({ series }: { series: { label: string; values: number[] }[] }) {

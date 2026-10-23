@@ -78,6 +78,12 @@ export function HomeAtlas() {
             <p className="t-meta atlas-hero-meta">
               XENISO 异域同构 · 全程 8–12 分钟，可以随时停下。填的东西只进你自己的档案，随时能删。
             </p>
+            {/* 色键墨迹那一屏在首屏之下（区块顶边约 876px，视口 900），
+                不滚一下只能看到 24px。这里给一个明确的向下指引，避免"页面上没有"。 */}
+            <a className="atlas-hero-jump" href="#ink-stage">
+              往下看：你的经历摊开会是什么样
+              <span aria-hidden="true">↓</span>
+            </a>
           </div>
 
           <HomeScene groupCount={groups.length} directionCount={directionCount} />
@@ -98,7 +104,7 @@ export function HomeAtlas() {
       </div>
 
       {/* ---------- 色键墨迹舞台：同一件事的四种看法 ---------- */}
-      <section className="chroma-band">
+      <section className="chroma-band" id="ink-stage">
         <div className="chroma-band-ink" aria-hidden="true">
           <ChromaInkStage className="chroma-canvas" />
         </div>
@@ -107,16 +113,17 @@ export function HomeAtlas() {
             <p className="atlas-label">色键墨迹 · 实时生成</p>
             <h2 className="t-section">你走过的路，换个角度就能看见结构</h2>
             <p>
-              左边这幅墨迹是实时画的：它先在绿幕上成形，再被逐像素抠掉底色，才叠到这张纸上。
-              你把鼠标横着移过去，它会换成下一个阶段——这四个阶段，正好是你接下来要走的四步。
+              左边这幅墨迹是实时画的：先在绿幕上成形，再逐像素抠掉底色，才落到这张纸上。
+              光标在这一块左右移动，墨迹就换一种形态——四种形态对应你要走的四步，
+              编号和下面那只档案抽屉是同一套。
             </p>
             <ul className="chroma-legend">
-              <li><b>墨环</b><span>盘点：环环相扣，先看清手上已有的东西</span></li>
-              <li><b>墨涡</b><span>评价：向内收拢，兴趣与能力的交集</span></li>
-              <li><b>脉迹</b><span>体验：真实节律，做过一次才知道</span></li>
-              <li><b>格纸</b><span>规划：排进周次，才算真的开始</span></li>
+              <li><b>01 盘点</b><span>一圈圈叠起来的墨环：先看清手上已经有了什么</span></li>
+              <li><b>02 评价</b><span>墨往中心收成涡：兴趣与能力只留下交集那一块</span></li>
+              <li><b>03 体验</b><span>一道心电节律：真的做过一遍，才知道它的起伏</span></li>
+              <li><b>04 规划</b><span>排进周次的格纸：填到第几格，就算排到了哪里</span></li>
             </ul>
-            <p className="chroma-hint">移动鼠标切换阶段</p>
+            <p className="chroma-hint">光标左右移动，换一种墨迹形态——四种形态就是四步</p>
           </div>
         </div>
       </section>

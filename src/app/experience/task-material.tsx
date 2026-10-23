@@ -6,15 +6,18 @@ const requests = [
   ["3", "1", "甲", "取消"], ["4", "1", "甲", "取消"], ["5", "3", "丙", "创建"],
 ];
 
-const seriesColors = ["var(--green)", "var(--ochre)", "var(--blue)"];
+const seriesColors = ["var(--green)", "var(--ochre)", "var(--ink-3)"];
 
 /** 材料固定在原位，只有当前决策和结果会跟着变。 */
 export function TaskMaterial({ template, choices = [null, null, null], compact = false }: { template: Template; choices?: ChoiceState; compact?: boolean }) {
   const id = template.id;
   const effective = choices.map(value => value ?? "0") as ChoiceState;
+  // compact 只用在「按项目做 / 按面试做」的预览框里。那个框已有 h4 作标题，
+  // 再出一个 h3 区块标题（21px）会让字号在 13/16/21 之间乱跳，
+  // 读起来像"句子中间突然有几个字变大"。所以 compact 时降为标签档。
   const head = (title: string, note?: string) => (
     <div className="xd-sheet-head">
-      <h3>{title}</h3>
+      {compact ? <p className="xd-sheet-cap">{title}</p> : <h3>{title}</h3>}
       {note && !compact && <p className="xd-sheet-note">{note}</p>}
     </div>
   );

@@ -53,7 +53,14 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
+  /* 四格底边错落：真实抽屉柜不会四条线笔齐，总有一两格没推到底。
+     下沉量只作用在整张抽屉面（含它下面的柜口），所以文字整体平移、
+     字距行高不动，拉开后的内容也跟着这一格走。 */
+  --fd-drop: 0px;
 }
+.fd-cell:nth-child(2) { --fd-drop: 6px; }
+.fd-cell:nth-child(3) { --fd-drop: 3px; }
+.fd-cell:nth-child(4) { --fd-drop: 9px; }
 
 /* ---------- 抽屉面：纸签 + 拉手 ---------- */
 .fd-tab {
@@ -64,7 +71,7 @@
   gap: 4px 10px;
   width: 100%;
   min-height: 96px;
-  margin: 0;
+  margin: var(--fd-drop) 0 0;
   padding: 13px 14px 27px;
   background: var(--paper-2);
   border: 1px solid color-mix(in srgb, var(--ink) 26%, transparent);
@@ -281,6 +288,8 @@
 
 /* ---------- ≤900px：竖着排的档案盒，标签横跨整行 ---------- */
 @media (max-width: 900px) {
+  /* 竖排时四格上下相叠，错落会让间距看起来像没对齐，收回成齐边 */
+  .fd-cell { --fd-drop: 0px; }
   .fd-cells {
     grid-template-columns: minmax(0, 1fr);
     gap: 10px;

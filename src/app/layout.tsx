@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { XenisoMotion } from "@/components/xeniso-motion";
+import { ScrollScenes } from "@/components/scroll-scenes";
 import { NavShell } from "@/components/nav-shell";
 import { SiteFooter } from "@/components/site-footer";
 import "./fonts.css";
@@ -10,8 +11,9 @@ import "./home.css";
 import "./motion.css";
 import "./chroma.css";
 import "./nav-icons.css";
-import "./home-artifacts.css";
 import "./filing-drawer.css";
+import "./scroll-scenes.css";
+import "./reading-craft.css";
 import "./profile.css";
 import "./report.css";
 import "./experience.css";
@@ -24,6 +26,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <a href="#main" className="skip-link">跳到主要内容</a>
     <NavShell />
     <XenisoMotion />
+    <ScrollScenes />
     {children}
     <SiteFooter />
   </body></html>;

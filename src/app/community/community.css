@@ -492,3 +492,123 @@
   .community-report-drawer,
   .community-confirm { animation: none !important; }
 }
+
+/* ===========================================================================
+ * 本轮新增：标题图标、功能限制条、类型色条、状态反馈
+ * 颜色仍只取 globals.css 的 token；缓动复用 motion.css 的 --xn-spring，
+ * 取不到时用同一个过冲曲线兜底，不新造配色。
+ * ======================================================================== */
+
+/* ---------- 页头：标题带图钉图标 ---------- */
+.community-title { display: flex; align-items: center; gap: .26em; }
+.community-title-icon { flex: none; font-size: .5em; color: var(--green-deep); }
+
+/* 功能限制压成一条，和标题分开，不混进正文 */
+.community-limits {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 24px;
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  color: var(--ink-2);
+}
+.community-limits svg { flex: none; font-size: 1.4em; color: var(--ochre); }
+
+/* ---------- 两类帖子：侧边色条（赭石=求助，苔绿=经验） ---------- */
+.community-slip[data-kind="help"] { border-left: 3px solid var(--ochre); }
+.community-slip[data-kind="experience"] { border-left: 3px solid var(--green); }
+
+/* 类型标签、右栏说明加图标 */
+.community-kind { display: inline-flex; align-items: center; gap: 5px; }
+.community-kind svg { flex: none; font-size: 1.15em; }
+.community-rail-list dt { display: flex; align-items: center; gap: 7px; }
+.community-rail-list dt svg { flex: none; font-size: 1.15em; color: var(--green-deep); }
+
+/* ---------- 空态与加载态 ---------- */
+.community-wall-empty > .community-empty-icon {
+  display: block;
+  font-size: 2.6em;
+  color: var(--ink-3);
+  margin-bottom: 12px;
+}
+.community-wall-loading { display: flex; align-items: center; gap: 10px; }
+.community-spin {
+  flex: none;
+  font-size: 1.35em;
+  color: var(--green-deep);
+  animation: community-spin 900ms linear infinite;
+}
+@keyframes community-spin { to { rotate: 360deg; } }
+
+/* ---------- 通知：滑入 + 图标 ---------- */
+.community-notice svg { flex: none; font-size: 1.35em; }
+.community-notice[data-tone="ok"] svg { color: var(--green-deep); }
+.community-notice[data-tone="error"] svg { color: var(--danger); }
+.community-notice {
+  animation: community-notice-in 300ms var(--xn-spring, cubic-bezier(.34, 1.56, .64, 1)) both;
+}
+@keyframes community-notice-in {
+  from { opacity: 0; translate: 0 -7px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+/* ---------- 类型切换：选中时弹一下，按下时压一下 ---------- */
+.community-kind-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition:
+    transform 240ms var(--xn-spring, cubic-bezier(.34, 1.56, .64, 1)),
+    border-color 200ms ease-out,
+    background-color 200ms ease-out,
+    color 200ms ease-out;
+}
+.community-kind-btn svg { flex: none; font-size: 1.25em; }
+.community-kind-btn:active { transform: scale(.975); }
+.community-kind-btn[aria-pressed="true"] {
+  animation: community-kind-pop 320ms var(--xn-spring, cubic-bezier(.34, 1.56, .64, 1)) both;
+}
+@keyframes community-kind-pop {
+  0% { scale: .955; }
+  55% { scale: 1.035; }
+  100% { scale: 1; }
+}
+
+/* ---------- 筛选与卡片：只做按压 / 落位反馈，不给整列表错峰 ---------- */
+.community-filter {
+  transition:
+    transform 220ms var(--xn-spring, cubic-bezier(.34, 1.56, .64, 1)),
+    border-color 200ms ease-out,
+    background-color 200ms ease-out,
+    color 200ms ease-out;
+}
+.community-filter:active { transform: scale(.965); }
+
+/* 双类名压过 .atlas-lift 的同名 transition，避免被引入顺序影响 */
+.community-wall .community-slip.community-slip {
+  transition:
+    transform 300ms var(--xn-spring, cubic-bezier(.34, 1.56, .64, 1)),
+    box-shadow 420ms var(--ease),
+    border-color 240ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .community-spin,
+  .community-notice,
+  .community-kind-btn[aria-pressed="true"],
+  .community-slip.is-fresh,
+  .community-slip.is-fresh .atlas-pin,
+  .community-slip.is-fresh .atlas-tape,
+  .community-report-drawer,
+  .community-confirm { animation: none !important; }
+
+  /* 动画停掉后必须保证内容在位、不透明 */
+  .community-notice { opacity: 1 !important; translate: none !important; }
+  .community-kind-btn[aria-pressed="true"] { scale: none !important; }
+  .community-kind-btn,
+  .community-filter,
+  .community-wall .community-slip.community-slip { transition: none !important; }
+  .community-kind-btn:active,
+  .community-filter:active { transform: none !important; }
+}

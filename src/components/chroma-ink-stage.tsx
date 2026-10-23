@@ -7,8 +7,11 @@
  * 每帧作为纹理送进 WebGL，片元着色器逐像素做色键：把绿色分量占优的像素变透明，
  * 同时对边缘做去绿溢色（spill suppression），最后叠在页面纸底之上。
  *
- * 鼠标横向移动切换 4 个"阶段"（墨环 → 墨涡 → 脉迹 → 格纸），纵向移动改变浓淡；
- * 指针静止 3.2 秒后自动巡游。prefers-reduced-motion 时只渲染一帧静态图。
+ * 鼠标横向移动切换 4 个形态，每个形态对应首页四步里的一步：
+ *   01 盘点（墨环：一层层摊开）→ 02 评价（墨涡：向内收拢成交集）
+ *   → 03 体验（脉迹：真实节律）→ 04 规划（格纸：排进周次）。
+ * 纵向移动改墨色浓淡；指针静止 3.2 秒后自动巡游。
+ * prefers-reduced-motion 时只渲染一帧静态图。
  *
  * 之所以不用现成视频：色键在这里是实时做的，任何 DPI 下都锐利、零加载体积，
  * 而且能跟着鼠标变形；换成绿幕 mp4 反而做不不到"随鼠标换阶段"。
@@ -123,6 +126,10 @@ export function ChromaInkStage({ className }: { className?: string }) {
 
     // ---- 尺寸 ----
     let dpr = 1;
+    /* 墨迹重心：桌面端舞台是「左文案 + 右墨迹」两栏，右栏从 32.5rem 起，
+       所以把形态中心放在画布 68% 处，否则大半墨迹被文案挡在下面看不见。
+       窄屏改成上下堆叠，中心回到 50%。 */
+    let cxRatio = 0.5;
     const resize = () => {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       const rect = canvas.getBoundingClientRect();
@@ -132,6 +139,7 @@ export function ChromaInkStage({ className }: { className?: string }) {
       canvas.height = h;
       off.width = Math.min(960, w);
       off.height = Math.round((off.width * h) / Math.max(1, w));
+      cxRatio = rect.width >= 1024 ? 0.68 : 0.5;
       gl.viewport(0, 0, w, h);
     };
     resize();
@@ -156,6 +164,15 @@ export function ChromaInkStage({ className }: { className?: string }) {
     window.addEventListener("pointermove", onMove, { passive: true });
 
     // ---- 画面：绿幕上画墨 ----
+    /* 色键有一条硬约束：半透明的墨会先和绿幕混色，混出来的绿仍占优，
+       抠像时又被抠掉一半——墨画得再"深"落纸也是淡的。这就是它之前
+       在纸上几乎看不出在动的原因。所以墨一律用不透明实色，
+       浓淡靠换色值（墨黑 / 石墨 / 淡灰 / 赭石）与笔触粗细，密度靠笔数。 */
+    const INK = "rgb(26, 24, 20)";
+    const INK_MID = "rgb(78, 74, 63)";
+    const INK_SOFT = "rgb(132, 126, 111)";
+    const OCHRE_INK = "rgb(143, 71, 38)";
+
     const drawActor = (t: number, stage: number, dens: number) => {
       const w = off.width;
       const h = off.height;
@@ -164,136 +181,221 @@ export function ChromaInkStage({ className }: { className?: string }) {
       offCtx.fillStyle = GREEN;
       offCtx.fillRect(0, 0, w, h);
 
-      const cx = w * 0.5;
-      const cy = h * 0.5;
+      const cx = w * cxRatio;
+      const cy = h * 0.52;
       const unit = Math.min(w, h);
-      const ink = "rgba(24,22,18,";
+      // 形态的水平半宽：桌面端只铺右栏，窄屏铺满
+      const span = Math.min(w * (cxRatio > 0.6 ? 0.27 : 0.35), h * 0.62);
+      const squash = 0.74;
+      const weight = Math.max(2.5, unit * 0.012);
+      const hair = Math.max(1.6, unit * 0.006);
+      // 纵向移动鼠标改浓淡：整体换一档颜色，不靠 alpha
+      const tone = (dark: string, mid: string, soft: string) =>
+        dens > 0.72 ? dark : dens > 0.42 ? mid : soft;
 
       offCtx.lineCap = "round";
       offCtx.lineJoin = "round";
 
-      // 墨环：一圈带粗细变化的笔迹
-      const ring = (radius: number, wobble: number, alpha: number, width: number) => {
+      const stroke = (points: Array<[number, number]>, color: string, width: number) => {
         offCtx.beginPath();
-        for (let i = 0; i <= 96; i += 1) {
-          const a = (i / 96) * Math.PI * 2;
-          const r = radius * (1 + Math.sin(a * 3 + t * 1.6) * wobble);
-          const x = cx + Math.cos(a) * r;
-          const y = cy + Math.sin(a) * r * 0.82;
-          if (i === 0) offCtx.moveTo(x, y);
-          else offCtx.lineTo(x, y);
-        }
-        offCtx.strokeStyle = ink + alpha + ")";
+        points.forEach(([x, y], index) => (index === 0 ? offCtx.moveTo(x, y) : offCtx.lineTo(x, y)));
+        offCtx.strokeStyle = color;
         offCtx.lineWidth = width;
         offCtx.stroke();
       };
 
-      // 墨涡：阿基米德螺线，随阶段拉伸
-      const spiral = (turns: number, alpha: number, width: number, squash: number) => {
-        offCtx.beginPath();
-        const steps = 220;
+      // 环：横竖比例压扁，带手绘抖动
+      const ring = (rx: number, ry: number, wobble: number, color: string, width: number, phase = 0) => {
+        const points: Array<[number, number]> = [];
+        const steps = 128;
         for (let i = 0; i <= steps; i += 1) {
-          const p = i / steps;
-          const a = p * Math.PI * 2 * turns + t * 0.9;
-          const r = unit * 0.06 + p * unit * 0.34;
-          const x = cx + Math.cos(a) * r;
-          const y = cy + Math.sin(a) * r * squash;
-          if (i === 0) offCtx.moveTo(x, y);
-          else offCtx.lineTo(x, y);
+          const angle = (i / steps) * Math.PI * 2;
+          const k = 1 + Math.sin(angle * 3 + t * 1.1 + phase) * wobble;
+          points.push([cx + Math.cos(angle) * rx * k, cy + Math.sin(angle) * ry * k]);
         }
-        offCtx.strokeStyle = ink + alpha + ")";
-        offCtx.lineWidth = width;
-        offCtx.stroke();
+        stroke(points, color, width);
       };
 
-      // 脉迹：心电波形
-      const pulse = (alpha: number, width: number, amp: number) => {
-        offCtx.beginPath();
-        const steps = 260;
-        for (let i = 0; i <= steps; i += 1) {
-          const p = i / steps;
-          const x = w * 0.08 + p * w * 0.84;
-          const phase = (p * 6 - t * 0.55) % 1;
-          let v = 0;
-          if (phase > 0.44 && phase < 0.5) v = -1;
-          else if (phase > 0.5 && phase < 0.56) v = 2.6;
-          else if (phase > 0.56 && phase < 0.62) v = -0.8;
-          else v = Math.sin(phase * Math.PI * 2) * 0.12;
-          const y = cy - v * amp * unit * 0.06;
-          if (i === 0) offCtx.moveTo(x, y);
-          else offCtx.lineTo(x, y);
+      if (stage < 0.5) {
+        /* 01 盘点 · 墨环
+           一圈套一圈的等高线：手上的东西先一层层摊开清点。
+           环的粗细一厚一薄交替，像蘸墨写下的重笔与轻笔。 */
+        for (let i = 0; i < 10; i += 1) {
+          const k = i / 9;
+          const rx = span * (0.20 + k * 0.80);
+          const main = i % 2 === 0;
+          ring(
+            rx,
+            rx * squash,
+            0.018 + k * 0.026,
+            main ? tone(INK, INK, INK_MID) : tone(INK_MID, INK_MID, INK_SOFT),
+            main ? weight * (1.35 - k * 0.5) : hair * 1.3,
+            i * 1.7,
+          );
         }
-        offCtx.strokeStyle = ink + alpha + ")";
-        offCtx.lineWidth = width;
-        offCtx.stroke();
-      };
-
-      // 格纸：日历/表格网格
-      const grid = (alpha: number, width: number) => {
+        // 刻度：清点时会一行行划过去的短笔
+        const ticks = 44;
+        for (let i = 0; i < ticks; i += 1) {
+          const angle = (i / ticks) * Math.PI * 2 + t * 0.04;
+          const r = span * (0.55 + (i % 4) * 0.11);
+          const x0 = cx + Math.cos(angle) * r;
+          const y0 = cy + Math.sin(angle) * r * squash;
+          stroke(
+            [
+              [x0, y0],
+              [x0 + Math.cos(angle) * span * 0.09, y0 + Math.sin(angle) * span * 0.09 * squash],
+            ],
+            tone(INK, INK_MID, INK_SOFT),
+            hair,
+          );
+        }
+        ring(span * 1.0, span * squash, 0.02, OCHRE_INK, hair * 1.1, 2.1);
+      } else if (stage < 1.5) {
+        /* 02 评价 · 墨涡
+           螺旋向内收：兴趣与能力绕同一中心，收口处只留下交集。 */
+        for (let s = 0; s < 4; s += 1) {
+          const points: Array<[number, number]> = [];
+          const steps = 340;
+          const turns = 2.4 + s * 0.7;
+          const reach = span * (0.46 + s * 0.18);
+          const direction = s % 2 === 0 ? 1 : -1;
+          for (let i = 0; i <= steps; i += 1) {
+            const p = i / steps;
+            const angle = p * Math.PI * 2 * turns * direction + t * (0.5 + s * 0.14) + s;
+            const r = span * 0.06 + p * reach;
+            points.push([cx + Math.cos(angle) * r, cy + Math.sin(angle) * r * squash]);
+          }
+          stroke(points, s === 0 ? tone(INK, INK, INK_MID) : tone(INK_MID, INK_SOFT, INK_SOFT), weight * (1.2 - s * 0.18));
+        }
+        // 收口：三道同心椭圆
+        ring(span * 0.30, span * 0.30 * squash, 0.03, tone(INK, INK_MID, INK_SOFT), weight, 0.6);
+        ring(span * 0.19, span * 0.19 * squash, 0.04, tone(INK, INK_MID, INK_SOFT), hair * 1.4, 1.4);
+        ring(span * 0.09, span * 0.09 * squash, 0.05, OCHRE_INK, hair, 2.2);
+      } else if (stage < 2.5) {
+        /* 03 体验 · 脉迹
+           三道心电节律：真的做过一遍，才知道它的节奏。 */
+        const trace = (offset: number, amp: number, color: string, width: number, speed: number) => {
+          const points: Array<[number, number]> = [];
+          const steps = 460;
+          for (let i = 0; i <= steps; i += 1) {
+            const p = i / steps;
+            const x = cx - span * 1.12 + p * span * 2.24;
+            const phase = (((p * 5 - t * speed) % 1) + 1) % 1;
+            let v = Math.sin(phase * Math.PI * 2) * 0.1;
+            if (phase > 0.42 && phase < 0.47) v = -0.55;
+            else if (phase > 0.47 && phase < 0.53) v = 2.2;
+            else if (phase > 0.53 && phase < 0.58) v = -0.7;
+            points.push([x, cy + offset - v * amp * unit * 0.11]);
+          }
+          stroke(points, color, width);
+        };
+        trace(-span * 0.3, 1.05, tone(INK, INK, INK_MID), weight * 1.5, 0.52);
+        trace(span * 0.02, 0.72, tone(INK, INK_MID, INK_SOFT), weight * 1.15, 0.78);
+        trace(span * 0.3, 0.46, tone(INK_MID, INK_MID, INK_SOFT), weight * 0.9, 1.02);
+        trace(span * 0.54, 0.3, tone(INK_MID, INK_SOFT, INK_SOFT), hair * 1.3, 1.3);
+        // 基线与刻度：像心率纸上的格子
+        const baseY = cy + span * 0.58;
+        stroke(
+          [
+            [cx - span * 1.12, baseY],
+            [cx + span * 1.12, baseY],
+          ],
+          tone(INK_MID, INK_SOFT, INK_SOFT),
+          hair,
+        );
+        for (let i = 0; i <= 30; i += 1) {
+          const x = cx - span * 1.12 + (i / 30) * span * 2.24;
+          stroke(
+            [
+              [x, baseY],
+              [x, baseY + (i % 5 === 0 ? span * 0.13 : span * 0.07)],
+            ],
+            tone(INK, INK_MID, INK_SOFT),
+            hair,
+          );
+        }
+      } else {
+        /* 04 规划 · 格纸
+           排进周次的表格：填到第几格，就是已经排到哪里。 */
         const cols = 7;
         const rows = 4;
-        const gw = unit * 0.72;
-        const gh = unit * 0.44;
+        const gw = span * 2.0;
+        const gh = span * 1.06;
         const x0 = cx - gw / 2;
         const y0 = cy - gh / 2;
-        offCtx.strokeStyle = ink + alpha + ")";
-        offCtx.lineWidth = width;
-        offCtx.beginPath();
-        for (let c = 0; c <= cols; c += 1) {
-          const x = x0 + (gw / cols) * c;
-          offCtx.moveTo(x, y0);
-          offCtx.lineTo(x, y0 + gh);
-        }
-        for (let r = 0; r <= rows; r += 1) {
-          const y = y0 + (gh / rows) * r;
-          offCtx.moveTo(x0, y);
-          offCtx.lineTo(x0 + gw, y);
-        }
-        offCtx.stroke();
-        // 已填的格子：慢慢推进的进度感
-        const filled = Math.floor((Math.sin(t * 0.6) * 0.5 + 0.5) * cols * rows);
-        offCtx.fillStyle = "rgba(58,72,44,.30)";
+        const cw = gw / cols;
+        const chh = gh / rows;
+        // 已排进去的格子慢慢推进；起点不是 0，免得某一帧整张纸是空的
+        const filled = Math.floor((0.32 + 0.68 * (Math.sin(t * 0.5) * 0.5 + 0.5)) * cols * rows);
+
+        // 斜线铺底：只填"已经排进去"的格子
         for (let i = 0; i < filled; i += 1) {
           const c = i % cols;
           const r = Math.floor(i / cols);
           if (r >= rows) break;
-          offCtx.fillRect(x0 + (gw / cols) * c + 2, y0 + (gh / rows) * r + 2, gw / cols - 4, gh / rows - 4);
+          const bx = x0 + c * cw + 2;
+          const by = y0 + r * chh + 2;
+          offCtx.save();
+          offCtx.beginPath();
+          offCtx.rect(bx, by, cw - 4, chh - 4);
+          offCtx.clip();
+          offCtx.beginPath();
+          for (let sx = -chh; sx < cw; sx += 5) {
+            offCtx.moveTo(bx + sx, by + chh);
+            offCtx.lineTo(bx + sx + chh, by);
+          }
+          offCtx.strokeStyle = tone(INK, INK_MID, INK_MID);
+          offCtx.lineWidth = hair;
+          offCtx.stroke();
+          offCtx.restore();
         }
-      };
 
-      const a = 0.5 + dens * 0.42;
-
-      if (stage < 0.5) {
-        ring(unit * 0.30, 0.05, a * 0.85, Math.max(1.5, unit * 0.006));
-        ring(unit * 0.21, 0.09, a * 0.6, Math.max(1.2, unit * 0.004));
-        ring(unit * 0.12, 0.14, a * 0.45, Math.max(1, unit * 0.003));
-      } else if (stage < 1.5) {
-        spiral(2.6, a * 0.8, Math.max(1.5, unit * 0.005), 0.9);
-        spiral(1.7, a * 0.5, Math.max(1, unit * 0.0035), 1.25);
-      } else if (stage < 2.5) {
-        pulse(a * 0.85, Math.max(1.6, unit * 0.006), 1);
-        offCtx.setLineDash([4, 7]);
-        offCtx.strokeStyle = "rgba(122,84,40,.5)";
-        offCtx.lineWidth = Math.max(1, unit * 0.0025);
-        offCtx.beginPath();
-        offCtx.moveTo(w * 0.08, cy);
-        offCtx.lineTo(w * 0.92, cy);
-        offCtx.stroke();
-        offCtx.setLineDash([]);
-      } else {
-        grid(a * 0.55, Math.max(1, unit * 0.003));
-        ring(unit * 0.34, 0.03, a * 0.35, Math.max(1.2, unit * 0.004));
+        // 格线
+        for (let c = 0; c <= cols; c += 1) {
+          const x = x0 + cw * c;
+          stroke(
+            [
+              [x, y0],
+              [x, y0 + gh],
+            ],
+            c % 7 === 0 ? tone(INK, INK, INK_MID) : tone(INK_MID, INK_MID, INK_SOFT),
+            c % 7 === 0 ? weight * 1.1 : weight * 0.75,
+          );
+        }
+        for (let r = 0; r <= rows; r += 1) {
+          const y = y0 + chh * r;
+          stroke(
+            [
+              [x0, y],
+              [x0 + gw, y],
+            ],
+            r % 4 === 0 ? tone(INK, INK, INK_MID) : tone(INK_MID, INK_MID, INK_SOFT),
+            r % 4 === 0 ? weight * 1.1 : weight * 0.75,
+          );
+        }
+        // 外框用赭石重描一遍：这张表是要贴在墙上的
+        stroke(
+          [
+            [x0, y0],
+            [x0 + gw, y0],
+            [x0 + gw, y0 + gh],
+            [x0, y0 + gh],
+            [x0, y0],
+          ],
+          OCHRE_INK,
+          hair * 1.6,
+        );
       }
 
-      // 墨点飞散：少量小圆点，制造"活物"感
-      offCtx.fillStyle = ink + a * 0.5 + ")";
-      const drops = 7;
+      // 落笔时溅出的墨点：少量、实心，保持"活物"感
+      offCtx.fillStyle = tone(INK, INK_MID, INK_SOFT);
+      const drops = 6;
       for (let i = 0; i < drops; i += 1) {
-        const a2 = t * 0.7 + (i / drops) * Math.PI * 2;
-        const r = unit * (0.30 + Math.sin(t * 1.1 + i) * 0.06);
-        const x = cx + Math.cos(a2) * r;
-        const y = cy + Math.sin(a2 * 1.13) * r * 0.82;
-        const size = Math.max(1, unit * (0.004 + (Math.sin(t * 2 + i) * 0.5 + 0.5) * 0.005));
+        const angle = t * 0.7 + (i / drops) * Math.PI * 2;
+        const r = span * (0.95 + Math.sin(t * 1.1 + i) * 0.12);
+        const x = cx + Math.cos(angle) * r;
+        const y = cy + Math.sin(angle * 1.13) * r * squash;
+        const size = Math.max(1.5, unit * (0.006 + (Math.sin(t * 2 + i) * 0.5 + 0.5) * 0.006));
         offCtx.beginPath();
         offCtx.arc(x, y, size, 0, Math.PI * 2);
         offCtx.fill();
@@ -321,7 +423,7 @@ export function ChromaInkStage({ className }: { className?: string }) {
       gl.bindTexture(gl.TEXTURE_2D, tex);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, off);
       gl.clear(gl.COLOR_BUFFER_BIT);
-      gl.uniform1f(uOpacity, 0.92);
+      gl.uniform1f(uOpacity, 1);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
 
       raf = requestAnimationFrame(render);
@@ -332,7 +434,7 @@ export function ChromaInkStage({ className }: { className?: string }) {
       gl.bindTexture(gl.TEXTURE_2D, tex);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, off);
       gl.clear(gl.COLOR_BUFFER_BIT);
-      gl.uniform1f(uOpacity, 0.8);
+      gl.uniform1f(uOpacity, 0.95);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
     } else {
       raf = requestAnimationFrame(render);

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 
 import type { AssessmentResult } from "@/lib/assessment";
 import { evaluate, experiencePresentation, generateSamples, type Experience } from "@/lib/experience";
 import { operationResult } from "@/lib/experience/operations";
-import "../profile-reports-redesign.css";
 
 /** 入场交给 atlas.css 的 [data-atlas-reveal]；只保留 delay 参数兼容旧调用。 */
 export function ReportReveal({ children, className = "", motion, delay = 0 }: { children: ReactNode; className?: string; motion: string; delay?: number }) {

@@ -193,11 +193,22 @@
   opacity: 0;
   transform: translateY(10px);
 }
-[data-atlas-reveal][data-atlas-stagger][data-state="in"] > :nth-child(1) { transition-delay: 40ms; }
-[data-atlas-reveal][data-atlas-stagger][data-state="in"] > :nth-child(2) { transition-delay: 110ms; }
-[data-atlas-reveal][data-atlas-stagger][data-state="in"] > :nth-child(3) { transition-delay: 180ms; }
-[data-atlas-reveal][data-atlas-stagger][data-state="in"] > :nth-child(4) { transition-delay: 250ms; }
-[data-atlas-reveal][data-atlas-stagger][data-state="in"] > :nth-child(n+5) { transition-delay: 310ms; }
+/* 逐项序号：0..9，第 11 项起固定在 10，延迟上限 700ms（10 × 70ms）。
+   这样 5 项以上的列表每一项都还在错峰，长列表末尾也不会等太久。 */
+[data-atlas-reveal][data-atlas-stagger] > :nth-child(1) { --xn-i: 0; }
+[data-atlas-reveal][data-atlas-stagger] > :nth-child(2) { --xn-i: 1; }
+[data-atlas-reveal][data-atlas-stagger] > :nth-child(3) { --xn-i: 2; }
+[data-atlas-reveal][data-atlas-stagger] > :nth-child(4) { --xn-i: 3; }
+[data-atlas-reveal][data-atlas-stagger] > :nth-child(5) { --xn-i: 4; }
+[data-atlas-reveal][data-atlas-stagger] > :nth-child(6) { --xn-i: 5; }
+[data-atlas-reveal][data-atlas-stagger] > :nth-child(7) { --xn-i: 6; }
+[data-atlas-reveal][data-atlas-stagger] > :nth-child(8) { --xn-i: 7; }
+[data-atlas-reveal][data-atlas-stagger] > :nth-child(9) { --xn-i: 8; }
+[data-atlas-reveal][data-atlas-stagger] > :nth-child(10) { --xn-i: 9; }
+[data-atlas-reveal][data-atlas-stagger] > :nth-child(n+11) { --xn-i: 10; }
+[data-atlas-reveal][data-atlas-stagger][data-state="in"] > * {
+  transition-delay: calc(var(--xn-i, 0) * 70ms);
+}
 
 /* 2. 悬停：纸片被指尖拨动 */
 .atlas-lift { transition: transform 420ms var(--ease), box-shadow 420ms var(--ease); }
