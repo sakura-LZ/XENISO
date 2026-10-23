@@ -4,13 +4,14 @@ import roleData from "../../data/knowledge/roles.json";
 
 export const categories = ["occupation", "recruitment", "admissions", "industry", "learning"] as const;
 export const categorySchema = z.enum(categories);
-// 引用来源默认必须是公开 HTTPS。唯一例外：政府站点（*.gov.cn）在 HTTPS
-// 通道不可用时只提供 http 版本（实测湖南省统计局 https 报 TLS 错误）。
-// 例外仍要求是正式政府域名，不接受裸 IP 地址，且导入侧必须披露取得方式。
+// 引用来源默认必须是公开 HTTPS。例外：政府与高校站点（*.gov.cn / *.edu.cn）
+// 在 HTTPS 通道不可用时只提供 http 版本（实测湖南省统计局 https 报 TLS 错误，
+// 东北大学 job.neu.edu.cn 的 443 直接超时）。例外仍要求是正式机构域名，
+// 不接受裸 IP 地址，且导入侧必须在 publication_date_note 披露取得方式。
 const publicUrl = z.url().refine(value => {
   const url = new URL(value);
   const hostOk = url.hostname.includes(".") && !/^[\d.]+$/.test(url.hostname) && !url.hostname.endsWith(".local") && !url.hostname.endsWith(".localhost") && url.hostname !== "localhost";
-  const protocolOk = url.protocol === "https:" || (url.protocol === "http:" && url.hostname.endsWith(".gov.cn"));
+  const protocolOk = url.protocol === "https:" || (url.protocol === "http:" && (url.hostname.endsWith(".gov.cn") || url.hostname.endsWith(".edu.cn")));
   return protocolOk && !url.username && !url.password && (!url.hash || url.hash.startsWith("#/")) && hostOk;
 }, "Requires a public HTTPS source without credentials or fragment");
 export const roleSchema = z.object({
