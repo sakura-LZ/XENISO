@@ -398,7 +398,7 @@
 .community-preview-list > li:nth-child(2) .atlas-pin { left: auto; right: 44px; }
 .community-preview-list > li:nth-child(3) .atlas-pin { left: 50%; right: auto; margin-left: -7px; }
 .community-preview-list .community-slip-title { font-size: var(--fs-h3); }
-.community-sample-flag { color: var(--ochre); font-family: var(--font-sans); font-size: var(--fs-meta); }
+.community-sample-flag { color: var(--ochre-ink); font-family: var(--font-sans); font-size: var(--fs-meta); }
 .community-preview-list .sim-tag { font-family: var(--font-mono); font-size: var(--fs-label); }
 
 /* 未验证时也能看见「在哪发帖」 */
@@ -517,7 +517,7 @@
   line-height: var(--lh-meta);
   color: var(--ink-2);
 }
-.community-limits svg { flex: none; font-size: 1.4em; color: var(--ochre); }
+.community-limits svg { flex: none; font-size: 1.4em; color: var(--ochre-ink); }
 
 /* ---------- 两类帖子：侧边色条（赭石=求助，苔绿=经验） ---------- */
 .community-slip[data-kind="help"] { border-left: 3px solid var(--ochre); }

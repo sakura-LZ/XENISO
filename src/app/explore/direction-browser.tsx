@@ -276,9 +276,26 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
         <input className="field" type="search" placeholder="如 影像、SAS、408" value={state.query} onChange={event => navigate({ ...state, query: event.target.value }, true, true)} />
       </label>
     </header>
+    {/* 这页原来是全站唯一没有任何纸片物料、也没有主按钮的页面：进来只有一列平铺
+        的 10 行数据表。补一张检索说明卡把"怎么用"讲清楚，并给出这一页的主动作。 */}
+    <section className="xnlib-howto atlas-sheet" aria-labelledby="xnlib-howto-title">
+      <span className="atlas-tape tl" aria-hidden="true" />
+      <h2 id="xnlib-howto-title"><IconStamp aria-hidden="true" />这本文库怎么用</h2>
+      <ol className="xnlib-howto-steps">
+        <li><b>先按分类收窄。</b>左栏是站内编辑的方向分组，不是官方学科目录。</li>
+        <li><b>点一行展开读原文。</b>每份资料都带来源与抓取时间；原文没写的写「没查到」。</li>
+        <li><b>勾两个方向并排比。</b>行末的勾选框凑够两个，就能拉出对照视图。</li>
+      </ol>
+      <div className="xnlib-howto-actions">
+        <button className="atlas-btn atlas-btn-primary" type="button" onClick={() => navigate({ ...state, group: "all" }, false, true)}>看全部 {directions.length} 个方向</button>
+        <Link className="atlas-btn atlas-btn-quiet" href="/assessment">不确定方向？先做兴趣问卷</Link>
+      </div>
+    </section>
     <div className="xnlib-cabinet">
       <aside className="xnlib-rail">
-        <p className="xnlib-rail-title"><IconCompass aria-hidden="true" />方向分类</p>
+        {/* 原本这里是 <p>：整页大纲从 h1 直接跳到各方向行的 h3/h4，缺一级 h2。
+            改成 h2 后既补上结构，也让这页接上全站的划线动效。 */}
+        <h2 className="xnlib-rail-title"><IconCompass aria-hidden="true" />方向分类</h2>
         <div className="xnlib-rail-list" role="group" aria-label="方向分类">
           <button className="xnlib-rail-btn" aria-pressed={state.group === "all"} onClick={() => navigate({ ...state, group: "all" }, false, true)}>全部方向<span className="xnlib-rail-count">{directions.length}</span></button>
           {groups.map(group => <button key={group.id} className="xnlib-rail-btn" aria-pressed={state.group === group.id} onClick={() => navigate({ ...state, group: group.id }, false, true)}>{group.name}<span className="xnlib-rail-count">{group.specializations.length}</span></button>)}
@@ -292,6 +309,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
       </aside>
       <div className="xnlib-cabinet-drawers">
         <div className="xnlib-drawers-head">
+          <h2 className="xnlib-drawers-title">方向清单</h2>
           <p className="xnlib-drawers-count" role="status">共 {visible.length} 个方向</p>
           <p className="xnlib-drawers-count">每行末尾可以勾选，凑够两个就能并排比较</p>
         </div>

@@ -109,7 +109,7 @@
 }
 /* 印章是这页的状态标记，压掉默认的半透明，保证读得清 */
 .xr-cover-side .atlas-stamp { opacity: 1; color: var(--green-deep); border-color: var(--green-deep); }
-.xr-cover-side .atlas-stamp.ochre { color: var(--ochre); border-color: var(--ochre); }
+.xr-cover-side .atlas-stamp.ochre { color: var(--ochre-ink); border-color: var(--ochre); }
 @media (max-width: 760px) {
   .xr-cover-side { align-items: flex-start; flex-direction: row; flex-wrap: wrap; max-width: 100%; min-width: 0; }
 }

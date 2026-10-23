@@ -217,7 +217,7 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
 }
 .xd-table td { padding: 8px 10px; border-bottom: 1px solid var(--line-2); font-variant-numeric: tabular-nums; }
 .xd-table tr.is-excluded td { color: var(--ink-3); text-decoration: line-through; text-decoration-color: var(--ochre); }
-.xd-table td.is-missing { color: var(--ochre); }
+.xd-table td.is-missing { color: var(--ochre-ink); }
 .xd-cell-note {
   display: inline-block;
   margin-left: 8px;
@@ -225,7 +225,7 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   border: 1px dashed var(--ochre);
   font-family: var(--font-mono);
   font-size: var(--fs-label);
-  color: var(--ochre);
+  color: var(--ochre-ink);
   white-space: nowrap;
 }
 
@@ -347,7 +347,7 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   background: transparent;
   border-radius: 50%;
 }
-.xd-link-state[data-state="connecting"] { color: var(--ochre); }
+.xd-link-state[data-state="connecting"] { color: var(--ochre-ink); }
 .xd-link-state[data-state="connecting"] .xd-link-dot { border-color: var(--ochre); background: var(--ochre); }
 .xd-link-state[data-state="connected"] { color: var(--green-deep); }
 .xd-link-state[data-state="connected"] .xd-link-dot { border-color: var(--green-deep); background: var(--green); }
@@ -526,7 +526,7 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   line-height: var(--lh-meta);
   color: var(--ink-3);
 }
-.xd-before-note svg { flex: none; margin-top: 2px; font-size: 1.2em; color: var(--ochre); }
+.xd-before-note svg { flex: none; margin-top: 2px; font-size: 1.2em; color: var(--ochre-ink); }
 
 .xd-resume { display: grid; gap: 8px; margin-top: 14px; }
 .xd-resume .atlas-btn { width: 100%; font-size: var(--fs-meta); padding-inline: 12px; }

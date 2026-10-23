@@ -87,7 +87,7 @@
 .atlas-hand {
   font-family: var(--font-serif);
   font-style: italic;
-  color: var(--ochre);
+  color: var(--ochre-ink);
   letter-spacing: .01em;
 }
 
@@ -148,6 +148,8 @@
   min-height: 46px;
   padding: 0 22px;
   border: 1px solid var(--line-strong);
+  /* 与 globals.css 的 .button 统一：全站按钮只有一种圆角，避免 0px / 2px / 999px 三套并存 */
+  border-radius: 2px;
   background: var(--surface);
   color: var(--ink);
   font-size: var(--fs-small);

@@ -144,7 +144,7 @@
   font-size: var(--fs-label);
   line-height: var(--lh-label);
   letter-spacing: .14em;
-  color: var(--ochre);
+  color: var(--ochre-ink);
 }
 .fd-title {
   flex: 1 1 auto;

@@ -19,7 +19,7 @@ import { usePathname } from "next/navigation";
  * 可滚动高度）在 ResizeObserver 里预先量好缓存，rAF 里只写 transform。
  */
 
-const SAFETY_MS = 2200;
+const SAFETY_MS = 9000;
 
 export function XenisoMotion() {
   const pathname = usePathname();
@@ -49,12 +49,36 @@ export function XenisoMotion() {
     scan();
     const mutations = new MutationObserver(scan);
     mutations.observe(document.body, { subtree: true, childList: true });
-    const release = () => document.querySelectorAll('[data-reveal][data-state="pending"], [data-atlas-reveal]:not([data-atlas-in])').forEach(show);
 
-    // 兜底：入场动效只是锦上添花，不能成为"内容看不见"的理由。
-    // 整页截图、打印、自动化抓取都不会滚动，元素会永远停在 pending。
-    // 所以 2.2 秒后无条件放出所有仍被藏起来的元素。
-    const safety = window.setTimeout(release, SAFETY_MS);
+    /**
+     * 兜底：入场动效只是锦上添花，不能成为"内容看不见"的理由。
+     * 整页截图、打印、自动化抓取都不会滚动，元素会一直停在 pending。
+     *
+     * 但这里**不能无条件全放**：那样等于把滚动入场整个废掉——真实读者只要在
+     * 第一屏停留超过兜底时长（必然发生），往后滚时所有区块早就被放成不透明，
+     * 错峰入场根本不存在。所以只放行「此刻真的在视口内」的，其余继续交给
+     * IntersectionObserver 按滚动放行；超时只用来救「卡在视口外却永远不触发」
+     * 的病态情况，因此时长远大于正常交互节奏。
+     */
+    const releaseVisible = () => {
+      const vh = window.innerHeight;
+      document
+        .querySelectorAll('[data-reveal][data-state="pending"], [data-atlas-reveal]:not([data-atlas-in])')
+        .forEach(element => {
+          // 只要元素的顶边已经越过视口下沿——无论是在视口里、还是已经被滚到
+          // 上方——都放行。已经被滚过去的元素不可能再入场，留着 pending 就是
+          // 永久空白。还在视口下方的才继续等滚动。
+          if (element.getBoundingClientRect().top < vh) show(element);
+        });
+    };
+    const releaseAll = () => document
+      .querySelectorAll('[data-reveal][data-state="pending"], [data-atlas-reveal]:not([data-atlas-in])')
+      .forEach(show);
+    const safety = window.setTimeout(releaseVisible, SAFETY_MS);
+
+    // 无滚动场景（打印、整页截图）也要能看到全部内容：打印前全放
+    const beforePrint = releaseAll;
+    window.addEventListener("beforeprint", beforePrint);
 
     /* ---------------- 二、顶部滚动进度条 ---------------- */
     const bar = document.createElement("div");
@@ -104,7 +128,13 @@ export function XenisoMotion() {
       if (!frame) frame = window.requestAnimationFrame(paint);
     };
 
-    const onScroll = () => schedule();
+    /**
+     * 滚动时顺手补一次放行：IntersectionObserver 是异步的，快速滚动（含程序化
+     * scrollTo、锚点跳转、惯性甩动）可能整段跳过，被跳过的元素就会永久停在
+     * pending = 永久不可见。这里按几何位置兜一遍，凡是已经进入视口或已经被
+     * 滚过去的，一律放行；还没到的继续等，所以错峰仍然是滚动驱动的。
+     */
+    const onScroll = () => { schedule(); releaseVisible(); };
     const onResize = () => { measure(); schedule(); };
     // 减少动态效果：立刻归位，之后不再改。
     const onReduceChange = () => {
@@ -125,7 +155,7 @@ export function XenisoMotion() {
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
     reduce.addEventListener("change", onReduceChange);
-    reduce.addEventListener("change", release);
+    reduce.addEventListener("change", releaseAll);
 
     return () => {
       window.clearTimeout(safety);
@@ -134,13 +164,14 @@ export function XenisoMotion() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
       reduce.removeEventListener("change", onReduceChange);
-      reduce.removeEventListener("change", release);
+      reduce.removeEventListener("change", releaseAll);
+      window.removeEventListener("beforeprint", beforePrint);
       sizes.disconnect();
       if (frame) window.cancelAnimationFrame(frame);
       bar.remove();
       ink?.style.removeProperty("--xn-ink-y");
       inner?.style.removeProperty("--xn-content-y");
-      release();
+      releaseAll();
     };
   }, [pathname]);
   return null;

@@ -36,6 +36,9 @@
   --blue-soft: var(--green-wash); /* 同上 */
   --ochre: #8a6420;
   --ochre-soft: #f4ead2;
+  /* --ochre 在 paper 上只有 4.20:1、paper-2 上 3.83:1，当文字色不达 AA。
+     所以文字一律用这个更深的赭；--ochre 只留给线、边框、印章与填充。 */
+  --ochre-ink: #6b4a15;
   --danger: #9b3535;
   --danger-soft: #f8e9e6;
   /* night sections */
@@ -172,9 +175,13 @@
 @media (max-width: 1024px) { .with-toc { grid-template-columns: 1fr; gap: 32px; } .toc { position: static; } .toc ol, .toc ul { display: flex; flex-wrap: wrap; gap: 4px 20px; border-left: 0; border-bottom: 1px solid var(--line); padding-bottom: 12px; } .toc a { padding: 6px 0; } .toc a[aria-current]::before { left: 0; right: 0; top: auto; bottom: -1px; width: auto; height: 3px; } }
 
 /* ---------- controls ---------- */
-.button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 52px; padding: 12px 28px; border: 1.5px solid var(--green); border-radius: 999px; background: var(--green); color: #fff; font-family: var(--font-sans); font-size: var(--fs-body); font-weight: 600; line-height: var(--lh-label); text-decoration: none; white-space: nowrap; transition: background-color 180ms ease-out, border-color 180ms ease-out, color 180ms ease-out, transform 120ms ease-out; }
-.button:hover:not(:disabled) { background: var(--green-deep); border-color: var(--green-deep); color: #fff; }
-.button:active:not(:disabled) { transform: translateY(1px); }
+/* 全站主按钮。这里原来用 999px 胶囊 + ease-out 180ms，而 .atlas-btn 用直角 +
+   弹性缓动，同一个站里两套按钮形态并存（还叠了 profile.css 里一处 2px 覆盖，
+   等于三套）。档案/纸张的方向不该出现 SaaS 胶囊，所以这里统一成 .atlas-btn
+   的语言：直角、同一组缓动、hover 抬一像素并起纸影。改这里即可，不用动调用点。 */
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; min-height: 48px; padding: 12px 26px; border: 1px solid var(--green); border-radius: 2px; background: var(--green); color: #fff; font-family: var(--font-sans); font-size: var(--fs-body); font-weight: 600; line-height: var(--lh-label); text-decoration: none; white-space: nowrap; transition: transform 260ms var(--ease), box-shadow 260ms var(--ease), background-color 260ms var(--ease), border-color 260ms var(--ease), color 260ms var(--ease); }
+.button:hover:not(:disabled) { background: var(--green-deep); border-color: var(--green-deep); color: #fff; transform: translateY(-1px); box-shadow: var(--atlas-shadow-1); }
+.button:active:not(:disabled) { transform: translateY(0); box-shadow: none; }
 .button:disabled, .button[aria-disabled="true"] { opacity: .5; }
 .button .arrow, .button > [aria-hidden="true"]:last-child { display: inline-block; transition: transform 220ms var(--ease); }
 .button:hover:not(:disabled) .arrow, .button:hover:not(:disabled) > [aria-hidden="true"]:last-child { transform: translateX(3px); }
@@ -208,7 +215,7 @@ select.field { appearance: none; padding-right: 44px; background-image: url("dat
 .notice.error { border-left-color: var(--danger); background: var(--danger-soft); }
 .status { min-height: 26px; margin-top: 12px; font-size: var(--fs-small); line-height: var(--lh-meta); color: var(--green); }
 .status.error, .status[data-tone="error"] { color: var(--danger); }
-.simulation-tag, .sim-tag { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border: 1px dashed var(--ochre); border-radius: 999px; color: var(--ochre); font-size: var(--fs-meta); font-weight: 600; line-height: var(--lh-meta); white-space: nowrap; }
+.simulation-tag, .sim-tag { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border: 1px dashed var(--ochre); border-radius: 999px; color: var(--ochre-ink); font-size: var(--fs-meta); font-weight: 600; line-height: var(--lh-meta); white-space: nowrap; }
 .tag { display: inline-flex; align-items: center; gap: 6px; padding: 3px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink-2); font-size: var(--fs-meta); line-height: var(--lh-label); white-space: nowrap; }
 .tag.green { border-color: transparent; background: var(--green-soft); color: var(--green-deep); }
 .tag.blue { border-color: transparent; background: var(--blue-soft); color: var(--green-deep); }

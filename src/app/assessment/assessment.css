@@ -81,7 +81,7 @@
   line-height: var(--lh-small);
   color: var(--ink-2);
 }
-.as-limit svg { flex: none; margin-top: 3px; font-size: var(--fs-body); color: var(--ochre); }
+.as-limit svg { flex: none; margin-top: 3px; font-size: var(--fs-body); color: var(--ochre-ink); }
 .as-limit span { min-width: 0; }
 .as-limit span br { line-height: 0; }
 .as-limit span br::after { content: ""; display: block; height: 4px; }
@@ -130,7 +130,7 @@
   margin-bottom: 10px;
 }
 .qn-count { display: flex; align-items: baseline; gap: 5px; margin: 0; font-family: var(--font-mono); }
-.qn-count b { font-size: var(--fs-h2); line-height: 1; letter-spacing: .03em; color: var(--ochre); font-weight: 600; }
+.qn-count b { font-size: var(--fs-h2); line-height: 1; letter-spacing: .03em; color: var(--ochre-ink); font-weight: 600; }
 .qn-count span { font-size: var(--fs-meta); color: var(--ink-3); }
 .qn-left { margin: 0; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-2); }
 .qn-meter-top .atlas-chip { gap: 6px; }
@@ -217,7 +217,7 @@
   font-size: var(--fs-display);
   line-height: 1;
   letter-spacing: .02em;
-  color: var(--ochre);
+  color: var(--ochre-ink);
 }
 .qn-area { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
 .qn-area b { font-size: var(--fs-body); font-weight: 600; }
@@ -337,7 +337,7 @@
 .r1-row:last-child { border-bottom: 0; padding-bottom: 0; }
 .r1-row p { margin: 0; }
 .r1-row-title { font-size: var(--fs-small); line-height: var(--lh-small); display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
-.r1-arrow { font-family: var(--font-mono); color: var(--ochre); }
+.r1-arrow { font-family: var(--font-mono); color: var(--ochre-ink); }
 .r1-row-why { margin-top: 5px !important; font-size: var(--fs-meta); line-height: var(--lh-small); color: var(--ink-3); }
 .r1-row-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
 .r1-row-head .atlas-chip { font-size: var(--fs-label); padding: 3px 9px; }
@@ -355,7 +355,7 @@
 .r1-exam-code {
   font-family: var(--font-mono);
   font-size: var(--fs-meta);
-  color: var(--ochre);
+  color: var(--ochre-ink);
   border: 1px solid var(--line);
   padding: 1px 6px;
   background: var(--paper-2);

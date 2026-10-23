@@ -78,7 +78,7 @@
   font-family: var(--font-mono); font-size: var(--fs-meta); letter-spacing: .02em; color: var(--ink-2);
   line-height: var(--lh-meta);
 }
-.xp-sheet-status .xp-dirty { color: var(--ochre); }
+.xp-sheet-status .xp-dirty { color: var(--ochre-ink); }
 .xp-sheet .atlas-tape { width: 120px; height: 24px; }
 
 .xp-sec { margin-top: 34px; }
@@ -168,13 +168,15 @@
 }
 .xp-actions .xp-actions-note { margin: 0; max-width: 34em; font-size: var(--fs-meta); line-height: var(--lh-small); color: var(--ink-2); }
 .xp-actions .xp-action-row { display: flex; flex-wrap: wrap; gap: 12px; }
-.xp-sheet .button { border-radius: 2px; min-height: 50px; font-size: var(--fs-body); padding-inline: 22px; }
+/* .button 的圆角/缓动已在 globals.css 统一成直角，这里不再覆盖（原来这行把
+   它改成 2px，成了全站第三套按钮形态）。只保留尺寸微调。 */
+.xp-sheet .button { min-height: 50px; font-size: var(--fs-body); padding-inline: 22px; }
 .xp-msg { margin: 14px 0 0; font-size: var(--fs-small); line-height: var(--lh-small); }
 .xp-msg[data-tone="error"] { color: var(--danger); }
 .xp-msg[data-tone="ok"] { color: var(--green-deep); }
 .xp-footnote { margin: 18px 0 0; font-size: var(--fs-meta); line-height: var(--lh-small); color: var(--ink-2); }
 .xp-sheet .atlas-label { color: var(--ink-2); font-size: var(--fs-label); }
-.xp-hand { display: block; margin-top: 18px; font-family: var(--font-serif); font-style: italic; font-size: var(--fs-body); color: var(--ochre); transform: rotate(-1.2deg); line-height: var(--lh-small); }
+.xp-hand { display: block; margin-top: 18px; font-family: var(--font-serif); font-style: italic; font-size: var(--fs-body); color: var(--ochre-ink); transform: rotate(-1.2deg); line-height: var(--lh-small); }
 
 /* 纸张质感：只在本页表纸内覆盖 Tailwind 工具类，避免全站串色 */
 .xp-sheet .bg-slate-50 { background: var(--paper-2); }
