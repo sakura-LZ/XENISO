@@ -17,7 +17,7 @@
  * 而且能跟着鼠标变形；换成绿幕 mp4 反而做不不到"随鼠标换阶段"。
  */
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const GREEN = "#00ff00";
 
@@ -54,6 +54,8 @@ type Stage = 0 | 1 | 2 | 3;
 
 export function ChromaInkStage({ className }: { className?: string }) {
   const hostRef = useRef<HTMLCanvasElement | null>(null);
+  /* 上下文丢失后自增，用来把整个 WebGL 装配重跑一遍 */
+  const [epoch, setEpoch] = useState(0);
 
   useEffect(() => {
     const canvas = hostRef.current;
@@ -63,6 +65,19 @@ export function ChromaInkStage({ className }: { className?: string }) {
       canvas.style.display = "none";
       return;
     }
+
+    /**
+     * 上下文丢失恢复。
+     * 浏览器在 GPU 重置、切标签页回来、内存压力、或连续大量截图时会把 WebGL 上下文丢掉。
+     * 不处理的话画布就永久空白——实测连续截图时丢了 2 次，屏幕上就是一块什么都没有的纸。
+     * 做法：丢失时 preventDefault（告诉浏览器"我要恢复"），恢复时把整个 effect 重跑一遍
+     * （用一个 epoch 计数器触发），资源重建后接着画。
+     */
+    const onLost = (event: Event) => {
+      event.preventDefault();
+      setEpoch((n) => n + 1);
+    };
+    canvas.addEventListener("webglcontextlost", onLost, false);
 
     const off = document.createElement("canvas");
     const offCtx = off.getContext("2d");
@@ -444,6 +459,7 @@ export function ChromaInkStage({ className }: { className?: string }) {
       stopped = true;
       cancelAnimationFrame(raf);
       window.removeEventListener("pointermove", onMove);
+      canvas.removeEventListener("webglcontextlost", onLost, false);
       ro.disconnect();
       gl.deleteTexture(tex);
       gl.deleteBuffer(buf);
@@ -451,7 +467,7 @@ export function ChromaInkStage({ className }: { className?: string }) {
       gl.deleteShader(vs);
       gl.deleteShader(fs);
     };
-  }, []);
+  }, [epoch]);
 
   return <canvas ref={hostRef} className={className} aria-hidden="true" />;
 }
