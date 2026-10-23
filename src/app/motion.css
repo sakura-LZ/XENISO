@@ -239,7 +239,7 @@
   gap: 22px;
   padding-right: 22px;
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: var(--fs-body);
   line-height: 1.6;
   letter-spacing: .1em;
   color: var(--ink-2);
@@ -260,7 +260,7 @@
 }
 @media (max-width: 760px) {
   .xn-marquee { --xn-marquee-duration: 30s; padding-block: 10px; }
-  .xn-marquee-item { gap: 16px; padding-right: 16px; font-size: 15px; }
+  .xn-marquee-item { gap: 16px; padding-right: 16px; font-size: var(--fs-small); }
 }
 
 /* ===========================================================================

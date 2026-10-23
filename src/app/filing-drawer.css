@@ -367,7 +367,7 @@
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
-  font-size: 19px;
+  font-size: var(--fs-h3);
   color: var(--green-deep);
   opacity: .8;
   transition: opacity 220ms var(--ease), transform 320ms cubic-bezier(.34, 1.56, .64, 1);

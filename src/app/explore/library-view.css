@@ -427,7 +427,7 @@
   .xnlib-record { padding: 12px 0 10px; }
   .xnlib-record-fold > summary { padding: 3px 0; }
   .xnlib-record-chips { margin-left: 6px; }
-  .xnlib-record-chips .atlas-chip { font-size: 12px; padding: 1px 7px; }
+  .xnlib-record-chips .atlas-chip { font-size: var(--fs-label); padding: 1px 7px; }
   .xnlib-record-body { max-height: min(380px, 52vh); }
   .xnlib-admissions { max-height: min(420px, 55vh); }
 }
