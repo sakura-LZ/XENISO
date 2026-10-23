@@ -239,6 +239,9 @@
   font-weight: 600;
   line-height: 1.3;
 }
+/* 报告页标题与分区标题的手绘图标（display:inline-block 由 globals 统一） */
+.xr-title svg { width: .54em; height: .54em; margin-right: .16em; color: var(--green-deep); vertical-align: -0.01em; }
+.xr-sec-head h2 svg { width: .82em; height: .82em; margin-right: .3em; color: var(--green-deep); vertical-align: -0.1em; }
 .xr-sec-tag {
   font-family: var(--font-mono);
   font-size: 13px;

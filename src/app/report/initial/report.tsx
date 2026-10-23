@@ -11,6 +11,7 @@ import { AiReport } from "@/components/ai-report";
 import { DirectionArt, StorysetAttribution } from "@/components/direction-art";
 import { snapshotSource, translation } from "@/lib/onet/translation";
 import { readProfileOverview } from "@/lib/profile-overview";
+import { IconBook, IconCompass, IconFolder, IconPulse, IconStamp, IconWarning } from "@/components/icons";
 
 const areaLabels: Record<string, string> = { realistic: "R 实作型", investigative: "I 研究型", artistic: "A 艺术型", social: "S 社会型", enterprising: "E 企业型", conventional: "C 常规型" };
 const activityGuide: Record<string, string> = { realistic: "制作、装配与操作实物", investigative: "观察现象、提出问题与实验研究", artistic: "创作文字、音乐与视觉表达", social: "帮助、教学与支持他人", enterprising: "组织、协商与推动事务", conventional: "整理记录、按程序处理信息" };
@@ -62,7 +63,7 @@ export function InitialReport() {
         <span className="atlas-tape mid" aria-hidden="true" />
         <div className="xr-cover-top">
           <div className="xr-cover-main">
-            <h1 className="xr-title">初步评价报告</h1>
+            <h1 className="xr-title"><IconFolder aria-hidden="true" />初步评价报告</h1>
             <p className="xr-lede">
               <b>R1 = 初步评价报告</b>，是异域探索第 2 步交出来的东西。它固定分四栏，顺序不变：
               <b>兴趣</b>（在哪类活动上给分最高）、<b>能力迁移</b>（画像里已经有什么、能带进新方向）、
@@ -97,7 +98,7 @@ export function InitialReport() {
         <div className="xr-body">
 
           <section id="initial-interest" className="atlas-sheet xr-sec" data-atlas-reveal>
-            <div className="xr-sec-head"><h2>兴趣</h2><span className="xr-sec-tag">O*NET Mini-IP · 30 题</span></div>
+            <div className="xr-sec-head"><h2><IconPulse aria-hidden="true" />兴趣</h2><span className="xr-sec-tag">O*NET Mini-IP · 30 题</span></div>
             <p className="xr-note atlas-hand">分数只说明你愿意做哪类活，不说明你能做多好。</p>
             {assessment ? <>
               <p className="xr-body-text">六类兴趣各 5 题，每题 1–5 分，同一类的 5 题相加得到原始分。原始分只用来比较你在这六类活动之间的相对偏好，不折算成适合度，也不和别的考生比。</p>
@@ -121,7 +122,7 @@ export function InitialReport() {
           </section>
 
           <section id="initial-evidence" className="atlas-sheet xr-sec" data-atlas-reveal>
-            <div className="xr-sec-head"><h2>能力迁移</h2><span className="xr-sec-tag">本人填写 · 未独立核验</span></div>
+            <div className="xr-sec-head"><h2><IconCompass aria-hidden="true" />能力迁移</h2><span className="xr-sec-tag">本人填写 · 未独立核验</span></div>
             <p className="xr-body-text">这一栏只回答一件事：你手上已经有什么，其中哪些能带进新方向。它不判断能力高低；记录名称相关也不等于已经掌握。</p>
             {mode !== "empty" ? <p className="xr-source">画像：{profile.school || "院校未填写"} · {profile.major || "专业未填写"} · {profile.grade || "年级未填写"}<br />课程 {profile.courses.length} 条、研究项目 {profile.research_projects.length} 条、论文记录 {profile.papers.length} 条、技术自评 {profile.tech_skills.length} 条。全部来自本人填写，未独立核验。</p> : <p className="xr-source">尚未读取个人经历。<Link href="/profile/basics">填写医学经历</Link>。</p>}
 
@@ -165,7 +166,7 @@ export function InitialReport() {
           </section>
 
           <section id="initial-gaps" className="atlas-sheet xr-sec" data-atlas-reveal>
-            <div className="xr-sec-head"><h2>知识缺口</h2><span className="xr-sec-tag">手册要求 − 画像记录</span></div>
+            <div className="xr-sec-head"><h2><IconBook aria-hidden="true" />知识缺口</h2><span className="xr-sec-tag">手册要求 − 画像记录</span></div>
             <p className="xr-body-text">这一栏只做一件事：把方向手册里写着「能力基础」和「入门前先补的基础」的条目，和你画像里已经记录的内容对一遍，列出手册要、而你没有记录的那部分。它不是能力评分。</p>
             {gapGroups.length ? <>
               {gapCount > 0 ? <div className="xr-gap-groups xr-stack">{gapGroups.map(({ direction, skills, courses }) => <div className="xr-gap-group" key={direction.id}>
@@ -184,7 +185,7 @@ export function InitialReport() {
           </section>
 
           <section id="initial-admissions" className="atlas-sheet xr-sec" data-atlas-reveal>
-            <div className="xr-sec-head"><h2>报考条件</h2><span className="xr-sec-tag">全部待核验</span></div>
+            <div className="xr-sec-head"><h2><IconWarning aria-hidden="true" />报考条件</h2><span className="xr-sec-tag">全部待核验</span></div>
             <p className="xr-body-text">这一栏现在只能是空的：还没拿到任何目标院校当年的招生目录原文。空着比编一条有用。下面是你要自己去核对的项目，核过的写上日期。</p>
             <div className="xr-flag xr-stack"><span className="atlas-chip" data-tone="miss">没查到</span><span className="xr-source">招生资格、考试科目与复试要求均未取得官方原文。</span></div>
             <dl className="xr-check xr-stack">
@@ -201,7 +202,7 @@ export function InitialReport() {
       </div>
 
       <section id="initial-explanation" className="atlas-sheet xr-sec xr-closing" data-atlas-reveal>
-        <div className="xr-sec-head"><h2>解释与下一步</h2><span className="xr-sec-tag">收尾</span></div>
+        <div className="xr-sec-head"><h2><IconStamp aria-hidden="true" />解释与下一步</h2><span className="xr-sec-tag">收尾</span></div>
         <p className="xr-body-text">上面四栏是规则整理的结果，不需要联网。想要一段把四栏串起来的文字，可以让 AI 单独写一遍；它只能引用上面这些证据，不会新增院校、考试科目或学习时长。</p>
         <div className="xr-ai"><AiReport key={JSON.stringify([profile, assessment, mode, busy])} kind="R1" enabled={!busy && mode === "personal" && !!assessment} /></div>
         <div className="xr-next xr-stack">

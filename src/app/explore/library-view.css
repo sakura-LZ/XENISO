@@ -17,6 +17,10 @@
   border-bottom: 1px solid var(--line);
 }
 .xnlib-head h1 { margin: 0; font-size: var(--fs-display); line-height: var(--lh-display); }
+/* 标题与行首的手绘图标：给尺寸并跟文字基线对齐（display:inline-block 由 globals 统一） */
+.xnlib-head h1 svg { width: .62em; height: .62em; margin-right: .14em; color: var(--green-deep); vertical-align: -0.02em; }
+.xnlib-drawer-title svg { width: 15px; height: 15px; margin-right: 8px; color: var(--ink-3); vertical-align: -2px; }
+.xnlib-rail-title svg { width: 12px; height: 12px; margin-right: 6px; vertical-align: -1px; color: var(--ink-3); }
 .xnlib-lede { margin: 14px 0 0; max-width: 60ch; font-size: var(--fs-lead); line-height: var(--lh-lead); color: var(--ink-2); }
 .xnlib-search { display: block; }
 .xnlib-search > span { display: block; margin-bottom: 6px; font-size: var(--fs-small); color: var(--ink-3); }

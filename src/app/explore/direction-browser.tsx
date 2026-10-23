@@ -268,7 +268,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
   return <>
     <header className="xnlib-head">
       <div>
-        <h1>信息文库</h1>
+        <h1><IconBook aria-hidden="true" />信息文库</h1>
         <p className="xnlib-lede">这里收三样能查的东西：O*NET 的职业条目、公司招聘页上写的岗位要求、院系招生目录里的考试科目。每条资料都带来源和抓取时间；原文没写的，我们写「没查到」，不替它补。</p>
       </div>
       <label className="xnlib-search">
@@ -278,7 +278,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
     </header>
     <div className="xnlib-cabinet">
       <aside className="xnlib-rail">
-        <p className="xnlib-rail-title">方向分类</p>
+        <p className="xnlib-rail-title"><IconCompass aria-hidden="true" />方向分类</p>
         <div className="xnlib-rail-list" role="group" aria-label="方向分类">
           <button className="xnlib-rail-btn" aria-pressed={state.group === "all"} onClick={() => navigate({ ...state, group: "all" }, false, true)}>全部方向<span className="xnlib-rail-count">{directions.length}</span></button>
           {groups.map(group => <button key={group.id} className="xnlib-rail-btn" aria-pressed={state.group === group.id} onClick={() => navigate({ ...state, group: group.id }, false, true)}>{group.name}<span className="xnlib-rail-count">{group.specializations.length}</span></button>)}
@@ -300,7 +300,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
             const next: LibraryState = { ...state, view: "reading", direction: item.id };
             return <li key={item.id} className="xnlib-drawer-row">
               <Link className="xnlib-drawer-main" href={stateUrl(next)} onClick={event => follow(event, next)}>
-                <span className="xnlib-drawer-title">{item.name}</span>
+                <span className="xnlib-drawer-title"><IconFolder aria-hidden="true" />{item.name}</span>
                 <span className="xnlib-drawer-sum">{summaries[item.id]}</span>
               </Link>
               <span className="xnlib-drawer-chips">
