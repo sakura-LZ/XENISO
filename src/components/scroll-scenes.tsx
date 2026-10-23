@@ -59,7 +59,9 @@ const TARGETS: Array<[SceneKind, string[]]> = [
   /* 引用与手记：铅笔波浪线 */
   ["ink", ["p.atlas-hand", "blockquote.xnlib-quote"]],
   /* 表格：先画横线再填字 */
-  ["rule", ["table.xd-table", "table.xnlib-compare"]],
+  // 表格按"行"武装：整张表的顶边往往就在视口里，按表武装等于永不触发；
+  // 按行武装则表头几行原地不动、往下翻一行画一行，语义也更准。
+  ["rule", ["table.xd-table tbody tr", "table.xnlib-compare tbody tr"]],
   /* 数字：机械计数器 */
   ["count", [".xnlib-rail-count", ".xp-ledger-count"]],
   /* 章节标签：随翻阅做细微位移 */
@@ -267,7 +269,6 @@ function install(): () => void {
   const apply = (el: HTMLElement, kind: SceneKind) => {
     el.dataset.sceneKind = el.dataset.sceneKind || kind;
     if (kind === "stamp") markStagger(el.children);
-    else if (kind === "rule") markStagger(el.querySelectorAll("tbody tr"));
     else if (kind === "shift") {
       if (shiftSeen.has(el)) return;
       shiftSeen.add(el);
@@ -353,9 +354,10 @@ function install(): () => void {
     const viewport = window.innerHeight;
 
     // 兜底一：用武装时缓存的 top 判断"已经滚过去了"。快速跳转、锚点直达、
-    // IO 因为 rootMargin 没命中的情况，都由这一条放行。
+    // IO 因为 rootMargin 没命中的情况，都由这一条放行。取视口满高而不是
+    // 0.94 视口：只要顶边已经进了画面就该放行，避免页面底部那一条永远等不到。
     if (armed.size) {
-      const limit = y + viewport * 0.94;
+      const limit = y + viewport;
       for (const [el, top] of Array.from(armed.entries())) {
         if (top < limit) play(el);
       }
@@ -384,7 +386,11 @@ function install(): () => void {
    */
   const sweep = () => {
     if (!armed.size) return;
-    const limit = window.scrollY + window.innerHeight * 0.94;
+    // 已经滚到页面底部：底下再没有可滚的余量，还停着的必须立刻放行，
+    // 否则"最后一屏"里那几行会永远停在起始态。
+    const doc = document.documentElement;
+    const atBottom = window.scrollY + window.innerHeight >= doc.scrollHeight - 2;
+    const limit = atBottom ? Infinity : window.scrollY + window.innerHeight;
     for (const [el, top] of Array.from(armed.entries())) {
       if (top < limit) play(el);
     }

@@ -257,13 +257,6 @@
   color: var(--green-deep);
 }
 .xnlib-chapter-icon svg { width: 18px; height: 18px; }
-.xnlib-chapter-num {
-  margin: 2px 0 2px;
-  font-family: var(--font-mono);
-  font-size: var(--fs-label);
-  letter-spacing: .08em;
-  color: var(--ink-3);
-}
 .xnlib-chapter h2 { margin: 0; font-size: var(--fs-h2); line-height: var(--lh-h2); }
 .xnlib-chapter-q { margin: 4px 0 0; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-3); }
 .xnlib-chapter > .xnlib-plain-list { margin-top: 16px; }
@@ -332,15 +325,11 @@
 .xnlib-fold[open] > summary .xnlib-fold-chevron { transform: rotate(-135deg) translate(-1px, -1px); }
 .xnlib-fold-body { padding: 4px 0 6px; }
 .xnlib-fold-body > :first-child { margin-top: 0; }
-/* 支持 ::details-content 的浏览器才动高度，其余浏览器瞬时开合（内容不会缺席） */
-@supports selector(::details-content) {
-  .xnlib-fold { interpolate-size: allow-keywords; }
-  .xnlib-fold::details-content {
-    block-size: 0;
-    overflow: hidden;
-    transition: block-size 320ms var(--ease), content-visibility 320ms allow-discrete;
-  }
-  .xnlib-fold[open]::details-content { block-size: auto; }
+/* 展开反馈：只动 opacity + translateY，不碰布局高度，原生开合行为不变 */
+.xnlib-fold[open] > .xnlib-fold-body { animation: xnlib-fold-in 280ms var(--ease) both; }
+@keyframes xnlib-fold-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
 }
 .xnlib-plain-list { margin: 12px 0 0; padding: 0; list-style: none; max-width: 62ch; }
 .xnlib-plain-list li { position: relative; padding: 5px 0 5px 18px; font-size: var(--fs-body); line-height: var(--lh-body); color: var(--ink-2); }

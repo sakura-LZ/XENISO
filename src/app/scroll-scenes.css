@@ -71,16 +71,16 @@ html[data-xn-scenes="1"] [data-scene-kind="stamp"][data-scene-arm="1"] > * {
 
 /* ===========================================================================
  * 2. 画表格线再填字（表格 / 对照）
- *    行线由 tr::after 从左侧拉出（笔只有起点，不从中间向两头推）；
- *    字晚 90ms 浮现。行线画在 tr 上而不是单元格上，所以单元格淡入时
- *    不会把正在画的线一起淡掉；tr::after 不被支持时只剩原本的边框，
- *    退化成普通淡入，不会缺线。
+ *    按"行"而不是"整张表"武装：表头几行本来就在视口里，不该再动；往下翻时
+ *    每一行把横线拉出来，字晚 90ms 浮现。行线画在 tr::after 上而不是单元格上，
+ *    这样单元格淡入时不会把正在画的线一起淡掉；万一 tr::after 不生效，
+ *    单元格淡入后仍有原本的边框，退化成普通淡入，不会缺线。
  * ======================================================================== */
-[data-scene-kind="rule"] tbody tr {
+[data-scene-kind="rule"] {
   position: relative;
 }
 
-[data-scene-kind="rule"] tbody tr::after {
+[data-scene-kind="rule"]::after {
   content: "";
   position: absolute;
   right: 0;
@@ -93,28 +93,26 @@ html[data-xn-scenes="1"] [data-scene-kind="stamp"][data-scene-arm="1"] > * {
   pointer-events: none;
 }
 
-html[data-xn-scenes="1"] [data-scene-kind="rule"][data-scene-arm="1"] tbody tr::after {
+html[data-xn-scenes="1"] [data-scene-kind="rule"][data-scene-arm="1"]::after {
   transform: scaleX(0);
 }
 
-[data-scene-kind="rule"][data-scene-play="1"] tbody tr::after {
+[data-scene-kind="rule"][data-scene-play="1"]::after {
   transform: scaleX(1);
   transition: transform var(--xn-scene-rule-dur) var(--xn-out);
-  transition-delay: calc(var(--xn-i, 0) * 70ms);
 }
 
-html[data-xn-scenes="1"] [data-scene-kind="rule"][data-scene-arm="1"] tbody tr > * {
+html[data-xn-scenes="1"] [data-scene-kind="rule"][data-scene-arm="1"] > * {
   opacity: 0;
   transform: translate3d(0, 3px, 0);
 }
 
-[data-scene-kind="rule"][data-scene-play="1"] tbody tr > * {
+[data-scene-kind="rule"][data-scene-play="1"] > * {
   opacity: 1;
   transform: none;
   transition:
-    opacity 260ms var(--xn-out),
-    transform 300ms var(--xn-out);
-  transition-delay: calc(var(--xn-i, 0) * 70ms + 90ms);
+    opacity 260ms var(--xn-out) 90ms,
+    transform 300ms var(--xn-out) 90ms;
 }
 
 /* ===========================================================================

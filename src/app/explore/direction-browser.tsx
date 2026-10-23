@@ -180,7 +180,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
         <article className="xnlib-file-body">
           <div className="xnlib-chapters">
             <section id="chapter-overview" className="xnlib-chapter">
-              <ChapterHead entry={chapters[0]} index={0} />
+              <ChapterHead entry={chapters[0]} />
               <ul className="xnlib-plain-list">{current.work_tasks.map(task => <li key={task}>{task}</li>)}</ul>
               {medicine ? <p className="xnlib-note">医院科室、招生学科和岗位身份要分开核对。科室介绍不能证明个人的报考、执业或入职资格。</p> : <>
                 <Fold label="对应到哪些职业" count={current.onet.length}>
@@ -193,7 +193,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
               </>}
             </section>
             <section id="chapter-work" className="xnlib-chapter">
-              <ChapterHead entry={chapters[1]} index={1} />
+              <ChapterHead entry={chapters[1]} />
               <div className="xnlib-kv3">
                 <div><h3>输入</h3><p>{template.brief}</p></div>
                 <div><h3>处理</h3><p>{template.stages.map(stage => stage.title).join("，然后")}</p></div>
@@ -204,7 +204,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
               </Fold>
             </section>
             <section id="chapter-skills" className="xnlib-chapter">
-              <ChapterHead entry={chapters[2]} index={2} />
+              <ChapterHead entry={chapters[2]} />
               <div className="xnlib-skill-pair">
                 <div>
                   <h3>医学经历可能提供的起点</h3>
@@ -220,7 +220,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
               <p className="xnlib-note">补到什么程度，看目标院校当年的考试科目；不从「我是临床医学」直接推断。</p>
             </section>
             <section id="chapter-practice" className="xnlib-chapter">
-              <ChapterHead entry={chapters[3]} index={3} />
+              <ChapterHead entry={chapters[3]} />
               <div className="atlas-sheet xnlib-project">
                 <h3>{template.title}</h3>
                 <p>{template.brief}</p>
@@ -241,14 +241,14 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
               <div className="xnlib-file-actions"><Link className="button secondary" href={`/experience?direction=${current.id}`}>在职业体验里做一遍</Link></div>
             </section>
             <section id="chapter-admissions" className="xnlib-chapter">
-              <ChapterHead entry={chapters[4]} index={4} />
+              <ChapterHead entry={chapters[4]} />
               <p>报考条件按院校、项目和年份逐条核对：能不能报、要不要加试、当年计划多少，都以院校原文为准，没写清的标「没查到」。</p>
               <Fold label={medicine ? "院校与科室资料" : "院校招生原文与检索"}>
                 {medicine ? <MedicineBrowser initialView="programs" initialCategory="admissions" /> : <OfficialDossier directionId={current.id} initialCategory="admissions" chapterMode />}
               </Fold>
             </section>
             <section id="chapter-industry" className="xnlib-chapter">
-              <ChapterHead entry={chapters[5]} index={5} />
+              <ChapterHead entry={chapters[5]} />
               <p>看原文先看发布单位、发布日期和统计对象。一个岗位、一所院校或一年的样本，都不代表整个行业。</p>
               {medicine ? <Fold label="科室与执业资料"><MedicineBrowser initialView="departments" /></Fold> : <>
                 <Fold label="招聘原文与检索"><OfficialDossier directionId={current.id} initialCategory="recruitment" chapterMode /></Fold>
@@ -338,12 +338,11 @@ function chapterIcon(id: ChapterId) {
   }
 }
 
-/** 分区头：图标 + 编号 + 标题 + 一句话"这块回答什么"。编号走档案语言，不用"第 N 章"。 */
-function ChapterHead({ entry, index }: { entry: (typeof chapters)[number]; index: number }) {
+/** 分区头：图标 + 标题 + 一句话"这块回答什么"。不加 eyebrow 编号，免得多一层模板味。 */
+function ChapterHead({ entry }: { entry: (typeof chapters)[number] }) {
   return <header className="xnlib-chapter-head">
     <span className="xnlib-chapter-icon" aria-hidden="true">{chapterIcon(entry.id)}</span>
     <div className="xnlib-chapter-text">
-      <p className="xnlib-chapter-num" aria-hidden="true">{String(index + 1).padStart(2, "0")}</p>
       <h2>{entry.title}</h2>
       <p className="xnlib-chapter-q">{entry.question}</p>
     </div>
