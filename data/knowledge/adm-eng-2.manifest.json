@@ -1,0 +1,467 @@
+[
+  {
+    "source": {
+      "id": "zju-2027-spa-ee-085400",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（SPA 渲染快照·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用（SPA），页面正文由查询结果动态渲染，未印发布日，故 published_at 记 null；招生年度由标题「2027年」确定。因普通 HTTP GET 只能取得未渲染的应用壳，本记录同时提供 artifact_capture（ego 浏览器真实点击后保存的渲染后 HTML），collect.ts 会读取该 artifact 并用 htmlText() 复算文本，与本记录 literal 同源。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng-2/zju-2027-ee-085400.raw.html",
+      "sha256": "cd72ece249ea8e347cafd32b407aef0f1f2ebc09887f23e73be1d77d0cd2bcd2",
+      "captured_at": "2026-10-23T08:14:58.429Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-spa-ee-085400-guide-devices-7d8f166e",
+      "role_id": "guide_devices",
+      "category": "admissions",
+      "title": "浙大2027（渲染快照）：085400 电子信息「生物医学工程」02 方向明确「欢迎医学…考生报考」，医学列首位",
+      "summary": "浙大 2027 专业目录 SPA 渲染结果：生物医学工程与仪器科学学院·电子信息(085400)·生物医学工程(02)方向，统考名额 11，备注原文「本专业单独分数线划档，单独录取。欢迎医学、药学、数学、物理、化学、生物、信电、计算机、电子、电气、电机、自控、仪器类考生报考。」（同一官方来源共 2 条原文事实，字段：cross_major_restrictions、exam_subjects；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "**全库对「医学本科」最正面的一条原文**：浙大把「医学」列在 085400 生物医学工程方向白名单的第一位，护理/药学/医学技术/预防医学等医学门类本科属明确欢迎范围。仅限该学院 085400 的 02 方向，不适用于同学院 01 仪器仪表工程方向（另条）。本记录带渲染快照 artifact，可由采集器复算。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "电子信息",
+        "085400",
+        "生物医学工程方向",
+        "欢迎医学考生",
+        "白名单",
+        "跨专业限制",
+        "SPA渲染快照",
+        "891数字医疗仪器综合",
+        "初试科目"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（生物医学工程 02 方向）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "生物医学工程与仪器科学学院",
+        "department_type": "medical_technology",
+        "evidence_locator": "查询结果表·电子信息(085400) 生物医学工程(02) 行考试科目列与名额列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "生 物 医 学 工 程 \\(02\\) 生 物 医 学 工 程 领 域 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.891数字医疗仪器综合 11 \\(以最终实际录取人数为准。\\) 本专业单独分数线划档，单独录取。 欢迎医学、药学、数学、物理、化学、生物、信电、计算机、电子、电气、电机、自控、仪器类考生报考。"
+      },
+      {
+        "field": "exam_subjects",
+        "pattern": "①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.891数字医疗仪器综合 11 \\(以最终实际录取人数为准。\\)"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions",
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-spa-ee-085400",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（SPA 渲染快照·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用（SPA），页面正文由查询结果动态渲染，未印发布日，故 published_at 记 null；招生年度由标题「2027年」确定。因普通 HTTP GET 只能取得未渲染的应用壳，本记录同时提供 artifact_capture（ego 浏览器真实点击后保存的渲染后 HTML），collect.ts 会读取该 artifact 并用 htmlText() 复算文本，与本记录 literal 同源。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng-2/zju-2027-ee-085400.raw.html",
+      "sha256": "cd72ece249ea8e347cafd32b407aef0f1f2ebc09887f23e73be1d77d0cd2bcd2",
+      "captured_at": "2026-10-23T08:14:58.429Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-spa-ee-085400-guide-signals-aef3812a",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "浙大2027（渲染快照）：同专业 085400「仪器仪表工程 01」白名单只列工科类，不含医学（与 02 方向形成对照）",
+      "summary": "渲染快照同一表：电子信息(085400)·仪器仪表工程(01)方向，统考名额 12，备注「本专业单独分数线划档，单独录取。欢迎电子信息、计算机、自控、电气、应用电子类和应用数学考生报考。」——白名单未列入医学。",
+      "applicability": "适用于需要在浙大 085400 内选方向的医学本科生：**同一专业代码下，02 方向（生物医学工程）点名欢迎医学，01 方向（仪器仪表工程）不欢迎医学**——方向选择直接决定跨考可行性。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "电子信息",
+        "085400",
+        "仪器仪表工程",
+        "白名单",
+        "方向差异",
+        "跨专业限制",
+        "SPA渲染快照"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（仪器仪表工程 01 方向）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "生物医学工程与仪器科学学院",
+        "evidence_locator": "查询结果表·电子信息(085400) 仪器仪表工程(01) 行备注栏"
+      }
+    },
+    "extracts": [
+      {
+        "field": "cross_major_restrictions",
+        "pattern": "仪 器 仪 表 工 程 \\(01\\) 仪 器 仪 表 工 程 领 域 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.891数字医疗仪器综合 12 \\(以最终实际录取人数为准。\\) 本专业单独分数线划档，单独录取。 欢迎电子信息、计算机、自控、电气、应用电子类和应用数学考生报考。"
+      }
+    ],
+    "expected_fields": [
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-spa-ee-085400",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（SPA 渲染快照·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用（SPA），页面正文由查询结果动态渲染，未印发布日，故 published_at 记 null；招生年度由标题「2027年」确定。因普通 HTTP GET 只能取得未渲染的应用壳，本记录同时提供 artifact_capture（ego 浏览器真实点击后保存的渲染后 HTML），collect.ts 会读取该 artifact 并用 htmlText() 复算文本，与本记录 literal 同源。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng-2/zju-2027-cs-085400.raw.html",
+      "sha256": "a92f37d85f0e34bd74845a3b9d96784dbe870ce3a2e2d987bce15e6522e2fcd4",
+      "captured_at": "2026-10-23T08:14:58.424Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-spa-ee-085400-guide-software-f39f34e6",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "浙大2027（渲染快照）：计算机学院 085400 01 计算机技术，初试 101/201/301 数学（一）/408，名额 94",
+      "summary": "渲染快照：计算机科学与技术学院·电子信息(085400)·计算机技术(01)方向，初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④408 计算机学科专业基础，统考名额 94（含拱墅研究院 5 个、海南研究院 1 个、宁波理工联培 5 个、城市学院联培 3 个、中国历代绘画大系项目制 4 个）。",
+      "applicability": "适用于报考浙大计算机学院 085400 的考生：数一 + 408，与清华计算机系、北大软微 01/02 一致。该学院 2027 统考目录只有 085400，无 081200 学术学位条目。本记录带渲染快照 artifact，可由采集器复算。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "计算机科学与技术学院",
+        "085400",
+        "计算机技术",
+        "408",
+        "数学一",
+        "SPA渲染快照"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（01 计算机技术）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "计算机科学与技术学院",
+        "evidence_locator": "查询结果表·电子信息(085400) 计算机技术(01) 行考试科目列与名额列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.408计算机学科专业基础 94 \\(含拱墅研究院5个，海南研究院1个，宁波理工联培5个，城市学院联培3个，《中华图像文明与数据科学（中国历代绘画大系）》项目制4个\\)"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-spa-ee-085400",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（SPA 渲染快照·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用（SPA），页面正文由查询结果动态渲染，未印发布日，故 published_at 记 null；招生年度由标题「2027年」确定。因普通 HTTP GET 只能取得未渲染的应用壳，本记录同时提供 artifact_capture（ego 浏览器真实点击后保存的渲染后 HTML），collect.ts 会读取该 artifact 并用 htmlText() 复算文本，与本记录 literal 同源。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng-2/zju-2027-cs-085400.raw.html",
+      "sha256": "a92f37d85f0e34bd74845a3b9d96784dbe870ce3a2e2d987bce15e6522e2fcd4",
+      "captured_at": "2026-10-23T08:14:58.424Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-spa-ee-085400-guide-software-5dc02850",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "浙大2027（渲染快照）：计算机学院 085400 02 网络与信息安全，同为 101/201/301 数学（一）/408，名额 21",
+      "summary": "渲染快照：计算机科学与技术学院·电子信息(085400)·网络与信息安全(02)方向，初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④408 计算机学科专业基础，统考名额 21（以最终实际录取人数为准），2027 级启动「数据与系统安全」项目制培养，学费 8 万元/全程。",
+      "applicability": "适用于在浙大计算机学院内比较方向的考生：01 计算机技术（94 人）与 02 网络与信息安全（21 人）**初试科目完全相同（数一 + 408）**，差别只在名额、项目方向与学费口径。与北大软微「不同方向考不同科目」形成对照。",
+      "relation": "related",
+      "tags": [
+        "浙江大学",
+        "计算机科学与技术学院",
+        "085400",
+        "网络与信息安全",
+        "408",
+        "方向对比",
+        "SPA渲染快照"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（02 网络与信息安全）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "计算机科学与技术学院",
+        "evidence_locator": "查询结果表·电子信息(085400) 网络与信息安全(02) 行考试科目列与名额列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training_direction",
+        "pattern": "网 络 与 信 息 安 全 \\(02\\) 网 络 与 信 息 安 全 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.408计算机学科专业基础 21 \\(以最终实际录取人数为准。\\)"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "training_direction",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-spa-ee-085400",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（SPA 渲染快照·生物医学工程与仪器科学学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用（SPA），页面正文由查询结果动态渲染，未印发布日，故 published_at 记 null；招生年度由标题「2027年」确定。因普通 HTTP GET 只能取得未渲染的应用壳，本记录同时提供 artifact_capture（ego 浏览器真实点击后保存的渲染后 HTML），collect.ts 会读取该 artifact 并用 htmlText() 复算文本，与本记录 literal 同源。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng-2/zju-2027-cs-085400.raw.html",
+      "sha256": "a92f37d85f0e34bd74845a3b9d96784dbe870ce3a2e2d987bce15e6522e2fcd4",
+      "captured_at": "2026-10-23T08:14:58.424Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-spa-ee-085400-guide-software-d1a8b01f",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "浙大2027（渲染快照）：计算机学院 085400 的 03 计算机技术（强军计划）仅招收强军计划考生，且考单考科目",
+      "summary": "渲染快照：计算机科学与技术学院·电子信息(085400)·计算机技术（强军计划）(03)方向，初试 ①111 思想政治理论（单独考试）②243 单考英语 ③751 单考数学 ④408 计算机学科专业基础，名额 1，备注「该方向仅招收强军计划考生。」同表列出该专业以上方向合计招生数 115。",
+      "applicability": "适用于排除错误选项：浙大计算机学院 085400 的 03 方向**只招强军计划考生**（且前三科为单考科目 111/243/751），普通考生不可报。该专业合计招生 115 人（01 的 94 + 02 的 21 = 115，03 为单列 1 人）。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "计算机科学与技术学院",
+        "085400",
+        "强军计划",
+        "单独考试",
+        "SPA渲染快照"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（03 计算机技术·强军计划）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "计算机科学与技术学院",
+        "evidence_locator": "查询结果表·电子信息(085400) 计算机技术（强军计划）(03) 行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "admission_requirements",
+        "pattern": "计 算 机 技 术 （ 强 军 计 划 ） \\(03\\) ①\\.111思想政治理论（单独考试） ②\\.243单考英语 ③\\.751单考数学 ④\\.408计算机学科专业基础 1 \\(以最终实际录取人数为准。\\) 该方向仅招收强军计划考生。"
+      }
+    ],
+    "expected_fields": [
+      "admission_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "pku-2027-catalog-ss-software-micro",
+      "url": "https://admission.pku.edu.cn/zsxx/sszs/zyml/2027/yx/zsml_ss_yx_00017.pdf",
+      "organization": "北京大学研究生招生办公室",
+      "title": "北京大学2027年硕士研究生招生专业目录（校本部）·软件与微电子学院",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该 PDF 页正文未印发布日期，故记 null；招生年度由文件名 zsml_ss_yx_00017 与页面标题「北京大学2027年硕士研究生招生专业目录（校本部）」确定为 2027 年版。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng-2/pku-2027-catalog-ss.pdf",
+      "sha256": "107d58329a0e683208fbe005ce981f015dd33473399977b43811c1e3ea1122fb",
+      "captured_at": "2026-10-23T08:18:08.145Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-eng-2/pku-2027-catalog-ss.txt",
+      "extracted_sha256": "d2e09f614ac3b549f2e3b1b545522b0edf83fd129fedfa0113427640d045883b"
+    },
+    "record": {
+      "id": "admissions-pku-2027-catalog-ss-software-micro-guide-software-b9816b89",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "北大校本部2027专业目录（软微）：院系「备注说明」只规定招生人数口径与代招名额，未设任何本科专业要求",
+      "summary": "北大校本部 2027 专业目录·软件与微电子学院页的「招生院系 / 备注说明」栏原文：「应试生招生人数以招生计划减去实际公示的接收推免生人数为准。本学院电子信息专业01方向招生人数中含未来技术学院成像科学中心代招15人（含推免9人）。应试生招生人数以招生计划减去实际接收的推荐免试生人数为准。」——全栏只讲招生人数与推免扣减，没有任何限定本科专业的表述。",
+      "applicability": "**回答「医学本科生能不能报北大软微」的关键证据**：北大校本部专业目录是北大发布报考限制的正式载体（同校医学部各专业就是在此栏写「仅招收…专业考生」），而软微 085400 这一栏只有人数口径与代招说明，未出现任何本科专业限制。故结论是「资格上可以报」，门坎不在资格而在 408 与数学（一）。",
+      "relation": "related",
+      "tags": [
+        "北京大学",
+        "软件与微电子学院",
+        "085400",
+        "备注说明",
+        "无本科专业限制",
+        "招生人数口径",
+        "跨专业限制"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学",
+        "program": "085400 电子信息（软微全院）",
+        "admission_year": 2027,
+        "region": "北京大兴",
+        "college": "软件与微电子学院",
+        "evidence_locator": "专业目录（校本部）软件与微电子学院页「招生院系 / 备注说明」栏"
+      }
+    },
+    "extracts": [
+      {
+        "field": "admission_requirements",
+        "pattern": "备注说明 应试生招生人数以招生计划减去实际公示的接收推免生人数为准。本学院电子信息专业01方向招生人数中含未来技术学院成像科学中心代招15人（含推免9人）。应试生招生 人数以招生计划减去实际接收的推荐免试生人数为准。"
+      }
+    ],
+    "expected_fields": [
+      "admission_requirements"
+    ]
+  },
+  {
+    "source": {
+      "id": "pku-2027-catalog-ss-software-micro",
+      "url": "https://admission.pku.edu.cn/zsxx/sszs/zyml/2027/yx/zsml_ss_yx_00017.pdf",
+      "organization": "北京大学研究生招生办公室",
+      "title": "北京大学2027年硕士研究生招生专业目录（校本部）·软件与微电子学院",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该 PDF 页正文未印发布日期，故记 null；招生年度由文件名 zsml_ss_yx_00017 与页面标题「北京大学2027年硕士研究生招生专业目录（校本部）」确定为 2027 年版。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng-2/pku-2027-catalog-ss.pdf",
+      "sha256": "107d58329a0e683208fbe005ce981f015dd33473399977b43811c1e3ea1122fb",
+      "captured_at": "2026-10-23T08:18:08.145Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-eng-2/pku-2027-catalog-ss.txt",
+      "extracted_sha256": "d2e09f614ac3b549f2e3b1b545522b0edf83fd129fedfa0113427640d045883b"
+    },
+    "record": {
+      "id": "admissions-pku-2027-catalog-ss-software-micro-guide-software-c6a41231",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "北大校本部2027专业目录（软微）：03 集成电路工程为 301 数学（一）+ 803 电子信息基础（官方科目代码）",
+      "summary": "北大校本部 2027 专业目录·软微页「软件与微电子学院招生专业及招生人数」表：085400 电子信息 03. 集成电路工程（全日制）考试科目 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④803 电子信息基础。同表 085400 计划招生 583、拟接收推免 255；01 软件工程拟招 90（含推免 9）、02 人工智能 135、03 集成电路工程 50、04 金融科技 100（含推免 38）。",
+      "applicability": "适用于查考试科目官方代码：软微 03 集成电路工程的第四科官方代码是 803 电子信息基础（学院招生说明只写科目名、不写代码，此处补全）。同 085400 下三套完全不同的科目组合，再次印证必须逐方向确认。",
+      "relation": "direct",
+      "tags": [
+        "北京大学",
+        "软件与微电子学院",
+        "085400",
+        "803电子信息基础",
+        "集成电路工程",
+        "官方科目代码"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学",
+        "program": "085400 电子信息（03 集成电路工程）",
+        "admission_year": 2027,
+        "region": "北京大兴",
+        "college": "软件与微电子学院",
+        "evidence_locator": "专业目录（校本部）软微页「招生专业及招生人数」表 085400 第 03 行考试科目列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "03\\. 集成电路工程 全日制 ① 101 思想政治理论 ② 201 英语（一） ③ 301 数学（一） ④ 803 电子信息基础 04\\. 金融科技 全日制"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects"
+    ]
+  },
+  {
+    "source": {
+      "id": "pku-2027-catalog-ss-software-micro",
+      "url": "https://admission.pku.edu.cn/zsxx/sszs/zyml/2027/yx/zsml_ss_yx_00017.pdf",
+      "organization": "北京大学研究生招生办公室",
+      "title": "北京大学2027年硕士研究生招生专业目录（校本部）·软件与微电子学院",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该 PDF 页正文未印发布日期，故记 null；招生年度由文件名 zsml_ss_yx_00017 与页面标题「北京大学2027年硕士研究生招生专业目录（校本部）」确定为 2027 年版。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-eng-2/pku-2027-catalog-ss.pdf",
+      "sha256": "107d58329a0e683208fbe005ce981f015dd33473399977b43811c1e3ea1122fb",
+      "captured_at": "2026-10-23T08:18:08.145Z",
+      "content_type": "application/pdf",
+      "method": "pypdf_page_text",
+      "extracted_path": "work/knowledge-adm-eng-2/pku-2027-catalog-ss.txt",
+      "extracted_sha256": "d2e09f614ac3b549f2e3b1b545522b0edf83fd129fedfa0113427640d045883b"
+    },
+    "record": {
+      "id": "admissions-pku-2027-catalog-ss-software-micro-guide-software-b4f45d16",
+      "role_id": "guide_software",
+      "category": "admissions",
+      "title": "北大校本部2027专业目录（软微）：04 金融科技为 302 数学（二）+ 831 经济学综合（官方科目代码）",
+      "summary": "北大校本部 2027 专业目录·软微页：085400 电子信息 04. 金融科技（全日制）考试科目 ①101 思想政治理论 ②201 英语（一）③302 数学（二）④831 经济学综合；该方向拟招 100 人（含推免 38 人）。",
+      "applicability": "适用于数学基础较弱、想避开数学（一）与 408 的考生：软微 04 金融科技是唯一考 302 数学（二）+ 831 经济学综合 的方向，官方科目代码已补齐。注意 831 为经济学综合，医学本科生基本需从零准备。",
+      "relation": "direct",
+      "tags": [
+        "北京大学",
+        "软件与微电子学院",
+        "085400",
+        "金融科技",
+        "302数学二",
+        "831经济学综合",
+        "官方科目代码"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京大学",
+        "program": "085400 电子信息（04 金融科技）",
+        "admission_year": 2027,
+        "region": "北京大兴",
+        "college": "软件与微电子学院",
+        "evidence_locator": "专业目录（校本部）软微页「招生专业及招生人数」表 085400 第 04 行考试科目列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "04\\. 金融科技 全日制 ① 101 思想政治理论 ② 201 英语（一） ③ 302 数学（二） ④ 831 经济学综合 05\\. 网络与信息安全 全日制"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects"
+    ]
+  }
+]

@@ -1,65 +1,64 @@
 {
-  "at": "2026-10-23T10:20:20.274Z",
-  "sources": 1,
-  "records": 3,
+  "at": "2026-10-23T11:03:42.931Z",
+  "sources": 3,
+  "records": 6,
   "by_category": {
     "occupation": 0,
     "recruitment": 0,
-    "admissions": 3,
-    "industry": 0,
+    "admissions": 0,
+    "industry": 6,
     "learning": 0
   },
   "attempts": [
     {
-      "source_id": "zju-2027-catalog-085400-bme",
-      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
-      "at": "2026-10-23T07:32:28.071Z",
-      "status": "failed",
-      "reason": "no_evidence_matched"
-    },
-    {
-      "source_id": "zju-2027-catalog-085400-bme",
-      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
-      "at": "2026-10-23T07:32:28.071Z",
-      "status": "failed",
-      "reason": "no_evidence_matched"
-    },
-    {
-      "source_id": "zju-2027-catalog-085400-bme",
-      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
-      "at": "2026-10-23T07:38:35.046Z",
-      "status": "collected",
-      "missing_fields": []
-    },
-    {
-      "source_id": "zju-2027-catalog-085400-bme",
-      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
-      "at": "2026-10-23T07:36:07.061Z",
-      "status": "collected",
-      "missing_fields": []
-    },
-    {
-      "source_id": "zju-2027-catalog-085400-bme",
-      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
-      "at": "2026-10-23T07:38:51.159Z",
+      "source_id": "cq-wage-2025-yigong-xilei",
+      "url": "https://cqstl.gov.cn/bm/qrlsbj_71106/zwgk_70831/fdzdgknr_70834/qtgknr/qtxx/202609/W020260918592816626257.pdf",
+      "at": "2026-10-23T09:00:08.164Z",
       "status": "collected",
       "missing_fields": [
-        "exam_subjects"
+        "salary_statistics（企业口径，不含公立医院/事业单位）"
       ]
     },
     {
-      "source_id": "zju-2027-catalog-085400-bme",
-      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
-      "at": "2026-10-23T07:39:07.099Z",
-      "status": "failed",
-      "reason": "no_evidence_matched"
+      "source_id": "cq-wage-2025-yigong-xilei",
+      "url": "https://cqstl.gov.cn/bm/qrlsbj_71106/zwgk_70831/fdzdgknr_70834/qtgknr/qtxx/202609/W020260918592816626257.pdf",
+      "at": "2026-10-23T09:00:08.164Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary_statistics（企业口径，不含公立医院）"
+      ]
     },
     {
-      "source_id": "zju-2027-catalog-085400-bme",
-      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
-      "at": "2026-10-23T07:35:51.745Z",
-      "status": "failed",
-      "reason": "no_evidence_matched"
+      "source_id": "cq-wage-2025-yigong-xilei",
+      "url": "https://cqstl.gov.cn/bm/qrlsbj_71106/zwgk_70831/fdzdgknr_70834/qtgknr/qtxx/202609/W020260918592816626257.pdf",
+      "at": "2026-10-23T09:00:08.164Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "hn-tjj-2025-feisiying",
+      "url": "http://tjj.hunan.gov.cn/hntj/tjfx/hntjsj/202607/34018561/files/50897fb9423a4d669495cad774210d7b.pdf",
+      "at": "2026-10-23T08:57:33.277Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary_statistics（为行业门类「卫生和社会工作」，非医师单岗；含基层/公卫/社会工作）"
+      ]
+    },
+    {
+      "source_id": "hn-tjj-2025-feisiying",
+      "url": "http://tjj.hunan.gov.cn/hntj/tjfx/hntjsj/202607/34018561/files/50897fb9423a4d669495cad774210d7b.pdf",
+      "at": "2026-10-23T08:57:33.277Z",
+      "status": "collected",
+      "missing_fields": []
+    },
+    {
+      "source_id": "sh-jineng-2025",
+      "url": "https://rsj.sh.gov.cn/t01_17887/20261019/t0035_1444243.html",
+      "at": "2026-10-23T08:58:30.383Z",
+      "status": "collected",
+      "missing_fields": [
+        "salary_statistics（企业口径技能人才，非医院技师职称序列）"
+      ]
     }
   ]
 }

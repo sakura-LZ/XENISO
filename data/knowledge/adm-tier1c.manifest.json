@@ -1,0 +1,174 @@
+[
+  {
+    "source": {
+      "id": "zju-2027-spa-ai-085400",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（SPA 渲染快照·人工智能学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用（SPA），正文由查询结果动态渲染，页面未印发布日，故 published_at 记 null；招生年度由标题「2027年」确定。因普通 HTTP GET 只能取得未渲染的应用壳，本记录同时提供 artifact_capture（ego 浏览器真实点击后保存的渲染后 HTML），collect.ts 读取该 artifact 并用 htmlText() 复算文本，与 literal 同源。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1c/zju-2027-人工-085400.raw.html",
+      "sha256": "7d43faf65f4bb3b4a7ef48bcafc952ca056fbd72fb2168a36079f9e641770e00",
+      "captured_at": "2026-10-23T08:40:05.148Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-spa-ai-085400-guide-ml-cv-af4338a4",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "浙大2027（渲染快照）：人工智能学院 085400 01 人工智能方向，初试 101/201/301 数学（一）/408",
+      "summary": "浙大 2027 专业目录 SPA 渲染结果：人工智能学院·电子信息(085400)·人工智能(01)方向（统考名额 27，含智慧绿洲未来影像实验室 2 个），初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④408 计算机学科专业基础；具体研究方向含人工智能基础理论与机器学习、大模型与生成式人工智能、多模态智能与智能交互、智能体与自主智能、智能设计与数字创意、人工智能系统与平台。",
+      "applicability": "适用于报考浙大人工智能学院 085400 的考生：科目为数学（一）+**408**，与浙大计算机学院一致。2027 级启动「大模型与智能体融合创新平台」项目制培养，学费 8 万元/全程。注意与同校**控制学院**同一个 085400 的第四科（845 自动控制原理）完全不同。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "人工智能学院",
+        "085400",
+        "人工智能",
+        "408",
+        "大模型",
+        "数学一",
+        "SPA渲染快照"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（01 人工智能）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "人工智能学院",
+        "evidence_locator": "查询结果表·电子信息(085400) 人工智能(01) 行考试科目列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "人 工 智 能 \\(01\\) 人 工 智 能 基 础 理 论 与 机 器 学 习 、 大 模 型 与 生 成 式 人 工 智 能 、 多 模 态 智 能 与 智 能 交 互 、 智 能 体 与 自 主 智 能 、 智 能 设 计 与 数 字 创 意 、 人 工 智 能 系 统 与 平 台 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.408计算机学科专业基础"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-spa-ai-085400",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（SPA 渲染快照·人工智能学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用（SPA），正文由查询结果动态渲染，页面未印发布日，故 published_at 记 null；招生年度由标题「2027年」确定。因普通 HTTP GET 只能取得未渲染的应用壳，本记录同时提供 artifact_capture（ego 浏览器真实点击后保存的渲染后 HTML），collect.ts 读取该 artifact 并用 htmlText() 复算文本，与 literal 同源。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1c/zju-2027-控制-085400.raw.html",
+      "sha256": "92754d407f8fd18682b0bb15cad07ec85fddc909f3dc7aa7eaa565347834ce0d",
+      "captured_at": "2026-10-23T08:40:24.829Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-spa-ai-085400-guide-signals-d564ea1e",
+      "role_id": "guide_signals",
+      "category": "admissions",
+      "title": "浙大2027（渲染快照）：控制学院 085400 01 控制工程-工业智能，第四科为 845 自动控制原理（非 408）",
+      "summary": "浙大 2027 专业目录 SPA 渲染结果：控制科学与工程学院·电子信息(085400)·控制工程-工业智能(01)方向（统考名额 10），初试 ①101 思想政治理论 ②201 英语（一）③301 数学（一）④**845 自动控制原理**；备注「本院电子信息专业统一划线，按研究方向组织复试」，学费全程 8 万元。",
+      "applicability": "**这是「同校同专业代码、不同学院科目完全不同」的最强证据**：浙大 085400 在控制学院的第四科是 **845 自动控制原理**，而在计算机学院/人工智能学院是 408、在生仪学院是 891。想避开 408 的考生可以走控制学院（但要补自动控制原理）。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "控制科学与工程学院",
+        "085400",
+        "845自动控制原理",
+        "工业智能",
+        "方向差异",
+        "SPA渲染快照"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（01 控制工程-工业智能）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "控制科学与工程学院",
+        "evidence_locator": "查询结果表·电子信息(085400) 控制工程-工业智能(01) 行考试科目列"
+      }
+    },
+    "extracts": [
+      {
+        "field": "exam_subjects",
+        "pattern": "控 制 工 程 - 工 业 智 能 \\(01\\) 工 业 智 能 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.845自动控制原理"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "cross_major_restrictions"
+    ]
+  },
+  {
+    "source": {
+      "id": "zju-2027-spa-ai-085400",
+      "url": "https://yjsy.zju.edu.cn/open/zsss/ZsssTksList?zsnf=2027",
+      "organization": "浙江大学研究生院",
+      "title": "浙江大学2027年硕士研究生招生专业目录（SPA 渲染快照·人工智能学院·电子信息 085400）",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": null,
+      "publication_date_note": "该页为浙大研招「2027年硕士研究生招生专业目录查询（统考生）」单页应用（SPA），正文由查询结果动态渲染，页面未印发布日，故 published_at 记 null；招生年度由标题「2027年」确定。因普通 HTTP GET 只能取得未渲染的应用壳，本记录同时提供 artifact_capture（ego 浏览器真实点击后保存的渲染后 HTML），collect.ts 读取该 artifact 并用 htmlText() 复算文本，与 literal 同源。"
+    },
+    "artifact_capture": {
+      "path": "work/knowledge-adm-tier1c/zju-2027-控制-085400.raw.html",
+      "sha256": "92754d407f8fd18682b0bb15cad07ec85fddc909f3dc7aa7eaa565347834ce0d",
+      "captured_at": "2026-10-23T08:40:24.829Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "admissions-zju-2027-spa-ai-085400-guide-ml-cv-e0dfa74f",
+      "role_id": "guide_ml_cv",
+      "category": "admissions",
+      "title": "浙大2027（渲染快照）：控制学院 085400 02 控制工程-具身智能，同为 845 自动控制原理，名额 19",
+      "summary": "同表：控制科学与工程学院·电子信息(085400)·控制工程-具身智能(02)方向（统考名额 19，含先进技术研究院 1、科创中心 1、湖州研究院 2），初试 ①101 ②201 英语（一）③301 数学（一）④845 自动控制原理。",
+      "applicability": "适用于在浙大控制学院内选方向的考生：01 工业智能（10 人）与 02 具身智能（19 人）**科目完全相同（数一 + 845）**，差别只在名额与联合培养单位；具身智能是当前具身智能/机器人方向的热门入口。",
+      "relation": "direct",
+      "tags": [
+        "浙江大学",
+        "控制科学与工程学院",
+        "085400",
+        "具身智能",
+        "845自动控制原理",
+        "SPA渲染快照"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "浙江大学",
+        "program": "085400 电子信息（02 控制工程-具身智能）",
+        "admission_year": 2027,
+        "region": "浙江杭州",
+        "college": "控制科学与工程学院",
+        "evidence_locator": "查询结果表·电子信息(085400) 控制工程-具身智能(02) 行考试科目列与名额"
+      }
+    },
+    "extracts": [
+      {
+        "field": "training_direction",
+        "pattern": "控 制 工 程 - 具 身 智 能 \\(02\\) 具 身 智 能 ①\\.101思想政治理论 ②\\.201英语（一） ③\\.301数学（一） ④\\.845自动控制原理"
+      }
+    ],
+    "expected_fields": [
+      "exam_subjects",
+      "training_direction",
+      "cross_major_restrictions"
+    ]
+  }
+]

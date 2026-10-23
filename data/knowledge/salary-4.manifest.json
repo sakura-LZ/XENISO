@@ -1,0 +1,236 @@
+[
+  {
+    "source": {
+      "id": "bj-wage-2025-weisheng",
+      "url": "http://114.255.111.180/SYrlzyhshbzb/laodongguanxi_/fwyd/202607/t20260708_579822.html",
+      "organization": "北京市人力资源和社会保障局",
+      "title": "北京市企业薪酬调查信息（2025年）：卫生专业技术人员中位6.56万元/年，低于广东（9.14）——企业口径的自我反证",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-08",
+      "publication_date_note": "北京市人力资源和社会保障局该页仅以 http 端点 114.255.111.180 提供（其政务外网 IP），https 证书与 IP 不匹配、无法建立 TLS；同名路径 www 域 rsj.beijing.gov.cn 返回 404。正文经该 http 端点取得，raw 留存备查。页面标注「发布日期：2026-07-08」。"
+    },
+    "publication_pattern": "2026-07-08",
+    "artifact_capture": {
+      "path": "work/knowledge-salary-4/bj-wage-2025.raw",
+      "sha256": "b165463dee2d462e70de3125c21bd54bcaca9c985cc129de3f236f4f7268dfde",
+      "captured_at": "2026-10-23T08:35:53.472Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-bj-wage-2025-weisheng-medicine-guide",
+      "role_id": "medicine_guide",
+      "category": "industry",
+      "title": "北京2025工资价位：卫生专业技术人员 3.60/4.74/6.56/9.73/14.87 万元/年（中位6.56）",
+      "summary": "「1-1 分职业中类企业从业人员工资价位（2025年）」，单位万元/年，五分位（10%/25%/50%/75%/90%）：205 卫生专业技术人员 3.60/4.74/**6.56**/9.73/14.87；相邻 202 工程技术人员 4.20/5.52/7.95/12.37/19.23；206 经济和金融专业人员 4.20/5.53/8.01/12.77/20.29。",
+      "applicability": "**企业口径最有力的自我反证**：北京是一线城市，其「卫生专业技术人员」中位却只有 6.56 万/年，低于广东 9.14、与山东 6.78 相当。原因是调查对象限于「企业」——北京的三甲公立医院全部是事业单位、不入样本，剩下的企业侧医疗机构（诊所、民营机构、医药企业）把中位拉低。**凡看到这类数字，必须同时说明它不含公立医院，否则会被理解成「北京医生只挣 6.5 万」。**",
+      "relation": "direct",
+      "tags": [
+        "北京市",
+        "卫生专业技术人员",
+        "6.56万元",
+        "企业口径反证",
+        "不含公立医院",
+        "工资价位"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京市人力资源和社会保障局",
+        "medical_topic": "卫生职业工资价位",
+        "region": "北京市",
+        "statistic_scope": "2025年北京市企业分职业中类工资价位（万元/年，五分位：10/25/50/75/90）",
+        "evidence_locator": "1-1 分职业中类企业从业人员工资价位（2025年）· 职业代码205 卫生专业技术人员行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "205 卫生专业技术人员 3\\.60 4\\.74 6\\.56 9\\.73 14\\.87 206 经济和金融专业人员 4\\.20 5\\.53 8\\.01 12\\.77 20\\.29"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "salary_statistics（企业口径，不含事业单位/公立医院）"
+    ]
+  },
+  {
+    "source": {
+      "id": "bj-wage-2025-weisheng",
+      "url": "http://114.255.111.180/SYrlzyhshbzb/laodongguanxi_/fwyd/202607/t20260708_579822.html",
+      "organization": "北京市人力资源和社会保障局",
+      "title": "北京市企业薪酬调查信息（2025年）：卫生专业技术人员中位6.56万元/年，低于广东（9.14）——企业口径的自我反证",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-08",
+      "publication_date_note": "北京市人力资源和社会保障局该页仅以 http 端点 114.255.111.180 提供（其政务外网 IP），https 证书与 IP 不匹配、无法建立 TLS；同名路径 www 域 rsj.beijing.gov.cn 返回 404。正文经该 http 端点取得，raw 留存备查。页面标注「发布日期：2026-07-08」。"
+    },
+    "publication_pattern": "2026-07-08",
+    "artifact_capture": {
+      "path": "work/knowledge-salary-4/bj-wage-2025.raw",
+      "sha256": "b165463dee2d462e70de3125c21bd54bcaca9c985cc129de3f236f4f7268dfde",
+      "captured_at": "2026-10-23T08:35:53.472Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-bj-wage-2025-weisheng-guide-software",
+      "role_id": "guide_software",
+      "category": "industry",
+      "title": "北京2025职业细类：计算机软件工程技术人员 5.85/9.00/14.33/22.01/33.13，计算机网络工程技术人员 4.50/5.91/8.82/13.20/20.16（万元/年）",
+      "summary": "北京「分职业细类」表（万元/年，10%/25%/50%/75%/90%），带 7 位职业代码：2021003 计算机软件工程技术人员 5.85/9.00/**14.33**/22.01/33.13；2021004 计算机网络工程技术人员 4.50/5.91/**8.82**/13.20/20.16。（同一官方来源共 2 条原文事实，字段：salary_statistics；标题与适用范围为 LIMEN 编辑索引。）",
+      "applicability": "**医工交叉「IT 侧」的官方定价**：医学背景转医院信息科/医疗 IT，可对照「计算机软件工程技术人员中位 14.33 万/年」判断市场区间（约为卫生专业技术人员 6.56 万的 2.2 倍）。注意这是**企业**口径，且北京是全国 IT 工资高地，外推到其他省会明显偏高。",
+      "relation": "direct",
+      "tags": [
+        "职业细类",
+        "计算机软件工程技术人员",
+        "14.33万元",
+        "计算机网络工程技术人员",
+        "医工交叉IT",
+        "北京市",
+        "计算机程序设计员",
+        "12.93万元",
+        "软件测试员",
+        "网络与信息安全管理员",
+        "技能型IT",
+        "上尾长"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京市人力资源和社会保障局",
+        "medical_topic": "信息类职业工资价位",
+        "region": "北京市",
+        "statistic_scope": "2025年北京市企业职业细类工资价位·程序设计与运维安全（万元/年，五分位）",
+        "evidence_locator": "分职业细类工资价位表 · 职业代码4010601、4040402、4040501、4040502 各行"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "2021003 计算机软件工程技术人员 5\\.85 9\\.00 14\\.33 22\\.01 33\\.13 2021004 计算机网络工程技术人员 4\\.50 5\\.91 8\\.82 13\\.20 20\\.16"
+      },
+      {
+        "field": "salary_statistics",
+        "pattern": "4010601 电子商务师 3\\.72 5\\.10 7\\.00 10\\.51 15\\.64 4040402 网络与信息安全管理员 4\\.33 5\\.81 7\\.96 11\\.97 18\\.35 4040501 计算机程序设计员 5\\.93 8\\.00 12\\.93 21\\.53 36\\.19 4040502 计算机软件测试员 4\\.68 7\\.39 9\\.88 15\\.05 20\\.80"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "salary_statistics（企业口径；北京为IT工资高地，外推需谨慎）",
+      "salary_statistics（企业口径）"
+    ]
+  },
+  {
+    "source": {
+      "id": "bj-wage-2025-weisheng",
+      "url": "http://114.255.111.180/SYrlzyhshbzb/laodongguanxi_/fwyd/202607/t20260708_579822.html",
+      "organization": "北京市人力资源和社会保障局",
+      "title": "北京市企业薪酬调查信息（2025年）：卫生专业技术人员中位6.56万元/年，低于广东（9.14）——企业口径的自我反证",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-08",
+      "publication_date_note": "北京市人力资源和社会保障局该页仅以 http 端点 114.255.111.180 提供（其政务外网 IP），https 证书与 IP 不匹配、无法建立 TLS；同名路径 www 域 rsj.beijing.gov.cn 返回 404。正文经该 http 端点取得，raw 留存备查。页面标注「发布日期：2026-07-08」。"
+    },
+    "publication_pattern": "2026-07-08",
+    "artifact_capture": {
+      "path": "work/knowledge-salary-4/bj-wage-2025.raw",
+      "sha256": "b165463dee2d462e70de3125c21bd54bcaca9c985cc129de3f236f4f7268dfde",
+      "captured_at": "2026-10-23T08:35:53.472Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-bj-wage-2025-weisheng-guide-health-systems",
+      "role_id": "guide_health_systems",
+      "category": "industry",
+      "title": "北京2025细类：信息安全工程技术人员 4.10/5.40/8.00/12.84/20.72，信息系统运行维护工程技术人员 4.86/6.36/9.95/16.16/24.88（万元/年）",
+      "summary": "北京分职业细类（万元/年，10%/25%/50%/75%/90%）：2021007 信息安全工程技术人员 4.10/5.40/**8.00**/12.84/20.72；2021008 信息系统运行维护工程技术人员 4.86/6.36/**9.95**/16.16/24.88。",
+      "applicability": "**这两行与「医院信息科运维岗」最对应**：华西信息中心运维工程师、北大人民信息中心硬件/安全工程师，工作内容就是信息系统运行维护与网络安全。官方细类给出运维中位 9.95 万、信息安全中位 8.00 万（企业口径、北京）——可作为医院信息科薪资的**市场参照上限**（医院实际通常低于企业侧）。",
+      "relation": "direct",
+      "tags": [
+        "信息系统运行维护",
+        "9.95万元",
+        "信息安全工程技术人员",
+        "8.00万元",
+        "医院信息科对照",
+        "北京市"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京市人力资源和社会保障局",
+        "medical_topic": "信息类职业工资价位",
+        "region": "北京市",
+        "statistic_scope": "2025年北京市企业职业细类工资价位·信息安全与系统运维（万元/年，五分位）",
+        "evidence_locator": "分职业细类工资价位表 · 职业代码2021007 信息安全、2021008 信息系统运行维护工程技术人员"
+      }
+    },
+    "extracts": [
+      {
+        "field": "salary_statistics",
+        "pattern": "2021007 信息安全工程技术人员 4\\.10 5\\.40 8\\.00 12\\.84 20\\.72 2021008 信息系统运行维护工程技术人员 4\\.86 6\\.36 9\\.95 16\\.16 24\\.88"
+      }
+    ],
+    "expected_fields": [
+      "salary_statistics",
+      "salary_statistics（企业口径，非医院内岗位实际工资）"
+    ]
+  },
+  {
+    "source": {
+      "id": "bj-wage-2025-weisheng",
+      "url": "http://114.255.111.180/SYrlzyhshbzb/laodongguanxi_/fwyd/202607/t20260708_579822.html",
+      "organization": "北京市人力资源和社会保障局",
+      "title": "北京市企业薪酬调查信息（2025年）：卫生专业技术人员中位6.56万元/年，低于广东（9.14）——企业口径的自我反证",
+      "jurisdiction": "CN",
+      "source_tier": "primary",
+      "published_at": "2026-07-08",
+      "publication_date_note": "北京市人力资源和社会保障局该页仅以 http 端点 114.255.111.180 提供（其政务外网 IP），https 证书与 IP 不匹配、无法建立 TLS；同名路径 www 域 rsj.beijing.gov.cn 返回 404。正文经该 http 端点取得，raw 留存备查。页面标注「发布日期：2026-07-08」。"
+    },
+    "publication_pattern": "2026-07-08",
+    "artifact_capture": {
+      "path": "work/knowledge-salary-4/bj-wage-2025.raw",
+      "sha256": "b165463dee2d462e70de3125c21bd54bcaca9c985cc129de3f236f4f7268dfde",
+      "captured_at": "2026-10-23T08:35:53.472Z",
+      "content_type": "text/html",
+      "method": "downloaded_html"
+    },
+    "record": {
+      "id": "industry-bj-wage-2025-weisheng-guide-clinical-data",
+      "role_id": "guide_clinical_data",
+      "category": "industry",
+      "title": "北京口径：企业薪酬调查（企业从业人员口径），含分职业、分岗位等级、数字经济与低空经济核心产业四类",
+      "summary": "北京「简要说明」：企业薪酬调查是以企业中不同职业从业人员工资报酬水平和不同行业企业人工成本状况为调查内容的抽样调查，以反映我国劳动力市场价格状况；本篇资料的内容主要包括不同职业、不同岗位等级以及数字经济和低空经济核心产业企业从业人员工资价位数据。附注明确「分位值」为将数据由低到高排序处于相应百分比位置的数据、「企业从业人员」指在本企业工作并取得劳动报酬的人员、「工资价位」含基本工资、奖金、津贴补贴、加班加点工资和特殊情况下支付的工资。",
+      "applicability": "**与广东/山东/江苏/四川/福建/云南一致的企业口径**，第七份省级样本。北京额外单列「数字经济核心产业」（数字技术应用业 25%/50%/75% 为 6.21/9.64/14.83 万元/年），对评估医疗数字化就业市场有旁证价值。关键限定：调查对象是「企业」，公立医院（事业单位）不在内。",
+      "relation": "direct",
+      "tags": [
+        "北京市",
+        "统计口径",
+        "企业薪酬调查",
+        "数字经济核心产业",
+        "分位值",
+        "不含事业单位"
+      ],
+      "valid_through": null,
+      "freshness_days": 60,
+      "context": {
+        "institution": "北京市人力资源和社会保障局",
+        "medical_topic": "工资价位统计口径",
+        "region": "北京市",
+        "statistic_scope": "2025年北京市企业薪酬调查范围与发布口径（四类表）",
+        "evidence_locator": "简要说明 全段 + 附注 1.主要统计指标解释（分位值、企业从业人员、工资价位）"
+      }
+    },
+    "extracts": [
+      {
+        "field": "statistical_definition",
+        "pattern": "简要说明 企业薪酬调查是以企业中不同职业从业人员工资报酬水平和不同行业企业人工成本状况为调查内容的抽样调查， 以 反映我国劳动力市场价格状况 。 本篇资料的内容主要包括不同职业、不同岗位等级 以及 数字经济 和 低空经济 核心 产业 企业 从业人员工资价位数据。"
+      }
+    ],
+    "expected_fields": [
+      "statistical_definition"
+    ]
+  }
+]

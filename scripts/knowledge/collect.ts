@@ -22,7 +22,7 @@ const hash = (value: string | Buffer) => createHash("sha256").update(value).dige
 const records: KnowledgeRecord[] = [], sources: KnowledgeSource[] = [];
 const snapshots: { content_hash: string; source_id: string; raw_hash: string; raw_base64: string; text_body: string; content_type: string; fetched_at: string }[] = [];
 const attempts: { source_id: string; url: string; at: string; status: string; http_status?: number; reason?: string; missing_fields?: string[] }[] = [];
-const seenUrls = new Set<string>(), seenContent = new Set<string>();
+const seenContent = new Set<string>(), seenContentForSnapshot = new Set<string>(), seenSourceIds = new Set<string>();
 const seenEntries = new Set<string>();
 for (const item of manifest) {
   const at = item.artifact_capture?.captured_at ?? item.browser_capture?.captured_at ?? new Date().toISOString(), url = normalizeSourceUrl(item.source.url);
@@ -81,10 +81,16 @@ for (const item of manifest) {
     if (!verifyQuotes(record, text)) throw new Error("evidence_offsets_mismatch");
     seenContent.add(contentHash);
     records.push(record);
-    if (!seenUrls.has(url)) {
-      sources.push({ ...item.source, url });
+    // 快照必须按「内容」而不是「URL」去重：同一 URL 可能有多个页面
+    // （如浙大 SPA 不同学院各存一份渲染快照），按 URL 去重会让后来页面的
+    // 记录引用到不存在的 content_hash，导入时证据校验必然失败。
+    if (!seenContentForSnapshot.has(contentHash)) {
       snapshots.push({ content_hash: contentHash, source_id: item.source.id, raw_hash: rawHash, raw_base64: raw.toString("base64"), text_body: text, content_type: contentType, fetched_at: at });
-      seenUrls.add(url);
+      seenContentForSnapshot.add(contentHash);
+    }
+    if (!seenSourceIds.has(item.source.id)) {
+      sources.push({ ...item.source, url });
+      seenSourceIds.add(item.source.id);
     }
     attempts.push({ source_id: item.source.id, url, at, status: "collected", http_status: httpStatus, missing_fields: missingFields });
   } catch (error) {

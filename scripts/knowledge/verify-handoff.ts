@@ -37,13 +37,13 @@ for (const [index, entry] of entries.entries()) {
   if (!artifact.raw_path || !existsSync(artifact.raw_path)) errors.push(`${where}: raw_path 不存在 ${artifact.raw_path}`);
   const text = readFileSync(artifact.text_path, "utf8");
   const source = entry.source as { url?: string; published_at?: string | null; publication_date_note?: string; jurisdiction?: string; source_tier?: string };
-  // 默认要求 https。唯一例外：政府站点只提供 http（含其公布的 IP 端点），
-  // 且必须在 publication_date_note 里写明 https 通道不可用及取得方式，
-  // 否则视为不可复验的引用。
+  // 默认要求 https。唯一例外：政府站点（*.gov.cn）HTTPS 通道不可用时只提供
+  // http（实测湖南省统计局 https 报 TLS 错误）。不接受裸 IP 作为引用；
+  // 例外必须在 publication_date_note 里说明取得方式。
   const srcUrl = source.url ?? "";
-  const httpExceptionAllowed = /^http:\/\/(\d{1,3}(\.\d{1,3}){3}|[^/]*\.gov\.cn)(\/|:|$)/i.test(srcUrl)
-    && /https|http|IP|端点|通道/i.test(source.publication_date_note ?? "");
-  if (!/^https:/i.test(srcUrl) && !httpExceptionAllowed) errors.push(`${where}: url 必须是 https（政府站 http 例外需在 publication_date_note 披露）`);
+  const httpExceptionAllowed = /^http:\/\/[^/]*\.gov\.cn(\/|:|$)/i.test(srcUrl)
+    && /https|http|通道|方式/i.test(source.publication_date_note ?? "");
+  if (!/^https:/i.test(srcUrl) && !httpExceptionAllowed) errors.push(`${where}: url 必须是 https（.gov.cn 的 http 例外需在 publication_date_note 披露）`);
   if (!source.published_at && !source.publication_date_note) errors.push(`${where}: published_at 为 null 时必须写 publication_date_note`);
   if (source.source_tier !== "primary") errors.push(`${where}: source_tier 必须是 primary`);
 
