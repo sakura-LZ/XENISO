@@ -1,5 +1,9 @@
 import Link from "next/link";
 import { InkField } from "@/components/ink-field";
+import { ChromaInkStage } from "@/components/chroma-ink-stage";
+import { HomeScene } from "@/components/home-scene";
+import { FilingDrawer } from "@/components/filing-drawer";
+import { IconProfile, IconQuiz, IconPulse, IconCalendar } from "@/components/icons";
 import { groups } from "@/lib/directions";
 
 const steps = [
@@ -37,6 +41,9 @@ const steps = [
   },
 ];
 
+/* 四步各配一个手绘线描图标，和抽屉标签上的编号一起用 */
+const stepIcons = [<IconProfile key="p" />, <IconQuiz key="q" />, <IconPulse key="u" />, <IconCalendar key="c" />];
+
 const notes = [
   { kind: "求助", title: "跨考公共卫生，统计基础要补到什么程度？", meta: "3 条回复 · 2 小时前" },
   { kind: "经验", title: "从临床转医学信息，我第一年踩过的三个坑", meta: "17 条回复 · 昨天" },
@@ -73,54 +80,65 @@ export function HomeAtlas() {
             </p>
           </div>
 
-          <aside className="atlas-hero-side" data-atlas-reveal data-atlas-stagger>
-            <div className="atlas-sheet tilt-r">
-              <p className="atlas-label">现在收着</p>
-              <p className="atlas-hero-count"><strong>{groups.length}</strong> 类方向 · <strong>{directionCount}</strong> 个具体去向</p>
-              <p className="t-small">每一条都标了来源和抓取时间，没查到的就写没查到。</p>
-            </div>
-            <div className="atlas-sheet tilt-l">
-              <p className="atlas-label">第 1 步会问你什么</p>
-              <ul className="atlas-hero-list">
-                <li>这学期上过哪些课，哪几门你学得动</li>
-                <li>跟过什么项目、做过什么活，具体到能复述</li>
-                <li>会用什么工具，程度到哪一步</li>
-              </ul>
-            </div>
-            <div className="atlas-sheet">
-              <p className="atlas-label">不用先想清楚</p>
-              <p className="t-small">不知道要转去哪，是正常状态。第一步只盘点你手上已经有的东西，不要求你先选一个目标。</p>
-            </div>
-          </aside>
+          <HomeScene groupCount={groups.length} directionCount={directionCount} />
         </div>
       </section>
 
-      {/* ---------- 四步 ---------- */}
+      {/* ---------- 文字滚动带：跨学科方向主题 ---------- */}
+      <div className="xn-marquee" aria-label="跨学科方向主题">
+        <div className="xn-marquee-track">
+          {[0, 1].map((copy) => (
+            <div className="xn-marquee-group" key={copy} aria-hidden={copy === 1}>
+              {["课程", "见习", "科研", "技能", "工具", "病例", "数据"].map((word) => (
+                <span className="xn-marquee-item" key={word}>{word}</span>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ---------- 色键墨迹舞台：同一件事的四种看法 ---------- */}
+      <section className="chroma-band">
+        <div className="chroma-band-ink" aria-hidden="true">
+          <ChromaInkStage className="chroma-canvas" />
+        </div>
+        <div className="container chroma-band-inner">
+          <div className="chroma-copy" data-atlas-reveal>
+            <p className="atlas-label">色键墨迹 · 实时生成</p>
+            <h2 className="t-section">你走过的路，换个角度就能看见结构</h2>
+            <p>
+              左边这幅墨迹是实时画的：它先在绿幕上成形，再被逐像素抠掉底色，才叠到这张纸上。
+              你把鼠标横着移过去，它会换成下一个阶段——这四个阶段，正好是你接下来要走的四步。
+            </p>
+            <ul className="chroma-legend">
+              <li><b>墨环</b><span>盘点：环环相扣，先看清手上已有的东西</span></li>
+              <li><b>墨涡</b><span>评价：向内收拢，兴趣与能力的交集</span></li>
+              <li><b>脉迹</b><span>体验：真实节律，做过一次才知道</span></li>
+              <li><b>格纸</b><span>规划：排进周次，才算真的开始</span></li>
+            </ul>
+            <p className="chroma-hint">移动鼠标切换阶段</p>
+          </div>
+        </div>
+      </section>
+
       <section className="atlas-band" data-tone="paper-2">
         <div className="container">
           <div className="atlas-band-head" data-atlas-reveal>
             <h2 className="t-section">四步，每一步都留下能核对的东西</h2>
             <p className="t-lede">不是问卷填完给一段鸡汤。每一步都会生成一份你可以拿走、也可以推翻的材料。</p>
           </div>
-          <ol className="atlas-steps" data-atlas-reveal data-atlas-stagger>
-            {steps.map((step, index) => (
-              <li key={step.href}>
-                <Link className="atlas-sheet atlas-lift atlas-step" href={step.href}>
-                  <span className="atlas-tape tl" aria-hidden="true" />
-                  <div className="atlas-step-top">
-                    <span className="atlas-step-no">第 {index + 1} 步</span>
-                    <span className="atlas-chip">{step.time}</span>
-                  </div>
-                  <h3 className="t-item">{step.title}</h3>
-                  <p className="t-small">{step.lede}</p>
-                  <dl className="atlas-kv">
-                    <div><dt>产出</dt><dd>{step.output}</dd></div>
-                    <div><dt>为什么排这里</dt><dd>{step.why}</dd></div>
-                  </dl>
-                </Link>
-              </li>
-            ))}
-          </ol>
+          {/* 四步做成一只可以一格格拉开的档案抽屉：收起时只留编号、标题、时长，
+              想看细节就拉开那一格。默认第一格是开的，否则页面一进来像空的。 */}
+          <div data-atlas-reveal>
+            <FilingDrawer
+              className="home-filing-drawer"
+              steps={steps.map((step, index) => ({
+                ...step,
+                no: `0${index + 1}`,
+                icon: stepIcons[index],
+              }))}
+            />
+          </div>
         </div>
       </section>
 

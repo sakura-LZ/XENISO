@@ -1,0 +1,52 @@
+/* 导航与入口的图标接线。单独成文件，避免与 chrome.css 的并行编辑冲突。 */
+
+.site-nav a,
+.site-account,
+.site-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.site-nav-icon,
+.site-account-icon,
+.site-back-icon {
+  flex: 0 0 auto;
+  font-size: var(--fs-body);
+  opacity: .82;
+  transition: opacity 220ms var(--ease), transform 320ms cubic-bezier(.34, 1.56, .64, 1);
+}
+.site-nav a:hover .site-nav-icon,
+.site-nav a:focus-visible .site-nav-icon {
+  opacity: 1;
+  transform: translateY(-1px) scale(1.06);
+}
+.site-nav a[aria-current="page"] .site-nav-icon {
+  opacity: 1;
+}
+.site-account-icon { font-size: var(--fs-small); }
+.site-back-icon { font-size: var(--fs-small); }
+
+/* 手机端：主导航收进汉堡，所以给汉堡按钮补一个文字标签，
+   让"导航在哪"这件事不用猜。 */
+@media (max-width: 900px) {
+  .site-menu::after {
+    content: "导航";
+    margin-left: 6px;
+    font-family: var(--font-mono);
+    font-size: var(--fs-label);
+    letter-spacing: .08em;
+    color: var(--ink-2);
+  }
+  .site-menu {
+    width: auto;
+    padding: 0 10px;
+    gap: 0;
+  }
+  /* 展开后的面板里，图标和文字对齐得更松一点 */
+  .site-nav a { gap: 8px; }
+  .site-nav-icon { font-size: var(--fs-lead); }
+}
+@media (max-width: 360px) {
+  .site-menu::after { content: ""; margin: 0; }
+  .site-menu { padding: 0; width: 44px; }
+}

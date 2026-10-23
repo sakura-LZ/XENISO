@@ -72,7 +72,8 @@
   border: 2px solid var(--green);
   color: var(--green);
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
   letter-spacing: .18em;
   text-transform: uppercase;
   transform: rotate(-3deg);
@@ -93,7 +94,8 @@
 .atlas-label {
   display: block;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--ink-3);
@@ -107,7 +109,8 @@
   border: 1px solid var(--line);
   background: var(--paper-2);
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
   color: var(--ink-2);
   white-space: nowrap;
 }
@@ -133,8 +136,8 @@
 /* ---------- 键值小表 ---------- */
 .atlas-kv { display: grid; gap: 10px; }
 .atlas-kv > div { display: grid; grid-template-columns: 92px 1fr; gap: 14px; align-items: baseline; }
-.atlas-kv dt, .atlas-kv b { font-family: var(--font-mono); font-size: 13px; letter-spacing: .06em; color: var(--ink-3); font-weight: 500; }
-.atlas-kv dd, .atlas-kv i { margin: 0; font-style: normal; font-size: 16px; color: var(--ink-2); }
+.atlas-kv dt, .atlas-kv b { font-family: var(--font-mono); font-size: var(--fs-label); line-height: var(--lh-label); letter-spacing: .06em; color: var(--ink-3); font-weight: 500; }
+.atlas-kv dd, .atlas-kv i { margin: 0; font-style: normal; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-2); }
 
 /* ---------- 按钮 ---------- */
 .atlas-btn {
@@ -147,7 +150,7 @@
   border: 1px solid var(--line-strong);
   background: var(--surface);
   color: var(--ink);
-  font-size: 16px;
+  font-size: var(--fs-small);
   text-decoration: none;
   transition: transform 260ms var(--ease), box-shadow 260ms var(--ease), background 260ms var(--ease), border-color 260ms var(--ease);
 }

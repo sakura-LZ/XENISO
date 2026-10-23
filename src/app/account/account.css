@@ -13,15 +13,15 @@
 .account-head h1 {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: 46px;
-  line-height: 1.16;
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
   font-weight: 600;
 }
 .account-head p {
   margin: 16px 0 0;
   max-width: 760px;
-  font-size: 19px;
-  line-height: 1.72;
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
   color: var(--ink-2);
 }
 
@@ -31,22 +31,22 @@
 .account-section h2 {
   margin: 0 0 14px;
   font-family: var(--font-serif);
-  font-size: 26px;
-  line-height: 1.38;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
   font-weight: 600;
 }
 .account-section h3 {
   margin: 0 0 8px;
   font-family: var(--font-serif);
-  font-size: 20px;
-  line-height: 1.42;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
   font-weight: 600;
 }
 .account-section p {
-  margin: 0 0 12px;
+  margin: 0 0 var(--prose-gap);
   max-width: 70ch;
-  font-size: 17px;
-  line-height: 1.75;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
   color: var(--ink-2);
 }
 .account-section p:last-child { margin-bottom: 0; }
@@ -62,12 +62,12 @@
 }
 .account-kv dt {
   font-family: var(--font-mono);
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
   letter-spacing: .04em;
   color: var(--ink-3);
 }
-.account-kv dd { margin: 0; font-size: 17px; line-height: 1.7; color: var(--ink-2); }
+.account-kv dd { margin: 0; font-size: var(--fs-body); line-height: var(--lh-meta); color: var(--ink-2); }
 
 .account-section details {
   border-top: 1px solid var(--line-2);
@@ -75,16 +75,16 @@
 }
 .account-section details:last-of-type { border-bottom: 1px solid var(--line-2); }
 .account-section summary {
-  font-size: 17px;
+  font-size: var(--fs-body);
   font-weight: 600;
-  line-height: 1.6;
+  line-height: var(--lh-meta);
   color: var(--ink);
   list-style-position: outside;
   padding-left: 2px;
 }
 .account-section summary::marker { color: var(--green-deep); }
 .account-section summary:hover { color: var(--green-deep); }
-.account-section details p { margin: 10px 0 0; font-size: 16px; line-height: 1.72; color: var(--ink-2); }
+.account-section details p { margin: var(--prose-gap) 0 0; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-2); }
 
 .account-danger {
   border-color: color-mix(in srgb, var(--danger) 38%, var(--line));
@@ -100,7 +100,7 @@
   background: var(--danger-soft);
 }
 .account-confirm h3 { color: var(--danger); }
-.account-confirm p { font-size: 16px; }
+.account-confirm p { font-size: var(--fs-small); }
 
 .account-danger .button.danger { margin-top: 6px; }
 
@@ -108,16 +108,16 @@
 
 .account-foot-note {
   margin: 18px 0 0;
-  font-size: 15px;
-  line-height: 1.7;
+  font-size: var(--fs-meta);
+  line-height: var(--lh-small);
   color: var(--ink-3);
 }
 
 @media (max-width: 900px) {
   .account-page { padding-block: 36px 72px; }
-  .account-head h1 { font-size: 38px; }
-  .account-head p { font-size: 18px; }
+  .account-head h1 { }
+  .account-head p { }
   .account-section { padding: 22px 20px 20px; }
   .account-kv > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
-  .account-kv dt { font-size: 13px; }
+  .account-kv dt { }
 }

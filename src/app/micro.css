@@ -1,0 +1,536 @@
+/*
+ * XENISO · 微交互层（micro.css）
+ * ---------------------------------------------------------------------------
+ * 12 个原创效果的样式部分。只消费 globals.css / atlas.css 的 token，不新开色板、
+ * 不改任何既有的视觉原语；全部效果都是「增强」：没有 JS、关掉动效、打印时，
+ * 内容与排版一样完整。
+ *
+ * 引入方式（由 src/app/template.tsx 自行引入；若改到 layout.tsx，必须排在
+ * motion.css 之后）：
+ *   import "./micro.css";
+ *
+ * 手感取自 oil-ui-pro 的「动作 + 实物」：
+ *   墨滴  = 纸面洇开（快起慢收，420ms，无回弹）
+ *   划线  = 马克笔（匀速扫过 + 末端迟滞），520ms
+ *   铅字  = 活字压印（逐字 18ms，上浮 0.9em，±0.4deg 手摆误差）
+ *   倾斜  = 薄纸被指尖压出弧度（≤2.5deg，离开时 stiffness 高、damping 中）
+ *   磁吸  = 磁铁吸合（≤6px，24px 感应区）
+ *   抽卡  = 从档案夹里抽出（位移 + ≤1.8deg 随光标摆动 + 1.2% 放大）
+ *   落章  = 砸落（1.15 → .93 → 1 过冲，纸面 0.5px 抖动，尘点飞散）
+ *
+ * 克制约定：同一屏同时运动的元素不超过三个；本层里只有落章（一次性）、
+ * 光标墨迹（桌面、极淡）和滚动压痕会与既有入场动效同屏出现。
+ * ------------------------------------------------------------------------- */
+
+:root {
+  /* 本层独立命名，避免依赖 motion.css 的加载顺序 */
+  --xn-m-spring: cubic-bezier(.34, 1.5, .52, 1);
+  --xn-m-soft: cubic-bezier(.22, 1.22, .36, 1);
+  --xn-m-out: cubic-bezier(.16, 1, .3, 1);
+  --xn-m-sweep: cubic-bezier(.33, .68, .28, 1);
+  --xn-m-ink: color-mix(in srgb, var(--ink) 46%, transparent);
+}
+
+/* ===========================================================================
+ * 1. 墨滴点击反馈（ink drop）
+ *    点击 .atlas-btn / .scene-card / .atlas-step：从点击点洇开一团不规则的墨，
+ *    420ms 内淡出。形状由 ::before（墨心）与 ::after（色渗边）两层不规则圆构成，
+ *    位置由 JS 写 transform，扩散由 scale/opacity 关键帧完成——只动变换和透明度。
+ * ========================================================================= */
+.xn-fx-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 46;
+  pointer-events: none;
+  overflow: hidden;
+  contain: paint;
+}
+.xn-ink-drop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 136px;
+  height: 136px;
+  margin: -68px 0 0 -68px;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  will-change: scale, opacity;
+  --xn-ink: var(--xn-m-ink);
+}
+/* 墨心：不规则外轮廓，中心深、边缘浅，模拟纸纤维吸墨 */
+.xn-ink-drop::before {
+  content: "";
+  position: absolute;
+  inset: 14%;
+  border-radius: 46% 54% 51% 49% / 55% 44% 56% 45%;
+  background: radial-gradient(
+    circle at 44% 41%,
+    var(--xn-ink) 0%,
+    color-mix(in srgb, var(--xn-ink) 58%, transparent) 44%,
+    color-mix(in srgb, var(--xn-ink) 0%, transparent) 74%
+  );
+  filter: blur(.3px);
+}
+/* 色渗边：比墨心更慢、更虚的一圈，带一点点形状偏差 */
+.xn-ink-drop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 52% 48% 45% 55% / 46% 55% 45% 54%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--xn-ink) 0%, transparent) 46%,
+    color-mix(in srgb, var(--xn-ink) 34%, transparent) 64%,
+    color-mix(in srgb, var(--xn-ink) 0%, transparent) 84%
+  );
+  filter: blur(1.6px);
+}
+/* 深色按钮上用纸色墨，避免深底上看不见 */
+.xn-ink-drop[data-tone="paper"] { --xn-ink: color-mix(in srgb, var(--paper) 62%, transparent); }
+
+@keyframes xn-ink-a {
+  0%   { opacity: .88; scale: .16; rotate: -7deg; }
+  38%  { opacity: .62; }
+  74%  { opacity: .26; }
+  100% { opacity: 0;   scale: 1;   rotate: 2deg; }
+}
+@keyframes xn-ink-b {
+  0%   { opacity: .88; scale: .16; rotate: -7deg; }
+  38%  { opacity: .62; }
+  74%  { opacity: .26; }
+  100% { opacity: 0;   scale: 1;   rotate: 2deg; }
+}
+/* is-a / is-b 是同一组关键帧的两个名字：交替赋名即可重放，不需要强制重排 */
+.xn-ink-drop.is-a { animation: xn-ink-a 420ms cubic-bezier(.2, .72, .3, 1) forwards; }
+.xn-ink-drop.is-b { animation: xn-ink-b 420ms cubic-bezier(.2, .72, .3, 1) forwards; }
+
+/* ===========================================================================
+ * 2. 荧光笔划线（highlighter）
+ *    区块标题进入视口后，一条马克笔色带从左向右扫过标题下沿，520ms 只播一次。
+ *    末端略超出字宽（width 上限 13em）并用渐变收尾，另有一层更慢、更模糊的
+ *    ::before 作为「晕开」。由 JS 打 data-xn-mark="1" 触发。
+ * ========================================================================= */
+.t-section { position: relative; }
+
+.t-section::after {
+  content: "";
+  position: absolute;
+  left: -.05em;
+  bottom: -.06em;
+  width: min(100%, 13em);
+  height: max(3px, .1em);
+  border-radius: 3px 42% 4px 55% / 62% 50% 58% 48%;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--green-mark) 0%, transparent) 0%,
+    color-mix(in srgb, var(--green-mark) 42%, transparent) 5%,
+    color-mix(in srgb, var(--green-mark) 48%, transparent) 58%,
+    color-mix(in srgb, var(--green-mark) 30%, transparent) 93%,
+    color-mix(in srgb, var(--green-mark) 0%, transparent) 100%
+  );
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+.t-section::before {
+  content: "";
+  position: absolute;
+  left: -.05em;
+  bottom: -.05em;
+  width: min(100%, 13em);
+  height: max(5px, .16em);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--green-mark) 24%, transparent);
+  filter: blur(3px);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+.t-section[data-xn-mark="1"]::after { animation: xn-mark-band 520ms var(--xn-m-sweep) both; }
+.t-section[data-xn-mark="1"]::before { animation: xn-mark-bleed 720ms var(--xn-m-out) both; }
+
+@keyframes xn-mark-band {
+  0%   { opacity: 0;  transform: scaleX(.03); }
+  9%   { opacity: 1; }
+  76%  { opacity: 1;  transform: scaleX(.94); }
+  100% { opacity: .92; transform: scaleX(1); }
+}
+@keyframes xn-mark-bleed {
+  0%   { opacity: 0;  transform: scaleX(.06); }
+  34%  { opacity: .5; }
+  100% { opacity: .34; transform: scaleX(1); }
+}
+
+/* ===========================================================================
+ * 3. 铅字逐字浮现（lead type）
+ *    标题逐字上浮 0.9em + 各 ±0.4deg 的手摆误差 + 透明度，间隔 18ms。
+ *    只作用在视口下方、纯文本的 h1/h2（首屏标题不拆，避免首帧闪烁与 LCP 退化）；
+ *    JS 负责拆字并给标题 aria-label，逐字 span 一律 aria-hidden，读屏只读一遍原文。
+ * ========================================================================= */
+.xn-lead {
+  display: inline-block;
+  vertical-align: baseline;
+  opacity: 0;
+  transform: translate3d(0, .9em, 0) rotate(var(--xn-cr, .4deg));
+}
+h1.is-typing .xn-lead,
+h2.is-typing .xn-lead {
+  animation: xn-lead-in 620ms var(--xn-m-out) both;
+  animation-delay: calc(var(--xn-ci, 0) * 18ms + var(--xn-cdelay, 0ms));
+}
+@keyframes xn-lead-in {
+  0%   { opacity: 0; transform: translate3d(0, .9em, 0) rotate(var(--xn-cr, .4deg)); }
+  52%  { opacity: 1; }
+  100% { opacity: 1; transform: translate3d(0, 0, 0) rotate(0deg); }
+}
+
+/* ===========================================================================
+ * 4. 纸张跟随鼠标倾斜（paper tilt）
+ *    鼠标在首屏纸面上移动时，纸以中心为轴最多倾斜 ±2.5deg；离开后按弹簧曲线回正。
+ *    只在精确指针的 hover 设备上启用；用单独的 transform 组合，保留 reveal 的
+ *    opacity/filter 过渡。数据属性由 JS 写入，触屏完全不参与。
+ * ========================================================================= */
+@media (hover: hover) and (pointer: fine) {
+  .atlas-hero-sheet.atlas-sheet[data-xn-tilt="1"] {
+    transform: perspective(1200px) rotateX(var(--xn-tilt-x, 0deg)) rotateY(var(--xn-tilt-y, 0deg));
+    transform-origin: 50% 46%;
+    transition:
+      transform 680ms var(--xn-m-spring),
+      opacity 620ms var(--ease),
+      filter 620ms var(--ease);
+  }
+  .atlas-hero-sheet.atlas-sheet[data-xn-tilt="1"][data-xn-tilting] {
+    will-change: transform;
+    transition:
+      transform 110ms linear,
+      opacity 620ms var(--ease),
+      filter 620ms var(--ease);
+  }
+}
+
+/* ===========================================================================
+ * 5. 磁吸按钮（magnet）
+ *    主按钮在光标进入 24px 感应区后被吸向光标，最多 6px；离开回弹。
+ *    用独立的 translate 属性，和既有的 hover 位移（transform）叠加。
+ * ========================================================================= */
+@media (hover: hover) and (pointer: fine) {
+  .atlas-btn.atlas-btn-primary[data-xn-magnetic] {
+    translate: var(--xn-mx, 0px) var(--xn-my, 0px);
+    transition:
+      translate 480ms var(--xn-m-spring),
+      transform 340ms var(--xn-m-spring),
+      box-shadow 340ms var(--xn-m-spring),
+      background-color 180ms var(--ease),
+      border-color 180ms var(--ease),
+      color 180ms var(--ease);
+  }
+  /* 吸住时跟手：把 translate/transform 的时长压到一帧左右 */
+  .atlas-btn.atlas-btn-primary[data-xn-magnetic][data-xn-mag="1"] {
+    transition:
+      translate 90ms linear,
+      transform 90ms linear,
+      box-shadow 340ms var(--xn-m-spring),
+      background-color 180ms var(--ease),
+      border-color 180ms var(--ease),
+      color 180ms var(--ease);
+  }
+}
+
+/* ===========================================================================
+ * 6. 装订线进度（binding line）
+ *    屏幕左侧固定一条穿线装订：每个主区块一个装订孔，随滚动逐个点亮，
+ *    一根线按滚动进度长下去，到底部时全部点亮。窄屏（<1200px）不出现，
+ *    避免压到内容；滚动数据由 rAF 批量写入。
+ * ========================================================================= */
+.xn-binding {
+  position: fixed;
+  left: 26px;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: 34;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 16px;
+  padding: 6px 0;
+  pointer-events: none;
+}
+@media (min-width: 1200px) {
+  .xn-binding { display: flex; }
+}
+.xn-binding-track,
+.xn-binding-fill {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  margin-left: -.5px;
+}
+.xn-binding-track {
+  background: repeating-linear-gradient(180deg, var(--line-strong) 0 3px, transparent 3px 7px);
+  opacity: .45;
+}
+.xn-binding-fill {
+  background: var(--green-mark);
+  transform-origin: 50% 0;
+  transform: scaleY(0);
+}
+.xn-binding-dot {
+  position: relative;
+  z-index: 1;
+  width: 7px;
+  height: 7px;
+  margin: 9px 0;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  transition:
+    background-color 260ms var(--ease),
+    border-color 260ms var(--ease),
+    box-shadow 260ms var(--ease);
+}
+.xn-binding-dot[data-on="1"] {
+  background: var(--green-mark);
+  border-color: var(--green-deep);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--green-mark) 16%, transparent);
+}
+
+/* ===========================================================================
+ * 7. 抽卡（pull-out）
+ *    悬停首屏步骤卡：像从档案夹里抽出来——既有样式已给位移/阴影/z-index，
+ *    这一层补弹簧节奏、1.2% 放大和随光标左右摆动的 ≤1.8deg 倾斜。
+ *    离开后按弹簧回位。只在精确指针 hover 设备上启用。
+ * ========================================================================= */
+@media (hover: hover) and (pointer: fine) {
+  .hero-scene > .scene-card.scene-card {
+    rotate: var(--xn-c-rot, 0deg);
+    scale: var(--xn-c-scale, 1);
+    transition:
+      transform 380ms var(--xn-m-soft),
+      box-shadow 380ms var(--xn-m-out),
+      rotate 520ms var(--xn-m-spring),
+      scale 520ms var(--xn-m-spring);
+  }
+  .hero-scene > .scene-card.scene-card[data-xn-pulled] {
+    --xn-c-scale: 1.012;
+  }
+}
+
+/* ===========================================================================
+ * 8. 数字滚动（number roll）
+ *    由 JS 把数字包成 .xn-num，用 easeOutExpo 在 700ms 内从 0 滚到目标值。
+ *    等宽数字保证滚动时不抖宽。
+ * ========================================================================= */
+.xn-num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* ===========================================================================
+ * 9. 光标墨迹拖尾（ink trail）
+ *    桌面精确指针下，光标后面留 8 个极淡的墨点，逐个淡出；触屏与减少动效关闭。
+ *    位置只写 transform，淡出只动 opacity/scale。
+ * ========================================================================= */
+.xn-trail-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 36;
+  pointer-events: none;
+  overflow: hidden;
+  contain: paint;
+}
+.xn-trail-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 7px;
+  height: 7px;
+  margin: -3.5px 0 0 -3.5px;
+  border-radius: 50%;
+  background: var(--xn-m-ink);
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  will-change: scale, opacity;
+}
+.xn-trail-dot.is-a { animation: xn-trail-a 620ms cubic-bezier(.2, .7, .3, 1) forwards; }
+.xn-trail-dot.is-b { animation: xn-trail-b 620ms cubic-bezier(.2, .7, .3, 1) forwards; }
+@keyframes xn-trail-a {
+  0%   { opacity: .34; scale: .95; }
+  100% { opacity: 0;   scale: .42; }
+}
+@keyframes xn-trail-b {
+  0%   { opacity: .34; scale: .95; }
+  100% { opacity: 0;   scale: .42; }
+}
+
+/* ===========================================================================
+ * 10. 盖章落下（stamp drop）
+ *     印章从上方 1.15 倍砸下、压扁回弹，纸面 0.5px 抖动，几粒尘点飞散。
+ *     只接管首屏这枚统计章（motion.css 也写过一次下落；这里用更高优先级统一成
+ *     同一段节奏，并补上尘点与纸张震动，见交付说明）。
+ * ========================================================================= */
+@keyframes xn-stamp-drop {
+  0%   { opacity: 0; scale: 1.15; translate: 0 -16px; rotate: -3deg; }
+  52%  { opacity: 1; scale: .93;  translate: 0 2px;   rotate: 1deg; }
+  74%  { scale: 1.035; translate: 0 -1px; rotate: -.4deg; }
+  100% { opacity: 1; scale: 1;    translate: 0 0;    rotate: 0deg; }
+}
+@keyframes xn-stamp-float {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  50%      { translate: 0 -3px; rotate: .9deg; }
+}
+.hero-scene[data-atlas-in="1"] > .scene-stamp[data-xn-stamp="1"] {
+  transform-origin: 50% 42%;
+  animation:
+    xn-stamp-drop 760ms var(--xn-m-spring) 720ms both,
+    xn-stamp-float 6.6s ease-in-out 2400ms infinite;
+}
+/* 尘点：一圈不等距的小点，随落章向外扩散后消失 */
+@keyframes xn-stamp-dust {
+  0%   { opacity: 0;  scale: .35; translate: 0 0; }
+  16%  { opacity: .62; }
+  100% { opacity: 0;  scale: 1.45; translate: 0 7px; }
+}
+.hero-scene[data-atlas-in="1"] > .scene-stamp[data-xn-stamp="1"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 64%;
+  width: 104px;
+  height: 66px;
+  margin: -33px 0 0 -52px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-image:
+    radial-gradient(circle at 10% 38%, color-mix(in srgb, var(--ink) 52%, transparent) 0 1.3px, transparent 2.1px),
+    radial-gradient(circle at 28% 78%, color-mix(in srgb, var(--ink) 44%, transparent) 0 1px, transparent 1.9px),
+    radial-gradient(circle at 47% 20%, color-mix(in srgb, var(--ink) 48%, transparent) 0 1.2px, transparent 2px),
+    radial-gradient(circle at 68% 70%, color-mix(in srgb, var(--ink) 42%, transparent) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 88% 34%, color-mix(in srgb, var(--ink) 48%, transparent) 0 1.2px, transparent 2px);
+  animation: xn-stamp-dust 820ms cubic-bezier(.2, .7, .3, 1) 1150ms both;
+}
+/* 纸面被砸到时的 0.5px 抖动：只动 translate，不碰纸张自身的旋转 */
+@keyframes xn-paper-shake {
+  0%, 100% { translate: 0 0; }
+  18%      { translate: .5px .5px; }
+  42%      { translate: -.5px .5px; }
+  66%      { translate: .5px -.5px; }
+  84%      { translate: -.5px 0; }
+}
+.atlas-hero:has(.scene-stamp[data-xn-stamp="1"]) .atlas-hero-sheet {
+  animation: xn-paper-shake 240ms ease-out 1150ms both;
+}
+
+/* ===========================================================================
+ * 11. 段落压痕（paper crease）
+ *    两道区块交界处，随滚动出现一道极淡的纸张压痕：上暗下亮，像纸被压过一道。
+ *    离中心越远越淡，离开即消失（过渡 460ms）。由滚动 rAF 打 data-xn-crease。
+ * ========================================================================= */
+.atlas-band { --xn-crease: color-mix(in srgb, var(--ink) 15%, transparent); }
+.atlas-band[data-tone="night"] { --xn-crease: rgb(0 0 0 / .42); }
+.atlas-band::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  z-index: 2;
+  height: 34px;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, var(--xn-crease) 0, transparent 64%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 72%, transparent) 0, transparent 26%);
+  opacity: 0;
+  transition: opacity 460ms var(--ease);
+}
+.atlas-band[data-xn-crease="1"]::before { opacity: .6; }
+
+/* ===========================================================================
+ * 12. 路由级墨迹转场（route ink wipe）
+ *    template.tsx 每次站内导航都会重新挂载；纸色遮罩从盖住到向上擦除（320ms），
+ *    退出不阻塞：不做退场动画，新页面照常先渲染。
+ *    首次加载与 StrictMode 重挂不播（由 JS 判定），减少动效下完全不出现。
+ * ========================================================================= */
+.xn-route-veil {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  background: var(--paper-3);
+  transform: translate3d(0, -101%, 0);
+}
+/* 擦除边：一道墨色渐隐，像纸被掀起来 */
+.xn-route-veil::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 30px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 22%, transparent), transparent);
+}
+.xn-route-veil.is-play {
+  visibility: visible;
+  opacity: 1;
+  will-change: transform;
+  animation: xn-route-wipe 320ms var(--xn-m-out) both;
+}
+@keyframes xn-route-wipe {
+  0%   { transform: translate3d(0, 0, 0); opacity: 1; }
+  100% { transform: translate3d(0, -101%, 0); opacity: 1; }
+}
+
+/* ===========================================================================
+ * 13. 总兜底：减少动态效果 / 打印
+ *     一条规则把所有本层效果直接落到终态——内容不缺、不靠动画才出现。
+ * ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .xn-fx-layer,
+  .xn-trail-layer,
+  .xn-binding,
+  .xn-route-veil,
+  .xn-route-veil.is-play { display: none !important; }
+
+  .xn-lead {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .t-section::before,
+  .t-section::after {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .t-section::before { opacity: .3 !important; }
+
+  .atlas-hero-sheet.atlas-sheet[data-xn-tilt="1"] { transform: none !important; }
+
+  .atlas-btn.atlas-btn-primary[data-xn-magnetic] { translate: none !important; }
+
+  .hero-scene > .scene-card.scene-card { rotate: none !important; scale: none !important; }
+
+  .hero-scene[data-atlas-in="1"] > .scene-stamp[data-xn-stamp="1"] { animation: none !important; }
+  .hero-scene[data-atlas-in="1"] > .scene-stamp[data-xn-stamp="1"]::after { display: none !important; }
+  .atlas-hero:has(.scene-stamp[data-xn-stamp="1"]) .atlas-hero-sheet { animation: none !important; }
+
+  .atlas-band::before { display: none !important; }
+}
+
+@media print {
+  .xn-fx-layer,
+  .xn-trail-layer,
+  .xn-binding,
+  .xn-route-veil { display: none !important; }
+
+  .xn-lead { opacity: 1 !important; transform: none !important; animation: none !important; }
+  .t-section::before,
+  .t-section::after { opacity: .85 !important; transform: none !important; animation: none !important; }
+  .atlas-band::before { display: none !important; }
+}

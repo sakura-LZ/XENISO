@@ -1,0 +1,309 @@
+/*
+ * XENISO · 动效层（motion.css）
+ * ---------------------------------------------------------------------------
+ * 只做"动作"，不做视觉：纸面、印章、胶带的样子仍在 atlas.css / home.css。
+ * 颜色、字体、缓动全部沿用 globals.css 的 token，这里不新开色板。
+ *
+ * 引入方式（layout.tsx，必须排在 atlas.css / home.css 之后）：
+ *   import "./motion.css";
+ *
+ * 三层驱动：
+ *   1. 首屏入场     纯 CSS，首帧即生效，不依赖 JS（JS 挂了内容照样在）
+ *   2. 区块错峰     复用 xeniso-motion.tsx 已有的 pending/in 判定，不另造状态
+ *   3. 视差 + 进度  rAF 批量写 transform，滚动回调里只排帧、不读布局
+ *
+ * 手感（按"动作 + 实物"取值）：
+ *   砸落（印章）刚度高、阻尼低 → 过冲明显；浮动（纸片）振幅 2–4px、周期 4–8s。
+ *   过冲幅度跟着面积走：按钮/印章这类小物件 6–14%，整块面板不超过 2%。
+ * ------------------------------------------------------------------------- */
+
+:root {
+  /* 弹性：小物件（按钮、印章、卡片 hover）用带过冲的曲线 */
+  --xn-spring: cubic-bezier(.34, 1.56, .64, 1);      /* 过冲约 6% */
+  --xn-spring-soft: cubic-bezier(.22, 1.28, .36, 1); /* 过冲约 3%，纸片用 */
+  /* 减速入场：砸落、流淌之外都用它 */
+  --xn-out: cubic-bezier(.16, 1, .3, 1);
+  /* 错峰步长：40–80ms 一段，首屏 6 项总长约 0.7s（"依次出现总长不超过 600ms" + 一点余量） */
+  --xn-stagger-step: 46ms;
+}
+
+/* ===========================================================================
+ * 1. 首屏错峰入场（stagger）
+ *    标题先到，其余按阅读顺序跟上；只跑一次，不循环。
+ *    用独立的 translate/scale 属性做动画，这样能和 home.css 里卡片原有的
+ *    transform: rotate() 叠加，不会把纸片的倾斜抹平。
+ * ======================================================================== */
+@keyframes xn-rise {
+  from { opacity: 0; translate: 0 16px; }
+  to { opacity: 1; translate: 0 0; }
+}
+
+@keyframes xn-paper-in {
+  0% { opacity: 0; translate: 0 20px; }
+  60% { opacity: 1; }
+  100% { opacity: 1; translate: 0 0; }
+}
+
+.atlas-hero-sheet > * {
+  animation: xn-rise 420ms var(--xn-out) both;
+  animation-delay: calc(var(--xn-i, 0) * var(--xn-stagger-step) + 60ms);
+}
+.atlas-hero-sheet > :nth-child(1) { --xn-i: 0; }
+.atlas-hero-sheet > :nth-child(2) { --xn-i: 1; }
+.atlas-hero-sheet > :nth-child(3) { --xn-i: 2; }
+.atlas-hero-sheet > :nth-child(4) { --xn-i: 3; }
+.atlas-hero-sheet > :nth-child(5) { --xn-i: 4; }
+.atlas-hero-sheet > :nth-child(6) { --xn-i: 5; }
+.atlas-hero-sheet > :nth-child(7) { --xn-i: 6; }
+
+/* 主视觉四张卡：按 01→04 的顺序依次落下，最后一张弹一下就停 */
+.hero-scene > .scene-card { animation: xn-paper-in 520ms var(--xn-spring-soft) both; }
+.hero-scene > .scene-c1 { animation-delay: 210ms; }
+.hero-scene > .scene-c2 { animation-delay: 265ms; }
+.hero-scene > .scene-c3 { animation-delay: 320ms; }
+.hero-scene > .scene-c4 { animation-delay: 375ms; }
+.hero-scene > .scene-hand { animation: xn-rise 480ms var(--xn-out) 520ms both; }
+
+/* 通用错峰容器：给区块里的列表/卡片组加 data-xn-stagger 即可。
+ * 只有在 xeniso-motion 判定"该区块还在视口下方"并打上 pending 时才隐藏，
+ * 所以 JS 没跑、爬虫抓页、打印时内容默认是可见的。 */
+[data-xn-stagger] > * {
+  transition: opacity 560ms var(--xn-out), translate 560ms var(--xn-out);
+  transition-delay: calc(var(--xn-i, 0) * var(--xn-stagger-step));
+}
+[data-xn-stagger] > :nth-child(1) { --xn-i: 0; }
+[data-xn-stagger] > :nth-child(2) { --xn-i: 1; }
+[data-xn-stagger] > :nth-child(3) { --xn-i: 2; }
+[data-xn-stagger] > :nth-child(4) { --xn-i: 3; }
+[data-xn-stagger] > :nth-child(5) { --xn-i: 4; }
+[data-xn-stagger] > :nth-child(6) { --xn-i: 5; }
+[data-xn-stagger] > :nth-child(7) { --xn-i: 6; }
+[data-xn-stagger] > :nth-child(8) { --xn-i: 7; }
+[data-xn-stagger] > :nth-child(9) { --xn-i: 8; }
+[data-xn-stagger] > :nth-child(10) { --xn-i: 9; }
+[data-xn-stagger] > :nth-child(n+11) { --xn-i: 10; }
+
+[data-atlas-reveal][data-state="pending"] [data-xn-stagger] > *,
+[data-reveal][data-state="pending"] [data-xn-stagger] > *,
+[data-atlas-reveal][data-state="pending"][data-xn-stagger] > *,
+[data-xn-stagger][data-state="pending"] > * {
+  opacity: 0;
+  translate: 0 14px;
+}
+
+/* 已有的 .atlas-steps / .atlas-notes 错峰改用弹性收尾，纸片落位时轻轻顿一下。
+ * 选择器加了一档优先级（.atlas-steps.atlas-steps），不依赖文件引入顺序。 */
+.atlas-steps.atlas-steps > li,
+.atlas-notes.atlas-notes > li {
+  transition-timing-function: var(--xn-spring-soft);
+  transition-duration: 520ms;
+}
+
+/* ===========================================================================
+ * 2. 首屏视差（parallax）
+ *    墨迹底比内容"慢"，随滚动最多下移 48px；内容本身反向上移 22px。
+ *    数值由 xeniso-motion 的 rAF 写进这两个自定义属性，CSS 只负责消费。
+ *    墨迹层向上多留 60px，位移后有富余，不会露出纸底。
+ * ======================================================================== */
+.atlas-hero .atlas-hero-ink {
+  top: -60px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translate3d(0, var(--xn-ink-y, 0px), 0);
+}
+.atlas-hero .atlas-hero-inner {
+  transform: translate3d(0, var(--xn-content-y, 0px), 0);
+}
+
+/* ===========================================================================
+ * 3. 纸片浮动（float）
+ *    印章 / 胶带 / 图钉：4–8s 一个来回，位移 2–4px，旋转 ±1° 以内。
+ *    用 rotate 属性叠加，不覆盖它们各自的位置旋转。
+ * ======================================================================== */
+@keyframes xn-float-stamp {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  50% { translate: 0 -3px; rotate: .9deg; }
+}
+@keyframes xn-float-tape {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  50% { translate: 0 -2px; rotate: -.7deg; }
+}
+@keyframes xn-float-pin {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  50% { translate: 0 2px; rotate: 1.2deg; }
+}
+
+.scene-stamp { animation: xn-float-stamp 6.6s ease-in-out infinite; }
+.scene-tape { animation: xn-float-tape 5.4s ease-in-out infinite; }
+/* 四个角的胶带各自错开周期和相位，看起来不是同一阵风 */
+.scene-tape-tl { animation-duration: 5.2s; animation-delay: -1.1s; }
+.scene-tape-tr { animation-duration: 6.4s; animation-delay: -2.6s; }
+.scene-tape-bl { animation-duration: 7s; animation-delay: -3.4s; }
+.scene-tape-br { animation-duration: 4.8s; animation-delay: -.7s; }
+.atlas-pin { animation: xn-float-pin 4.6s ease-in-out infinite; }
+
+/* ===========================================================================
+ * 4. 弹性（spring）
+ *    按钮按下立刻陷、松开弹回；卡片上浮带一点过冲；印章"落下"。
+ * ======================================================================== */
+.atlas-btn.atlas-btn {
+  transition:
+    transform 340ms var(--xn-spring),
+    box-shadow 340ms var(--xn-spring),
+    background-color 180ms var(--ease),
+    border-color 180ms var(--ease),
+    color 180ms var(--ease);
+}
+@media (hover: hover) {
+  .atlas-btn.atlas-btn:hover { transform: translateY(-2px); box-shadow: var(--atlas-shadow-1); }
+}
+.atlas-btn.atlas-btn:active { transform: translateY(1px) scale(.985); transition-duration: 90ms; }
+
+.atlas-lift.atlas-lift { transition: transform 420ms var(--xn-spring-soft), box-shadow 420ms var(--xn-out); }
+@media (hover: hover) {
+  .atlas-lift.atlas-lift:hover { transform: translateY(-4px) rotate(-.2deg); box-shadow: var(--atlas-shadow-2); }
+}
+
+/* 主视觉卡片保留 home.css 的 -5px 抬升（那边是 !important），这里只换成弹性曲线 */
+.hero-scene > .scene-card { transition: transform 380ms var(--xn-spring-soft), box-shadow 380ms var(--xn-out); }
+
+/* 印章落下：从上方 12px、放大 1.42 倍砸下来，收尾过冲一次再停稳 */
+@keyframes xn-stamp-drop {
+  0% { opacity: 0; scale: 1.42; translate: 0 -12px; }
+  58% { opacity: 1; scale: .93; translate: 0 3px; }
+  80% { scale: 1.045; translate: 0 -1px; }
+  100% { opacity: 1; scale: 1; translate: 0 0; }
+}
+/* 落章跑完再交给浮动接管（浮动延迟 2.2s，两者不同时占用 translate） */
+.hero-scene[data-atlas-in="1"] .scene-stamp {
+  animation:
+    xn-stamp-drop 700ms var(--xn-spring) 760ms both,
+    xn-float-stamp 6.6s ease-in-out 2200ms infinite;
+}
+
+/* ===========================================================================
+ * 5. 顶部滚动进度条
+ *    DOM 由 xeniso-motion.tsx 创建并挂到 body，这里只管长相与定位。
+ *    transform: scaleX() 由 rAF 直接写，不做 transition（进度就是当前值）。
+ * ======================================================================== */
+.xn-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green-deep), var(--green) 55%, var(--ochre));
+  box-shadow: 0 1px 0 rgb(33 31 25 / .12);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+/* ===========================================================================
+ * 6. 文字滚动带（marquee）
+ *    用法见交付说明里的 JSX 片段：两层 .xn-marquee-group 内容完全一致，
+ *    轨道整体左移 50% 正好接回起点，所以是无缝的。
+ *    两端用 mask 渐隐，鼠标悬停暂停，减少动态效果时静止并允许换行。
+ * ======================================================================== */
+.xn-marquee {
+  --xn-marquee-duration: 42s;
+  position: relative;
+  overflow: hidden;
+  padding-block: 13px;
+  border-block: 1px solid var(--line);
+  background: var(--paper-2);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
+.xn-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: xn-marquee-scroll var(--xn-marquee-duration) linear infinite;
+}
+.xn-marquee:hover .xn-marquee-track,
+.xn-marquee:focus-within .xn-marquee-track { animation-play-state: paused; }
+/* 每组至少占满一屏：词少的时候由 space-around 均匀撑开，词多的时候自然占位。
+   这样"轨道左移 50%"永远等于"正好移动了一组"，不会在宽屏右端露出空白。 */
+.xn-marquee-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: none;
+  min-width: 100vw;
+}
+.xn-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  padding-right: 22px;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: .1em;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.xn-marquee-item::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  flex: none;
+  background: var(--ochre);
+  rotate: 45deg;
+  opacity: .6;
+}
+@keyframes xn-marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+@media (max-width: 760px) {
+  .xn-marquee { --xn-marquee-duration: 30s; padding-block: 10px; }
+  .xn-marquee-item { gap: 16px; padding-right: 16px; font-size: 15px; }
+}
+
+/* ===========================================================================
+ * 7. 降级：减少动态效果 / 打印
+ *    reduce 时所有状态直接到位，内容一样不少（不缺一项、不靠动画才出现）。
+ * ======================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .atlas-hero .atlas-hero-ink,
+  .atlas-hero .atlas-hero-inner { transform: none !important; }
+
+  .atlas-hero-sheet > *,
+  .hero-scene > .scene-card,
+  .hero-scene > .scene-hand,
+  .hero-scene[data-atlas-in="1"] .scene-stamp,
+  .scene-stamp,
+  .scene-tape,
+  .atlas-pin { animation: none !important; }
+
+  .atlas-hero-sheet > *,
+  .hero-scene > .scene-card,
+  .hero-scene > .scene-hand { opacity: 1 !important; translate: none !important; scale: none !important; }
+
+  .scene-stamp, .scene-tape, .atlas-pin { translate: none !important; rotate: none !important; }
+
+  [data-xn-stagger] > * { transition: none !important; opacity: 1 !important; translate: none !important; }
+
+  /* 文字带静止：去掉两端遮罩，两层内容折叠成一层可读的静态文字 */
+  .xn-marquee { -webkit-mask-image: none; mask-image: none; }
+  .xn-marquee-track { animation: none; transform: none; width: 100%; }
+  .xn-marquee-group[aria-hidden="true"] { display: none; }
+  .xn-marquee-group { min-width: 0; width: 100%; flex-wrap: wrap; justify-content: center; }
+  .xn-marquee-item { white-space: normal; }
+}
+
+@media print {
+  .xn-progress { display: none !important; }
+  .atlas-hero .atlas-hero-ink,
+  .atlas-hero .atlas-hero-inner { transform: none !important; }
+  .atlas-hero-sheet > *,
+  .hero-scene > .scene-card,
+  .hero-scene > .scene-hand,
+  .scene-stamp,
+  .scene-tape,
+  .atlas-pin,
+  .xn-marquee-track { animation: none !important; opacity: 1 !important; translate: none !important; scale: none !important; }
+}

@@ -1,0 +1,371 @@
+/*
+ * XENISO · 四步档案抽屉（filing-drawer）
+ * 只依赖 globals.css / atlas.css 里的 token 与纸面语言，不新开色板。
+ * 结构：柜面横梁 + 四个抽屉格；标签是抽屉面（纸签 + 铜拉手），
+ * 内容从柜口里拉出来，格口上方有一道内阴影当作抽屉暗部。
+ * 动效只动 grid-template-rows / transform / opacity；一次只动一格。
+ */
+
+.fd-drawer {
+  /* 抽屉的物理参数：拉出比推回慢，带一点过冲；推回是减速收口。 */
+  --fd-spring: cubic-bezier(.34, 1.56, .64, 1);
+  --fd-ease: cubic-bezier(.22, 1, .36, 1);
+  --fd-open: 420ms;
+  --fd-close: 260ms;
+  --fd-gap: 12px;
+  position: relative;
+  margin: 0;
+}
+
+/* ---------- 柜面横梁：四个抽屉从这里拉出来 ---------- */
+.fd-rail {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 14px 8px;
+  background: color-mix(in srgb, var(--paper-3) 86%, var(--ink));
+  border: 1px solid color-mix(in srgb, var(--ink) 34%, transparent);
+  border-bottom-width: 2px;
+  box-shadow:
+    0 5px 9px -7px rgba(33, 31, 25, .6),
+    inset 0 1px 0 rgba(255, 255, 255, .35);
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  letter-spacing: .1em;
+  color: var(--ink-3);
+}
+.fd-rail-title { color: var(--ink-2); }
+.fd-rail-hint { color: var(--ink-3); text-align: right; }
+
+/* ---------- 四格 ---------- */
+.fd-cells {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: var(--fd-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.fd-cell {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- 抽屉面：纸签 + 拉手 ---------- */
+.fd-tab {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  width: 100%;
+  min-height: 96px;
+  margin: 0;
+  padding: 13px 14px 27px;
+  background: var(--paper-2);
+  border: 1px solid color-mix(in srgb, var(--ink) 26%, transparent);
+  border-radius: 2px;
+  color: var(--ink);
+  text-align: left;
+  /* 推进柜里的抽屉面：上沿吃光，下沿留一道纸厚 */
+  box-shadow:
+    inset 0 3px 7px -4px rgba(33, 31, 25, .45),
+    0 1px 0 rgba(90, 76, 48, .12);
+  transition:
+    background-color 220ms var(--fd-ease),
+    border-color 220ms var(--fd-ease),
+    box-shadow 260ms var(--fd-ease);
+}
+
+/* 拉手：凹槽 + 铜条，两个伪元素画，不占布局 */
+.fd-tab::before,
+.fd-tab::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.fd-tab::before {
+  bottom: 10px;
+  width: 44px;
+  height: 9px;
+  margin-left: -22px;
+  background: color-mix(in srgb, var(--paper-2) 58%, var(--ink));
+  box-shadow:
+    inset 0 1px 2px rgba(33, 31, 25, .55),
+    0 1px 0 rgba(255, 255, 255, .45);
+}
+.fd-tab::after {
+  bottom: 13px;
+  width: 28px;
+  height: 3px;
+  margin-left: -14px;
+  background: var(--ochre);
+  opacity: .55;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+  transition: opacity 220ms var(--fd-ease);
+}
+
+/* 纸签：档案袋上的那张纸，各自歪一点，拉出来时才摆正 */
+.fd-slip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px 9px;
+  width: 100%;
+  padding: 7px 9px 8px;
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  box-shadow: 1px 1px 0 rgba(90, 76, 48, .16);
+  transform: rotate(-.55deg);
+  transition:
+    transform 340ms var(--fd-spring),
+    box-shadow 220ms var(--fd-ease);
+}
+.fd-cell:nth-child(2) .fd-slip { transform: rotate(.5deg); }
+.fd-cell:nth-child(3) .fd-slip { transform: rotate(-.4deg); }
+.fd-cell:nth-child(4) .fd-slip { transform: rotate(.65deg); }
+
+.fd-no {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  letter-spacing: .14em;
+  color: var(--ochre);
+}
+.fd-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-serif);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-label);
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--ink);
+}
+.fd-time {
+  flex: 0 0 auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  letter-spacing: .04em;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+
+/* ---------- 拉开 / 推回 ---------- */
+.fd-well {
+  display: grid;
+  grid-template-rows: 0fr;
+  /* 收起时整块从可访问树和 Tab 序列里消失（面板里的链接点不到），
+     visibility 推迟到收起动画结束才翻转，内容在收回过程中仍然看得见。 */
+  visibility: hidden;
+  transition-property: grid-template-rows, visibility;
+  transition-duration: var(--fd-close), 0s;
+  transition-timing-function: var(--fd-ease), linear;
+  transition-delay: 0s, var(--fd-close);
+}
+.fd-cell[data-open="true"] .fd-well {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition-property: grid-template-rows, visibility;
+  transition-duration: var(--fd-open), 0s;
+  transition-timing-function: var(--fd-spring), linear;
+  transition-delay: 0s, 0s;
+}
+/* 抽屉内部：比柜面暗一档，上沿一道内阴影就是被拉开的暗部 */
+.fd-well-inner {
+  min-height: 0;
+  overflow: hidden;
+  background: var(--paper-3);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--ink) 26%, transparent),
+    inset 0 18px 20px -18px rgba(33, 31, 25, .7),
+    inset 0 -14px 16px -16px rgba(33, 31, 25, .4);
+}
+.fd-body {
+  padding: 24px 14px 16px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition:
+    transform var(--fd-close) var(--fd-ease),
+    opacity 160ms linear;
+}
+.fd-cell[data-open="true"] .fd-body {
+  opacity: 1;
+  transform: none;
+  transition:
+    transform var(--fd-open) var(--fd-spring),
+    opacity 200ms var(--fd-ease) 80ms;
+}
+
+/* 拉开的那格：抽屉面被拉进光里，纸签摆正，拉手亮一点 */
+.fd-cell[data-open="true"] .fd-tab {
+  background: var(--paper);
+  border-color: color-mix(in srgb, var(--ink) 38%, transparent);
+  box-shadow:
+    0 2px 0 rgba(90, 76, 48, .14),
+    0 12px 20px -14px rgba(60, 48, 26, .6),
+    inset 0 1px 0 rgba(255, 255, 255, .5);
+}
+.fd-cell[data-open="true"] .fd-slip {
+  transform: rotate(0deg);
+  box-shadow: 2px 2px 0 rgba(90, 76, 48, .2);
+}
+.fd-cell[data-open="true"] .fd-tab::after { opacity: .9; }
+
+/* 悬停只让纸签和拉手先动，抽屉面不离开柜面 */
+@media (hover: hover) {
+  .fd-tab:hover {
+    background: color-mix(in srgb, var(--paper-2) 55%, var(--paper));
+    border-color: color-mix(in srgb, var(--ink) 34%, transparent);
+  }
+  .fd-tab:hover .fd-slip { transform: rotate(0deg) translateY(-1px); }
+  .fd-tab:hover::after { opacity: .85; }
+}
+.fd-tab:active { background: color-mix(in srgb, var(--paper-2) 80%, var(--ink)); }
+.fd-cell[data-open="true"] .fd-tab:active { background: var(--paper-2); }
+
+/* ---------- 抽屉里的内容 ---------- */
+.fd-lede {
+  margin: 0;
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--ink-2);
+}
+.fd-kv {
+  display: grid;
+  gap: 10px;
+  margin: 16px 0 0;
+  padding-top: 13px;
+  border-top: 1px dashed color-mix(in srgb, var(--ink) 28%, transparent);
+}
+.fd-kv > div { display: grid; gap: 2px; }
+.fd-kv dt {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  line-height: var(--lh-label);
+  letter-spacing: .1em;
+  color: var(--ink-3);
+}
+.fd-kv dd {
+  margin: 0;
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--ink);
+}
+.fd-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin-top: 12px;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 5px;
+  text-decoration-color: color-mix(in srgb, var(--green) 40%, transparent);
+  transition: color 180ms var(--fd-ease), text-decoration-color 180ms var(--fd-ease);
+}
+.fd-go:hover { color: var(--green-deep); text-decoration-color: currentColor; }
+.fd-go span { transition: transform 220ms var(--fd-ease); }
+.fd-go:hover span { transform: translateX(3px); }
+
+/* ---------- ≤900px：竖着排的档案盒，标签横跨整行 ---------- */
+@media (max-width: 900px) {
+  .fd-cells {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+  .fd-tab {
+    min-height: 0;
+    padding: 12px 13px 24px;
+  }
+  .fd-slip { transform: rotate(-.3deg); }
+  .fd-cell:nth-child(2) .fd-slip { transform: rotate(.28deg); }
+  .fd-cell:nth-child(3) .fd-slip { transform: rotate(-.24deg); }
+  .fd-cell:nth-child(4) .fd-slip { transform: rotate(.32deg); }
+  .fd-cell[data-open="true"] .fd-slip { transform: rotate(0deg); }
+  .fd-body { padding: 20px 13px 15px; }
+}
+
+/* 平板宽度的竖排：抽屉横跨整行，内容分两栏，不把正文拉成一行 50 字 */
+@media (min-width: 640px) and (max-width: 900px) {
+  .fd-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+    column-gap: 30px;
+    align-items: start;
+  }
+  .fd-lede { grid-column: 1; grid-row: 1; }
+  .fd-go { grid-column: 1; grid-row: 2; justify-self: start; }
+  .fd-kv {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    margin-top: 0;
+    padding-top: 0;
+    padding-left: 20px;
+    border-top: 0;
+    border-left: 1px dashed color-mix(in srgb, var(--ink) 28%, transparent);
+  }
+}
+
+/* ---------- ≤420px（390 视口）：不溢出，标签不截断 ---------- */
+@media (max-width: 420px) {
+  .fd-rail {
+    padding: 8px 11px 7px;
+    letter-spacing: .06em;
+  }
+  .fd-tab { padding: 11px 11px 23px; }
+  .fd-slip {
+    gap: 2px 7px;
+    padding: 6px 8px 7px;
+  }
+  .fd-title { font-size: var(--fs-body); }
+  .fd-body { padding: 18px 11px 14px; }
+}
+
+/* ---------- 减少动态效果：直接切换，内容一样不少 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .fd-tab,
+  .fd-slip,
+  .fd-well,
+  .fd-cell[data-open="true"] .fd-well,
+  .fd-body,
+  .fd-cell[data-open="true"] .fd-body,
+  .fd-tab::after,
+  .fd-go,
+  .fd-go span {
+    transition: none;
+  }
+  .fd-body,
+  .fd-cell[data-open="true"] .fd-body {
+    transform: none;
+  }
+}
+
+/* 标签上的手绘图标（由调用方传入）。放在编号之后、标题之前，
+   和编号同一视觉重量，不抢标题。 */
+.fd-icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  font-size: 19px;
+  color: var(--green-deep);
+  opacity: .8;
+  transition: opacity 220ms var(--ease), transform 320ms cubic-bezier(.34, 1.56, .64, 1);
+}
+.fd-tab:hover .fd-icon,
+.fd-tab:focus-visible .fd-icon { opacity: 1; transform: translateY(-1px); }
+.fd-cell[data-open="true"] .fd-icon { opacity: 1; }
+@media (max-width: 560px) {
+  .fd-icon { font-size: 17px; }
+}

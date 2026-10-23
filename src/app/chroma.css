@@ -1,0 +1,94 @@
+/* 色键墨迹舞台（ChromaInkStage）：绿幕绘制 + 片元着色器抠底 + 鼠标切换阶段。
+   单独成文件，避免与 home.css / motion.css 的并行编辑冲突。 */
+
+.chroma-band {
+  position: relative;
+  overflow: hidden;
+  padding: 76px 0 84px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+}
+.chroma-band-ink {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.chroma-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: .85;
+}
+.chroma-band-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 30rem) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  min-height: 320px;
+}
+.chroma-copy {
+  padding: 26px 28px;
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  box-shadow: 1px 2px 0 rgb(33 31 25 / .05);
+}
+.chroma-copy .t-section { margin: 10px 0 0; }
+.chroma-copy p { margin: 14px 0 0; color: var(--ink-2); line-height: var(--lh-body); }
+.chroma-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .06em;
+  color: var(--ochre);
+  line-height: var(--lh-label);
+}
+.chroma-hint::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: currentColor;
+  opacity: .6;
+}
+.chroma-legend {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.chroma-legend li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  color: var(--ink-3);
+}
+.chroma-legend b {
+  flex: 0 0 auto;
+  min-width: 3.2em;
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .1em;
+  color: var(--green-deep);
+}
+
+@media (max-width: 1024px) {
+  .chroma-band-inner { grid-template-columns: minmax(0, 1fr); min-height: 0; gap: 24px; }
+  .chroma-band { padding: 52px 0 58px; }
+}
+@media (max-width: 760px) {
+  .chroma-band { padding: 40px 0 46px; }
+  .chroma-copy { padding: 20px 18px; }
+  .chroma-legend li { }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chroma-canvas { opacity: .7; }
+}

@@ -1,0 +1,166 @@
+import Link from "next/link";
+import Image from "next/image";
+
+/**
+ * 首屏主视觉：一只摊开的档案夹，四张手写卡按步骤钉在里面，中间用虚线串起来。
+ * 图形全部是内联 SVG（来自 redesign/xeniso.html 的手绘图形库），不额外请求图片，
+ * 也不依赖 canvas，所以在任何浏览器里都能出来。
+ */
+
+const art = {
+  profile: (
+    <>
+      <rect x="14" y="10" width="112" height="80" rx="1.5" fill="none" stroke="#4a5d3a" strokeWidth="1.4" />
+      <line x1="14" y1="28" x2="126" y2="28" stroke="#4a5d3a" strokeWidth="1.2" />
+      <circle cx="26" cy="19" r="4.6" fill="none" stroke="#37452b" strokeWidth="1.2" />
+      <line x1="34" y1="17" x2="70" y2="17" stroke="#37452b" strokeWidth="1" />
+      <line x1="34" y1="22" x2="58" y2="22" stroke="#37452b" strokeWidth=".8" strokeDasharray="2 2" />
+      <g stroke="#37452b" strokeWidth=".9">
+        <line x1="22" y1="40" x2="74" y2="40" /><line x1="22" y1="52" x2="66" y2="52" />
+        <line x1="22" y1="64" x2="72" y2="64" /><line x1="22" y1="76" x2="60" y2="76" />
+      </g>
+      <g fill="none" stroke="#8f4726" strokeWidth="1">
+        <rect x="92" y="36" width="5" height="5" /><rect x="99" y="36" width="5" height="5" />
+        <rect x="106" y="36" width="5" height="5" /><rect x="113" y="36" width="5" height="5" />
+        <rect x="120" y="36" width="5" height="5" />
+        <rect x="92" y="48" width="5" height="5" /><rect x="99" y="48" width="5" height="5" />
+        <rect x="106" y="48" width="5" height="5" /><rect x="113" y="48" width="5" height="5" />
+        <rect x="120" y="48" width="5" height="5" />
+        <rect x="92" y="60" width="5" height="5" /><rect x="99" y="60" width="5" height="5" />
+        <rect x="106" y="60" width="5" height="5" /><rect x="113" y="60" width="5" height="5" />
+        <rect x="120" y="60" width="5" height="5" />
+        <rect x="92" y="72" width="5" height="5" /><rect x="99" y="72" width="5" height="5" />
+        <rect x="106" y="72" width="5" height="5" /><rect x="113" y="72" width="5" height="5" />
+        <rect x="120" y="72" width="5" height="5" />
+      </g>
+      <g fill="#4a5d3a">
+        <rect x="92" y="36" width="5" height="5" /><rect x="99" y="36" width="5" height="5" />
+        <rect x="113" y="36" width="5" height="5" />
+        <rect x="99" y="48" width="5" height="5" /><rect x="106" y="48" width="5" height="5" />
+        <rect x="92" y="60" width="5" height="5" />
+        <rect x="106" y="72" width="5" height="5" /><rect x="120" y="72" width="5" height="5" />
+      </g>
+    </>
+  ),
+  radar: (
+    <>
+      <g fill="none" stroke="#37452b" strokeWidth=".9">
+        <polygon points="70,14 101,32 101,68 70,86 39,68 39,32" />
+        <polygon points="70,26 92,38 92,62 70,74 48,62 48,38" />
+        <polygon points="70,38 82,46 82,54 70,62 58,54 58,46" />
+        <line x1="70" y1="14" x2="70" y2="86" /><line x1="39" y1="32" x2="101" y2="68" />
+        <line x1="101" y1="32" x2="39" y2="68" />
+      </g>
+      <polygon points="70,22 96,34 88,60 70,78 50,60 52,40" fill="rgba(74,93,58,.22)" stroke="#4a5d3a" strokeWidth="1.6" />
+      <g fill="#8f4726">
+        <circle cx="70" cy="22" r="2" /><circle cx="96" cy="34" r="2" /><circle cx="88" cy="60" r="2" />
+        <circle cx="70" cy="78" r="2" /><circle cx="50" cy="60" r="2" /><circle cx="52" cy="40" r="2" />
+      </g>
+      <line x1="20" y1="92" x2="120" y2="92" stroke="#37452b" strokeWidth=".8" strokeDasharray="3 3" />
+    </>
+  ),
+  ecg: (
+    <>
+      <path d="M8,52 L26,52 L32,52 L38,28 L44,74 L50,52 L64,52 L70,44 L76,52 L96,52 L102,52 L108,34 L114,68 L120,52 L132,52" fill="none" stroke="#4a5d3a" strokeWidth="1.8" strokeLinejoin="round" />
+      <line x1="8" y1="34" x2="132" y2="34" stroke="#8f4726" strokeWidth="1" strokeDasharray="4 4" />
+      <line x1="96" y1="16" x2="96" y2="86" stroke="#8f4726" strokeWidth="1" strokeDasharray="2 3" />
+      <circle cx="96" cy="52" r="2.6" fill="#8f4726" />
+      <g stroke="#37452b" strokeWidth=".7" opacity=".55">
+        <line x1="8" y1="88" x2="132" y2="88" />
+        <line x1="20" y1="86" x2="20" y2="90" /><line x1="40" y1="86" x2="40" y2="90" />
+        <line x1="60" y1="86" x2="60" y2="90" /><line x1="80" y1="86" x2="80" y2="90" />
+        <line x1="100" y1="86" x2="100" y2="90" /><line x1="120" y1="86" x2="120" y2="90" />
+      </g>
+    </>
+  ),
+  week: (
+    <>
+      <g stroke="#37452b" strokeWidth=".9" fill="none">
+        <rect x="16" y="16" width="108" height="70" rx="1.5" />
+        <line x1="16" y1="30" x2="124" y2="30" />
+        <line x1="38" y1="16" x2="38" y2="86" /><line x1="60" y1="16" x2="60" y2="86" />
+        <line x1="82" y1="16" x2="82" y2="86" /><line x1="104" y1="16" x2="104" y2="86" />
+        <line x1="16" y1="48" x2="124" y2="48" /><line x1="16" y1="66" x2="124" y2="66" />
+      </g>
+      <g fill="rgba(74,93,58,.3)" stroke="#4a5d3a" strokeWidth=".8">
+        <rect x="17" y="31" width="20" height="16" /><rect x="39" y="31" width="20" height="16" />
+        <rect x="61" y="49" width="20" height="16" /><rect x="83" y="49" width="20" height="16" />
+        <rect x="105" y="31" width="18" height="16" />
+      </g>
+      <g fill="rgba(143,71,38,.28)" stroke="#8f4726" strokeWidth=".8">
+        <rect x="39" y="67" width="20" height="16" /><rect x="83" y="31" width="20" height="16" />
+      </g>
+      <path d="M16,92 L124,92" stroke="#37452b" strokeWidth=".8" strokeDasharray="3 3" />
+    </>
+  ),
+} as const;
+
+type SceneCard = {
+  href: string;
+  no: string;
+  title: string;
+  art: keyof typeof art;
+  desc: string;
+  left: string;
+  right: string;
+  state: string;
+  tape: "tl" | "tr" | "bl" | "br";
+};
+
+const cards: SceneCard[] = [
+  { href: "/profile", no: "01", title: "个人画像", art: "profile", desc: "课程、见习、科研、技能，按 0–4 级勾一遍。", left: "约 10 分钟", right: "现在可做", state: "现在可做", tape: "tl" },
+  { href: "/report/initial", no: "02", title: "初步评价", art: "radar", desc: "30 道兴趣题，结果分四栏看。", left: "等第一步填完", right: "待解锁", state: "待解锁", tape: "tr" },
+  { href: "/experience", no: "03", title: "职业体验", art: "ecg", desc: "挑一个真实任务做一遍，卡住可以问导师。", left: "等评价出来", right: "待解锁", state: "待解锁", tape: "bl" },
+  { href: "/report/plan", no: "04", title: "行动规划", art: "week", desc: "把体验结果排成一周能执行的表。", left: "等体验做完", right: "待解锁", state: "待解锁", tape: "br" },
+];
+
+export function HomeScene({ groupCount, directionCount }: { groupCount: number; directionCount: number }) {
+  return (
+    <div className="hero-scene" data-atlas-reveal>
+      <div className="scene-folder" aria-hidden="true" />
+
+      {/* 档案原件：一张公有领域的解剖图版，像被随手夹进档案夹的复印件。
+          它不是为了好看而放的装饰图，而是这个站"每条结论都要有出处"的物证。 */}
+      <figure className="scene-archive">
+        <Image
+          src="/generated/W3-hsyw2whj.jpg"
+          alt="19 世纪人体解剖图版，Jones Quain 编，Wellcome Collection 藏"
+          width={1189}
+          height={1600}
+          sizes="(max-width: 1024px) 120px, 160px"
+        />
+        <figcaption>Quain 解剖图版 · Wellcome Collection</figcaption>
+      </figure>
+
+      <svg className="scene-thread" viewBox="0 0 680 600" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M196,150 C280,168 300,196 360,214" fill="none" stroke="#8f4726" strokeWidth="1.6" strokeDasharray="6 6" opacity=".55" />
+        <path d="M470,250 C420,300 330,300 268,330" fill="none" stroke="#8f4726" strokeWidth="1.6" strokeDasharray="6 6" opacity=".55" />
+        <path d="M420,430 C470,440 500,470 540,486" fill="none" stroke="#8f4726" strokeWidth="1.6" strokeDasharray="6 6" opacity=".5" />
+        <circle cx="360" cy="214" r="3.2" fill="#8f4726" opacity=".7" />
+        <circle cx="268" cy="330" r="3.2" fill="#8f4726" opacity=".7" />
+        <circle cx="540" cy="486" r="3.2" fill="#8f4726" opacity=".6" />
+      </svg>
+
+      {cards.map((card, index) => (
+        <Link key={card.href} href={card.href} className={`scene-card scene-c${index + 1}`} data-atlas-stagger>
+          <span className={`scene-tape scene-tape-${card.tape}`} aria-hidden="true" />
+          <span className="scene-no">{card.no}</span>
+          <span className="scene-title">{card.title}</span>
+          <span className="scene-art" aria-hidden="true">
+            <svg viewBox="0 0 140 100">{art[card.art]}</svg>
+          </span>
+          <span className="scene-d">{card.desc}</span>
+          <span className="scene-st">
+            <span>{card.left}</span>
+            <b>{card.right}</b>
+          </span>
+        </Link>
+      ))}
+
+      <p className="scene-stamp" aria-hidden="true">
+        {groupCount} 类方向<br />{directionCount} 个去向
+      </p>
+      <p className="scene-hand">不知道要转去哪，是正常状态。第一步只盘点你手上已经有的东西。</p>
+    </div>
+  );
+}

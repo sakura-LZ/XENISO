@@ -3,9 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { IconBack, IconHome, IconCompass, IconBook, IconChat, IconAccount } from "@/components/icons";
 
 const journey = [["/profile", "个人画像"], ["/report/initial", "初步评价"], ["/experience", "职业体验"], ["/report/plan", "行动规划"]] as const;
-const destinations = [["/", "首页"], ["/profile", "异域探索"], ["/explore", "信息文库"], ["/community", "交流社区"]] as const;
+const destinations = [
+  ["/", "首页", IconHome],
+  ["/profile", "异域探索", IconCompass],
+  ["/explore", "信息文库", IconBook],
+  ["/community", "交流社区", IconChat],
+] as const;
 
 function Header({ pathname, exploring }: { pathname: string; exploring: boolean }) {
   const [open, setOpen] = useState(false);
@@ -32,13 +38,21 @@ function Header({ pathname, exploring }: { pathname: string; exploring: boolean 
   const current = (href: string) => href === "/profile" ? exploring : href === "/" ? pathname === "/" : pathname.startsWith(href);
   return <header className="site-header" data-scrolled={scrolled} data-motion="M-G01">
     <div className="site-header-inner container">
-      {pathname !== "/" && <button type="button" className="site-back" onClick={goBack} aria-label="返回上一页"><span aria-hidden="true">←</span><span className="site-back-label">返回</span></button>}
+      {pathname !== "/" && <button type="button" className="site-back" onClick={goBack} aria-label="返回上一页"><IconBack className="site-back-icon" /><span className="site-back-label">返回</span></button>}
       <Link href="/" className="site-brand" aria-label="XENISO 异域同构首页"><Image src="/brand/xeniso-logo.webp" alt="XENISO 异域同构" width={1210} height={340} priority sizes="172px" /></Link>
       <nav id="primary-navigation" className="site-nav" data-open={open} aria-label="主导航">
-        {destinations.map(([href, title]) => <Link href={href} key={href} onClick={() => setOpen(false)} aria-current={current(href) ? "page" : undefined}>{title}</Link>)}
+        {destinations.map(([href, title, Icon]) => (
+          <Link href={href} key={href} onClick={() => setOpen(false)} aria-current={current(href) ? "page" : undefined}>
+            <Icon className="site-nav-icon" />
+            <span>{title}</span>
+          </Link>
+        ))}
       </nav>
       <div className="site-tools">
-        <Link href="/account" className="site-account" aria-current={pathname.startsWith("/account") ? "page" : undefined}>我的资料</Link>
+        <Link href="/account" className="site-account" aria-current={pathname.startsWith("/account") ? "page" : undefined}>
+          <IconAccount className="site-account-icon" />
+          <span>我的资料</span>
+        </Link>
         <button ref={button} type="button" className="site-menu" aria-expanded={open} aria-controls="primary-navigation" aria-label={open ? "收起导航" : "展开导航"} onClick={() => setOpen(!open)}><span /><span /></button>
       </div>
     </div>
