@@ -32,6 +32,8 @@ export type PlanStage = {
   goal: string;
   exit: string;
   basis: "官方" | "惯例";
+  /** 相对"现在"的位置：已经过去、正在这一段、还没到。 */
+  state: "past" | "current" | "future";
   /** 这一阶段里每年都要重新核对的东西；没有就留空。 */
   verify: string;
   task_ids: string[];
@@ -94,7 +96,7 @@ type Assembled = {
   bounds: { id: string; start: number; end: number }[];
 };
 
-function assemble(seeds: StageSeed[], source: string): Assembled {
+function assemble(seeds: StageSeed[], source: string, nowIndex: number): Assembled {
   const stages: PlanStage[] = [];
   const tasks: PlanTask[] = [];
   const bounds: Assembled["bounds"] = [];
@@ -109,6 +111,7 @@ function assemble(seeds: StageSeed[], source: string): Assembled {
       goal: seed.goal,
       exit: seed.exit,
       basis: seed.basis,
+      state: nowIndex > end ? "past" : nowIndex < start ? "future" : "current",
       verify: seed.verify ?? "",
       task_ids: seed.tasks.map((item) => item.id),
     });
@@ -416,9 +419,9 @@ export function buildPathwayPlan(input: {
   if (!seeds) return null;
 
   const source = stageSources.template(pathway);
-  const { stages, tasks, bounds } = assemble(seeds, source);
-
   const nowIndex = monthIndex(now.getUTCFullYear(), now.getUTCMonth() + 1);
+  const { stages, tasks, bounds } = assemble(seeds, source, nowIndex);
+
   const startIndex = bounds[0].start;
   const endIndex = bounds[bounds.length - 1].end;
   const anchor = pathway === "统考" ? monthIndex(transitionYear - 1, 12) : monthIndex(transitionYear - 1, 9);

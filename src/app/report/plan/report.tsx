@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { useCallback, useEffect, useState, type CSSProperties } from "react";
 import { z } from "zod";
@@ -152,7 +152,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
       {setup !== "none" && <section id="plan-conditions" className="atlas-sheet xr-sec xr-setup" data-atlas-reveal>
         <div className="xr-sec-head"><h2>这一步还排不了</h2><span className="xr-sec-tag">需要先完成第 1–3 步</span></div>
         <p className="xr-body-text">
-          行动规划不产生资料，它只读三份已经保存的东西：个人画像、官方兴趣结果、一次完整的职业体验。
+          这一页不收集新资料，只读三样已经保存的东西：个人画像、官方兴趣结果、一次完整的职业体验。
           {setup === "guest" ? "当前浏览器没有登录会话（画像、兴趣、体验三个接口都返回 401），所以这里一份也读不到。" : "这个账号下还没有保存个人画像，所以这里没有可排的条件。"}
           与其给一个填了也出不来结果的表单，不如先把入口摆在这里。
         </p>
@@ -313,13 +313,15 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
                 <ul className="xr-stage-index">{plan.planning.stages.map((stage, index) => <li key={stage.id}><a href={`#plan-stage-${index}`}>{stage.name}</a></li>)}</ul>
 
                 <div className="xr-timeline" data-atlas-reveal>
-                  {plan.planning.stages.map((stage, index) => <section id={`plan-stage-${index}`} className="xr-stage" key={stage.id}>
+                  {plan.planning.stages.map((stage, index) => <section id={`plan-stage-${index}`} className="xr-stage" data-state={stage.state} key={stage.id}>
                     <svg className="xr-stage-ink atlas-draw" viewBox="0 0 12 100" preserveAspectRatio="none" aria-hidden="true"><line x1="6" y1="0" x2="6" y2="100" style={{ "--len": 130 } as CSSProperties} /></svg>
                     <span className="xr-stage-node" aria-hidden="true" />
                     <div className="xr-stage-head">
                       <h3>{stage.name}</h3>
                       <span className="xr-stage-window">{stage.window}</span>
                       <span className="atlas-chip" data-tone={stage.basis === "官方" ? "ok" : undefined}>{stage.basis === "官方" ? "官方节点" : "通行惯例"}</span>
+                      {stage.state === "current" && <span className="atlas-chip" data-tone="ok">你现在在这里</span>}
+                      {stage.state === "past" && <span className="atlas-chip" data-tone="gap">已过</span>}
                     </div>
                     <p className="xr-stage-goal">{stage.goal}</p>
                     <p className="xr-stage-exit"><b>这一段的判据</b>{stage.exit}</p>
@@ -369,7 +371,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
 
             <section id="plan-admissions" className="atlas-sheet xr-sec" data-atlas-reveal>
               <div className="xr-sec-head"><h2>升学核验与备选</h2><span className="xr-sec-tag">招生条目：没查到</span></div>
-              <p className="xr-body-text">当前没有已核验的招生项目，所以这一栏只给核验清单，不给结论。下面每条都要你自己拿官方原文核对一遍，核过的写上日期。</p>
+              <p className="xr-body-text">还没有已核验的招生条目，所以这一栏只给要查什么，不给结论。阶段计划里「定位与资格核验」那几条也是同一件事——那边是待办，这里是要填的表。每条都拿官方原文核一遍，核过的写上日期。</p>
               <dl className="xr-check">{[["学校与项目", "核实院校、项目名称、专业代码与招生方式。"], ["目标年份", "核实招生年份、报名和考核时间，记录发布日期。"], ["报考条件", "核实跨专业资格、考试科目、语言与复试要求。"], ["官方来源", "保存项目官方 URL、原文与本次核验日期。"]].map(([title, content]) => <div key={title}><dt>{title}</dt><dd>{content}</dd></div>)}</dl>
               <h3 className="xr-stack">已知风险</h3>
               <ul className="xr-gaps">{plan.risks.map(risk => <li key={risk}>{risk}</li>)}</ul>
@@ -380,7 +382,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
 
             <section id="plan-explanation" className="atlas-sheet xr-sec" data-atlas-reveal>
               <div className="xr-sec-head"><h2>解释与导出</h2><span className="xr-sec-tag">规则预览与 AI 解读分开</span></div>
-              <p className="xr-body-text">规则预览和 AI 解读是两份东西：预览不联网就能看，AI 解读要另外生成，需要已保存的画像、官方兴趣、职业体验和上面这组有效条件。</p>
+              <p className="xr-body-text">规则预览和 AI 解读是两件事：预览不联网就能看；AI 解读要单独生成，需要已保存的画像、官方兴趣、职业体验，以及上面这组有效条件。</p>
               <div className="xr-ai"><AiReport key={JSON.stringify([direction, alternatives, profile.transition_year, profile.weekly_hours, profile.pathway, budget, loaded, simulation])} kind="R2" direction={findDirection(direction)?.id} alternatives={alternatives} enabled={ready && !simulation && !!assessment} planning={{ transition_year: profile.transition_year, weekly_hours: profile.weekly_hours, pathway: profile.pathway, weekly_allocation: budget }} /></div>
               <div className="xr-actions xr-stack">
                 <button className="atlas-btn" type="button" disabled={!ready} onClick={exportDraft}>导出行动计划</button>
@@ -402,3 +404,4 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
     </div>
   </main>;
 }
+

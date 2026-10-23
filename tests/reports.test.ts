@@ -126,6 +126,14 @@ test("simulation P4: 统考 stages follow the standard preparation rhythm with d
   for (const stage of stages) assert.doesNotMatch(`${stage.goal}${stage.exit}${stage.verify}`, /\d{4}-\d{2}-\d{2}/);
 });
 
+test("simulation P4: stage positions mark what has passed, what is current, and what is ahead", () => {
+  // 目标年份 2028、当前 2027-08：前四段已过，强化轮正在走，后面两段还没到。
+  const plan = actionPlan({ ...simulationProfile, pathway: "统考" }, "ml_cv", null, new Date("2027-08-15"));
+  const states = plan.planning!.stages.map((stage) => [stage.id, stage.state]);
+  assert.deepEqual(states, [["locate", "past"], ["prerequisite", "past"], ["base", "past"], ["intensify", "current"], ["real", "future"], ["sprint", "future"], ["post", "future"]]);
+  assert.equal(plan.planning!.stages.filter((stage) => stage.state === "current").length, 1);
+});
+
 test("simulation P4: cross-major adds a prerequisite stage, staying in clinical medicine does not", () => {
   const cross = actionPlan({ ...simulationProfile, pathway: "统考" }, "ml_cv", null, new Date("2026-10-20"));
   const same = actionPlan({ ...simulationProfile, pathway: "统考" }, "medicine", null, new Date("2026-10-20"));

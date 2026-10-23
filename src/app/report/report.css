@@ -111,7 +111,7 @@
 .xr-cover-side .atlas-stamp { opacity: 1; color: var(--green-deep); border-color: var(--green-deep); }
 .xr-cover-side .atlas-stamp.ochre { color: var(--ochre); border-color: var(--ochre); }
 @media (max-width: 760px) {
-  .xr-cover-side { align-items: flex-start; flex-direction: row; flex-wrap: wrap; max-width: none; }
+  .xr-cover-side { align-items: flex-start; flex-direction: row; flex-wrap: wrap; max-width: 100%; min-width: 0; }
 }
 
 .xr-meta {
@@ -538,6 +538,17 @@
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--green-soft) 70%, transparent);
 }
 .xr-stage > h3 { margin: 0; font-size: 21px; line-height: 1.4; }
+
+/* 时间轴上的位置：已过的收暗，当前这一段把节点做实 */
+.xr-stage[data-state="past"] .xr-stage-node { border-color: var(--line-strong); background: var(--surface); box-shadow: none; }
+.xr-stage[data-state="past"] > .xr-stage-head > h3 { color: var(--ink-3); }
+.xr-stage[data-state="past"] .xr-stage-ink line { stroke: var(--line); }
+.xr-stage[data-state="current"] .xr-stage-node {
+  border-color: var(--green);
+  background: var(--green);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--green-soft) 85%, transparent);
+}
+.xr-stage[data-state="current"] > .xr-stage-head > h3 { font-size: 23px; }
 .xr-stage-exit { margin: 6px 0 0; font-size: 16px; line-height: 1.75; color: var(--ink-3); max-width: 44em; }
 .xr-stage-exit b,
 .xr-stage-verify b { font-weight: 600; color: var(--ink-2); }
