@@ -23,6 +23,8 @@
   display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 28px 48px;
   align-items: end; padding-bottom: 26px; border-bottom: 2px solid var(--ink);
 }
+/* 首屏错峰：用已有的 .enter（xn-enter + --d 延迟），只给进度块加一拍 */
+.xp-meter-d1 { --d: 1; }
 .xp-head h1 { margin: 0; font-size: var(--fs-display); line-height: var(--lh-display); }
 .xp-head .xp-lede { margin: 14px 0 0; max-width: 42em; font-size: var(--fs-lead); line-height: var(--lh-lead); color: var(--ink-2); }
 .xp-head .xp-lede b { font-weight: 600; }

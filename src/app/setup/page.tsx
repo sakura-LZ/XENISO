@@ -8,7 +8,7 @@ export default function Setup() {
   const enabled = process.env.LIMEN_ENABLE_P0_CONSOLE === "true";
   return <main id="main" className="shell py-12">
     <p className="eyebrow">维护工具 · P0</p>
-    <h1 className="mt-3 text-3xl font-semibold">运行环境配置</h1>
+    <h1 className="mt-3">运行环境配置</h1>
     <p className="mt-4 max-w-2xl leading-7 muted">本页检查本地配置是否存在。接口联通与隔离验收见项目的 CURRENT_STATUS 和 testing 记录。</p>
     <dl className="mt-8 divide-y divide-slate-200 border-y border-slate-200">
       {[["O*NET 官方接口", configured.onet], ["Supabase 访客服务", configured.supabase]].map(([label, ready]) => <div className="flex justify-between gap-4 py-4" key={String(label)}>

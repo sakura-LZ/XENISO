@@ -633,27 +633,18 @@ export function Community() {
       </div>
 
       <aside className="community-rail" aria-label="社区规则与说明">
+        {/* 这里原来有一张「两类帖子」定义卡，与上方 preview 的「两类帖子 · 示例」重复
+            （preview 已经用真实例子展示了两类），删掉减少一个同级标题。
+            剩下两张规则卡也并成一张「社区规则」：首屏 h2 从 5 个降到 2 个。 */}
         <section className="community-rail-card atlas-sheet">
           <span className="atlas-tape tl" aria-hidden="true" />
-          <h2>两类帖子</h2>
-          <dl className="community-rail-list">
-            <div><dt><IconChat aria-hidden="true" />求助</dt><dd>还没弄清楚的问题：背景、试过什么、想让人回答哪一点。</dd></div>
-            <div><dt><IconBook aria-hidden="true" />经验</dt><dd>做完一段体验的复盘：做了什么、多久、哪一步最难。</dd></div>
-          </dl>
-          <p>广告、招生中介、课程推销不进来。</p>
-        </section>
-
-        <section className="community-rail-card atlas-sheet">
-          <h2>三条规则</h2>
+          <h2>社区规则</h2>
           <ol className="community-rules">
             <li><b>只写确认过的事。</b>引用招生简章、导师回复要给出处；没查到就写「没查到」。</li>
             <li><b>不替别人下判断。</b>说自己怎么判断、依据是什么，不说「你适合」，也不给排名和录取概率。</li>
             <li><b>对内容提不同意见</b>，比反驳发帖人有用。</li>
+            <li><b>广告、招生中介、课程推销不进来。</b></li>
           </ol>
-        </section>
-
-        <section className="community-rail-card atlas-sheet">
-          <h2>匿名与删除</h2>
           <p>帖子只显示「匿名探索者」，邮箱不公开。验证邮箱是为了在有人发广告时能找到发帖的人。</p>
           <Link className="community-link" href="/account">到「我的资料」看删除记录</Link>
         </section>

@@ -29,7 +29,7 @@ export function P0Console() {
     finally { setBusy(false); }
   }
   return <section className="mt-10" aria-labelledby="console-heading">
-    <h2 id="console-heading" className="text-xl font-semibold">封闭验证入口</h2>
+    <h2 id="console-heading" className="t-block">封闭验证入口</h2>
     <div className="mt-5 flex flex-wrap gap-3">
       <button className="button" disabled={busy} onClick={() => run("session")}>创建或恢复匿名访客</button>
       <button className="button secondary" disabled={busy} onClick={() => run("questions")}>请求官方 30 题</button>

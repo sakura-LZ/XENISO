@@ -160,14 +160,14 @@ export function ProfileForm() {
     <Link href="/profile" className="xp-crumb"><IconBack aria-hidden="true" />返回总览</Link>
 
     <header className="xp-head">
-      <div>
+      <div className="enter">
         <h1><IconProfile aria-hidden="true" />填写个人画像</h1>
         <p className="xp-lede">
           四节共 20 项，只记录你已经有的东西，填进<b>能力底册</b>。
           没有的部分留空即可，空着不会扣分，也不会被当成零分能力。
         </p>
       </div>
-      <aside className="xp-meter" aria-label="填写进度">
+      <aside className="xp-meter enter xp-meter-d1" aria-label="填写进度">
         <div className="xp-meter-row"><span>当前页</span><strong>第 1 步 / 共 4 步</strong></div>
         <div className="xp-meter-row"><span>完成度</span><strong>{progress.done} / {progress.total} 项</strong></div>
         <div className="xp-bar" role="img" aria-label={`已填写 ${progress.done} 项，共 ${progress.total} 项`}><i style={{ width: `${progress.done / progress.total * 100}%` }} /></div>
@@ -209,7 +209,7 @@ export function ProfileForm() {
           <fieldset disabled={busy || loading || readFailed} className="xp-sections">
             <legend className="sr-only">医学经历与探索目标</legend>
 
-            <section id="profile-group-0" className="xp-sec">
+            <section id="profile-group-0" className="xp-sec" data-reveal>
               <div className="xp-sec-head"><span className="xp-mark">第一节</span><h2><IconAccount aria-hidden="true" />基本信息</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[0].checks.filter(check => check.filled).length} / 5 项</span></div>
               <p className="xp-sec-note">{progress.sections[0].note}</p>
               <div className="xp-grid">
@@ -222,7 +222,7 @@ export function ProfileForm() {
               </div>
             </section>
 
-            <section id="profile-group-1" className="xp-sec">
+            <section id="profile-group-1" className="xp-sec" data-reveal>
               <div className="xp-sec-head"><span className="xp-mark">第二节</span><h2><IconBook aria-hidden="true" />学业与英语</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[1].checks.filter(check => check.filled).length} / 5 项</span></div>
               <p className="xp-sec-note">{progress.sections[1].note}</p>
 
@@ -251,7 +251,7 @@ export function ProfileForm() {
               </div>
             </section>
 
-            <section id="profile-group-2" className="xp-sec">
+            <section id="profile-group-2" className="xp-sec" data-reveal>
               <div className="xp-sec-head"><span className="xp-mark">第三节</span><h2><IconPulse aria-hidden="true" />科研与技能</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[2].checks.filter(check => check.filled).length} / 5 项</span></div>
               <p className="xp-sec-note">{progress.sections[2].note}</p>
 
@@ -320,7 +320,7 @@ export function ProfileForm() {
               </div>
             </section>
 
-            <section id="profile-group-3" className="xp-sec">
+            <section id="profile-group-3" className="xp-sec" data-reveal>
               <div className="xp-sec-head"><span className="xp-mark">第四节</span><h2><IconCompass aria-hidden="true" />偏好与目标</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[3].checks.filter(check => check.filled).length} / 5 项</span></div>
               <p className="xp-sec-note">{progress.sections[3].note}</p>
               <div className="xp-grid">
