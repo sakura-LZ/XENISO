@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const journey = [["/profile", "个人画像"], ["/report/initial", "初步评价"], ["/experience", "职业体验"], ["/report/plan", "行动规划"]] as const;
 const destinations = [["/", "首页"], ["/profile", "异域探索"], ["/explore", "信息文库"], ["/community", "交流社区"]] as const;
@@ -11,6 +11,12 @@ function Header({ pathname, exploring }: { pathname: string; exploring: boolean 
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const button = useRef<HTMLButtonElement>(null);
+  const router = useRouter();
+  // 直接打开内页（新标签、外链、刷新）时没有可回退的历史，退回首页而不是原地不动。
+  const goBack = () => {
+    const sameOriginReferrer = document.referrer.startsWith(window.location.origin);
+    if (sameOriginReferrer) router.back(); else router.push("/");
+  };
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 4);
     update();
@@ -26,6 +32,7 @@ function Header({ pathname, exploring }: { pathname: string; exploring: boolean 
   const current = (href: string) => href === "/profile" ? exploring : href === "/" ? pathname === "/" : pathname.startsWith(href);
   return <header className="site-header" data-scrolled={scrolled} data-motion="M-G01">
     <div className="site-header-inner container">
+      {pathname !== "/" && <button type="button" className="site-back" onClick={goBack} aria-label="返回上一页"><span aria-hidden="true">←</span><span className="site-back-label">返回</span></button>}
       <Link href="/" className="site-brand" aria-label="XENISO 异域同构首页"><Image src="/brand/xeniso-logo.webp" alt="XENISO 异域同构" width={1210} height={340} priority sizes="172px" /></Link>
       <nav id="primary-navigation" className="site-nav" data-open={open} aria-label="主导航">
         {destinations.map(([href, title]) => <Link href={href} key={href} onClick={() => setOpen(false)} aria-current={current(href) ? "page" : undefined}>{title}</Link>)}

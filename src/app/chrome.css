@@ -3,6 +3,12 @@
 .site-header[data-scrolled="true"] { border-bottom-color: var(--line); background: var(--paper); }
 .site-header-inner { height: 100%; display: flex; align-items: center; gap: 40px; }
 .site-brand { display: block; flex: none; line-height: 0; }
+/* 返回：只在非首页出现。头部 gap 是 40px，用负 margin 把它拉回 18px，
+   不因为多一个控件而改变「品牌到导航」原有的间距。 */
+.site-back { flex: none; display: inline-flex; align-items: center; gap: 8px; min-height: 42px; margin-right: -22px; padding: 0 10px 0 0; border: 0; background: transparent; color: var(--ink-2); font-family: inherit; font-size: 16px; font-weight: 500; line-height: 1; cursor: pointer; transition: color 180ms ease-out; }
+.site-back:hover { color: var(--ink); }
+.site-back span[aria-hidden="true"] { font-size: 18px; line-height: 1; transition: transform 220ms var(--ease); }
+.site-back:hover span[aria-hidden="true"] { transform: translateX(-3px); }
 .site-brand img, .site-footer-brand img { display: block; width: 172px; height: auto; mix-blend-mode: multiply; }
 .site-nav { display: flex; align-items: center; gap: 36px; margin-left: 12px; }
 .site-nav a { position: relative; color: var(--ink-2); font-size: 17px; font-weight: 500; line-height: 1; text-decoration: none; padding: 10px 0; transition: color 180ms ease-out; }
@@ -23,6 +29,7 @@
 @media (max-width: 900px) {
   .site-menu { display: block; }
   .site-brand img { width: 148px; }
+  .site-back { margin-right: -20px; gap: 6px; }
   .site-nav { display: none; position: absolute; top: var(--header-h); left: 0; right: 0; margin: 0; padding: 8px var(--gutter) 20px; flex-direction: column; align-items: stretch; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); box-shadow: 0 16px 32px -24px rgb(21 36 28 / .35); }
   .site-nav[data-open="true"] { display: flex; animation: xn-swap 200ms var(--ease); }
   .site-nav a { padding: 16px 0 16px 20px; font-size: 18px; border-bottom: 1px solid var(--line-2); }
@@ -30,6 +37,8 @@
   .site-nav a::before { left: 0; }
 }
 @media (max-width: 400px) { .site-account { padding: 0 14px; font-size: 15px; } .site-brand img { width: 128px; } }
+/* 窄屏只留箭头，文字标签交给 aria-label，避免把「我的资料」挤掉。 */
+@media (max-width: 560px) { .site-back { padding-right: 6px; } .site-back-label { display: none; } }
 
 /* Exploration journey: shows where the user is, never claims completion. */
 body:has(.journey-bar) { --journey-h: 56px; }
