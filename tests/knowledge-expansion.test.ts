@@ -18,7 +18,10 @@ function fixtureClient(rows: KnowledgeRecord[], refs: KnowledgeSource[]) {
   return { from(table: string) {
     return { select() {
       if (table === "kb_sources") return { in: async (_key: string, ids: string[]) => ({ data: refs.filter(source => ids.includes(source.id)), error: null }) };
-      return { in: (_key: string, ids: string[]) => ({ order: () => ({ limit: async (limit: number) => ({ data: rows.filter(record => ids.includes(record.role_id)).slice(0, limit), error: null }) }) }) };
+      return { in: (_key: string, ids: string[]) => ({ order: () => ({
+        limit: async (limit: number) => ({ data: rows.filter(record => ids.includes(record.role_id)).slice(0, limit), error: null }),
+        range: async (from: number, to: number) => ({ data: rows.filter(record => ids.includes(record.role_id)).slice(from, to + 1), error: null }),
+      }) }) };
     } };
   } } as unknown as SupabaseClient;
 }

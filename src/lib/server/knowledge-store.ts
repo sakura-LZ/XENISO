@@ -7,11 +7,21 @@ export async function retrieveKnowledge(client: SupabaseClient, input: Knowledge
   const query = searchSchema.parse(input);
   const roles = knowledgeRoles.filter(role => roleMatchesQuery(role, query));
   if (!roles.length) return { status: "not_covered" as const, hits: [], total: 0, has_more: false, facets: { institutions: [], admission_years: [] }, coverage: { records: 0, sources: 0, by_category: {} }, query, retrieved_at: now.toISOString(), missing_categories: ["occupation", "recruitment", "admissions", "industry", "learning"] };
-  const request = client.from("kb_records").select("*").in("role_id", roles.map(role => role.id)).order("id").limit(501);
-  const recordsResult = await request;
-  if (recordsResult.error || !recordsResult.data) throw new AppError("KNOWLEDGE_UNAVAILABLE", 503, "知识库暂时不可用，未使用本地样例替代真实资料。");
-  if (recordsResult.data.length > 500) throw new AppError("KNOWLEDGE_CAPACITY", 503, "知识库检索规模已超出本阶段上限，需要升级数据库检索。");
-  const records = recordSchema.array().safeParse(recordsResult.data);
+  // 知识库已增长到 600+ 条，原来「一次取 501 条、超过 500 就 503」会让宽泛关键词
+  // （例如「医学」命中几乎所有角色）直接搜不出来。改为分页拉取，只保留一个
+  // 真正防止内存失控的硬上限；排序仍在内存里做，规模上限需后续下推到 SQL。
+  const ROLE_RECORD_CAP = 4000;
+  const PAGE = 1000;
+  const roleIds = roles.map(role => role.id);
+  const rows: unknown[] = [];
+  for (let from = 0; ; from += PAGE) {
+    const page = await client.from("kb_records").select("*").in("role_id", roleIds).order("id").range(from, from + PAGE - 1);
+    if (page.error || !page.data) throw new AppError("KNOWLEDGE_UNAVAILABLE", 503, "知识库暂时不可用，未使用本地样例替代真实资料。");
+    rows.push(...page.data);
+    if (page.data.length < PAGE) break;
+    if (rows.length > ROLE_RECORD_CAP) throw new AppError("KNOWLEDGE_CAPACITY", 503, "知识库检索规模已超出本阶段上限，需要升级数据库检索。");
+  }
+  const records = recordSchema.array().safeParse(rows);
   if (!records.success) throw new AppError("KNOWLEDGE_CONTRACT", 502, "知识库资料未通过数据校验。");
   const sourceIds = [...new Set(records.data.map(record => record.source_id))];
   const sourcesResult = sourceIds.length ? await client.from("kb_sources").select("*").in("id", sourceIds) : { data: [], error: null };
