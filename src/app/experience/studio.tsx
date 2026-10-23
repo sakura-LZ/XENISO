@@ -27,6 +27,7 @@ import { TaskWorkbench, OperationPreview } from "./task-workbench";
 import { TaskMaterial, TaskModePreview } from "./task-material";
 import "./experience-desk.css";
 
+import { InkField } from "@/components/ink-field";
 const draftKey = "limen:career-draft:v3";
 const emptyReflection = { favorite_operation: "", least_favorite_operation: "", willingness_for_3_hours: 3, followup_question: "" };
 const draftSchema = z.object({ template_id: z.string(), mode: z.enum(["project", "interview"]), step: z.number().int().min(0).max(3), choices: choiceSchema, outputs: z.tuple([z.string().max(3000), z.string().max(3000), z.string().max(3000)]), reflection: z.object({ favorite_operation: z.string().max(240), least_favorite_operation: z.string().max(240), willingness_for_3_hours: z.number().int().min(1).max(5), followup_question: z.string().max(1000) }) }).strict().superRefine((draft, ctx) => {
@@ -180,6 +181,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
 
   return <main id="main" className="xd-page"><div className="container"><fieldset disabled={busy} className="contents">
     <header className="xd-head" data-motion="M-E01">
+      <InkField className="page-ink" />
       <div>
         <p className="atlas-label">第 3 步 · 职业体验</p>
         <h1>{started ? template.title : "职业体验"}</h1>

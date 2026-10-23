@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import "./account.css";
 
+import { InkField } from "@/components/ink-field";
 const SECTIONS = [
   ["identity", "身份与访问"],
   ["storage", "资料存储与 AI"],
@@ -60,6 +61,7 @@ export default function AccountPage() {
 
   return <main id="main" className="shell account-page">
     <header className="account-head">
+      <InkField className="page-ink" />
       <h1>我的资料</h1>
       <p>这一页说明三件事：现在的匿名身份是什么、资料存在哪儿、想删的时候怎么删干净。匿名不是隐藏，而是这份身份只跟这台浏览器绑定。</p>
     </header>

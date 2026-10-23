@@ -8,6 +8,7 @@ import { IconCalendar, IconCompass, IconExternal, IconFolder, IconProfile, IconQ
 import { profileProgress } from "./completion";
 import "./profile.css";
 
+import { InkField } from "@/components/ink-field";
 type Status = { state: "loading" | "error" | "ready"; data: ProfileOverview | null; message: string };
 
 /** 把画像里已有的记录折成三行能读的文字；没有记录时留一条空横线。 */
@@ -47,6 +48,7 @@ export function ProfileHub() {
   return <div className="container xp-narrow">
     <ReportReveal motion="M-P01">
       <header className="xp-head">
+      <InkField className="page-ink" />
         <div>
           <h1><IconProfile aria-hidden="true" />个人画像</h1>
           <p className="xp-lede">

@@ -16,6 +16,7 @@ import {
 import "./community.css";
 import "@/app/ambient-video.css";
 
+import { InkField } from "@/components/ink-field";
 type PostKind = "help" | "experience";
 type Filter = "all" | PostKind | "recruit";
 type ReportReason = "privacy" | "abuse" | "spam" | "other";
@@ -343,6 +344,7 @@ export function Community() {
 
   return <main id="main" className="shell community-page">
     <header className="community-head">
+      <InkField className="page-ink" />
       <AmbientVideo src="/brand/community-background.mp4" ariaLabel="环境底纹" />
       <div>
         <h1 className="community-title"><IconPin className="community-title-icon" aria-hidden="true" />交流社区</h1>
@@ -353,6 +355,13 @@ export function Community() {
           ? <>{counts.all} 条帖子<br />求助 {counts.help} · 经验 {counts.experience}</>
           : <>验证邮箱后可读写</>}
       </p>
+      {/* 首屏原来只有邮箱表单里两个 disabled 按钮（没填邮箱确实不该可点），
+          第一次来的人看不到任何可走的动作。给一个始终可用的主动作：先看示例。 */}
+      <div className="community-head-actions">
+        <a className="atlas-btn atlas-btn-primary" href="#community-preview">
+          <IconChat aria-hidden="true" />先看两条示例
+        </a>
+      </div>
     </header>
 
     <p className="community-limits">
@@ -433,7 +442,7 @@ export function Community() {
           </p>}
           </section>
 
-          <section className="community-preview" aria-labelledby="preview-title">
+          <section className="community-preview" id="community-preview" aria-labelledby="preview-title">
             <div className="community-preview-head">
               <h2 id="preview-title">两类帖子 · 示例</h2>
             </div>

@@ -21,6 +21,7 @@ import { emptyProfile, type Profile } from "@/lib/profile";
 import { readProfileOverview } from "@/lib/profile-overview";
 import { initialReport, skillEvidence } from "@/lib/reports";
 
+import { InkField } from "@/components/ink-field";
 const areaOrder = ["realistic", "investigative", "artistic", "social", "enterprising", "conventional"] as const;
 type AreaCode = (typeof areaOrder)[number];
 const areaMeta: Record<AreaCode, { zh: string; en: string; letter: string; guide: string }> = {
@@ -225,6 +226,7 @@ export function Assessment() {
   return (
     <main id="main" className="shell assessment-page">
       <header className="assessment-head" data-atlas-reveal>
+      <InkField className="page-ink" />
         <div className="assessment-head-main">
           <p className="atlas-label">第 2 步 · 初步评价</p>
           <h1 className="t-title">初步评价</h1>
@@ -402,6 +404,17 @@ export function Assessment() {
                   <p className="t-body assessment-intro-lead">
                     每题一种工作活动，六类各 5 题；同类活动会出现两次，这是量表设计。
                   </p>
+                  {/* 主按钮原来压在卡片底部，实测 y=827：1440×900 只剩 73px，
+                      更矮的视口直接掉到折叠以下。移到导语之后、规格表之前——
+                      主动作先于细节，任何视口首屏都能点到。 */}
+                  <div className="assessment-intro-actions">
+                    <button className="button" type="button" disabled={busy} onClick={load}>
+                      {busy ? "正在读题…" : "开始问卷"}
+                    </button>
+                    <Link className="button secondary" href="/profile">
+                      先补个人画像
+                    </Link>
+                  </div>
                   <dl className="as-spec">
                     <div>
                       <dt><IconQuiz aria-hidden="true" />题量</dt>
@@ -428,14 +441,6 @@ export function Assessment() {
                       按第一反应选；答案只在这一页，离开或刷新会丢。
                     </span>
                   </p>
-                  <div className="assessment-intro-actions">
-                    <button className="button" type="button" disabled={busy} onClick={load}>
-                      {busy ? "正在读题…" : "开始问卷"}
-                    </button>
-                    <Link className="button secondary" href="/profile">
-                      先补个人画像
-                    </Link>
-                  </div>
                   <p className="assessment-source">
                     题目来自{" "}
                     <a href="https://services.onetcenter.org/" target="_blank" rel="noreferrer">

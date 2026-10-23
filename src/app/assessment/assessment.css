@@ -28,6 +28,10 @@
 
 /* ---------- 答题态：窄栏 + 左右留白 ---------- */
 .assessment-intro-section { display: grid; gap: 34px; }
+/* 说明区是页面第一屏内容，必须和页头左边缘对齐（页头通栏 x=73）。
+   .assessment-stage 是 margin-inline:auto 居中的，那是给「一题一屏」的答题区用的；
+   套到说明区就变成卡片缩进 250px、与 h1 错开。这里只对说明区取消居中。 */
+.assessment-intro-section .assessment-stage { margin-inline: 0; max-width: none; }
 .assessment-stage {
   max-width: 780px;
   margin-inline: auto;

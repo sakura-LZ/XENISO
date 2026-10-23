@@ -6,6 +6,7 @@ import { directions, findDirection, groups, occupationUrl, type Direction } from
 import { getTemplate } from "@/lib/experience/templates";
 import { IconBook, IconCompass, IconFolder, IconPulse, IconProfile, IconQuote, IconStamp } from "@/components/icons";
 import { OfficialDossier } from "./official-dossier";
+import { InkField } from "@/components/ink-field";
 import { MedicineBrowser } from "./medicine-browser";
 
 /** 六块内容：每块回答一个问题，问题写在标题下面，读者先知道"这块要不要看"。 */
@@ -267,6 +268,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
 
   return <>
     <header className="xnlib-head">
+      <InkField className="page-ink" />
       <div>
         <h1><IconBook aria-hidden="true" />信息文库</h1>
         <p className="xnlib-lede">这里收三样能查的东西：O*NET 的职业条目、公司招聘页上写的岗位要求、院系招生目录里的考试科目。每条资料都带来源和抓取时间；原文没写的，我们写「没查到」，不替它补。</p>

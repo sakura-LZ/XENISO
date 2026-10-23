@@ -6,6 +6,10 @@
 
 .community-page { padding-block: 52px 96px; }
 
+/* 首屏主动作：页眉里始终可点的一条，用来把第一次来的人带到示例帖子 */
+.community-head-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.community-head-actions .atlas-btn svg { width: 1em; height: 1em; flex: none; }
+
 /* ---------- 页头 ---------- */
 .community-head {
   /* 环境视频层用负 inset 铺到标题块外面（-18px -24px），所以要自己当包含块，

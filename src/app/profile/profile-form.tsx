@@ -8,6 +8,7 @@ import { IconAccount, IconBack, IconBook, IconCalendar, IconCompass, IconPulse, 
 import { profileProgress, PROFILE_GATE } from "./completion";
 import "./profile.css";
 
+import { InkField } from "@/components/ink-field";
 const steps = ["基本信息", "学业与英语", "科研与技能", "偏好与目标"];
 const storageKey = "limen:simulation:profile:v1";
 type StringKey = { [K in keyof Profile]: Profile[K] extends string ? K : never }[keyof Profile];
@@ -160,6 +161,7 @@ export function ProfileForm() {
     <Link href="/profile" className="xp-crumb"><IconBack aria-hidden="true" />返回总览</Link>
 
     <header className="xp-head">
+      <InkField className="page-ink" />
       <div className="enter">
         <h1><IconProfile aria-hidden="true" />填写个人画像</h1>
         <p className="xp-lede">
