@@ -154,7 +154,7 @@ for (const group of groups.values()) {
     : (first.summary ?? "事实见下列官方原文；标题、分类与适用范围为 LIMEN 编辑索引。");
 
   entries.push({
-    source: { ...group.source.source, source_tier: "primary", published_at: groupDateFallback.has(group.source.source.id) ? null : group.source.source.published_at },
+    source: { ...group.source.source, source_tier: "primary", published_at: groupDateFallback.has(group.source.source.id) ? null : group.source.source.published_at, publication_date_note: group.source.source.publication_date_note ?? "" },
     ...(groupDatePattern.has(group.source.source.id) ? { publication_pattern: groupDatePattern.get(group.source.source.id)! } : {}),
     artifact_capture: meta.capture,
     record: {
