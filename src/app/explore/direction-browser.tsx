@@ -295,9 +295,9 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
     </section>
     <div className="xnlib-cabinet">
       <aside className="xnlib-rail">
-        {/* 原本这里是 <p>：整页大纲从 h1 直接跳到各方向行的 h3/h4，缺一级 h2。
-            改成 h2 后既补上结构，也让这页接上全站的划线动效。 */}
-        <h2 className="xnlib-rail-title"><IconCompass aria-hidden="true" />方向分类</h2>
+        {/* 这里保持 <p>：它只是筛选器的小标签（视觉 13px），不是区块标题。
+            整页的真二级标题是主区的「方向清单」——那样 h2 只有一种尺寸。 */}
+        <p className="xnlib-rail-title"><IconCompass aria-hidden="true" />方向分类</p>
         <div className="xnlib-rail-list" role="group" aria-label="方向分类">
           <button className="xnlib-rail-btn" aria-pressed={state.group === "all"} onClick={() => navigate({ ...state, group: "all" }, false, true)}>全部方向<span className="xnlib-rail-count">{directions.length}</span></button>
           {groups.map(group => <button key={group.id} className="xnlib-rail-btn" aria-pressed={state.group === group.id} onClick={() => navigate({ ...state, group: group.id }, false, true)}>{group.name}<span className="xnlib-rail-count">{group.specializations.length}</span></button>)}

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import { useCallback, useEffect, useState, type CSSProperties } from "react";
 import { z } from "zod";
@@ -159,15 +159,15 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
         <ol className="xr-setup-steps xr-stack">
           <li>
             <span className="xr-setup-step">第 1 步</span>
-            <div><h3><Link href="/profile">保存个人画像</Link></h3><p>课程、技能、研究项目、论文写进去，后面的能力迁移与知识缺口才有东西可比。</p></div>
+            <div><h4><Link href="/profile">保存个人画像</Link></h4><p>课程、技能、研究项目、论文写进去，后面的能力迁移与知识缺口才有东西可比。</p></div>
           </li>
           <li>
             <span className="xr-setup-step">第 2 步</span>
-            <div><h3><Link href="/assessment">做 O*NET 兴趣问卷</Link></h3><p>30 道活动题，做完才有官方的六类兴趣原始分。</p></div>
+            <div><h4><Link href="/assessment">做 O*NET 兴趣问卷</Link></h4><p>30 道活动题，做完才有官方的六类兴趣原始分。</p></div>
           </li>
           <li>
             <span className="xr-setup-step">第 3 步</span>
-            <div><h3><Link href="/experience">完成一次职业体验</Link></h3><p>三阶段模拟任务，做完并保存成果，计划里才有体验依据。</p></div>
+            <div><h4><Link href="/experience">完成一次职业体验</Link></h4><p>三阶段模拟任务，做完并保存成果，计划里才有体验依据。</p></div>
           </li>
         </ol>
         <p className="xr-source">三步都保存好之后，回到这一页刷新，条件表单与规则预览会出现在原处。中途也可以先去看 R1 的四栏结论。</p>
@@ -185,7 +185,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
           <p className="xr-body-text">先在下面定三件事：去试哪个方向、打算哪一年转、每周真正能拿出来多少小时。三项填齐，下面才会按它们排出阶段计划。</p>
           <div className="xr-cond-grid">
             <div className="xr-field-block">
-              <h3>选一个方向去试</h3>
+              <h4>选一个方向去试</h4>
               <label className="xr-label">目标方向<select className="field" value={direction} onChange={event => { setDirection(event.target.value); setAlternatives([]); setConditionsChanged(true); }}><option value="">选择目标方向</option>{directions.map(item => <option key={item.id} value={item.id}>{item.id === "medicine" ? "临床工作" : `${item.group_name} / ${item.name}`}</option>)}</select></label>
               {plan ? <>
                 <p className="xr-source xr-stack">这个方向日常在做的事：{plan.direction.work_tasks.join("；")}。</p>
@@ -196,7 +196,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
             </div>
 
             <div className="xr-field-block">
-              <h3>时间与升学路径</h3>
+              <h4>时间与升学路径</h4>
               <div className="xr-field-row">
                 <label className="xr-label">计划转型年份<input className="field" type="number" min={currentYear} max={2100} value={profile.transition_year ?? ""} aria-invalid={invalidYear} aria-describedby={invalidYear ? "planning-year-error" : undefined} onChange={event => changePlanning("transition_year", event.target.value ? Number(event.target.value) : null)} />{invalidYear && <span className="xr-error" id="planning-year-error">填写 {currentYear} 至 2100 之间的整数年份。</span>}</label>
                 <label className="xr-label">每周可投入小时<input className="field" type="number" min={0.5} max={168} step="0.5" value={profile.weekly_hours ?? ""} aria-invalid={invalidHours} aria-describedby={invalidHours ? "planning-hours-error" : undefined} onChange={event => changePlanning("weekly_hours", event.target.value ? Number(event.target.value) : null)} />{invalidHours && <span className="xr-error" id="planning-hours-error">每周投入需大于零，且不超过168小时。</span>}</label>
@@ -206,7 +206,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
             </div>
 
             <div className="xr-field-block">
-              <h3>每周时间分配</h3>
+              <h4>每周时间分配</h4>
               <fieldset className="xr-fieldset"><legend>基础、实践与复盘的小时预算</legend>
                 <div className="xr-field-row">{budgetLabels.map(([id, label]) => <label className="xr-label" key={id}>{label}<span className="xr-inline-unit"><input className="field" type="number" min={0} max={168} step="0.5" value={budget[id]} onChange={event => { const value = Number(event.target.value); setBudget(current => ({ ...current, [id]: Number.isFinite(value) ? Math.max(0, Math.min(168, value)) : 0 })); setConditionsChanged(true); }} /><span>小时</span></span></label>)}</div>
               </fieldset>

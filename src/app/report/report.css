@@ -511,7 +511,11 @@
 .xr-cond-grid { display: grid; gap: 26px; }
 .xr-field-block { border-top: 1px solid var(--line); padding-top: 16px; }
 .xr-field-block:first-of-type { border-top: 0; padding-top: 0; }
-.xr-field-block > h3 { margin: 0 0 10px; font-size: var(--fs-body); line-height: var(--lh-h3); }
+/* 这三个是表单里的字段分组标签（选方向 / 时间路径 / 每周分配），不是区块标题。
+   原来用 <h3> 但字号压到 --fs-body(17px)，导致全站 h3 出现 17 和 21 两种尺寸
+   ——正是"字体大小不统一"的观感来源。改成语义更准的 h4（站内 h4 本来就是 17px），
+   h3 就此全站统一 21px。 */
+.xr-field-block > h4 { margin: 0 0 10px; font-size: var(--fs-h4, var(--fs-body)); line-height: var(--lh-h3); font-weight: 600; }
 .xr-label {
   display: block;
   margin-top: 12px;
@@ -843,8 +847,9 @@
   border-top: 1px solid var(--line);
 }
 .xr-setup-steps li:first-child { padding-top: 0; border-top: 0; }
-.xr-setup-steps h3 { margin: 0 0 4px; font-size: var(--fs-body); line-height: var(--lh-h3); }
-.xr-setup-steps h3 a { color: var(--ink); text-underline-offset: 4px; }
+/* 空态「下一步」三项是列表项标题，不是区块标题：用 h4 让 h3 全站统一 21px */
+.xr-setup-steps h4 { margin: 0 0 4px; font-size: var(--fs-body); line-height: var(--lh-h3); font-weight: 600; }
+.xr-setup-steps h4 a { color: var(--ink); text-underline-offset: 4px; }
 .xr-setup-steps p { margin: 0; font-size: var(--fs-body); line-height: 1.7; color: var(--ink-2); max-width: 40em; }
 .xr-setup-step { padding-top: 3px; font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: .08em; color: var(--ink-3); }
 
