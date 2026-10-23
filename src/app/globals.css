@@ -164,7 +164,10 @@
 .rule { border-top: 1px solid var(--line); }
 
 /* Two-column reading layout with sticky table of contents. */
-.with-toc { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 64px; align-items: start; }
+/* 目录列宽抽成变量：页眉也要对齐到这一列，否则 h1 在 x=73、h2 在 x=388，
+   同一页出现两条互不相干的内容左锚线（实测 15 个元素全起在 388）。 */
+:root { --toc-w: 220px; --toc-gap: 64px; }
+.with-toc { display: grid; grid-template-columns: var(--toc-w) minmax(0, 1fr); gap: var(--toc-gap); align-items: start; }
 .toc { position: sticky; top: calc(var(--header-h) + var(--journey-h) + 32px); }
 .toc ol, .toc ul { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); }
 .toc a { position: relative; display: flex; gap: 12px; padding: 9px 0 9px 20px; color: var(--ink-3); text-decoration: none; font-size: var(--fs-small); line-height: var(--lh-label); transition: color 180ms ease-out; }

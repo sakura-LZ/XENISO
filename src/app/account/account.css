@@ -9,6 +9,13 @@
   padding-bottom: 28px;
   margin-bottom: 42px;
   border-bottom: 1px solid var(--line);
+  /* 对齐 .with-toc 的内容列：这页是"左侧目录 + 右侧正文"，页眉若继续通栏，
+     h1 落在 x=73 而正文全部起在 x=388，一页两条左锚线，版面没有骨架。
+     1024px 以下目录折到顶部，页眉也就该回到通栏。 */
+  margin-left: calc(var(--toc-w) + var(--toc-gap));
+}
+@media (max-width: 1024px) {
+  .account-head { margin-left: 0; }
 }
 .account-head h1 {
   margin: 0;
