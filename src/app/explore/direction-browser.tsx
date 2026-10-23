@@ -256,7 +256,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
     </header>
     <div className="xnlib-cabinet">
       <aside className="xnlib-rail">
-        <h2>方向分类</h2>
+        <h3 className="xnlib-rail-title">方向分类</h3>
         <div className="xnlib-rail-list" role="group" aria-label="方向分类">
           <button className="xnlib-rail-btn" aria-pressed={state.group === "all"} onClick={() => navigate({ ...state, group: "all" }, false, true)}>全部方向<span className="xnlib-rail-count">{directions.length}</span></button>
           {groups.map(group => <button key={group.id} className="xnlib-rail-btn" aria-pressed={state.group === group.id} onClick={() => navigate({ ...state, group: group.id }, false, true)}>{group.name}<span className="xnlib-rail-count">{group.specializations.length}</span></button>)}

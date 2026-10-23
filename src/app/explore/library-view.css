@@ -44,7 +44,7 @@
   background: var(--paper-2);
   box-shadow: var(--atlas-shadow-1);
 }
-.xnlib-rail h2 { margin: 0 0 12px; font-family: var(--font-sans); font-size: var(--fs-small); font-weight: 600; color: var(--ink-2); }
+.xnlib-rail-title { margin: 0 0 12px; font-family: var(--font-sans); font-size: var(--fs-label); line-height: var(--lh-label); font-weight: 600; letter-spacing: .04em; color: var(--ink-2); }
 .xnlib-rail-list { display: flex; flex-direction: column; gap: 3px; }
 .xnlib-rail-btn {
   display: flex;
