@@ -8,6 +8,10 @@
 
 /* ---------- 页头 ---------- */
 .community-head {
+  /* 环境视频层用负 inset 铺到标题块外面（-18px -24px），所以要自己当包含块，
+     并把探出的部分裁掉——否则它会撑宽文档，实测产生 24px 横向溢出。 */
+  position: relative;
+  overflow: clip;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 20px 56px;

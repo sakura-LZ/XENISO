@@ -199,7 +199,7 @@
   width: 16px;
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--line-strong);
+  color: var(--ink-faint);
   font-variant-numeric: tabular-nums;
 }
 .xr-toc a[aria-current="location"] .xr-toc-mark { color: var(--green); }

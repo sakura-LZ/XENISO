@@ -88,6 +88,9 @@ const TARGETS: Array<[SceneKind, string[]]> = [
     ".as-spec > div",
     // 交流社区的帖子卡片
     ".community-slip",
+    // 信息文库详情页的六个分区头：像章节标签落下
+    // （详情页原本 75 个场景全在收起的折叠里、实际播放 0 个，可见区域等于没有动效）
+    ".xnlib-chapter-head",
   ]],
 ];
 

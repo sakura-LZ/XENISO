@@ -240,7 +240,7 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   border-bottom: 1px dashed var(--line);
 }
 .xd-evidence li:last-child { border-bottom: 0; }
-.xd-evidence span { font-family: var(--font-mono); font-size: var(--fs-label); color: var(--line-strong); }
+.xd-evidence span { font-family: var(--font-mono); font-size: var(--fs-label); color: var(--ink-faint); }
 .xd-evidence p { margin: 0; font-size: var(--fs-small); line-height: var(--lh-meta); color: var(--ink-2); }
 .xd-figure { margin: 8px 0 0; }
 .xd-figure svg { display: block; width: 100%; height: auto; }

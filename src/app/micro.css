@@ -110,9 +110,13 @@
  *    末端略超出字宽（width 上限 13em）并用渐变收尾，另有一层更慢、更模糊的
  *    ::before 作为「晕开」。由 JS 打 data-xn-mark="1" 触发。
  * ========================================================================= */
-.t-section { position: relative; }
+/* .t-block 是站内另一套「区块标题」宿主类，与 .t-section 共享同一套划线效果：
+   两套类并存会让内页看起来像模板，所以在这里一次性并上（不新造效果）。 */
+.t-section,
+main .t-block { position: relative; }
 
-.t-section::after {
+.t-section::after,
+main .t-block::after {
   content: "";
   position: absolute;
   left: -.05em;
@@ -133,7 +137,8 @@
   opacity: 0;
   pointer-events: none;
 }
-.t-section::before {
+.t-section::before,
+main .t-block::before {
   content: "";
   position: absolute;
   left: -.05em;
@@ -148,8 +153,10 @@
   opacity: 0;
   pointer-events: none;
 }
-.t-section[data-xn-mark="1"]::after { animation: xn-mark-band 520ms var(--xn-m-sweep) both; }
-.t-section[data-xn-mark="1"]::before { animation: xn-mark-bleed 720ms var(--xn-m-out) both; }
+.t-section[data-xn-mark="1"]::after,
+main .t-block[data-xn-mark="1"]::after { animation: xn-mark-band 520ms var(--xn-m-sweep) both; }
+.t-section[data-xn-mark="1"]::before,
+main .t-block[data-xn-mark="1"]::before { animation: xn-mark-bleed 720ms var(--xn-m-out) both; }
 
 @keyframes xn-mark-band {
   0%   { opacity: 0;  transform: scaleX(.03); }
@@ -497,12 +504,15 @@ main:has(.atlas-hero) {
   }
 
   .t-section::before,
-  .t-section::after {
+  main .t-block::before,
+  .t-section::after,
+  main .t-block::after {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
   }
-  .t-section::before { opacity: .3 !important; }
+  .t-section::before,
+  main .t-block::before { opacity: .3 !important; }
 
   .atlas-hero-sheet.atlas-sheet[data-xn-tilt="1"] { transform: none !important; }
 
@@ -524,6 +534,8 @@ main:has(.atlas-hero) {
 
   .xn-lead { opacity: 1 !important; transform: none !important; animation: none !important; }
   .t-section::before,
-  .t-section::after { opacity: .85 !important; transform: none !important; animation: none !important; }
+  main .t-block::before,
+  .t-section::after,
+  main .t-block::after { opacity: .85 !important; transform: none !important; animation: none !important; }
   .atlas-band::before { display: none !important; }
 }

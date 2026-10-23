@@ -48,10 +48,10 @@ body:has(.journey-bar) { --journey-h: 56px; }
 .journey-bar a { position: relative; flex: 1; display: flex; align-items: center; gap: 12px; color: var(--ink-3); font-size: var(--fs-small); font-weight: 500; text-decoration: none; transition: color 180ms ease-out; }
 .journey-bar li + li a { padding-left: 24px; }
 .journey-bar li + li a::before { content: ""; position: absolute; left: 0; top: 50%; width: 1px; height: 18px; margin-top: -9px; background: repeating-linear-gradient(180deg, var(--line-strong) 0 3px, transparent 3px 6px); }
-.journey-index { font-size: var(--fs-meta); color: var(--line-strong); font-variant-numeric: tabular-nums; }
+.journey-index { font-size: var(--fs-meta); color: var(--ink-faint); font-variant-numeric: tabular-nums; }
 .journey-bar a:hover { color: var(--ink); }
 .journey-bar a[aria-current="step"] { color: var(--ink); font-weight: 600; }
-.journey-bar a[aria-current="step"] .journey-index { color: var(--green-mark); }
+.journey-bar a[aria-current="step"] .journey-index { color: var(--green-deep); }
 .journey-bar a[aria-current="step"]::after { content: ""; position: absolute; left: 0; right: 24px; bottom: -1px; height: 3px; background: var(--green-mark); }
 .journey-bar li + li a[aria-current="step"]::after { left: 24px; }
 @media (max-width: 760px) {

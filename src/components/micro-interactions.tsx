@@ -575,11 +575,72 @@ function install(): () => void {
   cleanups.push(() => observer.disconnect());
 
   /* 2. 荧光笔：所有区块标题 */
+  /**
+   * 内页接线：把"区块标题"自动认成 .t-section。
+   *
+   * 背景：荧光笔划线、铅字拆分这些效果早就做好了，但它们的宿主类 .t-section
+   * 之前只写在首页的 tsx 上。实测首页 5/5 个 h2 带、内页 26 个 h2 里 0 个带，
+   * 所以 42 个 keyframes 和 12 个微交互在内页的可见表现是零——用户说的
+   * "内页没有特效"其实是"没接线"，不是"没做"。
+   *
+   * 这里不改任何 tsx、也不写新效果，只按语义认宿主：main 里作为区块标题的
+   * h2（父级是 section / header / 已知的分区标题容器），且自身没被卡片包一层。
+   * 首页本来就有 .t-section，重复命中会被下面的 Set 去重。
+   */
+  const SECTION_HEAD_HOSTS = "section, header, .xr-sec-head, .atlas-band-head, .r1-head";
+  for (const heading of Array.from(document.querySelectorAll<HTMLElement>("main h2"))) {
+    if (heading.classList.contains("t-section")) continue;
+    // .t-block 本身就是站内的"区块标题"类（首页也在用），直接认
+    if (heading.classList.contains("t-block")) { heading.classList.add("t-section"); continue; }
+    // 其余按结构认：区块标题通常是「section > header > div > h2」这类，
+    // 父级不一定直接是 section/header。往上最多两级能碰到区块容器才算。
+    const host = heading.parentElement?.closest(SECTION_HEAD_HOSTS);
+    if (!host) continue;
+    let depth = 0;
+    for (let node: HTMLElement | null = heading.parentElement; node && node !== host; node = node.parentElement) depth += 1;
+    if (depth > 2) continue;
+    heading.classList.add("t-section");
+  }
+
+  /**
+   * 内页接线之二：列表/卡片组的错峰。
+   *
+   * motion.css 早就实现了 [data-xn-stagger] 的 46ms 错峰，但全站没有任何元素
+   * 带过这个属性（实测 0 个），所以它一直是死代码。这里给内页的列表容器
+   * 自动补上 data-reveal + data-xn-stagger：
+   *   - data-reveal 由 xeniso-motion.tsx 管 pending/in 状态，JS 挂了内容照样可见
+   *     （motion.css 的隐藏态挂在 [data-state="pending"] 上，不是无条件隐藏）
+   *   - 只认"确实是一组并列条目"的容器，且条目数 ≥3，避免单行列表也错峰
+   */
+  for (const list of Array.from(document.querySelectorAll<HTMLElement>("main ul, main ol, main .xd-modes, main .as-index, main .community-wall"))) {
+    if (list.dataset.xnStagger !== undefined) continue;
+    if (list.children.length < 3) continue;
+    if (list.closest("details:not([open])")) continue;
+    // 只在没有被别的 pending 祖先管着时自己当宿主，避免同一屏出现两层错峰
+    list.dataset.reveal = "";
+    list.dataset.xnStagger = "";
+  }
+
   const observe = new Set<HTMLElement>();
-  for (const heading of Array.from(document.querySelectorAll<HTMLElement>(".t-section"))) {
+  // .t-block 与 .t-section 是站内两套并存的"区块标题"宿主类（micro.css 已让它们
+  // 共享同一套划线样式），这里一并挂观察器，否则 t-block 那套永远不触发。
+  for (const heading of Array.from(document.querySelectorAll<HTMLElement>(".t-section, main .t-block"))) {
     heading.dataset.xnMarkTarget = "1";
     observe.add(heading);
   }
+
+  /* 2b. 迟到的区块标题兜底
+     有些页面的 .t-block 标题要等一次状态更新才进 DOM（实测 /assessment 的
+     "职业兴趣问卷 · 30 项工作语言"在 install 时还拿不到），一次性扫描会漏。
+     这里挂一个 MutationObserver，新出现的 .t-block 补挂观察器；已处理过的打标记跳过。 */
+  const lateObserver = new MutationObserver(() => {
+    for (const heading of Array.from(document.querySelectorAll<HTMLElement>("main .t-block:not([data-xn-mark-target])"))) {
+      heading.dataset.xnMarkTarget = "1";
+      observer.observe(heading);
+    }
+  });
+  lateObserver.observe(document.body, { childList: true, subtree: true });
+  cleanups.push(() => lateObserver.disconnect());
 
   /* 3. 铅字：只拆视口下方、纯文本的 h1/h2（首屏标题不拆） */
   const fold = window.innerHeight * 0.92;
