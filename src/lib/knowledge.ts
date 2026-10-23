@@ -43,7 +43,7 @@ export const recordSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]{3,120}$/), source_id: z.string(), role_id: z.string().refine(id => knowledgeRoles.some(role => role.id === id)),
   category: categorySchema, title: z.string().min(1).max(250), summary: z.string().min(1).max(600),
   applicability: z.string().min(1).max(700), relation: z.enum(["direct", "related", "context"]),
-  tags: z.array(z.string().min(1).max(80)).max(30), facts: z.array(factSchema).min(1).max(30),
+  tags: z.array(z.string().min(1).max(80)).max(30), facts: z.array(factSchema).min(1).max(200),
   missing_fields: z.array(z.string().min(1).max(100)).max(30),
   verification: z.literal("quote_verified"), content_hash: z.string().regex(/^[a-f0-9]{64}$/),
   collected_at: z.iso.datetime({ offset: true }), verified_at: z.iso.datetime({ offset: true }),

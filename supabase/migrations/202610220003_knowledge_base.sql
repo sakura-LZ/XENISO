@@ -37,7 +37,7 @@ create table public.kb_records (
   applicability text not null,
   relation text not null check (relation in ('direct','related','context')),
   tags text[] not null,
-  facts jsonb not null check (jsonb_typeof(facts) = 'array' and jsonb_array_length(facts) between 1 and 30),
+  facts jsonb not null check (jsonb_typeof(facts) = 'array' and jsonb_array_length(facts) between 1 and 200),
   missing_fields text[] not null,
   verification text not null check (verification = 'quote_verified'),
   content_hash text not null references public.kb_snapshots(content_hash),

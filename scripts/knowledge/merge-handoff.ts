@@ -78,7 +78,7 @@ for (const item of handoff) {
     sha256: hash(raw),
     captured_at: capturedAt,
     content_type: artifact.content_type,
-    method: isPdf ? "pypdf_page_text" : isDocx ? "docx_text" : isXlsx ? "xlsx_text" : artifact.content_type === "text/plain" ? "downloaded_text" : "downloaded_html",
+    method: isPdf ? "pypdf_page_text" : isDocx ? "docx_text" : isXlsx ? "xlsx_text" : /^text\/plain$|javascript/i.test(artifact.content_type) ? "downloaded_text" : "downloaded_html",
     ...(needsExtraction && artifact.text_path ? { extracted_path: artifact.text_path, extracted_sha256: hash(Buffer.from(text, "utf8")) } : {}),
   };
 
@@ -104,7 +104,7 @@ for (const item of handoff) {
         `${y}\\D{0,6}0?${Number(m)}\\D{0,6}0?${Number(d)}`,
       ];
       // PDF 的日期证据必须来自抽取后的正文，而不是二进制原文
-      const dateEvidence = isHtml || artifact.content_type === "text/plain" ? rawDecoded : text;
+      const dateEvidence = isHtml || /^text\/plain$|javascript/i.test(artifact.content_type) ? rawDecoded : text;
       const hit = candidates.find((candidate) => new RegExp(candidate, "iu").test(dateEvidence));
       if (hit) groupDatePattern.set(source.id, hit);
       else {

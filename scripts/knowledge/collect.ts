@@ -11,7 +11,7 @@ const manifestSchema = z.array(z.object({
   extracts: z.array(z.object({ field: z.string(), pattern: z.string().min(10).max(2000) })).min(1),
   expected_fields: z.array(z.string()), publication_pattern: z.string().min(8).optional(),
   browser_capture: z.object({ path: z.string().startsWith("data/knowledge/captures/"), captured_at: z.iso.datetime(), sha256: z.string().regex(/^[a-f0-9]{64}$/), method: z.literal("browser_visible_excerpt") }).optional(),
-  artifact_capture: z.object({ path: z.string().startsWith("work/knowledge-"), sha256: z.string().regex(/^[a-f0-9]{64}$/), captured_at: z.iso.datetime(), content_type: z.enum(["text/html", "application/pdf", "text/plain", "application/json", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]), extracted_path: z.string().startsWith("work/knowledge-").optional(), extracted_sha256: z.string().regex(/^[a-f0-9]{64}$/).optional(), method: z.enum(["downloaded_html", "pypdf_page_text", "docx_text", "xlsx_text", "downloaded_text"]) }).optional(),
+  artifact_capture: z.object({ path: z.string().startsWith("work/knowledge-"), sha256: z.string().regex(/^[a-f0-9]{64}$/), captured_at: z.iso.datetime(), content_type: z.enum(["text/html", "application/pdf", "text/plain", "application/json", "application/javascript", "application/x-javascript", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]), extracted_path: z.string().startsWith("work/knowledge-").optional(), extracted_sha256: z.string().regex(/^[a-f0-9]{64}$/).optional(), method: z.enum(["downloaded_html", "pypdf_page_text", "docx_text", "xlsx_text", "downloaded_text"]) }).optional(),
 }).refine(item => item.source.published_at === null || Boolean(item.publication_pattern), "Known publication date requires raw metadata evidence"));
 const name = process.argv[2] ?? "pilot";
 if (!/^[a-z0-9-]{2,40}$/.test(name)) throw new Error("Invalid collection manifest name");
@@ -53,7 +53,7 @@ for (const item of manifest) {
     const isXlsx = artifact?.method === "xlsx_text" && contentType === xlsxType;
     // application/json 也是公开官方接口的合法证据载体（如大厂职位检索 API），
     // 按纯文本处理并做空白折叠。
-    if (!/text\/(html|plain)|application\/(xhtml\+xml|json)/i.test(contentType) && !isPdf && !isDocx && !isXlsx) throw new Error("unsupported_content_type");
+    if (!/text\/(html|plain)|application\/(xhtml\+xml|json|javascript|x-javascript)/i.test(contentType) && !isPdf && !isDocx && !isXlsx) throw new Error("unsupported_content_type");
     const reader = response.body!.getReader(), chunks: Buffer[] = []; let size = 0;
     // 上限 20MB：高校就业质量报告 PDF 常达 5–20MB（含图表），
     // 5MB 会把合法官方原件误判为超大响应。
@@ -135,7 +135,12 @@ for (const item of manifest) {
   } catch (error) {
     const safeReasons = ["unsupported_content_type", "response_too_large", "no_evidence_matched", "no_evidence_matched_whitespace", "evidence_offsets_mismatch", "publication_date_unverified", "classification_review_required", "text_encoding_mismatch", "capture_hash_mismatch", "pdf_extraction_hash_mismatch", "source_id_conflict"];
     const message = error instanceof Error ? error.message : "";
-    attempts.push({ source_id: item.source.id, url, at, status: "failed", http_status: httpStatus, reason: safeReasons.includes(message) || /^http_\d+$/.test(message) ? message : "network_redirect_or_contract_error" });
+    const masked = safeReasons.includes(message) || /^http_\d+$/.test(message) ? message : "network_redirect_or_contract_error";
+    // 兜底原因会抹掉真实错误，审计时必须能看到原始信息。
+    if (masked === "network_redirect_or_contract_error") {
+      console.error(`[collect] ${item.source.id} 未归因错误：${message || String(error)}`);
+    }
+    attempts.push({ source_id: item.source.id, url, at, status: "failed", http_status: httpStatus, reason: masked });
   }
 }
 const bundle = { version: "1.0", generated_at: new Date().toISOString(), sources, records, snapshots, attempts };
