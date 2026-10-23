@@ -55,6 +55,10 @@ const TARGETS: Array<[SceneKind, string[]]> = [
     ".xp-lede",
     ".atlas-band-head .t-lede",
     ".atlas-limits .atlas-cols-3 > div",
+    ".community-lede",
+    // 带边框的说明块：逐行揭示，不用波浪线（否则会和边框重叠）
+    ".community-note",
+    ".as-limit",
   ]],
   /* 图版：从档案袋里抽出来 */
   ["plate", [".xn-direction-art", "figure.xd-figure", "figure.pr-experience-outcome"]],
@@ -63,13 +67,28 @@ const TARGETS: Array<[SceneKind, string[]]> = [
   /* 表格：先画横线再填字 */
   // 表格按"行"武装：整张表的顶边往往就在视口里，按表武装等于永不触发；
   // 按行武装则表头几行原地不动、往下翻一行画一行，语义也更准。
-  ["rule", ["table.xd-table tbody tr", "table.xnlib-compare tbody tr"]],
+  ["rule", [
+    "table.xd-table tbody tr",
+    "table.xnlib-compare tbody tr",
+  ]],
   /* 数字：机械计数器 */
   ["count", [".xnlib-rail-count", ".xp-ledger-count"]],
   /* 章节标签：随翻阅做细微位移 */
   ["shift", [".xr-sec-tag"]],
   /* 条目：盖章落入 */
-  ["stamp", [".xnlib-steps", ".xd-evidence", ".atlas-dir-list", ".xr-gap-list", ".chroma-legend"]],
+  ["stamp", [
+    ".xnlib-steps",
+    ".xd-evidence",
+    ".atlas-dir-list",
+    ".xr-gap-list",
+    ".chroma-legend",
+    // 初步评价的"答完给你四栏"：四个栏目像图章依次落下
+    ".as-index > div",
+    // 初步评价的规格清单（自带边框，用盖章比画线更合适，不会和边框重叠）
+    ".as-spec > div",
+    // 交流社区的帖子卡片
+    ".community-slip",
+  ]],
 ];
 
 const KINDS = new Set<string>(TARGETS.map(([kind]) => kind));
