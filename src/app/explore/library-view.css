@@ -318,7 +318,9 @@
   flex: none;
   width: 8px;
   height: 8px;
+  /* 右移 2px：旋转 45° 后包围盒约 11.3px，留出余量，避免 summary 内部横向溢出 */
   margin-left: auto;
+  margin-right: 2px;
   border-right: 1.5px solid currentColor;
   border-bottom: 1.5px solid currentColor;
   transform: rotate(45deg) translate(-1px, -1px);
