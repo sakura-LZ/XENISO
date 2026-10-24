@@ -299,6 +299,37 @@
   border-radius: var(--radius);
   background: var(--surface);
 }
+
+/* ---- 拉开档案袋：点开一个方向时，六块内容像抽屉一格格拉出来 ----
+   用户原话："是不是还可以有一些比如拉开抽屉 或者打开档案袋 这类原创特效"。
+   之前这里是一次性换页（pageH 2386 → 3616），document.getAnimations() 在
+   0 / 60 / 260ms 三个时刻只有行背景色过渡，**没有任何 transform / height /
+   clip-path 动画**——结构做对了，动作一点没有。
+   现在的做法：每块用 clip-path 从自己上沿向下展开（像抽屉面被拉开一道缝再露全），
+   同时向上轻移 10px 收住，按 nth-child 每格错 70ms。
+   只动 clip-path / translate / opacity，不碰 height，避免重排与跳动。 */
+.xnlib-chapter {
+  animation: xnlib-drawer-pull 520ms cubic-bezier(.22, .8, .28, 1) both;
+}
+.xnlib-chapter:nth-child(1) { animation-delay: 0ms; }
+.xnlib-chapter:nth-child(2) { animation-delay: 70ms; }
+.xnlib-chapter:nth-child(3) { animation-delay: 140ms; }
+.xnlib-chapter:nth-child(4) { animation-delay: 210ms; }
+.xnlib-chapter:nth-child(5) { animation-delay: 280ms; }
+.xnlib-chapter:nth-child(6) { animation-delay: 350ms; }
+
+@keyframes xnlib-drawer-pull {
+  0%   { clip-path: inset(0 0 100% 0);   translate: 0 -10px; opacity: 0; }
+  35%  { opacity: 1; }
+  100% { clip-path: inset(0 0 0 0);      translate: 0 0;     opacity: 1; }
+}
+
+/* 列表行原本就有 xnlib-pull（见 .xnlib-drawer-row 的基础规则），这里不覆盖它。
+   盲审 P0-3 缺的是"点开之后那六块内容"的转场，不是行本身。 */
+
+@media (prefers-reduced-motion: reduce) {
+  .xnlib-chapter { animation: none; }
+}
 .xnlib-chapter-head { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 0 14px; align-items: start; }
 .xnlib-chapter-icon {
   display: grid;
