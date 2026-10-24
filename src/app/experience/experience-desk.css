@@ -628,3 +628,10 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   .xd-step-done { animation: none; }
   .xd-mode { transition: none; }
 }
+
+/* 材料口径折叠行：制度说明不再占首屏，点开才看到 */
+.xd-before-fold { margin: 10px 0 0; font-size: var(--fs-meta); color: var(--ink-3); }
+.xd-before-fold > summary { display: flex; align-items: center; gap: 6px; cursor: pointer; list-style: none; }
+.xd-before-fold > summary::-webkit-details-marker { display: none; }
+.xd-before-fold > summary svg { width: 1em; height: 1em; flex: none; }
+.xd-before-fold > p { margin: 6px 0 0; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-2); }

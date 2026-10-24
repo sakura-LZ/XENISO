@@ -258,7 +258,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
         <section className="atlas-sheet xd-tight xd-leaves" aria-label="做完会留下什么">
           <div className="xd-leaves-head">
             <h3>做完会留下什么</h3>
-            <p className="xd-sheet-note">能不能考上不预测，方向也不给排名。</p>
+            
           </div>
           <div className="xd-leaves-grid" data-atlas-reveal data-atlas-stagger>
             <div className="xd-leaf">
@@ -274,10 +274,10 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
               <p className="xd-leaf-line">一张可导出 JSON 或 Markdown 的成果卡。</p>
             </div>
           </div>
-          <p className="xd-before-note">
-            <IconWarning aria-hidden="true" />
-            材料是合成的，不能当临床依据或岗位绩效。留在临床也是正经选项。
-          </p>
+          <details className="xd-before-fold">
+            <summary><IconWarning aria-hidden="true" />材料口径与边界</summary>
+            <p>材料是合成的，不能当临床依据或岗位绩效。留在临床也是正经选项。</p>
+          </details>
           {(hasDraft || hasSaved || legacyDraft) && <div className="xd-resume">
             {hasDraft && <button type="button" className="atlas-btn" onClick={restore}>接着做本机暂存</button>}
             {hasSaved && <button type="button" className="atlas-btn" onClick={() => void loadSaved()}>读回已保存成果</button>}
