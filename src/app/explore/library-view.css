@@ -1,4 +1,4 @@
-/*
+﻿/*
  * XENISO 信息文库 —— 目录柜 + 抽出来的档案页。
  * 只使用 globals.css 的 token 与 atlas.css 的原语，不新开色板。
  * 主动效：筛选后卡片像抽屉被抽出（xnlib-pull），逐行错开；其余为悬停与描边。
@@ -350,7 +350,7 @@
 .xnlib-sub-label { margin: 16px 0 0; font-size: var(--fs-small); font-weight: 600; color: var(--ink-3); }
 .xnlib-chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
 .xnlib-skill-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 28px; margin-top: 16px; }
-.xnlib-skill-pair > div > :is(h4, h3) { margin-top: 0; }
+.xnlib-skill-pair > div > :is(h4, h3, .xnlib-field) { margin-top: 0; }
 /* 对比表格单元格内的小标签：原来是 h3（16px，不在任何字号档上），改成 strong + 标签档 */
 .xnlib-cell-label { display: block; margin: 10px 0 4px; font-size: var(--fs-label); line-height: var(--lh-label); color: var(--ink-3); font-weight: 600; }
 .xnlib-cell-label:first-child { margin-top: 0; }
@@ -433,6 +433,10 @@
 .xnlib-kv3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px 24px; margin-top: 20px; }
 .xnlib-kv3 h3 { margin: 0 0 4px; font-size: var(--fs-small); color: var(--ink-3); font-weight: 600; }
 .xnlib-kv3 p { margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); }
+/* 卡内字段名不是区块标题：用 span + 这一档样式，正文层级只保留 h1/h2/h3 三层。 */
+.xnlib-fold-icon { display: inline-flex; align-items: center; justify-content: center; color: var(--ink-3); }
+.xnlib-fold-icon svg { width: 1em; height: 1em; }
+.xnlib-field { display: block; margin: 0 0 4px; font-size: var(--fs-small); color: var(--ink-3); font-weight: 600; }
 .xnlib-note { margin: 14px 0 0; max-width: 62ch; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-3); }
 .xnlib-note a { color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
 .xnlib-after-form { margin-top: 16px; }

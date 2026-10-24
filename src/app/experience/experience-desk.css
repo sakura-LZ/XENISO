@@ -1,4 +1,4 @@
-/*
+﻿/*
  * 职业体验（异域探索第 3 步）——三栏工作台。
  * 纸片、封条、印章、横格纸来自 atlas.css，色板只用 globals.css 的 token，不新开颜色。
  * 结构：176px 阶段导航 ｜ 中栏「材料—决策—理由」｜ 320px 导师数字人；
@@ -277,7 +277,7 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
 /* 结果 */
 .xd-result { margin-top: 16px; border-top: 1.5px solid var(--ink); padding-top: 14px; }
 .xd-result-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; }
-.xd-result-head h4 { margin: 0; font-size: var(--fs-body); }
+.xd-result-head .xd-result-name { margin: 0; font-size: var(--fs-body); font-weight: 600; display: flex; align-items: center; gap: 6px; }
 .xd-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(112px, 1fr)); gap: 1px; margin: 12px 0 0; background: var(--line-2); }
 .xd-metrics > div { padding: 10px 12px; background: var(--surface); }
 .xd-metrics dt { font-size: var(--fs-meta); line-height: var(--lh-label); color: var(--ink-3); }
@@ -483,15 +483,16 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   font-weight: 600;
   color: var(--ink);
 }
-.xd-mode h4 {
+.xd-mode .xd-mode-name {
   display: flex;
   align-items: center;
   gap: 8px;
   margin: 0;
   font-size: var(--fs-body);
   line-height: var(--lh-small);
+  font-weight: 600;
 }
-.xd-mode h4 svg { flex: none; font-size: 1.15em; color: var(--green-deep); }
+.xd-mode .xd-mode-name svg { flex: none; font-size: 1.15em; color: var(--green-deep); }
 .xd-mode p { margin: 0; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-2); }
 .xd-mode .atlas-btn { justify-self: start; margin-top: 4px; }
 .xd-mode-preview { border: 1px dashed var(--line); background: var(--surface); padding: 12px; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-2); }

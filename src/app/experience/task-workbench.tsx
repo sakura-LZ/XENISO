@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import type { Template } from "@/lib/experience/templates";
 import { IconPin, IconPulse } from "@/components/icons";
 import { operationResult, type ChoiceState, type OperationResult } from "@/lib/experience/operations";
@@ -38,7 +38,7 @@ export function OperationPreview({ result }: { result: OperationResult }) {
   return (
     <div className="xd-result" aria-live="polite" data-motion="M-E06">
       <div className="xd-result-head">
-        <h4><IconPulse aria-hidden="true" />这一步的结果</h4>
+        <p className="xd-result-name"><IconPulse aria-hidden="true" />这一步的结果</p>
         <span className="simulation-tag">simulation · 固定教学数据</span>
       </div>
       {result.series && <SeriesChart series={result.series} />}

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * XENISO · 报告区（R1 初步评价 / R2 行动规划）
  * 采集册 / 档案袋：只用 globals.css 的 token 和 atlas.css 的纸片原语。
  * 类名统一 xr- 前缀，避免和别的目录撞车。
@@ -263,7 +263,7 @@
 .xr-stack { margin-top: 18px; }
 .xr-next { display: grid; gap: 10px; }
 .xr-sec h3 { margin: 0 0 10px; font-size: var(--fs-h3); line-height: var(--lh-h3); }
-.xr-sec h4 { margin: 0 0 4px; font-size: var(--fs-body); line-height: 1.5; }
+.xr-sec h4, .xr-sec .xr-sub-name { margin: 0 0 4px; font-size: var(--fs-body); line-height: 1.5; }
 .xr-radar-figure > div { min-width: 0; }
 .xr-source { margin: 10px 0 0; font-size: var(--fs-small); line-height: 1.7; color: var(--ink-3); max-width: 40em; }
 .xr-source a { color: var(--ink-2); text-underline-offset: 3px; }
@@ -518,7 +518,7 @@
    原来用 <h3> 但字号压到 --fs-body(17px)，导致全站 h3 出现 17 和 21 两种尺寸
    ——正是"字体大小不统一"的观感来源。改成语义更准的 h4（站内 h4 本来就是 17px），
    h3 就此全站统一 21px。 */
-.xr-field-block > h4 { margin: 0 0 10px; font-size: var(--fs-h4, var(--fs-body)); line-height: var(--lh-h3); font-weight: 600; }
+.xr-field-block > h4, .xr-field-block > .xr-sub-name { margin: 0 0 10px; font-size: var(--fs-h4, var(--fs-body)); line-height: var(--lh-h3); font-weight: 600; }
 .xr-label {
   display: block;
   margin-top: 12px;
@@ -711,7 +711,7 @@
   gap: 10px 16px;
   flex-wrap: wrap;
 }
-.xr-task-head h4 { margin: 0; font-size: var(--fs-body); line-height: var(--lh-h3); }
+.xr-task-head h4, .xr-task-head .xr-sub-name { margin: 0; font-size: var(--fs-body); line-height: var(--lh-h3); font-weight: 600; }
 .xr-task > p { margin: 8px 0 10px; font-size: var(--fs-body); line-height: 1.75; color: var(--ink-2); }
 @media (prefers-reduced-motion: reduce) {
   .xr-task { transition: none; }
@@ -850,9 +850,9 @@
   border-top: 1px solid var(--line);
 }
 .xr-setup-steps li:first-child { padding-top: 0; border-top: 0; }
-/* 空态「下一步」三项是列表项标题，不是区块标题：用 h4 让 h3 全站统一 21px */
-.xr-setup-steps h4 { margin: 0 0 4px; font-size: var(--fs-body); line-height: var(--lh-h3); font-weight: 600; }
-.xr-setup-steps h4 a { color: var(--ink); text-underline-offset: 4px; }
+/* 空态「下一步」三项是列表项标题，不是区块标题：用 span 样式，正文只留 h1/h2/h3 三层。 */
+.xr-setup-steps .xr-setup-name { margin: 0 0 4px; font-size: var(--fs-body); line-height: var(--lh-h3); font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.xr-setup-steps .xr-setup-name a { color: var(--ink); text-underline-offset: 4px; }
 .xr-setup-steps p { margin: 0; font-size: var(--fs-body); line-height: 1.7; color: var(--ink-2); max-width: 40em; }
 .xr-setup-step { padding-top: 3px; font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: .08em; color: var(--ink-3); }
 

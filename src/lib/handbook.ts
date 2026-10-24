@@ -1,4 +1,4 @@
-/** LIMEN 编辑性实践建议；参考资料支持技术概念，不构成招生或职业资格承诺。 */
+﻿/** LIMEN 编辑性实践建议；参考资料支持技术概念，不构成招生或职业资格承诺。 */
 export type HandbookDirectionId =
   | "ml_cv" | "software" | "llm_agent" | "devices" | "signals"
   | "imaging_eng" | "clinical_data" | "health_systems" | "med_nlp_kg" | "medicine";
@@ -20,7 +20,7 @@ export type HandbookEntry = {
 
 export const handbookEntries: Record<HandbookDirectionId, HandbookEntry> = {
   medicine: {
-    overview: "继续医学也是一种主动选择。先从内科学、外科学、妇产科学和儿科学的合成情景，了解信息整理、沟通和团队协作活动。学科与医院科室并非一一对应；体验不能替代见习、规培或执业资格评定。",
+    overview: "从内科学、外科学、妇产科学和儿科学的合成情景了解协作。学科与科室并非一一对应，体验不能替代见习规培。",
     daily_work: ["在带教和岗位权限内整理信息，区分本人观察、转述和待核实内容。", "向患者及家属解释沟通目的，确认理解与参与意愿。", "向团队交接已知事项、未知事项和待跟进工作，按本机构规范核对。"],
     starter_project: {
       title: "完成一份科室沟通与交接卡", question: "内科学、外科学、妇产科学和儿科学相关工作中的沟通重点有哪些差异？",
@@ -32,7 +32,7 @@ export const handbookEntries: Record<HandbookDirectionId, HandbookEntry> = {
     prerequisites: ["医学伦理与患者隐私", "临床沟通基础", "在带教和权限范围内实践"], sources: [{ title: "上海交通大学研招网公开2026目录", url: "https://yzb.sjtu.edu.cn/storage/gs/web/yzbcn/article/2026/03/696a59c2f7ccecc45649e9d5500ef7a0.xlsx", purpose: "核对内科学、外科学、妇产科学、儿科学名称；不是当前招生、学位类型、专业代码或个人资格核定。" }],
   },
   ml_cv: {
-    overview: "把临床问题转成可评价的预测任务，工作重点包括数据划分、基线模型、错误分析和泛化验证。会使用模型只是起点，更重要的是解释模型在什么人群、设备和条件下失效。",
+    overview: "把临床问题拆成预测任务，做数据划分与基线校验。别光看跑通模型，得抓出它在哪类人群和设备下失效。",
     daily_work: [
       "与使用者约定预测对象、标签定义、决策时点及漏报和误报代价，再检查标签是否可靠。",
       "按患者或数据来源划分训练集与测试集，只在训练数据上拟合标准化等预处理，建立简单基线。",
@@ -50,7 +50,7 @@ export const handbookEntries: Record<HandbookDirectionId, HandbookEntry> = {
     sources: [{ title: "scikit-learn：Common pitfalls and recommended practices", url: "https://scikit-learn.org/stable/common_pitfalls.html", purpose: "理解预处理不一致、数据泄漏及训练/测试隔离。" }],
   },
   software: {
-    overview: "把真实工作流程做成可以持续使用的软件，需要处理需求、数据结构、交互、测试和维护。医学背景能帮助发现流程问题，但仍需用可运行功能和验证结果证明方案有效。",
+    overview: "把临床流程写成可用软件，做需求梳理、交互与测试。懂业务痛点还不够，得拿出能跑的代码与实际验证结果。",
     daily_work: [
       "观察一个业务流程，将需求写成可检查的行为，例如保存后刷新还能读取、错误输入能得到提示。",
       "设计页面和数据结构，实现输入校验、状态反馈、异常处理与必要权限。",
@@ -68,7 +68,7 @@ export const handbookEntries: Record<HandbookDirectionId, HandbookEntry> = {
     sources: [{ title: "Next.js：Testing", url: "https://nextjs.org/docs/app/guides/testing", purpose: "区分单元、组件、集成和端到端测试，选择与功能相符的验证方式。" }],
   },
   llm_agent: {
-    overview: "设计让语言模型在资料与工具之间完成任务的工作流。核心工作包含检索、工具边界、失败处理和逐条评估，不能只用一次流畅回答判断系统质量。",
+    overview: "搭工作流串联模型、资料库与工具，盯紧调用边界与容错。单次答得顺不算数，得建测试集逐条评估稳定性。",
     daily_work: [
       "定义可回答问题、允许使用的资料、拒绝或追问条件，以及工具可以执行的动作。",
       "记录模型版本、输入、引用和工具结果，分析漏检、引用不支持、工具失败等错误。",
@@ -86,7 +86,7 @@ export const handbookEntries: Record<HandbookDirectionId, HandbookEntry> = {
     sources: [{ title: "Hugging Face：Lighteval 官方 README", url: "https://raw.githubusercontent.com/huggingface/lighteval/main/README.md", purpose: "了解自定义任务、指标与逐样本结果；问答项目的人工评分规则由 LIMEN 编辑设计。" }],
   },
   devices: {
-    overview: "从临床使用需求出发，把传感器、电子电路、软件与测试组合成器械方案。既要关注测量性能，也要描述使用条件、故障风险和验证方法；教学原型不等同于可用于人体的医疗器械。",
+    overview: "拿传感器、电路和软件搭测量方案，排查故障与环境限制。做手板很容易，但原型不等同于能上人体的医疗器械。",
     daily_work: [
       "把临床诉求转为可测量需求，说明使用者、环境、输入输出和不能接受的失败。",
       "比较传感与处理方案，建立台架或仿真测试，记录校准、漂移和噪声。",
@@ -104,7 +104,7 @@ export const handbookEntries: Record<HandbookDirectionId, HandbookEntry> = {
     sources: [{ title: "FDA：Overview of Device Regulation", url: "https://www.fda.gov/medical-devices/device-advice-comprehensive-regulatory-assistance/overview-device-regulation", purpose: "了解美国医疗器械监管概览；不能代替中国注册要求或具体器械合规判断。" }],
   },
   signals: {
-    overview: "处理 ECG、EEG 等时间序列，判断噪声来源、选择滤波方法并验证特征是否被改变。医学背景帮助理解波形意义，工程训练帮助区分真实生理变化与处理伪影。",
+    overview: "处理 ECG、EEG 等时间序列，选择滤波方法。医学背景帮助理解波形，工程训练帮助区分生理变化与伪影。",
     daily_work: [
       "核对采样率、通道、单位、标注和缺失片段，绘制时域波形及频谱。",
       "识别基线漂移、工频和运动伪影，比较不同滤波或重采样设置。",
@@ -125,7 +125,7 @@ export const handbookEntries: Record<HandbookDirectionId, HandbookEntry> = {
     ],
   },
   imaging_eng: {
-    overview: "研究医学图像如何形成、重建、配准和被可靠地处理。与单纯训练分类器相比，这个方向更关注物理空间、图像质量、几何关系和算法误差。",
+    overview: "做成像重建、配准与形变处理。别光套分类模型跑分，把精力放在物理空间、图像质量和几何算法误差上。",
     daily_work: [
       "核对图像的 spacing、origin、direction 和强度单位，判断不同图像能否直接比较。",
       "选择配准、分割或增强方法，设置变换、相似性度量、优化器与插值。",
@@ -143,7 +143,7 @@ export const handbookEntries: Record<HandbookDirectionId, HandbookEntry> = {
     sources: [{ title: "SimpleITK：Registration Overview", url: "https://simpleitk.readthedocs.io/en/master/registrationOverview.html", purpose: "配准坐标映射、变换、度量、优化器与初始化的官方说明。" }],
   },
   clinical_data: {
-    overview: "把临床数据整理成可分析且可复核的研究资料，重点是定义变量、检查质量、设计分析和解释不确定性。医学知识能帮助发现不合理值，但不能替代研究设计和统计验证。",
+    overview: "清洗病历与检查指标，定义变量并核对脏数据。临床经验能帮你揪出异常，但结论必须靠严谨研究设计与统计检验。",
     daily_work: [
       "与研究者确定研究对象、观察窗口、暴露与结局，并建立变量字典。",
       "检查缺失、重复、单位和时间顺序，保留清洗规则及排除记录。",
@@ -161,7 +161,7 @@ export const handbookEntries: Record<HandbookDirectionId, HandbookEntry> = {
     sources: [{ title: "pandas：Working with missing data", url: "https://pandas.pydata.org/docs/user_guide/missing_data.html", purpose: "缺失值类型、检测和处理操作；研究层面的缺失机制判断仍需另外设计。" }],
   },
   health_systems: {
-    overview: "让不同医疗系统交换可理解的数据，并让信息系统符合实际工作流程。工作常在临床需求、数据标准、软件实现和质量控制之间展开。",
+    overview: "打通院内割裂系统，让业务流转顺畅。在医护痛点与软件实现之间搭桥，落地数据标准并把控字段交换质量。",
     daily_work: [
       "梳理门诊、检验或转诊流程，定义参与者、触发事件及数据去向。",
       "对照数据标准设计字段映射，核对标识、编码、单位、时间与资源引用。",
@@ -179,7 +179,7 @@ export const handbookEntries: Record<HandbookDirectionId, HandbookEntry> = {
     sources: [{ title: "HL7：FHIR Overview（R5）", url: "https://hl7.org/fhir/overview.html", purpose: "电子医疗信息交换与资源化建模概览；具体实现还需对应资源和实施指南。" }],
   },
   med_nlp_kg: {
-    overview: "把医学文本中的术语、实体和关系整理为可检索的知识。核心难点包括同义词、否定、时间、缩写和证据来源，不能只抽出几个词就视为理解了临床语义。",
+    overview: "从病历里抽取实体与关系，做结构化整理。难点在抓准缩写、否定词与时序逻辑，抽几个关键词不算读懂病历。",
     daily_work: [
       "确定语料使用条件，编写实体边界、否定和关系标注规则并处理分歧。",
       "使用规则或模型抽取实体，链接到术语表，保留原文位置和来源。",

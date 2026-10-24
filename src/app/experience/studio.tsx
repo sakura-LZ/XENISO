@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { z } from "zod";
@@ -240,10 +240,10 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
               <h3 className="xd-modes-head">选一种做法开始</h3>
               <div className="xd-modes" data-atlas-reveal data-atlas-stagger>
                 {(["project", "interview"] as const).map(value => <section className="xd-mode" key={value}>
-                  <h4>
+                  <p className="xd-mode-name">
                     {value === "project" ? <IconFolder aria-hidden="true" /> : <IconChat aria-hidden="true" />}
                     {value === "project" ? "按项目做" : "按面试做"}
-                  </h4>
+                  </p>
                   <TaskModePreview template={item} mode={value} />
                   <p>{value === "project" ? "看材料、做三次决定、每步写理由，最后拿到成果卡。" : "先选证据再解释取舍，第三步会来一条新约束。"}</p>
                   <button type="button" className="atlas-btn atlas-btn-primary" onClick={() => { invalidate(); setMode(value); setStarted(true); setSaved(null); setStep(0); setMessage(""); }}>{value === "project" ? "用项目方式开始" : "用面试方式开始"}</button>

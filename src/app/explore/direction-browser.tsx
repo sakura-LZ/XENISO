@@ -1,10 +1,10 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type MouseEvent, type ReactNode } from "react";
 import { handbookEntries, type HandbookDirectionId } from "@/lib/handbook";
 import { directions, findDirection, groups, occupationUrl, type Direction } from "@/lib/directions";
 import { getTemplate } from "@/lib/experience/templates";
-import { IconBook, IconCompass, IconFolder, IconPulse, IconProfile, IconQuote, IconStamp } from "@/components/icons";
+import { IconAccount, IconBook, IconCompass, IconExternal, IconFolder, IconPlay, IconProfile, IconPulse, IconQuote, IconStamp } from "@/components/icons";
 import { OfficialDossier } from "./official-dossier";
 import { InkField } from "@/components/ink-field";
 import { MedicineBrowser } from "./medicine-browser";
@@ -162,11 +162,13 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
           <span className="atlas-chip">{current.group_name}</span>
           {current.onet.length
             ? current.onet.map(item => <a className="atlas-chip" key={item.code} href={occupationUrl(item.code)} target="_blank" rel="noreferrer">SOC {item.code}</a>)
-            : <span className="atlas-chip">不适用 O*NET 职业条目</span>}
-          <span className="atlas-chip" data-tone="ok">资料按来源逐条标注</span>
+            : null}
         </div>
         <p className="xnlib-file-lede">{handbook.overview}</p>
-        <p className="xnlib-file-rule"><span className="xnlib-file-rule-icon" aria-hidden="true"><IconQuote /></span><span>引文照录原文，院校、年份和统计对象均已核对。标题与归属是站内索引，非原文自带；没写或查不到的，标「没查到」。</span></p>
+        <Fold label="引文与标注口径">
+
+          <p className="xnlib-file-rule"><span className="xnlib-file-rule-icon" aria-hidden="true"><IconQuote /></span><span>引文照录原文，院校、年份和统计对象均已核对。标题与归属是站内索引，非原文自带；没写或查不到的，标「没查到」。</span></p>
+        </Fold>
         <div className="xnlib-file-actions">
           <Link className="button secondary" href={`/experience?direction=${current.id}`}>看这个方向的练习任务</Link>
           <label className="xnlib-check"><input type="checkbox" checked={state.compare.includes(current.id)} onChange={() => toggle(current.id)} />加入比较</label>
@@ -183,7 +185,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
             <section id="chapter-overview" className="xnlib-chapter">
               <ChapterHead entry={chapters[0]} />
               <ul className="xnlib-plain-list">{current.work_tasks.map(task => <li key={task}>{task}</li>)}</ul>
-              {medicine ? <p className="xnlib-note">科室、学科和岗位得拆开看。科室介绍证明不了个人报考或入职资格。</p> : <>
+              {medicine ? <p className="xnlib-note">科室和岗位拆开看，科室介绍证明不了资格。</p> : <>
                 <Fold label="对应到哪些职业" count={current.onet.length}>
                   <p className="xnlib-note">职业取自 O*NET，与国内方向的对应由 LIMEN 整理，不是 O*NET 结论。</p>
                   <ul className="xnlib-sources">{current.onet.map(item => <li key={item.code}><a href={occupationUrl(item.code)} target="_blank" rel="noreferrer">{item.name}</a><span className="xnlib-source-code">SOC {item.code} · {relationshipLabel[item.relationship] ?? item.relationship}</span></li>)}</ul>
@@ -198,11 +200,11 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
               {/* 三格小标题是卡内的字段名，不是区块标题：用 h4 与字号阶梯对齐
                   （原先是 h3，但在 390 下只有 15px，会和 h2 同尺寸、层级塌陷）。 */}
               <div className="xnlib-kv3">
-                <div><h4>输入</h4><p>{template.brief}</p></div>
-                <div><h4>处理</h4><p>{template.stages.map(stage => stage.title).join("，然后")}</p></div>
-                <div><h4>结果</h4><p>{template.deliverable}</p></div>
+                <div><span className="xnlib-field">输入</span><p>{template.brief}</p></div>
+                <div><span className="xnlib-field">处理</span><p>{template.stages.map(stage => stage.title).join("，然后")}</p></div>
+                <div><span className="xnlib-field">结果</span><p>{template.deliverable}</p></div>
               </div>
-              <Fold label="一天里的三步" count={handbook.daily_work.length}>
+              <Fold label="一天里的三步" count={handbook.daily_work.length} icon={<IconPulse />}>
                 <ol className="xnlib-steps">{handbook.daily_work.map((task, i) => <li key={task}><span>第 {i + 1} 步</span><p>{task}</p></li>)}</ol>
               </Fold>
             </section>
@@ -212,32 +214,31 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
                 <div>
                   {/* 两列的小标题是卡内字段名，不是章节标题：用 h4 与阶梯对齐
                       （原来是 h3 但 CSS 给到 16px，不在任何字号档上）。 */}
-                  <h4>医学经历可能提供的起点</h4>
+                  <span className="xnlib-field">医学经历可能提供的起点</span>
                   <ul className="xnlib-plain-list">{current.medical_transfer.map(item => <li key={item}>{item}</li>)}</ul>
                 </div>
                 <div>
-                  <h4>这个方向要求、你可能没学过的</h4>
+                  <span className="xnlib-field">这个方向要求、你可能没学过的</span>
                   <p className="xnlib-chip-row">{current.skills.map(item => <span className="atlas-chip" data-tone="gap" key={item}>{item}</span>)}</p>
                   <p className="xnlib-sub-label">入门前先补的基础</p>
                   <ul className="xnlib-plain-list">{handbook.prerequisites.map(item => <li key={item}>{item}</li>)}</ul>
                 </div>
               </div>
-              <p className="xnlib-note">补到什么程度，看目标院校当年的考试科目；不从「我是临床医学」直接推断。</p>
+              <p className="xnlib-note">补到什么程度看目标院校当年考试科目，不直接推断。</p>
             </section>
             <section id="chapter-practice" className="xnlib-chapter">
               <ChapterHead entry={chapters[3]} />
               <div className="atlas-sheet xnlib-project">
                 <h3>{template.title}</h3>
-                <p>{template.brief}</p>
                 <p className="xnlib-note">做完应该拿到：{template.deliverable}<span className="simulation-tag" style={{ marginLeft: 8 }}>simulation</span></p>
               </div>
-              <Fold label="练习的三步" count={template.stages.length}>
+              <Fold label="练习的三步" count={template.stages.length} icon={<IconPlay />}>
                 <ol className="xnlib-steps">{template.stages.map((item, i) => <li key={item.title}><span>第 {i + 1} 步</span><p><strong>{item.title}</strong>：{item.question}</p></li>)}</ol>
               </Fold>
-              <Fold label="可以作为起点的课程" count={current.courses.length}>
+              <Fold label="可以作为起点的课程" count={current.courses.length} icon={<IconBook />}>
                 <ul className="xnlib-plain-list">{current.courses.map(item => <li key={item}>{item}</li>)}</ul>
               </Fold>
-              <Fold label="延伸阅读与实践资料" count={handbook.sources.length}>
+              <Fold label="延伸阅读与实践资料" count={handbook.sources.length} icon={<IconFolder />}>
                 <ul className="xnlib-sources">{handbook.sources.map(source => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a><p>{source.purpose}</p></li>)}</ul>
               </Fold>
               {!medicine && <Fold label="来源资料与检索">
@@ -247,17 +248,19 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
             </section>
             <section id="chapter-admissions" className="xnlib-chapter">
               <ChapterHead entry={chapters[4]} />
-              <p>报考条件按院校、项目和年份逐条核对：能不能报、要不要加试、当年计划多少，都以院校原文为准，没写清的标「没查到」。</p>
-              <Fold label={medicine ? "院校与科室资料" : "院校招生原文与检索"}>
+              <Fold label={medicine ? "院校与科室资料" : "院校招生原文与检索"} icon={<IconStamp />}>
+                <p className="xnlib-note">报考条件按院校逐条核对，要不要加试以院校原文为准，没写清的标「没查到」。</p>
                 {medicine ? <MedicineBrowser initialView="programs" initialCategory="admissions" /> : <OfficialDossier directionId={current.id} initialCategory="admissions" chapterMode />}
               </Fold>
             </section>
             <section id="chapter-industry" className="xnlib-chapter">
               <ChapterHead entry={chapters[5]} />
-              <p>看清发布单位、日期和统计对象。单个岗位或单年样本，都不代表整个行业。</p>
-              {medicine ? <Fold label="科室与执业资料"><MedicineBrowser initialView="departments" /></Fold> : <>
-                <Fold label="招聘原文与检索"><OfficialDossier directionId={current.id} initialCategory="recruitment" chapterMode /></Fold>
-                <Fold label="行业与就业统计"><OfficialDossier directionId={current.id} initialCategory="industry" chapterMode /></Fold>
+              <Fold label="怎么读这些原文" icon={<IconQuote />}>
+                <p className="xnlib-note">看清发布单位，单个岗位或单年样本不代表行业。</p>
+              </Fold>
+              {medicine ? <Fold label="科室与执业资料" icon={<IconAccount />}><MedicineBrowser initialView="departments" /></Fold> : <>
+                <Fold label="招聘原文与检索" icon={<IconExternal />}><OfficialDossier directionId={current.id} initialCategory="recruitment" chapterMode /></Fold>
+                <Fold label="行业与就业统计" icon={<IconFolder />}><OfficialDossier directionId={current.id} initialCategory="industry" chapterMode /></Fold>
               </>}
             </section>
           </div>
@@ -381,9 +384,10 @@ function ChapterHead({ entry }: { entry: (typeof chapters)[number] }) {
 }
 
 /** 需要时才展开：原生 details，不依赖 JS 也能开合、也能被检索到。 */
-function Fold({ label, count, children }: { label: string; count?: number; children: ReactNode }) {
+function Fold({ label, count, icon, children }: { label: string; count?: number; icon?: ReactNode; children: ReactNode }) {
   return <details className="xnlib-fold">
     <summary>
+      {icon && <span className="xnlib-fold-icon" aria-hidden="true">{icon}</span>}
       <span className="xnlib-fold-label">{label}</span>
       {typeof count === "number" && <span className="xnlib-fold-count">{count}</span>}
       <span className="xnlib-fold-chevron" aria-hidden="true" />
