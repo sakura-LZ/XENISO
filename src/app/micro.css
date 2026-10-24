@@ -193,6 +193,19 @@ main h2[data-xn-mark="1"]::before { animation: xn-mark-bleed 720ms var(--xn-m-ou
   vertical-align: baseline;
   opacity: 0;
   transform: translate3d(0, .9em, 0) rotate(var(--xn-cr, .4deg));
+  /* 兜底：拆字之后如果 is-typing 没能加上（JS 中途抛错、标题被 React 重挂、
+     或者浏览器丢弃了动画），这行字会永远停在 opacity: 0——这是全站唯一一条
+     "藏内容却不看开关"的规则，必须自己兜住自己。
+     2.5s 后无条件显形：forwards 填充只在动画跑完后生效，延迟期间仍然按基础
+     样式（opacity: 0）渲染，所以正常路径完全不受影响。
+     一旦 is-typing 出现，下面的 animation 简写会整条覆盖这条兜底。 */
+  animation: xn-lead-guard 1ms linear 2500ms forwards;
+}
+@keyframes xn-lead-guard {
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 h1.is-typing .xn-lead,
 h2.is-typing .xn-lead {
@@ -463,41 +476,12 @@ main:has(.atlas-hero) {
 .atlas-band[data-xn-crease="1"]::before { opacity: .6; }
 
 /* ===========================================================================
- * 12. 路由级墨迹转场（route ink wipe）
- *    template.tsx 每次站内导航都会重新挂载；纸色遮罩从盖住到向上擦除（320ms），
- *    退出不阻塞：不做退场动画，新页面照常先渲染。
- *    首次加载与 StrictMode 重挂不播（由 JS 判定），减少动效下完全不出现。
+ * 12.（已移除）路由级墨迹转场
+ *     这里原本有一块 fixed 整屏纸色遮罩，320ms 自下而上擦走。它和 theatre.css 的
+ *     翻页纸幕叠在一起，等于每次切页把整页压住一次。现在切页不带整屏遮挡：
+ *     只在异域探索四步之间留一道自上而下的纸边（theatre.css 第 3 节，
+ *     路由判定在 template.tsx）。
  * ========================================================================= */
-.xn-route-veil {
-  position: fixed;
-  inset: 0;
-  z-index: 90;
-  pointer-events: none;
-  visibility: hidden;
-  opacity: 0;
-  background: var(--paper-3);
-  transform: translate3d(0, -101%, 0);
-}
-/* 擦除边：一道墨色渐隐，像纸被掀起来 */
-.xn-route-veil::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 30px;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 22%, transparent), transparent);
-}
-.xn-route-veil.is-play {
-  visibility: visible;
-  opacity: 1;
-  will-change: transform;
-  animation: xn-route-wipe 320ms var(--xn-m-out) both;
-}
-@keyframes xn-route-wipe {
-  0%   { transform: translate3d(0, 0, 0); opacity: 1; }
-  100% { transform: translate3d(0, -101%, 0); opacity: 1; }
-}
 
 /* ===========================================================================
  * 13. 总兜底：减少动态效果 / 打印
@@ -505,9 +489,7 @@ main:has(.atlas-hero) {
  * ========================================================================= */
 @media (prefers-reduced-motion: reduce) {
   .xn-fx-layer,
-  .xn-binding,
-  .xn-route-veil,
-  .xn-route-veil.is-play { display: none !important; }
+  .xn-binding { display: none !important; }
 
   .xn-lead {
     opacity: 1 !important;
@@ -541,8 +523,7 @@ main:has(.atlas-hero) {
 
 @media print {
   .xn-fx-layer,
-  .xn-binding,
-  .xn-route-veil { display: none !important; }
+  .xn-binding { display: none !important; }
 
   .xn-lead { opacity: 1 !important; transform: none !important; animation: none !important; }
   .t-section::before,

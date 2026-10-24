@@ -4,8 +4,10 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { IconBack, IconHome, IconCompass, IconBook, IconChat, IconAccount } from "@/components/icons";
+import { JOURNEY_STEPS, isJourneyRoute } from "@/lib/journey";
 
-const journey = [["/profile", "个人画像"], ["/report/initial", "初步评价"], ["/experience", "职业体验"], ["/report/plan", "行动规划"]] as const;
+/** 进度条的四步与动效层的判定共用一份清单（src/lib/journey.ts），不各写一遍 */
+const journey = JOURNEY_STEPS;
 const destinations = [
   ["/", "首页", IconHome],
   ["/profile", "异域探索", IconCompass],
@@ -62,7 +64,7 @@ function Header({ pathname, exploring }: { pathname: string; exploring: boolean 
 export function NavShell() {
   const pathname = usePathname();
   const current = pathname.startsWith("/profile") || pathname === "/assessment" ? "/profile" : pathname.startsWith("/experience") ? "/experience" : pathname;
-  const exploring = journey.some(([href]) => href === current);
+  const exploring = isJourneyRoute(pathname);
   return <>
     <Header key={pathname} pathname={pathname} exploring={exploring} />
     {exploring && <nav className="journey-bar" aria-label="探索进度"><ol className="container">{journey.map(([href, title], index) => <li key={href}><Link href={href} aria-current={current === href ? "step" : undefined}><span className="journey-index" aria-hidden="true">0{index + 1}</span>{title}</Link></li>)}</ol></nav>}

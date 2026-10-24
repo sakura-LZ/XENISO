@@ -15,6 +15,14 @@
  *   整段正文    → 铅字一行一行压上去：按行高切分成 N 段，不是整段淡入
  *   图版 / 插图 → 从档案袋口抽出来：先只露一条边，再滑出到位并回正
  *   章节标签    → 随翻阅做 ≤6px 的细微位移（滚动驱动，往回滚会倒放）
+ *   标签 / 键值 → 小标签原地鼓起；键值行从左滑入带散焦
+ *
+ * 第二批（块内部的细节，让一个区块里能看到两三种小动作）：
+ *
+ *   图版说明    → 铅字压下来：先压下来、触纸时压扁、再回弹（只动说明那一行）
+ *   条形 / 进度 → 从 0 长到目标值：只加 scaleX，宽度仍是数据决定的真值
+ *   数据行      → 滚筒扫过一行：clip 从左揭开，数值再晚半拍落定
+ *   步骤 / 时间轴 → 竖线先长、条目随后一条条贴上来
  *
  * 状态机（关键：默认可见，JS 只负责"把还没滚到的藏起来"）
  *   [data-scene-kind="…"]    场景类型。由 JS 打；也接受作者手写 data-scene="…"
@@ -36,6 +44,14 @@
   --xn-scene-ink-dur: 800ms;
   --xn-scene-plate-dur: 720ms;
   --xn-scene-step: 44ms;          /* 同一组内相邻两项的间隔，40–80ms 一档 */
+
+  /* 第二批：都在 380–560ms 之间。lead 是"内容先到、说明后到"的那半拍。 */
+  --xn-scene-letterpress-dur: 460ms; /* 铅字落纸：要能看清"压"这一下，但不能拖 */
+  --xn-scene-meter-dur: 520ms;       /* 条形生长：慢一点才像在读数，不像闪一下 */
+  --xn-scene-ledger-dur: 440ms;      /* 一行被滚筒扫过的时间 */
+  --xn-scene-ledger-lead: 120ms;     /* 数值比行线晚落半拍 */
+  --xn-scene-timeline-dur: 520ms;    /* 竖线长满的时间；条目比它早一点开始贴 */
+  --xn-scene-timeline-step: 48ms;    /* 条目错峰，40–70ms 一档 */
 }
 
 /* ===========================================================================
@@ -260,13 +276,185 @@ html[data-xn-scenes="1"] [data-scene-kind="kv"][data-scene-arm="1"] > * {
 }
 
 /* ===========================================================================
- * 10. 本层自带的最小兜底（完整的保障见 reading-craft.css）
- *    减少动态效果 / 打印时，所有场景直接到位。
+ * 10. 图版说明：铅字压下来（figure > figcaption）
+ *     figcaption 是"印在图版下沿的一行小字"。图版本身（plate）是抽纸动作，
+ *     说明如果跟着一起淡入，读者会觉得"图还没站稳，字先飘进来了"；
+ *     所以给说明单独一拍：从上方压下来（scaleY 先拉长 .14），触纸瞬间压扁
+ *     到 .965，再回弹到 1。origin 取上沿，动作方向才对得上"从上面落下来"。
+ *     只动 transform / opacity，不改行高，说明文字换行完全不受影响。
+ * ======================================================================== */
+@keyframes xn-scene-letterpress {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -8px, 0) scaleY(1.14);
+  }
+  46% {
+    opacity: 1;
+    transform: translate3d(0, 1px, 0) scaleY(.965);
+  }
+  72% {
+    transform: translate3d(0, -.5px, 0) scaleY(1.012);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scaleY(1);
+  }
+}
+
+[data-scene-kind="letterpress"] {
+  transform-origin: 50% 0;
+}
+
+html[data-xn-scenes="1"] [data-scene-kind="letterpress"][data-scene-arm="1"] {
+  opacity: 0;
+  transform: translate3d(0, -8px, 0) scaleY(1.14);
+}
+
+[data-scene-kind="letterpress"][data-scene-play="1"] {
+  animation: xn-scene-letterpress var(--xn-scene-letterpress-dur) var(--xn-out) both;
+}
+
+/* ===========================================================================
+ * 11. 条形 / 进度：从 0 长到目标值（.xr-ledger-track / .xr-budget-track / .xp-bar）
+ *     条形长度是数据决定的真值（inline width），这里一个像素都不改宽度，
+ *     只给填充条加 scaleX：起始 0、到位 1，origin 取左端——所以是"长出来"，
+ *     不是"淡出来"，读者能读出"这根条代表多少"这件事本身。
+ *     为什么用 animation 而不是 transition：.xp-bar i 自带
+ *     `transition: width 620ms`（用户填表时进度要跟着涨），写 transition 会把
+ *     那条既有规则顶掉；animation 只占 transform，两者互不干扰。
+ *     --xn-i 由 JS 按所在 <li> 的序号写在场景元素上，子元素继承。
+ * ======================================================================== */
+@keyframes xn-scene-meter {
+  0% { transform: scaleX(0); }
+  86% { transform: scaleX(1.015); }  /* 略过一点再回落：像指针停稳前的抖动 */
+  100% { transform: scaleX(1); }
+}
+
+[data-scene-kind="meter"] > * {
+  transform-origin: 0 50%;
+}
+
+html[data-xn-scenes="1"] [data-scene-kind="meter"][data-scene-arm="1"] > * {
+  transform: scaleX(0);
+}
+
+[data-scene-kind="meter"][data-scene-play="1"] > * {
+  animation: xn-scene-meter var(--xn-scene-meter-dur) var(--xn-out) both;
+  animation-delay: calc(var(--xn-i, 0) * 56ms);
+}
+
+/* ===========================================================================
+ * 12. 数据行：一行行被印出来（.xr-metrics / .xd-metrics / .r1-scores / .fd-kv …）
+ *     这些 dl 都是 键 + 值 的行组（dt/dd），读的时候是一行一行核对的，
+ *     所以按行揭开：起始态 clip-path 从右侧收掉 100%（整行不可见），到位时
+ *     从左往右揭开，像印刷机滚筒扫过一行；同时整行向左 6px 回正，暗示"被拉进来"。
+ *     数值（dd）再晚 120ms 落定——同一行里有"行先印、数字后落"两个拍子，
+ *     这是这一层"一个区块两三种小动作"的来源。
+ *     和 kv 的区别：kv 是整行从左滑入带散焦（文字位置在动），
+ *     这里是文字不动、只有行被揭开，数值单独后到。
+ * ======================================================================== */
+html[data-xn-scenes="1"] [data-scene-kind="ledger"][data-scene-arm="1"] > * {
+  clip-path: inset(0 100% 0 0);
+  transform: translate3d(-6px, 0, 0);
+}
+
+html[data-xn-scenes="1"] [data-scene-kind="ledger"][data-scene-arm="1"] > * > dd {
+  opacity: 0;
+}
+
+[data-scene-kind="ledger"][data-scene-play="1"] > * {
+  clip-path: inset(0 0 0 0);
+  transform: none;
+  transition:
+    clip-path var(--xn-scene-ledger-dur) var(--xn-out) calc(var(--xn-i, 0) * 46ms),
+    transform var(--xn-scene-ledger-dur) var(--xn-out) calc(var(--xn-i, 0) * 46ms);
+}
+
+[data-scene-kind="ledger"][data-scene-play="1"] > * > dd {
+  opacity: 1;
+  transition: opacity 300ms var(--xn-out) calc(var(--xn-i, 0) * 46ms + var(--xn-scene-ledger-lead));
+}
+
+/* ===========================================================================
+ * 13. 步骤 / 时间轴：竖线先长、条目随后贴上
+ *     （.xr-setup-steps / .xnlib-howto-steps / .xd-stage / .xnlib-toc）
+ *     竖线画在容器 ::before 上：绝对定位，不占布局、不改行宽，所以不会因为
+ *     "多了一条线"让整段文字重新折行。scaleY 从 0 长到 1，origin 取顶部——
+ *     先立起一根线，条目再一条条贴上来，读起来就是"往下推进"。
+ *     左偏移默认 -10px，落在父级（.atlas-sheet 一类）的内边距里；
+ *     .xnlib-howto-steps 自己有 1.35em 左内边距，把线放回 0 位才贴边。
+ * ======================================================================== */
+[data-scene-kind="timeline"] {
+  position: relative;
+}
+
+[data-scene-kind="timeline"]::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: var(--xn-tl-x, -10px);
+  width: 1px;
+  background: var(--line-strong);
+  opacity: .55;
+  transform: scaleY(1);
+  transform-origin: 50% 0;
+  pointer-events: none;
+}
+
+[data-scene-kind="timeline"].xnlib-howto-steps {
+  --xn-tl-x: 0px;
+}
+
+/* 窄屏时这两处会从竖排变成横排（体验阶段条并排、章节目录横向滚动），
+   竖线在横排里没有意义，直接不画；条目的错峰入场照常。 */
+@media (max-width: 1279px) {
+  [data-scene-kind="timeline"].xd-stage::before {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  [data-scene-kind="timeline"].xnlib-toc::before {
+    display: none;
+  }
+}
+
+html[data-xn-scenes="1"] [data-scene-kind="timeline"][data-scene-arm="1"]::before {
+  transform: scaleY(0);
+}
+
+[data-scene-kind="timeline"][data-scene-play="1"]::before {
+  transform: scaleY(1);
+  transition: transform var(--xn-scene-timeline-dur) var(--xn-out);
+}
+
+html[data-xn-scenes="1"] [data-scene-kind="timeline"][data-scene-arm="1"] > * {
+  opacity: 0;
+  transform: translate3d(8px, 0, 0);
+}
+
+[data-scene-kind="timeline"][data-scene-play="1"] > * {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 380ms var(--xn-out) calc(var(--xn-i, 0) * var(--xn-scene-timeline-step) + 60ms),
+    transform 460ms var(--xn-out) calc(var(--xn-i, 0) * var(--xn-scene-timeline-step) + 60ms);
+}
+
+/* ===========================================================================
+ * 14. 本层自带的最小兜底（完整的保障见 reading-craft.css）
+ *     减少动态效果 / 打印时，所有场景直接到位。
  * ======================================================================== */
 @media (prefers-reduced-motion: reduce), print {
   [data-scene-kind="stamp"] > *,
   [data-scene-kind="chips"] > *,
   [data-scene-kind="kv"] > *,
+  [data-scene-kind="letterpress"],
+  [data-scene-kind="meter"] > *,
+  [data-scene-kind="ledger"] > *,
+  [data-scene-kind="ledger"] > * > dd,
+  [data-scene-kind="timeline"] > *,
   [data-scene-kind="rule"] tbody tr > *,
   [data-scene-kind="lines"],
   [data-scene-kind="plate"] {
@@ -288,7 +476,13 @@ html[data-xn-scenes="1"] [data-scene-kind="kv"][data-scene-arm="1"] > * {
     transition: none !important;
   }
 
+  [data-scene-kind="timeline"]::before {
+    transform: scaleY(1) !important;
+    transition: none !important;
+  }
+
   [data-scene-kind="shift"] {
     transform: none !important;
   }
 }
+

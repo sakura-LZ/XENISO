@@ -40,7 +40,21 @@ const SHIFT_RANGE = 6;
 /** 巡检间隔：只用来捞"该出现却还停在起始态"的元素 */
 const SWEEP_MS = 1200;
 
-type SceneKind = "stamp" | "rule" | "ink" | "lines" | "plate" | "count" | "shift" | "chips" | "kv";
+type SceneKind =
+  | "stamp"
+  | "rule"
+  | "ink"
+  | "lines"
+  | "plate"
+  | "count"
+  | "shift"
+  | "chips"
+  | "kv"
+  /* 以下四种是第二批细节场景：都作用在"块内部"，和上面九种不重复 */
+  | "letterpress"
+  | "meter"
+  | "ledger"
+  | "timeline";
 
 /**
  * 自动作用于既有的语义选择器——不需要改任何既有 tsx。
@@ -77,6 +91,63 @@ const TARGETS: Array<[SceneKind, string[]]> = [
   ["chips", [".xnlib-chip-row", ".atlas-chip-row", ".xd-chips", ".match-chips"]],
   /* 键值说明行：从左侧一条条抽出来，和正文的逐行压字错开 */
   ["kv", [".atlas-kv", ".account-kv", ".xr-meta"]],
+  /**
+   * 图版说明：铅字压下来。
+   * figcaption 是"印在图版下沿的一行小字"，不该和图版本身（plate 的抽纸动作）
+   * 一起淡入，所以单独给一拍：先压下来、触纸时压扁、再回弹。
+   * 全部用直接子选择器：只吃 figure 自己的说明，不吃嵌套在图里的别的 figcaption。
+   */
+  ["letterpress", [
+    ".xd-figure > figcaption",          // 体验台两张教学图（task-workbench / task-material）
+    ".xn-direction-art > figcaption",   // 方向插画右下角的 simulation 标记
+    ".scene-archive > figcaption",      // 首页 Quain 解剖图版
+    ".xr-experience > figcaption",      // 报告页已保存体验的成果卡
+    ".pr-experience-outcome > figcaption",
+    ".xd-portrait-cap",                 // 模拟形象立绘的说明
+    ".r1-note",                         // 初步评价雷达图下的说明
+  ]],
+  /**
+   * 条形 / 进度：从 0 长到目标值。
+   * 条形长度是数据决定的真值（inline width），这里一个像素都不改宽度，
+   * 只给填充条加 scaleX(0) → scaleX(1)，所以"数据没变、只是长出来"。
+   * .pr-interest-fill / .pr-budget-track 已经在 report-visuals 里用 WAAPI 动过，
+   * 故意不收进来，避免两套动画抢同一个 transform。
+   */
+  ["meter", [
+    ".xr-ledger-track",   // 报告页兴趣六维的原始分台账（每行一根）
+    ".xr-budget-track",   // 报告页周投入时间账本（三段堆叠）
+    ".xn-art-budget",     // 方向插画里的教学预算条
+    ".xp-bar",            // 画像页填写进度条
+  ]],
+  /**
+   * 数据行：一行行被"印"出来。
+   * 这些 dl 都是 键 + 值 的行组（dt/dd），读的时候是一行一行核对，
+   * 所以按行揭开，数值再晚半拍落定——同一行里两个拍子。
+   * 和 kv 的区别：kv 是整行从左滑入带散焦，这里是行被滚筒扫过（clip 揭开），
+   * 文字位置不动，只有数值后落。
+   */
+  ["ledger", [
+    ".xr-metrics",           // 报告页体验结果指标
+    ".xd-metrics",           // 体验台的教学指标格
+    ".pr-outcome-metrics",   // 画像页成果指标
+    ".xp-rows",              // 画像页样例行
+    ".r1-scores",            // 初步评价六维原始分
+    ".fd-kv",                // 档案抽屉的键值说明
+    ".xr-check",             // 报告页报考条件核对清单
+  ]],
+  /**
+   * 步骤 / 时间轴：竖线先长、条目随后贴上。
+   * 竖线画在容器 ::before 上（绝对定位，不占布局、不改行宽），
+   * 条目按 --xn-i 错峰从右侧贴上来。
+   * 不收 .community-rules / .xnlib-steps：前者 li::before 已经是计数器编号，
+   * 后者已经归 stamp，同一元素只认一个 kind（prepare 里的 seen 去重）。
+   */
+  ["timeline", [
+    ".xr-setup-steps",      // 报告页"先完成前几步"的空态步骤
+    ".xnlib-howto-steps",   // 信息文库的"怎么用"步骤
+    ".xd-stage",            // 体验台的阶段条
+    ".xnlib-toc",           // 信息文库详情的章节目录
+  ]],
   /* 章节标签：随翻阅做细微位移 */
   ["shift", [".xr-sec-tag"]],
   /* 条目：盖章落入 */
@@ -296,7 +367,19 @@ function install(): () => void {
   const apply = (el: HTMLElement, kind: SceneKind) => {
     el.dataset.sceneKind = el.dataset.sceneKind || kind;
     if (kind === "stamp" || kind === "chips" || kind === "kv") markStagger(el.children);
-    else if (kind === "shift") {
+    else if (kind === "ledger" || kind === "timeline") {
+      // 行 / 条目的错峰：直接子元素就是"一行"或"一步"，和 stamp 同一套 --xn-i
+      markStagger(el.children);
+    } else if (kind === "meter") {
+      /**
+       * 条形按所在 <li> 的序号错峰，一根接一根长出来，而不是六根同时弹开。
+       * --xn-i 写在场景元素上、由子元素继承（CSS 里用 var(--xn-i) 取延迟）。
+       * 找不到 <li>（例如 .xp-bar 在侧栏里）就按 0 处理，单根条形本来也不需要错峰。
+       */
+      const item = el.closest("li");
+      const index = item?.parentElement ? Array.from(item.parentElement.children).indexOf(item) : 0;
+      el.style.setProperty("--xn-i", String(Math.min(Math.max(index, 0), STAGGER_CAP)));
+    } else if (kind === "shift") {
       if (shiftSeen.has(el)) return;
       shiftSeen.add(el);
       measureShift(el);
@@ -360,6 +443,13 @@ function install(): () => void {
       if (played.has(el)) continue;
       const kind = el.dataset.sceneKind as SceneKind;
       if (kind === "shift") continue;
+      /**
+       * 第二批（letterpress / meter / ledger / timeline）在这里没有特殊分支，
+       * 这是有意的：它们都是"先藏后放"的普通场景，统一走下面的 arm()。
+       * 于是四条放行路径对它们自动成立，不需要另写一套——
+       *   IO 命中、滚动时用武装缓存 top 判断"顶边已进画面"、1200ms 巡检、
+       *   以及 pagehide 的全量 release()。滚过去了还停在起始态这种情况不会出现。
+       */
       if (kind === "count") {
         // 数字不需要藏：它一直是真值，滚到就滚一下
         if (el.dataset.sceneWatch === "1") continue;
