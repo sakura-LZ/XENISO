@@ -57,3 +57,25 @@
   `clamp`/`hypot` 的 JS 侧计算）都是常规支持范围。
 - 触摸设备没有替代反馈（按设计只给精确指针）。
 - 四张卡仍是说明块、不可点；若以后恢复为链接，可再加回悬停抬升。
+
+## 发布（2026-10-24 05:47 PDT）
+
+- 部署 `dpl_HKsh7SxBCHttkXzyCdLiSLUSMNbw`，Production / Ready，创建 05:47 PDT；
+  生产别名已切到这一版：`xeniso-platform.vercel.app`、`limen-azure.vercel.app`、
+  `xeniso-sakura-lzs-projects.vercel.app`。
+- 发布源：`git archive HEAD`（提交 `1ce79f5`）+ 线上已有的 7 个前端文件。
+  这 7 个文件在 04:07 的部署里已经是线上版本（与工作区一致），但尚未提交，
+  发布副本按 Vercel 部署源码逐字节带过去，保证"除了这次指针微交互，线上其它内容不变"：
+  `experience-desk.css`、`studio.tsx`、`report/initial/report.tsx`、`report.css`、
+  `avatar-panel.tsx`、`filing-drawer.tsx`、`home-atlas.tsx`。
+  未提交的 Match / 数据 / 测试改动未进入发布副本；`.env.local` 未上传。
+- 发布副本内 `npm run build` 退出 0；云端 build（`npm ci` + `next build`）通过，
+  16 个静态页生成。构建产物核对：`index.html` 里 `data-hs-depth` 出现 16 次
+  （8 处标记 + RSC payload），并引用了本轮新增的样式资产
+  `8d9f57b347c3266b.css`（内含 `data-hs-motion` 规则）。
+- 部署源码核对（Vercel API）：`scene-motion.css` 3630 字节、`layout.tsx`、
+  `home-scene.tsx`、`home-scene-motion.tsx` 与本地逐字节一致；部署内无 `.env*`。
+- 回滚目标：上一版 `dpl_3UubFa2gzEwDwxDVAQWx7DbbDN4v`（04:07，含同一效果的中途版本）。
+- 本机网络限制：`*.vercel.app` 的 443 在本机被重置/超时（api.vercel.com 正常），
+  所以本轮没有做正式域名的 HTTP 冒烟，改用"Vercel API 状态与别名 + 部署源码比对 +
+  同源本地构建产物"三层核验。正式站的实际交互需要使用者侧打开域名复核。
