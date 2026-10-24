@@ -59,6 +59,8 @@
   width: 100%;
   padding: 9px 11px;
   border: 1px solid transparent;
+  /* 与全站按钮统一 2px：这 6 个 rail 按钮原来是 0px，和同页 .atlas-btn 的 2px 混用 */
+  border-radius: 2px;
   background: transparent;
   color: var(--ink-2);
   font-size: var(--fs-body);

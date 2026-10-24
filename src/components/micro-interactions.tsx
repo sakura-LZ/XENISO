@@ -624,7 +624,17 @@ function install(): () => void {
   const observe = new Set<HTMLElement>();
   // .t-block 与 .t-section 是站内两套并存的"区块标题"宿主类（micro.css 已让它们
   // 共享同一套划线样式），这里一并挂观察器，否则 t-block 那套永远不触发。
-  for (const heading of Array.from(document.querySelectorAll<HTMLElement>(".t-section, main .t-block"))) {
+  //
+  // 另外把内页的裸 h2 也接上：实测内页 animationName 种类普遍只有 1 种
+  // （/explore 1、/profile 1、/assessment 1、/account 1、/experience 1），
+  // 首页是 8 种——"内页没特色"最直接的一条就是这个。内页的区块标题大多是裸 <h2>
+  // 而不是 .t-block，所以划线效果一直没落到它们身上。
+  // 首页排除：那边 h2 是封面式大标题，已经有胶带/印章/纸片那一套，再叠划线会打架。
+  const isHome = window.location.pathname === "/";
+  const markSelector = isHome
+    ? ".t-section, main .t-block"
+    : ".t-section, main .t-block, main h2:not(.atlas-label):not([data-xn-mark-skip])";
+  for (const heading of Array.from(document.querySelectorAll<HTMLElement>(markSelector))) {
     heading.dataset.xnMarkTarget = "1";
     observe.add(heading);
   }
@@ -634,7 +644,9 @@ function install(): () => void {
      "职业兴趣问卷 · 30 项工作语言"在 install 时还拿不到），一次性扫描会漏。
      这里挂一个 MutationObserver，新出现的 .t-block 补挂观察器；已处理过的打标记跳过。 */
   const lateObserver = new MutationObserver(() => {
-    for (const heading of Array.from(document.querySelectorAll<HTMLElement>("main .t-block:not([data-xn-mark-target])"))) {
+    // 内页裸 h2 也要补：实测 /report/plan 的 h2 全是条件渲染的空态块，
+    // install 时一个都不存在，一上来扫到的 mark 目标是 0。
+    for (const heading of Array.from(document.querySelectorAll<HTMLElement>(markSelector.replace(/([^,]+)/g, "$1:not([data-xn-mark-target])")))) {
       heading.dataset.xnMarkTarget = "1";
       observer.observe(heading);
     }

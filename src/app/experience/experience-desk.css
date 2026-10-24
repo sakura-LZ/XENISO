@@ -160,6 +160,8 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   width: 100%;
   padding: 8px 10px;
   border: 1px solid transparent;
+  /* 与全站按钮统一 2px：这 12 个方向按钮原来是 0px，和同页 .atlas-btn 的 2px 混用 */
+  border-radius: 2px;
   background: none;
   text-align: left;
   color: var(--ink-2);

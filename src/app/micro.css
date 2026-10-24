@@ -111,12 +111,16 @@
  *    ::before 作为「晕开」。由 JS 打 data-xn-mark="1" 触发。
  * ========================================================================= */
 /* .t-block 是站内另一套「区块标题」宿主类，与 .t-section 共享同一套划线效果：
-   两套类并存会让内页看起来像模板，所以在这里一次性并上（不新造效果）。 */
+   两套类并存会让内页看起来像模板，所以在这里一次性并上（不新造效果）。
+   h2[data-xn-mark-target] 是内页的裸 h2（JS 只在内页打这个标记，首页 h2 不参与），
+   内页 animationName 种类普遍只有 1 种，靠它补上第二套"墨水划重点"的动效。 */
 .t-section,
-main .t-block { position: relative; }
+main .t-block,
+main h2[data-xn-mark-target] { position: relative; }
 
 .t-section::after,
-main .t-block::after {
+main .t-block::after,
+main h2[data-xn-mark-target]::after {
   content: "";
   position: absolute;
   left: -.05em;
@@ -138,7 +142,8 @@ main .t-block::after {
   pointer-events: none;
 }
 .t-section::before,
-main .t-block::before {
+main .t-block::before,
+main h2[data-xn-mark-target]::before {
   content: "";
   position: absolute;
   left: -.05em;
@@ -154,9 +159,11 @@ main .t-block::before {
   pointer-events: none;
 }
 .t-section[data-xn-mark="1"]::after,
-main .t-block[data-xn-mark="1"]::after { animation: xn-mark-band 520ms var(--xn-m-sweep) both; }
+main .t-block[data-xn-mark="1"]::after,
+main h2[data-xn-mark="1"]::after { animation: xn-mark-band 520ms var(--xn-m-sweep) both; }
 .t-section[data-xn-mark="1"]::before,
-main .t-block[data-xn-mark="1"]::before { animation: xn-mark-bleed 720ms var(--xn-m-out) both; }
+main .t-block[data-xn-mark="1"]::before,
+main h2[data-xn-mark="1"]::before { animation: xn-mark-bleed 720ms var(--xn-m-out) both; }
 
 @keyframes xn-mark-band {
   0%   { opacity: 0;  transform: scaleX(.03); }
