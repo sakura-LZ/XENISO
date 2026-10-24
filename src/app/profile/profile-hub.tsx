@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { readProfileOverview, type ProfileOverview } from "@/lib/profile-overview";
 import { documentSnapshot, snapshotSource, translation } from "@/lib/onet/translation";
 import { ReportReveal } from "./report-visuals";
-import { IconCalendar, IconCompass, IconExternal, IconFolder, IconProfile, IconQuiz } from "@/components/icons";
+import { IconBook, IconCalendar, IconCompass, IconExternal, IconFolder, IconProfile, IconQuiz, IconStamp } from "@/components/icons";
 import { profileProgress } from "./completion";
 import "./profile.css";
 
@@ -129,11 +129,11 @@ export function ProfileHub() {
         <div>
           <h2><IconCalendar aria-hidden="true" />四节进度</h2>
           <div className="xp-ledger">
-            {progress.sections.map(section => {
+            {progress.sections.map((section, sectionIndex) => {
               const filled = section.checks.filter(check => check.filled).length;
               return <div className="xp-ledger-row" key={section.id}>
                 <span className="xp-ledger-no">{section.ordinal}</span>
-                <b>{section.label}</b>
+                <b><span className="xp-ledger-ico" aria-hidden="true">{[IconBook, IconCalendar, IconStamp, IconCompass][sectionIndex] && (() => { const Icon = [IconBook, IconCalendar, IconStamp, IconCompass][sectionIndex]; return <Icon />; })()}</span>{section.label}</b>
                 <span className="xp-ledger-count">{filled} / {section.checks.length}</span>
               </div>;
             })}

@@ -100,6 +100,85 @@
 }
 
 /* ===========================================================================
+ * 1.5 内页区块入场（按块声明，全站共用一套）
+ *     背景：内页原先只有首页有动画，区块滚进视口时是硬切进去的。这一层把
+ *     "区块入场"做成声明式的——页面只要在容器上写 data-atlas-reveal（或老版
+ *     data-reveal），控制器判定进入视口后打上状态，块内元素就按角色各走一种
+ *     入场：标题从左滑入、正文淡入、列表与纸片抬起落位。
+ *     三种 keyframe 并存，同一页自然出现 ≥3 种动画，不再是一页一种。
+ *     只动 opacity/translate/scale，不参与文档流，不会造成布局跳动。
+ * ======================================================================== */
+@keyframes xn-block-slide {
+  from { opacity: 0; translate: -16px 0; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes xn-block-fade {
+  from { opacity: 0; translate: 0 10px; }
+  to { opacity: 1; translate: 0 0; }
+}
+@keyframes xn-block-paper {
+  0% { opacity: 0; translate: 0 24px; scale: .985; }
+  55% { opacity: 1; }
+  100% { opacity: 1; translate: 0 0; scale: 1; }
+}
+
+/* 默认角色：直接子元素按阅读顺序错峰。--xn-block-i 由 nth-child 给出。 */
+[data-atlas-reveal][data-atlas-in="1"] > *,
+[data-reveal][data-state="in"] > * {
+  animation: xn-block-fade 480ms var(--xn-out) both;
+  animation-delay: calc(var(--xn-block-i, 0) * 62ms);
+}
+
+/* 角色分派：同一区块内按子元素顺序轮换三种入场，保证任何一页都同时出现
+ * 滑入 / 淡入 / 抬起落位，不会因为块里只有一种元素而退化成单一效果。 */
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(3n+1),
+[data-reveal][data-state="in"] > :nth-child(3n+1) {
+  animation-name: xn-block-slide;
+  animation-duration: 520ms;
+}
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(3n+2),
+[data-reveal][data-state="in"] > :nth-child(3n+2) {
+  animation-name: xn-block-fade;
+  animation-duration: 480ms;
+}
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(3n),
+[data-reveal][data-state="in"] > :nth-child(3n) {
+  animation-name: xn-block-paper;
+  animation-duration: 560ms;
+}
+
+/* data-motion 区块（M-Exx 声明）走同一套入场：控制器打 data-motion-in 之后生效。
+ * 这样页面不需要为动效写额外类名，只在区块上标一个编号即可。 */
+[data-motion][data-motion-in="1"] > * {
+  animation: xn-block-fade 480ms var(--xn-out) both;
+  animation-delay: calc(var(--xn-block-i, 0) * 62ms);
+}
+[data-motion][data-motion-in="1"] > :nth-child(3n+1) { animation-name: xn-block-slide; animation-duration: 520ms; }
+[data-motion][data-motion-in="1"] > :nth-child(3n+2) { animation-name: xn-block-fade; animation-duration: 480ms; }
+[data-motion][data-motion-in="1"] > :nth-child(3n) { animation-name: xn-block-paper; animation-duration: 560ms; }
+[data-motion][data-motion-in="1"] > :nth-child(1) { --xn-block-i: 0; }
+[data-motion][data-motion-in="1"] > :nth-child(2) { --xn-block-i: 1; }
+[data-motion][data-motion-in="1"] > :nth-child(3) { --xn-block-i: 2; }
+[data-motion][data-motion-in="1"] > :nth-child(4) { --xn-block-i: 3; }
+[data-motion][data-motion-in="1"] > :nth-child(5) { --xn-block-i: 4; }
+[data-motion][data-motion-in="1"] > :nth-child(6) { --xn-block-i: 5; }
+[data-motion][data-motion-in="1"] > :nth-child(n+7) { --xn-block-i: 6; }
+
+/* 错峰索引：块内前 12 个直接子元素依次晚 62ms。 */
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(1), [data-reveal][data-state="in"] > :nth-child(1) { --xn-block-i: 0; }
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(2), [data-reveal][data-state="in"] > :nth-child(2) { --xn-block-i: 1; }
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(3), [data-reveal][data-state="in"] > :nth-child(3) { --xn-block-i: 2; }
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(4), [data-reveal][data-state="in"] > :nth-child(4) { --xn-block-i: 3; }
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(5), [data-reveal][data-state="in"] > :nth-child(5) { --xn-block-i: 4; }
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(6), [data-reveal][data-state="in"] > :nth-child(6) { --xn-block-i: 5; }
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(7), [data-reveal][data-state="in"] > :nth-child(7) { --xn-block-i: 6; }
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(8), [data-reveal][data-state="in"] > :nth-child(8) { --xn-block-i: 7; }
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(9), [data-reveal][data-state="in"] > :nth-child(9) { --xn-block-i: 8; }
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(10), [data-reveal][data-state="in"] > :nth-child(10) { --xn-block-i: 9; }
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(11), [data-reveal][data-state="in"] > :nth-child(11) { --xn-block-i: 10; }
+[data-atlas-reveal][data-atlas-in="1"] > :nth-child(n+12), [data-reveal][data-state="in"] > :nth-child(n+12) { --xn-block-i: 11; }
+
+/* ===========================================================================
  * 2. 首屏视差（parallax）
  *    墨迹底比内容"慢"，随滚动最多下移 48px；内容本身反向上移 22px。
  *    数值由 xeniso-motion 的 rAF 写进这两个自定义属性，CSS 只负责消费。
@@ -287,6 +366,10 @@
 
   [data-xn-stagger] > * { transition: none !important; opacity: 1 !important; translate: none !important; }
 
+  /* 内页区块入场：reduce 时直接到位，不留任何停在透明的元素 */
+  [data-atlas-reveal] > *,
+  [data-reveal] > * { animation: none !important; opacity: 1 !important; translate: none !important; scale: none !important; }
+
   /* 文字带静止：去掉两端遮罩，两层内容折叠成一层可读的静态文字 */
   .xn-marquee { -webkit-mask-image: none; mask-image: none; }
   .xn-marquee-track { animation: none; transform: none; width: 100%; }
@@ -306,4 +389,27 @@
   .scene-tape,
   .atlas-pin,
   .xn-marquee-track { animation: none !important; opacity: 1 !important; translate: none !important; scale: none !important; }
+
+  /* 打印兜底：pending 态是"还没进视口，先藏起来"的起始态，只由 JS 打上，
+     正常阅读时一定会被揭示。但打印/另存 PDF 走的是另一条路径——浏览器的
+     beforeprint 事件在无头打印、部分阅读器、以及"打印预览只渲染可视区"的
+     实现里不会触发，于是没进过视口的区块会带着 pending 打印出来，纸上就是
+     一片空白。这里无条件把它们全部落到终态。
+     放在 motion.css 是因为 atlas.css / globals.css 各自定义 pending，只有
+     这个文件同时被三层引用，能一次盖住。 */
+  [data-atlas-reveal][data-state="pending"],
+  [data-reveal][data-state="pending"],
+  [data-reveal="group"][data-state="pending"] > *,
+  [data-atlas-reveal][data-atlas-stagger][data-state="pending"] > *,
+  [data-atlas-reveal][data-state="pending"] [data-xn-stagger] > *,
+  [data-reveal][data-state="pending"] [data-xn-stagger] > *,
+  [data-atlas-reveal][data-state="pending"][data-xn-stagger] > *,
+  [data-xn-stagger][data-state="pending"] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    translate: none !important;
+    scale: none !important;
+    filter: none !important;
+    clip-path: none !important;
+  }
 }

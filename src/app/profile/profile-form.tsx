@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -196,7 +196,7 @@ export function ProfileForm() {
         </label>
       </aside>
 
-      <section className="xp-sheet atlas-sheet">
+      <section className="xp-sheet atlas-sheet" data-atlas-reveal>
         <span className="atlas-tape tr" aria-hidden="true" />
         <div className="xp-sheet-status">
           <span>异域探索 · 第 1 步 · 第 1 / 4 页</span>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { useCallback, useEffect, useState, type CSSProperties } from "react";
 import { z } from "zod";
@@ -12,6 +12,7 @@ import { exitRule, reviewCadence, reviewQuestions, stageSources, yearlyVerifyNot
 import { BudgetLedger, ExperienceCard, InterestRadar, ReportIndex, budgetLabels } from "../report-visuals";
 import { download } from "@/lib/download";
 import { AiReport } from "@/components/ai-report";
+import { IconAccount, IconBook, IconCalendar, IconCompass, IconCopy, IconDownload, IconExternal, IconFolder, IconPlay, IconPulse, IconQuiz, IconStamp, IconWarning } from "@/components/icons";
 import { DirectionArt, StorysetAttribution } from "@/components/direction-art";
 import { assessmentSchema, type AssessmentResult } from "@/lib/assessment";
 
@@ -150,7 +151,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
       {message && <p className="xr-feedback" role="status">{message}</p>}
 
       {setup !== "none" && <section id="plan-conditions" className="atlas-sheet xr-sec xr-setup" data-atlas-reveal>
-        <div className="xr-sec-head"><h2>这一步还排不了</h2><span className="xr-sec-tag">需要先完成第 1–3 步</span></div>
+        <div className="xr-sec-head"><h2><IconWarning aria-hidden="true" />这一步还排不了</h2><span className="xr-sec-tag">需要先完成第 1–3 步</span></div>
         <p className="xr-body-text">
           这一页不收集新资料，只读三样已经保存的东西：个人画像、官方兴趣结果、一次完整的职业体验。
           {setup === "guest" ? "当前浏览器没有登录会话（画像、兴趣、体验三个接口都返回 401），所以这里一份也读不到。" : "这个账号下还没有保存个人画像，所以这里没有可排的条件。"}
@@ -159,29 +160,29 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
         <ol className="xr-setup-steps xr-stack">
           <li>
             <span className="xr-setup-step">第 1 步</span>
-            <div><h4><Link href="/profile">保存个人画像</Link></h4><p>课程、技能、研究项目、论文写进去，后面的能力迁移与知识缺口才有东西可比。</p></div>
+            <div><h4><IconAccount aria-hidden="true" /><Link href="/profile">保存个人画像</Link></h4><p>课程、技能、研究项目、论文写进去，后面的能力迁移与知识缺口才有东西可比。</p></div>
           </li>
           <li>
             <span className="xr-setup-step">第 2 步</span>
-            <div><h4><Link href="/assessment">做 O*NET 兴趣问卷</Link></h4><p>30 道活动题，做完才有官方的六类兴趣原始分。</p></div>
+            <div><h4><IconQuiz aria-hidden="true" /><Link href="/assessment">做 O*NET 兴趣问卷</Link></h4><p>30 道活动题，做完才有官方的六类兴趣原始分。</p></div>
           </li>
           <li>
             <span className="xr-setup-step">第 3 步</span>
-            <div><h4><Link href="/experience">完成一次职业体验</Link></h4><p>三阶段模拟任务，做完并保存成果，计划里才有体验依据。</p></div>
+            <div><h4><IconCompass aria-hidden="true" /><Link href="/experience">完成一次职业体验</Link></h4><p>三阶段模拟任务，做完并保存成果，计划里才有体验依据。</p></div>
           </li>
         </ol>
         <p className="xr-source">三步都保存好之后，回到这一页刷新，条件表单与规则预览会出现在原处。中途也可以先去看 R1 的四栏结论。</p>
         <div className="xr-actions">
-          <Link className="atlas-btn atlas-btn-primary" href="/profile">从第 1 步开始</Link>
-          <Link className="atlas-btn" href="/report/initial">先看初步评价</Link>
-          <Link className="xr-textlink" href="/explore">翻方向手册</Link>
+          <Link className="atlas-btn atlas-btn-primary" href="/profile"><IconPlay aria-hidden="true" />从第 1 步开始</Link>
+          <Link className="atlas-btn" href="/report/initial"><IconBook aria-hidden="true" />先看初步评价</Link>
+          <Link className="xr-textlink" href="/explore"><IconExternal aria-hidden="true" />翻方向手册</Link>
         </div>
-        <p className="xr-note atlas-hand xr-stack">先有一份记录，才谈得上排计划。顺序反过来只会得到一张好看的空白表。</p>
+        <p className="xr-note atlas-hand xr-stack"><IconStamp aria-hidden="true" />先有一份记录，才谈得上排计划。顺序反过来只会得到一张好看的空白表。</p>
       </section>}
 
       {setup === "none" && <div id="plan-conditions" className="xr-cond-layout xr-stack">
         <section className="atlas-sheet xr-sec" data-atlas-reveal>
-          <div className="xr-sec-head"><h2>登记这次规划的条件</h2><span className="xr-sec-tag">R2 的输入</span></div>
+          <div className="xr-sec-head"><h2><IconStamp aria-hidden="true" />登记这次规划的条件</h2><span className="xr-sec-tag">R2 的输入</span></div>
           <p className="xr-body-text">先在下面定三件事：去试哪个方向、打算哪一年转、每周真正能拿出来多少小时。三项填齐，下面才会按它们排出阶段计划。</p>
           <div className="xr-cond-grid">
             <div className="xr-field-block">
@@ -217,7 +218,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
         </section>
 
         <aside className="atlas-sheet xr-aside" data-atlas-reveal>
-          <h2>当前条件</h2>
+          <h2><IconAccount aria-hidden="true" />当前条件</h2>
           <div className="xr-aside-target" key={direction}>
             {direction && <DirectionArt direction={direction} compact />}
             <div><b>目标方向</b><strong>{plan?.direction.name ?? "尚未选择"}</strong></div>
@@ -235,7 +236,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
 
       {plan && <div id="plan-results" className="xr-stack">
         <header className="atlas-sheet xr-sec" data-atlas-reveal>
-          <div className="xr-sec-head"><h2>{plan.direction.name} · 规则预览</h2><span className="xr-sec-tag">规则整理 · AI 未生成</span></div>
+          <div className="xr-sec-head"><h2><IconFolder aria-hidden="true" />{plan.direction.name} · 规则预览</h2><span className="xr-sec-tag">规则整理 · AI 未生成</span></div>
           <p className="xr-body-text">{profile.transition_year === null ? "年份待填写" : `${profile.transition_year} 年`} · {profile.weekly_hours === null ? "周投入待填写" : `每周 ${profile.weekly_hours} 小时`} · {profile.pathway}。下面是按这三项条件算出来的任务结构，任务顺序由依赖关系决定，不代表进度承诺。</p>
           <div className="xr-actions">
             <a className="atlas-btn" href="#plan-conditions">修改条件</a>
@@ -249,7 +250,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
           <div className="xr-body">
 
             <section id="plan-basis" className="atlas-sheet xr-sec" data-atlas-reveal>
-              <div className="xr-sec-head"><h2>兴趣与体验依据</h2><span className="xr-sec-tag">兴趣来自问卷 · 体验来自第 3 步</span></div>
+              <div className="xr-sec-head"><h2><IconPulse aria-hidden="true" />兴趣与体验依据</h2><span className="xr-sec-tag">兴趣来自问卷 · 体验来自第 3 步</span></div>
               <div className="atlas-cols-2">
                 <div>
                   <h3>职业活动兴趣</h3>
@@ -279,7 +280,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
             </section>
 
             <section id="plan-gaps" className="atlas-sheet xr-sec" data-atlas-reveal>
-              <div className="xr-sec-head"><h2>已有积累与知识缺口</h2><span className="xr-sec-tag">对照方向手册 · 未核验</span></div>
+              <div className="xr-sec-head"><h2><IconBook aria-hidden="true" />已有积累与知识缺口</h2><span className="xr-sec-tag">对照方向手册 · 未核验</span></div>
               <p className="xr-body-text">缺口只说明要补基础、补哪一块，不说明要学多久，也不说明你学不会。记录名称相关不等于已经掌握；没查到记录不等于零能力。</p>
               <ol className="xr-records">
                 {plan.gaps.map(gap => <li className="xr-record" key={gap.skill}>
@@ -295,13 +296,13 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
             </section>
 
             <section id="plan-budget" className="atlas-sheet xr-sec" data-atlas-reveal>
-              <div className="xr-sec-head"><h2>周投入安排</h2><span className="xr-sec-tag">按可用时间切三份</span></div>
+              <div className="xr-sec-head"><h2><IconCalendar aria-hidden="true" />周投入安排</h2><span className="xr-sec-tag">按可用时间切三份</span></div>
               <BudgetLedger budget={budget} hours={profile.weekly_hours} />
               <p className={budgetValid ? "xr-source" : "xr-error"}>{budgetValid ? `每周可用 ${profile.weekly_hours} 小时，已安排 ${budgetTotal} 小时。用实际练习耗时调整下一周预算。` : "时间分配尚未满足条件，请返回修改每周投入与预算。"}</p>
             </section>
 
             <section id="plan-stages" className="atlas-sheet xr-sec" data-atlas-reveal>
-              <div className="xr-sec-head"><h2>阶段计划</h2><span className="xr-sec-tag">按通行节奏排 · 日期每年核实</span></div>
+              <div className="xr-sec-head"><h2><IconCompass aria-hidden="true" />阶段计划</h2><span className="xr-sec-tag">按通行节奏排 · 日期每年核实</span></div>
               {plan.planning ? <>
                 <p className="xr-body-text">{plan.planning.horizon}</p>
                 <p className="xr-body-text">下面的顺序——核验资格、补先修、基础、强化、真题与报名、冲刺、初试之后——是培训机构和考生群体长期形成的节奏，不是官方规定。跨考的人通常要在补先修和基础两段多花时间，后面几段相应往后挪。</p>
@@ -346,7 +347,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
             </section>
 
             <section id="plan-review" className="atlas-sheet xr-sec" data-atlas-reveal>
-              <div className="xr-sec-head"><h2>复盘与年度核对</h2><span className="xr-sec-tag">计划怎么活下来</span></div>
+              <div className="xr-sec-head"><h2><IconCopy aria-hidden="true" />复盘与年度核对</h2><span className="xr-sec-tag">计划怎么活下来</span></div>
               <p className="xr-body-text">计划推不下去，通常不是目标选错了，而是估时不准，并且只顾着往里加任务、从不往外删。下面按周、月、阶段末三个频率，各给一组要回答的问题。</p>
               <p className="xr-body-text">{exitRule}</p>
               <div className="xr-cadence">
@@ -370,7 +371,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
             </section>
 
             <section id="plan-admissions" className="atlas-sheet xr-sec" data-atlas-reveal>
-              <div className="xr-sec-head"><h2>升学核验与备选</h2><span className="xr-sec-tag">招生条目：没查到</span></div>
+              <div className="xr-sec-head"><h2><IconExternal aria-hidden="true" />升学核验与备选</h2><span className="xr-sec-tag">招生条目：没查到</span></div>
               <p className="xr-body-text">还没有已核验的招生条目，所以这一栏只给要查什么，不给结论。阶段计划里「定位与资格核验」那几条也是同一件事——那边是待办，这里是要填的表。每条都拿官方原文核一遍，核过的写上日期。</p>
               <dl className="xr-check">{[["学校与项目", "核实院校、项目名称、专业代码与招生方式。"], ["目标年份", "核实招生年份、报名和考核时间，记录发布日期。"], ["报考条件", "核实跨专业资格、考试科目、语言与复试要求。"], ["官方来源", "保存项目官方 URL、原文与本次核验日期。"]].map(([title, content]) => <div key={title}><dt>{title}</dt><dd>{content}</dd></div>)}</dl>
               <h3 className="xr-stack">已知风险</h3>
@@ -381,7 +382,7 @@ export function PlanReport({ initialDirection }: { initialDirection: string }) {
             </section>
 
             <section id="plan-explanation" className="atlas-sheet xr-sec" data-atlas-reveal>
-              <div className="xr-sec-head"><h2>解释与导出</h2><span className="xr-sec-tag">规则预览与 AI 解读分开</span></div>
+              <div className="xr-sec-head"><h2><IconDownload aria-hidden="true" />解释与导出</h2><span className="xr-sec-tag">规则预览与 AI 解读分开</span></div>
               <p className="xr-body-text">规则预览和 AI 解读是两件事：预览不联网就能看；AI 解读要单独生成，需要已保存的画像、官方兴趣、职业体验，以及上面这组有效条件。</p>
               <div className="xr-ai"><AiReport key={JSON.stringify([direction, alternatives, profile.transition_year, profile.weekly_hours, profile.pathway, budget, loaded, simulation])} kind="R2" direction={findDirection(direction)?.id} alternatives={alternatives} enabled={ready && !simulation && !!assessment} planning={{ transition_year: profile.transition_year, weekly_hours: profile.weekly_hours, pathway: profile.pathway, weekly_allocation: budget }} /></div>
               <div className="xr-actions xr-stack">

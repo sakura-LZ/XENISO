@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -379,9 +379,9 @@ export function Community() {
     <div className="community-grid">
       <div className="community-wall">
         {checkingSession ? <p className="community-wall-loading" role="status"><IconSpinner className="community-spin" aria-hidden="true" /><span>正在读取帖子…</span></p> : !member ? <>
-          <section className="community-compose atlas-sheet" aria-labelledby="gate-title">
+          <section className="community-compose atlas-sheet" data-atlas-reveal aria-labelledby="gate-title">
           <span className="atlas-pin" aria-hidden="true" />
-          <h2 id="gate-title">先验证邮箱，再看帖子</h2>
+          <h2 id="gate-title"><IconWarning aria-hidden="true" />先验证邮箱，再看帖子</h2>
           <p className="community-note">读写都要先验证邮箱：有人发广告时，我们要能找到发帖人。邮箱不公开，别人只看到「匿名探索者」。</p>
           <form onSubmit={event => { event.preventDefault(); void verifyEmail(); }}>
             <label className="form-label" htmlFor="community-auth-mode">这个邮箱怎么用</label>
@@ -439,9 +439,9 @@ export function Community() {
           </p>}
           </section>
 
-          <section className="community-preview" id="community-preview" aria-labelledby="preview-title">
+          <section className="community-preview" data-atlas-reveal id="community-preview" aria-labelledby="preview-title">
             <div className="community-preview-head">
-              <h2 id="preview-title">两类帖子 · 示例</h2>
+              <h2 id="preview-title"><IconBook aria-hidden="true" />两类帖子 · 示例</h2>
             </div>
             <ul className="community-preview-list">
               {SAMPLE_POSTS.map(sample => <li key={sample.title}>
@@ -459,9 +459,9 @@ export function Community() {
             </ul>
           </section>
         </> : <>
-          <section className="community-compose atlas-sheet" aria-labelledby="compose-title">
+          <section className="community-compose atlas-sheet" data-atlas-reveal aria-labelledby="compose-title">
             <span className="atlas-tape tr" aria-hidden="true" />
-            <h2 id="compose-title">发一条新帖</h2>
+            <h2 id="compose-title"><IconChat aria-hidden="true" />发一条新帖</h2>
             <p className="community-note">写清卡在哪步、做完变了什么。发帖只显示「匿名探索者」；帖子不能编辑，别人发的只能举报。</p>
             <form onSubmit={event => { event.preventDefault(); void publish(); }} noValidate>
               <fieldset className="community-kinds">
@@ -641,9 +641,9 @@ export function Community() {
         {/* 这里原来有一张「两类帖子」定义卡，与上方 preview 的「两类帖子 · 示例」重复
             （preview 已经用真实例子展示了两类），删掉减少一个同级标题。
             剩下两张规则卡也并成一张「社区规则」：首屏 h2 从 5 个降到 2 个。 */}
-        <section className="community-rail-card atlas-sheet">
+        <section className="community-rail-card atlas-sheet" data-atlas-reveal>
           <span className="atlas-tape tl" aria-hidden="true" />
-          <h2>社区规则</h2>
+          <h2><IconStamp aria-hidden="true" />社区规则</h2>
           <ol className="community-rules">
             <li><b>只写确认过的事。</b>引用招生简章、导师回复要给出处；没查到就写「没查到」。</li>
             <li><b>不替别人下判断。</b>说自己怎么判断、依据是什么，不说「你适合」，也不给排名和录取概率。</li>

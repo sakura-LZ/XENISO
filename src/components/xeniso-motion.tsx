@@ -27,9 +27,13 @@ export function XenisoMotion() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     /* ---------------- 一、滚动入场 ---------------- */
+    /* data-motion 是页面里按区块声明的动效编号（M-Exx）。以前它只写在 DOM 上、
+       没有任何消费方，等于给后来的人留了一份假接口；现在它和 data-atlas-reveal
+       走同一套观测与放行，进场时打 data-motion-in，样式层按编号分派入场效果。 */
     const show = (element: Element) => {
       element.setAttribute("data-state", "in");
       element.setAttribute("data-atlas-in", "1");
+      element.setAttribute("data-motion-in", "1");
     };
     const observer = new IntersectionObserver(entries => {
       for (const entry of entries) {
@@ -39,7 +43,7 @@ export function XenisoMotion() {
       }
     }, { rootMargin: "0px 0px -12% 0px", threshold: 0.01 });
     const scan = () => {
-      document.querySelectorAll("[data-reveal]:not([data-state]), [data-atlas-reveal]:not([data-atlas-in])").forEach(element => {
+      document.querySelectorAll("[data-reveal]:not([data-state]), [data-atlas-reveal]:not([data-atlas-in]), [data-motion]:not([data-motion-in])").forEach(element => {
         const top = element.getBoundingClientRect().top;
         if (reduce.matches || top < window.innerHeight * 0.9) { show(element); return; }
         element.setAttribute("data-state", "pending");
@@ -63,7 +67,7 @@ export function XenisoMotion() {
     const releaseVisible = () => {
       const vh = window.innerHeight;
       document
-        .querySelectorAll('[data-reveal][data-state="pending"], [data-atlas-reveal]:not([data-atlas-in])')
+        .querySelectorAll('[data-reveal][data-state="pending"], [data-atlas-reveal]:not([data-atlas-in]), [data-motion]:not([data-motion-in])')
         .forEach(element => {
           // 只要元素的顶边已经越过视口下沿——无论是在视口里、还是已经被滚到
           // 上方——都放行。已经被滚过去的元素不可能再入场，留着 pending 就是
@@ -72,7 +76,7 @@ export function XenisoMotion() {
         });
     };
     const releaseAll = () => document
-      .querySelectorAll('[data-reveal][data-state="pending"], [data-atlas-reveal]:not([data-atlas-in])')
+      .querySelectorAll('[data-reveal][data-state="pending"], [data-atlas-reveal]:not([data-atlas-in]), [data-motion]:not([data-motion-in])')
       .forEach(show);
     const safety = window.setTimeout(releaseVisible, SAFETY_MS);
 

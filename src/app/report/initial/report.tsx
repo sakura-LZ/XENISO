@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { type AssessmentResult } from "@/lib/assessment";
@@ -126,7 +126,7 @@ export function InitialReport() {
             <p className="xr-body-text">盘点能带进新方向的底子。不判断水平高低，写过不等于掌握。</p>
             {mode !== "empty" ? <p className="xr-source">画像：{profile.school || "院校未填写"} · {profile.major || "专业未填写"} · {profile.grade || "年级未填写"}<br />课程 {profile.courses.length} 条、研究项目 {profile.research_projects.length} 条、论文记录 {profile.papers.length} 条、技术自评 {profile.tech_skills.length} 条。全部来自本人填写，未独立核验。</p> : <p className="xr-source">尚未读取个人经历。<Link href="/profile/basics">填写医学经历</Link>。</p>}
 
-            <h3 className="xr-stack">已经记录在案的</h3>
+            <h3 className="xr-stack"><IconFolder aria-hidden="true" />已经记录在案的</h3>
             {report.evidence.length ? <ol className="xr-records">
               {leadRecords.map(row => <li className="xr-record" key={row.ref}>
                 <div className="xr-record-head"><h3>{row.skill}</h3><span className="atlas-chip" data-tone="gap">{row.status}</span></div>
@@ -144,7 +144,7 @@ export function InitialReport() {
               </li>}
             </ol> : <p className="xr-empty">暂无记录。空着不代表没有能力，只是档案里还缺证据。</p>}
 
-            <h3 className="xr-stack">能带进哪些方向</h3>
+            <h3 className="xr-stack"><IconCompass aria-hidden="true" />能带进哪些方向</h3>
             <p className="xr-source">标出医学训练能接得上的起点，供参考，不是录用条件。</p>
             {report.candidates.length ? <ol className="xr-directions xr-stack">
               {report.candidates.map(({ direction, occupations }) => <li className="xr-direction atlas-lift" key={direction.id}>
