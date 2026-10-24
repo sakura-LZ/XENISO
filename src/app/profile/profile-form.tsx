@@ -161,7 +161,7 @@ export function ProfileForm() {
     <Link href="/profile" className="xp-crumb"><IconBack aria-hidden="true" />返回总览</Link>
 
     <header className="xp-head">
-      <InkField className="page-ink" />
+      <InkField className="page-ink" band />
       <div className="enter">
         <h1><IconProfile aria-hidden="true" />填写个人画像</h1>
         <p className="xp-lede">

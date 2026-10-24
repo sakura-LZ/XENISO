@@ -181,7 +181,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
 
   return <main id="main" className="xd-page"><div className="container"><fieldset disabled={busy} className="contents">
     <header className="xd-head" data-motion="M-E01">
-      <InkField className="page-ink" />
+      <InkField className="page-ink" band />
       <div>
         <p className="atlas-label">第 3 步 · 职业体验</p>
         <h1>{started ? template.title : "职业体验"}</h1>

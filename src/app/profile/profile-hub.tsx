@@ -48,7 +48,7 @@ export function ProfileHub() {
   return <div className="container xp-narrow">
     <ReportReveal motion="M-P01">
       <header className="xp-head">
-      <InkField className="page-ink" />
+      <InkField className="page-ink" band />
         <div>
           <h1><IconProfile aria-hidden="true" />个人画像</h1>
           <p className="xp-lede">
