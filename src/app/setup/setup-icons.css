@@ -1,0 +1,29 @@
+/* ---------- P0 配置页区块图标 ----------
+ * 只做识别：h1/h2 前、配置项名称前、状态旁、提示条旁、按钮内。
+ * Tailwind preflight 把 svg 设成 display:block，这里统一拉回行内块；尺寸用 em，
+ * 跟着所在文字的字号走，不会撑高行盒、也不会把标题顶成两行。
+ */
+
+.setup-ico {
+  display: inline-block;
+  flex: none;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.14em;
+  color: currentColor;
+}
+
+/* 页眉 h1 */
+.setup-ico-lead { width: .5em; height: .5em; margin-right: .2em; vertical-align: -0.02em; color: var(--green-deep); }
+
+/* 区块标题前 */
+.setup-ico-block { width: .82em; height: .82em; margin-right: .3em; vertical-align: -0.08em; color: var(--green-deep); }
+
+/* 配置项名称前 */
+.setup-ico-meta { width: 1.05em; height: 1.05em; margin-right: 7px; vertical-align: -0.16em; color: var(--green-deep); }
+
+/* 状态文字旁：颜色跟随状态色（已配置蓝 / 缺少配置琥珀） */
+.setup-ico-state { width: 1em; height: 1em; margin-right: 6px; vertical-align: -0.14em; color: inherit; }
+
+/* 提示条旁 */
+.setup-ico-notice { width: 1.1em; height: 1.1em; margin-right: 8px; vertical-align: -0.18em; color: var(--ochre-ink); }
