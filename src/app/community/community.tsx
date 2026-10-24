@@ -430,8 +430,8 @@ export function Community() {
             </div>
           </form>
           <div className="community-publish-entry">
-            <button type="button" className="button" disabled aria-describedby="community-publish-hint">发一条新帖</button>
-            <span className="community-publish-hint" id="community-publish-hint">验证邮箱后可用</span>
+            <button type="button" className="button" disabled>发一条新帖</button>
+            
           </div>
           {authFeedback && <p className="community-notice" data-tone={authFeedback.tone} key={authFeedback.text} role="status" style={{ marginTop: 18, marginBottom: 0 }}>
             {authFeedback.tone === "ok" ? <IconStamp aria-hidden="true" /> : <IconWarning aria-hidden="true" />}
@@ -648,7 +648,7 @@ export function Community() {
             <li><b>只写确认过的事。</b>引用招生简章、导师回复要给出处；没查到就写「没查到」。</li>
             <li><b>不替别人下判断。</b>说自己怎么判断、依据是什么，不说「你适合」，也不给排名和录取概率。</li>
             <li><b>对内容提不同意见</b>，比反驳发帖人有用。</li>
-            <li><b>广告、招生中介、课程推销不进来。</b></li>
+            
           </ol>
           <p>帖子只显示「匿名探索者」，邮箱不公开。验证邮箱是为了在有人发广告时能找到发帖的人。</p>
           <Link className="community-link" href="/account">到「我的资料」看删除记录</Link>
