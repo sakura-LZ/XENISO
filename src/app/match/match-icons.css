@@ -1,0 +1,64 @@
+﻿/* ---------- 匹配页区块图标 ----------
+ * 只做识别：h1/h2/h3/h4 前、入口链接/按钮内、状态提示旁。
+ * Tailwind preflight 把 svg 设成 display:block，这里统一拉回行内块；尺寸一律用 em，
+ * 所以图标跟着所在文字的字号走，不会把标题顶成两行，也不改变任何既有间距（只加
+ * 图标自身需要的右外边距）。
+ */
+
+.match-ico {
+  display: inline-block;
+  flex: none;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.14em;
+  color: currentColor;
+}
+
+/* 页眉 h1：大字号下图标要收小，否则会把标题压宽 */
+.match-heading h1 .match-ico-lead {
+  width: .5em;
+  height: .5em;
+  margin-right: .18em;
+  vertical-align: -0.02em;
+  color: var(--green-deep);
+}
+
+/* 区块标题前 */
+.match-redesign h2 .match-ico-block,
+.match-redesign h3 .match-ico-block,
+.match-redesign h4 .match-ico-block,
+.match-redesign .match-sub-name .match-ico-block {
+  width: .8em;
+  height: .8em;
+  margin-right: .3em;
+  vertical-align: -0.08em;
+  color: var(--green-deep);
+}
+
+/* 补充依据的入口链接（.match-prerequisites a 是行内文本，图标不能撑高行盒） */
+.match-prerequisites a .match-ico-link {
+  width: 1.05em;
+  height: 1.05em;
+  margin-right: 7px;
+  vertical-align: -0.16em;
+  color: inherit;
+}
+
+/* 状态提示旁 */
+.match-notice .match-ico-notice {
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 8px;
+  vertical-align: -0.18em;
+  color: var(--green-deep);
+}
+
+/* 卡内小标题（非标题元素）：与 h4 同档，不参与标题层级 */
+.match-redesign .match-sub-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 14px 0 6px;
+  font-size: 17px;
+  font-weight: 600;
+}

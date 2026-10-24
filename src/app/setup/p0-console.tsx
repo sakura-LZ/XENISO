@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { emptyProfile } from "@/lib/profile";
+import { IconAccount, IconEmpty, IconFolder, IconPlay, IconQuiz, IconStamp } from "@/components/icons";
 
 type Action = "session" | "save" | "read" | "questions" | "delete";
 export function P0Console() {
@@ -29,21 +30,21 @@ export function P0Console() {
     finally { setBusy(false); }
   }
   return <section className="mt-10" aria-labelledby="console-heading">
-    <h2 id="console-heading" className="t-block">封闭验证入口</h2>
+    <h2 id="console-heading" className="t-block"><IconPlay className="setup-ico setup-ico-block" aria-hidden="true" />封闭验证入口</h2>
     <div className="mt-5 flex flex-wrap gap-3">
-      <button className="button" disabled={busy} onClick={() => run("session")}>创建或恢复匿名访客</button>
-      <button className="button secondary" disabled={busy} onClick={() => run("questions")}>请求官方 30 题</button>
+      <button className="button" disabled={busy} onClick={() => run("session")}><IconAccount className="setup-ico" aria-hidden="true" />创建或恢复匿名访客</button>
+      <button className="button secondary" disabled={busy} onClick={() => run("questions")}><IconQuiz className="setup-ico" aria-hidden="true" />请求官方 30 题</button>
     </div>
     <form className="mt-7" onSubmit={(event) => { event.preventDefault(); void run("save"); }}>
       <label htmlFor="nickname" className="font-medium">合成测试昵称</label>
       <input id="nickname" className="field" value={nickname} onChange={(e) => setNickname(e.target.value)} required minLength={1} maxLength={40} />
       <div className="mt-4 flex flex-wrap gap-3">
-        <button className="button secondary" disabled={busy}>保存昵称</button>
-        <button type="button" className="button secondary" disabled={busy} onClick={() => run("read")}>读取已保存资料</button>
+        <button className="button secondary" disabled={busy}><IconStamp className="setup-ico" aria-hidden="true" />保存昵称</button>
+        <button type="button" className="button secondary" disabled={busy} onClick={() => run("read")}><IconFolder className="setup-ico" aria-hidden="true" />读取已保存资料</button>
       </div>
     </form>
     <div className="mt-8 rule pt-6">
-      {confirmDelete ? <div><p className="mb-3">确认删除当前访客身份及全部关联资料？此操作无法恢复。</p><div className="flex flex-wrap gap-3"><button className="button danger" disabled={busy} onClick={() => run("delete")}>确认删除</button><button className="button secondary" disabled={busy} onClick={() => setConfirmDelete(false)}>取消</button></div></div> : <button className="button danger" disabled={busy} onClick={() => setConfirmDelete(true)}>删除当前访客及资料</button>}
+      {confirmDelete ? <div><p className="mb-3">确认删除当前访客身份及全部关联资料？此操作无法恢复。</p><div className="flex flex-wrap gap-3"><button className="button danger" disabled={busy} onClick={() => run("delete")}><IconEmpty className="setup-ico" aria-hidden="true" />确认删除</button><button className="button secondary" disabled={busy} onClick={() => setConfirmDelete(false)}>取消</button></div></div> : <button className="button danger" disabled={busy} onClick={() => setConfirmDelete(true)}><IconEmpty className="setup-ico" aria-hidden="true" />删除当前访客及资料</button>}
     </div>
     <p className="status" role="status" aria-live="polite" aria-busy={busy}>{message}</p>
   </section>;
