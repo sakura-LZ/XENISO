@@ -34,8 +34,8 @@
 /* ---------- 使用指南：首屏四步路径 ---------- */
 .guide-page { max-width: 1120px; padding-block: 54px 96px; }
 .guide-hero { padding-bottom: 32px; border-bottom: 1px solid var(--line); }
-.guide-hero h1 { max-width: 20ch; margin: 12px 0 8px; }
-.gd-hero-lede { max-width: 40ch; margin: 0 0 26px; color: var(--ink-2); line-height: var(--lh-body); }
+.guide-hero h1 { max-width: 20ch; margin: 12px 0 8px; text-wrap: balance; }
+.gd-hero-lede { max-width: 46ch; margin: 0 0 26px; color: var(--ink-2); line-height: var(--lh-body); }
 .gd-path { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0 0 26px; padding: 0; list-style: none; border-top: 1px solid var(--line); }
 .gd-path li { position: relative; min-width: 0; border-left: 1px solid var(--line); }
 .gd-path li:first-child { border-left: 0; }
@@ -96,7 +96,7 @@
 .gd-flow li::before { content: ""; flex: none; width: 7px; height: 7px; background: var(--line-strong); }
 .gd-flow li[data-state="done"]::before { background: var(--green-mark); }
 .gd-flow li[data-state="current"]::before { background: var(--green); }
-.gd-flow-no { flex: none; width: 3.4em; font-family: var(--font-mono); font-size: var(--fs-meta); }
+.gd-flow-no { flex: none; width: 4.2em; font-family: var(--font-mono); font-size: var(--fs-meta); white-space: nowrap; }
 .gd-flow-name { color: var(--ink); }
 .gd-flow li[data-state="done"] .gd-flow-name { color: var(--ink-3); }
 .gd-flow li[data-state="current"] .gd-flow-name { color: var(--green-deep); font-weight: 600; }
@@ -144,7 +144,36 @@
 .guide-page .guide-kv a, .guide-page .gd-fact a, .guide-page .guide-source a { color: var(--green-deep); text-decoration: underline; text-underline-offset: 4px; }
 .page-help summary:focus-visible, .report-section-nav button:focus-visible, .guide-page a:focus-visible, .guide-page summary:focus-visible { outline: 2px solid var(--green-deep); outline-offset: 4px; }
 
-@media (max-width: 900px) { .site-help-label { display: none; } .gd-rules { column-gap: 28px; } }
+/* ---------- 使用指南 v2：首屏三问、步骤双栏、全宽要点 ---------- */
+.gd-frame { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 36px; margin: 24px 0 0; }
+.gd-frame > div { padding-top: 14px; border-top: 1px solid var(--line); }
+.gd-frame dt { color: var(--ink); font-size: var(--fs-small); font-weight: 600; }
+.gd-frame dd { margin: 4px 0 0; color: var(--ink-2); font-size: var(--fs-small); line-height: var(--lh-small); }
+.gd-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 22px; }
+.guide-hero .gd-cta { margin-top: 26px; }
+.gd-hero-note { max-width: 700px; margin: 14px 0 0; color: var(--ink-3); font-size: var(--fs-small); line-height: var(--lh-small); }
+.gd-cta .atlas-btn { min-height: 48px; }
+.gd-cta .arrow { display: inline-block; transition: transform 220ms var(--ease); }
+.gd-cta .atlas-btn:hover .arrow { transform: translateX(3px); }
+.gd-cols { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 18px 44px; margin-top: 24px; }
+.gd-sub { margin: 0 0 10px; color: var(--ink); font-size: var(--fs-small); font-weight: 600; }
+.gd-cols .gd-points { margin: 0; }
+.gd-cols .gd-points li { color: var(--ink-2); font-size: var(--fs-small); line-height: 1.75; }
+.gd-cols .gd-points li + li { margin-top: 8px; }
+.gd-cols ul.gd-points { padding-left: 0; list-style: none; }
+.gd-cols ul.gd-points li { position: relative; padding-left: 14px; }
+.gd-cols ul.gd-points li::before { content: ""; position: absolute; top: 0.72em; left: 0; width: 5px; height: 5px; background: var(--green-mark); }
+.gd-points-wide { margin: 18px 0 0; padding-left: 1.15em; max-width: 76ch; }
+.gd-points-wide li { color: var(--ink-2); font-size: var(--fs-small); line-height: 1.8; }
+.gd-points-wide li + li { margin-top: 8px; }
+.gd-points-wide b { color: var(--ink); font-weight: 600; }
+.gd-change { max-width: 78ch; margin: 20px 0 0; padding-top: 14px; border-top: 1px solid var(--line-2); color: var(--ink-2); font-size: var(--fs-small); line-height: 1.75; }
+.gd-mock-note { display: block; margin-top: 10px; color: var(--ink-3); font-size: var(--fs-small); }
+.gd-step .gd-facts { margin-top: 20px; }
+/* 中文长段落的行长：约 38–42 个汉字，超过就读着累 */
+.gd-lede, .gd-fact > p, .gd-change, .gd-points-wide, .gd-points-wide li { max-width: 700px; }
+@media (max-width: 900px) { .site-help-label { display: none; } .gd-rules { column-gap: 28px; } .gd-frame { grid-template-columns: minmax(0, 1fr); gap: 0; } .gd-frame > div { padding: 12px 0; } }
+@media (max-width: 760px) { .gd-cols { grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 20px; } }
 @media (max-width: 820px) {
   .guide-kv > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
   .report-sections, .guide-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
