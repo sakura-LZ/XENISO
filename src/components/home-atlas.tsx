@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { InkField } from "@/components/ink-field";
-import { RegisterPress, RegisterPressCopy } from "@/components/register-press";
+import { BookSpread } from "@/components/book-spread";
 import { HomeScene } from "@/components/home-scene";
 import { FilingDrawer } from "@/components/filing-drawer";
 import { IconProfile, IconQuiz, IconPulse, IconCalendar } from "@/components/icons";
@@ -80,8 +80,8 @@ export function HomeAtlas() {
             </p>
             {/* 对版台那一屏在首屏之下（区块顶边约 876px，视口 900），
                 不滚一下只能看到 24px。这里给一个明确的向下指引，避免"页面上没有"。 */}
-            <a className="atlas-hero-jump" href="#register-press">
-              往下看：换个领域，一半的动词是同一个
+            <a className="atlas-hero-jump" href="#direction-index">
+              往下看：学医的十个出口，编成了一本册子
               <span aria-hidden="true">↓</span>
             </a>
           </div>
@@ -103,14 +103,22 @@ export function HomeAtlas() {
         </div>
       </div>
 
-      {/* ---------- 对版台：把你的经历和目标领域印到同一张纸上 ----------
-          这一屏换过三版：随鼠标变形的水墨画布（抽象、和网站无关）、逐条核对的
-          表格（清楚但没劲）、现在是印刷里的「对版」——两版印张没对准时字是虚的，
-          对上了才实。可拖、可对，对上亮勾环、落「已对版」的章。 */}
-      <section className="rp-band" id="register-press">
-        <div className="container rp-band-inner">
-          <RegisterPressCopy />
-          <RegisterPress />
+      {/* ---------- 装订册：一张图版，一页目录 ----------
+          这一屏换过四版：随鼠标变形的水墨画布（抽象、和网站无关）、逐条核对的表格
+          （清楚但没劲）、印刷「对版」（对得上才实）、根须图（墨迹分布脏、交互看不出）。
+          现在是第五版：一本摊开的线圈装订册。左边是 1568 年的解剖图版，右边是方向索引，
+          可以真的翻过去——翻动是这一屏的主张本身：路就在这儿，只是没打光/没翻页时看不见。 */}
+      <section className="bk-band" id="direction-index">
+        <div className="container">
+          <div className="bk-head" data-atlas-reveal>
+            <p className="atlas-label">装订册</p>
+            <h2 className="t-section">同一份身体知识，编了两次目</h2>
+            <p className="t-lede bk-lede">
+              左边是 1568 年的一页解剖图版，右边是今天的方向目录。你在这份知识里待了五年，
+              它不只通向一个方向——把右边那张纸翻过去，还能看到每一类为什么在这儿。
+            </p>
+          </div>
+          <BookSpread />
         </div>
       </section>
 

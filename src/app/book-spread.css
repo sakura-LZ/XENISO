@@ -1,0 +1,441 @@
+/* 装订册（BookSpread）：首页第二屏。
+   一本摊开的线圈装订册——左页一张公有领域解剖图版，右页方向索引，可拖动翻页。
+   纸、墨、赭石全部取 globals.css 的 token；这里只写「书」自己的东西：
+   书脊凹槽、铁丝环与打孔、纸页朝书脊卷进去的明暗、翻动时的扫光与投影。 */
+
+.bk-band {
+  position: relative;
+  /* 底部留够，丝带书签垂在书外 52px 不压到下一屏 */
+  padding: 76px 0 92px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-2);
+}
+.bk-head { max-width: 44rem; }
+.bk-head h2 { margin: 12px 0 0; }
+.bk-lede { margin: 14px 0 0; }
+
+.bk-stage { margin-top: 34px; }
+.bk-shelf { position: relative; }
+
+/* 桌面投影：单独一层。不用 filter 包住书本身——filter 会把 3D 上下文压平 */
+.bk-drop {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  top: 26px;
+  bottom: -6px;
+  z-index: 0;
+  border-radius: 6px;
+  background: rgba(60, 48, 26, .22);
+  filter: blur(26px);
+}
+
+.bk-book {
+  --bk-h: 604px;
+  --bk-spine: 46px;
+  --bk-leaf: #f7f2e4;
+  --flip: 0;
+  --lift: 0;
+  position: relative;
+  z-index: 1;
+  height: var(--bk-h);
+  perspective: 1900px;
+  perspective-origin: 50% 46%;
+  transform-style: preserve-3d;
+  /* 进场用 CSS 关键帧自己做：JS 没跑、报错或加载慢时，书照样是可见的，
+     不能把可见性交给 data-enter 这个 JS 才会写的属性 */
+  animation: bk-enter .52s var(--ease) both;
+}
+@keyframes bk-enter {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- 底层两页 ---------- */
+.bk-base {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--bk-spine) minmax(0, 1fr);
+}
+.bk-leaf {
+  position: relative;
+  min-width: 0;
+  padding: 26px 30px 22px;
+  background: var(--bk-leaf);
+  border: 1px solid var(--line-strong);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.bk-leaf-l { grid-column: 1; border-right: 0; }
+.bk-leaf-r { grid-column: 3; border-left: 0; }
+
+/* 页边 1.5px 高光折线：把纸页和书脊分开，否则两侧压暗和书脊连成一条黑带 */
+.bk-leaf-l,
+.bk-face-front { box-shadow: inset -1.5px 0 0 rgba(255, 255, 255, .55); }
+.bk-leaf-r,
+.bk-face-back { box-shadow: inset 1.5px 0 0 rgba(255, 255, 255, .55); }
+
+/* ---------- 图版页 ---------- */
+.bk-plate {
+  margin: 0;
+  flex: 1;
+  min-height: 0;
+  padding: 7px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.bk-plate img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 16%;
+  /* 图版本身的暖色压一点，跟纸面同族 */
+  filter: sepia(.14) contrast(1.05);
+}
+
+/* ---------- 015 页：每类方向一句话 ---------- */
+.bk-notes { list-style: none; margin: 0; padding: 0; display: grid; gap: 15px; }
+.bk-notes-name {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: .08em;
+  color: var(--ochre-ink);
+}
+.bk-notes-line {
+  display: block;
+  margin-top: 3px;
+  font-family: var(--font-serif);
+  font-size: var(--fs-small);
+  line-height: 1.62;
+  color: var(--ink);
+}
+
+/* ---------- 可翻的那一张 ---------- */
+.bk-sheet {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% + var(--bk-spine) / 2);
+  right: 0;
+  z-index: 4;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+  will-change: transform;
+  /* 竖向还能滚页面，横向留给翻页 */
+  touch-action: pan-y;
+  cursor: grab;
+}
+.bk-sheet:active { cursor: grabbing; }
+.bk-face {
+  position: absolute;
+  inset: 0;
+  padding: 26px 30px 22px;
+  background: var(--bk-leaf);
+  border: 1px solid var(--line-strong);
+  backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.bk-face-front { border-left: 0; }
+.bk-face-back { transform: rotateY(180deg); border-right: 0; }
+/* 纸页朝书脊卷进去：越靠脊越暗，外侧留一点提亮 */
+.bk-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, .14) 0%,
+    rgba(255, 255, 255, 0) 7%,
+    rgba(255, 255, 255, 0) 72%,
+    rgba(74, 60, 34, .05) 90%,
+    rgba(74, 60, 34, .13) 100%
+  );
+}
+.bk-face-back::after { transform: scaleX(-1); }
+
+/* 翻动时纸面扫过一道光：斜向高光带跟着翻转进度平移 */
+.bk-sweep {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    100deg,
+    transparent 26%,
+    rgba(255, 255, 255, .58) 47%,
+    transparent 66%
+  );
+  background-size: 260% 100%;
+  background-position: calc(var(--flip) * 100%) 0;
+  opacity: calc(min(var(--flip), calc(1 - var(--flip))) * .9);
+}
+
+/* 底层右页上跟着走的投影 */
+.bk-cast {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% + var(--bk-spine) / 2);
+  right: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to left, rgba(60, 48, 26, .16), rgba(60, 48, 26, 0) 58%);
+  opacity: calc(var(--flip) * .85);
+}
+
+/* ---------- 掀角：幅度由 --lift 决定，最大 176px ---------- */
+.bk-curl {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+  width: calc(26px + var(--lift) * 150px);
+  height: calc(26px + var(--lift) * 150px);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(74, 60, 34, .20) 0%,
+    rgba(74, 60, 34, .04) 40%,
+    #fbf7ec 43%,
+    #ece2c9 100%
+  );
+  box-shadow: -10px -10px 20px -12px rgba(60, 48, 26, .5);
+  transform: rotate(calc(var(--lift) * -5deg));
+  transform-origin: 100% 100%;
+}
+.bk-curl-l {
+  right: auto;
+  left: 0;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  background: linear-gradient(
+    225deg,
+    rgba(74, 60, 34, .20) 0%,
+    rgba(74, 60, 34, .04) 40%,
+    #fbf7ec 43%,
+    #ece2c9 100%
+  );
+  transform: rotate(calc(var(--lift) * 5deg));
+  transform-origin: 0 100%;
+}
+
+/* 角落的点击热区：盖在掀角上，本体不画东西 */
+.bk-corner {
+  position: absolute;
+  bottom: 0;
+  z-index: 6;
+  width: 76px;
+  height: 76px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.bk-corner-r { right: 0; }
+.bk-corner-l { left: 0; }
+.bk-corner:focus-visible { outline: 2px solid var(--green); outline-offset: -3px; }
+
+/* ---------- 索引页排版 ---------- */
+.bk-index { margin: 0; padding: 0; list-style: none; }
+.bk-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 12px;
+  margin-top: 15px;
+}
+.bk-group:first-child { margin-top: 0; }
+.bk-group-name {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  letter-spacing: .1em;
+  color: var(--ink-3);
+}
+.bk-group-count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  color: var(--ochre-ink);
+}
+.bk-items {
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
+  padding: 0 0 4px;
+  list-style: none;
+  border-bottom: 1px solid var(--line);
+}
+.bk-items li {
+  display: grid;
+  grid-template-columns: 2.4em minmax(0, 1fr);
+  gap: 2px;
+  align-items: baseline;
+  padding: 3px 0;
+}
+.bk-no {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  color: var(--ink-faint);
+}
+.bk-name {
+  font-family: var(--font-serif);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+/* ---------- 背面：一段说明 ---------- */
+.bk-prose p {
+  margin: 0 0 14px;
+  font-family: var(--font-serif);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--ink-2);
+}
+.bk-prose p:last-child { margin-bottom: 0; }
+
+/* ---------- 书脊与铁环 ---------- */
+.bk-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - var(--bk-spine) / 2);
+  width: var(--bk-spine);
+  z-index: 6;
+  display: block;
+  transform: translateZ(3px);
+  background: #efe7d5;
+  background-image: linear-gradient(
+    to right,
+    rgba(74, 60, 34, .11),
+    rgba(255, 255, 255, .30) 50%,
+    rgba(74, 60, 34, .11)
+  );
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+}
+.bk-rings { position: absolute; inset: 0; display: block; }
+/* 纸被拉出时环会跟着内移一点，翻得越多移得越明显 */
+.bk-ring {
+  position: absolute;
+  left: -9px;
+  width: 62px;
+  height: 34px;
+  transform: translateX(calc(var(--flip) * -2.5px));
+}
+.bk-ring svg {
+  display: block;
+  width: 62px;
+  height: 34px;
+  overflow: visible;
+  filter: drop-shadow(1px 1.5px 1px rgba(60, 48, 26, .18));
+}
+
+/* ---------- 打孔 ---------- */
+.bk-holes { position: absolute; inset: 0; pointer-events: none; }
+.bk-hole {
+  position: absolute;
+  width: 13px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e4dabd;
+  box-shadow: inset 0 1.5px 2px rgba(60, 48, 26, .32), 0 1px 0 rgba(255, 255, 255, .5);
+}
+.bk-holes-l .bk-hole { left: 9px; }
+.bk-holes-r .bk-hole { right: 9px; }
+
+/* ---------- 丝带书签：翻页时摆一下 ---------- */
+.bk-ribbon {
+  position: absolute;
+  left: calc(50% - 9px);
+  bottom: -52px;
+  width: 18px;
+  height: 104px;
+  z-index: 7;
+  background: linear-gradient(to bottom, #9a4f2a, #7d3c1f);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+  transform: rotate(calc(2.4deg - var(--flip) * 8deg));
+  transform-origin: top center;
+}
+
+/* ---------- 图版署名 ---------- */
+.bk-source {
+  margin: 18px 0 0;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  color: var(--ink-3);
+}
+
+/* ---------- 中屏 ---------- */
+@media (max-width: 1200px) {
+  .bk-book { --bk-h: 566px; }
+}
+@media (max-width: 1080px) {
+  .bk-band { padding: 60px 0 76px; }
+  .bk-book { --bk-h: 540px; }
+  .bk-leaf,
+  .bk-face { padding: 22px 22px 18px; }
+  .bk-name { font-size: var(--fs-small); }
+}
+
+/* ---------- 手机：摊不开就竖排成四张纸，翻页交回内容本身 ---------- */
+@media (max-width: 860px) {
+  .bk-book {
+    height: auto;
+    perspective: none;
+    transform-style: flat;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .bk-base { position: static; display: block; }
+  .bk-leaf {
+    display: block;
+    grid-column: auto;
+    margin-bottom: 16px;
+    padding: 20px 18px;
+    border: 1px solid var(--line-strong);
+    box-shadow: none;
+  }
+  .bk-plate { height: 320px; }
+  .bk-sheet {
+    position: static;
+    display: block;
+    transform: none !important;
+    touch-action: auto;
+    cursor: auto;
+  }
+  .bk-face {
+    position: static;
+    display: block;
+    transform: none;
+    backface-visibility: visible;
+    margin-bottom: 16px;
+    padding: 20px 18px;
+    border: 1px solid var(--line-strong);
+    box-shadow: none;
+  }
+  .bk-face-back { margin-top: 16px; }
+  .bk-drop,
+  .bk-cast,
+  .bk-spine,
+  .bk-ribbon,
+  .bk-curl,
+  .bk-corner,
+  .bk-sweep,
+  .bk-holes { display: none; }
+  .bk-source { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bk-book { animation: none; }
+  .bk-curl { transform: none; }
+  .bk-ribbon { transform: rotate(2.4deg); }
+}

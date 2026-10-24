@@ -11,7 +11,7 @@ import "./chrome.css";
 import "./home.css";
 import "./home-artifacts.css";
 import "./motion.css";
-import "./register-press.css";
+import "./book-spread.css";
 import "./nav-icons.css";
 import "./filing-drawer.css";
 import "./scroll-scenes.css";
