@@ -180,7 +180,9 @@
 }
 .xnlib-drawer-title { display: block; font-family: var(--font-serif); font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 600; }
 .xnlib-drawer-sum { display: block; margin-top: 2px; font-size: var(--fs-small); line-height: var(--lh-meta); color: var(--ink-3); }
-.xnlib-drawer-chips { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+.xnlib-drawer-chips { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; align-items: center; }
+/* SOC 编号是标识符不是标签，降为等宽纯文本，不再占用一个胶囊位 */
+.xnlib-drawer-soc { font-family: var(--font-mono); font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-3); white-space: nowrap; }
 .xnlib-drawer-chips a.atlas-chip { text-decoration: none; }
 .xnlib-drawer-pick {
   display: inline-flex;

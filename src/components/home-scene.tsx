@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 /**
  * 首屏主视觉：一只摊开的档案夹，四张手写卡按步骤钉在里面，中间用虚线串起来。
@@ -118,6 +119,23 @@ export function HomeScene({ groupCount, directionCount }: { groupCount: number; 
     <div className="hero-scene" data-atlas-reveal>
       <div className="scene-folder" aria-hidden="true" />
 
+      {/* 档案原件：一张公有领域的解剖图版，像被随手夹进档案夹的复印件。
+          它不是为了好看而放的装饰图，而是这个站"每条结论都要有出处"的物证。
+          这块曾被整段删掉，用户澄清后恢复——要删的是压在它上面的赭黄批注
+          （.scene-hand，已在下方移除），图版本身留着。
+          priority 让它进首屏预载：JPG 解码前的那个窗口是"变白闪"的来源。 */}
+      <figure className="scene-archive">
+        <Image
+          src="/generated/W3-hsyw2whj.jpg"
+          alt="19 世纪人体解剖图版，Jones Quain 编，Wellcome Collection 藏"
+          width={1189}
+          height={1600}
+          sizes="(max-width: 1024px) 120px, 160px"
+          priority
+        />
+        <figcaption>Quain 解剖图版 · Wellcome Collection</figcaption>
+      </figure>
+
       <svg className="scene-thread" viewBox="0 0 680 600" preserveAspectRatio="none" aria-hidden="true">
         <path d="M196,150 C280,168 300,196 360,214" fill="none" stroke="#8f4726" strokeWidth="1.6" strokeDasharray="6 6" opacity=".55" />
         <path d="M470,250 C420,300 330,300 268,330" fill="none" stroke="#8f4726" strokeWidth="1.6" strokeDasharray="6 6" opacity=".55" />
@@ -146,7 +164,6 @@ export function HomeScene({ groupCount, directionCount }: { groupCount: number; 
       <p className="scene-stamp" aria-hidden="true">
         {groupCount} 类方向<br />{directionCount} 个去向
       </p>
-      <p className="scene-hand">不知道要转去哪，是正常状态。第一步只盘点你手上已经有的东西。</p>
     </div>
   );
 }

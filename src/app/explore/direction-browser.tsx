@@ -324,9 +324,18 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
                 <span className="xnlib-drawer-sum">{summaries[item.id]}</span>
               </Link>
               <span className="xnlib-drawer-chips">
+                {/* 这里原来每行两个胶囊（SOC 编号 + 关联类型），10 行就是 20 个，
+                    是全站最像"组件库默认样式"的一块：SOC 是标识符不是标签，而
+                    "直接关联"是默认值、8 行里 7 行都一样，重复且不携带信息。
+                    改成：SOC 降为等宽纯文本；只有在不是"直接关联"时才出一个胶囊
+                    （那才是真正需要一眼看见的例外）。 */}
                 {item.onet.length
-                  ? <><span className="atlas-chip">SOC {item.onet[0].code}</span><span className="atlas-chip">{relationshipLabel[item.onet[0].relationship] ?? item.onet[0].relationship}</span></>
-                  : <span className="atlas-chip">科室与执业路径</span>}
+                  ? <>
+                      <span className="xnlib-drawer-soc">SOC {item.onet[0].code}</span>
+                      {item.onet[0].relationship !== "direct"
+                        && <span className="atlas-chip" data-tone="gap">{relationshipLabel[item.onet[0].relationship] ?? item.onet[0].relationship}</span>}
+                    </>
+                  : <span className="xnlib-drawer-soc">科室与执业路径</span>}
               </span>
               <label className="xnlib-drawer-pick">
                 <input type="checkbox" checked={state.compare.includes(item.id)} aria-label={`比较${item.name}`} onChange={() => toggle(item.id)} />

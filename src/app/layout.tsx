@@ -8,6 +8,7 @@ import "./globals.css";
 import "./atlas.css";
 import "./chrome.css";
 import "./home.css";
+import "./home-artifacts.css";
 import "./motion.css";
 import "./chroma.css";
 import "./nav-icons.css";

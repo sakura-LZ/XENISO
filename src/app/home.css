@@ -149,20 +149,10 @@
   text-align: center;
   transform: rotate(6deg);
 }
-.scene-hand {
-  position: absolute;
-  left: 30%;
-  top: 47%;
-  z-index: 14;
-  max-width: 190px;
-  margin: 0;
-  color: var(--ochre-ink);
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: var(--fs-meta);
-  line-height: var(--lh-meta);
-  transform: rotate(-1.6deg);
-}
+/* .scene-hand（那条压在解剖图版上的赭黄手写批注）已删除。
+   用户两次反馈"上面有黄字看不清"，上一轮理解成"删掉图版"，实际要删的是这段黄字。
+   批注位置 left:30% / top:47% 正好盖在 left:34% / top:30% 的图版上。
+   文字内容与首屏导语重复，删掉不损失信息。 */
 
 @media (max-width: 1024px) {
   .hero-scene { height: auto; min-height: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding-top: 0; }
@@ -170,7 +160,6 @@
   .scene-card { position: static; width: auto; transform: none !important; }
   .scene-card:hover, .scene-card:focus-visible { transform: translateY(-3px) !important; }
   .scene-tape { display: none; }
-  .scene-hand { position: static; max-width: none; margin-top: 4px; grid-column: 1 / -1; padding-left: 2px; }
 }
 @media (max-width: 760px) {
   .hero-scene { grid-template-columns: minmax(0, 1fr); gap: 12px; }
