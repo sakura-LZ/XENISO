@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -7,6 +7,7 @@ import { TranscriptPreview } from "@/components/transcript-preview";
 import { IconAccount, IconBack, IconBook, IconCalendar, IconCompass, IconPulse, IconProfile, IconStamp } from "@/components/icons";
 import { profileProgress, PROFILE_GATE } from "./completion";
 import "./profile.css";
+import { PageHelp } from "@/components/page-help";
 
 import { InkField } from "@/components/ink-field";
 const steps = ["基本信息", "学业与英语", "科研与技能", "偏好与目标"];
@@ -165,16 +166,17 @@ export function ProfileForm() {
       <div className="enter">
         <h1><IconProfile aria-hidden="true" />填写个人画像</h1>
         <p className="xp-lede">
-          四节 20 项，有就填进<b>能力底册</b>。没有直接留着，空着不会扣分，不算零分能力。
+          有就填，没有的留空。
         </p>
       </div>
       <aside className="xp-meter enter xp-meter-d1" aria-label="填写进度">
-        <div className="xp-meter-row"><span>当前页</span><strong>第 1 步 / 共 4 步</strong></div>
-        <div className="xp-meter-row"><span>完成度</span><strong>{progress.done} / {progress.total} 项</strong></div>
+        <div className="xp-meter-row"><span>底册</span><strong>{progress.done} / {progress.total} 项</strong></div>
         <div className="xp-bar" role="img" aria-label={`已填写 ${progress.done} 项，共 ${progress.total} 项`}><i style={{ width: `${progress.done / progress.total * 100}%` }} /></div>
         <p className="xp-meter-foot">{remaining > 0 ? `还差 ${remaining} 项（填到 18 项即可）。` : `已够 ${PROFILE_GATE} 项。`}</p>
       </aside>
     </header>
+
+    <PageHelp topic="profile"><p>分几次填也可以，随时保存草稿。</p></PageHelp>
 
     <div className="xp-layout">
       <aside className="xp-tabs" aria-label="画像四节导航">
@@ -199,7 +201,7 @@ export function ProfileForm() {
       <section className="xp-sheet atlas-sheet" data-atlas-reveal>
         <span className="atlas-tape tr" aria-hidden="true" />
         <div className="xp-sheet-status">
-          <span>异域探索 · 第 1 步 · 第 1 / 4 页</span>
+          <span>能力底册</span>
           <span role="status" className={dirty ? "xp-dirty" : undefined}>{loading ? "正在读取…" : dirty ? "有未保存的修改" : "已同步"}</span>
         </div>
 
@@ -211,7 +213,6 @@ export function ProfileForm() {
 
             <section id="profile-group-0" className="xp-sec" data-reveal>
               <div className="xp-sec-head"><span className="xp-mark">第一节</span><h2><IconAccount aria-hidden="true" />基本信息</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[0].checks.filter(check => check.filled).length} / 5 项</span></div>
-              <p className="xp-sec-note">{progress.sections[0].note}</p>
               <div className="xp-grid">
                 {text("nickname", "昵称", "怎么称呼你")}
                 {text("school", "院校", "就读或毕业院校")}
@@ -224,7 +225,6 @@ export function ProfileForm() {
 
             <section id="profile-group-1" className="xp-sec" data-reveal>
               <div className="xp-sec-head"><span className="xp-mark">第二节</span><h2><IconBook aria-hidden="true" />学业与英语</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[1].checks.filter(check => check.filled).length} / 5 项</span></div>
-              <p className="xp-sec-note">{progress.sections[1].note}</p>
 
               <div className="xp-subsec">
                 <h3>学业表现</h3>
@@ -253,7 +253,6 @@ export function ProfileForm() {
 
             <section id="profile-group-2" className="xp-sec" data-reveal>
               <div className="xp-sec-head"><span className="xp-mark">第三节</span><h2><IconPulse aria-hidden="true" />科研与技能</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[2].checks.filter(check => check.filled).length} / 5 项</span></div>
-              <p className="xp-sec-note">{progress.sections[2].note}</p>
 
               <div className="xp-subsec">
                 <h3>研究方向</h3>
@@ -262,7 +261,6 @@ export function ProfileForm() {
 
               <div className="xp-subsec">
                 <h3>科研项目与成果</h3>
-                <p className="xp-hint">真上手干过的才写，围观打杂不算。</p>
                 {profile.research_projects.map((project, i) => <fieldset className="repeat-item xp-repeat" key={i}>
                   <legend>项目 {i + 1}</legend>
                   <div className="xp-grid">
@@ -322,7 +320,6 @@ export function ProfileForm() {
 
             <section id="profile-group-3" className="xp-sec" data-reveal>
               <div className="xp-sec-head"><span className="xp-mark">第四节</span><h2><IconCompass aria-hidden="true" />偏好与目标</h2><span className="xp-rule" /><span className="xp-count">{progress.sections[3].checks.filter(check => check.filled).length} / 5 项</span></div>
-              <p className="xp-sec-note">{progress.sections[3].note}</p>
               <div className="xp-grid">
                 {list("hobbies", "日常兴趣", "写作、编程、科普")}
                 {list("work_preferences", "喜欢的工作内容", "分析数据、与人交流")}
@@ -347,9 +344,6 @@ export function ProfileForm() {
           </fieldset>
 
           <div className="xp-actions">
-            <p className="xp-actions-note">
-              存进个人档案。填够 18 项就能去下一步，没想清的回头再补。
-            </p>
             <div className="xp-action-row">
               <button type="submit" className="button secondary" disabled={busy || loading || readFailed}><IconStamp aria-hidden="true" />{busy ? "保存中…" : "保存草稿"}</button>
               <button type="button" className="button" disabled={busy || loading || readFailed || remaining > 0} aria-disabled={remaining > 0} onClick={() => void save(true)}>
@@ -360,9 +354,8 @@ export function ProfileForm() {
           {message && <p role="status" className="xp-msg" data-tone={/失败|请补充|无法|超时|还差/.test(message) ? "error" : "ok"}>{message}</p>}
         </form>
 
-        {tools && <details className="xp-footnote"><summary>开发演示工具</summary><p>simulation：仅使用合成资料。真实个人资料通过上方私有保存。</p><button type="button" className="button secondary" onClick={() => { setProfile(structuredClone(simulationProfile)); setSimulation(true); setDirty(true); }}>载入合成示例</button></details>}
+        {tools && <details className="xp-footnote"><summary>开发演示工具</summary><p>simulation：只使用合成资料。</p><button type="button" className="button secondary" onClick={() => { setProfile(structuredClone(simulationProfile)); setSimulation(true); setDirty(true); }}>载入合成示例</button></details>}
 
-        <p className="xp-hand">拿不准的项目留空，别硬凑成 4。</p>
         <p className="xp-footnote"><Link href="/account" className="xp-text-link">隐私与资料管理</Link></p>
       </section>
     </div>

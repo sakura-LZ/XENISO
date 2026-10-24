@@ -82,6 +82,6 @@ export function ProfileReport({ ready, checking }: { ready: boolean; checking: b
       <details id="profile-report-evidence" className="xp-report-evidence"><summary>报告来源与证据</summary>{report.evidence.map(item => <div key={item.ref} id={`evidence-${encodeURIComponent(item.ref)}`}><h3>{kindLabels[item.kind]}</h3><pre>{JSON.stringify(item.value, null, 2)}</pre></div>)}</details>
       <Link className="xp-text-link" href="/report/initial">查看完整初步评价</Link>
     </div>}
-    <details className="xp-footnote"><summary>数据使用与报告说明</summary><p>报告只读已保存的画像与 O*NET 兴趣结果；生成时发送经历与兴趣证据，不含昵称和院校。仅供参考，不代表报考资格。</p></details>
+    <details className="xp-footnote"><summary>数据使用与报告说明</summary><p>报告只读已保存的画像与 O*NET 兴趣结果；生成时发送经历与兴趣证据，不含昵称和院校。完整范围见<Link href="/guide#privacy">使用指南 · 隐私与保存</Link>。</p></details>
   </section>;
 }

@@ -1,4 +1,4 @@
-﻿/*
+/*
  * XENISO · 报告区（R1 初步评价 / R2 行动规划）
  * 采集册 / 档案袋：只用 globals.css 的 token 和 atlas.css 的纸片原语。
  * 类名统一 xr- 前缀，避免和别的目录撞车。
@@ -901,3 +901,128 @@
 .xr-ai .xn-ai-report p,
 .xr-ai .xn-ai-report li { max-width: 44em; }
 .xr-file .mt-2 { font-size: var(--fs-small); }
+
+/* ---------- R1 四栏（2026-10-24）：真的四栏，不是四张长卡片 ----------
+   桌面四列、≤1100 两列、≤640 单列。每栏 = 编号 + 名称 + 状态 chip +
+   ≤1 句空状态 + 1 个动作；逐条证据留在本栏内部，方法说明不进栏。 */
+.rp-cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+  margin-top: 22px;
+}
+@media (max-width: 1100px) {
+  .rp-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .rp-cols { grid-template-columns: minmax(0, 1fr); }
+}
+.rp-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 16px 16px 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.rp-col-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 10px;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.rp-col-num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  letter-spacing: .1em;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+.rp-col-head h2 {
+  margin: 0;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  font-weight: 600;
+}
+.rp-col-head h2 svg { width: .8em; height: .8em; margin-right: .22em; color: var(--green-deep); vertical-align: -.06em; }
+.rp-col-head .atlas-chip { margin-left: auto; }
+.rp-col-sub { margin: 16px 0 0; font-size: var(--fs-body); line-height: 1.5; font-weight: 600; }
+.rp-col-empty { margin: 0; font-size: var(--fs-body); line-height: 1.7; color: var(--ink-3); }
+.rp-col-foot { margin-top: auto; padding-top: 14px; }
+.rp-col-foot .atlas-btn { width: 100%; min-height: 44px; padding: 0 12px; font-size: var(--fs-body); justify-content: center; }
+
+/* 栏内正文收一档：四栏实际宽 260–300px，17px 会在窄栏里折成 12 字/行 */
+.rp-col .xr-record { padding: 10px 0; }
+.rp-col .xr-record-head { gap: 4px 10px; }
+.rp-col .xr-record-head h3 { font-size: var(--fs-body); line-height: 1.45; }
+.rp-col .xr-record-body { font-size: var(--fs-small); line-height: 1.65; max-width: none; }
+.rp-col .xr-record details > summary,
+.rp-col .xr-record details .xr-source { font-size: var(--fs-meta); }
+.rp-col .xr-source { font-size: var(--fs-meta); line-height: 1.6; max-width: none; }
+.rp-col .xr-source code { font-size: var(--fs-meta); overflow-wrap: anywhere; }
+.rp-col .xr-empty { padding: 14px; font-size: var(--fs-small); }
+.rp-col .xr-details { margin-top: 10px; }
+.rp-col .xr-details > summary { font-size: var(--fs-small); }
+.rp-col .xr-src-list { font-size: var(--fs-small); padding-left: 16px; }
+
+/* 六维雷达在 260px 栏里改上下排：图在上、原始分台账在下 */
+.rp-col .xr-radar-figure { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.rp-col .xr-radar { max-width: 200px; }
+.rp-col .xr-ledger li { grid-template-columns: 16px minmax(0, 1fr) minmax(26px, .8fr) 26px; gap: 8px; padding: 6px 0; font-size: var(--fs-small); }
+.rp-col .xr-ledger .xr-ledger-score { font-size: var(--fs-small); }
+
+/* 方向卡在栏内改成上下排，插画只作识别，不占正文宽度 */
+.rp-col .xr-directions { gap: 12px; margin-top: 10px; }
+.rp-col .xr-direction { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 12px; }
+.rp-col .xr-direction .xn-direction-art { width: 76px; height: 76px; }
+.rp-col .xr-direction h3 { font-size: var(--fs-body); }
+.rp-col .xr-direction p { font-size: var(--fs-small); }
+.rp-col .xr-chips { gap: 4px; }
+.rp-col .xr-chips .atlas-chip { font-size: var(--fs-meta); }
+
+/* 缺口清单：栏内 chip、名称、来源竖排，不再并排挤成一列 */
+.rp-col .xr-gap-groups { gap: 14px; }
+.rp-col .xr-gap-group > h3 { font-size: var(--fs-body); }
+.rp-col .xr-gap-list li { display: grid; gap: 2px; padding: 6px 0; font-size: var(--fs-small); line-height: 1.6; }
+.rp-col .xr-gap-name { font-size: var(--fs-small); }
+.rp-col .xr-gap-src { margin-left: 0; font-size: var(--fs-meta); }
+
+/* 报考条件四处：栏内标签在上、核实内容在下 */
+.rp-col .xr-check { gap: 12px; margin-top: 14px; }
+.rp-col .xr-check > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+.rp-col .xr-check dt { font-size: var(--fs-meta); letter-spacing: .06em; color: var(--ink-2); }
+.rp-col .xr-check dd { font-size: var(--fs-small); line-height: 1.6; color: var(--ink-3); }
+
+@media (max-width: 640px) {
+  .rp-col { padding: 16px 14px; }
+}
+
+/* ---------- R2 未就绪：准备清单（三行状态点） ---------- */
+.rp-ready { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.rp-ready li {
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 6px 14px;
+  padding: 12px 0;
+  border-bottom: 1px dotted var(--line);
+}
+.rp-ready li:last-child { border-bottom: 0; }
+.rp-ready-dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  background: transparent;
+}
+.rp-ready li[data-done="true"] .rp-ready-dot { border-color: var(--green); background: var(--green-mark); }
+.rp-ready-name { font-size: var(--fs-body); line-height: 1.5; color: var(--ink); }
+.rp-ready-name a { color: var(--ink); text-underline-offset: 4px; }
+@media (max-width: 640px) {
+  .rp-ready li { grid-template-columns: 12px minmax(0, 1fr) auto; row-gap: 8px; }
+  .rp-ready li .atlas-chip { grid-column: 2; }
+}

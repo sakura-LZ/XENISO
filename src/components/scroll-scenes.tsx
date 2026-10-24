@@ -8,10 +8,13 @@ import { usePathname } from "next/navigation";
  * ---------------------------------------------------------------------------
  * 样式全部在 scroll-scenes.css，兜底在 reading-craft.css，这里只负责"什么时候动"。
  *
- * 和 xeniso-motion.tsx 的分工：
- *   xeniso-motion 管 [data-reveal] / [data-atlas-reveal] 的整块上浮，以及首屏视差、进度条；
+ * 和 page-theatre.tsx 的分工（本轮改的触发方式）：
+ *   page-theatre 决定"整个区块怎么进场"（八种场次动作），并抛出 xn:actplay；
  *   本组件管"标题以下的内容各自怎么被摆上去"——盖章、画表格线、滚数字、拉波浪线、
- *   逐行压字、抽图版。两套各看各的属性，互不重叠。
+ *   逐行压字、抽图版。位于某个场次内部的元素**不再各自等滚动**，而是收到
+ *   xn:actplay 后跟着所属区块进；只有不在场次里的元素仍按视口滚动触发。
+ *   这样同一个区块只有一次入场触发，不会出现"区块还在裁切、里面的字已经在动"。
+ *   xeniso-motion 只管首页 [data-reveal] / [data-atlas-reveal] 与内页 [data-motion]。
  *
  * 三条硬约定：
  *  1. **默认可见。** 只有"起始位置在视口下方"的元素才会被打上 data-scene-arm；
@@ -35,6 +38,9 @@ const ARM_LINE = 0.9;
 const STAGGER_CAP = 8;
 /** 机械计数器滚到底的时长 */
 const ROLL_MS = 620;
+/** 场次动作起手后多久，块内细节开始进：留半拍让区块先"落"下来，
+    读者先看到一张纸被摆上，再看到上面的表格线被画出来。 */
+const ACT_LEAD_MS = 140;
 /** 章节标签随滚动位移的幅度：±6px（任务上限 12px，这里再收一半） */
 const SHIFT_RANGE = 6;
 /** 巡检间隔：只用来捞"该出现却还停在起始态"的元素 */
@@ -181,7 +187,7 @@ export function ScrollScenes() {
 
     const boot = () => {
       stop?.();
-      if (reduce.matches) {
+      if (reduce.matches || pathname === "/") {
         stop = null;
         return;
       }
@@ -434,6 +440,10 @@ function install(): () => void {
     if (rect.top < window.innerHeight * ARM_LINE) return;
     el.dataset.sceneArm = "1";
     armed.set(el, rect.top + window.scrollY);
+    /* 场次内部：先挂起，等 page-theatre 的 xn:actplay 再进（见下面的 onActPlay）。
+       不在场次里、或所属场次已经开演（事件已错过）的，照旧交给观察器。 */
+    const act = el.closest<HTMLElement>("[data-act]");
+    if (act && act.dataset.actState === "arm") return;
     observer.observe(el);
   };
 
@@ -569,11 +579,32 @@ function install(): () => void {
     }
   };
   document.addEventListener("toggle", onToggle, true);
+  /**
+   * 场次开播（page-theatre.tsx 在 play() 里抛的 xn:actplay）：块内细节跟着进。
+   * 只放行"已经武装、且顶边在视口下沿附近"的元素；更靠下的仍留给滚动 / 巡检，
+   * 避免一个很高的区块在屏幕外把所有细节一次放完。这样同一个区块只有一次入场，
+   * 区块的裁切动作和里面的表格线 / 数字 / 盖章不会同时起手。
+   */
+  const onActPlay = (event: Event) => {
+    const node = event.target;
+    if (!(node instanceof HTMLElement) || !node.matches("[data-act]")) return;
+    const inside = Array.from(node.querySelectorAll<HTMLElement>('[data-scene-kind][data-scene-arm="1"]'));
+    if (!inside.length) return;
+    later(() => {
+      const limit = window.innerHeight * 1.02;
+      for (const el of inside) {
+        if (!el.isConnected) continue;
+        if (el.getBoundingClientRect().top < limit) play(el);
+      }
+    }, ACT_LEAD_MS);
+  };
+  document.addEventListener("xn:actplay", onActPlay);
   cleanups.push(() => {
     window.removeEventListener("scroll", onScroll);
     window.removeEventListener("resize", onResize);
     window.removeEventListener("pagehide", release);
     document.removeEventListener("toggle", onToggle, true);
+    document.removeEventListener("xn:actplay", onActPlay);
   });
 
   scan();

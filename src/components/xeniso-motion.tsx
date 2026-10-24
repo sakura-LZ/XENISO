@@ -27,6 +27,21 @@ export function XenisoMotion() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     /* ---------------- 一、滚动入场 ---------------- */
+    /* 分工（这一轮收紧的）：
+       首页 —— 三套标记都管（首页没有 page-theatre / scroll-scenes / micro-interactions）；
+       内页 —— 只认 data-motion。内页的区块入场已经由 page-theatre 的八种场次动作
+       统一接管，若这里再给 data-reveal / data-atlas-reveal 的整块打 pending，
+       同一个区块会被两层入场各推一次，也就是用户说的"滚动入场堆叠"。
+       data-motion 保留：它们多是交互后才渲染出来的结果块（M-Exx），不在
+       page-theatre 的场次候选里，需要这一层单独放行。 */
+    const isHome = pathname === "/";
+    const SCAN_TARGETS = isHome
+      ? '[data-reveal]:not([data-state]), [data-atlas-reveal]:not([data-atlas-in]), [data-motion]:not([data-motion-in])'
+      : '[data-motion]:not([data-motion-in])';
+    /** 兜底放行只认"已经进入 pending 的"，否则每次滚动都会把还没到视口的元素提前放掉 */
+    const PENDING_TARGETS = isHome
+      ? '[data-reveal][data-state="pending"], [data-atlas-reveal]:not([data-atlas-in]), [data-motion]:not([data-motion-in])'
+      : '[data-motion]:not([data-motion-in])';
     /* data-motion 是页面里按区块声明的动效编号（M-Exx）。以前它只写在 DOM 上、
        没有任何消费方，等于给后来的人留了一份假接口；现在它和 data-atlas-reveal
        走同一套观测与放行，进场时打 data-motion-in，样式层按编号分派入场效果。 */
@@ -43,7 +58,7 @@ export function XenisoMotion() {
       }
     }, { rootMargin: "0px 0px -12% 0px", threshold: 0.01 });
     const scan = () => {
-      document.querySelectorAll("[data-reveal]:not([data-state]), [data-atlas-reveal]:not([data-atlas-in]), [data-motion]:not([data-motion-in])").forEach(element => {
+      document.querySelectorAll(SCAN_TARGETS).forEach(element => {
         const top = element.getBoundingClientRect().top;
         if (reduce.matches || top < window.innerHeight * 0.9) { show(element); return; }
         element.setAttribute("data-state", "pending");
@@ -67,7 +82,7 @@ export function XenisoMotion() {
     const releaseVisible = () => {
       const vh = window.innerHeight;
       document
-        .querySelectorAll('[data-reveal][data-state="pending"], [data-atlas-reveal]:not([data-atlas-in]), [data-motion]:not([data-motion-in])')
+        .querySelectorAll(PENDING_TARGETS)
         .forEach(element => {
           // 只要元素的顶边已经越过视口下沿——无论是在视口里、还是已经被滚到
           // 上方——都放行。已经被滚过去的元素不可能再入场，留着 pending 就是
@@ -75,9 +90,7 @@ export function XenisoMotion() {
           if (element.getBoundingClientRect().top < vh) show(element);
         });
     };
-    const releaseAll = () => document
-      .querySelectorAll('[data-reveal][data-state="pending"], [data-atlas-reveal]:not([data-atlas-in]), [data-motion]:not([data-motion-in])')
-      .forEach(show);
+    const releaseAll = () => document.querySelectorAll(PENDING_TARGETS).forEach(show);
     const safety = window.setTimeout(releaseVisible, SAFETY_MS);
 
     // 无滚动场景（打印、整页截图）也要能看到全部内容：打印前全放

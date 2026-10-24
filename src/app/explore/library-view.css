@@ -1,4 +1,4 @@
-﻿/*
+/*
  * XENISO 信息文库 —— 目录柜 + 抽出来的档案页。
  * 只使用 globals.css 的 token 与 atlas.css 的原语，不新开色板。
  * 主动效：筛选后卡片像抽屉被抽出（xnlib-pull），逐行错开；其余为悬停与描边。
@@ -264,13 +264,6 @@
 .xnlib-cover { padding: 20px 20px 18px; }
 .xnlib-cover-name { margin: 0 0 12px; font-family: var(--font-serif); font-size: var(--fs-h3); line-height: var(--lh-h3); font-weight: 600; }
 .xnlib-cover .xnlib-check { margin-top: 14px; }
-.xnlib-chapter-nav-label {
-  margin: 0 0 10px;
-  font-family: var(--font-mono);
-  font-size: var(--fs-label);
-  letter-spacing: .08em;
-  color: var(--ink-3);
-}
 .xnlib-toc { margin: 0; padding: 0; list-style: none; }
 .xnlib-toc a {
   display: grid;
@@ -481,7 +474,6 @@
     background: var(--paper);
     border-bottom: 1px solid var(--line-2);
   }
-  .xnlib-chapter-nav-label { display: none; }
   .xnlib-toc { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
   .xnlib-toc::-webkit-scrollbar { display: none; }
   .xnlib-toc li { flex: none; }

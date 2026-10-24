@@ -16,12 +16,13 @@ import {
 import { assessmentSchema, type AssessmentResult } from "@/lib/assessment";
 import type { Direction } from "@/lib/directions";
 import { download } from "@/lib/download";
-import { documentSnapshot, snapshotSource, translatedQuestion, translation, type Questionnaire } from "@/lib/onet/translation";
+import { documentSnapshot, snapshotSource, translatedQuestion, type Questionnaire } from "@/lib/onet/translation";
 import { emptyProfile, type Profile } from "@/lib/profile";
 import { readProfileOverview } from "@/lib/profile-overview";
 import { initialReport, skillEvidence } from "@/lib/reports";
 
 import { InkField } from "@/components/ink-field";
+import { PageHelp } from "@/components/page-help";
 const areaOrder = ["realistic", "investigative", "artistic", "social", "enterprising", "conventional"] as const;
 type AreaCode = (typeof areaOrder)[number];
 const areaMeta: Record<AreaCode, { zh: string; en: string; letter: string; guide: string }> = {
@@ -228,10 +229,9 @@ export function Assessment() {
       <header className="assessment-head" data-atlas-reveal>
       <InkField className="page-ink" band />
         <div className="assessment-head-main">
-          <p className="atlas-label enter">第 2 步 · 初步评价</p>
           <h1 className="t-title enter" style={{ "--d": 1 } as React.CSSProperties}>初步评价</h1>
           <p className="t-lede enter" style={{ "--d": 2 } as React.CSSProperties}>
-            答 30 道兴趣题，拿到初步评价报告 R1。它只整理你的分数和画像资料，不替你决定专业。
+            答 30 道兴趣题，生成初步评价报告 R1。
           </p>
         </div>
         <div className="assessment-head-tools enter" style={{ "--d": 3 } as React.CSSProperties}>
@@ -240,6 +240,8 @@ export function Assessment() {
       </header>
 
       {message && <p className="notice" role="status">{message}</p>}
+
+      {!result && <PageHelp topic="profile"><p>一次一题，可按题号回改；答完 30 题才能提交。</p></PageHelp>}
 
       {result ? (
         <R1Report assessment={result} profile={profile} onRestart={restart} />
@@ -299,11 +301,7 @@ export function Assessment() {
             <h2 className="qn-text" id="qn-heading" tabIndex={-1} ref={headingRef}>
               {translatedQuestion(question) ?? question.original_en}
             </h2>
-            <p className="qn-translation-note">
-              {translatedQuestion(question)
-                ? `中文是本站独立译稿（${translation.version}，待人工复核），可展开下方原题。`
-                : "这道题还没有核对通过的中文译稿，先显示 O*NET 英文原题。"}
-            </p>
+            {!translatedQuestion(question) && <p className="qn-translation-note">暂无中文译稿，先显示 O*NET 英文原题。</p>}
             <details className="qn-source">
               <summary>原题与版本来源</summary>
               <p lang="en">{question.original_en}</p>
@@ -311,7 +309,7 @@ export function Assessment() {
                 题号 {question.index} · 维度 {metaOf(question.area).letter} {metaOf(question.area).zh}（{metaOf(question.area).en}） · {questionnaire.onet_version} · API {questionnaire.api_version}
               </p>
               <p>
-                译稿只在题号、维度与英文原文逐字一致时显示；来源见{" "}
+                中文译稿待人工复核；来源见{" "}
                 <a href={snapshotSource} target="_blank" rel="noreferrer">
                   O*NET Mini-IP 2016 附录 A
                 </a>
@@ -346,11 +344,9 @@ export function Assessment() {
 
             <p className="qn-picked" role="status">
               {answers[question.index] !== undefined
-                ? `已选「${optionLabels[answers[question.index]] ?? ""}」· 可以继续，也可以换一项`
+                ? `已选「${optionLabels[answers[question.index]] ?? ""}」`
                 : "选一项，再点下一题。"}
             </p>
-
-            <p className="atlas-hand qn-hand">按第一反应选，不用先想它以后有没有用。</p>
 
             <div className="qn-actions">
               <button className="button secondary" type="button" disabled={index === 0 || busy} onClick={() => goTo(index - 1)}>
@@ -371,7 +367,7 @@ export function Assessment() {
               )}
             </div>
             <p className="qn-actions-note">
-              答案只存在这一页，离开前要提交。也可以先{" "}
+              答案只在这一页，离开前提交；也可以先{" "}
               <Link className="link" href="/profile/basics">
                 回个人画像补资料
               </Link>
@@ -401,9 +397,6 @@ export function Assessment() {
                 <div className="atlas-sheet assessment-intro">
                   <p className="atlas-label">问卷 · O*NET Mini-IP 2016</p>
                   <h2 className="t-block">职业兴趣问卷 · 30 项工作活动</h2>
-                  <p className="t-body assessment-intro-lead">
-                    每题一种工作活动，六类各 5 题；同类活动会出现两次，这是量表设计。
-                  </p>
                   {/* 主按钮原来压在卡片底部，实测 y=827：1440×900 只剩 73px，
                       更矮的视口直接掉到折叠以下。移到导语之后、规格表之前——
                       主动作先于细节，任何视口首屏都能点到。 */}
@@ -436,8 +429,6 @@ export function Assessment() {
                   <p className="as-limit">
                     <IconWarning aria-hidden="true" />
                     <span>
-                      只问喜不喜欢，不问会不会；兴趣分不代表能力，也不作录取判断。
-                      <br />
                       按第一反应选；答案只在这一页，离开或刷新会丢。
                     </span>
                   </p>
@@ -446,11 +437,8 @@ export function Assessment() {
                     <a href="https://services.onetcenter.org/" target="_blank" rel="noreferrer">
                       O*NET Web Services
                     </a>
-                    （USDOL/ETA），译稿见{" "}
-                    <a href={snapshotSource} target="_blank" rel="noreferrer">
-                      Mini-IP 2016 附录 A
-                    </a>
-                    ，待人工复核。
+                    （USDOL/ETA），中文译稿待人工复核。来源与译稿说明见{" "}
+                    <Link href="/guide#data">数据与来源</Link>。
                   </p>
                 </div>
               </div>
@@ -465,19 +453,19 @@ export function Assessment() {
                 <dl className="as-index">
                   <div>
                     <dt><IconPulse aria-hidden="true" />兴趣六维</dt>
-                    <dd>六类各 5 题按类加总，不换算百分位。</dd>
+                    <dd>六类各 5 题，原始分。</dd>
                   </div>
                   <div>
                     <dt><IconCompass aria-hidden="true" />能力迁移</dt>
-                    <dd>临床做熟的动作，对应到目标方向的任务。</dd>
+                    <dd>临床动作 → 目标方向任务。</dd>
                   </div>
                   <div>
                     <dt><IconBook aria-hidden="true" />知识缺口</dt>
-                    <dd>方向入门课减去画像里填过的。</dd>
+                    <dd>方向入门课减去画像已填。</dd>
                   </div>
                   <div>
                     <dt><IconWarning aria-hidden="true" />报考条件</dt>
-                    <dd>没拿到招生目录原文，一律标「没查到」。</dd>
+                    <dd>待核验，未查到标「没查到」。</dd>
                   </div>
                 </dl>
               </div>
@@ -595,11 +583,6 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
       <header className="r1-head" data-atlas-reveal>
         <div className="r1-head-main">
           <h2 id="r1-title">初步评价报告 R1</h2>
-          <p>
-            <b>R1 = 初步评价报告</b>，是第 2 步的产出：兴趣六维来自刚才 30 题的 O*NET 官方计分，
-            能力迁移与知识缺口按本次匹配到的方向整理，报考条件则因为还没拿到招生目录原文，一律标「没查到」。
-            这份报告不给分数，也不给方向排名。
-          </p>
         </div>
         <div className="r1-meta">
           <span className="atlas-stamp">R1 · 初步评价</span>
@@ -615,8 +598,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
         {first && second ? (
           <>
             你在「<b>{metaOf(first.code).zh}</b>」和「<b>{metaOf(second.code).zh}</b>」这两类活动上给分最高：
-            {metaOf(first.code).guide}、{metaOf(second.code).guide}。这说的是你愿意做哪类活，不是你能做多好，
-            也不代表哪个专业更适合你。
+            {metaOf(first.code).guide}、{metaOf(second.code).guide}。
           </>
         ) : (
           "这次没有读到完整的六维分数，暂时只能看到原始答案。"
@@ -628,7 +610,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
           <section className="r1-col" aria-labelledby="r1-interest">
             <h3 id="r1-interest"><IconPulse className="r1-col-icon" aria-hidden="true" />兴趣六维</h3>
             <p className="r1-note">
-              六类兴趣各 5 题，每题 1–5 分，合计 5–25 分。分数只表示你对这类活动的喜好强度，不换算成百分位，也不代表能力。
+              六类各 5 题，合计 5–25 分。
             </p>
             <figure className="r1-radar-figure">
               <InterestRadar scores={ordered} maximum={maximum} />
@@ -660,8 +642,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
           <section className="r1-col" aria-labelledby="r1-transfer">
             <h3 id="r1-transfer"><IconCompass className="r1-col-icon" aria-hidden="true" />能力迁移</h3>
             <p className="r1-note">
-              左边是临床训练里已经做熟的动作，右边是{topDirection ? `「${topDirection.name}」` : "目标方向"}里对应的任务。
-              判断口径：医学侧带来的领域理解和评价习惯可以直接带入；要动手做出技术成果的部分，标为要补基础。
+              左：临床训练里的动作；右：{topDirection ? `「${topDirection.name}」` : "目标方向"}里的任务。
             </p>
             {transfers.map(row => (
               <div className="r1-row" key={`${row.medical}-${row.task}`}>
@@ -676,9 +657,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
                   </span>
                 </div>
                 <p className="r1-row-why">
-                  {row.transferable
-                    ? `「${row.medical}」在临床训练里反复出现，换到「${row.task}」时动作形状相近，结论仍要用新领域的标准核对。`
-                    : `「${row.task}」要上手得先补技术基础，医学训练不直接覆盖这一层。`}
+                  {row.transferable ? "动作形状相近，结论仍要按新领域标准核对。" : "要补技术基础，医学训练不直接覆盖。"}
                 </p>
               </div>
             ))}
@@ -688,7 +667,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
           <section className="r1-col" aria-labelledby="r1-gap">
             <h3 id="r1-gap"><IconBook className="r1-col-icon" aria-hidden="true" />知识缺口</h3>
             <p className="r1-note">
-              这里只列你在画像里没有记录、又确实用得上的技能。没有记录不等于没有能力，它只用来决定从哪里开始补。
+              只列画像里没有记录、方向又需要的技能。
             </p>
             {gaps.length ? (
               gaps.slice(0, 6).map(gap => (
@@ -702,21 +681,19 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
                     </span>
                   </div>
                   <p className="r1-row-why">
-                    {gap.course
-                      ? `方向手册给的入门课是「${gap.course}」，先按这门课的概念做一次小练习。`
-                      : "方向手册没有列出对应课程，需要向目标项目的招生目录核对先修要求。"}
+                    {gap.course ? `入门课：「${gap.course}」。` : "需核对招生目录的先修要求。"}
                   </p>
                 </div>
               ))
             ) : (
-              <p className="r1-note">这次没发现画像里完全空白的技能；可以对照方向手册的课程清单逐项核对。</p>
+              <p className="r1-note">没发现画像里完全空白的技能。</p>
             )}
           </section>
 
           <section className="r1-col" aria-labelledby="r1-admission">
             <h3 id="r1-admission"><IconWarning className="r1-col-icon" aria-hidden="true" />报考条件</h3>
             <p className="r1-note">
-              常见初试组合如下。目标院校当年的招生目录原文我们还没拿到，所以每一项都标「没查到」，不判断你能不能报。
+              常见初试组合；招生目录原文未核，一律标「没查到」。
             </p>
             <ul className="r1-exam">
               <li>
@@ -733,11 +710,11 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
               </li>
             </ul>
             <p className="r1-note">
-              有的院校考 302 数学（二）或者不考数学；跨专业资格、加试与复试要求也各不相同。查法：到{" "}
+              院校差异大，以{" "}
               <Link className="link" href="/explore">
                 信息文库
               </Link>{" "}
-              按方向找招生目录条目，以原文为准。
+              的招生目录原文为准。
             </p>
           </section>
         </div>
@@ -745,7 +722,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
 
       <section className="r1-matches" aria-labelledby="r1-match-title">
         <h3 id="r1-match-title">这次匹配到的方向</h3>
-        <p>按 O*NET 返回的职业顺序列出，不是推荐排名。方向映射是本站编辑整理，不是官方招生结论。</p>
+        <p>按 O*NET 返回顺序列出，不是推荐排名。</p>
         <ul>
           {report.candidates.map(candidate => (
             <li key={candidate.direction.id}>
@@ -757,7 +734,7 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
               </span>
             </li>
           ))}
-          {!report.candidates.length && <li>这次返回的职业没有落在手册的方向里，可以从具体工作任务开始了解。</li>}
+          {!report.candidates.length && <li>返回的职业没有落在手册方向里。</li>}
         </ul>
       </section>
 
@@ -765,7 +742,6 @@ function R1Report({ assessment, profile, onRestart }: { assessment: AssessmentRe
         <Link className="button" href="/experience">
           下一步：挑一个方向去体验
         </Link>
-        <span className="atlas-hand">先挑离你最近的那个方向去试一次。</span>
       </div>
 
       <div className="r1-actions">

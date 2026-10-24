@@ -1,6 +1,5 @@
-﻿"use client";
+"use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { type CommunityPost, postSchema } from "@/lib/community";
 import { AmbientVideo } from "@/components/ambient-video";
@@ -350,20 +349,17 @@ export function Community() {
       <AmbientVideo src="/brand/community-background.mp4" ariaLabel="环境底纹" />
       <div>
         <h1 className="community-title"><IconPin className="community-title-icon" aria-hidden="true" />交流社区</h1>
-        <p className="community-lede">只收求助和经验两类，全部匿名。</p>
       </div>
-      <p className="community-head-meta">
-        {member
-          ? <>{counts.all} 条帖子<br />求助 {counts.help} · 经验 {counts.experience}</>
-          : <>验证邮箱后可读写</>}
-      </p>
+      {member && <p className="community-head-meta">
+        {counts.all} 条帖子<br />求助 {counts.help} · 经验 {counts.experience}
+      </p>}
       {/* 首屏原来只有邮箱表单里两个 disabled 按钮（没填邮箱确实不该可点），
           第一次来的人看不到任何可走的动作。给一个始终可用的主动作：先看示例。 */}
-      <div className="community-head-actions">
+      {!checkingSession && !member && <div className="community-head-actions">
         <a className="atlas-btn atlas-btn-primary" href="#community-preview">
           <IconChat aria-hidden="true" />先看两条示例
         </a>
-      </div>
+      </div>}
     </header>
 
     {feedback && <p className="community-notice" data-tone={feedback.tone} key={feedback.text} role="status" aria-live="polite">
@@ -381,13 +377,13 @@ export function Community() {
         {checkingSession ? <p className="community-wall-loading" role="status"><IconSpinner className="community-spin" aria-hidden="true" /><span>正在读取帖子…</span></p> : !member ? <>
           <section className="community-compose atlas-sheet" data-atlas-reveal aria-labelledby="gate-title">
           <span className="atlas-pin" aria-hidden="true" />
-          <h2 id="gate-title"><IconWarning aria-hidden="true" />先验证邮箱，再看帖子</h2>
+          <h2 id="gate-title"><IconWarning aria-hidden="true" />登录</h2>
           
           <form onSubmit={event => { event.preventDefault(); void verifyEmail(); }}>
-            <label className="form-label" htmlFor="community-auth-mode">这个邮箱怎么用</label>
             <select
               id="community-auth-mode"
               className="field"
+              aria-label="登录方式"
               value={authMode}
               disabled={authBusy}
               onChange={event => { setAuthMode(event.target.value as AuthMode); setSent(false); setToken(""); }}
@@ -645,13 +641,10 @@ export function Community() {
           <span className="atlas-tape tl" aria-hidden="true" />
           <h2><IconStamp aria-hidden="true" />社区规则</h2>
           <ol className="community-rules">
-            <li><b>只写确认过的事。</b>引用招生简章、导师回复要给出处；没查到就写「没查到」。</li>
-            <li><b>不替别人下判断。</b>说自己怎么判断、依据是什么，不说「你适合」，也不给排名和录取概率。</li>
-            <li><b>对内容提不同意见</b>，比反驳发帖人有用。</li>
-            
+            <li><b>只写确认过的事。</b></li>
+            <li><b>不替别人下判断。</b></li>
+            <li><b>对内容提不同意见。</b></li>
           </ol>
-          <p>帖子只显示「匿名探索者」，邮箱不公开。验证邮箱是为了在有人发广告时能找到发帖的人。</p>
-          <Link className="community-link" href="/account">到「我的资料」看删除记录</Link>
         </section>
       </aside>
     </div>

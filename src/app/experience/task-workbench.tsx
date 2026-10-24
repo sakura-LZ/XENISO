@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import type { Template } from "@/lib/experience/templates";
 import { IconPin, IconPulse } from "@/components/icons";
 import { operationResult, type ChoiceState, type OperationResult } from "@/lib/experience/operations";
@@ -48,7 +48,7 @@ export function OperationPreview({ result }: { result: OperationResult }) {
             <title>合成几何图形</title>
             {result.pixels.map((value, i) => <rect key={i} x={i % 16} y={Math.floor(i / 16)} width="1" height="1" fill={`rgb(${value},${value},${value})`} />)}
           </svg>
-          <figcaption>16 × 16 几何方块，只用来练习显示与降噪的判断，不是患者影像。</figcaption>
+          <figcaption>16 × 16 几何方块，不是患者影像。</figcaption>
         </figure>
       )}
       <dl className="xd-metrics">

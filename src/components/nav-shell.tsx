@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { IconBack, IconHome, IconCompass, IconBook, IconChat, IconAccount } from "@/components/icons";
 import { JOURNEY_STEPS, isJourneyRoute } from "@/lib/journey";
 
@@ -19,12 +19,12 @@ function Header({ pathname, exploring }: { pathname: string; exploring: boolean 
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const button = useRef<HTMLButtonElement>(null);
-  const router = useRouter();
-  // 直接打开内页（新标签、外链、刷新）时没有可回退的历史，退回首页而不是原地不动。
-  const goBack = () => {
-    const sameOriginReferrer = document.referrer.startsWith(window.location.origin);
-    if (sameOriginReferrer) router.back(); else router.push("/");
-  };
+  // 固定的上一级入口在刷新和直接打开内页时也可用，不依赖 document.referrer。
+  const parent = pathname.startsWith("/profile/") || pathname === "/assessment"
+    ? { href: "/profile", label: "返回个人画像" }
+    : pathname.startsWith("/experience/")
+      ? { href: "/experience", label: "返回职业体验" }
+      : { href: "/", label: "返回首页" };
   useEffect(() => {
     const update = () => setScrolled(window.scrollY > 4);
     update();
@@ -40,7 +40,7 @@ function Header({ pathname, exploring }: { pathname: string; exploring: boolean 
   const current = (href: string) => href === "/profile" ? exploring : href === "/" ? pathname === "/" : pathname.startsWith(href);
   return <header className="site-header" data-scrolled={scrolled} data-motion="M-G01">
     <div className="site-header-inner container">
-      {pathname !== "/" && <button type="button" className="site-back" onClick={goBack} aria-label="返回上一页"><IconBack className="site-back-icon" /><span className="site-back-label">返回</span></button>}
+      {pathname !== "/" && <Link className="site-back" href={parent.href} aria-label={parent.label}><IconBack className="site-back-icon" /><span className="site-back-label">{parent.label}</span></Link>}
       <Link href="/" className="site-brand" aria-label="XENISO 异域同构首页"><Image src="/brand/xeniso-logo.webp" alt="XENISO 异域同构" width={1210} height={340} priority sizes="172px" /></Link>
       <nav id="primary-navigation" className="site-nav" data-open={open} aria-label="主导航">
         {destinations.map(([href, title, Icon]) => (
@@ -49,8 +49,10 @@ function Header({ pathname, exploring }: { pathname: string; exploring: boolean 
             <span>{title}</span>
           </Link>
         ))}
+        <Link href="/guide" className="site-guide-mobile" onClick={() => setOpen(false)} aria-current={pathname === "/guide" ? "page" : undefined}>使用指南</Link>
       </nav>
       <div className="site-tools">
+        <Link href="/guide" className="site-help" aria-label="使用指南" title="使用指南" aria-current={pathname === "/guide" ? "page" : undefined}><span aria-hidden="true">?</span><span className="site-help-label">使用指南</span></Link>
         <Link href="/account" className="site-account" aria-current={pathname.startsWith("/account") ? "page" : undefined}>
           <IconAccount className="site-account-icon" />
           <span>我的资料</span>
@@ -63,7 +65,7 @@ function Header({ pathname, exploring }: { pathname: string; exploring: boolean 
 
 export function NavShell() {
   const pathname = usePathname();
-  const current = pathname.startsWith("/profile") || pathname === "/assessment" ? "/profile" : pathname.startsWith("/experience") ? "/experience" : pathname;
+  const current = pathname.startsWith("/profile") ? "/profile" : pathname === "/assessment" ? "/report/initial" : pathname.startsWith("/experience") ? "/experience" : pathname;
   const exploring = isJourneyRoute(pathname);
   return <>
     <Header key={pathname} pathname={pathname} exploring={exploring} />

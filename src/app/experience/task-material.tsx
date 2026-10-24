@@ -88,7 +88,7 @@ export function TaskMaterial({ template, choices = [null, null, null], compact =
     <ol className="xd-evidence">
       {evidence.map((item, i) => <li key={item}><span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span><p>{item}</p></li>)}
     </ol>
-    {!compact && <p className="xd-hint">这些是编辑好的固定材料，编号只为对照，按顺序读不代表优先级。</p>}
+    {!compact && <p className="xd-hint">编号只为对照，不代表先后。</p>}
   </div>;
   return sheet;
 }

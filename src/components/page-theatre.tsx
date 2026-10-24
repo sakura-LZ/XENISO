@@ -8,11 +8,16 @@ import { usePathname } from "next/navigation";
  * ---------------------------------------------------------------------------
  * 样式全在 theatre.css，这一层只决定"每一页的每一场戏用哪种动作、什么时候演"。
  *
- * 和已有两套动效的分工（互不重叠）：
- *   xeniso-motion     [data-reveal] / [data-atlas-reveal] 的整块淡入（保留不动）
- *   scroll-scenes     标题以下的细节：画表格线、盖章、滚数字、铅笔波浪线
- *   page-theatre  ←   顶层区块的"场次动作"（掀角/展卷/上推/浮起/晕开/侧推/发牌/翻面），
- *                     以及整页翻页进来时的页眉错峰
+ * 和已有动效层的分工（互不重叠）：
+ *   page-theatre  ←   内页唯一的"区块入场"：顶层区块的场次动作（展卷 / 横擦 / 掀角 /
+ *                     晕开 / 上浮 / 侧推 / 叠放 / 翻面，八种机制各不相同），
+ *                     以及整页进来时的页眉错峰。滚动只在"这一场还没进画面"时用。
+ *   scroll-scenes     标题以下的细节：画表格线、盖章、滚数字、铅笔波浪线。
+ *                     块内的细节不再各自等滚动，而是监听本层抛出的 xn:actplay，
+ *                     跟着所属场次的动作走。
+ *   xeniso-motion     只在首页做整块 reveal；内页只保留 [data-motion] 的动态结果块
+ *                     （交互后才出现的内容），不再和本层抢同一批区块。
+ *   micro-interactions 点击墨滴、悬停磁吸、标题划线等反馈，不参与区块入场。
  *
  * 为什么按路由分配动作：用户要的是"各个内页都有、而且不止一种"。如果所有页面
  * 用同一套顺序，翻到第二页就腻了。所以用 pathname 做种子，让每页的动作序列不同，
@@ -57,9 +62,13 @@ const KINDS = ["peel", "unfold", "wipe", "rise", "bloom", "slide", "stack", "fli
 
 /** 顶边低于视口这个比例才算"还没滚到"，否则一律保持可见、不做入场 */
 const ARM_LINE = 0.92;
-/** 场次动作的落定时间：之后清掉 clip-path，避免给内部 fixed 元素造出包含块。
-    必须大于「最长过渡 840ms + 最大延迟 220ms」，否则会在过渡中途把遮罩掐掉。 */
-const SETTLE_MS = 1150;
+/** 场次动作的落定时间（从动作起手算）：之后清掉 clip-path，避免给内部 fixed
+    元素造出包含块。最长过渡 700ms（stack / flip 的 rotate）+ 120ms 余量；
+    错峰延迟另算（play 时按 delay + SETTLE_MS 摘遮罩），所以不会在过渡中途掐断。 */
+const SETTLE_MS = 820;
+/** 页眉是"父级落定、子项还在动"：子项最长 536ms 延迟 + 560ms 收尾 = 1096ms，
+    父级必须等它跑完再摘遮罩，否则子项的位移会中途跳回默认值。 */
+const HERO_SETTLE_MS = 1220;
 /** 巡检间隔：只捞"该出现却还停在起始态"的区块 */
 const SWEEP_MS = 1200;
 /** 首次加载窗口：这段时间内的挂载算"首屏"而非"翻页"，页眉不做透明起步 */
@@ -103,7 +112,7 @@ export function PageTheatre() {
     const boot = () => {
       stop?.();
       stop = null;
-      if (reduce.matches) return;
+      if (reduce.matches || pathname === "/") return;
       try {
         stop = install();
       } catch {
@@ -361,24 +370,37 @@ function install(): () => void {
   /* ------------------------------------------------------------------ *
    * 3. 播放
    * ------------------------------------------------------------------ */
-  const settle = (el: HTMLElement) => {
+  const settle = (el: HTMLElement, delay: number) => {
+    const hold =
+      el.dataset.actKind === "hero"
+        ? Math.max(HERO_SETTLE_MS, SETTLE_MS + delay)
+        : SETTLE_MS + delay;
     later(() => {
       if (!el.isConnected) return;
       el.dataset.actState = "done";
-    }, SETTLE_MS);
+    }, hold);
   };
 
-  const play = (el: HTMLElement, delay = 0) => {
+  const play = (el: HTMLElement, delay = 0, boot = false) => {
     if (played.has(el)) return;
     played.add(el);
     armed.delete(el);
+    /* 首屏硬加载时内容已经画在屏幕上了：这时再套"从裁切/位移起点演一遍"，
+       读者会先看到完整内容、再被收回起点，像闪一下。首屏只给一个轻落位
+       （data-act-boot），八种动作仍留给翻页与滚动进来的区块。 */
+    if (boot) el.dataset.actBoot = "1";
+    else delete el.dataset.actBoot;
     if (delay) el.style.setProperty("--xn-act-delay", `${delay}ms`);
     el.dataset.actState = "arm";
     // 强制一次同步布局：先让浏览器认下起始态，再切到位态，transition 才会跑；
     // 否则同一帧内的两次属性写入会被合并，动作直接跳到终点。
     void el.offsetHeight;
     el.dataset.actState = "play";
-    settle(el);
+    settle(el, delay);
+    /* 场次开播后通知子层（scroll-scenes.tsx）：块内细节不要再自己等滚动，
+       跟着这一场戏的节拍进。否则区块还在裁切时，里面的字已经在动，
+       读者看到的是"两层入场叠在一起"，而不是一张纸被摆上来。 */
+    el.dispatchEvent(new CustomEvent("xn:actplay", { bubbles: true }));
   };
 
   const arm = (el: HTMLElement) => {
@@ -449,7 +471,7 @@ function install(): () => void {
     inFirstScreen
       .filter((el) => el !== acts[0])
       .slice(0, 5)
-      .forEach((el, index) => play(el, 160 + index * 90));
+      .forEach((el, index) => play(el, 160 + index * 90, true));
   }
 
   for (const el of acts) {
@@ -471,6 +493,7 @@ function install(): () => void {
       delete el.dataset.act;
       delete el.dataset.actKind;
       delete el.dataset.actState;
+      delete el.dataset.actBoot;
       el.style.removeProperty("--xn-act-delay");
       el.style.removeProperty("--xn-hero-i");
       played.delete(el);

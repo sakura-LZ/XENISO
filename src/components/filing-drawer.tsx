@@ -12,7 +12,6 @@ export type FilingStep = {
   time: string;
   lede: string;
   output: string;
-  why: string;
   /** 标签上的手绘图标，由调用方给（不传就只有编号）。 */
   icon?: ReactNode;
 };
@@ -38,8 +37,8 @@ export function FilingDrawer({ steps, defaultOpen = 0, className }: FilingDrawer
   return (
     <div className={className ? `fd-drawer ${className}` : "fd-drawer"}>
       <div className="fd-rail">
-        <span className="fd-rail-title">档案抽屉</span>
-        <span className="fd-rail-hint">点标签拉开一格</span>
+        <span className="fd-rail-title">流程说明</span>
+        <span className="fd-rail-hint">点击步骤展开详情</span>
       </div>
 
       <ul className="fd-cells">
@@ -64,10 +63,11 @@ export function FilingDrawer({ steps, defaultOpen = 0, className }: FilingDrawer
                   {step.icon ? <span className="fd-icon" aria-hidden="true">{step.icon}</span> : null}
                   <span className="fd-title">{step.title}</span>
                   <span className="fd-time">{step.time}</span>
+                  <span className="fd-toggle" aria-hidden="true">{open ? "收起 −" : "展开 +"}</span>
                 </span>
               </button>
 
-              <div className="fd-well" id={panelId} role="region" aria-labelledby={tabId}>
+              <div className="fd-well" id={panelId} role="region" aria-labelledby={tabId} inert={!open}>
                 <div className="fd-well-inner">
                   <div className="fd-body">
                     <p className="fd-lede">{step.lede}</p>
@@ -76,15 +76,11 @@ export function FilingDrawer({ steps, defaultOpen = 0, className }: FilingDrawer
                         <dt>产出</dt>
                         <dd>{step.output}</dd>
                       </div>
-                      <div>
-                        <dt>为什么排这里</dt>
-                        <dd>{step.why}</dd>
-                      </div>
                     </dl>
-                    <Link className="fd-go" href={step.href}>
-                      去这一步
+                    {index === 0 ? <Link className="fd-go" href={step.href}>
+                      从个人画像开始
                       <span aria-hidden="true">→</span>
-                    </Link>
+                    </Link> : <p className="fd-prerequisite">{step.time}，在探索流程中继续。</p>}
                   </div>
                 </div>
               </div>

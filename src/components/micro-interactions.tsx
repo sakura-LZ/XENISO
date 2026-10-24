@@ -59,7 +59,7 @@ export function MicroInteractions() {
 
     const boot = () => {
       stop?.();
-      stop = reduce.matches ? null : install();
+      stop = reduce.matches || pathname === "/" ? null : install();
     };
     const restart = () => boot();
 
@@ -162,7 +162,7 @@ function install(): () => void {
       const event = raw as PointerEvent;
       if (event.pointerType === "mouse" && event.button !== 0) return;
       if (!(event.target instanceof Element)) return;
-      const host = event.target.closest<HTMLElement>(".atlas-btn, .scene-card, .atlas-step, .fd-tab");
+      const host = event.target.closest<HTMLElement>(".atlas-btn, a.scene-card, a.atlas-step, .fd-tab");
       if (!host) return;
       const drop = inkDrops[inkIndex];
       inkIndex = (inkIndex + 1) % inkDrops.length;
@@ -201,7 +201,7 @@ function install(): () => void {
     maxScroll = Math.max(root.scrollHeight - window.innerHeight, 1);
     bandEls = Array.from(document.querySelectorAll<HTMLElement>(".atlas-band"));
     bandTops = bandEls.map((el) => el.getBoundingClientRect().top + window.scrollY);
-    primaryButtons = Array.from(document.querySelectorAll<HTMLElement>(".atlas-btn-primary"));
+    primaryButtons = Array.from(document.querySelectorAll<HTMLElement>(".atlas-btn-primary")).filter(el => !el.closest(".home-clarity"));
     primaryRects.clear();
     for (const el of primaryButtons) {
       // 常驻标记：micro.css 只对带标记的主按钮启用 translate 过渡，
@@ -403,7 +403,7 @@ function install(): () => void {
         if (!(event.target instanceof Element)) return;
         if (!tiltSheet) {
           const sheet = event.target.closest<HTMLElement>(".atlas-hero-sheet");
-          if (sheet) {
+          if (sheet && !sheet.closest(".home-clarity")) {
             tiltSheet = sheet;
             tiltRect = sheet.getBoundingClientRect();
             sheet.dataset.xnTilt = "1";
@@ -411,7 +411,7 @@ function install(): () => void {
           }
         }
         if (!pullCard) {
-          const card = event.target.closest<HTMLElement>(".scene-card");
+          const card = event.target.closest<HTMLElement>("a.scene-card");
           if (card && card.closest(".hero-scene")) {
             pullCard = card;
             pullRect = card.getBoundingClientRect();
@@ -614,23 +614,14 @@ function install(): () => void {
   }
 
   /**
-   * 内页接线之二：列表/卡片组的错峰。
+   * 内页接线之二（本轮撤掉）：列表错峰不再由这里补 data-reveal。
    *
-   * motion.css 早就实现了 [data-xn-stagger] 的 46ms 错峰，但全站没有任何元素
-   * 带过这个属性（实测 0 个），所以它一直是死代码。这里给内页的列表容器
-   * 自动补上 data-reveal + data-xn-stagger：
-   *   - data-reveal 由 xeniso-motion.tsx 管 pending/in 状态，JS 挂了内容照样可见
-   *     （motion.css 的隐藏态挂在 [data-state="pending"] 上，不是无条件隐藏）
-   *   - 只认"确实是一组并列条目"的容器，且条目数 ≥3，避免单行列表也错峰
+   * 这条自动接线曾让内页列表多一层"滚进来就淡入上移"，但它和 page-theatre 的
+   * 区块动作落在同一个滚动时刻，正是用户说的"滚动入场堆叠"。现在内页的区块
+   * 入场只有一个来源：page-theatre 的场次动作；块内细节跟着 xn:actplay 进来，
+   * 列表自己的节奏由 scroll-scenes 的内容场景（盖章 / 数据行 / 时间轴）承担。
+   * 保留本段注释，避免以后有人以为"内页列表没有错峰"是漏接线。
    */
-  for (const list of Array.from(document.querySelectorAll<HTMLElement>("main ul, main ol, main .xd-modes, main .as-index, main .community-wall"))) {
-    if (list.dataset.xnStagger !== undefined) continue;
-    if (list.children.length < 3) continue;
-    if (list.closest("details:not([open])")) continue;
-    // 只在没有被别的 pending 祖先管着时自己当宿主，避免同一屏出现两层错峰
-    list.dataset.reveal = "";
-    list.dataset.xnStagger = "";
-  }
 
   const observe = new Set<HTMLElement>();
   // .t-block 与 .t-section 是站内两套并存的"区块标题"宿主类（micro.css 已让它们

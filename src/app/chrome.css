@@ -73,7 +73,7 @@ body:has(.journey-bar) { --journey-h: 56px; }
 .site-footer-links a { color: var(--ink-2); font-size: var(--fs-small); text-decoration: none; transition: color 160ms ease-out; }
 .site-footer-links a:hover { color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
 .site-footer-credits { display: grid; gap: 6px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); }
-.site-footer-credits p { margin: 0; font-size: var(--fs-small); line-height: var(--lh-body); color: var(--ink-2); }
-.site-footer-credits a { color: var(--ink-2); text-underline-offset: 3px; }
+.site-footer-credits p { margin: 0; max-width: 62em; font-size: var(--fs-small); line-height: var(--lh-body); color: var(--ink-2); }
+.site-footer-credits a { color: var(--ink-2); text-underline-offset: 3px; margin-left: 6px; }
 @media (max-width: 900px) { .site-footer-grid { grid-template-columns: 1fr 1fr; } .site-footer-brand { grid-column: 1 / -1; } }
 @media (max-width: 480px) { .site-footer { padding-top: 56px; } .site-footer-grid { grid-template-columns: 1fr; gap: 32px; } }

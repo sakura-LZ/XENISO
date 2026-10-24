@@ -10,51 +10,41 @@ const steps = [
   {
     href: "/profile",
     title: "个人画像",
-    time: "10 分钟",
-    lede: "课程、见习、科研、技能分开填，不合成一个总分。填完你能看清自己真正攒下了什么，也知道哪几门课是你的底气。",
+    time: "从这里开始",
+    lede: "分别整理课程、见习与技能经历，留下可核对的记录。选填项可以跳过。",
     output: "能力底册",
-    why: "不先盘点，就不知道能带走什么",
   },
   {
     href: "/report/initial",
     title: "初步评价",
-    time: "30 题 · 约 10 分钟",
+    time: "填写画像后",
     lede: "O*NET 兴趣量表，六个维度各五题。结果分四栏：兴趣、能力迁移、知识缺口、报考条件。零基础不会被判成不适合。",
     output: "报告 R1",
-    why: "先筛掉硬性走不通的，少花错力气",
   },
   {
     href: "/experience",
     title: "职业体验",
-    time: "25 分钟",
-    lede: "挑一个真实任务做一遍：核对资料、清洗记录、写一段结论。有导师数字人在旁边，卡住可以问。",
+    time: "了解初评后",
+    lede: "选择一个模拟职业任务，记录操作、选择理由和体验后的想法，导出体验记录。",
     output: "体验记录",
-    why: "想象和真做是两件事，先试再决定",
   },
   {
     href: "/report/plan",
     title: "行动规划",
-    time: "15 分钟",
+    time: "完成体验后",
     lede: "把体验结果变成能执行的安排：每周投多少小时、先补哪门基础、什么时候回头看一次。",
     output: "报告 R2",
-    why: "没有时间表的计划，等于没有计划",
   },
 ];
 
 /* 四步各配一个手绘线描图标，和抽屉标签上的编号一起用 */
 const stepIcons = [<IconProfile key="p" />, <IconQuiz key="q" />, <IconPulse key="u" />, <IconCalendar key="c" />];
 
-const notes = [
-  { kind: "求助", title: "跨考公共卫生，统计基础要补到什么程度？", meta: "3 条回复 · 2 小时前" },
-  { kind: "经验", title: "从临床转医学信息，我第一年踩过的三个坑", meta: "17 条回复 · 昨天" },
-  { kind: "招募", title: "想找一位做过真实世界研究的朋友聊聊", meta: "1 条回复 · 3 天前" },
-];
-
 export function HomeAtlas() {
   const directionCount = groups.reduce((sum, group) => sum + group.specializations.length, 0);
 
   return (
-    <main id="main">
+    <main id="main" className="home-clarity">
       {/* ---------- 首屏：一张摊开的档案袋 ---------- */}
       <section className="atlas-hero">
         <div className="atlas-hero-ink" aria-hidden="true">
@@ -63,45 +53,24 @@ export function HomeAtlas() {
         <div className="container atlas-hero-inner">
           <div className="atlas-hero-sheet atlas-sheet raised" data-atlas-reveal>
             <span className="atlas-tape mid" aria-hidden="true" />
-            <h1 className="t-display">医学读到这里，路不止一条</h1>
+            <p className="home-question">继续学医，还是试试其他方向？已有的经历能用在哪里？</p>
+            <h1 className="t-display">看清方向，<br />再决定下一步</h1>
             <svg className="atlas-hero-rule atlas-draw" viewBox="0 0 620 14" aria-hidden="true" style={{ ["--len" as string]: 640 }}>
               <path d="M2 9C96 3 168 11 262 7s176-6 268 1 66 2 88 0" fill="none" stroke="var(--green)" strokeWidth="2.2" strokeLinecap="round" />
             </svg>
             <p className="t-lede atlas-hero-lede">
-              这里不猜你适合什么，也不给你排个名次。它做的事很朴素：把你的经历一条条摊开，
-              对着真实职业要求核一遍，看哪些能带走、哪些得补，然后陪你走一段试试看。
+              面向医学生的跨学科探索与行动规划平台。梳理你的经历与职业兴趣，了解不同方向的实际工作，
+              通过模拟任务体验，形成可导出的准备计划。
             </p>
             <div className="atlas-hero-actions">
-              <Link className="atlas-btn atlas-btn-primary" href="/profile">开始盘点我的经历</Link>
-              <Link className="atlas-btn" href="/explore">先看看有哪些方向</Link>
+              <Link className="atlas-btn atlas-btn-primary" href="/profile">开始探索 <span aria-hidden="true">→</span></Link>
+              <Link className="home-text-link" href="/explore">先浏览方向文库</Link>
             </div>
-            <p className="t-meta atlas-hero-meta">
-              XENISO 异域同构 · 全程 8–12 分钟，可以随时停下。填的东西只进你自己的档案，随时能删。
-            </p>
-            {/* 对版台那一屏在首屏之下（区块顶边约 876px，视口 900），
-                不滚一下只能看到 24px。这里给一个明确的向下指引，避免"页面上没有"。 */}
-            <a className="atlas-hero-jump" href="#direction-index">
-              往下看：学医的十个出口，编成了一本册子
-              <span aria-hidden="true">↓</span>
-            </a>
           </div>
 
           <HomeScene groupCount={groups.length} directionCount={directionCount} />
         </div>
       </section>
-
-      {/* ---------- 文字滚动带：跨学科方向主题 ---------- */}
-      <div className="xn-marquee" aria-label="跨学科方向主题">
-        <div className="xn-marquee-track">
-          {[0, 1].map((copy) => (
-            <div className="xn-marquee-group" key={copy} aria-hidden={copy === 1}>
-              {["课程", "见习", "科研", "技能", "工具", "病例", "数据"].map((word) => (
-                <span className="xn-marquee-item" key={word}>{word}</span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* ---------- 装订册：一张图版，一页目录 ----------
           这一屏换过四版：随鼠标变形的水墨画布（抽象、和网站无关）、逐条核对的表格
@@ -111,12 +80,7 @@ export function HomeAtlas() {
       <section className="bk-band" id="direction-index">
         <div className="container">
           <div className="bk-head" data-atlas-reveal>
-            <p className="atlas-label">装订册</p>
-            <h2 className="t-section">同一份身体知识，编了两次目</h2>
-            <p className="t-lede bk-lede">
-              左边是 1568 年的一页解剖图版，右边是今天的方向目录。你在这份知识里待了五年，
-              它不只通向一个方向——把右边那张纸翻过去，还能看到每一类为什么在这儿。
-            </p>
+            <h2 className="t-section">先了解有哪些方向</h2>
           </div>
           <BookSpread />
         </div>
@@ -125,8 +89,8 @@ export function HomeAtlas() {
       <section className="atlas-band" data-tone="paper-2">
         <div className="container">
           <div className="atlas-band-head" data-atlas-reveal>
-            <h2 className="t-section">四步，每一步都留下能核对的东西</h2>
-            <p className="t-lede">不是问卷填完给一段鸡汤。每一步都会生成一份你可以拿走、也可以推翻的材料。</p>
+            <h2 className="t-section">探索分四步进行</h2>
+            <p className="t-lede">先整理经历，再了解兴趣、体验工作，最后形成准备计划。展开查看每一步的内容与产出。</p>
           </div>
           {/* 四步做成一只可以一格格拉开的档案抽屉：收起时只留编号、标题、时长，
               想看细节就拉开那一格。默认第一格是开的，否则页面一进来像空的。 */}
@@ -143,78 +107,17 @@ export function HomeAtlas() {
         </div>
       </section>
 
-      {/* ---------- 文库 ---------- */}
-      <section className="atlas-band">
-        <div className="container atlas-split">
-          <div data-atlas-reveal>
-            <h2 className="t-section">每个方向能查到什么，先说清楚</h2>
-            <p className="t-lede">
-              文库按方向归档，一条资料对应一个来源。查得到的是报考条件、课程与技能要求、常见工作内容；
-              查不到的（比如某个学校今年到底招几个）就明写没查到，不拿猜测凑数。
-            </p>
-            <Link className="atlas-btn" href="/explore">进文库看看</Link>
-          </div>
-          <div className="atlas-sheet atlas-lift" data-atlas-reveal>
-            <span className="atlas-tape tr" aria-hidden="true" />
-            <p className="atlas-label">方向目录</p>
-            <ul className="atlas-dir-list">
-              {groups.slice(0, 10).map(group => (
-                <li key={group.id}>
-                  <span>{group.name}</span>
-                  <i>{group.specializations.length} 个去向</i>
-                </li>
-              ))}
-            </ul>
-            {groups.length > 10 && <p className="t-meta">还有 {groups.length - 10} 类方向在文库目录里。</p>}
-            <div className="atlas-src-note">
-              <p className="atlas-label">每条资料固定带三样</p>
-              <p className="t-small">来源机构、发布日期、我们采集它的日期。三者缺一，这条就不进文库。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ---------- 社区 ---------- */}
       <section className="atlas-band" data-tone="paper-2">
         <div className="container">
           <div className="atlas-band-head" data-atlas-reveal>
-            <h2 className="t-section">正在走这条路的人，把话留在这儿</h2>
-            <p className="t-lede">求助、踩坑、找人聊。发帖可以匿名，也可以只用一句「我临床五年制，想问问」。</p>
+            <h2 className="t-section">还有具体问题？去社区交流</h2>
+            <p className="t-lede">浏览其他人的分享，或登录后提出你的方向选择与准备问题。</p>
+            <Link className="home-text-link" href="/community">进入交流社区 <span aria-hidden="true">→</span></Link>
           </div>
-          <ul className="atlas-notes" data-atlas-reveal data-atlas-stagger>
-            {notes.map(note => (
-              <li key={note.title} className="atlas-sheet atlas-lift atlas-note">
-                <span className="atlas-pin" aria-hidden="true" />
-                <span className="atlas-chip" data-tone={note.kind === "求助" ? "gap" : note.kind === "经验" ? "ok" : undefined}>{note.kind}</span>
-                <p className="atlas-note-title">{note.title}</p>
-                <p className="t-meta">{note.meta}</p>
-              </li>
-            ))}
-          </ul>
-          <p className="t-meta atlas-center"><Link href="/community">进社区 →</Link></p>
         </div>
       </section>
 
-      {/* ---------- 边界 ---------- */}
-      <section className="atlas-band" data-tone="night">
-        <div className="container atlas-limits" data-atlas-reveal>
-          <h2 className="t-section">我们把话说在前面</h2>
-          <div className="atlas-cols-3">
-            <div>
-              <p className="atlas-label">不给的东西</p>
-              <p>不预测录取概率，不给方向排名，不算「适合度百分比」。这些数字看着专业，其实没有依据。</p>
-            </div>
-            <div>
-              <p className="atlas-label">一定保留的</p>
-              <p>继续医学、留在临床，永远是一条正经选择，不是「没转成」的退路。</p>
-            </div>
-            <div>
-              <p className="atlas-label">数据怎么来的</p>
-              <p>职业兴趣题目与职业信息来自 O*NET Web Services；方向映射由本站编辑整理，不是官方招生结论。</p>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

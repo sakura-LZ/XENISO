@@ -1,7 +1,8 @@
 /*
  * XENISO · 微交互层（micro.css）
  * ---------------------------------------------------------------------------
- * 12 个原创效果的样式部分。只消费 globals.css / atlas.css 的 token，不新开色板、
+ * 13 个原创效果的样式部分（本轮新增「折叠展开」一条交互触发动作）。只消费
+ * globals.css / atlas.css 的 token，不新开色板、
  * 不改任何既有的视觉原语；全部效果都是「增强」：没有 JS、关掉动效、打印时，
  * 内容与排版一样完整。
  *
@@ -368,25 +369,11 @@ h2.is-typing .xn-lead {
  *    只接管首页（含 .atlas-hero 的 main）；表单输入仍是文本光标。
  *    :has() 不支持时整条规则不生效，退回系统指针，不影响可用性。
  * ========================================================================= */
-main:has(.atlas-hero) {
-  cursor: url("/cursor/pen.svg") 2 2, auto;
-}
-/* 只在真有精确指针的设备上换光标：触屏没有指针可看，不必付这份风险 */
+/* 系统光标区分可点击操作与普通内容。 */
 @media (hover: hover) and (pointer: fine) {
-  main:has(.atlas-hero),
-  main:has(.atlas-hero) * {
-    cursor: url("/cursor/pen.svg") 2 2, auto;
-  }
-  /* 正文/标题保留 I-beam：笔形光标压在文字上会让人没法判断"这里能不能选字"，
-     读者要复制一段话时会找不到落点。笔只出现在纸面、卡片、按钮这些"能画的地方"。 */
-  main:has(.atlas-hero) :is(
-    p, h1, h2, h3, h4, h5, h6, li, dt, dd, blockquote, figcaption, time, b, strong, em, i, span, small, label, th, td
-  ) {
-    cursor: text;
-  }
-  /* 但这些容器内的可点元素仍然用笔 */
-  main:has(.atlas-hero) :is(a, button, summary, [role="button"]) {
-    cursor: url("/cursor/pen.svg") 2 2, auto;
+  main:has(.atlas-hero) :is(a, button, summary, [role="button"]),
+  main:has(.atlas-hero) :is(a, button, summary, [role="button"]) * {
+    cursor: pointer;
   }
   main:has(.atlas-hero) :is(input, textarea, select, [contenteditable="true"]) {
     cursor: text;
@@ -484,7 +471,22 @@ main:has(.atlas-hero) {
  * ========================================================================= */
 
 /* ===========================================================================
- * 13. 总兜底：减少动态效果 / 打印
+ * 13. 折叠展开（details）：交互触发的"抽纸"入场
+ *     前面几节里，区块入场只由 page-theatre 的场次动作负责；这一条是**非滚动**
+ *     触发：用户点开 <details> 时，面板从折缝里抽出来（clip 自上而下 + 6px 回位）。
+ *     作用域挂在 html[data-xn-theatre="1"] 上：只有内页装上了场次控制器才生效，
+ *     首页、无 JS、减少动态效果时都不参与。
+ * ========================================================================= */
+@keyframes xn-details-draw {
+  0% { opacity: 0; clip-path: inset(0 0 100% 0); translate: 0 -6px; }
+  100% { opacity: 1; clip-path: inset(0 0 0 0); translate: 0 0; }
+}
+html[data-xn-theatre="1"] details[open] > :not(summary) {
+  animation: xn-details-draw 360ms var(--xn-m-out) both;
+}
+
+/* ===========================================================================
+ * 14. 总兜底：减少动态效果 / 打印
  *     一条规则把所有本层效果直接落到终态——内容不缺、不靠动画才出现。
  * ========================================================================= */
 @media (prefers-reduced-motion: reduce) {
@@ -519,6 +521,14 @@ main:has(.atlas-hero) {
   .atlas-hero:has(.scene-stamp[data-xn-stamp="1"]) .atlas-hero-sheet { animation: none !important; }
 
   .atlas-band::before { display: none !important; }
+
+  /* 折叠面板不做"抽纸"：直接展开到位 */
+  html[data-xn-theatre="1"] details[open] > :not(summary) {
+    animation: none !important;
+    opacity: 1 !important;
+    clip-path: none !important;
+    translate: none !important;
+  }
 }
 
 @media print {
@@ -531,4 +541,11 @@ main:has(.atlas-hero) {
   .t-section::after,
   main .t-block::after { opacity: .85 !important; transform: none !important; animation: none !important; }
   .atlas-band::before { display: none !important; }
+
+  html[data-xn-theatre="1"] details[open] > :not(summary) {
+    animation: none !important;
+    opacity: 1 !important;
+    clip-path: none !important;
+    translate: none !important;
+  }
 }

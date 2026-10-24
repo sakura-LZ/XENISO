@@ -22,6 +22,8 @@ import "./report.css";
 import "./experience.css";
 import "./library.css";
 import "./community.css";
+import "./home-clarity.css";
+import "./guidance.css";
 
 export const metadata: Metadata = { title: "XENISO 异域同构 · 医学生跨学科探索", description: "Different Fields. Shared Potential. 从医学经历出发，探索跨学科方向与职业实践。", icons: { icon: "/brand/xeniso-mark.svg" } };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

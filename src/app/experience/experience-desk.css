@@ -1,4 +1,4 @@
-﻿/*
+/*
  * 职业体验（异域探索第 3 步）——三栏工作台。
  * 纸片、封条、印章、横格纸来自 atlas.css，色板只用 globals.css 的 token，不新开颜色。
  * 结构：176px 阶段导航 ｜ 中栏「材料—决策—理由」｜ 320px 导师数字人；
@@ -432,6 +432,12 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
 .xd-mentor-note p { margin: 0; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-2); }
 .xd-mentor-note ul { margin: 10px 0 0; padding-left: 1.1em; display: grid; gap: 5px; }
 .xd-mentor-note li { font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-3); }
+/* 「接通前需要知道」收成一行折叠：三条使用说明不再挡在面板里。 */
+.xd-mentor-how { margin-top: 12px; }
+.xd-mentor-how > summary { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; list-style: none; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-3); }
+.xd-mentor-how > summary::-webkit-details-marker { display: none; }
+.xd-mentor-how > summary::after { content: "+"; font-family: var(--font-mono); }
+.xd-mentor-how[open] > summary::after { content: "−"; }
 .xd-consent { display: flex; align-items: flex-start; gap: 10px; margin-top: 14px; font-size: var(--fs-meta); line-height: var(--lh-meta); color: var(--ink-2); }
 .xd-consent input { margin-top: 4px; }
 .xd-inline-field { margin-top: 14px; }
@@ -567,7 +573,9 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
 @media (max-width: 1279px) {
   .xd-desk { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .xd-desk > .xd-rail { order: -2; position: static; }
-  .xd-desk > .xd-mentor { order: -1; position: static; }
+  /* 导师栏是可选的，窄屏排到任务之后；原来 order:-1 会把它顶在「可做的任务」前面，
+     一进页面先看到一整屏「带教老师」，任务被推到 1200px 以外。 */
+  .xd-desk > .xd-mentor { position: static; }
   .xd-ink { display: none; }
   .xd-lamp { inset: -20px -16px auto -16px; height: 520px; }
 

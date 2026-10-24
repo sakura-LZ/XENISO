@@ -1,8 +1,9 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState, type CSSProperties } from "react";
 import { z } from "zod";
 import { AvatarPanel, type MentorLinkState } from "@/components/avatar-panel";
+import { PageHelp } from "@/components/page-help";
 import {
   IconChat,
   IconCompass,
@@ -99,10 +100,10 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
     setStepNote(next > step ? `第 ${step + 1} 步已提交 · 可以继续，也能回改` : "");
     setStep(next);
   }
-  function pause() { if (busyRef.current) return; try { localStorage.setItem(draftKey, JSON.stringify({ template_id: templateId, mode, step, choices, outputs, reflection })); setHasDraft(true); setMessage("已存到这台机器，刷新后可以接着做。共用电脑用完记得清掉暂存。"); } catch { setMessage("本机存不下，先导出当前记录。"); } }
+  function pause() { if (busyRef.current) return; try { localStorage.setItem(draftKey, JSON.stringify({ template_id: templateId, mode, step, choices, outputs, reflection })); setHasDraft(true); setMessage("已存到这台机器，刷新后可以接着做。"); } catch { setMessage("本机存不下，先导出当前记录。"); } }
   function restore() {
     if (busyRef.current) return;
-    try { const draft = draftSchema.parse(JSON.parse(localStorage.getItem(draftKey) ?? "null")); const found = experienceTemplates.find(item => item.id === draft.template_id)!; invalidate(); setDirection(found.direction); setTemplateId(found.id); setMode(draft.mode); setChoices(draft.choices); setOutputs(draft.outputs); setReflection(draft.reflection); setStep(draft.step); setStarted(true); setTranscript([]); setRecord(false); setMessage("已恢复同一个任务和本机进度；和导师的对话不在暂存里。"); } catch { setMessage("暂存内容对不上当前模板，先把旧记录导出去。"); }
+    try { const draft = draftSchema.parse(JSON.parse(localStorage.getItem(draftKey) ?? "null")); const found = experienceTemplates.find(item => item.id === draft.template_id)!; invalidate(); setDirection(found.direction); setTemplateId(found.id); setMode(draft.mode); setChoices(draft.choices); setOutputs(draft.outputs); setReflection(draft.reflection); setStep(draft.step); setStarted(true); setTranscript([]); setRecord(false); setMessage("已恢复本机进度；导师对话不在暂存里。"); } catch { setMessage("暂存内容对不上当前模板，先把旧记录导出去。"); }
   }
   async function loadSaved() {
     if (busyRef.current) return; busyRef.current = true; setBusy(true);
@@ -148,7 +149,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
   const mentor = <aside className="xd-mentor">
     <AvatarPanel
       presenter={presenterForExperience(direction, templateId)}
-      role={`${template.role}${started ? mode === "project" ? "（项目导师）" : "（面试官）" : "（带教老师）"}`}
+      role={`${template.role}${started ? mode === "project" ? "（项目导师）" : "（面试官）" : "（模拟导师）"}`}
       onConnectionChange={handsOff}
       onTranscript={entry => { if (record) { setTranscript(previous => [...previous.slice(-59), entry]); invalidate(); } }}
       context={started
@@ -156,18 +157,18 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
         : `simulation编辑性教学场景：用户还在挑任务，方向是${direction === "medicine" ? "继续医学" : findDirection(direction)?.name}，可选任务有${templates.map(item => item.title).join("、")}。不提供诊疗建议，不评定用户能力。`}
     />
     <div className="atlas-sheet xd-mentor-note">
-      <p>{started
-        ? "接通后导师只知道你在看哪个方向、做到哪一步；你写的理由不会自动发过去，想让它看就贴进对话。"
-        : "没开始也能先问。接通后导师只知道你在看哪个方向，选了任务就换成本步的问题。"}</p>
-      <ul>
-        <li>首次接通要加载数字人资源，通常十几秒。</li>
-        <li>可以打字，也可以按住话筒说话；回复能随时打断。</li>
-        <li>对话默认不保存，勾选下面这项才随成果存档。</li>
-      </ul>
-      <label className="xd-consent">
+      <details className="xd-mentor-how">
+        <summary>接通前需要知道</summary>
+        <ul>
+          <li>首次接通要加载数字人资源，通常十几秒。</li>
+          <li>可以打字，也可以按住话筒说话；回复能随时打断。</li>
+          <li>对话默认不保存，勾选后才随成果存档。<a href="/guide#privacy">隐私说明</a></li>
+        </ul>
+      </details>
+      {(lit || transcript.length > 0) && <label className="xd-consent">
         <input type="checkbox" checked={record} onChange={e => { invalidate(); setRecord(e.target.checked); if (!e.target.checked) setTranscript([]); }} />
         <span>把这次对话随成果一起私有保存</span>
-      </label>
+      </label>}
     </div>
   </aside>;
 
@@ -185,9 +186,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
       <div>
         <p className="atlas-label">第 3 步 · 职业体验</p>
         <h1>{started ? template.title : "职业体验"}</h1>
-        <p className="xd-lede">{started
-          ? `${template.role} · ${mode === "project" ? "按项目做" : "按面试做"}。${template.brief}`
-          : "挑个方向，在合成材料上做三次决定，做完留一张体验卡。"}</p>
+        {started && <p className="xd-lede">{`${template.role} · ${mode === "project" ? "按项目做" : "按面试做"}。${template.brief}`}</p>}
       </div>
       <div className="xd-head-meta">
         <span className="atlas-chip">第 3 步 / 共 4 步</span>
@@ -196,6 +195,8 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
         <span className="simulation-tag">simulation · 合成材料</span>
       </div>
     </header>
+
+    <PageHelp topic="experience">{started ? <p>三步：看材料、做决定并写下理由、复盘导出。修改前一步后，需要重新确认后续步骤。</p> : <p>先选方向与任务，再选「按项目做」或「按面试做」。</p>}</PageHelp>
 
     {message && <p className="xd-flash" role="status">{message}</p>}
 
@@ -219,13 +220,12 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
       <section className="xd-main" aria-label="可选择的体验任务" data-motion="M-E02">
         <div className="xd-main-head" data-atlas-reveal>
           <h2>可做的任务</h2>
-          <p className="xd-question">不打分，不用编经历。</p>
         </div>
         {/* data-atlas-stagger 让任务卡逐张摆上来。带 key={direction}，换方向时整个
             容器重挂，所以"换一个方向"这个动作本身会重播一次入场——这正是
             /experience 最该有反馈的地方（原来是 0 个 reveal 宿主、整页 1 个动画元素）。 */}
         <div className="xd-tasks" key={direction} data-atlas-reveal data-atlas-stagger>
-          {direction === "medicine" && <p className="xd-sheet-note">学科名称看招生目录，不等同医院科室；报考条件按目标院校当年目录核验。{medicineNamingSource.url && <a href={medicineNamingSource.url} target="_blank" rel="noreferrer" style={{ marginLeft: 6 }}>学科名称来源</a>}</p>}
+          {direction === "medicine" && <p className="xd-sheet-note">学科名称按招生目录，不等同医院科室。{medicineNamingSource.url && <a href={medicineNamingSource.url} target="_blank" rel="noreferrer" style={{ marginLeft: 6 }}>学科名称来源</a>}</p>}
           {templates.map(item => <article className="atlas-sheet xd-task" key={item.id} data-selected={templateId === item.id}>
             <button type="button" className="xd-task-btn" aria-expanded={templateId === item.id} aria-controls={`task-${item.id}`} onClick={() => { invalidate(); setTemplateId(item.id); }}>
               <span>
@@ -245,7 +245,6 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
                     {value === "project" ? "按项目做" : "按面试做"}
                   </p>
                   <TaskModePreview template={item} mode={value} />
-                  <p>{value === "project" ? "看材料、做三次决定、每步写理由，最后拿到成果卡。" : "先选证据再解释取舍，第三步会来一条新约束。"}</p>
                   <button type="button" className="atlas-btn atlas-btn-primary" onClick={() => { invalidate(); setMode(value); setStarted(true); setSaved(null); setStep(0); setMessage(""); }}>{value === "project" ? "用项目方式开始" : "用面试方式开始"}</button>
                 </section>)}
               </div>
@@ -276,7 +275,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
           </div>
           <details className="xd-before-fold">
             <summary><IconWarning aria-hidden="true" />材料口径与边界</summary>
-            <p>材料是合成的，不能当临床依据或岗位绩效。留在临床也是正经选项。</p>
+            <p>材料是合成的，不能当临床依据或岗位绩效。口径见 <a href="/guide#boundaries">口径与边界</a>。</p>
           </details>
           {(hasDraft || hasSaved || legacyDraft) && <div className="xd-resume">
             {hasDraft && <button type="button" className="atlas-btn" onClick={restore}>接着做本机暂存</button>}
@@ -320,9 +319,9 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
             <p className="xd-sheet-note">至少 10 个字才能进下一步</p>
           </div>
           <label className="sr-only" htmlFor="xd-reason">{mode === "project" ? "操作理由" : "回答与反问"}</label>
-          <textarea id="xd-reason" className="xd-reason-field" rows={5} maxLength={3000} value={outputs[step]} onChange={e => edit(e.target.value)} placeholder={mode === "project" ? "写清你依据哪一条材料、放弃了什么。比如：我先把 A 组单独筛了一遍，误报都落在夜间低幅段，所以我宁可多报一点。" : "说明你的依据，也留一个具体的问题给面试官。"} />
+          <textarea id="xd-reason" className="xd-reason-field" rows={5} maxLength={3000} value={outputs[step]} onChange={e => edit(e.target.value)} placeholder={mode === "project" ? "写清你依据哪一条材料、放弃了什么。" : "说明你的依据，也留一个具体的问题给面试官。"} />
           <div className="xd-reason-foot">
-            <p>{outputs[step].trim().length} / 3000 字 · 写具体一点，后面复盘要用到这句</p>
+            <p>{outputs[step].trim().length} / 3000 字</p>
             <div className="xd-actions">
               <button type="button" className="atlas-btn" disabled={step === 0} onClick={() => goStep(step - 1)}>上一步</button>
               <button type="button" className="atlas-btn atlas-btn-primary" disabled={choices[step] === null || outputs[step].trim().length < 10} onClick={() => goStep(step + 1)}>{step === 2 ? "完成操作，进入复盘" : "提交本步，继续"}</button>
@@ -348,7 +347,6 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
       <section className="xd-main xd-outcome" aria-label="成果与复盘">
         <div className="xd-main-head">
           <h2 ref={stageHeading} tabIndex={-1}>{template.deliverable}</h2>
-          <p className="xd-question">下面三步的选择和结果。看一遍，回答四个复盘问题，再保存或导出。</p>
         </div>
 
         <section className="atlas-sheet xd-tight" data-motion="M-E12">
@@ -378,7 +376,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
         </section>
 
         <section className="atlas-sheet xd-tight" data-motion="M-E13">
-          <div className="xd-sheet-head"><h3><IconPulse aria-hidden="true" />回头看这次体验</h3><p className="xd-sheet-note">这四项会一起存进成果，第 4 步要用</p></div>
+          <div className="xd-sheet-head"><h3><IconPulse aria-hidden="true" />回头看这次体验</h3><p className="xd-sheet-note">这四项会一起存进成果</p></div>
           <div className="xd-reflection">
             {([["favorite_operation", "哪部分你最想继续做"], ["least_favorite_operation", "哪部分你最不想再碰"], ["followup_question", "下一次想验证什么"]] as const).map(([key, label]) => <label key={key} className="form-label">{label}
               <textarea className="field" rows={2} maxLength={key === "followup_question" ? 1000 : 240} value={reflection[key]} onChange={e => { invalidate(); setReflection(previous => ({ ...previous, [key]: e.target.value })); }} />
@@ -387,7 +385,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
               <select className="field" value={reflection.willingness_for_3_hours} onChange={e => { invalidate(); setReflection(previous => ({ ...previous, willingness_for_3_hours: Number(e.target.value) })); }}>{["完全不想", "不太想", "还不确定", "比较愿意", "很愿意"].map((label, i) => <option key={label} value={i + 1}>{label}</option>)}</select>
             </label>
           </div>
-          <p className="xd-hint">私有保存会替换你上一次保存的体验成果。旧的要留，就先导出。</p>
+          <p className="xd-hint">保存会替换上次的成果；要留旧的就先导出。</p>
           <div className="xd-actions" style={{ marginTop: 14 }}>
             <button type="button" className="atlas-btn" onClick={() => goStep(2)}>返回修改</button>
             <button type="button" className="atlas-btn atlas-btn-primary" disabled={!reflectionSchema.safeParse(reflection).success} onClick={() => void finish()}>{busy ? "保存中…" : "保存成果与复盘"}</button>
@@ -404,7 +402,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
             {template.stages.map((stageItem, i) => <div key={stageItem.title}><dt>第 {i + 1} 步</dt><dd>{stageItem.options.find(option => option.value === choices[i])?.label ?? "未选择"}</dd></div>)}
             <div><dt>日期</dt><dd>{saved?.completed_at ? saved.completed_at.slice(0, 10) : "尚未保存"}</dd></div>
           </dl>
-          <p className="xd-card-foot">教学记录，不代表专业能力、报考条件或执业资格。数据为合成，不能当临床依据。</p>
+          <p className="xd-card-foot">教学记录，不代表专业能力或执业资格。<a href="/guide#boundaries">口径与边界</a></p>
           <div className="xd-card-seal"><span className="atlas-stamp ochre">simulation</span><span>合成数据 · 教学记录</span></div>
         </article>
 

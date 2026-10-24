@@ -1,5 +1,6 @@
-﻿"use client";
+"use client";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type MouseEvent, type ReactNode } from "react";
 import { handbookEntries, type HandbookDirectionId } from "@/lib/handbook";
 import { directions, findDirection, groups, occupationUrl, type Direction } from "@/lib/directions";
@@ -8,6 +9,7 @@ import { IconAccount, IconBook, IconCompass, IconExternal, IconFolder, IconPlay,
 import { OfficialDossier } from "./official-dossier";
 import { InkField } from "@/components/ink-field";
 import { MedicineBrowser } from "./medicine-browser";
+import { PageHelp } from "@/components/page-help";
 
 /** 六块内容：每块回答一个问题，问题写在标题下面，读者先知道"这块要不要看"。 */
 const chapters = [
@@ -51,7 +53,15 @@ const summaries: Record<string, string> = {
 };
 
 export function DirectionBrowser({ initialParams = {} }: { initialParams?: LibraryParams }) {
+  const search = useSearchParams().toString();
+  const [previousSearch, setPreviousSearch] = useState(search);
   const [state, setState] = useState(() => parseState(initialParams));
+  // Native history updates and cached Next.js navigation both change the URL.
+  // Sync before rendering so a cached directory cannot retain a reading view.
+  if (search !== previousSearch) {
+    setPreviousSearch(search);
+    setState(parseState(Object.fromEntries(new URLSearchParams(search))));
+  }
   const [chapter, setChapter] = useState<ChapterId>("overview");
   const [message, setMessage] = useState("");
   const scrollPositions = useRef(new Map<string, number>());
@@ -128,8 +138,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
     setChapter(id);
   }
 
-  const chapterNav = <nav className="xnlib-chapter-nav" aria-label="本页六块内容">
-    <p className="xnlib-chapter-nav-label">本页六块</p>
+  const chapterNav = <nav className="xnlib-chapter-nav" aria-label="本页内容">
     <ol className="xnlib-toc">{chapters.map(entry => <li key={entry.id}>
       <a href={`#chapter-${entry.id}`} aria-current={chapter === entry.id ? "location" : undefined} onClick={event => chapterLink(event, entry.id)}>
         <span className="xnlib-toc-icon" aria-hidden="true">{chapterIcon(entry.id)}</span>
@@ -274,7 +283,6 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
       <InkField className="page-ink" band />
       <div>
         <h1><IconBook aria-hidden="true" />信息文库</h1>
-        <p className="xnlib-lede">只查三样：O*NET 职业、公司招聘要求、院系招生目录考试科目。原文没写的直接标「没查到」。</p>
       </div>
       <label className="xnlib-search">
         <span>检索方向或工作内容</span>
@@ -283,19 +291,13 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
     </header>
     {/* 这页原来是全站唯一没有任何纸片物料、也没有主按钮的页面：进来只有一列平铺
         的 10 行数据表。补一张检索说明卡把"怎么用"讲清楚，并给出这一页的主动作。 */}
-    <section className="xnlib-howto atlas-sheet" aria-labelledby="xnlib-howto-title">
-      <span className="atlas-tape tl" aria-hidden="true" />
-      <h2 id="xnlib-howto-title"><IconStamp aria-hidden="true" />这本文库怎么用</h2>
+    <PageHelp topic="library">
       <ol className="xnlib-howto-steps">
         <li><b>先按分类收窄。</b>左栏是站内编辑的方向分组，不是官方学科目录。</li>
         <li><b>点一行展开读原文。</b></li>
         <li><b>勾两个方向并排比。</b>行末的勾选框凑够两个，就能拉出对照视图。</li>
       </ol>
-      <div className="xnlib-howto-actions">
-        <button className="atlas-btn atlas-btn-primary" type="button" onClick={() => navigate({ ...state, group: "all" }, false, true)}>看全部 {directions.length} 个方向</button>
-        <Link className="atlas-btn atlas-btn-quiet" href="/assessment">不确定方向？先做兴趣问卷</Link>
-      </div>
-    </section>
+    </PageHelp>
     <div className="xnlib-cabinet">
       <aside className="xnlib-rail">
         {/* 这里保持 <p>：它只是筛选器的小标签（视觉 13px），不是区块标题。

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 /**
@@ -101,17 +100,14 @@ type SceneCard = {
   title: string;
   art: keyof typeof art;
   desc: string;
-  left: string;
-  right: string;
-  state: string;
   tape: "tl" | "tr" | "bl" | "br";
 };
 
 const cards: SceneCard[] = [
-  { href: "/profile", no: "01", title: "个人画像", art: "profile", desc: "课程、见习、科研、技能，按 0–4 级勾一遍。", left: "约 10 分钟", right: "现在可做", state: "现在可做", tape: "tl" },
-  { href: "/report/initial", no: "02", title: "初步评价", art: "radar", desc: "30 道兴趣题，结果分四栏看。", left: "等第一步填完", right: "待解锁", state: "待解锁", tape: "tr" },
-  { href: "/experience", no: "03", title: "职业体验", art: "ecg", desc: "挑一个真实任务做一遍，卡住可以问导师。", left: "等评价出来", right: "待解锁", state: "待解锁", tape: "bl" },
-  { href: "/report/plan", no: "04", title: "行动规划", art: "week", desc: "把体验结果排成一周能执行的表。", left: "等体验做完", right: "待解锁", state: "待解锁", tape: "br" },
+  { href: "/profile", no: "01", title: "个人画像", art: "profile", desc: "整理课程、见习与技能经历。", tape: "tl" },
+  { href: "/report/initial", no: "02", title: "初步评价", art: "radar", desc: "完成 30 道职业兴趣题，查看探索方向。", tape: "tr" },
+  { href: "/experience", no: "03", title: "职业体验", art: "ecg", desc: "尝试模拟工作，记录选择与感受。", tape: "bl" },
+  { href: "/report/plan", no: "04", title: "行动规划", art: "week", desc: "结合目标和可投入时间，安排后续准备。", tape: "br" },
 ];
 
 export function HomeScene({ groupCount, directionCount }: { groupCount: number; directionCount: number }) {
@@ -146,7 +142,7 @@ export function HomeScene({ groupCount, directionCount }: { groupCount: number; 
       </svg>
 
       {cards.map((card, index) => (
-        <Link key={card.href} href={card.href} className={`scene-card scene-c${index + 1}`} data-atlas-stagger>
+        <div key={card.href} className={`scene-card scene-c${index + 1}`} data-atlas-stagger>
           <span className={`scene-tape scene-tape-${card.tape}`} aria-hidden="true" />
           <span className="scene-no">{card.no}</span>
           <span className="scene-title">{card.title}</span>
@@ -154,11 +150,7 @@ export function HomeScene({ groupCount, directionCount }: { groupCount: number; 
             <svg viewBox="0 0 140 100">{art[card.art]}</svg>
           </span>
           <span className="scene-d">{card.desc}</span>
-          <span className="scene-st">
-            <span>{card.left}</span>
-            <b>{card.right}</b>
-          </span>
-        </Link>
+        </div>
       ))}
 
       <p className="scene-stamp" aria-hidden="true">

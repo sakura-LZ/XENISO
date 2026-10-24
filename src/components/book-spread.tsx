@@ -18,8 +18,9 @@
  */
 
 import Image from "next/image";
+import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import type { KeyboardEvent as ReactKeyboardEvent, PointerEvent as ReactPointerEvent } from "react";
+import type { PointerEvent as ReactPointerEvent } from "react";
 import { groups } from "@/lib/directions";
 
 /* 环与孔共用同一组 y 坐标：铁环正好穿过打孔，不靠眼睛对 */
@@ -44,7 +45,7 @@ const INDEX = (() => {
     count: group.specializations.length,
     items: group.specializations.map((item) => {
       n += 1;
-      return { no: String(n).padStart(2, "0"), name: item.name };
+      return { id: item.id, no: String(n).padStart(2, "0"), name: item.name };
     }),
   }));
 })();
@@ -63,6 +64,7 @@ export function BookSpread() {
   const bookRef = useRef<HTMLDivElement>(null);
   const sheetRef = useRef<HTMLDivElement>(null);
   const [flipped, setFlipped] = useState(false);
+  const [linear, setLinear] = useState(false);
   const flippedRef = useRef(false);
   const reduceRef = useRef(false);
 
@@ -129,11 +131,16 @@ export function BookSpread() {
   );
 
   useEffect(() => {
+    const narrow = window.matchMedia("(max-width: 860px)");
+    const update = () => setLinear(narrow.matches);
+    update();
+    narrow.addEventListener("change", update);
     reduceRef.current = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     /* 把 ref 的值取出来：cleanup 跑到时 engine.current 可能已经换过 */
     const engineState = engine.current;
     paint();
     return () => {
+      narrow.removeEventListener("change", update);
       if (engineState.raf) cancelAnimationFrame(engineState.raf);
       engineState.raf = 0;
     };
@@ -177,7 +184,7 @@ export function BookSpread() {
     if (!sheet) return;
     /* 角落按钮自己处理点击。这里若也 setPointerCapture，pointerup 会被重定向到纸面，
        click 就不再落到按钮上，翻页会整个失效 */
-    if ((event.target as HTMLElement).closest(".bk-corner")) return;
+    if (linear || (event.target as HTMLElement).closest("a, button")) return;
     st.dragging = true;
     st.moved = 0;
     st.startX = event.clientX;
@@ -200,23 +207,6 @@ export function BookSpread() {
       return;
     }
     commit(st.flip > 0.5);
-  };
-
-  const onSheetKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      commit(!flipped);
-      return;
-    }
-    if (event.key === "ArrowLeft") {
-      event.preventDefault();
-      commit(true);
-      return;
-    }
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      commit(false);
-    }
   };
 
   return (
@@ -258,15 +248,11 @@ export function BookSpread() {
           <div
             className="bk-sheet"
             ref={sheetRef}
-            role="button"
-            tabIndex={0}
-            aria-label={flipped ? "翻回方向索引" : "翻到背面：为什么做成目录"}
             onPointerDown={onSheetPointerDown}
             onPointerUp={onSheetPointerUp}
             onPointerCancel={onSheetPointerUp}
-            onKeyDown={onSheetKeyDown}
           >
-            <div className="bk-face bk-face-front">
+            <div className="bk-face bk-face-front" inert={flipped && !linear}>
               <Holes side="l" />
               <ol className="bk-index">
                 {INDEX.map((group) => (
@@ -277,7 +263,7 @@ export function BookSpread() {
                       {group.items.map((item) => (
                         <li key={item.no}>
                           <span className="bk-no">{item.no}</span>
-                          <span className="bk-name">{item.name}</span>
+                          <Link className="bk-name" href={`/explore?direction=${encodeURIComponent(item.id)}`}>{item.name}<span aria-hidden="true"> ↗</span></Link>
                         </li>
                       ))}
                     </ol>
@@ -298,16 +284,12 @@ export function BookSpread() {
               />
             </div>
 
-            <div className="bk-face bk-face-back">
+            <div className="bk-face bk-face-back" inert={!flipped && !linear}>
               <Holes side="l" />
               <div className="bk-prose">
                 <p>
-                  一份目录能做的事很少：它不能替你决定，只能告诉你这门学问的出口一共有十处，
-                  每一处要的东西不一样。
-                </p>
-                <p>
-                  十六世纪的人把身体画清楚，是因为看不清就没法讨论。方向也一样——说不清有哪些，
-                  就只能凭感觉挑。
+                  目录包含继续医学与跨学科方向。每个方向的工作内容、所需基础与升学要求不同，
+                  可以进入文库逐条查看来源。
                 </p>
               </div>
               <span className="bk-sweep" aria-hidden="true" />
@@ -350,10 +332,6 @@ export function BookSpread() {
           <span className="bk-ribbon" aria-hidden="true" />
         </div>
       </div>
-
-      <p className="bk-source">
-        图版：Vesalius / Becerra，1568，铜版雕刻 · Wellcome Collection，公有领域（Public Domain Mark）
-      </p>
     </div>
   );
 }
