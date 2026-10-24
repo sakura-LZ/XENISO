@@ -48,7 +48,7 @@ const toc = [
 const frame = [
   { term: "你愿意做哪类活动", body: "30 道兴趣题，六个维度各 5 题。分数只说明偏好，不说明能力。" },
   { term: "你做过什么", body: "四节 20 项底册，每条记录都写明证据来源；没核验的也标出来。" },
-  { term: "接下来按什么节奏做", body: "月份窗口、每周 15 分钟复盘、每年重新核对一次招生条件。" },
+  { term: "接下来按什么节奏做", body: "月份窗口、每周 15 分钟复盘、每年重新核对报名与招生条件。" },
 ];
 
 type ReadItem = { q: string; a: string };
@@ -127,7 +127,7 @@ const libraryReads: ReadItem[] = [
   { q: "来源资料收哪些？", a: "五类：专业与职业、真实招聘、院校招生、行业与就业统计、课程与实践。每页 5 条，可以导出 LIMEN-来源资料摘录.md。" },
   { q: "没查到的分类为什么不补上？", a: "页面会写「还没查到的分类」，位置就空着。没有官方原文就不补，这一条对所有分类都适用。" },
   { q: "招生条目能直接用来判断能不能报吗？", a: "不能。招生只收有官方原文的项目，写明学校、年份和来源；个人报考资格还没核定，要按院校原文逐条核对。" },
-  { q: "医学方向的科室资料从哪来？", a: "51 个科室条目（39 个临床科室、12 个医技科室）采用北京大学第一医院的实际分组，是院方实例，不是全国统一标准；其中 8 个科室有详细简介。学科名称按招生目录，不等同于医院科室。" },
+  { q: "医学方向的科室资料从哪来？", a: "51 个科室条目（39 个临床科室、12 个医技科室）采用北京大学第一医院的实际分组，是院方实例，不是全国统一标准；其中 8 个科室有介绍摘录。学科名称按招生目录，不等同于医院科室。" },
 ];
 
 /** 口径与边界：每条都写清边界本身和真实原因。 */
@@ -150,7 +150,7 @@ const dataSources = [
   { term: "方向映射", body: "由 LIMEN 编辑整理的一对多映射，不是 O*NET 官方结论，也不是中国考研专业目录。" },
   { term: "招生条目", body: "只收有官方原文的项目，写明学校、年份和来源；没核实的不补。" },
   { term: "站内编辑内容", body: "方向、课程、任务和阶段节奏都是 LIMEN 的编辑信息，不伪装成官方事实。" },
-  { term: "插画", body: "来自 Storyset 的 Pana 系列，署名在页面底部。" },
+  { term: "插画", body: "来自 Storyset 的 Pana 系列，按该图库的许可使用。" },
   { term: "报告版本", body: "R1 是 limen-r1-rules-v1，R2 是 limen-r2-rules-v2 或 v3。画像、问卷或体验改动后，旧报告会按输入指纹判定过期，需要重新生成。" },
 ];
 
@@ -234,7 +234,7 @@ function InitialMock() {
       <div className="gd-four-col">
         <p className="gd-four-name">报考条件</p>
         <span className="atlas-chip" data-tone="miss">全部待核验</span>
-        <p className="gd-four-line">101 · 201 · 301 都没查到</p>
+        <p className="gd-four-line">四行都写「无」</p>
       </div>
     </div>
   </div>;
@@ -295,7 +295,7 @@ function LibraryMock() {
     </div>
     <p className="gd-search"><span>关键词</span><b>医学影像</b></p>
     <ul className="gd-catalog">
-      <li><span className="gd-check" aria-hidden="true">✓</span><b>医学影像工程</b><span className="atlas-chip">有出处</span></li>
+      <li><span className="gd-check" aria-hidden="true">✓</span><b>医学影像工程</b><span className="atlas-chip" data-tone="ok">有出处</span></li>
       <li><span className="gd-check" aria-hidden="true">✓</span><b>医学信号处理</b><span className="atlas-chip" data-tone="gap">要补基础</span></li>
     </ul>
     <span className="gd-mock-note">勾两个方向可以并排比较，页面不排优劣。</span>
