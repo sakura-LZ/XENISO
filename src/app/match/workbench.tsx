@@ -48,7 +48,7 @@ export default function MatchWorkbench() {
     <header className="match-heading" data-motion="M-T01" data-reveal><h1><IconCompass className="match-ico match-ico-lead" aria-hidden="true" />职业与升学匹配</h1><p>分别查看兴趣、准备情况、投入线索与报考条件，找到下一项值得验证的行动。</p></header>
     <nav className="match-prerequisites" aria-label="补充匹配依据"><Link href="/profile"><IconProfile className="match-ico match-ico-link" aria-hidden="true" />完善个人画像</Link><Link href="/assessment"><IconQuiz className="match-ico match-ico-link" aria-hidden="true" />兴趣测评</Link><Link href="/explore"><IconBook className="match-ico match-ico-link" aria-hidden="true" />方向手册</Link><Link href="/experience"><IconCompass className="match-ico match-ico-link" aria-hidden="true" />职业体验</Link></nav>
     <div className="match-modes" aria-label="选择匹配资料来源" data-motion="M-T01"><button className="button secondary" aria-pressed={mode === "simulation"} disabled={busy} onClick={startDemo}><IconPlay aria-hidden="true" />使用合成演示</button><button className="button secondary" aria-pressed={mode === "personal"} disabled={busy} onClick={() => void loadPersonal()}><IconDownload aria-hidden="true" />{busy ? "正在读取…" : "读取我的画像"}</button></div>
-    <p role="status" className="match-notice">{message}</p>
+    <p role="status" className="match-notice"><IconWarning className="match-ico match-ico-notice" aria-hidden="true" />{message}</p>
     {input && <section key={mode} className="match-input" data-motion="M-T01">
       <h2><IconProfile className="match-ico match-ico-block" aria-hidden="true" />确认技能准备</h2>
       <p>{input.user.simulation ? "simulation：以下画像、岗位数值均为合成演示。" : "个人模式：数据仅在本页面计算，不保存本次修改。"}</p>
