@@ -65,10 +65,10 @@ export function InitialReport() {
           <div className="xr-cover-main">
             <h1 className="xr-title"><IconFolder aria-hidden="true" />初步评价报告</h1>
             <p className="xr-lede">
-              <b>R1 = 初步评价报告</b>，是异域探索第 2 步交出来的东西。它固定分四栏，顺序不变：
+              <b>R1 = 初步评价报告</b>，固定分四栏：
               <b>兴趣</b>（在哪类活动上给分最高）、<b>能力迁移</b>（画像里已经有什么、能带进新方向）、
               <b>知识缺口</b>（手册要求而你还没记录的）、<b>报考条件</b>（现在只能是空的）。
-              它不给分数排名，也不给适合度百分比——那种数字看起来精确，其实不成立。
+              不给排名，也不给适合度百分比。
             </p>
           </div>
           <div className="xr-cover-side">
@@ -101,7 +101,7 @@ export function InitialReport() {
             <div className="xr-sec-head"><h2><IconPulse aria-hidden="true" />兴趣</h2><span className="xr-sec-tag">O*NET Mini-IP · 30 题</span></div>
             <p className="xr-note atlas-hand">分数只说明你愿意做哪类活，不说明你能做多好。</p>
             {assessment ? <>
-              <p className="xr-body-text">六类兴趣各 5 题，每题 1–5 分，同一类的 5 题相加得到原始分。原始分只用来比较你在这六类活动之间的相对偏好，不折算成适合度，也不和别的考生比。</p>
+              <p className="xr-body-text">每类 5 题相加得原始分。只看自己偏好，不折算适合度，不跟别人比。</p>
               <InterestRadar scores={assessment.scores} />
               <details className="xr-details xr-stack">
                 <summary>原始结果与职业来源</summary>
@@ -110,7 +110,7 @@ export function InitialReport() {
                 <p className="xr-source">展示 {assessment.careers.length} 条，共返回 {assessment.career_total} 条。职业信息来自 O*NET Web Services（USDOL/ETA）。</p>
               </details>
             </> : <div className="xr-empty">
-              <p>还没有官方兴趣结果，这一栏先空着。兴趣分来自 O*NET 的 30 道活动题，做完才会出现；没有分数时，这里不推断你适合什么。</p>
+              <p>先空着。做完 O*NET 30 道题才出分；没分前不推断适合方向。</p>
               <div className="xr-actions"><Link className="atlas-btn atlas-btn-primary" href="/assessment">开始问卷</Link><Link className="xr-textlink" href="/explore">先翻方向手册</Link></div>
             </div>}
             <details className="xr-details">
@@ -123,7 +123,7 @@ export function InitialReport() {
 
           <section id="initial-evidence" className="atlas-sheet xr-sec" data-atlas-reveal>
             <div className="xr-sec-head"><h2><IconCompass aria-hidden="true" />能力迁移</h2><span className="xr-sec-tag">本人填写 · 未独立核验</span></div>
-            <p className="xr-body-text">这一栏只回答一件事：你手上已经有什么，其中哪些能带进新方向。它不判断能力高低；记录名称相关也不等于已经掌握。</p>
+            <p className="xr-body-text">盘点能带进新方向的底子。不判断水平高低，写过不等于掌握。</p>
             {mode !== "empty" ? <p className="xr-source">画像：{profile.school || "院校未填写"} · {profile.major || "专业未填写"} · {profile.grade || "年级未填写"}<br />课程 {profile.courses.length} 条、研究项目 {profile.research_projects.length} 条、论文记录 {profile.papers.length} 条、技术自评 {profile.tech_skills.length} 条。全部来自本人填写，未独立核验。</p> : <p className="xr-source">尚未读取个人经历。<Link href="/profile/basics">填写医学经历</Link>。</p>}
 
             <h3 className="xr-stack">已经记录在案的</h3>
@@ -142,10 +142,10 @@ export function InitialReport() {
                   </li>)}</ol>
                 </details>
               </li>}
-            </ol> : <p className="xr-empty">尚无课程、技能或项目记录。空着不代表没有能力，只代表这份档案还没有证据可引。</p>}
+            </ol> : <p className="xr-empty">暂无记录。空着不代表没有能力，只是档案里还缺证据。</p>}
 
             <h3 className="xr-stack">能带进哪些方向</h3>
-            <p className="xr-source">下面每个方向后面，是手册里写的「医学经历可能提供的起点」。它说明医学训练在哪一段接得上，不是录用条件。</p>
+            <p className="xr-source">标出医学训练能接得上的起点，供参考，不是录用条件。</p>
             {report.candidates.length ? <ol className="xr-directions xr-stack">
               {report.candidates.map(({ direction, occupations }) => <li className="xr-direction atlas-lift" key={direction.id}>
                 <DirectionArt direction={direction.id} compact />
@@ -167,7 +167,7 @@ export function InitialReport() {
 
           <section id="initial-gaps" className="atlas-sheet xr-sec" data-atlas-reveal>
             <div className="xr-sec-head"><h2><IconBook aria-hidden="true" />知识缺口</h2><span className="xr-sec-tag">手册要求 − 画像记录</span></div>
-            <p className="xr-body-text">这一栏只做一件事：把方向手册里写着「能力基础」和「入门前先补的基础」的条目，和你画像里已经记录的内容对一遍，列出手册要、而你没有记录的那部分。它不是能力评分。</p>
+            <p className="xr-body-text">比对手册要求与已有记录，挑出没记的部分。不是能力评分。</p>
             {gapGroups.length ? <>
               {gapCount > 0 ? <div className="xr-gap-groups xr-stack">{gapGroups.map(({ direction, skills, courses }) => <div className="xr-gap-group" key={direction.id}>
                 <h3><Link href={`/explore?direction=${direction.id}`}>{direction.name}</Link></h3>
@@ -177,16 +177,19 @@ export function InitialReport() {
                 </ul> : <p className="xr-source">这个方向的入门要求里，没有你还没记录的条目。</p>}
               </div>)}</div> : <p className="xr-empty">没查到：这次职业匹配没有指向手册内的方向，暂时没有可对照的入门要求。<Link href="/explore">翻方向手册</Link>。</p>}
             </> : <p className="xr-empty">没查到：还没有关联方向，也就没有可对照的手册要求。做完兴趣问卷后再回来看这一栏。</p>}
-            <ul className="xr-gaps xr-stack">
-              <li>没有记录不等于没有能力。这里的「要补基础」只说明画像里还没有证据，不说明你学不会。</li>
-              <li>缺口的正式计算在 R2 行动规划里：那边会按你选定的方向，把技能条目和自述经历逐条对照，并排出补的顺序。这里只做提示。</li>
-              <li>手册没写到、或你查不到对应要求的条目，这里一律写「没查到」，不替它补一个。</li>
-            </ul>
+            <details className="xr-details xr-stack">
+              <summary>口径说明</summary>
+              <ul className="xr-gaps">
+                <li>没记录不等于没能力。「要补」只说明缺证据，不是学不会。</li>
+                <li>逐条比对与补差顺序，留到 R2 行动规划再算。这里只做提示。</li>
+                <li>查不到要求的，一律写「没查到」，不凭空脑补。</li>
+              </ul>
+            </details>
           </section>
 
           <section id="initial-admissions" className="atlas-sheet xr-sec" data-atlas-reveal>
             <div className="xr-sec-head"><h2><IconWarning aria-hidden="true" />报考条件</h2><span className="xr-sec-tag">全部待核验</span></div>
-            <p className="xr-body-text">这一栏现在只能是空的：还没拿到任何目标院校当年的招生目录原文。空着比编一条有用。下面是你要自己去核对的项目，核过的写上日期。</p>
+            <p className="xr-body-text">缺当年招生目录原文，宁空着不编。底下项目自己去核，核过记日期。</p>
             <div className="xr-flag xr-stack"><span className="atlas-chip" data-tone="miss">没查到</span><span className="xr-source">招生资格、考试科目与复试要求均未取得官方原文。</span></div>
             <dl className="xr-check xr-stack">
               <div><dt>学校与项目</dt><dd>核实院校、项目名称、专业代码与招生方式。</dd></div>
@@ -194,7 +197,6 @@ export function InitialReport() {
               <div><dt>报考条件</dt><dd>核实跨专业资格、考试科目、语言与复试要求。</dd></div>
               <div><dt>官方来源</dt><dd>保存项目官方 URL、原文与本次核验日期。</dd></div>
             </dl>
-            <p className="xr-source">报告里这一条同样写着：招生资格与具体考试要求未核实。未核实就不当结论用。</p>
             <div className="xr-actions"><Link className="atlas-btn" href="/explore">按方向查报考条目</Link><Link className="xr-textlink" href="/profile">补全画像</Link></div>
           </section>
 
@@ -203,20 +205,23 @@ export function InitialReport() {
 
       <section id="initial-explanation" className="atlas-sheet xr-sec xr-closing" data-atlas-reveal>
         <div className="xr-sec-head"><h2><IconStamp aria-hidden="true" />解释与下一步</h2><span className="xr-sec-tag">收尾</span></div>
-        <p className="xr-body-text">上面四栏是规则整理的结果，不需要联网。想要一段把四栏串起来的文字，可以让 AI 单独写一遍；它只能引用上面这些证据，不会新增院校、考试科目或学习时长。</p>
+        <p className="xr-body-text">四栏由规则整理。可让 AI 串写总评，它仅引述现有证据，不会新增院校与科目。</p>
         <div className="xr-ai"><AiReport key={JSON.stringify([profile, assessment, mode, busy])} kind="R1" enabled={!busy && mode === "personal" && !!assessment} /></div>
         <div className="xr-next xr-stack">
-          <p className="xr-body-text">下一步不是继续在报告里加结论，而是去试一次真实的活，看看自己坐不坐得住。</p>
+          <p className="xr-body-text">报告先搁下，去接个真实的活，看看能不能坐住。</p>
           <div className="xr-actions">
             <Link className="atlas-btn atlas-btn-primary" href="/experience">挑一个方向去体验</Link>
             <Link className="xr-textlink" href="/report/plan">直接排一周的计划</Link>
           </div>
         </div>
-        <p className="xr-note atlas-hand xr-stack">继续留在临床也是一条正当的路。这份报告只把你偏好的活动摆出来，不催你换。</p>
+          <p className="xr-note atlas-hand xr-stack">留在临床同样正当。报告只摆出事实，不催你换。</p>
       </section>
 
       <footer className="xr-foot">
-        <p>依据：O*NET 兴趣量表（Interest Profiler）的题目结构改写为中文，中文译稿 {translation.version}，待人工复核；计分来自 O*NET Web Services。能力条目来自本人自填记录、按规则整理，报考条件一律待核验。</p>
+        <details className="xr-details">
+          <summary>依据与来源</summary>
+          <p>依据：O*NET 兴趣量表（Interest Profiler）的题目结构改写为中文，中文译稿 {translation.version}，待人工复核；计分来自 O*NET Web Services。能力条目来自本人自填记录、按规则整理，报考条件一律待核验。</p>
+        </details>
         <p>{mode === "simulation" ? "当前载入的是合成演示档案（simulation），不是你的真实记录，只用来演示版式。" : "本页分数是官方兴趣计分结果，能力条目是本人自填记录，两者都未独立核验。"}</p>
         <p className="atlas-hand">先挑离你最近的那一件事做，别一次把路全改掉。</p>
       </footer>

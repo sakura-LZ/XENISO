@@ -40,7 +40,7 @@ const SHIFT_RANGE = 6;
 /** 巡检间隔：只用来捞"该出现却还停在起始态"的元素 */
 const SWEEP_MS = 1200;
 
-type SceneKind = "stamp" | "rule" | "ink" | "lines" | "plate" | "count" | "shift";
+type SceneKind = "stamp" | "rule" | "ink" | "lines" | "plate" | "count" | "shift" | "chips" | "kv";
 
 /**
  * 自动作用于既有的语义选择器——不需要改任何既有 tsx。
@@ -73,6 +73,10 @@ const TARGETS: Array<[SceneKind, string[]]> = [
   ]],
   /* 数字：机械计数器 */
   ["count", [".xnlib-rail-count", ".xp-ledger-count"]],
+  /* 标签行：一枚枚像盖章一样弹出来（SOC 码、技能词、状态标记） */
+  ["chips", [".xnlib-chip-row", ".atlas-chip-row", ".xd-chips", ".match-chips"]],
+  /* 键值说明行：从左侧一条条抽出来，和正文的逐行压字错开 */
+  ["kv", [".atlas-kv", ".account-kv", ".xr-meta"]],
   /* 章节标签：随翻阅做细微位移 */
   ["shift", [".xr-sec-tag"]],
   /* 条目：盖章落入 */
@@ -81,7 +85,6 @@ const TARGETS: Array<[SceneKind, string[]]> = [
     ".xd-evidence",
     ".atlas-dir-list",
     ".xr-gap-list",
-    ".chroma-legend",
     // 初步评价的"答完给你四栏"：四个栏目像图章依次落下
     ".as-index > div",
     // 初步评价的规格清单（自带边框，用盖章比画线更合适，不会和边框重叠）
@@ -292,7 +295,7 @@ function install(): () => void {
 
   const apply = (el: HTMLElement, kind: SceneKind) => {
     el.dataset.sceneKind = el.dataset.sceneKind || kind;
-    if (kind === "stamp") markStagger(el.children);
+    if (kind === "stamp" || kind === "chips" || kind === "kv") markStagger(el.children);
     else if (kind === "shift") {
       if (shiftSeen.has(el)) return;
       shiftSeen.add(el);

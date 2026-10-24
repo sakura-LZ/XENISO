@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { XenisoMotion } from "@/components/xeniso-motion";
 import { ScrollScenes } from "@/components/scroll-scenes";
+import { PageTheatre } from "@/components/page-theatre";
 import { NavShell } from "@/components/nav-shell";
 import { SiteFooter } from "@/components/site-footer";
 import "./fonts.css";
@@ -10,11 +11,12 @@ import "./chrome.css";
 import "./home.css";
 import "./home-artifacts.css";
 import "./motion.css";
-import "./chroma.css";
+import "./register-press.css";
 import "./nav-icons.css";
 import "./filing-drawer.css";
 import "./scroll-scenes.css";
 import "./reading-craft.css";
+import "./theatre.css";
 import "./profile.css";
 import "./report.css";
 import "./experience.css";
@@ -28,6 +30,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <NavShell />
     <XenisoMotion />
     <ScrollScenes />
+    <PageTheatre />
     {children}
     <SiteFooter />
   </body></html>;

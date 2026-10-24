@@ -261,3 +261,34 @@
 .atlas-limits .atlas-label { color: var(--night-mark); margin-bottom: 8px; }
 .atlas-limits p { color: var(--night-ink-2); margin: 0; font-size: var(--fs-body); line-height: var(--lh-body); }
 .atlas-limits .atlas-cols-3 > div { padding-top: 18px; border-top: 1px solid var(--night-line); }
+
+/* ---------- 首屏向下的入口 ----------
+   核对单那一屏在首屏之下，给一个明确的指引。用虚线 + 轻微下浮，
+   和文字滚动带区分开，不抢主按钮。
+   （原来住在 chroma.css：那块实时墨迹画布删掉后，这条规则跟首屏走，搬回这里。） */
+.atlas-hero-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 18px;
+  padding-bottom: 3px;
+  border-bottom: 1px dashed color-mix(in srgb, var(--ink-3) 45%, transparent);
+  color: var(--ink-2);
+  font-size: var(--fs-meta);
+  line-height: var(--lh-meta);
+  text-decoration: none;
+  transition: color 200ms var(--ease), border-color 200ms var(--ease), gap 240ms var(--ease);
+}
+.atlas-hero-jump span {
+  font-size: 1.1em;
+  color: var(--ochre-ink);
+}
+.atlas-hero-jump:hover,
+.atlas-hero-jump:focus-visible {
+  color: var(--ink);
+  border-bottom-color: var(--ochre);
+  gap: 11px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .atlas-hero-jump { transition: none; }
+}

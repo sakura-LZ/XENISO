@@ -1,0 +1,435 @@
+/*
+ * XENISO · 翻页剧场（theatre.css）
+ * ---------------------------------------------------------------------------
+ * 这一层解决两件此前没被覆盖的事：
+ *
+ *   一、翻页。旧转场只有一块纸色遮罩 320ms 擦走，内容自己是"硬切"进来的——
+ *       读者看到的是一次遮挡，不是一次翻页：没有纸的厚度、没有书脊、没有
+ *       新页被摆上桌的过程。
+ *   二、首屏以下的区块。此前只有带 data-atlas-reveal / data-scene 的区块会动，
+ *       没被接线的区块（各内页大量 atlas-sheet、xnlib-chapter、xd-main…）
+ *       滚进来时完全静止，也解释了"新部分出现没有效果、连浮动都没有"。
+ *
+ * 做法：把每个内页的顶层区块当成"一场戏"，进入视口时按场次挑一种动作：
+ *   peel   掀角   —— 从左下角斜着掀开（clip-path 三角展开，像翻过一页）
+ *   unfold 展卷   —— 从上沿向下展开
+ *   wipe   上推   —— 从下往上推上来，带一点压在桌面上的位移
+ *   rise   浮起   —— 上浮 + 轻微散焦，落到纸上
+ *   bloom  晕开   —— 以圆心向外扩成整块（墨滴入水）
+ *   slide  侧推   —— 从左侧带 mask 抽出
+ *   stack  发牌   —— 从右下带倾角发出，弹性落定
+ *   flip   翻面   —— 绕上沿微微翻起再放下
+ *   hero   页眉   —— 页眉专属：逐项错峰升起（翻页后新页的第一组内容）
+ *
+ * 三条硬约定（沿用本项目此前的踩坑结论）：
+ *   1. 起始态只在 html[data-xn-theatre="1"] 下成立。JS 没接管 = 正文原样可读。
+ *   2. JS 中途抛错 → html[data-xn-theatre="panic"]，一切强制到位。
+ *   3. 减少动态效果 / 打印 → 一切强制到位，不做逐条漏。
+ *
+ * 性能：进场的位移用独立的 translate / rotate / scale 属性，不动 transform，
+ * 这样能和卡片原有的 hover 抬升、纸片倾斜叠加，也不会覆盖它们；所有量都走
+ * 合成层，clip-path 与 opacity 都是可交互动画属性。
+ * ------------------------------------------------------------------------- */
+
+:root {
+  /* 翻页一次的总时长：纸页提起 560ms，新页内容最晚 620ms 到位 */
+  --xn-turn-dur: 560ms;
+  --xn-turn-ease: cubic-bezier(.66, .02, .22, 1);
+  --xn-act-out: cubic-bezier(.16, 1, .3, 1);
+  --xn-act-spring: cubic-bezier(.22, 1.26, .34, 1);
+  --xn-act-dur: 760ms;
+  --xn-act-step: 44ms;
+}
+
+/* ===========================================================================
+ * 1. 区块入场（场次动作）
+ *    状态：data-act-state="arm"（起始） → "play"（到位）
+ *    kind 写在 data-act-kind 上，由 page-theatre.tsx 按路由分配。
+ * ======================================================================== */
+html[data-xn-theatre="1"] [data-act] {
+  transition:
+    opacity 620ms var(--xn-act-out),
+    translate 820ms var(--xn-act-out),
+    rotate 760ms var(--xn-act-out),
+    scale 760ms var(--xn-act-spring),
+    clip-path 840ms var(--xn-act-out),
+    transform 820ms var(--xn-act-out),
+    filter 640ms var(--xn-act-out);
+  transition-delay: var(--xn-act-delay, 0ms);
+}
+
+/* --- peel：从左下角掀开。
+   顶点数必须和终态一致（4 点），否则 polygon 不能插值、会直接跳过去：
+   起始把 4 个顶点都收在左下角一点上，展开时斜着扫出整块，像捏住纸角往上翻。 --- */
+html[data-xn-theatre="1"] [data-act-kind="peel"][data-act-state="arm"] {
+  clip-path: polygon(0 100%, 0 100%, 0 100%, 0 100%);
+  rotate: -1.1deg;
+  translate: 0 6px;
+  opacity: .999;
+}
+
+/* --- unfold：从上沿向下展开 --- */
+html[data-xn-theatre="1"] [data-act-kind="unfold"][data-act-state="arm"] {
+  clip-path: inset(0 0 100% 0);
+  translate: 0 -10px;
+  opacity: .999;
+}
+
+/* --- wipe：从下往上推上来 --- */
+html[data-xn-theatre="1"] [data-act-kind="wipe"][data-act-state="arm"] {
+  clip-path: inset(100% 0 0 0);
+  translate: 0 26px;
+  opacity: .999;
+}
+
+/* --- rise：上浮 + 轻微散焦 --- */
+html[data-xn-theatre="1"] [data-act-kind="rise"][data-act-state="arm"] {
+  opacity: 0;
+  translate: 0 27px;
+  rotate: .3deg;
+  filter: blur(5px);
+}
+
+/* --- bloom：以圆心晕开 --- */
+html[data-xn-theatre="1"] [data-act-kind="bloom"][data-act-state="arm"] {
+  clip-path: circle(0% at 50% 38%);
+  opacity: .999;
+}
+
+/* --- slide：从左侧带 mask 抽出 --- */
+html[data-xn-theatre="1"] [data-act-kind="slide"][data-act-state="arm"] {
+  clip-path: inset(0 100% 0 0);
+  translate: -18px 0;
+  opacity: .999;
+}
+
+/* --- stack：从右下带倾角发出来 --- */
+html[data-xn-theatre="1"] [data-act-kind="stack"][data-act-state="arm"] {
+  opacity: 0;
+  translate: 30px 18px;
+  rotate: 1.5deg;
+  scale: .974;
+}
+
+/* --- flip：绕上沿翻起再放下 --- */
+html[data-xn-theatre="1"] [data-act-kind="flip"][data-act-state="arm"] {
+  opacity: 0;
+  transform: perspective(1400px) rotateX(-9deg) translateY(20px);
+  transform-origin: 50% 0;
+}
+
+/* --- peel 终态：把 4 个顶点撑满整块 --- */
+[data-act-kind="peel"][data-act-state="play"] {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* --- flip 终态：透视翻平 --- */
+[data-act-kind="flip"][data-act-state="play"] {
+  transform: perspective(1400px) rotateX(0deg) translateY(0);
+}
+
+/* 到位：位移类终态一致 */
+[data-act][data-act-state="play"] {
+  opacity: 1;
+  translate: 0 0;
+  rotate: 0deg;
+  scale: 1;
+  filter: none;
+}
+
+/* 用 clip-path 起手的那几种，到位时把遮罩推出去；其余种类全程不设 clip-path，
+   免得给区块内部的 fixed / sticky 元素造出包含块。
+   注意 peel 的终态必须还是 polygon（与起始同为 4 点），换成 inset 就不能插值。 */
+[data-act-kind="unfold"][data-act-state="play"],
+[data-act-kind="wipe"][data-act-state="play"],
+[data-act-kind="bloom"][data-act-state="play"],
+[data-act-kind="slide"][data-act-state="play"] {
+  clip-path: inset(0 0 0 0);
+}
+
+/* 落定：动作播完就彻底摘掉遮罩与透视，之后不再参与合成 */
+[data-act-state="done"] {
+  clip-path: none !important;
+  perspective: none !important;
+  filter: none !important;
+  transform-style: flat;
+}
+
+/* 兜底：JS 标记异常时，所有场次一律到位（与 reading-craft.css 一个思路） */
+html[data-xn-theatre="panic"] [data-act],
+html:not([data-xn-theatre="1"]) [data-act] {
+  opacity: 1 !important;
+  translate: none !important;
+  rotate: none !important;
+  scale: none !important;
+  filter: none !important;
+  clip-path: none !important;
+}
+
+/* ===========================================================================
+ * 2. 页眉（hero）：翻页后新页的第一组内容，逐项错峰升起
+ *    只作用于 main 里的顶层页眉，且只在"这一页是翻页进来的"时给延迟。
+ * ======================================================================== */
+html[data-xn-theatre="1"] [data-act-kind="hero"][data-act-state="arm"] > * {
+  opacity: 0;
+  translate: 0 16px;
+}
+html[data-xn-theatre="1"] [data-act-kind="hero"][data-act-state="play"] > * {
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity 520ms var(--xn-act-out),
+    translate 640ms var(--xn-act-spring);
+  transition-delay: calc(var(--xn-hero-i, 0) * 78ms + 40ms);
+}
+[data-act-kind="hero"] > :nth-child(1) { --xn-hero-i: 0; }
+[data-act-kind="hero"] > :nth-child(2) { --xn-hero-i: 1; }
+[data-act-kind="hero"] > :nth-child(3) { --xn-hero-i: 2; }
+[data-act-kind="hero"] > :nth-child(4) { --xn-hero-i: 3; }
+[data-act-kind="hero"] > :nth-child(5) { --xn-hero-i: 4; }
+[data-act-kind="hero"] > :nth-child(6) { --xn-hero-i: 5; }
+[data-act-kind="hero"] > :nth-child(n+7) { --xn-hero-i: 6; }
+
+/* 页眉里的标题不给 opacity 0 起步：它多半是 LCP 元素。改成 0.001→1 之外
+   更容易被读到的方式——用横向拉开的墨线代替，文字始终可读。 */
+html[data-xn-theatre="1"] [data-act-kind="hero"][data-act-state="arm"] > h1 {
+  opacity: 1;
+  translate: 0 10px;
+}
+
+/* ===========================================================================
+ * 3. 翻页转场
+ *    旧版：一块纸色遮罩 320ms 上擦。
+ *    新版四层，总长仍控制在 560ms 内，不阻塞点击：
+ *      a 纸页本体：提起时带一点透视倾斜，下沿留一道墨色渐隐（纸的厚度）
+ *      b 书脊：左起一道竖线，随翻页从上往下走一遍，像把整本书翻开
+ *      c 折角：右下角翻起的一角纸片，翻页过程中露一下
+ *      d 反光：纸面被掀起时的一道柔光斜扫
+ * ======================================================================== */
+.xn-route-veil.xn-route-veil {
+  background:
+    linear-gradient(180deg, var(--paper-3) 0%, var(--paper-2) 62%, var(--paper) 100%);
+  box-shadow: 0 18px 48px -18px rgb(33 31 25 / .38);
+  will-change: transform;
+}
+/* 下沿：纸被提起时压在下面那一页上的投影 */
+.xn-route-veil.xn-route-veil::after {
+  height: 42px;
+  background: linear-gradient(180deg, rgb(33 31 25 / .16), transparent);
+}
+.xn-route-veil.is-play.is-play {
+  animation: xn-turn-lift var(--xn-turn-dur) var(--xn-turn-ease) both;
+}
+@keyframes xn-turn-lift {
+  0% {
+    transform: perspective(1600px) translate3d(0, 0, 0) rotateX(0deg) scale(1.001);
+    opacity: 1;
+  }
+  42% {
+    /* 提起的瞬间略微放大，像纸离桌面 */
+    transform: perspective(1600px) translate3d(0, -34%, 0) rotateX(2.6deg) scale(1.006);
+    opacity: 1;
+  }
+  100% {
+    transform: perspective(1600px) translate3d(0, -103%, 0) rotateX(7deg) scale(1.012);
+    opacity: 1;
+  }
+}
+
+/* b 书脊 */
+.xn-veil-spine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: clamp(18px, 6.5vw, 96px);
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgb(33 31 25 / .28) 22%, rgb(33 31 25 / .28) 78%, transparent);
+  transform: scaleY(0);
+  transform-origin: top center;
+  opacity: 0;
+}
+.xn-route-veil.is-play .xn-veil-spine {
+  animation: xn-veil-spine 420ms cubic-bezier(.3, .8, .3, 1) 40ms both;
+}
+@keyframes xn-veil-spine {
+  0% { transform: scaleY(0); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: scaleY(1); opacity: .8; }
+}
+
+/* c 折角：右下角那一小块翻起来的纸 */
+.xn-veil-fold {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 118px;
+  height: 118px;
+  background:
+    linear-gradient(135deg, transparent 49.2%, rgb(33 31 25 / .10) 50%, var(--paper) 52%);
+  filter: drop-shadow(-6px -6px 10px rgb(33 31 25 / .10));
+  transform-origin: 100% 100%;
+  transform: scale(.001);
+  opacity: .9;
+}
+.xn-route-veil.is-play .xn-veil-fold {
+  animation: xn-veil-fold 480ms cubic-bezier(.2, .9, .3, 1) 90ms both;
+}
+@keyframes xn-veil-fold {
+  0% { transform: scale(.001) rotate(0deg); }
+  55% { transform: scale(1) rotate(-2deg); }
+  100% { transform: scale(1.02) rotate(0deg); }
+}
+
+/* d 反光：纸面被掀起时斜扫过去的一道柔光 */
+.xn-turn-sheen {
+  position: fixed;
+  inset: 0;
+  z-index: 89;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: soft-light;
+  background-image: linear-gradient(
+    104deg,
+    transparent 30%,
+    rgb(255 253 244 / .9) 45%,
+    rgb(255 253 244 / .35) 52%,
+    transparent 66%
+  );
+  background-size: 240% 100%;
+  background-position: 130% 0;
+}
+.xn-turn-sheen.is-play {
+  animation: xn-turn-sheen 760ms cubic-bezier(.3, .6, .2, 1) 140ms both;
+}
+@keyframes xn-turn-sheen {
+  0% { opacity: 0; background-position: 130% 0; }
+  18% { opacity: .75; }
+  100% { opacity: 0; background-position: -70% 0; }
+}
+
+/* ===========================================================================
+ * 4. 常驻浮动（ambient）
+ *    纸面上一直在飘的东西：细小的纤维与尘点。极轻，不参与阅读。
+ *    DOM 由 page-theatre.tsx 创建；这里只管形状与轨迹。
+ * ========================================================================== */
+.xn-ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  mix-blend-mode: multiply;
+}
+.xn-ambient i {
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--ink);
+  opacity: .16;
+  animation: xn-mote-drift var(--dur, 34s) linear var(--delay, 0s) infinite;
+  will-change: transform;
+}
+/* 纤维：细长的一条纸屑，比尘点更慢、更淡 */
+.xn-ambient i[data-fiber="1"] {
+  width: 1px;
+  height: var(--len, 14px);
+  border-radius: 1px;
+  background: var(--ink-3);
+  opacity: .1;
+  rotate: var(--tilt, 18deg);
+  animation-name: xn-fiber-drift;
+}
+@keyframes xn-mote-drift {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  12% { opacity: .18; }
+  50% { transform: translate3d(14px, -46vh, 0); opacity: .22; }
+  78% { opacity: .12; }
+  100% { transform: translate3d(-10px, -92vh, 0); opacity: 0; }
+}
+@keyframes xn-fiber-drift {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+  16% { opacity: .12; }
+  60% { transform: translate3d(-22px, -52vh, 0) rotate(24deg); opacity: .14; }
+  100% { transform: translate3d(8px, -96vh, 0) rotate(-14deg); opacity: 0; }
+}
+
+/* ===========================================================================
+ * 5. 悬停与按压：内页的"手感"
+ *    此前 hover 抬升只挂在首页纸上（.atlas-lift）与主按钮上。内页的任务卡、
+ *    帖子、目录条目都是死的。这里只补"小而可点"的物件，整块纸面不动。
+ * ======================================================================== */
+@media (hover: hover) and (pointer: fine) {
+  .xd-task,
+  .community-slip,
+  .community-rail-card,
+  .xp-entry,
+  .xnlib-chapter,
+  .match-candidate {
+    transition:
+      translate 420ms var(--xn-act-spring),
+      box-shadow 420ms var(--xn-act-out);
+  }
+  .xd-task:hover,
+  .community-slip:hover,
+  .community-rail-card:hover,
+  .xp-entry:hover,
+  .xnlib-chapter:hover,
+  .match-candidate:hover {
+    translate: 0 -3px;
+    box-shadow: 0 12px 28px -14px rgb(33 31 25 / .34);
+  }
+  /* 纸边被指尖压住的一下发亮：只动一条极细的轮廓，不整块发光 */
+  .xd-task:active,
+  .community-slip:active,
+  .xp-entry:active {
+    translate: 0 -1px;
+    scale: .996;
+    transition-duration: 90ms;
+  }
+}
+
+/* 正文里的站内链接：下划线从左往右长出来 */
+main a.xr-textlink,
+main .account-section a:not(.button):not(.atlas-btn) {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1px;
+  transition: background-size 320ms var(--xn-act-out);
+}
+main a.xr-textlink:hover,
+main .account-section a:not(.button):not(.atlas-btn):hover {
+  background-size: 100% 1px;
+}
+
+/* ===========================================================================
+ * 6. 降级
+ * ======================================================================== */
+@media (prefers-reduced-motion: reduce), print {
+  html[data-xn-theatre="1"] [data-act],
+  html[data-xn-theatre="1"] [data-act-kind="hero"][data-act-state="arm"] > * {
+    opacity: 1 !important;
+    translate: none !important;
+    rotate: none !important;
+    scale: none !important;
+    filter: none !important;
+    clip-path: none !important;
+    transition: none !important;
+    animation: none !important;
+    perspective: none !important;
+  }
+
+  .xn-route-veil,
+  .xn-route-veil.is-play,
+  .xn-turn-sheen { display: none !important; }
+
+  .xn-ambient { display: none !important; }
+
+  .xd-task:hover,
+  .community-slip:hover,
+  .community-rail-card:hover,
+  .xp-entry:hover,
+  .xnlib-chapter:hover { translate: none !important; box-shadow: none !important; }
+}

@@ -142,7 +142,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
     <Link href={directoryUrl} onClick={event => follow(event, directoryState)} className="xnlib-back">返回信息文库</Link>
     <header className="xnlib-compare-head">
       <h1>方向比较</h1>
-      <p className="xnlib-compare-note">这张表把两个方向的工作、能力缺口和报考条件排在一起，只为方便你对照。它不排优劣，也不给适合度百分比：两条路都有人走通，差别在门槛和起步任务。</p>
+      <p className="xnlib-compare-note">这张表只用来并排对照，不排优劣，也不给适合度百分比。两条路都有人走通，差别只在门槛和起步任务。</p>
     </header>
     {state.compare.length !== 2
       ? <div className="xnlib-empty" role="status"><p>选两个方向才能并排比较。现在只选了一个，或者还没选。</p><Link className="button secondary" href={directoryUrl} onClick={event => follow(event, directoryState)}>回目录选方向</Link></div>
@@ -166,7 +166,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
           <span className="atlas-chip" data-tone="ok">资料按来源逐条标注</span>
         </div>
         <p className="xnlib-file-lede">{handbook.overview}</p>
-        <p className="xnlib-file-rule"><span className="xnlib-file-rule-icon" aria-hidden="true"><IconQuote /></span><span>引文照抄来源原文，院校、年份和统计对象分别核对。标题和方向归属是站内编辑索引，不是来源原文；抓取不到或原文没写的，标「没查到」。</span></p>
+        <p className="xnlib-file-rule"><span className="xnlib-file-rule-icon" aria-hidden="true"><IconQuote /></span><span>引文照录原文，院校、年份和统计对象均已核对。标题与归属是站内索引，非原文自带；没写或查不到的，标「没查到」。</span></p>
         <div className="xnlib-file-actions">
           <Link className="button secondary" href={`/experience?direction=${current.id}`}>看这个方向的练习任务</Link>
           <label className="xnlib-check"><input type="checkbox" checked={state.compare.includes(current.id)} onChange={() => toggle(current.id)} />加入比较</label>
@@ -183,9 +183,9 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
             <section id="chapter-overview" className="xnlib-chapter">
               <ChapterHead entry={chapters[0]} />
               <ul className="xnlib-plain-list">{current.work_tasks.map(task => <li key={task}>{task}</li>)}</ul>
-              {medicine ? <p className="xnlib-note">医院科室、招生学科和岗位身份要分开核对。科室介绍不能证明个人的报考、执业或入职资格。</p> : <>
+              {medicine ? <p className="xnlib-note">科室、学科和岗位得拆开看。科室介绍证明不了个人报考或入职资格。</p> : <>
                 <Fold label="对应到哪些职业" count={current.onet.length}>
-                  <p className="xnlib-note">职业来自 O*NET；与国内研究方向的对应由 LIMEN 编辑整理，不是 O*NET 的结论。</p>
+                  <p className="xnlib-note">职业取自 O*NET，与国内方向的对应由 LIMEN 整理，不是 O*NET 结论。</p>
                   <ul className="xnlib-sources">{current.onet.map(item => <li key={item.code}><a href={occupationUrl(item.code)} target="_blank" rel="noreferrer">{item.name}</a><span className="xnlib-source-code">SOC {item.code} · {relationshipLabel[item.relationship] ?? item.relationship}</span></li>)}</ul>
                 </Fold>
                 <Fold label="来源资料与检索">
@@ -254,7 +254,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
             </section>
             <section id="chapter-industry" className="xnlib-chapter">
               <ChapterHead entry={chapters[5]} />
-              <p>看原文先看发布单位、发布日期和统计对象。一个岗位、一所院校或一年的样本，都不代表整个行业。</p>
+              <p>看清发布单位、日期和统计对象。单个岗位或单年样本，都不代表整个行业。</p>
               {medicine ? <Fold label="科室与执业资料"><MedicineBrowser initialView="departments" /></Fold> : <>
                 <Fold label="招聘原文与检索"><OfficialDossier directionId={current.id} initialCategory="recruitment" chapterMode /></Fold>
                 <Fold label="行业与就业统计"><OfficialDossier directionId={current.id} initialCategory="industry" chapterMode /></Fold>
@@ -271,7 +271,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
       <InkField className="page-ink" band />
       <div>
         <h1><IconBook aria-hidden="true" />信息文库</h1>
-        <p className="xnlib-lede">这里收三样能查的东西：O*NET 的职业条目、公司招聘页上写的岗位要求、院系招生目录里的考试科目。每条资料都带来源和抓取时间；原文没写的，我们写「没查到」，不替它补。</p>
+        <p className="xnlib-lede">只查三样：O*NET 职业、公司招聘要求、院系招生目录考试科目。原文没写的直接标「没查到」。</p>
       </div>
       <label className="xnlib-search">
         <span>检索方向或工作内容</span>
@@ -285,7 +285,7 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
       <h2 id="xnlib-howto-title"><IconStamp aria-hidden="true" />这本文库怎么用</h2>
       <ol className="xnlib-howto-steps">
         <li><b>先按分类收窄。</b>左栏是站内编辑的方向分组，不是官方学科目录。</li>
-        <li><b>点一行展开读原文。</b>每份资料都带来源与抓取时间；原文没写的写「没查到」。</li>
+        <li><b>点一行展开读原文。</b></li>
         <li><b>勾两个方向并排比。</b>行末的勾选框凑够两个，就能拉出对照视图。</li>
       </ol>
       <div className="xnlib-howto-actions">
@@ -302,7 +302,6 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
           <button className="xnlib-rail-btn" aria-pressed={state.group === "all"} onClick={() => navigate({ ...state, group: "all" }, false, true)}>全部方向<span className="xnlib-rail-count">{directions.length}</span></button>
           {groups.map(group => <button key={group.id} className="xnlib-rail-btn" aria-pressed={state.group === group.id} onClick={() => navigate({ ...state, group: group.id }, false, true)}>{group.name}<span className="xnlib-rail-count">{group.specializations.length}</span></button>)}
         </div>
-        <p className="xnlib-rail-note">分类是站内编辑的方向分组，不是官方学科目录。</p>
         <ul className="xnlib-legend">
           <li><span className="atlas-chip" data-tone="ok">有出处</span>原文能查到</li>
           <li><span className="atlas-chip" data-tone="miss">没查到</span>原文没写或没公开</li>
@@ -313,7 +312,6 @@ export function DirectionBrowser({ initialParams = {} }: { initialParams?: Libra
         <div className="xnlib-drawers-head">
           <h2 className="xnlib-drawers-title">方向清单</h2>
           <p className="xnlib-drawers-count" role="status">共 {visible.length} 个方向</p>
-          <p className="xnlib-drawers-count">每行末尾可以勾选，凑够两个就能并排比较</p>
         </div>
         <ul className="xnlib-drawer" key={`${state.query}:${state.group}`}>
           {visible.map(item => {

@@ -350,19 +350,19 @@ h2.is-typing .xn-lead {
 
 /* ===========================================================================
  * 9. 笔形光标（pen cursor）
- *    指针本身就是那支笔：笔尖对准真实点击点（hotspot 2 29），
- *    点到哪里，墨点就落在哪里，不再需要一串跟着跑的圆点。
+ *    指针本身就是那支笔：笔尖对准真实点击点（hotspot 2 2，与 pen.svg 里
+ *    落在 (2,2) 的尖端一致），点到哪里，墨点就落在哪里，不再需要一串跟着跑的圆点。
  *    只接管首页（含 .atlas-hero 的 main）；表单输入仍是文本光标。
  *    :has() 不支持时整条规则不生效，退回系统指针，不影响可用性。
  * ========================================================================= */
 main:has(.atlas-hero) {
-  cursor: url("/cursor/pen.svg") 2 29, auto;
+  cursor: url("/cursor/pen.svg") 2 2, auto;
 }
 /* 只在真有精确指针的设备上换光标：触屏没有指针可看，不必付这份风险 */
 @media (hover: hover) and (pointer: fine) {
   main:has(.atlas-hero),
   main:has(.atlas-hero) * {
-    cursor: url("/cursor/pen.svg") 2 29, auto;
+    cursor: url("/cursor/pen.svg") 2 2, auto;
   }
   /* 正文/标题保留 I-beam：笔形光标压在文字上会让人没法判断"这里能不能选字"，
      读者要复制一段话时会找不到落点。笔只出现在纸面、卡片、按钮这些"能画的地方"。 */
@@ -373,7 +373,7 @@ main:has(.atlas-hero) {
   }
   /* 但这些容器内的可点元素仍然用笔 */
   main:has(.atlas-hero) :is(a, button, summary, [role="button"]) {
-    cursor: url("/cursor/pen.svg") 2 29, auto;
+    cursor: url("/cursor/pen.svg") 2 2, auto;
   }
   main:has(.atlas-hero) :is(input, textarea, select, [contenteditable="true"]) {
     cursor: text;

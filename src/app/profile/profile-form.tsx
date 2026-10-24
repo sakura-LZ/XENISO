@@ -165,8 +165,7 @@ export function ProfileForm() {
       <div className="enter">
         <h1><IconProfile aria-hidden="true" />填写个人画像</h1>
         <p className="xp-lede">
-          四节共 20 项，只记录你已经有的东西，填进<b>能力底册</b>。
-          没有的部分留空即可，空着不会扣分，也不会被当成零分能力。
+          四节 20 项，有就填进<b>能力底册</b>。没有直接留着，空着不会扣分，不算零分能力。
         </p>
       </div>
       <aside className="xp-meter enter xp-meter-d1" aria-label="填写进度">
@@ -190,7 +189,6 @@ export function ProfileForm() {
         })}
         <div className="xp-aside">
           <span className="xp-aside-big">{progress.done} / {progress.total}</span>
-          每填完一项，左边的章会重新盖一次。
           <span key={stampPulse} className={`atlas-stamp ochre${stampPulse ? " xp-stamp-drop" : ""}`} aria-hidden="true">已填 {progress.done} 项</span>
         </div>
         <label className="xp-mobile-group form-label">当前分组
@@ -264,7 +262,7 @@ export function ProfileForm() {
 
               <div className="xp-subsec">
                 <h3>科研项目与成果</h3>
-                <p className="xp-hint">只填你真正上手做过的；旁观和打杂不算。第 2 步按“承担的工作”判断迁移。</p>
+                <p className="xp-hint">真上手干过的才写，围观打杂不算。</p>
                 {profile.research_projects.map((project, i) => <fieldset className="repeat-item xp-repeat" key={i}>
                   <legend>项目 {i + 1}</legend>
                   <div className="xp-grid">
@@ -350,7 +348,7 @@ export function ProfileForm() {
 
           <div className="xp-actions">
             <p className="xp-actions-note">
-              保存只写进你自己的档案。20 项里填到 18 项，第 2 步的按钮就解除禁用；剩下那 2 项可以带着没想清楚的地方往下走，之后回来补。
+              存进个人档案。填够 18 项就能去下一步，没想清的回头再补。
             </p>
             <div className="xp-action-row">
               <button type="submit" className="button secondary" disabled={busy || loading || readFailed}><IconStamp aria-hidden="true" />{busy ? "保存中…" : "保存草稿"}</button>

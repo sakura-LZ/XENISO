@@ -218,18 +218,64 @@ html[data-xn-scenes="1"] [data-scene-kind="plate"][data-scene-arm="1"] {
 }
 
 /* ===========================================================================
- * 8. 本层自带的最小兜底（完整的保障见 reading-craft.css）
+ * 8. 标签弹出（SOC 码、技能词、状态标记）
+ *    尺寸小、数量多，用"弹一下"而不是"淡入"：从 .9 倍弹到 1，收尾过冲一次。
+ *    和列表盖章的区别：盖章是自上而下落下，这里是原地鼓起，不抢正文视线。
+ * ======================================================================== */
+@keyframes xn-scene-chip {
+  0% { opacity: 0; transform: translate3d(0, 7px, 0) scale(.9); }
+  62% { opacity: 1; transform: translate3d(0, -1px, 0) scale(1.035); }
+  100% { opacity: 1; transform: none; }
+}
+
+html[data-xn-scenes="1"] [data-scene-kind="chips"][data-scene-arm="1"] > * {
+  opacity: 0;
+  transform: translate3d(0, 7px, 0) scale(.9);
+}
+
+[data-scene-kind="chips"][data-scene-play="1"] > * {
+  animation: xn-scene-chip 420ms var(--xn-spring-soft) both;
+  animation-delay: calc(var(--xn-i, 0) * 38ms);
+}
+
+/* ===========================================================================
+ * 9. 键值说明行（atlas-kv / account-kv / xr-meta）
+ *    从左侧一条条抽出来，配一点散焦。和正文的"逐行压字"分开：
+ *    这里是一行一行滑入，正文是整段被揭开。
+ * ======================================================================== */
+html[data-xn-scenes="1"] [data-scene-kind="kv"][data-scene-arm="1"] > * {
+  opacity: 0;
+  transform: translate3d(-12px, 0, 0);
+  filter: blur(2px);
+}
+
+[data-scene-kind="kv"][data-scene-play="1"] > * {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition:
+    opacity 420ms var(--xn-out) calc(var(--xn-i, 0) * 56ms),
+    transform 520ms var(--xn-out) calc(var(--xn-i, 0) * 56ms),
+    filter 460ms var(--xn-out) calc(var(--xn-i, 0) * 56ms);
+}
+
+/* ===========================================================================
+ * 10. 本层自带的最小兜底（完整的保障见 reading-craft.css）
  *    减少动态效果 / 打印时，所有场景直接到位。
  * ======================================================================== */
 @media (prefers-reduced-motion: reduce), print {
   [data-scene-kind="stamp"] > *,
+  [data-scene-kind="chips"] > *,
+  [data-scene-kind="kv"] > *,
   [data-scene-kind="rule"] tbody tr > *,
   [data-scene-kind="lines"],
   [data-scene-kind="plate"] {
     opacity: 1 !important;
     transform: none !important;
     clip-path: none !important;
+    filter: none !important;
     animation: none !important;
+    transition: none !important;
   }
 
   [data-scene-kind="rule"] tbody tr::after {

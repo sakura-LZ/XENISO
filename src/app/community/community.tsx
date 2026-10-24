@@ -67,8 +67,8 @@ const SAMPLE_POSTS: { kind: PostKind; label: string; title: string; body: string
   {
     kind: "experience",
     label: "经验",
-    title: "做完心电那个体验，我确定不做纯算法了",
-    body: "体验任务是把一段心电数据做出可解释的异常片段。我花了两天调模型，第三天才发现真正想弄清的是那段波形在临床上意味着什么，于是把方向往信号处理挪了。",
+    title: "做完「换设备后，模型还可靠吗」，我往数据核验挪了",
+    body: "做完才发现，我纠结的不是模型准不准，而是两组设备的数据能不能直接比。写理由时想清楚了：我更想弄清记录怎么采、谁核对。成果卡存了，下周找带教老师核一遍采集流程。",
   },
   {
     kind: "help",
@@ -350,7 +350,7 @@ export function Community() {
       <AmbientVideo src="/brand/community-background.mp4" ariaLabel="环境底纹" />
       <div>
         <h1 className="community-title"><IconPin className="community-title-icon" aria-hidden="true" />交流社区</h1>
-        <p className="community-lede">只收求助与经验两类，全部匿名展示。</p>
+        <p className="community-lede">只收求助和经验两类，全部匿名。</p>
       </div>
       <p className="community-head-meta">
         {member
@@ -365,11 +365,6 @@ export function Community() {
         </a>
       </div>
     </header>
-
-    <p className="community-limits">
-      <IconWarning aria-hidden="true" />
-      <span>回复暂未开放 · 别人的帖子只能举报 · 只有自己发的能删</span>
-    </p>
 
     {feedback && <p className="community-notice" data-tone={feedback.tone} key={feedback.text} role="status" aria-live="polite">
       {feedback.tone === "ok" ? <IconStamp aria-hidden="true" /> : <IconWarning aria-hidden="true" />}
@@ -448,7 +443,6 @@ export function Community() {
             <div className="community-preview-head">
               <h2 id="preview-title">两类帖子 · 示例</h2>
             </div>
-            <p className="community-note">合成内容，不能举报或删除。</p>
             <ul className="community-preview-list">
               {SAMPLE_POSTS.map(sample => <li key={sample.title}>
                 <article className="community-slip atlas-sheet" data-kind={sample.kind}>
@@ -468,7 +462,7 @@ export function Community() {
           <section className="community-compose atlas-sheet" aria-labelledby="compose-title">
             <span className="atlas-tape tr" aria-hidden="true" />
             <h2 id="compose-title">发一条新帖</h2>
-            <p className="community-note">写清卡在哪一步，或做完之后什么变了。发出后只显示「匿名探索者」。</p>
+            <p className="community-note">写清卡在哪步、做完变了什么。发帖只显示「匿名探索者」；帖子不能编辑，别人发的只能举报。</p>
             <form onSubmit={event => { event.preventDefault(); void publish(); }} noValidate>
               <fieldset className="community-kinds">
                 <legend className="form-label">类型</legend>

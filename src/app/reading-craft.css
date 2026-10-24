@@ -146,3 +146,40 @@ html[data-xn-scenes="panic"] [data-scene-kind="shift"] {
 [data-scene-kind="ink"] {
   display: block;
 }
+
+/* ===========================================================================
+ * E. 后续新增场景（chips 标签 / kv 键值行）的兜底
+ *    与上面四道兜底同一口径：任何一道成立，它们都必须直接到位。
+ * ======================================================================== */
+html:not([data-xn-scenes="1"]) [data-scene-kind="chips"] > *,
+html:not([data-xn-scenes="1"]) [data-scene-kind="kv"] > *,
+html[data-xn-scenes="panic"] [data-scene-kind="chips"] > *,
+html[data-xn-scenes="panic"] [data-scene-kind="kv"] > * {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  animation: none !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scene-kind="chips"] > *,
+  [data-scene-kind="kv"] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media print {
+  [data-scene-kind="chips"] > *,
+  [data-scene-kind="kv"] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

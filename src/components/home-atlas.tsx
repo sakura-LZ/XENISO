@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { InkField } from "@/components/ink-field";
-import { ChromaInkStage } from "@/components/chroma-ink-stage";
+import { RegisterPress, RegisterPressCopy } from "@/components/register-press";
 import { HomeScene } from "@/components/home-scene";
 import { FilingDrawer } from "@/components/filing-drawer";
 import { IconProfile, IconQuiz, IconPulse, IconCalendar } from "@/components/icons";
@@ -78,10 +78,10 @@ export function HomeAtlas() {
             <p className="t-meta atlas-hero-meta">
               XENISO 异域同构 · 全程 8–12 分钟，可以随时停下。填的东西只进你自己的档案，随时能删。
             </p>
-            {/* 色键墨迹那一屏在首屏之下（区块顶边约 876px，视口 900），
+            {/* 对版台那一屏在首屏之下（区块顶边约 876px，视口 900），
                 不滚一下只能看到 24px。这里给一个明确的向下指引，避免"页面上没有"。 */}
-            <a className="atlas-hero-jump" href="#ink-stage">
-              往下看：你的经历摊开会是什么样
+            <a className="atlas-hero-jump" href="#register-press">
+              往下看：换个领域，一半的动词是同一个
               <span aria-hidden="true">↓</span>
             </a>
           </div>
@@ -103,28 +103,14 @@ export function HomeAtlas() {
         </div>
       </div>
 
-      {/* ---------- 色键墨迹舞台：同一件事的四种看法 ---------- */}
-      <section className="chroma-band" id="ink-stage">
-        <div className="chroma-band-ink" aria-hidden="true">
-          <ChromaInkStage className="chroma-canvas" />
-        </div>
-        <div className="container chroma-band-inner">
-          <div className="chroma-copy" data-atlas-reveal>
-            <p className="atlas-label">色键墨迹 · 实时生成</p>
-            <h2 className="t-section">你走过的路，换个角度就能看见结构</h2>
-            <p>
-              左边这幅墨迹是实时画的：先在绿幕上成形，再逐像素抠掉底色，才落到这张纸上。
-              光标在这一块左右移动，墨迹就换一种形态——四种形态对应你要走的四步，
-              编号和下面那只档案抽屉是同一套。
-            </p>
-            <ul className="chroma-legend">
-              <li><b>01 盘点</b><span>一圈圈叠起来的墨环：先看清手上已经有了什么</span></li>
-              <li><b>02 评价</b><span>墨往中心收成涡：兴趣与能力只留下交集那一块</span></li>
-              <li><b>03 体验</b><span>一道心电节律：真的做过一遍，才知道它的起伏</span></li>
-              <li><b>04 规划</b><span>排进周次的格纸：填到第几格，就算排到了哪里</span></li>
-            </ul>
-            <p className="chroma-hint">光标左右移动，换一种墨迹形态——四种形态就是四步</p>
-          </div>
+      {/* ---------- 对版台：把你的经历和目标领域印到同一张纸上 ----------
+          这一屏换过三版：随鼠标变形的水墨画布（抽象、和网站无关）、逐条核对的
+          表格（清楚但没劲）、现在是印刷里的「对版」——两版印张没对准时字是虚的，
+          对上了才实。可拖、可对，对上亮勾环、落「已对版」的章。 */}
+      <section className="rp-band" id="register-press">
+        <div className="container rp-band-inner">
+          <RegisterPressCopy />
+          <RegisterPress />
         </div>
       </section>
 
