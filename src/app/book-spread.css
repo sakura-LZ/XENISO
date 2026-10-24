@@ -15,7 +15,14 @@
 .bk-head h2 { margin: 12px 0 0; }
 .bk-lede { margin: 14px 0 0; }
 
-.bk-stage { margin-top: 34px; }
+.bk-stage {
+  margin-top: 34px;
+  /* 父级若是 flex/grid，子项会按内容收缩（shrink-to-fit）而溢出容器；
+     显式给满宽，让这一屏永远落在容器的内容盒里 */
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
 .bk-shelf { position: relative; }
 
 /* 桌面投影：单独一层。不用 filter 包住书本身——filter 会把 3D 上下文压平 */
@@ -40,6 +47,10 @@
   position: relative;
   z-index: 1;
   height: var(--bk-h);
+  /* 同上：手机端父级收缩时书会跟着变宽，钉死满宽 */
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   perspective: 1900px;
   perspective-origin: 50% 46%;
   transform-style: preserve-3d;
