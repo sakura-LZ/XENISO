@@ -458,9 +458,9 @@ button.xd-stage-btn:not(:disabled):hover { color: var(--ink); padding-left: 6px;
   letter-spacing: .08em;
   color: var(--green-deep);
 }
-.xd-task-title { margin: 6px 0 0; font-family: var(--font-serif); font-size: var(--fs-h3); line-height: var(--lh-h3); color: var(--ink); }
+.xd-task-title { margin: 6px 0 0; font-family: var(--font-serif); font-size: var(--fs-lead); line-height: 1.45; color: var(--ink); }
 .xd-task-brief { margin: 8px 0 0; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-2); }
-.xd-task-mark { font-family: var(--font-mono); font-size: var(--fs-h3); color: var(--green); line-height: 1.2; }
+.xd-task-mark { font-family: var(--font-mono); font-size: var(--fs-lead); color: var(--green); line-height: 1.2; }
 .xd-task-body { padding: 0 22px 20px; border-top: 1px dashed var(--line); }
 .xd-modes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
 .xd-mode {

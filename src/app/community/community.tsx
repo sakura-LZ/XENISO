@@ -382,7 +382,7 @@ export function Community() {
           <section className="community-compose atlas-sheet" data-atlas-reveal aria-labelledby="gate-title">
           <span className="atlas-pin" aria-hidden="true" />
           <h2 id="gate-title"><IconWarning aria-hidden="true" />先验证邮箱，再看帖子</h2>
-          <p className="community-note">读写都要先验证邮箱：有人发广告时，我们要能找到发帖人。邮箱不公开，别人只看到「匿名探索者」。</p>
+          
           <form onSubmit={event => { event.preventDefault(); void verifyEmail(); }}>
             <label className="form-label" htmlFor="community-auth-mode">这个邮箱怎么用</label>
             <select
