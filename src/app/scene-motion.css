@@ -1,0 +1,73 @@
+/* 首页首屏右侧「档案夹」的指针微交互。
+   行为与数值见 src/components/home-scene-motion.tsx 顶部说明；
+   这里只负责消费两个变量：
+
+     --hs-rx / --hs-ry   整叠的倾斜角
+     --hs-dx / --hs-dy   每片纸的位移（按 --hs-depth 分层 + 靠近指针时让位）
+
+   只在 JS 主动打上 data-hs-motion="1" 时生效。没有这个属性时，
+   folder / thread / archive / stamp / 四张卡完全走 home.css 的静态版式，
+   所以 JS 不跑、reduced-motion、平板和手机都不会多出一层 transform。 */
+
+.hero-scene[data-hs-motion="1"] {
+  transform: perspective(1300px) rotateX(var(--hs-rx, 0deg)) rotateY(var(--hs-ry, 0deg));
+  transform-origin: 50% 46%;
+  /* 必须盖掉 atlas.css 里 [data-atlas-reveal] 的 transform 620ms 过渡：
+     那一条是给"入场从下方浮上来"用的，留着会把每帧 rAF 的倾斜再拖 620ms，
+     指针一动手就明显跟不上。归零由 JS 自己插值，不需要 CSS 过渡。 */
+  transition: none;
+  will-change: transform;
+}
+
+/* 档案夹、串线、图版、印章：保留各自的基础旋转，只叠加位移。 */
+.hero-scene[data-hs-motion="1"] > .scene-folder {
+  transform: translate3d(var(--hs-dx, 0px), var(--hs-dy, 0px), 0) rotate(-1.2deg);
+}
+.hero-scene[data-hs-motion="1"] > .scene-thread {
+  transform: translate3d(var(--hs-dx, 0px), var(--hs-dy, 0px), 0);
+}
+.hero-scene[data-hs-motion="1"] > .scene-archive {
+  transform: translate3d(var(--hs-dx, 0px), var(--hs-dy, 0px), 0) rotate(-4.6deg);
+}
+.hero-scene[data-hs-motion="1"] > .scene-stamp {
+  transform: translate3d(var(--hs-dx, 0px), var(--hs-dy, 0px), 0) rotate(6deg);
+}
+
+/* 四张步骤卡：位移 + 各自的基础倾角（角度与 home.css 的 .scene-cN 一致，
+   这里因为要合成 transform，只能把倾角改写到 --hs-rot 上）。 */
+.hero-scene[data-hs-motion="1"] > .scene-card {
+  transform:
+    translate3d(var(--hs-dx, 0px), var(--hs-dy, 0px), 0)
+    rotate(calc(var(--hs-rot, 0deg) + var(--hs-sway, 0deg)));
+  transition: box-shadow 380ms var(--xn-out);
+}
+.hero-scene[data-hs-motion="1"] > .scene-c1 { --hs-rot: -3.2deg; }
+.hero-scene[data-hs-motion="1"] > .scene-c2 { --hs-rot: 2.6deg; }
+.hero-scene[data-hs-motion="1"] > .scene-c3 { --hs-rot: 1.8deg; }
+.hero-scene[data-hs-motion="1"] > .scene-c4 { --hs-rot: -2.4deg; }
+
+/* 指针压住的那张纸：不跟视差滑走，只沉 1.4px、影子贴回纸面。
+   这是"手按住一张纸"的反馈，不是按钮的悬停态（卡片本身不可点）。 */
+.hero-scene[data-hs-motion="1"] > .scene-card[data-hs-press="1"] {
+  box-shadow:
+    1px 1px 0 rgb(33 31 25 / .06),
+    0 10px 16px -22px rgb(33 31 25 / .8);
+}
+
+.hero-scene[data-hs-motion="1"] > .scene-card,
+.hero-scene[data-hs-motion="1"] > .scene-folder,
+.hero-scene[data-hs-motion="1"] > .scene-thread,
+.hero-scene[data-hs-motion="1"] > .scene-archive,
+.hero-scene[data-hs-motion="1"] > .scene-stamp {
+  will-change: transform;
+}
+
+/* 打印时上面那几层如果正开着，会把位置按 0 位移重算；这里直接退回静态版式。 */
+@media print {
+  .hero-scene[data-hs-motion="1"] { transform: none !important; }
+  .hero-scene[data-hs-motion="1"] > .scene-folder { transform: rotate(-1.2deg) !important; }
+  .hero-scene[data-hs-motion="1"] > .scene-thread { transform: none !important; }
+  .hero-scene[data-hs-motion="1"] > .scene-archive { transform: rotate(-4.6deg) !important; }
+  .hero-scene[data-hs-motion="1"] > .scene-stamp { transform: rotate(6deg) !important; }
+  .hero-scene[data-hs-motion="1"] > .scene-card { transform: rotate(var(--hs-rot, 0deg)) !important; }
+}

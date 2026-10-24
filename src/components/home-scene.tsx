@@ -1,9 +1,14 @@
 import Image from "next/image";
+import { HomeSceneMotion } from "@/components/home-scene-motion";
 
 /**
  * 首屏主视觉：一只摊开的档案夹，四张手写卡按步骤钉在里面，中间用虚线串起来。
  * 图形全部是内联 SVG（来自 redesign/xeniso.html 的手绘图形库），不额外请求图片，
  * 也不依赖 canvas，所以在任何浏览器里都能出来。
+ *
+ * data-hs-depth：指针微交互里的分层深度（px，指指针推到边界时的位移量）。
+ * 档案夹最浅、图版和卡片最前——手扫过纸面时近的走得多、远的走得少。
+ * 具体行为在 home-scene-motion.tsx。
  */
 
 const art = {
@@ -101,26 +106,28 @@ type SceneCard = {
   art: keyof typeof art;
   desc: string;
   tape: "tl" | "tr" | "bl" | "br";
+  depth: number;
 };
 
 const cards: SceneCard[] = [
-  { href: "/profile", no: "01", title: "个人画像", art: "profile", desc: "整理课程、见习与技能经历。", tape: "tl" },
-  { href: "/report/initial", no: "02", title: "初步评价", art: "radar", desc: "完成 30 道职业兴趣题，查看探索方向。", tape: "tr" },
-  { href: "/experience", no: "03", title: "职业体验", art: "ecg", desc: "尝试模拟工作，记录选择与感受。", tape: "bl" },
-  { href: "/report/plan", no: "04", title: "行动规划", art: "week", desc: "结合目标和可投入时间，安排后续准备。", tape: "br" },
+  { href: "/profile", no: "01", title: "个人画像", art: "profile", desc: "整理课程、见习与技能经历。", tape: "tl", depth: 5 },
+  { href: "/report/initial", no: "02", title: "初步评价", art: "radar", desc: "完成 30 道职业兴趣题，查看探索方向。", tape: "tr", depth: 8.6 },
+  { href: "/experience", no: "03", title: "职业体验", art: "ecg", desc: "尝试模拟工作，记录选择与感受。", tape: "bl", depth: 7.2 },
+  { href: "/report/plan", no: "04", title: "行动规划", art: "week", desc: "结合目标和可投入时间，安排后续准备。", tape: "br", depth: 11 },
 ];
 
 export function HomeScene({ groupCount, directionCount }: { groupCount: number; directionCount: number }) {
   return (
     <div className="hero-scene" data-atlas-reveal>
-      <div className="scene-folder" aria-hidden="true" />
+      <HomeSceneMotion />
+      <div className="scene-folder" data-hs-depth="1.6" aria-hidden="true" />
 
       {/* 档案原件：一张公有领域的解剖图版，像被随手夹进档案夹的复印件。
           它不是为了好看而放的装饰图，而是这个站"每条结论都要有出处"的物证。
           这块曾被整段删掉，用户澄清后恢复——要删的是压在它上面的赭黄批注
           （.scene-hand，已在下方移除），图版本身留着。
           priority 让它进首屏预载：JPG 解码前的那个窗口是"变白闪"的来源。 */}
-      <figure className="scene-archive">
+      <figure className="scene-archive" data-hs-depth="5.2">
         <Image
           src="/generated/W3-hsyw2whj.jpg"
           alt="19 世纪人体解剖图版，Jones Quain 编，Wellcome Collection 藏"
@@ -132,7 +139,7 @@ export function HomeScene({ groupCount, directionCount }: { groupCount: number; 
         <figcaption>Quain 解剖图版 · Wellcome Collection</figcaption>
       </figure>
 
-      <svg className="scene-thread" viewBox="0 0 680 600" preserveAspectRatio="none" aria-hidden="true">
+      <svg className="scene-thread" data-hs-depth="2.6" viewBox="0 0 680 600" preserveAspectRatio="none" aria-hidden="true">
         <path d="M196,150 C280,168 300,196 360,214" fill="none" stroke="#8f4726" strokeWidth="1.6" strokeDasharray="6 6" opacity=".55" />
         <path d="M470,250 C420,300 330,300 268,330" fill="none" stroke="#8f4726" strokeWidth="1.6" strokeDasharray="6 6" opacity=".55" />
         <path d="M420,430 C470,440 500,470 540,486" fill="none" stroke="#8f4726" strokeWidth="1.6" strokeDasharray="6 6" opacity=".5" />
@@ -142,7 +149,7 @@ export function HomeScene({ groupCount, directionCount }: { groupCount: number; 
       </svg>
 
       {cards.map((card, index) => (
-        <div key={card.href} className={`scene-card scene-c${index + 1}`} data-atlas-stagger>
+        <div key={card.href} className={`scene-card scene-c${index + 1}`} data-hs-depth={card.depth} data-atlas-stagger>
           <span className={`scene-tape scene-tape-${card.tape}`} aria-hidden="true" />
           <span className="scene-no">{card.no}</span>
           <span className="scene-title">{card.title}</span>
@@ -153,7 +160,7 @@ export function HomeScene({ groupCount, directionCount }: { groupCount: number; 
         </div>
       ))}
 
-      <p className="scene-stamp" aria-hidden="true">
+      <p className="scene-stamp" data-hs-depth="3.4" aria-hidden="true">
         {groupCount} 类方向<br />{directionCount} 个去向
       </p>
     </div>
