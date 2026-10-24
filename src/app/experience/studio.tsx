@@ -158,7 +158,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
     <div className="atlas-sheet xd-mentor-note">
       <p>{started
         ? "接通后导师只知道你在看哪个方向、做到哪一步；你写的理由不会自动发过去，想让它看就贴进对话。"
-        : "还没开始也能先问。接通后导师只知道你在看哪个方向，选定任务后它会换成本步的问题继续。"}</p>
+        : "没开始也能先问。接通后导师只知道你在看哪个方向，选了任务就换成本步的问题。"}</p>
       <ul>
         <li>首次接通要加载数字人资源，通常十几秒。</li>
         <li>可以打字，也可以按住话筒说话；回复能随时打断。</li>
@@ -187,7 +187,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
         <h1>{started ? template.title : "职业体验"}</h1>
         <p className="xd-lede">{started
           ? `${template.role} · ${mode === "project" ? "按项目做" : "按面试做"}。${template.brief}`
-          : "挑一个方向的任务，在合成材料上做三次决定：看材料、选方案、写理由。做完留下一张能带走的体验卡。"}</p>
+          : "挑个方向，在合成材料上做三次决定，做完留一张体验卡。"}</p>
       </div>
       <div className="xd-head-meta">
         <span className="atlas-chip">第 3 步 / 共 4 步</span>
@@ -208,7 +208,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
           <IconCompass aria-hidden="true" />
           先从哪一类看
         </p>
-        <ul className="xd-dir">
+        <ul className="xd-dir" data-atlas-reveal data-atlas-stagger>
           {groups.map(group => <li key={group.id}>
             <p className="xd-dir-group">{group.name}</p>
             {directions.filter(item => item.group_id === group.id).map(item => <button key={item.id} type="button" className="xd-dir-btn" aria-pressed={direction === item.id} onClick={() => { invalidate(); setDirection(item.id); setTemplateId(getTemplate(item.id).id); if (mentorLink !== "idle") setMessage("换了方向，导师也换成这个方向的那位，需要重新接通一次。"); }}>{item.id === "medicine" ? "继续医学（留在临床）" : item.name}</button>)}
@@ -217,12 +217,15 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
       </aside>
 
       <section className="xd-main" aria-label="可选择的体验任务" data-motion="M-E02">
-        <div className="xd-main-head">
+        <div className="xd-main-head" data-atlas-reveal>
           <h2>可做的任务</h2>
-          <p className="xd-question">每个方向 1–4 个任务，材料是编辑按固定数据做好的；没人给你打分，也不用假装有相关经历。</p>
+          <p className="xd-question">不打分，不用编经历。</p>
         </div>
-        <div className="xd-tasks" key={direction}>
-          {direction === "medicine" && <p className="xd-sheet-note">按研究生招生常用学科名称组织，学科和医院科室不是一一对应；具体代码和报考条件要按目标院校当年目录核验。{medicineNamingSource.url && <a href={medicineNamingSource.url} target="_blank" rel="noreferrer" style={{ marginLeft: 6 }}>学科名称来源</a>}</p>}
+        {/* data-atlas-stagger 让任务卡逐张摆上来。带 key={direction}，换方向时整个
+            容器重挂，所以"换一个方向"这个动作本身会重播一次入场——这正是
+            /experience 最该有反馈的地方（原来是 0 个 reveal 宿主、整页 1 个动画元素）。 */}
+        <div className="xd-tasks" key={direction} data-atlas-reveal data-atlas-stagger>
+          {direction === "medicine" && <p className="xd-sheet-note">学科名称看招生目录，不等同医院科室；报考条件按目标院校当年目录核验。{medicineNamingSource.url && <a href={medicineNamingSource.url} target="_blank" rel="noreferrer" style={{ marginLeft: 6 }}>学科名称来源</a>}</p>}
           {templates.map(item => <article className="atlas-sheet xd-task" key={item.id} data-selected={templateId === item.id}>
             <button type="button" className="xd-task-btn" aria-expanded={templateId === item.id} aria-controls={`task-${item.id}`} onClick={() => { invalidate(); setTemplateId(item.id); }}>
               <span>
@@ -235,7 +238,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
             {templateId === item.id && <div id={`task-${item.id}`} className="xd-task-body swap-in">
               {/* 补一级 h3：否则 h2「可做的任务」直接跳到卡内 h4，标题层级断档。 */}
               <h3 className="xd-modes-head">选一种做法开始</h3>
-              <div className="xd-modes">
+              <div className="xd-modes" data-atlas-reveal data-atlas-stagger>
                 {(["project", "interview"] as const).map(value => <section className="xd-mode" key={value}>
                   <h4>
                     {value === "project" ? <IconFolder aria-hidden="true" /> : <IconChat aria-hidden="true" />}
@@ -255,9 +258,9 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
         <section className="atlas-sheet xd-tight xd-leaves" aria-label="做完会留下什么">
           <div className="xd-leaves-head">
             <h3>做完会留下什么</h3>
-            <p className="xd-sheet-note">三样东西都能带走；不预测能不能考上，也不给方向排名</p>
+            <p className="xd-sheet-note">能不能考上不预测，方向也不给排名。</p>
           </div>
-          <div className="xd-leaves-grid">
+          <div className="xd-leaves-grid" data-atlas-reveal data-atlas-stagger>
             <div className="xd-leaf">
               <p className="xd-leaf-no"><IconCopy aria-hidden="true" />记录</p>
               <p className="xd-leaf-line">三步的选择与理由，每步至少 10 个字。</p>
@@ -273,7 +276,7 @@ export function CareerStudio({ initialDirection }: { initialDirection: string })
           </div>
           <p className="xd-before-note">
             <IconWarning aria-hidden="true" />
-            材料是合成的，不能当临床依据，也不能当岗位绩效。留在临床也是清单里的正经选项。
+            材料是合成的，不能当临床依据或岗位绩效。留在临床也是正经选项。
           </p>
           {(hasDraft || hasSaved || legacyDraft) && <div className="xd-resume">
             {hasDraft && <button type="button" className="atlas-btn" onClick={restore}>接着做本机暂存</button>}

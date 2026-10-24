@@ -74,7 +74,7 @@ export function ProfileHub() {
         <span role="status">{status.state === "loading" ? "正在读取…" : status.state === "error" ? "资料未读取" : `最近读取 ${new Date().toLocaleDateString("zh-CN")}`}</span>
       </div>
 
-      <section className="xp-entry">
+      <section className="xp-entry enter" style={{ "--d": 0 } as React.CSSProperties}>
         <div>
           <h2><IconFolder aria-hidden="true" />医学经历</h2>
           <p className="xp-entry-sub">课程、见习、科研与工具。行尾「填」补空行，「改」改已有记录。</p>
@@ -98,7 +98,7 @@ export function ProfileHub() {
         </div>
       </section>
 
-      <section className="xp-entry">
+      <section className="xp-entry enter" style={{ "--d": 1 } as React.CSSProperties}>
         <div>
           <h2><IconQuiz aria-hidden="true" />职业兴趣</h2>
           <p className="xp-entry-sub">
@@ -125,7 +125,7 @@ export function ProfileHub() {
         </div>
       </section>
 
-      <section className="xp-entry">
+      <section className="xp-entry enter" style={{ "--d": 2 } as React.CSSProperties}>
         <div>
           <h2><IconCalendar aria-hidden="true" />四节进度</h2>
           <div className="xp-ledger">
@@ -152,12 +152,12 @@ export function ProfileHub() {
         <h2><IconCompass aria-hidden="true" />下一步：初步评价</h2>
         <span className="atlas-chip" data-tone="ok">资料齐备</span>
       </div>
-      <p className="xp-entry-sub">初步评价会读底册和兴趣分布，标出能迁移的能力和要补的基础。</p>
+      <p className="xp-entry-sub">初步评价读底册和兴趣分布，标出能迁移的能力、要补的基础。</p>
       <div className="xp-report-actions"><Link href="/report/initial" className="button">查看初步评价</Link></div>
     </ReportReveal>}
 
     <p className="xp-footnote" data-atlas-reveal>
-      记录只用于生成能力底册，不用于排名，也不出现在社区。随时可以回来改。
+      记录只用来做能力底册，随时能回来改。
     </p>
   </div>;
 }
