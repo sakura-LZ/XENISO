@@ -124,8 +124,13 @@ main h2[data-xn-mark-target]::after {
   content: "";
   position: absolute;
   left: -.05em;
-  bottom: -.06em;
-  width: min(100%, 13em);
+  /* 下移到降部之下：原来 -.06em 时色带顶边比文字墨迹底边还高 2.8px，
+     含 g / y / p 的拉丁降部会被盖住。 */
+  bottom: -.16em;
+  /* 宽度由 micro-interactions.tsx 的 startMark() 按 Range 实测的文字宽度写入。
+     原来的 min(100%, 13em) 在 27px 字号下恒为 350px——短标题「删除资料」才
+     108px，后面会挂一条 243px 的空绿条，像加载条而不是马克笔划线。 */
+  width: var(--xn-mark-w, min(100%, 13em));
   height: max(3px, .1em);
   border-radius: 3px 42% 4px 55% / 62% 50% 58% 48%;
   background: linear-gradient(
@@ -147,8 +152,8 @@ main h2[data-xn-mark-target]::before {
   content: "";
   position: absolute;
   left: -.05em;
-  bottom: -.05em;
-  width: min(100%, 13em);
+  bottom: -.14em;
+  width: var(--xn-mark-w, min(100%, 13em));
   height: max(5px, .16em);
   border-radius: 50%;
   background: color-mix(in srgb, var(--green-mark) 24%, transparent);

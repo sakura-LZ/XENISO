@@ -507,6 +507,17 @@ function install(): () => void {
   const startMark = (el: HTMLElement) => {
     if (el.dataset.xnMark === "1") return;
     el.dataset.xnMark = "1";
+    /* 色带宽度必须跟着文字走。
+       原来 CSS 写死 width: min(100%, 13em)，在 27px 字号下恒等于 350px，
+       于是短标题后面挂一条空绿条——实测「删除资料」文字 108px、色带 350px，
+       过出 243px；「身份与访问」135 vs 350，过出 216px。那读起来像加载条/占位条，
+       不像马克笔划线。盲审把它判为"新的凑数装饰"，判断是对的。
+       这里量真实文字墨迹宽度写进 --xn-mark-w，出锋给 0.16em（笔尖拖出的一点点）。 */
+    const em = Number.parseFloat(getComputedStyle(el).fontSize) || 16;
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    const textWidth = range.getBoundingClientRect().width;
+    if (textWidth > 0) el.style.setProperty("--xn-mark-w", `${Math.round(textWidth + em * 0.16)}px`);
   };
 
   const startType = (el: HTMLElement) => {
@@ -631,12 +642,27 @@ function install(): () => void {
   // 而不是 .t-block，所以划线效果一直没落到它们身上。
   // 首页排除：那边 h2 是封面式大标题，已经有胶带/印章/纸片那一套，再叠划线会打架。
   const isHome = window.location.pathname === "/";
+  /* 注册 mark 目标。
+     坑一：迟到的标题（条件渲染的块）在补挂观察器时，如果用户已经把它滚过去了，
+     IntersectionObserver 不会再回调 isIntersecting，那个标题就永远拿不到
+     data-xn-mark="1" —— 实测 /report/plan 唯一 h2 永远不触发、
+     /report/initial 2/6 不触发，且同页不同视口在 2/6–6/6 间抖动。
+     所以元素顶边已在视口上方时直接触发，不等回调。
+     坑二（更隐蔽，我第一版改法就踩了）：下面那个 observe 是个 Set，真正调
+     observer.observe() 的遍历只在初始化时跑一次。迟到元素 registerMark 时
+     再 observe.add() 已经没人去遍历它了——等于永远不观察。所以这里必须
+     直接 observer.observe(el)，不能只塞进 Set。 */
+  const registerMark = (el: HTMLElement) => {
+    el.dataset.xnMarkTarget = "1";
+    if (el.getBoundingClientRect().top < 0) startMark(el);
+    else observer.observe(el);
+  };
+
   const markSelector = isHome
     ? ".t-section, main .t-block"
     : ".t-section, main .t-block, main h2:not(.atlas-label):not([data-xn-mark-skip])";
   for (const heading of Array.from(document.querySelectorAll<HTMLElement>(markSelector))) {
-    heading.dataset.xnMarkTarget = "1";
-    observe.add(heading);
+    registerMark(heading);
   }
 
   /* 2b. 迟到的区块标题兜底
@@ -647,8 +673,7 @@ function install(): () => void {
     // 内页裸 h2 也要补：实测 /report/plan 的 h2 全是条件渲染的空态块，
     // install 时一个都不存在，一上来扫到的 mark 目标是 0。
     for (const heading of Array.from(document.querySelectorAll<HTMLElement>(markSelector.replace(/([^,]+)/g, "$1:not([data-xn-mark-target])")))) {
-      heading.dataset.xnMarkTarget = "1";
-      observer.observe(heading);
+      registerMark(heading);
     }
   });
   lateObserver.observe(document.body, { childList: true, subtree: true });
