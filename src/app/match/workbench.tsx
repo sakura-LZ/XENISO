@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -12,7 +12,11 @@ import "../experience-social-redesign.css";
 const labels = { interest: "职业兴趣接近度", readiness: "能力准备度", transition: "转型可行性线索", admissions: "升学条件适配度" } as const;
 function Score({ data }: { data: Dimension }) {
   const correlation = data.detail?.correlation;
-  return <><strong>{data.score === null ? "待补充" : `${data.score.toFixed(1)} / 100`}</strong><p>覆盖率 {Math.round(data.coverage * 100)}%{data.status === "partial" ? " · 部分依据" : ""}{typeof correlation === "number" ? ` · 轮廓相关 r=${correlation.toFixed(2)}` : ""}</p></>;
+  const hex = data.detail?.hex_code_similarity;
+  const emd = data.detail?.emd_similarity;
+  const topUser = data.detail?.high_point_user;
+  const topOcc = data.detail?.high_point_occupation;
+  return <><strong>{data.score === null ? "待补充" : `${data.score.toFixed(1)} / 100`}</strong><p>覆盖率 {Math.round(data.coverage * 100)}%{data.status === "partial" ? " · 部分依据" : ""}{typeof correlation === "number" ? ` · 轮廓相关 r=${correlation.toFixed(2)}` : ""}</p>{typeof hex === "number" && typeof emd === "number" && <p>六边形码 {hex.toFixed(2)} · EMD {emd.toFixed(2)}{typeof topUser === "string" && typeof topOcc === "string" ? ` · 高码 ${topUser} / ${topOcc}` : ""}</p>}</>;
 }
 function rankLabel(rank: number | null, range: [number, number] | null) {
   if (!rank) return "";
@@ -59,6 +63,7 @@ export default function MatchWorkbench() {
     {report && <section className="match-results" data-motion="M-T02">
       <h2><IconQuiz className="match-ico match-ico-block" aria-hidden="true" />比较并选择探索目标</h2><p>{report.ranking_basis}</p>
       <p role="status">排序稳定性：{{ stable: "稳定（权重 ±20% 扰动后名次不变）", variable: "可变（个别名次会随权重互换）", unstable: "不稳定（名次跨度过大，请并列看待）", "n/a": "不足以排序" }[report.sensitivity.stability]}。名次只用于提示探索顺序，不是适合度。</p>
+      <p className="match-notice">兴趣诊断：三种度量（轮廓相关 / 六边形码 / 环形 EMD）顺序一致性 τ = {[report.interest_metric_agreement.shape_vs_hex, report.interest_metric_agreement.shape_vs_emd, report.interest_metric_agreement.hex_vs_emd].map(value => value === null ? "—" : value.toFixed(2)).join(" / ")}。{report.interest_metric_agreement.note}</p>
       <div className="match-table-scroll" tabIndex={0} role="region" aria-label="岗位比较表，可横向滚动"><table className="match-table"><thead><tr><th scope="col">岗位</th>{Object.values(labels).map(label => <th scope="col" key={label}>{label}</th>)}<th scope="col">岗位资格</th></tr></thead><tbody>{report.results.map(r => <tr key={r.occupation_id} className={selected === r.occupation_id ? "is-selected" : ""}><td><button aria-pressed={selected === r.occupation_id} onClick={() => setSelected(r.occupation_id)}>{rankLabel(r.rank, r.rank_range)}{r.title}</button></td>{Object.keys(labels).map(k => <td key={k}><Score data={r[k as keyof typeof labels]} /></td>)}<td>{r.eligibility.status === "met" ? "所列条件已满足" : r.eligibility.status === "not_met" ? "存在不满足条件" : "待核实"}</td></tr>)}</tbody></table></div>
       {active && <article className="match-evidence" key={active.occupation_id} data-motion="M-T03"><h3>{active.title} · 依据与下一步</h3>
         {typeof active.readiness.detail?.must_have_gap === "string" && <p role="alert">关键要求未达到：{active.readiness.detail.must_have_gap}。准备度已封顶，不会因为其他技能而抵消。</p>}

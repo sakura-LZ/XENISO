@@ -121,6 +121,21 @@ R1/R2 `reportKnowledge()` 最多读取三个方向，每方向每类一项，去
 
 每类最多选择一条进入报告，报告不会包含所有库内资料；需要具体招生科目时应通过分类检索取得完整证据。报告输出仍须逐条语义核查，已有保存报告不会被后台静默重写。
 
+## 职业技能要求派生数据（R1 职业技能匹配）
+
+`data/knowledge/skill-requirements.json` 是给 R1「职业技能匹配」用的派生清单：按 10 个方向整理知识库里职业标准与真实招聘原文要求的技能（每方向 5–7 项）。它不是独立事实源，而是对 `kb_records` 的可回查引用：
+
+```text
+spec（编辑归并）: data/knowledge/skill-requirements.spec.json   只写 record / field / needle
+构建命令        : npm run knowledge:skill-requirements
+派生数据        : data/knowledge/skill-requirements.json
+引用字段        : record_id / field / quote / quote_start / quote_end / source_url / organization
+```
+
+构建脚本 `scripts/knowledge/build-skill-requirements.ts` 会回到 `data/knowledge/*.collected.json`，断言 needle 是该 fact 原文的连续子串后逐字截取 quote；任一 needle 对不上、record/field 不存在、或同一 record 在不同批次原文不一致，整次构建失败。因此派生数据里的 quote 不是手写的，也不会出现「改名/改写的官方原文」。技能名称、分类（工具/方法/领域/工程/沟通）和别名属于 LIMEN 编辑信息，不能当作官方统一岗位要求。
+
+消费侧（`src/lib/skill-requirements.ts` → `src/lib/skill-match.ts`）只做结构校验与画像名称/别名对照：输出「有记录 / 仅自述 / 信息不足」三种证据状态，不产生分数、排名或适合度。已知边界：`signals`、`med_nlp_kg` 方向只有单组招聘原文，`medicine` 只有培养目标与规培/博士后原文，覆盖面已在各方向 `coverage_note` 里写明。
+
 ## Match 接口边界与后续算法建议
 
 独立适配器读取 `KnowledgeHit` 或采集产物即可；保留角色ID、类别、原文、offset、hash、机构、URL、发布日期、采集/核实时间、适用范围及缺失。`verification=quote_verified` 映射为“原文匹配”，不能映射为“当前资格已核定”。

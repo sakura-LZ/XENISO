@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": 1.1,
   "date": "2026-10-20",
   "scope": "LIMEN 医学本科生跨学科方向探索的教学性映射，非官方研究生专业代码或录取预测",
   "source": "O*NET OnLine (USDOL/ETA); https://www.onetonline.org/; 依据 CC BY 4.0 引用职业数据，中文说明和职业到学科关联由 LIMEN 编写",
@@ -127,7 +127,25 @@
             "医疗场景评测"
           ]
         }
-      ]
+      ],
+      "onet": [
+        {
+          "code": "15-2051.00",
+          "name": "Data Scientists",
+          "relationship": "direct"
+        },
+        {
+          "code": "15-1252.00",
+          "name": "Software Developers",
+          "relationship": "related"
+        },
+        {
+          "code": "15-1221.00",
+          "name": "Computer and Information Research Scientists",
+          "relationship": "related"
+        }
+      ],
+      "onet_rationale": "AI / 计算机方向取 Data Scientists 为代表：该方向三个特化里 ml_cv 直接对应此 SOC，llm_agent 与其研究属性一致；software（15-1252.00）作为 related 保留，因为本方向在 LIMEN 语境下以 AI 能力为主而非通用软件开发。"
     },
     {
       "id": "biomed_eng",
@@ -251,7 +269,25 @@
             "临床影像解读场景"
           ]
         }
-      ]
+      ],
+      "onet": [
+        {
+          "code": "17-2031.00",
+          "name": "Bioengineers and Biomedical Engineers",
+          "relationship": "direct"
+        },
+        {
+          "code": "17-2072.00",
+          "name": "Electronics Engineers, Except Computer",
+          "relationship": "related"
+        },
+        {
+          "code": "17-2071.00",
+          "name": "Electrical Engineers",
+          "relationship": "related"
+        }
+      ],
+      "onet_rationale": "生物医学工程 / 医工交叉方向的三个特化（智能医疗器械、医学信号处理、医学影像工程）的 direct SOC 全部是 17-2031.00，无需在特化间取舍。"
     },
     {
       "id": "med_informatics",
@@ -376,7 +412,25 @@
             "医学知识结构化"
           ]
         }
-      ]
+      ],
+      "onet": [
+        {
+          "code": "15-1211.01",
+          "name": "Health Informatics Specialists",
+          "relationship": "direct"
+        },
+        {
+          "code": "15-2051.02",
+          "name": "Clinical Data Managers",
+          "relationship": "related"
+        },
+        {
+          "code": "15-2051.00",
+          "name": "Data Scientists",
+          "relationship": "related"
+        }
+      ],
+      "onet_rationale": "医学信息学方向取 Health Informatics Specialists 为代表：其 O*NET 职业名称即健康信息学，与该方向名称对应最直接；clinical_data（15-2051.02）与 med_nlp_kg（15-2051.00）作为 related，因为它们的兴趣画像更偏数据科学而非信息系统。"
     }
   ],
   "onet_urls": {
@@ -393,5 +447,6 @@
     "15-1211.00": "https://www.onetonline.org/link/summary/15-1211.00",
     "19-1029.01": "https://www.onetonline.org/link/summary/19-1029.01"
   },
-  "handoff_bundle": "V3"
+  "handoff_bundle": "V3",
+  "direction_onet_note": "方向级 onet[] 是 LIMEN 编辑性选点：用于 Match 的兴趣画像与技能加权（每个方向取 direct SOC 作兴趣画像，技能按该方向各特化的 direct SOC 等权加权）。它不是 O*NET 官方对中国考研专业或职业的结论，也不改变 specializations[].onet 的既有含义。"
 }

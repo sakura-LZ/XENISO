@@ -1,0 +1,5273 @@
+{
+  "standard_version": "onet-31.0+limen-2026-10-23",
+  "generated_at": "2026-10-23T00:00:00Z",
+  "source": {
+    "database": "O*NET 31.0 (text)",
+    "url": "https://www.onetcenter.org/database.html",
+    "zip_url": "https://www.onetcenter.org/dl_files/database/db_31_0_text.zip",
+    "tables": [
+      "Essential Skills.txt",
+      "Transferable Skills.txt",
+      "Career Interest Types.txt",
+      "Level Scale Anchors.txt"
+    ],
+    "license": "CC BY 4.0 (O*NET OnLine, U.S. Department of Labor / ETA)",
+    "notice": "O*NET® is a trademark of the U.S. Department of Labor, Employment and Training Administration."
+  },
+  "note": "10 个方向（9 个跨学科特化 + 医学）的 O*NET 官方数值标准。兴趣为官方 RIASEC OI（1.00–7.00，特化内各候选 SOC 等权平均，编辑性聚合），技能为官方 IM/LV 经编辑性投影到 LIMEN 1–5 / 0–4。未映射技能不写入 skills[]（见 onet-crosswalk.json 的 unmapped 项）。hard_requirements/preferences/professional_background 一律保持 unknown：O*NET 不包含中国报考规则与雇主偏好。",
+  "occupations": [
+    {
+      "schema_version": "match-2",
+      "id": "ml_cv",
+      "title": "机器学习与计算机视觉",
+      "simulation": false,
+      "direction_ids": [
+        "ml_cv"
+      ],
+      "onet_codes": [
+        "15-2051.00",
+        "15-1221.00"
+      ],
+      "mapping_basis": "LIMEN 编辑性方向映射（data/occupation_direction_map.json@1.1 + data/medicine_direction.json）：岗位粒度 = 单个特化方向（9 个跨学科特化 + 医学，共 10 个）。兴趣画像 = 该特化候选 SOC 的 OI 等权平均（编辑性聚合）；技能 = 该特化自己候选 SOC 中第一个可用分量（direct 优先）。O*NET-SOC 由方向映射给出，不是 O*NET 官方中国考研专业结论。",
+      "tasks": {
+        "value": [
+          "清洗与探索训练数据",
+          "训练并评价模型",
+          "分析模型错误、偏差及外部泛化"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "data/occupation_direction_map.json@1.1",
+            "source_kind": "editorial",
+            "url": null,
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "data/occupation_direction_map.json@1.1 · ml_cv · work_tasks（LIMEN 编辑性描述，非 O*NET 原文）"
+          }
+        ]
+      },
+      "interests": {
+        "value": {
+          "instrument": "O*NET Career Interest Types (RIASEC OI)",
+          "version": "31.0",
+          "scores": {
+            "realistic": 2.96,
+            "investigative": 6.99,
+            "artistic": 2.78,
+            "social": 1.83,
+            "enterprising": 2.1,
+            "conventional": 5.1
+          },
+          "scale": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "onet-31.0-database",
+            "source_kind": "official",
+            "url": "https://www.onetcenter.org/database.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "O*NET 31.0 · Career Interest Types.txt · 方向特化 ml_cv（机器学习与计算机视觉）的候选 SOC：15-2051.00（direct）=realistic 2.17/investigative 6.98/artistic 2.61/social 1.66/enterprising 1.71/conventional 5.39；15-1221.00（related）=realistic 3.74/investigative 7/artistic 2.95/social 2/enterprising 2.49/conventional 4.8 · 六维在本特化 SOC 间**等权平均**（编辑性聚合，非 O*NET 官方合成）· 官方量尺 1.00–7.00 · 组级选点依据：AI / 计算机方向取 Data Scientists 为代表：该方向三个特化里 ml_cv 直接对应此 SOC，llm_agent 与其研究属性一致；software（15-1252.00）作为 related 保留，因为本方向在 LIMEN 语境下以 AI 能力为主而非通用软件开发。"
+          }
+        ]
+      },
+      "skills": [
+        {
+          "skill_id": "python",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（ml_cv→15-1221.00(related, w=1.000) IM=3.62 LV=4.5），未做跨 SOC 平均 · 合成 SE≈0.19（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（ml_cv→15-1221.00(related, w=1.000) IM=3.62 LV=4.5），未做跨 SOC 平均 · 合成 SE≈0.19 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.19,
+            "lower": 4.13,
+            "upper": 4.87,
+            "suppressed": false
+          },
+          "must_have": true
+        },
+        {
+          "skill_id": "statistics",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（ml_cv→15-2051.00(direct, w=1.000) IM=4.38 LV=5），未做跨 SOC 平均 · 合成 SE≈0.42（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（ml_cv→15-2051.00(direct, w=1.000) IM=4.38 LV=5），未做跨 SOC 平均 · 合成 SE≈0.42 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.42,
+            "lower": 4.17,
+            "upper": 5.83,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（ml_cv→15-2051.00(direct, w=1.000) IM=3.38 LV=4），未做跨 SOC 平均 · 合成 SE≈0.27（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（ml_cv→15-2051.00(direct, w=1.000) IM=3.38 LV=4），未做跨 SOC 平均 · 合成 SE≈0.27 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.27,
+            "lower": 3.48,
+            "upper": 4.52,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "research_design",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（ml_cv→15-1221.00(related, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.26（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（ml_cv→15-1221.00(related, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.26 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.26,
+            "lower": 2.86,
+            "upper": 3.9,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "product_requirements",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（ml_cv→15-1221.00(related, w=1.000) IM=3.75 LV=4.38），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（ml_cv→15-1221.00(related, w=1.000) IM=3.75 LV=4.38），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 4.02,
+            "upper": 4.74,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "communication",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（ml_cv→15-2051.00(direct, w=1.000) IM=3.62 LV=3.75），未做跨 SOC 平均 · 合成 SE≈0.16（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（ml_cv→15-2051.00(direct, w=1.000) IM=3.62 LV=3.75），未做跨 SOC 平均 · 合成 SE≈0.16 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.16,
+            "lower": 3.43,
+            "upper": 4.07,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "model_evaluation",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（ml_cv→15-1221.00(related, w=1.000) IM=3.62 LV=4.88），未做跨 SOC 平均 · 合成 SE≈0.23（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（ml_cv→15-1221.00(related, w=1.000) IM=3.62 LV=4.88），未做跨 SOC 平均 · 合成 SE≈0.23 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.23,
+            "lower": 4.44,
+            "upper": 5.32,
+            "suppressed": false
+          }
+        }
+      ],
+      "professional_background": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "hard_requirements": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "preferences": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "standard_version": "onet-31.0+limen-2026-10-23"
+    },
+    {
+      "schema_version": "match-2",
+      "id": "software",
+      "title": "软件工程与系统开发",
+      "simulation": false,
+      "direction_ids": [
+        "software"
+      ],
+      "onet_codes": [
+        "15-1252.00",
+        "15-1299.08"
+      ],
+      "mapping_basis": "LIMEN 编辑性方向映射（data/occupation_direction_map.json@1.1 + data/medicine_direction.json）：岗位粒度 = 单个特化方向（9 个跨学科特化 + 医学，共 10 个）。兴趣画像 = 该特化候选 SOC 的 OI 等权平均（编辑性聚合）；技能 = 该特化自己候选 SOC 中第一个可用分量（direct 优先）。O*NET-SOC 由方向映射给出，不是 O*NET 官方中国考研专业结论。",
+      "tasks": {
+        "value": [
+          "分析用户需求与约束",
+          "设计和实现功能",
+          "自动化测试、部署与维护"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "data/occupation_direction_map.json@1.1",
+            "source_kind": "editorial",
+            "url": null,
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "data/occupation_direction_map.json@1.1 · software · work_tasks（LIMEN 编辑性描述，非 O*NET 原文）"
+          }
+        ]
+      },
+      "interests": {
+        "value": {
+          "instrument": "O*NET Career Interest Types (RIASEC OI)",
+          "version": "31.0",
+          "scores": {
+            "realistic": 3.85,
+            "investigative": 5.76,
+            "artistic": 2.13,
+            "social": 1.96,
+            "enterprising": 2.45,
+            "conventional": 5.69
+          },
+          "scale": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "onet-31.0-database",
+            "source_kind": "official",
+            "url": "https://www.onetcenter.org/database.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "O*NET 31.0 · Career Interest Types.txt · 方向特化 software（软件工程与系统开发）的候选 SOC：15-1252.00（direct）=realistic 3.61/investigative 6.05/artistic 2.37/social 1.81/enterprising 1.87/conventional 5.62；15-1299.08（related）=realistic 4.1/investigative 5.46/artistic 1.88/social 2.1/enterprising 3.03/conventional 5.76 · 六维在本特化 SOC 间**等权平均**（编辑性聚合，非 O*NET 官方合成）· 官方量尺 1.00–7.00 · 组级选点依据：AI / 计算机方向取 Data Scientists 为代表：该方向三个特化里 ml_cv 直接对应此 SOC，llm_agent 与其研究属性一致；software（15-1252.00）作为 related 保留，因为本方向在 LIMEN 语境下以 AI 能力为主而非通用软件开发。"
+          }
+        ]
+      },
+      "skills": [
+        {
+          "skill_id": "python",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（software→15-1299.08(related, w=1.000) IM=3.5 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（software→15-1299.08(related, w=1.000) IM=3.5 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.16,
+            "lower": 3.93,
+            "upper": 4.57,
+            "suppressed": false
+          },
+          "must_have": true
+        },
+        {
+          "skill_id": "statistics",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（software→15-1252.00(direct, w=1.000) IM=2.75 LV=3.25），未做跨 SOC 平均 · 合成 SE≈0.31（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（software→15-1252.00(direct, w=1.000) IM=2.75 LV=3.25），未做跨 SOC 平均 · 合成 SE≈0.31 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.31,
+            "lower": 2.64,
+            "upper": 3.86,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（software→15-1252.00(direct, w=1.000) IM=3.62 LV=3.75），未做跨 SOC 平均 · 合成 SE≈0.31（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（software→15-1252.00(direct, w=1.000) IM=3.62 LV=3.75），未做跨 SOC 平均 · 合成 SE≈0.31 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.31,
+            "lower": 3.14,
+            "upper": 4.36,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "research_design",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（software→15-1299.08(related, w=1.000) IM=3 LV=3.12），未做跨 SOC 平均 · 合成 SE≈0.13（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（software→15-1299.08(related, w=1.000) IM=3 LV=3.12），未做跨 SOC 平均 · 合成 SE≈0.13 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.13,
+            "lower": 2.88,
+            "upper": 3.37,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "product_requirements",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（software→15-1252.00(direct, w=1.000) IM=3.5 LV=3.88），未做跨 SOC 平均 · 合成 SE≈0.35（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（software→15-1252.00(direct, w=1.000) IM=3.5 LV=3.88），未做跨 SOC 平均 · 合成 SE≈0.35 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.35,
+            "lower": 3.19,
+            "upper": 4.57,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "communication",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（software→15-1252.00(direct, w=1.000) IM=3.12 LV=3.62），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（software→15-1252.00(direct, w=1.000) IM=3.12 LV=3.62），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 3.26,
+            "upper": 3.98,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "model_evaluation",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（software→15-1252.00(direct, w=1.000) IM=3.38 LV=4.12），未做跨 SOC 平均 · 合成 SE≈0.44（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（software→15-1252.00(direct, w=1.000) IM=3.38 LV=4.12），未做跨 SOC 平均 · 合成 SE≈0.44 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.44,
+            "lower": 3.26,
+            "upper": 4.98,
+            "suppressed": false
+          }
+        }
+      ],
+      "professional_background": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "hard_requirements": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "preferences": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "standard_version": "onet-31.0+limen-2026-10-23"
+    },
+    {
+      "schema_version": "match-2",
+      "id": "llm_agent",
+      "title": "大语言模型与AI Agent",
+      "simulation": false,
+      "direction_ids": [
+        "llm_agent"
+      ],
+      "onet_codes": [
+        "15-1221.00",
+        "15-1252.00"
+      ],
+      "mapping_basis": "LIMEN 编辑性方向映射（data/occupation_direction_map.json@1.1 + data/medicine_direction.json）：岗位粒度 = 单个特化方向（9 个跨学科特化 + 医学，共 10 个）。兴趣画像 = 该特化候选 SOC 的 OI 等权平均（编辑性聚合）；技能 = 该特化自己候选 SOC 中第一个可用分量（direct 优先）。O*NET-SOC 由方向映射给出，不是 O*NET 官方中国考研专业结论。",
+      "tasks": {
+        "value": [
+          "评估语言模型表现与错误类型",
+          "设计检索和工具调用工作流",
+          "为系统设置质量与安全测试"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "data/occupation_direction_map.json@1.1",
+            "source_kind": "editorial",
+            "url": null,
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "data/occupation_direction_map.json@1.1 · llm_agent · work_tasks（LIMEN 编辑性描述，非 O*NET 原文）"
+          }
+        ]
+      },
+      "interests": {
+        "value": {
+          "instrument": "O*NET Career Interest Types (RIASEC OI)",
+          "version": "31.0",
+          "scores": {
+            "realistic": 3.68,
+            "investigative": 6.53,
+            "artistic": 2.66,
+            "social": 1.91,
+            "enterprising": 2.18,
+            "conventional": 5.21
+          },
+          "scale": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "onet-31.0-database",
+            "source_kind": "official",
+            "url": "https://www.onetcenter.org/database.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "O*NET 31.0 · Career Interest Types.txt · 方向特化 llm_agent（大语言模型与AI Agent）的候选 SOC：15-1221.00（related）=realistic 3.74/investigative 7/artistic 2.95/social 2/enterprising 2.49/conventional 4.8；15-1252.00（related）=realistic 3.61/investigative 6.05/artistic 2.37/social 1.81/enterprising 1.87/conventional 5.62 · 六维在本特化 SOC 间**等权平均**（编辑性聚合，非 O*NET 官方合成）· 官方量尺 1.00–7.00 · 组级选点依据：AI / 计算机方向取 Data Scientists 为代表：该方向三个特化里 ml_cv 直接对应此 SOC，llm_agent 与其研究属性一致；software（15-1252.00）作为 related 保留，因为本方向在 LIMEN 语境下以 AI 能力为主而非通用软件开发。"
+          }
+        ]
+      },
+      "skills": [
+        {
+          "skill_id": "python",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.62 LV=4.5），未做跨 SOC 平均 · 合成 SE≈0.19（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.62 LV=4.5），未做跨 SOC 平均 · 合成 SE≈0.19 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.19,
+            "lower": 4.13,
+            "upper": 4.87,
+            "suppressed": false
+          },
+          "must_have": true
+        },
+        {
+          "skill_id": "statistics",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.38 LV=4.38），未做跨 SOC 平均 · 合成 SE≈0.26（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.38 LV=4.38），未做跨 SOC 平均 · 合成 SE≈0.26 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.26,
+            "lower": 3.86,
+            "upper": 4.9,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=4 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.26（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=4 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.26 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.26,
+            "lower": 4.1,
+            "upper": 5.14,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "research_design",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.26（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.26 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.26,
+            "lower": 2.86,
+            "upper": 3.9,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "product_requirements",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.75 LV=4.38），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.75 LV=4.38），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 4.02,
+            "upper": 4.74,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "communication",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.5 LV=4.12），未做跨 SOC 平均 · 合成 SE≈0.13（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.5 LV=4.12），未做跨 SOC 平均 · 合成 SE≈0.13 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.13,
+            "lower": 3.88,
+            "upper": 4.37,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "model_evaluation",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.62 LV=4.88），未做跨 SOC 平均 · 合成 SE≈0.23（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（llm_agent→15-1221.00(related, w=1.000) IM=3.62 LV=4.88），未做跨 SOC 平均 · 合成 SE≈0.23 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.23,
+            "lower": 4.44,
+            "upper": 5.32,
+            "suppressed": false
+          }
+        }
+      ],
+      "professional_background": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "hard_requirements": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "preferences": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "standard_version": "onet-31.0+limen-2026-10-23"
+    },
+    {
+      "schema_version": "match-2",
+      "id": "devices",
+      "title": "智能医疗器械",
+      "simulation": false,
+      "direction_ids": [
+        "devices"
+      ],
+      "onet_codes": [
+        "17-2031.00",
+        "17-2072.00"
+      ],
+      "mapping_basis": "LIMEN 编辑性方向映射（data/occupation_direction_map.json@1.1 + data/medicine_direction.json）：岗位粒度 = 单个特化方向（9 个跨学科特化 + 医学，共 10 个）。兴趣画像 = 该特化候选 SOC 的 OI 等权平均（编辑性聚合）；技能 = 该特化自己候选 SOC 中第一个可用分量（direct 优先）。O*NET-SOC 由方向映射给出，不是 O*NET 官方中国考研专业结论。",
+      "tasks": {
+        "value": [
+          "定义临床使用需求",
+          "设计传感或检测组件",
+          "测试准确性、稳定性与限制"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "data/occupation_direction_map.json@1.1",
+            "source_kind": "editorial",
+            "url": null,
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "data/occupation_direction_map.json@1.1 · devices · work_tasks（LIMEN 编辑性描述，非 O*NET 原文）"
+          }
+        ]
+      },
+      "interests": {
+        "value": {
+          "instrument": "O*NET Career Interest Types (RIASEC OI)",
+          "version": "31.0",
+          "scores": {
+            "realistic": 5.84,
+            "investigative": 6.28,
+            "artistic": 2.07,
+            "social": 2.02,
+            "enterprising": 1.73,
+            "conventional": 4.58
+          },
+          "scale": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "onet-31.0-database",
+            "source_kind": "official",
+            "url": "https://www.onetcenter.org/database.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "O*NET 31.0 · Career Interest Types.txt · 方向特化 devices（智能医疗器械）的候选 SOC：17-2031.00（direct）=realistic 5.44/investigative 6.75/artistic 2.11/social 2.45/enterprising 1.84/conventional 4.48；17-2072.00（related）=realistic 6.24/investigative 5.81/artistic 2.03/social 1.59/enterprising 1.62/conventional 4.68 · 六维在本特化 SOC 间**等权平均**（编辑性聚合，非 O*NET 官方合成）· 官方量尺 1.00–7.00 · 组级选点依据：生物医学工程 / 医工交叉方向的三个特化（智能医疗器械、医学信号处理、医学影像工程）的 direct SOC 全部是 17-2031.00，无需在特化间取舍。"
+          }
+        ]
+      },
+      "skills": [
+        {
+          "skill_id": "python",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 3.02,
+            "upper": 3.74,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "statistics",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.88 LV=4.5），未做跨 SOC 平均 · 合成 SE≈0.19（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.88 LV=4.5），未做跨 SOC 平均 · 合成 SE≈0.19 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.19,
+            "lower": 4.13,
+            "upper": 4.87,
+            "suppressed": false
+          },
+          "must_have": true
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 4.26,
+            "upper": 4.98,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "research_design",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 4.26,
+            "upper": 4.98,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "product_requirements",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.62 LV=3.88），未做跨 SOC 平均 · 合成 SE≈0.13（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.62 LV=3.88），未做跨 SOC 平均 · 合成 SE≈0.13 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.13,
+            "lower": 3.64,
+            "upper": 4.13,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "communication",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=4 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=4 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.16,
+            "lower": 3.93,
+            "upper": 4.57,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "model_evaluation",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.5 LV=4），未做跨 SOC 平均 · 合成 SE≈0（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（devices→17-2031.00(direct, w=1.000) IM=3.5 LV=4），未做跨 SOC 平均 · 合成 SE≈0 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "suppressed": false
+          }
+        }
+      ],
+      "professional_background": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "hard_requirements": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "preferences": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "standard_version": "onet-31.0+limen-2026-10-23"
+    },
+    {
+      "schema_version": "match-2",
+      "id": "signals",
+      "title": "医学信号处理",
+      "simulation": false,
+      "direction_ids": [
+        "signals"
+      ],
+      "onet_codes": [
+        "17-2031.00",
+        "17-2071.00"
+      ],
+      "mapping_basis": "LIMEN 编辑性方向映射（data/occupation_direction_map.json@1.1 + data/medicine_direction.json）：岗位粒度 = 单个特化方向（9 个跨学科特化 + 医学，共 10 个）。兴趣画像 = 该特化候选 SOC 的 OI 等权平均（编辑性聚合）；技能 = 该特化自己候选 SOC 中第一个可用分量（direct 优先）。O*NET-SOC 由方向映射给出，不是 O*NET 官方中国考研专业结论。",
+      "tasks": {
+        "value": [
+          "采集ECG/EEG类信号",
+          "分析噪声与伪影",
+          "设计、验证信号处理方法"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "data/occupation_direction_map.json@1.1",
+            "source_kind": "editorial",
+            "url": null,
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "data/occupation_direction_map.json@1.1 · signals · work_tasks（LIMEN 编辑性描述，非 O*NET 原文）"
+          }
+        ]
+      },
+      "interests": {
+        "value": {
+          "instrument": "O*NET Career Interest Types (RIASEC OI)",
+          "version": "31.0",
+          "scores": {
+            "realistic": 5.73,
+            "investigative": 6.1,
+            "artistic": 2.12,
+            "social": 2.09,
+            "enterprising": 2.14,
+            "conventional": 4.46
+          },
+          "scale": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "onet-31.0-database",
+            "source_kind": "official",
+            "url": "https://www.onetcenter.org/database.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "O*NET 31.0 · Career Interest Types.txt · 方向特化 signals（医学信号处理）的候选 SOC：17-2031.00（direct）=realistic 5.44/investigative 6.75/artistic 2.11/social 2.45/enterprising 1.84/conventional 4.48；17-2071.00（related）=realistic 6.02/investigative 5.45/artistic 2.12/social 1.72/enterprising 2.44/conventional 4.43 · 六维在本特化 SOC 间**等权平均**（编辑性聚合，非 O*NET 官方合成）· 官方量尺 1.00–7.00 · 组级选点依据：生物医学工程 / 医工交叉方向的三个特化（智能医疗器械、医学信号处理、医学影像工程）的 direct SOC 全部是 17-2031.00，无需在特化间取舍。"
+          }
+        ]
+      },
+      "skills": [
+        {
+          "skill_id": "python",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 3.02,
+            "upper": 3.74,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "statistics",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.88 LV=4.5），未做跨 SOC 平均 · 合成 SE≈0.19（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.88 LV=4.5），未做跨 SOC 平均 · 合成 SE≈0.19 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.19,
+            "lower": 4.13,
+            "upper": 4.87,
+            "suppressed": false
+          },
+          "must_have": true
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 4.26,
+            "upper": 4.98,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "research_design",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 4.26,
+            "upper": 4.98,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "product_requirements",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.62 LV=3.88），未做跨 SOC 平均 · 合成 SE≈0.13（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.62 LV=3.88），未做跨 SOC 平均 · 合成 SE≈0.13 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.13,
+            "lower": 3.64,
+            "upper": 4.13,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "communication",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=4 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=4 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.16,
+            "lower": 3.93,
+            "upper": 4.57,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "model_evaluation",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.5 LV=4），未做跨 SOC 平均 · 合成 SE≈0（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（signals→17-2031.00(direct, w=1.000) IM=3.5 LV=4），未做跨 SOC 平均 · 合成 SE≈0 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "suppressed": false
+          }
+        }
+      ],
+      "professional_background": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "hard_requirements": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "preferences": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "standard_version": "onet-31.0+limen-2026-10-23"
+    },
+    {
+      "schema_version": "match-2",
+      "id": "imaging_eng",
+      "title": "医学影像工程",
+      "simulation": false,
+      "direction_ids": [
+        "imaging_eng"
+      ],
+      "onet_codes": [
+        "17-2031.00",
+        "15-2051.00"
+      ],
+      "mapping_basis": "LIMEN 编辑性方向映射（data/occupation_direction_map.json@1.1 + data/medicine_direction.json）：岗位粒度 = 单个特化方向（9 个跨学科特化 + 医学，共 10 个）。兴趣画像 = 该特化候选 SOC 的 OI 等权平均（编辑性聚合）；技能 = 该特化自己候选 SOC 中第一个可用分量（direct 优先）。O*NET-SOC 由方向映射给出，不是 O*NET 官方中国考研专业结论。",
+      "tasks": {
+        "value": [
+          "处理医学成像或重建问题",
+          "分析影像质量与误差",
+          "开发影像算法及验证方法"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "data/occupation_direction_map.json@1.1",
+            "source_kind": "editorial",
+            "url": null,
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "data/occupation_direction_map.json@1.1 · imaging_eng · work_tasks（LIMEN 编辑性描述，非 O*NET 原文）"
+          }
+        ]
+      },
+      "interests": {
+        "value": {
+          "instrument": "O*NET Career Interest Types (RIASEC OI)",
+          "version": "31.0",
+          "scores": {
+            "realistic": 3.81,
+            "investigative": 6.87,
+            "artistic": 2.36,
+            "social": 2.06,
+            "enterprising": 1.78,
+            "conventional": 4.94
+          },
+          "scale": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "onet-31.0-database",
+            "source_kind": "official",
+            "url": "https://www.onetcenter.org/database.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "O*NET 31.0 · Career Interest Types.txt · 方向特化 imaging_eng（医学影像工程）的候选 SOC：17-2031.00（direct）=realistic 5.44/investigative 6.75/artistic 2.11/social 2.45/enterprising 1.84/conventional 4.48；15-2051.00（related）=realistic 2.17/investigative 6.98/artistic 2.61/social 1.66/enterprising 1.71/conventional 5.39 · 六维在本特化 SOC 间**等权平均**（编辑性聚合，非 O*NET 官方合成）· 官方量尺 1.00–7.00 · 组级选点依据：生物医学工程 / 医工交叉方向的三个特化（智能医疗器械、医学信号处理、医学影像工程）的 direct SOC 全部是 17-2031.00，无需在特化间取舍。"
+          }
+        ]
+      },
+      "skills": [
+        {
+          "skill_id": "python",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 3.02,
+            "upper": 3.74,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "statistics",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.88 LV=4.5），未做跨 SOC 平均 · 合成 SE≈0.19（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.88 LV=4.5），未做跨 SOC 平均 · 合成 SE≈0.19 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.19,
+            "lower": 4.13,
+            "upper": 4.87,
+            "suppressed": false
+          },
+          "must_have": true
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 4.26,
+            "upper": 4.98,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "research_design",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.88 LV=4.62），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 4.26,
+            "upper": 4.98,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "product_requirements",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.62 LV=3.88），未做跨 SOC 平均 · 合成 SE≈0.13（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.62 LV=3.88），未做跨 SOC 平均 · 合成 SE≈0.13 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.13,
+            "lower": 3.64,
+            "upper": 4.13,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "communication",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=4 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=4 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.16,
+            "lower": 3.93,
+            "upper": 4.57,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "model_evaluation",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.5 LV=4），未做跨 SOC 平均 · 合成 SE≈0（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（imaging_eng→17-2031.00(direct, w=1.000) IM=3.5 LV=4），未做跨 SOC 平均 · 合成 SE≈0 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "suppressed": false
+          }
+        }
+      ],
+      "professional_background": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "hard_requirements": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "preferences": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "standard_version": "onet-31.0+limen-2026-10-23"
+    },
+    {
+      "schema_version": "match-2",
+      "id": "clinical_data",
+      "title": "临床数据科学",
+      "simulation": false,
+      "direction_ids": [
+        "clinical_data"
+      ],
+      "onet_codes": [
+        "15-2051.02",
+        "15-2041.01"
+      ],
+      "mapping_basis": "LIMEN 编辑性方向映射（data/occupation_direction_map.json@1.1 + data/medicine_direction.json）：岗位粒度 = 单个特化方向（9 个跨学科特化 + 医学，共 10 个）。兴趣画像 = 该特化候选 SOC 的 OI 等权平均（编辑性聚合）；技能 = 该特化自己候选 SOC 中第一个可用分量（direct 优先）。O*NET-SOC 由方向映射给出，不是 O*NET 官方中国考研专业结论。",
+      "tasks": {
+        "value": [
+          "定义临床数据字典",
+          "数据质量检查与统计建模",
+          "进行可重复的数据分析"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "data/occupation_direction_map.json@1.1",
+            "source_kind": "editorial",
+            "url": null,
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "data/occupation_direction_map.json@1.1 · clinical_data · work_tasks（LIMEN 编辑性描述，非 O*NET 原文）"
+          }
+        ]
+      },
+      "interests": {
+        "value": {
+          "instrument": "O*NET Career Interest Types (RIASEC OI)",
+          "version": "31.0",
+          "scores": {
+            "realistic": 1.84,
+            "investigative": 6.33,
+            "artistic": 2.04,
+            "social": 2.97,
+            "enterprising": 2.64,
+            "conventional": 5.49
+          },
+          "scale": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "onet-31.0-database",
+            "source_kind": "official",
+            "url": "https://www.onetcenter.org/database.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "O*NET 31.0 · Career Interest Types.txt · 方向特化 clinical_data（临床数据科学）的候选 SOC：15-2051.02（direct）=realistic 1.25/investigative 5.66/artistic 1.27/social 2.82/enterprising 3.3/conventional 6.58；15-2041.01（direct）=realistic 2.43/investigative 7/artistic 2.8/social 3.11/enterprising 1.98/conventional 4.4 · 六维在本特化 SOC 间**等权平均**（编辑性聚合，非 O*NET 官方合成）· 官方量尺 1.00–7.00 · 组级选点依据：医学信息学方向取 Health Informatics Specialists 为代表：其 O*NET 职业名称即健康信息学，与该方向名称对应最直接；clinical_data（15-2051.02）与 med_nlp_kg（15-2051.00）作为 related，因为它们的兴趣画像更偏数据科学而非信息系统。"
+          }
+        ]
+      },
+      "skills": [
+        {
+          "skill_id": "python",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.25 LV=3.62），未做跨 SOC 平均 · 合成 SE≈0.26（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.25 LV=3.62），未做跨 SOC 平均 · 合成 SE≈0.26 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.26,
+            "lower": 3.1,
+            "upper": 4.14,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "statistics",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.5 LV=3.88），未做跨 SOC 平均 · 合成 SE≈0.23（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.5 LV=3.88），未做跨 SOC 平均 · 合成 SE≈0.23 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.23,
+            "lower": 3.44,
+            "upper": 4.32,
+            "suppressed": false
+          },
+          "must_have": true
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.25 LV=3.62），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.25 LV=3.62），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 3.26,
+            "upper": 3.98,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "research_design",
+          "importance": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=2.38 LV=2.25），未做跨 SOC 平均 · 合成 SE≈0.25（权重平方和） → LIMEN 重要性 round(IM)=2（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 1,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=2.38 LV=2.25），未做跨 SOC 平均 · 合成 SE≈0.25 → LIMEN 等级 round(LV/7×4)=1（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.25,
+            "lower": 1.76,
+            "upper": 2.74,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "product_requirements",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.25 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.25 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 3.02,
+            "upper": 3.74,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "communication",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.88 LV=4），未做跨 SOC 平均 · 合成 SE≈0（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.88 LV=4），未做跨 SOC 平均 · 合成 SE≈0 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "model_evaluation",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（clinical_data→15-2051.02(direct, w=1.000) IM=3.12 LV=3.38），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 3.02,
+            "upper": 3.74,
+            "suppressed": false
+          }
+        }
+      ],
+      "professional_background": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "hard_requirements": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "preferences": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "standard_version": "onet-31.0+limen-2026-10-23"
+    },
+    {
+      "schema_version": "match-2",
+      "id": "health_systems",
+      "title": "医疗信息系统",
+      "simulation": false,
+      "direction_ids": [
+        "health_systems"
+      ],
+      "onet_codes": [
+        "15-1211.01",
+        "15-1211.00"
+      ],
+      "mapping_basis": "LIMEN 编辑性方向映射（data/occupation_direction_map.json@1.1 + data/medicine_direction.json）：岗位粒度 = 单个特化方向（9 个跨学科特化 + 医学，共 10 个）。兴趣画像 = 该特化候选 SOC 的 OI 等权平均（编辑性聚合）；技能 = 该特化自己候选 SOC 中第一个可用分量（direct 优先）。O*NET-SOC 由方向映射给出，不是 O*NET 官方中国考研专业结论。",
+      "tasks": {
+        "value": [
+          "分析医院信息流程",
+          "整理系统需求及数据标准",
+          "测试数据互操作与业务流程"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "data/occupation_direction_map.json@1.1",
+            "source_kind": "editorial",
+            "url": null,
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "data/occupation_direction_map.json@1.1 · health_systems · work_tasks（LIMEN 编辑性描述，非 O*NET 原文）"
+          }
+        ]
+      },
+      "interests": {
+        "value": {
+          "instrument": "O*NET Career Interest Types (RIASEC OI)",
+          "version": "31.0",
+          "scores": {
+            "realistic": 3.06,
+            "investigative": 6.34,
+            "artistic": 1.99,
+            "social": 3.22,
+            "enterprising": 2.16,
+            "conventional": 5.32
+          },
+          "scale": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "onet-31.0-database",
+            "source_kind": "official",
+            "url": "https://www.onetcenter.org/database.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "O*NET 31.0 · Career Interest Types.txt · 方向特化 health_systems（医疗信息系统）的候选 SOC：15-1211.01（direct）=realistic 2.84/investigative 6.29/artistic 1.99/social 4.52/enterprising 2.08/conventional 4.71；15-1211.00（related）=realistic 3.27/investigative 6.39/artistic 1.98/social 1.91/enterprising 2.23/conventional 5.93 · 六维在本特化 SOC 间**等权平均**（编辑性聚合，非 O*NET 官方合成）· 官方量尺 1.00–7.00 · 组级选点依据：医学信息学方向取 Health Informatics Specialists 为代表：其 O*NET 职业名称即健康信息学，与该方向名称对应最直接；clinical_data（15-2051.02）与 med_nlp_kg（15-2051.00）作为 related，因为它们的兴趣画像更偏数据科学而非信息系统。"
+          }
+        ]
+      },
+      "skills": [
+        {
+          "skill_id": "python",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=2.88 LV=3.12），未做跨 SOC 平均 · 合成 SE≈0.13（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=2.88 LV=3.12），未做跨 SOC 平均 · 合成 SE≈0.13 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.13,
+            "lower": 2.88,
+            "upper": 3.37,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "statistics",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=3 LV=3），未做跨 SOC 平均 · 合成 SE≈0（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=3 LV=3），未做跨 SOC 平均 · 合成 SE≈0 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=3.88 LV=4），未做跨 SOC 平均 · 合成 SE≈0（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=3.88 LV=4），未做跨 SOC 平均 · 合成 SE≈0 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "suppressed": false
+          },
+          "must_have": true
+        },
+        {
+          "skill_id": "research_design",
+          "importance": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=2.12 LV=2），未做跨 SOC 平均 · 合成 SE≈0.19（权重平方和） → LIMEN 重要性 round(IM)=2（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 1,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=2.12 LV=2），未做跨 SOC 平均 · 合成 SE≈0.19 → LIMEN 等级 round(LV/7×4)=1（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.19,
+            "lower": 1.63,
+            "upper": 2.37,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "product_requirements",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=3.75 LV=4），未做跨 SOC 平均 · 合成 SE≈0.19（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=3.75 LV=4），未做跨 SOC 平均 · 合成 SE≈0.19 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.19,
+            "lower": 3.63,
+            "upper": 4.37,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "communication",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=4 LV=4），未做跨 SOC 平均 · 合成 SE≈0（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=4 LV=4），未做跨 SOC 平均 · 合成 SE≈0 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "model_evaluation",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=3.75 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（health_systems→15-1211.01(direct, w=1.000) IM=3.75 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.16,
+            "lower": 3.93,
+            "upper": 4.57,
+            "suppressed": false
+          }
+        }
+      ],
+      "professional_background": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "hard_requirements": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "preferences": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "standard_version": "onet-31.0+limen-2026-10-23"
+    },
+    {
+      "schema_version": "match-2",
+      "id": "med_nlp_kg",
+      "title": "医疗NLP与知识图谱",
+      "simulation": false,
+      "direction_ids": [
+        "med_nlp_kg"
+      ],
+      "onet_codes": [
+        "15-2051.00",
+        "19-1029.01"
+      ],
+      "mapping_basis": "LIMEN 编辑性方向映射（data/occupation_direction_map.json@1.1 + data/medicine_direction.json）：岗位粒度 = 单个特化方向（9 个跨学科特化 + 医学，共 10 个）。兴趣画像 = 该特化候选 SOC 的 OI 等权平均（编辑性聚合）；技能 = 该特化自己候选 SOC 中第一个可用分量（direct 优先）。O*NET-SOC 由方向映射给出，不是 O*NET 官方中国考研专业结论。",
+      "tasks": {
+        "value": [
+          "整理医疗文本语料与标注规则",
+          "抽取医学实体与关系",
+          "建立和评价检索与知识系统"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "data/occupation_direction_map.json@1.1",
+            "source_kind": "editorial",
+            "url": null,
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "data/occupation_direction_map.json@1.1 · med_nlp_kg · work_tasks（LIMEN 编辑性描述，非 O*NET 原文）"
+          }
+        ]
+      },
+      "interests": {
+        "value": {
+          "instrument": "O*NET Career Interest Types (RIASEC OI)",
+          "version": "31.0",
+          "scores": {
+            "realistic": 2.99,
+            "investigative": 6.99,
+            "artistic": 2.56,
+            "social": 1.65,
+            "enterprising": 1.49,
+            "conventional": 5.22
+          },
+          "scale": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "onet-31.0-database",
+            "source_kind": "official",
+            "url": "https://www.onetcenter.org/database.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "O*NET 31.0 · Career Interest Types.txt · 方向特化 med_nlp_kg（医疗NLP与知识图谱）的候选 SOC：15-2051.00（related）=realistic 2.17/investigative 6.98/artistic 2.61/social 1.66/enterprising 1.71/conventional 5.39；19-1029.01（adjacent）=realistic 3.81/investigative 7/artistic 2.51/social 1.64/enterprising 1.26/conventional 5.04 · 六维在本特化 SOC 间**等权平均**（编辑性聚合，非 O*NET 官方合成）· 官方量尺 1.00–7.00 · 组级选点依据：医学信息学方向取 Health Informatics Specialists 为代表：其 O*NET 职业名称即健康信息学，与该方向名称对应最直接；clinical_data（15-2051.02）与 med_nlp_kg（15-2051.00）作为 related，因为它们的兴趣画像更偏数据科学而非信息系统。"
+          }
+        ]
+      },
+      "skills": [
+        {
+          "skill_id": "statistics",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（med_nlp_kg→15-2051.00(related, w=1.000) IM=4.38 LV=5），未做跨 SOC 平均 · 合成 SE≈0.42（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（med_nlp_kg→15-2051.00(related, w=1.000) IM=4.38 LV=5），未做跨 SOC 平均 · 合成 SE≈0.42 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.42,
+            "lower": 4.17,
+            "upper": 5.83,
+            "suppressed": false
+          },
+          "must_have": true
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（med_nlp_kg→15-2051.00(related, w=1.000) IM=3.38 LV=4），未做跨 SOC 平均 · 合成 SE≈0.27（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（med_nlp_kg→15-2051.00(related, w=1.000) IM=3.38 LV=4），未做跨 SOC 平均 · 合成 SE≈0.27 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.27,
+            "lower": 3.48,
+            "upper": 4.52,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "research_design",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（med_nlp_kg→19-1029.01(adjacent, w=1.000) IM=4 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（med_nlp_kg→19-1029.01(adjacent, w=1.000) IM=4 LV=4.25），未做跨 SOC 平均 · 合成 SE≈0.16 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.16,
+            "lower": 3.93,
+            "upper": 4.57,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "product_requirements",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（med_nlp_kg→19-1029.01(adjacent, w=1.000) IM=3.38 LV=3.75），未做跨 SOC 平均 · 合成 SE≈0.16（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（med_nlp_kg→19-1029.01(adjacent, w=1.000) IM=3.38 LV=3.75），未做跨 SOC 平均 · 合成 SE≈0.16 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.16,
+            "lower": 3.43,
+            "upper": 4.07,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "communication",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（med_nlp_kg→15-2051.00(related, w=1.000) IM=3.62 LV=3.75），未做跨 SOC 平均 · 合成 SE≈0.16（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（med_nlp_kg→15-2051.00(related, w=1.000) IM=3.62 LV=3.75），未做跨 SOC 平均 · 合成 SE≈0.16 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.16,
+            "lower": 3.43,
+            "upper": 4.07,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "model_evaluation",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（med_nlp_kg→19-1029.01(adjacent, w=1.000) IM=3.25 LV=3.75），未做跨 SOC 平均 · 合成 SE≈0.16（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（med_nlp_kg→19-1029.01(adjacent, w=1.000) IM=3.25 LV=3.75），未做跨 SOC 平均 · 合成 SE≈0.16 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.16,
+            "lower": 3.43,
+            "upper": 4.07,
+            "suppressed": false
+          }
+        }
+      ],
+      "professional_background": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "hard_requirements": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "preferences": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "standard_version": "onet-31.0+limen-2026-10-23"
+    },
+    {
+      "schema_version": "match-2",
+      "id": "medicine",
+      "title": "临床科室探索",
+      "simulation": false,
+      "direction_ids": [
+        "medicine"
+      ],
+      "onet_codes": [
+        "29-1215.00",
+        "29-1216.00"
+      ],
+      "mapping_basis": "LIMEN 编辑性方向映射（data/occupation_direction_map.json@1.1 + data/medicine_direction.json）：岗位粒度 = 单个特化方向（9 个跨学科特化 + 医学，共 10 个）。兴趣画像 = 该特化候选 SOC 的 OI 等权平均（编辑性聚合）；技能 = 该特化自己候选 SOC 中第一个可用分量（direct 优先）。O*NET-SOC 由方向映射给出，不是 O*NET 官方中国考研专业结论。",
+      "tasks": {
+        "value": [
+          "整理就诊信息并核对信息来源",
+          "与患者和团队沟通未知项",
+          "完成带核对清单的团队交接"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "data/occupation_direction_map.json@1.1",
+            "source_kind": "editorial",
+            "url": null,
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "data/occupation_direction_map.json@1.1 · medicine · work_tasks（LIMEN 编辑性描述，非 O*NET 原文）"
+          }
+        ]
+      },
+      "interests": {
+        "value": {
+          "instrument": "O*NET Career Interest Types (RIASEC OI)",
+          "version": "31.0",
+          "scores": {
+            "realistic": 4.09,
+            "investigative": 6.45,
+            "artistic": 1.44,
+            "social": 6.15,
+            "enterprising": 2.22,
+            "conventional": 3.79
+          },
+          "scale": {
+            "min": 1,
+            "max": 7
+          }
+        },
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "onet-31.0-database",
+            "source_kind": "official",
+            "url": "https://www.onetcenter.org/database.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T00:00:00Z",
+            "verification": "verified",
+            "locator": "O*NET 31.0 · Career Interest Types.txt · 方向特化 medicine（临床科室探索）的候选 SOC：29-1215.00（direct）=realistic 3.75/investigative 6.08/artistic 1.45/social 6.21/enterprising 2.34/conventional 3.95；29-1216.00（related）=realistic 4.43/investigative 6.81/artistic 1.44/social 6.08/enterprising 2.1/conventional 3.63 · 六维在本特化 SOC 间**等权平均**（编辑性聚合，非 O*NET 官方合成）· 官方量尺 1.00–7.00 · 组级选点依据：继续医学（临床）方向在 O*NET 中没有单一对应职业，这里取 Family Medicine Physicians（29-1215.00）作 direct 代表：临床医学本科毕业后的主流去向是全科/内科方向的临床医师，其兴趣画像（social 高、realistic 低）与工程/数据类方向区分最明显。General Internal Medicine Physicians（29-1216.00）作 related，用于敏感性对照。这是 LIMEN 编辑性选点，不是 O*NET 官方结论，也不核定执业资格或科室准入。"
+          }
+        ]
+      },
+      "skills": [
+        {
+          "skill_id": "python",
+          "importance": {
+            "value": 1,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=1.25 LV=0.38），未做跨 SOC 平均 · 合成 SE≈0.26（权重平方和） → LIMEN 重要性 round(IM)=1（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 0,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.3.e Programming · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=1.25 LV=0.38），未做跨 SOC 平均 · 合成 SE≈0.26 → LIMEN 等级 round(LV/7×4)=0（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.26,
+            "lower": 0,
+            "upper": 0.9,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "statistics",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=2.75 LV=2.88），未做跨 SOC 平均 · 合成 SE≈0.13（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.e Mathematics · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=2.75 LV=2.88），未做跨 SOC 平均 · 合成 SE≈0.13 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.13,
+            "lower": 2.64,
+            "upper": 3.13,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=4 LV=4.75），未做跨 SOC 平均 · 合成 SE≈0.16（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.e Judgment and Decision Making · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=4 LV=4.75），未做跨 SOC 平均 · 合成 SE≈0.16 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.16,
+            "lower": 4.43,
+            "upper": 5.07,
+            "suppressed": false
+          },
+          "must_have": true
+        },
+        {
+          "skill_id": "research_design",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=3.88 LV=4），未做跨 SOC 平均 · 合成 SE≈0.19（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.f Science · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=3.88 LV=4），未做跨 SOC 平均 · 合成 SE≈0.19 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.19,
+            "lower": 3.63,
+            "upper": 4.37,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "product_requirements",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=2.88 LV=2.88），未做跨 SOC 平均 · 合成 SE≈0.13（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.g Systems Analysis · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=2.88 LV=2.88），未做跨 SOC 平均 · 合成 SE≈0.13 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.13,
+            "lower": 2.64,
+            "upper": 3.13,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "communication",
+          "importance": {
+            "value": 4,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=4.12 LV=4.38），未做跨 SOC 平均 · 合成 SE≈0.18（权重平方和） → LIMEN 重要性 round(IM)=4（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Essential Skills.txt · 2.A.1.d Speaking · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=4.12 LV=4.38），未做跨 SOC 平均 · 合成 SE≈0.18 → LIMEN 等级 round(LV/7×4)=3（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.18,
+            "lower": 4.02,
+            "upper": 4.74,
+            "suppressed": false
+          }
+        },
+        {
+          "skill_id": "model_evaluation",
+          "importance": {
+            "value": 3,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=2.88 LV=2.88），未做跨 SOC 平均 · 合成 SE≈0.13（权重平方和） → LIMEN 重要性 round(IM)=3（1–5，编辑性投影）"
+              }
+            ]
+          },
+          "required_level": {
+            "value": 2,
+            "status": "known",
+            "evidence": [
+              {
+                "ref": "onet-31.0-database",
+                "source_kind": "official",
+                "url": "https://www.onetcenter.org/database.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T00:00:00Z",
+                "verification": "verified",
+                "locator": "O*NET 31.0 · Transferable Skills.txt · 2.B.4.h Systems Evaluation · 只有一个可用分量（medicine→29-1215.00(direct, w=1.000) IM=2.88 LV=2.88），未做跨 SOC 平均 · 合成 SE≈0.13 → LIMEN 等级 round(LV/7×4)=2（编辑性线性投影，不是 O*NET 官方 0–4 量尺）"
+              }
+            ]
+          },
+          "rating": {
+            "n": 8,
+            "se": 0.13,
+            "lower": 2.64,
+            "upper": 3.13,
+            "suppressed": false
+          }
+        }
+      ],
+      "professional_background": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "hard_requirements": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "preferences": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "standard_version": "onet-31.0+limen-2026-10-23"
+    }
+  ],
+  "audits": {
+    "ml_cv": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 4.5,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 4.5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-2051.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4.38,
+              "lv": 5,
+              "n": 8,
+              "se": 0.4226,
+              "suppressed": false
+            }
+          ],
+          "im": 4.38,
+          "lv": 5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-2051.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.38,
+              "lv": 4,
+              "n": 8,
+              "se": 0.2673,
+              "suppressed": false
+            }
+          ],
+          "im": 3.38,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.75,
+              "lv": 4.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.75,
+          "lv": 4.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-2051.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.75,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.75,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 4.88,
+              "n": 8,
+              "se": 0.2266,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 4.88,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-2051.00",
+        "15-1221.00"
+      ],
+      "interest_soc": "15-2051.00/15-1221.00",
+      "weighted_socs": [
+        "15-1221.00",
+        "15-2051.00"
+      ],
+      "interest_rationale": "AI / 计算机方向取 Data Scientists 为代表：该方向三个特化里 ml_cv 直接对应此 SOC，llm_agent 与其研究属性一致；software（15-1252.00）作为 related 保留，因为本方向在 LIMEN 语境下以 AI 能力为主而非通用软件开发。"
+    },
+    "software": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1299.08",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1252.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.75,
+              "lv": 3.25,
+              "n": 8,
+              "se": 0.3134,
+              "suppressed": false
+            }
+          ],
+          "im": 2.75,
+          "lv": 3.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1252.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.75,
+              "n": 8,
+              "se": 0.3134,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.75,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1299.08",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3,
+              "lv": 3.12,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 3,
+          "lv": 3.12,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1252.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 3.88,
+              "n": 8,
+              "se": 0.3504,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 3.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1252.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1252.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.38,
+              "lv": 4.12,
+              "n": 8,
+              "se": 0.4407,
+              "suppressed": false
+            }
+          ],
+          "im": 3.38,
+          "lv": 4.12,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-1252.00",
+        "15-1299.08"
+      ],
+      "interest_soc": "15-1252.00/15-1299.08",
+      "weighted_socs": [
+        "15-1299.08",
+        "15-1252.00"
+      ],
+      "interest_rationale": "AI / 计算机方向取 Data Scientists 为代表：该方向三个特化里 ml_cv 直接对应此 SOC，llm_agent 与其研究属性一致；software（15-1252.00）作为 related 保留，因为本方向在 LIMEN 语境下以 AI 能力为主而非通用软件开发。"
+    },
+    "llm_agent": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 4.5,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 4.5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.38,
+              "lv": 4.38,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 3.38,
+          "lv": 4.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.75,
+              "lv": 4.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.75,
+          "lv": 4.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 4.12,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 4.12,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 4.88,
+              "n": 8,
+              "se": 0.2266,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 4.88,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-1221.00",
+        "15-1252.00"
+      ],
+      "interest_soc": "15-1221.00/15-1252.00",
+      "weighted_socs": [
+        "15-1221.00"
+      ],
+      "interest_rationale": "AI / 计算机方向取 Data Scientists 为代表：该方向三个特化里 ml_cv 直接对应此 SOC，llm_agent 与其研究属性一致；software（15-1252.00）作为 related 保留，因为本方向在 LIMEN 语境下以 AI 能力为主而非通用软件开发。"
+    },
+    "devices": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.5,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "17-2031.00",
+        "17-2072.00"
+      ],
+      "interest_soc": "17-2031.00/17-2072.00",
+      "weighted_socs": [
+        "17-2031.00"
+      ],
+      "interest_rationale": "生物医学工程 / 医工交叉方向的三个特化（智能医疗器械、医学信号处理、医学影像工程）的 direct SOC 全部是 17-2031.00，无需在特化间取舍。"
+    },
+    "signals": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.5,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "17-2031.00",
+        "17-2071.00"
+      ],
+      "interest_soc": "17-2031.00/17-2071.00",
+      "weighted_socs": [
+        "17-2031.00"
+      ],
+      "interest_rationale": "生物医学工程 / 医工交叉方向的三个特化（智能医疗器械、医学信号处理、医学影像工程）的 direct SOC 全部是 17-2031.00，无需在特化间取舍。"
+    },
+    "imaging_eng": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.5,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "17-2031.00",
+        "15-2051.00"
+      ],
+      "interest_soc": "17-2031.00/15-2051.00",
+      "weighted_socs": [
+        "17-2031.00"
+      ],
+      "interest_rationale": "生物医学工程 / 医工交叉方向的三个特化（智能医疗器械、医学信号处理、医学影像工程）的 direct SOC 全部是 17-2031.00，无需在特化间取舍。"
+    },
+    "clinical_data": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.25,
+              "lv": 3.62,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 3.25,
+          "lv": 3.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 3.88,
+              "n": 8,
+              "se": 0.2266,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 3.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.25,
+              "lv": 3.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.25,
+          "lv": 3.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.38,
+              "lv": 2.25,
+              "n": 8,
+              "se": 0.25,
+              "suppressed": false
+            }
+          ],
+          "im": 2.38,
+          "lv": 2.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.25,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.25,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-2051.02",
+        "15-2041.01"
+      ],
+      "interest_soc": "15-2051.02/15-2041.01",
+      "weighted_socs": [
+        "15-2051.02"
+      ],
+      "interest_rationale": "医学信息学方向取 Health Informatics Specialists 为代表：其 O*NET 职业名称即健康信息学，与该方向名称对应最直接；clinical_data（15-2051.02）与 med_nlp_kg（15-2051.00）作为 related，因为它们的兴趣画像更偏数据科学而非信息系统。"
+    },
+    "health_systems": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.88,
+              "lv": 3.12,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 2.88,
+          "lv": 3.12,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3,
+              "lv": 3,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3,
+          "lv": 3,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.12,
+              "lv": 2,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 2.12,
+          "lv": 2,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.75,
+              "lv": 4,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.75,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.75,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.75,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-1211.01",
+        "15-1211.00"
+      ],
+      "interest_soc": "15-1211.01/15-1211.00",
+      "weighted_socs": [
+        "15-1211.01"
+      ],
+      "interest_rationale": "医学信息学方向取 Health Informatics Specialists 为代表：其 O*NET 职业名称即健康信息学，与该方向名称对应最直接；clinical_data（15-2051.02）与 med_nlp_kg（15-2051.00）作为 related，因为它们的兴趣画像更偏数据科学而非信息系统。"
+    },
+    "med_nlp_kg": {
+      "skills": [
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "15-2051.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 4.38,
+              "lv": 5,
+              "n": 8,
+              "se": 0.4226,
+              "suppressed": false
+            }
+          ],
+          "im": 4.38,
+          "lv": 5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "15-2051.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.38,
+              "lv": 4,
+              "n": 8,
+              "se": 0.2673,
+              "suppressed": false
+            }
+          ],
+          "im": 3.38,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "19-1029.01",
+              "relationship": "adjacent",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "19-1029.01",
+              "relationship": "adjacent",
+              "weight": 1,
+              "im": 3.38,
+              "lv": 3.75,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.38,
+          "lv": 3.75,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "15-2051.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.75,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.75,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "19-1029.01",
+              "relationship": "adjacent",
+              "weight": 1,
+              "im": 3.25,
+              "lv": 3.75,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.25,
+          "lv": 3.75,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "python",
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-2051.00",
+        "19-1029.01"
+      ],
+      "interest_soc": "15-2051.00/19-1029.01",
+      "weighted_socs": [
+        "15-2051.00",
+        "19-1029.01"
+      ],
+      "interest_rationale": "医学信息学方向取 Health Informatics Specialists 为代表：其 O*NET 职业名称即健康信息学，与该方向名称对应最直接；clinical_data（15-2051.02）与 med_nlp_kg（15-2051.00）作为 related，因为它们的兴趣画像更偏数据科学而非信息系统。"
+    },
+    "medicine": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 1.25,
+              "lv": 0.38,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 1.25,
+          "lv": 0.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.75,
+              "lv": 2.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 2.75,
+          "lv": 2.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.75,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.75,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.88,
+              "lv": 2.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 2.88,
+          "lv": 2.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4.12,
+              "lv": 4.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 4.12,
+          "lv": 4.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.88,
+              "lv": 2.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 2.88,
+          "lv": 2.88,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "29-1215.00",
+        "29-1216.00"
+      ],
+      "interest_soc": "29-1215.00/29-1216.00",
+      "weighted_socs": [
+        "29-1215.00"
+      ],
+      "interest_rationale": "继续医学（临床）方向在 O*NET 中没有单一对应职业，这里取 Family Medicine Physicians（29-1215.00）作 direct 代表：临床医学本科毕业后的主流去向是全科/内科方向的临床医师，其兴趣画像（social 高、realistic 低）与工程/数据类方向区分最明显。General Internal Medicine Physicians（29-1216.00）作 related，用于敏感性对照。这是 LIMEN 编辑性选点，不是 O*NET 官方结论，也不核定执业资格或科室准入。"
+    }
+  }
+}

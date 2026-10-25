@@ -1,0 +1,721 @@
+{
+  "schema_version": "match-admissions-1",
+  "generated_at": "2026-10-25T05:11:59.849Z",
+  "note": "由 scripts/match-admissions.ts 从 data/knowledge/*.collected.json 生成，不要手改。只收原文明确写出「学校+专业+年份+路径」的条目；原文没写的字段为 unknown。valid_through 是按语料 freshness_days 计算的 LIMEN 复核窗口，不是院校公布的有效期，也不是录取依据。",
+  "corpus": {
+    "bundles_scanned": 96,
+    "admissions_records": 424,
+    "records_with_local_snapshot_text": 407,
+    "duplicate_record_ids_skipped": 53
+  },
+  "admission_count": 7,
+  "admissions": [
+    {
+      "schema_version": "match-2",
+      "id": "adm-tongji-2027-077700-bme",
+      "simulation": false,
+      "university": "同济大学",
+      "major_code": "077700",
+      "major_name": "生物医学工程",
+      "year": 2027,
+      "pathway": "统考",
+      "occupation_ids": [
+        "devices",
+        "signals",
+        "imaging_eng",
+        "clinical_data",
+        "health_systems",
+        "med_nlp_kg"
+      ],
+      "mapping_evidence": [
+        {
+          "ref": "kb:admissions-tongji-2027-077700-yjfx-guide-devices:exam_subjects",
+          "source_kind": "official",
+          "url": "https://yzbm.tongji.edu.cn/zsml/sszsml/zsmlYjfx/2027/110/077700?ksfs=21",
+          "published_at": null,
+          "retrieved_at": "2026-10-23T07:45:45.590Z",
+          "verification": "verified",
+          "locator": "sha256:916731195fe71dc52dd234faf1e534dad69b8c9ac34209938a4daf43637fc055 [30,115) 077700 （学术学位） 生物医学工程（全国统考） ①101思想政治理论 ②201英语（一） ③302数学（二） ④840生物综合 复试科目：①110001学科专业综合"
+        },
+        {
+          "ref": "limen-admission-occupation-map@3.0#R2",
+          "source_kind": "editorial",
+          "url": null,
+          "published_at": "2026-10-23",
+          "retrieved_at": "2026-10-23T00:00:00.000Z",
+          "verification": "verified",
+          "locator": "R2 生物医学工程类硕士 → devices、signals、imaging_eng（医工交叉做影像/信号/器械工程）；医学信息类 → clinical_data、health_systems、med_nlp_kg（医疗信息、临床数据与医学NLP）。LIMEN 编辑性出口映射，需人工复核。 本条：077700 生物医学工程 → biomed_eng / med_informatics。"
+        }
+      ],
+      "valid_through": "2026-12-22",
+      "exam_subjects": {
+        "value": [
+          "077700 （学术学位） 生物医学工程（全国统考） ①101思想政治理论 ②201英语（一） ③302数学（二） ④840生物综合 复试科目：①110001学科专业综合"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-tongji-2027-077700-yjfx-guide-devices:exam_subjects",
+            "source_kind": "official",
+            "url": "https://yzbm.tongji.edu.cn/zsml/sszsml/zsmlYjfx/2027/110/077700?ksfs=21",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T07:45:45.590Z",
+            "verification": "verified",
+            "locator": "sha256:916731195fe71dc52dd234faf1e534dad69b8c9ac34209938a4daf43637fc055 [30,115) 077700 （学术学位） 生物医学工程（全国统考） ①101思想政治理论 ②201英语（一） ③302数学（二） ④840生物综合 复试科目：①110001学科专业综合"
+          }
+        ]
+      },
+      "research_directions": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "cross_major": {
+        "value": "生物医学信息工程 可推免 备注 不接收同等学力考生",
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-tongji-2027-077700-yjfx-guide-devices:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://yzbm.tongji.edu.cn/zsml/sszsml/zsmlYjfx/2027/110/077700?ksfs=21",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T07:45:45.590Z",
+            "verification": "verified",
+            "locator": "sha256:916731195fe71dc52dd234faf1e534dad69b8c9ac34209938a4daf43637fc055 [211,236) 生物医学信息工程 可推免 备注 不接收同等学力考生"
+          }
+        ]
+      },
+      "hard_requirements": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      }
+    },
+    {
+      "schema_version": "match-2",
+      "id": "adm-ustc-2026-083100-bme",
+      "simulation": false,
+      "university": "中国科学技术大学",
+      "major_code": "083100",
+      "major_name": "生物医学工程",
+      "year": 2026,
+      "pathway": "推免",
+      "occupation_ids": [
+        "devices",
+        "signals",
+        "imaging_eng",
+        "clinical_data",
+        "health_systems",
+        "med_nlp_kg"
+      ],
+      "mapping_evidence": [
+        {
+          "ref": "kb:admissions-ustc-2026-master-bme-guide-signals-040bb01b:cross_major_restrictions",
+          "source_kind": "official",
+          "url": "https://yz1.ustc.edu.cn/sszs_2026/index_35.shtml",
+          "published_at": null,
+          "retrieved_at": "2026-10-23T05:16:26.461Z",
+          "verification": "verified",
+          "locator": "sha256:741113d215ab5b8136c947f08bdc51a1b87bfcd6422ce68574bf8e7e06f39702 [710,753) 学科专业名称：生物医学工程 (专业代码 083100 ) 一、报考说明 仅接收推免生。"
+        },
+        {
+          "ref": "limen-admission-occupation-map@3.0#R2",
+          "source_kind": "editorial",
+          "url": null,
+          "published_at": "2026-10-23",
+          "retrieved_at": "2026-10-23T00:00:00.000Z",
+          "verification": "verified",
+          "locator": "R2 生物医学工程类硕士 → devices、signals、imaging_eng（医工交叉做影像/信号/器械工程）；医学信息类 → clinical_data、health_systems、med_nlp_kg（医疗信息、临床数据与医学NLP）。LIMEN 编辑性出口映射，需人工复核。 本条：083100 生物医学工程 → biomed_eng / med_informatics。"
+        }
+      ],
+      "valid_through": "2026-12-22",
+      "exam_subjects": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "research_directions": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "cross_major": {
+        "value": "学科专业名称：生物医学工程 (专业代码 083100 ) 一、报考说明 仅接收推免生。",
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-ustc-2026-master-bme-guide-signals-040bb01b:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://yz1.ustc.edu.cn/sszs_2026/index_35.shtml",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T05:16:26.461Z",
+            "verification": "verified",
+            "locator": "sha256:741113d215ab5b8136c947f08bdc51a1b87bfcd6422ce68574bf8e7e06f39702 [710,753) 学科专业名称：生物医学工程 (专业代码 083100 ) 一、报考说明 仅接收推免生。"
+          }
+        ]
+      },
+      "hard_requirements": {
+        "value": [
+          {
+            "id": "adm-ustc-2026-083100-bme-r1",
+            "field": "pathway",
+            "allowed": [
+              "推免"
+            ],
+            "evidence": [
+              {
+                "ref": "kb:admissions-ustc-2026-master-bme-guide-signals-040bb01b:cross_major_restrictions",
+                "source_kind": "official",
+                "url": "https://yz1.ustc.edu.cn/sszs_2026/index_35.shtml",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T05:16:26.461Z",
+                "verification": "verified",
+                "locator": "sha256:741113d215ab5b8136c947f08bdc51a1b87bfcd6422ce68574bf8e7e06f39702 [710,753) 学科专业名称：生物医学工程 (专业代码 083100 ) 一、报考说明 仅接收推免生。"
+              }
+            ]
+          }
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-ustc-2026-master-bme-guide-signals-040bb01b:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://yz1.ustc.edu.cn/sszs_2026/index_35.shtml",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T05:16:26.461Z",
+            "verification": "verified",
+            "locator": "sha256:741113d215ab5b8136c947f08bdc51a1b87bfcd6422ce68574bf8e7e06f39702 [710,753) 学科专业名称：生物医学工程 (专业代码 083100 ) 一、报考说明 仅接收推免生。"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "match-2",
+      "id": "adm-ustc-2026-085405-software-regular",
+      "simulation": false,
+      "university": "中国科学技术大学",
+      "major_code": "085405",
+      "major_name": "软件工程（常规班）",
+      "year": 2026,
+      "pathway": "统考",
+      "occupation_ids": [
+        "ml_cv",
+        "software",
+        "llm_agent"
+      ],
+      "mapping_evidence": [
+        {
+          "ref": "kb:admissions-ustc-2026-sse-085405-guide-software-201d2bb2:exam_subjects",
+          "source_kind": "official",
+          "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+          "published_at": null,
+          "retrieved_at": "2026-10-23T07:58:31.904Z",
+          "verification": "verified",
+          "locator": "sha256:4d21c60e4164e016a4c042a3bece85df58ce3937baac78ad9f9c4c828e151d4f [1800,1856) 1、常规班（注：仅招收统考生） 101思想政治理论 204英语（二） 302数学（二） 408计算机学科专业基础"
+        },
+        {
+          "ref": "limen-admission-occupation-map@3.0#R1",
+          "source_kind": "editorial",
+          "url": null,
+          "published_at": "2026-10-23",
+          "retrieved_at": "2026-10-23T00:00:00.000Z",
+          "verification": "verified",
+          "locator": "R1 计算机/软件/电子信息类硕士 → ml_cv、software、llm_agent（AI / 计算机方向：影像处理、数据管线、模型部署都需要计算机与软件训练）。LIMEN 编辑性出口映射，需人工复核。 本条：085405 软件工程（常规班） → cs_ai。"
+        }
+      ],
+      "valid_through": "2026-12-22",
+      "exam_subjects": {
+        "value": [
+          "1、常规班（注：仅招收统考生） 101思想政治理论 204英语（二） 302数学（二） 408计算机学科专业基础"
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-ustc-2026-sse-085405-guide-software-201d2bb2:exam_subjects",
+            "source_kind": "official",
+            "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T07:58:31.904Z",
+            "verification": "verified",
+            "locator": "sha256:4d21c60e4164e016a4c042a3bece85df58ce3937baac78ad9f9c4c828e151d4f [1800,1856) 1、常规班（注：仅招收统考生） 101思想政治理论 204英语（二） 302数学（二） 408计算机学科专业基础"
+          }
+        ]
+      },
+      "research_directions": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "cross_major": {
+        "value": "学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。",
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-ustc-2026-sse-085405-guide-software-110aef42:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T07:58:31.904Z",
+            "verification": "verified",
+            "locator": "sha256:4d21c60e4164e016a4c042a3bece85df58ce3937baac78ad9f9c4c828e151d4f [685,765) 学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。"
+          }
+        ]
+      },
+      "hard_requirements": {
+        "value": [
+          {
+            "id": "adm-ustc-2026-085405-software-regular-r1",
+            "field": "pathway",
+            "allowed": [
+              "统考"
+            ],
+            "evidence": [
+              {
+                "ref": "kb:admissions-ustc-2026-sse-085405-guide-software-110aef42:cross_major_restrictions",
+                "source_kind": "official",
+                "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T07:58:31.904Z",
+                "verification": "verified",
+                "locator": "sha256:4d21c60e4164e016a4c042a3bece85df58ce3937baac78ad9f9c4c828e151d4f [685,765) 学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。"
+              }
+            ]
+          },
+          {
+            "id": "adm-ustc-2026-085405-software-regular-r2",
+            "field": "major",
+            "allowed": [
+              "软件工程",
+              "计算机科学与技术"
+            ],
+            "evidence": [
+              {
+                "ref": "kb:admissions-ustc-2026-sse-085405-guide-software-110aef42:cross_major_restrictions",
+                "source_kind": "official",
+                "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T07:58:31.904Z",
+                "verification": "verified",
+                "locator": "sha256:4d21c60e4164e016a4c042a3bece85df58ce3937baac78ad9f9c4c828e151d4f [685,765) 学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。"
+              }
+            ]
+          }
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-ustc-2026-sse-085405-guide-software-110aef42:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T07:58:31.904Z",
+            "verification": "verified",
+            "locator": "sha256:4d21c60e4164e016a4c042a3bece85df58ce3937baac78ad9f9c4c828e151d4f [685,765) 学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "match-2",
+      "id": "adm-ustc-2026-085405-software-special",
+      "simulation": false,
+      "university": "中国科学技术大学",
+      "major_code": "085405",
+      "major_name": "软件工程（特色化创新试点班）",
+      "year": 2026,
+      "pathway": "推免",
+      "occupation_ids": [
+        "ml_cv",
+        "software",
+        "llm_agent"
+      ],
+      "mapping_evidence": [
+        {
+          "ref": "kb:admissions-ustc-2026-sse-085405-guide-software-110aef42:cross_major_restrictions",
+          "source_kind": "official",
+          "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+          "published_at": null,
+          "retrieved_at": "2026-10-23T07:58:31.904Z",
+          "verification": "verified",
+          "locator": "sha256:4d21c60e4164e016a4c042a3bece85df58ce3937baac78ad9f9c4c828e151d4f [685,765) 学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。"
+        },
+        {
+          "ref": "limen-admission-occupation-map@3.0#R1",
+          "source_kind": "editorial",
+          "url": null,
+          "published_at": "2026-10-23",
+          "retrieved_at": "2026-10-23T00:00:00.000Z",
+          "verification": "verified",
+          "locator": "R1 计算机/软件/电子信息类硕士 → ml_cv、software、llm_agent（AI / 计算机方向：影像处理、数据管线、模型部署都需要计算机与软件训练）。LIMEN 编辑性出口映射，需人工复核。 本条：085405 软件工程（特色化创新试点班） → cs_ai。"
+        }
+      ],
+      "valid_through": "2026-12-22",
+      "exam_subjects": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "research_directions": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "cross_major": {
+        "value": "学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。",
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-ustc-2026-sse-085405-guide-software-110aef42:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T07:58:31.904Z",
+            "verification": "verified",
+            "locator": "sha256:4d21c60e4164e016a4c042a3bece85df58ce3937baac78ad9f9c4c828e151d4f [685,765) 学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。"
+          }
+        ]
+      },
+      "hard_requirements": {
+        "value": [
+          {
+            "id": "adm-ustc-2026-085405-software-special-r1",
+            "field": "pathway",
+            "allowed": [
+              "推免"
+            ],
+            "evidence": [
+              {
+                "ref": "kb:admissions-ustc-2026-sse-085405-guide-software-110aef42:cross_major_restrictions",
+                "source_kind": "official",
+                "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T07:58:31.904Z",
+                "verification": "verified",
+                "locator": "sha256:4d21c60e4164e016a4c042a3bece85df58ce3937baac78ad9f9c4c828e151d4f [685,765) 学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。"
+              }
+            ]
+          },
+          {
+            "id": "adm-ustc-2026-085405-software-special-r2",
+            "field": "major",
+            "allowed": [
+              "软件工程",
+              "计算机科学与技术"
+            ],
+            "evidence": [
+              {
+                "ref": "kb:admissions-ustc-2026-sse-085405-guide-software-110aef42:cross_major_restrictions",
+                "source_kind": "official",
+                "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T07:58:31.904Z",
+                "verification": "verified",
+                "locator": "sha256:4d21c60e4164e016a4c042a3bece85df58ce3937baac78ad9f9c4c828e151d4f [685,765) 学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。"
+              }
+            ]
+          }
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-ustc-2026-sse-085405-guide-software-110aef42:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://yz1.ustc.edu.cn/sszs_2026/index_9.shtml",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T07:58:31.904Z",
+            "verification": "verified",
+            "locator": "sha256:4d21c60e4164e016a4c042a3bece85df58ce3937baac78ad9f9c4c828e151d4f [685,765) 学科专业名称：软件工程 （专业代码 085405） 一、报考说明 ： 1、常规班仅招收统考生；特色化创新试点班仅接收推免生。 2、软件工程、计算机及其相关专业。"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "match-2",
+      "id": "adm-fudan-2026-083100-bme",
+      "simulation": false,
+      "university": "复旦大学",
+      "major_code": "083100",
+      "major_name": "生物医学工程（学术学位）",
+      "year": 2026,
+      "pathway": "推免",
+      "occupation_ids": [
+        "devices",
+        "signals",
+        "imaging_eng",
+        "clinical_data",
+        "health_systems",
+        "med_nlp_kg"
+      ],
+      "mapping_evidence": [
+        {
+          "ref": "kb:admissions-fudan-2026-catalog-306-bme-guide-devices-53c053e3:cross_major_restrictions",
+          "source_kind": "official",
+          "url": "https://gsas.fudan.edu.cn/sszsml2026/index.html",
+          "published_at": null,
+          "retrieved_at": "2026-10-23T12:04:02.974Z",
+          "verification": "verified",
+          "locator": "sha256:52d45141b5348ff80fdfc72f7436160d1c2417bb2561a062896d7585fb065a61 [1253,1381) 083100（学术学位）生物医学工程 生物医学工程主要研究生物医学信号处理方法、医学成像和图像处理方法、生物材料、人工器官等。目前本学科主要研究方向有医学影像与人工智能，生物大数据、脑智研究、生物传感与芯片等。 17 只招收推免生 1.本专业只招收推免生。"
+        },
+        {
+          "ref": "limen-admission-occupation-map@3.0#R2",
+          "source_kind": "editorial",
+          "url": null,
+          "published_at": "2026-10-23",
+          "retrieved_at": "2026-10-23T00:00:00.000Z",
+          "verification": "verified",
+          "locator": "R2 生物医学工程类硕士 → devices、signals、imaging_eng（医工交叉做影像/信号/器械工程）；医学信息类 → clinical_data、health_systems、med_nlp_kg（医疗信息、临床数据与医学NLP）。LIMEN 编辑性出口映射，需人工复核。 本条：083100 生物医学工程（学术学位） → biomed_eng / med_informatics。"
+        }
+      ],
+      "valid_through": "2026-12-22",
+      "exam_subjects": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "research_directions": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "cross_major": {
+        "value": "083100（学术学位）生物医学工程 生物医学工程主要研究生物医学信号处理方法、医学成像和图像处理方法、生物材料、人工器官等。目前本学科主要研究方向有医学影像与人工智能，生物大数据、脑智研究、生物传感与芯片等。 17 只招收推免生 1.本专业只招收推免生。",
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-fudan-2026-catalog-306-bme-guide-devices-53c053e3:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://gsas.fudan.edu.cn/sszsml2026/index.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T12:04:02.974Z",
+            "verification": "verified",
+            "locator": "sha256:52d45141b5348ff80fdfc72f7436160d1c2417bb2561a062896d7585fb065a61 [1253,1381) 083100（学术学位）生物医学工程 生物医学工程主要研究生物医学信号处理方法、医学成像和图像处理方法、生物材料、人工器官等。目前本学科主要研究方向有医学影像与人工智能，生物大数据、脑智研究、生物传感与芯片等。 17 只招收推免生 1.本专业只招收推免生。"
+          }
+        ]
+      },
+      "hard_requirements": {
+        "value": [
+          {
+            "id": "adm-fudan-2026-083100-bme-r1",
+            "field": "pathway",
+            "allowed": [
+              "推免"
+            ],
+            "evidence": [
+              {
+                "ref": "kb:admissions-fudan-2026-catalog-306-bme-guide-devices-53c053e3:cross_major_restrictions",
+                "source_kind": "official",
+                "url": "https://gsas.fudan.edu.cn/sszsml2026/index.html",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T12:04:02.974Z",
+                "verification": "verified",
+                "locator": "sha256:52d45141b5348ff80fdfc72f7436160d1c2417bb2561a062896d7585fb065a61 [1253,1381) 083100（学术学位）生物医学工程 生物医学工程主要研究生物医学信号处理方法、医学成像和图像处理方法、生物材料、人工器官等。目前本学科主要研究方向有医学影像与人工智能，生物大数据、脑智研究、生物传感与芯片等。 17 只招收推免生 1.本专业只招收推免生。"
+              }
+            ]
+          }
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-fudan-2026-catalog-306-bme-guide-devices-53c053e3:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://gsas.fudan.edu.cn/sszsml2026/index.html",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T12:04:02.974Z",
+            "verification": "verified",
+            "locator": "sha256:52d45141b5348ff80fdfc72f7436160d1c2417bb2561a062896d7585fb065a61 [1253,1381) 083100（学术学位）生物医学工程 生物医学工程主要研究生物医学信号处理方法、医学成像和图像处理方法、生物材料、人工器官等。目前本学科主要研究方向有医学影像与人工智能，生物大数据、脑智研究、生物传感与芯片等。 17 只招收推免生 1.本专业只招收推免生。"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "match-2",
+      "id": "adm-sysu-2027-085404-cs-670",
+      "simulation": false,
+      "university": "中山大学",
+      "major_code": "085404",
+      "major_name": "计算机技术（670 计算机学院）",
+      "year": 2027,
+      "pathway": "推免",
+      "occupation_ids": [
+        "ml_cv",
+        "software",
+        "llm_agent"
+      ],
+      "mapping_evidence": [
+        {
+          "ref": "kb:admissions-sysu-2027-catalog-670-085404-guide-software-96f30f4e:cross_major_restrictions",
+          "source_kind": "official",
+          "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+          "published_at": null,
+          "retrieved_at": "2026-10-23T14:03:34.468Z",
+          "verification": "verified",
+          "locator": "sha256:316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f [20563,20628) 085404 计算机技术 210 仅招收推免生。 69 不分方向 (全日制) 081200 计算机科学与技术 60 仅招收推免生。"
+        },
+        {
+          "ref": "limen-admission-occupation-map@3.0#R1",
+          "source_kind": "editorial",
+          "url": null,
+          "published_at": "2026-10-23",
+          "retrieved_at": "2026-10-23T00:00:00.000Z",
+          "verification": "verified",
+          "locator": "R1 计算机/软件/电子信息类硕士 → ml_cv、software、llm_agent（AI / 计算机方向：影像处理、数据管线、模型部署都需要计算机与软件训练）。LIMEN 编辑性出口映射，需人工复核。 本条：085404 计算机技术（670 计算机学院） → cs_ai。"
+        }
+      ],
+      "valid_through": "2026-12-22",
+      "exam_subjects": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "research_directions": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "cross_major": {
+        "value": "085404 计算机技术 210 仅招收推免生。 69 不分方向 (全日制) 081200 计算机科学与技术 60 仅招收推免生。",
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-sysu-2027-catalog-670-085404-guide-software-96f30f4e:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T14:03:34.468Z",
+            "verification": "verified",
+            "locator": "sha256:316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f [20563,20628) 085404 计算机技术 210 仅招收推免生。 69 不分方向 (全日制) 081200 计算机科学与技术 60 仅招收推免生。"
+          }
+        ]
+      },
+      "hard_requirements": {
+        "value": [
+          {
+            "id": "adm-sysu-2027-085404-cs-670-r1",
+            "field": "pathway",
+            "allowed": [
+              "推免"
+            ],
+            "evidence": [
+              {
+                "ref": "kb:admissions-sysu-2027-catalog-670-085404-guide-software-96f30f4e:cross_major_restrictions",
+                "source_kind": "official",
+                "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+                "published_at": null,
+                "retrieved_at": "2026-10-23T14:03:34.468Z",
+                "verification": "verified",
+                "locator": "sha256:316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f [20563,20628) 085404 计算机技术 210 仅招收推免生。 69 不分方向 (全日制) 081200 计算机科学与技术 60 仅招收推免生。"
+              }
+            ]
+          }
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-sysu-2027-catalog-670-085404-guide-software-96f30f4e:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://graduate.sysu.edu.cn/zsw/sites/default/files/2026-10/2.%20%E4%B8%AD%E5%B1%B1%E5%A4%A7%E5%AD%A62027%E7%A1%95%E5%A3%AB%E7%A0%94%E7%A9%B6%E7%94%9F%E6%8B%9B%E7%94%9F%E5%AD%A6%E7%A7%91%E4%B8%93%E4%B8%9A%E7%9B%AE%E5%BD%95.pdf",
+            "published_at": null,
+            "retrieved_at": "2026-10-23T14:03:34.468Z",
+            "verification": "verified",
+            "locator": "sha256:316b756b9d23b0b6a841399e2d9154988f3bd8466b8909bfbb29f06368b15e7f [20563,20628) 085404 计算机技术 210 仅招收推免生。 69 不分方向 (全日制) 081200 计算机科学与技术 60 仅招收推免生。"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "match-2",
+      "id": "adm-pku-2027-085400-ee-050607",
+      "simulation": false,
+      "university": "北京大学",
+      "major_code": "085400",
+      "major_name": "电子信息（05 网络与信息安全 / 06 关键软件 / 07 高端芯片）",
+      "year": 2027,
+      "pathway": "推免",
+      "occupation_ids": [
+        "ml_cv",
+        "software",
+        "llm_agent"
+      ],
+      "mapping_evidence": [
+        {
+          "ref": "kb:admissions-pku-ss-2027-ei-notice-guide-software-b892d8ee:cross_major_restrictions",
+          "source_kind": "official",
+          "url": "https://ss.pku.edu.cn/zsxx/zstz/56b3c3a23adf41d493db0e9f9bb91647.htm",
+          "published_at": "2026-10-12",
+          "retrieved_at": "2026-10-23T07:59:56.259Z",
+          "verification": "verified",
+          "locator": "sha256:8ff0e71a76ee4e724e2b65af85827be393381a8a9cf3f544c94398d00ccf46cf [713,778) 05 网络与信息安全 40 40 只招收推免生 06 关键软件 98 98 只招收推免生 07 高端芯片 70 70 只招收推免生"
+        },
+        {
+          "ref": "limen-admission-occupation-map@3.0#R1",
+          "source_kind": "editorial",
+          "url": null,
+          "published_at": "2026-10-23",
+          "retrieved_at": "2026-10-23T00:00:00.000Z",
+          "verification": "verified",
+          "locator": "R1 计算机/软件/电子信息类硕士 → ml_cv、software、llm_agent（AI / 计算机方向：影像处理、数据管线、模型部署都需要计算机与软件训练）。LIMEN 编辑性出口映射，需人工复核。 本条：085400 电子信息（05 网络与信息安全 / 06 关键软件 / 07 高端芯片） → cs_ai。"
+        }
+      ],
+      "valid_through": "2026-12-22",
+      "exam_subjects": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "research_directions": {
+        "value": null,
+        "status": "unknown",
+        "evidence": []
+      },
+      "cross_major": {
+        "value": "05 网络与信息安全 40 40 只招收推免生 06 关键软件 98 98 只招收推免生 07 高端芯片 70 70 只招收推免生",
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-pku-ss-2027-ei-notice-guide-software-b892d8ee:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://ss.pku.edu.cn/zsxx/zstz/56b3c3a23adf41d493db0e9f9bb91647.htm",
+            "published_at": "2026-10-12",
+            "retrieved_at": "2026-10-23T07:59:56.259Z",
+            "verification": "verified",
+            "locator": "sha256:8ff0e71a76ee4e724e2b65af85827be393381a8a9cf3f544c94398d00ccf46cf [713,778) 05 网络与信息安全 40 40 只招收推免生 06 关键软件 98 98 只招收推免生 07 高端芯片 70 70 只招收推免生"
+          }
+        ]
+      },
+      "hard_requirements": {
+        "value": [
+          {
+            "id": "adm-pku-2027-085400-ee-050607-r1",
+            "field": "pathway",
+            "allowed": [
+              "推免"
+            ],
+            "evidence": [
+              {
+                "ref": "kb:admissions-pku-ss-2027-ei-notice-guide-software-b892d8ee:cross_major_restrictions",
+                "source_kind": "official",
+                "url": "https://ss.pku.edu.cn/zsxx/zstz/56b3c3a23adf41d493db0e9f9bb91647.htm",
+                "published_at": "2026-10-12",
+                "retrieved_at": "2026-10-23T07:59:56.259Z",
+                "verification": "verified",
+                "locator": "sha256:8ff0e71a76ee4e724e2b65af85827be393381a8a9cf3f544c94398d00ccf46cf [713,778) 05 网络与信息安全 40 40 只招收推免生 06 关键软件 98 98 只招收推免生 07 高端芯片 70 70 只招收推免生"
+              }
+            ]
+          }
+        ],
+        "status": "known",
+        "evidence": [
+          {
+            "ref": "kb:admissions-pku-ss-2027-ei-notice-guide-software-b892d8ee:cross_major_restrictions",
+            "source_kind": "official",
+            "url": "https://ss.pku.edu.cn/zsxx/zstz/56b3c3a23adf41d493db0e9f9bb91647.htm",
+            "published_at": "2026-10-12",
+            "retrieved_at": "2026-10-23T07:59:56.259Z",
+            "verification": "verified",
+            "locator": "sha256:8ff0e71a76ee4e724e2b65af85827be393381a8a9cf3f544c94398d00ccf46cf [713,778) 05 网络与信息安全 40 40 只招收推免生 06 关键软件 98 98 只招收推免生 07 高端芯片 70 70 只招收推免生"
+          }
+        ]
+      }
+    }
+  ]
+}

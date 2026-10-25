@@ -1,0 +1,329 @@
+{
+  "checked_at": "2026-10-24T21:18:41-07:00",
+  "checked_at_utc": "2026-10-25T04:18:41Z",
+  "timezone": "America/Los_Angeles",
+  "app": {
+    "name": "LIMEN",
+    "stack": "Next.js App Router / TypeScript strict / zod",
+    "node": "v25.9.0",
+    "scope": "R1 初步评价新增第 05 块「职业技能匹配」（知识库岗位原文 × 画像记录，三态证据，不评分/不排序/不合成适合度）",
+    "servers": {
+      "preview_demo": "http://127.0.0.1:3011/report/initial（work/skill-match-preview 预览副本，next dev，硬编码演示画像 previewProfile/previewAssessment）",
+      "main_empty": "http://127.0.0.1:3000/report/initial（主仓库，next dev，无登录会话，空态）"
+    },
+    "servers_restarted_or_stopped_by_verifier": false,
+    "production_build_executed": false
+  },
+  "status": "PASS",
+  "sub_statuses": {
+    "quote_verbatim_lookup": "PASS",
+    "commands": "PASS",
+    "browser_rendering": "PASS"
+  },
+  "mock": true,
+  "synthetic_probe": true,
+  "assertions": [
+    {
+      "id": "quote_verbatim_lookup",
+      "goal": "62 条 skills[].evidence[] 的 quote 能在 data/knowledge/*.collected.json 中按 record_id + field + quote_start/quote_end 逐字回查，且包含 needle",
+      "status": "PASS",
+      "method": "tmp/verify-skill-quotes.cjs（复核员自写，不复用 build 脚本逻辑）：扫描 96 个 *.collected.json / 索引 1040 个 record id；对每条 evidence 断言 fact.value.slice(quote_start, quote_end) === quote 且 quote.includes(needle)，兼查端点、元数据一致性、无省略号字符、spec 与产物一一对应",
+      "evidence": "tmp/verify-skill-quotes.log / tmp/verify-skill-quotes-v2.log",
+      "result": {
+        "directions": 10,
+        "skills": 61,
+        "evidence": 62,
+        "matched": 62,
+        "failure_count": 0,
+        "warning_count": 0,
+        "unique_records": 22,
+        "unique_sources": 15,
+        "categories": {
+          "recruitment": 51,
+          "occupation": 9,
+          "learning": 2
+        },
+        "all_source_urls_https": true
+      }
+    },
+    {
+      "id": "no_scoring_or_ranking_fields",
+      "goal": "数据与代码无 score/rating/percentage/weight/rank/fit 字段；UI 无适合度/匹配度百分比/推荐排序正向文案；unknown 状态不参与排序",
+      "status": "PASS",
+      "evidence": "全量递归 key 扫描无禁用键（skill-requirements.ts 的 zod schema 均 .strict()）；src grep 相关文件只有否定表述（skill-match.ts:15/123、report.tsx:183/210）；匹配路径（skill-match.ts / report.tsx 05 块）无 sort，技能顺序=数据集顺序，方向顺序=O*NET 职业命中顺序"
+    },
+    {
+      "id": "coverage_honesty",
+      "goal": "signals / med_nlp_kg / medicine 等薄弱方向在 coverage_note 如实写出；不为了凑数编造岗位要求",
+      "status": "PASS",
+      "evidence": "signals：5 条引用全部来自 signals-mindray-recruitment 单组招聘，note 写明「覆盖最窄、没有额外编造条目」；med_nlp_kg：5 条全部来自药物警戒 AI 产品岗位单组招聘，note 写明「NLP/知识图谱缺少直接岗位原文，未强行补条目」；medicine：3 occupation + 2 learning + 1 recruitment，note 写明不能当医院招聘统一门槛；62 条 quote 全部逐字回查通过，无编造。3 条 coverage_note 措辞不准确见 minor_findings"
+    },
+    {
+      "id": "empty_state_and_unknown_semantics",
+      "goal": "真实空态出现 05 块且文案为「暂无：先完成职业兴趣问卷，才会出现候选职业。」；「信息不足」≠「不具备」说明存在",
+      "status": "PASS",
+      "evidence": "3000 SSR 探针：职业技能匹配=True，空态原文出现 1 次，initial-skill-match=True，信息不足不出现；截图 tmp/skill-match-shots-verify/empty-3000-1440.png；文案见 src/app/report/initial/report.tsx L210-L211、src/lib/skill-match.ts L24、src/lib/reports.ts L26"
+    },
+    {
+      "id": "typescript",
+      "goal": "npx tsc --noEmit 通过",
+      "status": "PASS",
+      "command": "npx tsc --noEmit",
+      "exit_code": 0,
+      "output": "（空）",
+      "evidence": "tmp/tsc.log"
+    },
+    {
+      "id": "targeted_eslint",
+      "goal": "任务指定 11 个文件 --max-warnings=0 通过",
+      "status": "PASS",
+      "command": "npx eslint src/lib/skill-requirements.ts src/lib/skill-match.ts src/lib/reports.ts src/lib/ai.ts src/app/report/initial/report.tsx src/app/api/reports/route.ts src/app/profile/profile-report.tsx src/components/ai-report.tsx tests/skill-requirements.test.ts tests/reports.test.ts scripts/knowledge/build-skill-requirements.ts --max-warnings=0",
+      "exit_code": 0,
+      "output": "（空）",
+      "evidence": "tmp/eslint.log"
+    },
+    {
+      "id": "npm_test_baseline",
+      "goal": "npm test 与基线一致：206 项 / 205 通过 / 1 失败，唯一失败仍是既有 tests/knowledge.test.ts 的 normalizeSourceUrl",
+      "status": "PASS",
+      "command": "npm test",
+      "exit_code": 1,
+      "result": {
+        "tests": 206,
+        "pass": 205,
+        "fail": 1,
+        "failing_test": "tests/knowledge.test.ts:23 source canonicalization removes tracking but preserves meaningful admissions parameters (AssertionError: Missing expected exception; 失败点 tests/knowledge.test.ts:25:131)"
+      },
+      "evidence": "tmp/npm-test.log",
+      "notes": "既有失败，非本次引入：src/lib/knowledge.ts 未在本轮修改（git status 无该文件），复核员实测 normalizeSourceUrl('http://example.edu.cn/') 未抛错，而用例期望抛错；其余 3 个 URL 用例正常抛错"
+    },
+    {
+      "id": "build_reproducible",
+      "goal": "npx tsx scripts/knowledge/build-skill-requirements.ts 可重复生成：10 方向 / 61 项 / 62 条引用，失败 0",
+      "status": "PASS",
+      "command": "npx tsx scripts/knowledge/build-skill-requirements.ts",
+      "exit_code": 0,
+      "result": "10 方向 / 61 项 / 62 条原文引用；重新生成内容与复核前一致（去掉 generated_at 后 JSON 完全相同），仅 generated_at 从 2026-10-25T03:35:13.415Z 变为 2026-10-25T04:15:06.042Z；已恢复原文件",
+      "evidence": "tmp/build-skill-requirements.log"
+    },
+    {
+      "id": "code_and_contract",
+      "goal": "initialReport 仅在候选方向存在时产出占用内容；report_contract 补字段；API AI 证据只引用知识库已有 record/quote",
+      "status": "PASS",
+      "evidence": "src/lib/reports.ts:24（occupation_skills 无候选为 []）；data/report_contract.json 新增 knowledge_base_occupation_skills / occupation_skill_requirement / occupation_skills_with_knowledge_source / skill_evidence_status_against_occupation_requirements；src/app/api/reports/route.ts:69-77 的 knowledge_quotes 只来自 skill.kb（62 条已回查引用），ai.ts 校验 evidence_refs；initialReport version 提升为 limen-r1-rules-v2"
+    },
+    {
+      "id": "browser_rendering",
+      "goal": "3011 演示版 1440x900 与 390x844 截取 #initial-skill-match；无横向溢出；状态 chip/技能名/必备与加分/原文折叠可用；移动端单列；3000 真实空态出现 05 块与指定空态文案",
+      "status": "PASS",
+      "conditions": "3011 为预览副本 + 硬编码演示画像；3000 为主仓库空态；均 next dev，未做生产构建",
+      "evidence": {
+        "desktop_1440": "tmp/skill-match-shots-verify/desktop-section.png（1226x2250，工具报告无控制台错误/横向溢出/加载失败图片）",
+        "mobile_390": "tmp/skill-match-shots-verify/mobile-section.png（324x3241，单列，工具报告无横向溢出）",
+        "fold_expanded": "tmp/skill-match-shots-verify/desktop-fold-open6.png（折叠展开显示 quote/机构链接/record_id/画像记录位置）",
+        "empty_3000": "tmp/skill-match-shots-verify/empty-3000-1440.png（1226x167，空态文案可见）",
+        "ssr_probes": "tmp/render-ssr-probes.txt",
+        "tool_raw": "tmp/rendering-probes.md",
+        "consistency": "预览副本 report.tsx 的 05 块 JSX 与主仓库逐字一致（2974 字符）；skill-match.ts / skill-requirements.ts / report.css 哈希一致；skill-requirements.json 内容一致（仅 generated_at 不同）"
+      }
+    }
+  ],
+  "network": {
+    "external_network_used": false,
+    "detail": "测试为 mock=true，未调用真实 O*NET / Supabase / LLM / 外部 URL；渲染只访问本机回环 127.0.0.1:3011 与 127.0.0.1:3000；构建/回查只读本地文件。未主动发起任何外网请求。",
+    "llm_live_called": false
+  },
+  "cleanup": {
+    "data_files_restored": true,
+    "detail": "构建脚本运行前把 data/knowledge/skill-requirements.json 备份到 tmp/skill-requirements.before.json，运行后从备份恢复；恢复后 SHA256 = 633BC2F26D951A935D0B7AE0C2141E492C87F084F7F01655FB5584F68850034D（与复核前一致）。未修改 src/data/tests/scripts/docs 其他文件（docs/testing/ 与 tmp/ 除外），未 git checkout/restore 他人改动，未重启/关闭 3011、3000，未执行 npm run build。",
+    "sqlite_or_db_writes": false,
+    "screenshot_files": "tmp/skill-match-shots-verify/*.png（4 张）"
+  },
+  "minor_findings": [
+    {
+      "id": "coverage_note_clinical_data_source",
+      "severity": "minor",
+      "detail": "clinical_data.coverage_note 写「来自医药企业统计岗、医院数据治理岗与科研助理招聘原文」，但本方向 3 个 evidence record 是泰格统计分析员、瑞金数据治理工程师、浙大一院数据工程师，没有科研助理 record；知识库确有 2 条 guide_clinical_data 科研助理 record（recruitment-huaxi-rwe-99045、recruitment-huaxi-bigdata-99044）但未进入清单。"
+    },
+    {
+      "id": "coverage_note_medicine_postdoc",
+      "severity": "minor",
+      "detail": "medicine.coverage_note 写「只有培养目标与规培制度原文」，但 6 条引用含 1 条北京协和医院《2026 年科研博士后招收简章》（category=recruitment），且该条 requirement 标 plus、原文实为博士后入站硬性条件（SCI≥1 篇）；docs/KNOWLEDGE_BASE.md 写「培养目标与规培/博士后原文」，与 data 的 coverage_note 不一致。"
+    },
+    {
+      "id": "coverage_note_imaging_eng_ambiguous",
+      "severity": "minor",
+      "detail": "imaging_eng.coverage_note 同时提迈瑞与联影两个岗位，随后「成像物理条目来自同一岗位」措辞有歧义；实测成像物理条目来自迈瑞记录，超声图像算法条目来自联影记录。"
+    },
+    {
+      "id": "ellipsis_flag_cosmetic",
+      "severity": "info",
+      "detail": "41 条 ellipsis_start 中 32 条的 quote 起点实际紧跟「；」「。」（子句边界而非截断）；13 条 ellipsis_end 中 1 条同类。UI 会多显示一个「…」，quote 本体仍是逐字连续原文，仅显示层 cosmetics。"
+    },
+    {
+      "id": "alias_matching_breadth",
+      "severity": "info",
+      "detail": "中文别名较宽（如「影像」「统计」「研究」「文献」），preview 中「医学影像学」课程使「成像与影像物理背景」判为「有记录」。与「名称匹配只整理证据、不代表掌握」的声明一致，但「有记录」偏宽，建议后续人工语义复核或收窄别名。"
+    },
+    {
+      "id": "occupation_skills_field_always_present",
+      "severity": "info",
+      "detail": "initialReport 始终输出 occupation_skills 字段，无候选方向时为 []；与「只在有候选方向时输出」的字面表述不同，但占用内容确实只在候选方向存在时非空，UI 空态/契约测试一致，无功能影响。"
+    },
+    {
+      "id": "preview_copy_not_main_runtime",
+      "severity": "info",
+      "detail": "3011 是 work/skill-match-preview 预览副本（硬编码演示画像），不是主仓库运行时；已比对 05 块 JSX、相关 lib/css、数据内容一致（generated_at 除外），但不能替代真实访客端到端验收。"
+    }
+  ],
+  "limitations": [
+    "未执行 npm run build：任务禁止（会抢 .next），因此无生产构建/生产包证据，只有 next dev 证据。",
+    "未做真实登录访客端到端：Supabase 会话与真实用户数据不在本次范围；3000 只验证空态，3011 只验证硬编码演示画像；问卷→画像→R1 05 块的真实数据链路未端到端验证。",
+    "未调用真实 LLM：LIMEN_ENABLE_LLM 未开，无真实 Key；API 的 AI 证据构造只做静态审阅 + tsc，未发真实 POST/LLM 请求。",
+    "未在非 Chromium 浏览器（Safari/Firefox/真实手机）验证；渲染工具为本机 Chromium。",
+    "未做移动端折叠点击实测（折叠展开仅在桌面 Chromium 验证）；未做读屏/键盘可达性专项测试。",
+    "未验证 R2 页面 skill 证据标签的运行时表现（只确认 profile-report.tsx / ai-report.tsx 有对应 label）。",
+    "未做真实数据规模性能压测（当前 10 方向/61 项/62 条）。",
+    "npm test 的 1 项失败为既有 normalizeSourceUrl 用例（http 公网 URL 未抛错），按任务要求不修复、不作为本次回归项。",
+    "coverage_note 的 3 条措辞问题未修复（任务禁止修改 data/docs），仅报告给 lead。",
+    "3011 预览副本不是主仓库运行时；演示画像为硬编码，不能替代真实端到端验收。"
+  ],
+  "followup_after_lead_fixes": {
+    "checked_at": "2026-10-24T21:28:15-07:00",
+    "checked_at_utc": "2026-10-25T04:28:15Z",
+    "trigger": "lead 修复上一轮报告的 3 条 coverage_note 措辞问题与省略号误标后，要求复核员做修复后复验",
+    "status": "PASS",
+    "data_file": {
+      "path": "data/knowledge/skill-requirements.json",
+      "sha256": "A816A3FABABCC2D1F398F03F8CC9ADD0D38FCB50BABFB8F53A9B1713A60AFB05",
+      "pre_fix_sha256": "633BC2F26D951A935D0B7AE0C2141E492C87F084F7F01655FB5584F68850034D",
+      "generated_at": "2026-10-25T04:22:24.742Z",
+      "counts": {
+        "directions": 10,
+        "skills": 61,
+        "evidence": 62
+      }
+    },
+    "diff_vs_pre_fix_snapshot": {
+      "script": "tmp/diff-skill-requirements-after-fix.cjs",
+      "snapshot": "tmp/skill-requirements.before.json",
+      "total_structural_changes": 38,
+      "generated_at_changes": 1,
+      "ellipsis_start_true_to_false": 32,
+      "ellipsis_end_true_to_false": 1,
+      "coverage_note_changed": 3,
+      "skill_name_changed": 1,
+      "quote_needle_offset_record_changed": 0
+    },
+    "coverage_notes_verified": {
+      "clinical_data": "来自泰格统计岗、瑞金医院与浙大一院数据治理岗的招聘原文；数据治理与 ETL 条目来自医院数据工程师岗位，不是所有统计岗都要求。",
+      "medicine": "知识库里没有临床医师的招聘技能清单：技能条目来自石河子大学临床医学培养目标、住院医师规范化培训原文，以及北京协和医院 2026 年科研博士后招收简章（论文要求只对博士后等科研路径成立，不是所有临床岗位的统一门槛）。覆盖偏弱。",
+      "imaging_eng": "来自迈瑞医学影像算法岗位与联影超声图像算法岗的招聘原文；成像物理条目来自迈瑞岗位对光学成像系统等经验的要求，不是所有影像岗位统一要求。",
+      "spec_matches_data": true,
+      "medicine_skill_renamed": "论文与科研成果（博士后等科研路径）"
+    },
+    "quote_recheck": {
+      "script": "tmp/verify-skill-quotes.cjs",
+      "exit_code": 0,
+      "matched": 62,
+      "evidence": 62,
+      "failure_count": 0,
+      "warning_count": 0,
+      "log": "tmp/verify-skill-quotes-after-fix.log"
+    },
+    "ellipsis": {
+      "before": { "start": 41, "end": 13 },
+      "after": { "start": 9, "end": 12 },
+      "independent_audit": {
+        "script": "tmp/audit-ellipsis.cjs",
+        "exit_code": 0,
+        "evidence": 62,
+        "start_flagged": 9,
+        "end_flagged": 12,
+        "mismatches": 0,
+        "log": "tmp/audit-ellipsis-after-fix.log"
+      }
+    },
+    "commands": [
+      {
+        "command": "node tmp/verify-skill-quotes.cjs",
+        "exit_code": 0,
+        "result": "62/62 matched，failure 0，warning 0"
+      },
+      {
+        "command": "node tmp/audit-ellipsis.cjs",
+        "exit_code": 0,
+        "result": "62 条证据，ellipsis_start=9 / ellipsis_end=12，独立判定不一致 0"
+      },
+      {
+        "command": "npx tsc --noEmit",
+        "first_run_exit_code": 2,
+        "first_run_error": "src/lib/community.ts(60,38): error TS2345（任务文件清单外，git status=M，mtime 2026-10-24 21:26:51，另一线程并发写入）",
+        "retry_exit_code": 0,
+        "retry_output": "",
+        "logs": ["tmp/tsc-after-fix.log", "tmp/tsc-after-fix-retry.log"]
+      },
+      {
+        "command": "npx eslint src/lib/skill-requirements.ts src/lib/skill-match.ts src/lib/reports.ts src/lib/ai.ts src/app/report/initial/report.tsx src/app/api/reports/route.ts src/app/profile/profile-report.tsx src/components/ai-report.tsx tests/skill-requirements.test.ts tests/reports.test.ts scripts/knowledge/build-skill-requirements.ts --max-warnings=0",
+        "exit_code": 0,
+        "output": "",
+        "log": "tmp/eslint-after-fix.log"
+      },
+      {
+        "command": "npm test",
+        "exit_code": 1,
+        "tests": 206,
+        "pass": 205,
+        "fail": 1,
+        "failing_test": "tests/knowledge.test.ts:23 source canonicalization removes tracking but preserves meaningful admissions parameters（既有 normalizeSourceUrl 用例，与本次修复无关）",
+        "log": "tmp/npm-test-after-fix.log"
+      }
+    ],
+    "findings_resolved": [
+      "coverage_note_clinical_data_source",
+      "coverage_note_medicine_postdoc",
+      "coverage_note_imaging_eng_ambiguous",
+      "ellipsis_flag_cosmetic"
+    ],
+    "remaining_notes": [
+      "clinical_data 新文案「泰格统计岗、瑞金医院与浙大一院数据治理岗」连读时轻微歧义：浙大一院实为数据工程师岗（瑞金才是数据治理工程师），后半句已说明「数据治理与 ETL 条目来自医院数据工程师岗位」，不影响引用真实性，未再要求修复。",
+      "alias_matching_breadth / occupation_skills_field_always_present / preview_copy_not_main_runtime 等 info 级说明仍适用，未随本次修复变化。",
+      "复验期间仍未执行 npm run build、未调用真实 LLM、未做真实登录访客端到端（原因同原 limitations）。",
+      "tsc 首次复跑因另一线程正在编辑 src/lib/community.ts 出现瞬时 TS2345，立即重跑 exit 0；非技能匹配文件引入。"
+    ],
+    "artifacts": [
+      "tmp/diff-skill-requirements-after-fix.cjs",
+      "tmp/diff-after-fix.log",
+      "tmp/verify-skill-quotes-after-fix.log",
+      "tmp/audit-ellipsis.cjs",
+      "tmp/audit-ellipsis-after-fix.log",
+      "tmp/tsc-after-fix.log",
+      "tmp/tsc-after-fix-retry.log",
+      "tmp/eslint-after-fix.log",
+      "tmp/npm-test-after-fix.log"
+    ],
+    "conclusion": "PASS：上一轮 4 个相关发现均已修复并复验；62/62 引用回查通过、quote/offset/record 未改动；省略号 41→9、13→12 且独立审计 0 处误标；红线与契约行为未变。"
+  },
+  "accepted": true,
+  "deliverables": [
+    "docs/testing/skill-match-20261024.md",
+    "docs/testing/skill-match-20261024.json",
+    "tmp/verify-skill-quotes.cjs",
+    "tmp/verify-skill-quotes.log",
+    "tmp/verify-skill-quotes-v2.log",
+    "tmp/tsc.log",
+    "tmp/eslint.log",
+    "tmp/npm-test.log",
+    "tmp/build-skill-requirements.log",
+    "tmp/skill-requirements.before.json",
+    "tmp/skill-requirements.after.json",
+    "tmp/skill-quotes-readable.txt",
+    "tmp/evidence-records.txt",
+    "tmp/render-ssr-probes.txt",
+    "tmp/rendering-probes.md",
+    "tmp/skill-match-shots-verify/desktop-section.png",
+    "tmp/skill-match-shots-verify/mobile-section.png",
+    "tmp/skill-match-shots-verify/desktop-fold-open6.png",
+    "tmp/skill-match-shots-verify/empty-3000-1440.png"
+  ]
+}

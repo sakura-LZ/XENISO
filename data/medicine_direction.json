@@ -1,6 +1,11 @@
 {
   "id": "medicine",
   "name": "继续医学",
+  "onet": [
+    { "code": "29-1215.00", "name": "Family Medicine Physicians", "relationship": "direct" },
+    { "code": "29-1216.00", "name": "General Internal Medicine Physicians", "relationship": "related" }
+  ],
+  "onet_rationale": "继续医学（临床）方向在 O*NET 中没有单一对应职业，这里取 Family Medicine Physicians（29-1215.00）作 direct 代表：临床医学本科毕业后的主流去向是全科/内科方向的临床医师，其兴趣画像（social 高、realistic 低）与工程/数据类方向区分最明显。General Internal Medicine Physicians（29-1216.00）作 related，用于敏感性对照。这是 LIMEN 编辑性选点，不是 O*NET 官方结论，也不核定执业资格或科室准入。",
   "specializations": [{
     "id": "medicine",
     "name": "临床科室探索",
@@ -10,5 +15,5 @@
     "courses": ["临床沟通与医学伦理", "循证医学与文献评价", "临床实践与交接规范"],
     "medical_transfer": ["已有医学课程与见习经历", "对患者需求的理解", "对证据局限和职业责任的认识"]
   }],
-  "source": "LIMEN编辑性医学探索方向；本轮未新增O*NET职业映射，不核定执业或科室准入资格"
+  "source": "LIMEN编辑性医学探索方向；本轮补入方向级 O*NET 代表职业（29-1215.00 全科医师 / 29-1216.00 内科医师）仅用于兴趣画像与技能数值，不核定执业或科室准入资格。"
 }

@@ -66,6 +66,15 @@ export async function POST(request: Request) {
       ...assessment.data.scores.map((s) => ({ ref: `onet_mini_ip.scores.${s.code}`, kind: "interest" as const, value: { ...s, source: "onet_live", version: assessment.data.onet_version } })),
       ...r1.evidence.map((e) => ({ ref: e.ref, kind: "transfer" as const, value: e })),
       ...r1.candidates.map((c) => ({ ref: `limen_direction_map:${c.direction.id}`, kind: "direction" as const, value: { name: c.direction.name, occupations: c.occupations, tasks: c.direction.work_tasks, editorial: true } })),
+      // 职业要求来自知识库原文；AI 只能引用这里列出的 record 与 quote，不得自行补充岗位要求。
+      ...r1.occupation_skills.flatMap((match) => match.skills.map((skill) => ({
+        ref: `occupation_skill.${match.direction_id}.${skill.id}`, kind: "skill" as const,
+        value: {
+          direction: match.direction_name, occupation: match.occupation_label,
+          skill: skill.name, requirement: skill.requirement, profile_status: skill.status,
+          knowledge_quotes: skill.kb.map((item) => ({ record_id: item.record_id, quote: item.quote, organization: item.organization })),
+        },
+      }))),
     ];
     let rules: unknown = r1;
     if (input.data.kind === "R2") {

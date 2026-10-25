@@ -1,0 +1,487 @@
+{
+  "version": "limen-skills-2",
+  "generated_at": "2026-10-23T00:00:00Z",
+  "source": {
+    "tables": [
+      "Level Scale Anchors.txt"
+    ],
+    "url": "https://www.onetcenter.org/database.html",
+    "license": "CC BY 4.0 (O*NET OnLine, U.S. Department of Labor / ETA)"
+  },
+  "note": "自评量尺。0–4 级的中文标签是 LIMEN 编辑性定义；标注为 official-anchor 的例句是 O*NET Level Scale Anchors 英文原文（LV2/LV4/LV6 对齐到 LIMEN 1/2/3），未逐字翻译以保留可核对的原文。",
+  "levels": [
+    "未接触",
+    "在指导下完成",
+    "独立完成基础任务",
+    "独立完成复杂任务",
+    "指导与评审"
+  ],
+  "skills": {
+    "python": {
+      "label": "Python 编程",
+      "mapping_strength": "direct",
+      "onet_element": {
+        "id": "2.B.3.e",
+        "name": "Programming",
+        "table": "Transferable Skills"
+      },
+      "levels": [
+        {
+          "level": 0,
+          "label": "未接触",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 1,
+          "label": "在指导下完成",
+          "observable": "Write a program to sort objects in a database",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 2,
+            "text": "Write a program to sort objects in a database",
+            "element_name": "Programming"
+          }
+        },
+        {
+          "level": 2,
+          "label": "独立完成基础任务",
+          "observable": "Write a statistical analysis program to analyze demographic data",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 4,
+            "text": "Write a statistical analysis program to analyze demographic data",
+            "element_name": "Programming"
+          }
+        },
+        {
+          "level": 3,
+          "label": "独立完成复杂任务",
+          "observable": "Write programs to analyze geological data for existence of mineral deposits",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 6,
+            "text": "Write programs to analyze geological data for existence of mineral deposits",
+            "element_name": "Programming"
+          }
+        },
+        {
+          "level": 4,
+          "label": "指导与评审",
+          "observable": "能在该技能上指导他人、并评审他人的产出（编辑性描述：O*NET 锚点只到 LV6，此级为 LIMEN 补充）",
+          "onet_anchor": null
+        }
+      ]
+    },
+    "statistics": {
+      "label": "统计分析",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.A.1.e",
+        "name": "Mathematics",
+        "table": "Essential Skills"
+      },
+      "levels": [
+        {
+          "level": 0,
+          "label": "未接触",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 1,
+          "label": "在指导下完成",
+          "observable": "Count the amount of change to be given to a customer",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 2,
+            "text": "Count the amount of change to be given to a customer",
+            "element_name": "Mathematics"
+          }
+        },
+        {
+          "level": 2,
+          "label": "独立完成基础任务",
+          "observable": "Calculate the square footage of a new home under construction",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 4,
+            "text": "Calculate the square footage of a new home under construction",
+            "element_name": "Mathematics"
+          }
+        },
+        {
+          "level": 3,
+          "label": "独立完成复杂任务",
+          "observable": "Develop a mathematical model to simulate and resolve an engineering problem",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 6,
+            "text": "Develop a mathematical model to simulate and resolve an engineering problem",
+            "element_name": "Mathematics"
+          }
+        },
+        {
+          "level": 4,
+          "label": "指导与评审",
+          "observable": "能在该技能上指导他人、并评审他人的产出（编辑性描述：O*NET 锚点只到 LV6，此级为 LIMEN 补充）",
+          "onet_anchor": null
+        }
+      ]
+    },
+    "machine_learning": {
+      "label": "机器学习",
+      "mapping_strength": "unmapped",
+      "onet_element": null,
+      "levels": [
+        {
+          "level": 0,
+          "label": "未接触",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 1,
+          "label": "在指导下完成",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 2,
+          "label": "独立完成基础任务",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 3,
+          "label": "独立完成复杂任务",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 4,
+          "label": "指导与评审",
+          "observable": "能在该技能上指导他人、并评审他人的产出（编辑性描述：O*NET 锚点只到 LV6，此级为 LIMEN 补充）",
+          "onet_anchor": null
+        }
+      ]
+    },
+    "clinical_reasoning": {
+      "label": "临床问题理解",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.B.4.e",
+        "name": "Judgment and Decision Making",
+        "table": "Transferable Skills"
+      },
+      "levels": [
+        {
+          "level": 0,
+          "label": "未接触",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 1,
+          "label": "在指导下完成",
+          "observable": "Decide how scheduling a break will affect work flow",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 2,
+            "text": "Decide how scheduling a break will affect work flow",
+            "element_name": "Judgment and Decision Making"
+          }
+        },
+        {
+          "level": 2,
+          "label": "独立完成基础任务",
+          "observable": "Evaluate a loan application for degree of risk",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 4,
+            "text": "Evaluate a loan application for degree of risk",
+            "element_name": "Judgment and Decision Making"
+          }
+        },
+        {
+          "level": 3,
+          "label": "独立完成复杂任务",
+          "observable": "Decide whether a manufacturing company should invest in new robotics technology",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 6,
+            "text": "Decide whether a manufacturing company should invest in new robotics technology",
+            "element_name": "Judgment and Decision Making"
+          }
+        },
+        {
+          "level": 4,
+          "label": "指导与评审",
+          "observable": "能在该技能上指导他人、并评审他人的产出（编辑性描述：O*NET 锚点只到 LV6，此级为 LIMEN 补充）",
+          "onet_anchor": null
+        }
+      ]
+    },
+    "research_design": {
+      "label": "研究设计",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.A.1.f",
+        "name": "Science",
+        "table": "Essential Skills"
+      },
+      "levels": [
+        {
+          "level": 0,
+          "label": "未接触",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 1,
+          "label": "在指导下完成",
+          "observable": "Conduct standard tests to determine soil quality",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 2,
+            "text": "Conduct standard tests to determine soil quality",
+            "element_name": "Science"
+          }
+        },
+        {
+          "level": 2,
+          "label": "独立完成基础任务",
+          "observable": "Conduct product tests to ensure safety standards are met",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 4,
+            "text": "Conduct product tests to ensure safety standards are met",
+            "element_name": "Science"
+          }
+        },
+        {
+          "level": 3,
+          "label": "独立完成复杂任务",
+          "observable": "Analyze aerodynamic systems to determine the practicality of a design",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 6,
+            "text": "Analyze aerodynamic systems to determine the practicality of a design",
+            "element_name": "Science"
+          }
+        },
+        {
+          "level": 4,
+          "label": "指导与评审",
+          "observable": "能在该技能上指导他人、并评审他人的产出（编辑性描述：O*NET 锚点只到 LV6，此级为 LIMEN 补充）",
+          "onet_anchor": null
+        }
+      ]
+    },
+    "product_requirements": {
+      "label": "产品需求分析",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.B.4.g",
+        "name": "Systems Analysis",
+        "table": "Transferable Skills"
+      },
+      "levels": [
+        {
+          "level": 0,
+          "label": "未接触",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 1,
+          "label": "在指导下完成",
+          "observable": "Determine how loss of a team member will affect the completion of a job",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 2,
+            "text": "Determine how loss of a team member will affect the completion of a job",
+            "element_name": "Systems Analysis"
+          }
+        },
+        {
+          "level": 2,
+          "label": "独立完成基础任务",
+          "observable": "Determine how a new piece of equipment will affect production rates",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 4,
+            "text": "Determine how a new piece of equipment will affect production rates",
+            "element_name": "Systems Analysis"
+          }
+        },
+        {
+          "level": 3,
+          "label": "独立完成复杂任务",
+          "observable": "Identify how changes in tax laws affect locations of manufacturing operations",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 6,
+            "text": "Identify how changes in tax laws affect locations of manufacturing operations",
+            "element_name": "Systems Analysis"
+          }
+        },
+        {
+          "level": 4,
+          "label": "指导与评审",
+          "observable": "能在该技能上指导他人、并评审他人的产出（编辑性描述：O*NET 锚点只到 LV6，此级为 LIMEN 补充）",
+          "onet_anchor": null
+        }
+      ]
+    },
+    "communication": {
+      "label": "沟通表达",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.A.1.d",
+        "name": "Speaking",
+        "table": "Essential Skills"
+      },
+      "levels": [
+        {
+          "level": 0,
+          "label": "未接触",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 1,
+          "label": "在指导下完成",
+          "observable": "Greet tourists and explain tourist attractions",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 2,
+            "text": "Greet tourists and explain tourist attractions",
+            "element_name": "Speaking"
+          }
+        },
+        {
+          "level": 2,
+          "label": "独立完成基础任务",
+          "observable": "Interview applicants to obtain personal and work history",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 4,
+            "text": "Interview applicants to obtain personal and work history",
+            "element_name": "Speaking"
+          }
+        },
+        {
+          "level": 3,
+          "label": "独立完成复杂任务",
+          "observable": "Argue a legal case before the Supreme Court",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 6,
+            "text": "Argue a legal case before the Supreme Court",
+            "element_name": "Speaking"
+          }
+        },
+        {
+          "level": 4,
+          "label": "指导与评审",
+          "observable": "能在该技能上指导他人、并评审他人的产出（编辑性描述：O*NET 锚点只到 LV6，此级为 LIMEN 补充）",
+          "onet_anchor": null
+        }
+      ]
+    },
+    "data_management": {
+      "label": "数据管理",
+      "mapping_strength": "unmapped",
+      "onet_element": null,
+      "levels": [
+        {
+          "level": 0,
+          "label": "未接触",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 1,
+          "label": "在指导下完成",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 2,
+          "label": "独立完成基础任务",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 3,
+          "label": "独立完成复杂任务",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 4,
+          "label": "指导与评审",
+          "observable": "能在该技能上指导他人、并评审他人的产出（编辑性描述：O*NET 锚点只到 LV6，此级为 LIMEN 补充）",
+          "onet_anchor": null
+        }
+      ]
+    },
+    "model_evaluation": {
+      "label": "模型评价",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.B.4.h",
+        "name": "Systems Evaluation",
+        "table": "Transferable Skills"
+      },
+      "levels": [
+        {
+          "level": 0,
+          "label": "未接触",
+          "observable": "未接触或仅了解概念，没有可展示产出（编辑性描述：O*NET 未提供 LV0–1 锚点）",
+          "onet_anchor": null
+        },
+        {
+          "level": 1,
+          "label": "在指导下完成",
+          "observable": "Determine why estimates for the time to complete a task are overly optimistic",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 2,
+            "text": "Determine why estimates for the time to complete a task are overly optimistic",
+            "element_name": "Systems Evaluation"
+          }
+        },
+        {
+          "level": 2,
+          "label": "独立完成基础任务",
+          "observable": "Identify the reasons why a client might be unhappy with a product",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 4,
+            "text": "Identify the reasons why a client might be unhappy with a product",
+            "element_name": "Systems Evaluation"
+          }
+        },
+        {
+          "level": 3,
+          "label": "独立完成复杂任务",
+          "observable": "Evaluate the long-term performance of a new computer system",
+          "onet_anchor": {
+            "scale": "LV",
+            "value": 6,
+            "text": "Evaluate the long-term performance of a new computer system",
+            "element_name": "Systems Evaluation"
+          }
+        },
+        {
+          "level": 4,
+          "label": "指导与评审",
+          "observable": "能在该技能上指导他人、并评审他人的产出（编辑性描述：O*NET 锚点只到 LV6，此级为 LIMEN 补充）",
+          "onet_anchor": null
+        }
+      ]
+    }
+  }
+}

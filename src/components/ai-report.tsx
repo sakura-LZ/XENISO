@@ -13,6 +13,7 @@ function evidenceLabel(ref: string) {
   if (ref === "experience_feedback") return "职业体验复盘";
   if (ref === "report_input.planning") return "本次计划条件";
   if (ref.startsWith("direction.")) return "方向手册条目";
+  if (ref.startsWith("occupation_skill.")) return "知识库职业要求原文";
   return "已保存的支持证据";
 }
 

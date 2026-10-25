@@ -1,0 +1,688 @@
+{
+  "schema_version": "skill-requirements-spec-1",
+  "note": "LIMEN 编辑性归并规范：把知识库（data/knowledge/*.collected.json）里职业标准与真实招聘原文中的技能要求，整理成按方向的技能清单。本文件只写 record/field/needle 指针，quote 一律由 build-skill-requirements.ts 从原文逐字截取；needle 必须是原文连续子串，否则构建失败。",
+  "method": "方向 ← 知识库 role（9 个方向用 guide_* 一侧的攻略角色，4 个方向存在同名方向角色）；每个方向 5–7 项技能，优先选招聘原文明确写出的要求，其次选国家职业标准的专业基础知识条目；medicine 只有培养目标/规培原文，覆盖偏弱。",
+  "directions": {
+    "ml_cv": {
+      "role_id": "guide_ml_cv",
+      "occupation_label": "算法/研发岗位（医学影像与数据科学招聘原文）",
+      "coverage_note": "主要来自迈瑞医学影像算法岗位招聘原文与国家人工智能工程技术人员职业标准；「相关项目经验」在原文中是优先项。",
+      "skills": [
+        {
+          "id": "python",
+          "name": "Python",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": ["python", "pytorch", "tensorflow"],
+          "evidence": [
+            { "record": "ml-cv-mindray-recruitment", "field": "technical_requirements", "needle": "Matlab/Python/Tensorflow/PyTorch/C/C++", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "image_algorithms",
+          "name": "图像处理与模式识别",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["图像处理", "模式识别", "计算机视觉", "图像算法", "cv"],
+          "evidence": [
+            { "record": "ml-cv-mindray-recruitment", "field": "technical_requirements", "needle": "图像处理或模式识别", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "machine_learning",
+          "name": "机器学习与深度学习",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["机器学习", "深度学习", "神经网络", "模型训练"],
+          "evidence": [
+            { "record": "ml-cv-ai-standard", "field": "skills", "needle": "机器学习知识", "max_length": 80 },
+            { "record": "ml-cv-mindray-recruitment", "field": "technical_requirements", "needle": "深度学习", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "data_engineering",
+          "name": "数据采集、清洗与标注",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": ["数据采集", "数据清洗", "数据标注", "数据处理", "数据集"],
+          "evidence": [
+            { "record": "ml-cv-ai-standard", "field": "skills", "needle": "数据采集、标注、清洗", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "math_foundation",
+          "name": "数学基础",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": ["数学", "线性代数", "概率论", "高等数学", "数理统计"],
+          "evidence": [
+            { "record": "ml-cv-ai-standard", "field": "skills", "needle": "数学基础知识", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "coding_standards",
+          "name": "代码与文档规范",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": ["代码规范", "文档规范", "工程规范", "代码质量"],
+          "evidence": [
+            { "record": "ml-cv-ai-standard", "field": "skills", "needle": "文档规范、代码规范", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "english_literature",
+          "name": "英文文献阅读",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": ["英语", "英文", "六级", "四级", "cet", "sci", "文献", "english"],
+          "evidence": [
+            { "record": "ml-cv-mindray-recruitment", "field": "technical_requirements", "needle": "英文读写能力", "max_length": 80 }
+          ]
+        }
+      ]
+    },
+    "software": {
+      "role_id": "guide_software",
+      "occupation_label": "软件开发工程师（企业招聘原文）",
+      "coverage_note": "来自迈瑞软件岗位招聘原文与国家人工智能工程技术人员职业标准；GPU 与图形学在原文中列为优选条件。",
+      "skills": [
+        {
+          "id": "programming",
+          "name": "主流编程语言",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": ["编程", "c++", "c#", "java", "python", "object-c"],
+          "evidence": [
+            { "record": "software-mindray-recruitment", "field": "technical_requirements", "needle": "C/C++/C#/Java/Object-C/Python", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "coding_practice",
+          "name": "编程基础与代码习惯",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": ["编程习惯", "代码规范", "代码质量", "工程规范"],
+          "evidence": [
+            { "record": "software-mindray-recruitment", "field": "technical_requirements", "needle": "良好的编程习惯", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "communication",
+          "name": "沟通与团队协作",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": ["沟通", "合作", "协作", "团队", "分享"],
+          "evidence": [
+            { "record": "software-mindray-recruitment", "field": "technical_requirements", "needle": "善于沟通，乐于合作", "max_length": 60 }
+          ]
+        },
+        {
+          "id": "gpu_nn",
+          "name": "GPU 与神经网络实践",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": ["gpu", "cuda", "神经网络", "深度学习"],
+          "evidence": [
+            { "record": "software-mindray-recruitment", "field": "technical_requirements", "needle": "GPU开发经验", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "computer_graphics",
+          "name": "计算机图形学",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": ["图形学", "计算机图形", "图形"],
+          "evidence": [
+            { "record": "software-mindray-recruitment", "field": "technical_requirements", "needle": "计算机图形学", "max_length": 70 }
+          ]
+        },
+        {
+          "id": "software_engineering",
+          "name": "软件工程与数据结构",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": ["软件工程", "数据结构", "算法", "操作系统", "计算机网络"],
+          "evidence": [
+            { "record": "software-ai-standard", "field": "skills", "needle": "软件工程知识", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "competition",
+          "name": "编程竞赛经历",
+          "kind": "engineering",
+          "requirement": "plus",
+          "aliases": ["竞赛", "比赛", "编程大赛", "acm"],
+          "evidence": [
+            { "record": "software-mindray-recruitment", "field": "technical_requirements", "needle": "积极参加校内外软件编程大赛", "max_length": 70 }
+          ]
+        }
+      ]
+    },
+    "llm_agent": {
+      "role_id": "guide_llm_agent",
+      "occupation_label": "前沿部署 / LLM 应用工程师（企业招聘原文）",
+      "coverage_note": "主要来自医药企业前沿部署工程师招聘原文与国家人工智能工程技术人员职业标准；方向本身较新，岗位样本少。",
+      "skills": [
+        {
+          "id": "python",
+          "name": "Python 工程能力",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": ["python"],
+          "evidence": [
+            { "record": "tigermed-clinical-agent-recruitment", "field": "technical_requirements", "needle": "Python 熟练", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "llm_app",
+          "name": "LLM / Agent 应用构建",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["llm", "大模型", "大语言模型", "智能体", "agent"],
+          "evidence": [
+            { "record": "tigermed-clinical-agent-recruitment", "field": "technical_requirements", "needle": "LLM 应用的实际构建经验", "max_length": 110 }
+          ]
+        },
+        {
+          "id": "prompt_rag",
+          "name": "Prompt 工程与 RAG",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["prompt", "提示词", "rag", "检索增强"],
+          "evidence": [
+            { "record": "tigermed-clinical-agent-recruitment", "field": "technical_requirements", "needle": "prompt 工程", "max_length": 100 }
+          ]
+        },
+        {
+          "id": "linux_container",
+          "name": "Linux 与容器化部署",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": ["linux", "docker", "容器", "k8s", "kubernetes"],
+          "evidence": [
+            { "record": "tigermed-clinical-agent-recruitment", "field": "technical_requirements", "needle": "Linux 与容器化部署", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "api_tooling",
+          "name": "API 集成与工具开发",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": ["api", "接口", "后端", "工具开发"],
+          "evidence": [
+            { "record": "tigermed-clinical-agent-recruitment", "field": "technical_requirements", "needle": "API 集成与工具开发", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "ml_foundation",
+          "name": "机器学习基础",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": ["机器学习", "深度学习", "神经网络"],
+          "evidence": [
+            { "record": "llm-agent-ai-standard", "field": "skills", "needle": "机器学习知识", "max_length": 80 }
+          ]
+        }
+      ]
+    },
+    "devices": {
+      "role_id": "guide_devices",
+      "occupation_label": "医疗器械研发 / 医学工程岗（招聘与职业标准原文）",
+      "coverage_note": "来自迈瑞医疗器械岗位招聘原文与医院医学工程岗招聘原文；「医疗设备全生命周期管理」来自医院岗位职责，不是研发岗统一要求。",
+      "skills": [
+        {
+          "id": "signal_data_analysis",
+          "name": "信号处理与数据分析",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["信号处理", "数据分析", "信号", "数据处理"],
+          "evidence": [
+            { "record": "devices-mindray-recruitment", "field": "technical_requirements", "needle": "信号处理方法和数据分析方法", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "programming",
+          "name": "Matlab / Python / C++",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": ["matlab", "python", "c++", "编程", "c语言"],
+          "evidence": [
+            { "record": "devices-mindray-recruitment", "field": "technical_requirements", "needle": "Matlab/Python/C/C++", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "english_literature",
+          "name": "英文文献阅读",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": ["英语", "英文", "六级", "四级", "cet", "sci", "文献"],
+          "evidence": [
+            { "record": "devices-mindray-recruitment", "field": "technical_requirements", "needle": "英文读写能力", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "device_lifecycle",
+          "name": "医疗设备全生命周期管理",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": ["医疗设备", "设备管理", "设备维护", "维保", "设备验收", "设备科"],
+          "evidence": [
+            { "record": "recruitment-huaxi-medeng-82007-guide-devices", "field": "technical_requirements", "needle": "医疗设备的全生命周期", "max_length": 100 }
+          ]
+        },
+        {
+          "id": "iot",
+          "name": "医疗设备物联网",
+          "kind": "engineering",
+          "requirement": "plus",
+          "aliases": ["物联网", "传感器", "嵌入式", "单片机", "数据采集"],
+          "evidence": [
+            { "record": "recruitment-huaxi-medeng-82007-guide-devices", "field": "technical_requirements", "needle": "医疗设备物联网", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "metrology_quality",
+          "name": "计量与质控",
+          "kind": "engineering",
+          "requirement": "plus",
+          "aliases": ["计量", "质控", "质量控制", "检测"],
+          "evidence": [
+            { "record": "recruitment-huaxi-medeng-82007-guide-devices", "field": "technical_requirements", "needle": "计量质控", "max_length": 80 }
+          ]
+        }
+      ]
+    },
+    "signals": {
+      "role_id": "guide_signals",
+      "occupation_label": "医学信号处理算法岗（企业招聘原文）",
+      "coverage_note": "知识库里该方向只有迈瑞医学信号岗位招聘原文这一组技能证据，覆盖最窄；没有额外编造条目。",
+      "skills": [
+        {
+          "id": "signal_processing",
+          "name": "信号处理方法",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["信号处理", "信号分析", "数字信号", "dsp"],
+          "evidence": [
+            { "record": "signals-mindray-recruitment", "field": "technical_requirements", "needle": "信号处理方法和数据分析方法", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "programming",
+          "name": "Matlab / Python / C++",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": ["matlab", "python", "c++", "编程"],
+          "evidence": [
+            { "record": "signals-mindray-recruitment", "field": "technical_requirements", "needle": "Matlab/Python/C/C++", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "medical_signal",
+          "name": "医学信号项目经验",
+          "kind": "domain",
+          "requirement": "plus",
+          "aliases": ["心电", "ecg", "脑电", "eeg", "生理信号", "医学信号", "肌电"],
+          "evidence": [
+            { "record": "signals-mindray-recruitment", "field": "technical_requirements", "needle": "医学相关信号处理项目经验", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "english_literature",
+          "name": "英文文献阅读",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": ["英语", "英文", "六级", "四级", "cet", "sci", "文献"],
+          "evidence": [
+            { "record": "signals-mindray-recruitment", "field": "technical_requirements", "needle": "英文读写能力", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "clinical_literature",
+          "name": "临床研究文献阅读",
+          "kind": "communication",
+          "requirement": "plus",
+          "aliases": ["文献", "临床研究", "医学文献", "阅读"],
+          "evidence": [
+            { "record": "signals-mindray-recruitment", "field": "technical_requirements", "needle": "临床研究文献", "max_length": 70 }
+          ]
+        }
+      ]
+    },
+    "imaging_eng": {
+      "role_id": "guide_imaging_eng",
+      "occupation_label": "医学影像算法 / 临床应用工程岗（企业招聘原文）",
+      "coverage_note": "来自迈瑞医学影像算法岗位与联影超声图像算法岗的招聘原文；成像物理条目来自迈瑞岗位对光学成像系统等经验的要求，不是所有影像岗位统一要求。",
+      "skills": [
+        {
+          "id": "image_algorithms",
+          "name": "图像处理算法研发",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["图像处理", "图像分割", "图像增强", "计算机视觉", "模式识别", "图像算法"],
+          "evidence": [
+            { "record": "recruitment-ui-clinicalapp-guide-imaging-eng", "field": "technical_requirements", "needle": "图像处理算法研发", "max_length": 100 }
+          ]
+        },
+        {
+          "id": "deep_learning",
+          "name": "深度学习基础",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": ["深度学习", "神经网络", "pytorch", "tensorflow"],
+          "evidence": [
+            { "record": "imaging-eng-mindray-recruitment", "field": "technical_requirements", "needle": "深度学习", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "python",
+          "name": "Python",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": ["python"],
+          "evidence": [
+            { "record": "recruitment-ui-clinicalapp-guide-imaging-eng", "field": "technical_requirements", "needle": "熟练掌握Python", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "cpp_cuda",
+          "name": "C++ / CUDA 加速",
+          "kind": "tool",
+          "requirement": "plus",
+          "aliases": ["c++", "cuda", "gpu"],
+          "evidence": [
+            { "record": "recruitment-ui-clinicalapp-guide-imaging-eng", "field": "technical_requirements", "needle": "C++/CUDA优化", "max_length": 70 }
+          ]
+        },
+        {
+          "id": "english_literature",
+          "name": "英文文献阅读",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": ["英语", "英文", "六级", "四级", "cet", "sci", "文献"],
+          "evidence": [
+            { "record": "imaging-eng-mindray-recruitment", "field": "technical_requirements", "needle": "英文读写能力", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "imaging_physics",
+          "name": "成像与影像物理背景",
+          "kind": "domain",
+          "requirement": "plus",
+          "aliases": ["成像", "影像", "光学", "物理", "ct", "mri", "超声"],
+          "evidence": [
+            { "record": "imaging-eng-mindray-recruitment", "field": "technical_requirements", "needle": "光学成像系统", "max_length": 80 }
+          ]
+        }
+      ]
+    },
+    "clinical_data": {
+      "role_id": "guide_clinical_data",
+      "occupation_label": "临床数据分析 / 统计岗（CRO 与医院招聘原文）",
+      "coverage_note": "来自泰格统计岗、瑞金医院与浙大一院数据治理岗的招聘原文；数据治理与 ETL 条目来自医院数据工程师岗位，不是所有统计岗都要求。",
+      "skills": [
+        {
+          "id": "statistics",
+          "name": "统计学基础",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["统计", "统计学", "概率论", "数理统计", "生物统计"],
+          "evidence": [
+            { "record": "tigermed-clinical-statistics-recruitment", "field": "technical_requirements", "needle": "统计学基本知识", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "sas",
+          "name": "SAS 编程",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": ["sas"],
+          "evidence": [
+            { "record": "tigermed-clinical-statistics-recruitment", "field": "technical_requirements", "needle": "SAS编程", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "python_r",
+          "name": "R / Python 数据分析",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": ["r语言", "python", "rstudio", "数据分析"],
+          "evidence": [
+            { "record": "recruitment-ruijin-2026-shuju-zhili-guide-clinical-data", "field": "technical_requirements", "needle": "熟练使用R、Python", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "sql",
+          "name": "SQL 与数据库",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": ["sql", "数据库", "etl"],
+          "evidence": [
+            { "record": "recruitment-ruijin-2026-shuju-zhili-guide-clinical-data", "field": "technical_requirements", "needle": "掌握SQL", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "data_governance",
+          "name": "医疗数据治理",
+          "kind": "engineering",
+          "requirement": "plus",
+          "aliases": ["数据治理", "数据标准", "数据字典", "元数据", "数据质量"],
+          "evidence": [
+            { "record": "recruitment-zdyy-ai-shuju-gongchengshi-guide-clinical-data", "field": "technical_requirements", "needle": "医疗数据治理与标准化", "max_length": 100 }
+          ]
+        },
+        {
+          "id": "english",
+          "name": "英文沟通",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": ["英语", "英文", "六级", "四级", "cet", "英文口头"],
+          "evidence": [
+            { "record": "tigermed-clinical-statistics-recruitment", "field": "technical_requirements", "needle": "英文口头和书面沟通能力", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "clinical_trial",
+          "name": "临床试验背景",
+          "kind": "domain",
+          "requirement": "plus",
+          "aliases": ["临床试验", "临床研究", "gcp", "循证"],
+          "evidence": [
+            { "record": "tigermed-clinical-statistics-recruitment", "field": "technical_requirements", "needle": "临床试验相关工作经验", "max_length": 80 }
+          ]
+        }
+      ]
+    },
+    "health_systems": {
+      "role_id": "guide_health_systems",
+      "occupation_label": "医疗信息化 / 数据平台工程岗（医院招聘原文）",
+      "coverage_note": "来自浙大一院数据工程师、华西信息中心与信息运维招聘原文；医疗信息标准与系统集成条目来自数据工程师岗位职责。",
+      "skills": [
+        {
+          "id": "python_sql",
+          "name": "Python 与 SQL",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": ["python", "sql"],
+          "evidence": [
+            { "record": "recruitment-zy91-data-eng-guide-health-systems", "field": "technical_requirements", "needle": "熟练掌握Python和SQL", "max_length": 70 }
+          ]
+        },
+        {
+          "id": "medical_standards",
+          "name": "医疗信息标准（ICD / LOINC / SNOMED）",
+          "kind": "domain",
+          "requirement": "plus",
+          "aliases": ["icd", "loinc", "snomed", "hl7", "fhir", "医学信息标准", "编码"],
+          "evidence": [
+            { "record": "recruitment-zy91-data-eng-guide-health-systems", "field": "technical_requirements", "needle": "ICD、LOINC、SNOMED CT", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "system_integration",
+          "name": "医院系统集成（HIS / PACS / LIS）",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": ["his", "pacs", "lis", "ris", "系统集成", "接口"],
+          "evidence": [
+            { "record": "recruitment-zy91-data-eng-guide-health-systems", "field": "technical_requirements", "needle": "HIS、RIS、PACS、LIS", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "data_governance",
+          "name": "医疗数据治理",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": ["数据治理", "数据标准", "元数据", "数据质量"],
+          "evidence": [
+            { "record": "recruitment-zy91-data-eng-guide-health-systems", "field": "technical_requirements", "needle": "医疗数据治理与标准化", "max_length": 100 }
+          ]
+        },
+        {
+          "id": "virtualization_ops",
+          "name": "虚拟化与运维",
+          "kind": "engineering",
+          "requirement": "plus",
+          "aliases": ["vmware", "kvm", "openstack", "linux", "运维"],
+          "evidence": [
+            { "record": "recruitment-huaxi-info-yunwei-guide-health-systems", "field": "technical_requirements", "needle": "主流虚拟化平台", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "web_backend",
+          "name": "后端与前端开发",
+          "kind": "tool",
+          "requirement": "plus",
+          "aliases": ["java", "golang", "nodejs", "react", "vue", "后端"],
+          "evidence": [
+            { "record": "recruitment-huaxi-info-center-84106-guide-health-systems", "field": "technical_requirements", "needle": "python、java、golang", "max_length": 80 }
+          ]
+        }
+      ]
+    },
+    "med_nlp_kg": {
+      "role_id": "guide_med_nlp_kg",
+      "occupation_label": "医疗 AI 产品 / 药物警戒 AI 岗（企业招聘原文）",
+      "coverage_note": "知识库只有药物警戒 AI 产品岗位一组岗位证据，方向覆盖最窄之一；NLP/知识图谱技术本身缺少直接岗位原文，未强行补条目。",
+      "skills": [
+        {
+          "id": "pv_business",
+          "name": "药物警戒业务与法规",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": ["药物警戒", "pv", "icsr", "psur", "不良反应", "信号检测"],
+          "evidence": [
+            { "record": "tigermed-ai-pharmacovigilance-recruitment", "field": "technical_requirements", "needle": "ICSR处理、信号检测", "max_length": 100 }
+          ]
+        },
+        {
+          "id": "llm_tech",
+          "name": "大语言模型理解",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["大模型", "大语言模型", "llm"],
+          "evidence": [
+            { "record": "tigermed-ai-pharmacovigilance-recruitment", "field": "technical_requirements", "needle": "大语言模型的原理", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "prompt_rag",
+          "name": "Prompt Engineering 与 RAG",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": ["prompt", "提示词", "rag", "检索增强"],
+          "evidence": [
+            { "record": "tigermed-ai-pharmacovigilance-recruitment", "field": "technical_requirements", "needle": "Prompt Engineering、RAG", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "model_evaluation",
+          "name": "模型评估与迭代",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["模型评估", "评测", "错误分析", "评估"],
+          "evidence": [
+            { "record": "tigermed-ai-pharmacovigilance-recruitment", "field": "technical_requirements", "needle": "主导模型评估与迭代", "max_length": 70 }
+          ]
+        },
+        {
+          "id": "tech_collaboration",
+          "name": "技术协作与需求沟通",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": ["沟通", "协作", "需求", "团队"],
+          "evidence": [
+            { "record": "tigermed-ai-pharmacovigilance-recruitment", "field": "technical_requirements", "needle": "与算法团队、开发团队", "max_length": 80 }
+          ]
+        }
+      ]
+    },
+    "medicine": {
+      "role_id": "medicine_guide",
+      "occupation_label": "临床医师（培养目标与住院医师规范化培训原文）",
+      "coverage_note": "知识库里没有临床医师的招聘技能清单：技能条目来自石河子大学临床医学培养目标、住院医师规范化培训原文，以及北京协和医院 2026 年科研博士后招收简章（论文要求只对博士后等科研路径成立，不是所有临床岗位的统一门槛）。覆盖偏弱。",
+      "skills": [
+        {
+          "id": "clinical_basics",
+          "name": "医学基础与临床基本知识",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": ["临床医学", "诊断学", "内科学", "外科学", "妇产科学", "儿科学", "病理学", "生理学", "解剖学"],
+          "evidence": [
+            { "record": "shzu-clinical-program-occupation", "field": "program_definition", "needle": "医学基础与临床基本理论、知识和基本技能", "max_length": 110 }
+          ]
+        },
+        {
+          "id": "clinical_competence",
+          "name": "临床能力与规培训练",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["临床技能", "见习", "实习", "规培", "住院医师", "查体", "问诊", "轮转"],
+          "evidence": [
+            { "record": "learning-sichuan-wsjkw-zhupei-duration-2025-medicine-guide", "field": "training", "needle": "临床能力考核", "max_length": 90 }
+          ]
+        },
+        {
+          "id": "clinical_communication",
+          "name": "医患沟通",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": ["医患沟通", "沟通", "交流", "人文"],
+          "evidence": [
+            { "record": "shzu-clinical-program-learning", "field": "topics", "needle": "医患沟通学", "max_length": 80 }
+          ]
+        },
+        {
+          "id": "lifelong_learning",
+          "name": "终身学习能力",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": ["自学", "持续学习", "学习能力", "终身学习"],
+          "evidence": [
+            { "record": "shzu-clinical-program-occupation", "field": "program_definition", "needle": "终身学习能力", "max_length": 70 }
+          ]
+        },
+        {
+          "id": "research_capacity",
+          "name": "研究能力",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": ["科研", "研究", "论文", "文献", "实验"],
+          "evidence": [
+            { "record": "shzu-clinical-program-occupation", "field": "program_definition", "needle": "研究能力", "max_length": 60 }
+          ]
+        },
+        {
+          "id": "research_output",
+          "name": "论文与科研成果（博士后等科研路径）",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": ["sci", "论文", "文献", "循证"],
+          "evidence": [
+            { "record": "recruitment-pumch-postdoc-2026-medicine-guide", "field": "technical_requirements", "needle": "SCI论著", "max_length": 100 }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2119 @@
+{
+  "schema_version": "skill-requirements-1",
+  "generated_at": "2026-10-25T04:22:24.742Z",
+  "note": "LIMEN 编辑性归并：把知识库里「国家职业标准 / 真实招聘岗位」原文要求的技能，按方向整理成可与画像对照的清单。技能名称与分类是编辑信息；每条 evidence 的 quote 均由脚本从 kb_records 原文逐字截取，可用 record_id + quote_start/quote_end 回查。不是官方统一招聘标准，不构成报考资格或能力结论。",
+  "method": "spec（data/knowledge/skill-requirements.spec.json）只写 record/field/needle；build-skill-requirements.ts 到 *.collected.json 校验 needle 是原文连续子串后截取 quote。任何一条对不上即整次构建失败。",
+  "source": {
+    "kb_records": "Supabase public.kb_records 的本地采集原文（data/knowledge/*.collected.json）",
+    "edited_by": "LIMEN",
+    "extraction": "verbatim_quote_verified"
+  },
+  "directions": [
+    {
+      "direction_id": "ml_cv",
+      "direction_name": "机器学习与计算机视觉",
+      "role_id": "guide_ml_cv",
+      "occupation_label": "算法/研发岗位（医学影像与数据科学招聘原文）",
+      "coverage_note": "主要来自迈瑞医学影像算法岗位招聘原文与国家人工智能工程技术人员职业标准；「相关项目经验」在原文中是优先项。",
+      "skills": [
+        {
+          "id": "python",
+          "name": "Python",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": [
+            "python",
+            "pytorch",
+            "tensorflow"
+          ],
+          "evidence": [
+            {
+              "record_id": "ml-cv-mindray-recruitment",
+              "role_id": "guide_ml_cv",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "Matlab/Python/Tensorflow/PyTorch/C/C++",
+              "quote": "3、熟悉Matlab/Python/Tensorflow/PyTorch/C/C++中至少一项开发工具的使用",
+              "quote_start": 162,
+              "quote_end": 216,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "image_algorithms",
+          "name": "图像处理与模式识别",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "图像处理",
+            "模式识别",
+            "计算机视觉",
+            "图像算法",
+            "cv"
+          ],
+          "evidence": [
+            {
+              "record_id": "ml-cv-mindray-recruitment",
+              "role_id": "guide_ml_cv",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "图像处理或模式识别",
+              "quote": "2、有扎实的图像处理或模式识别、数据挖掘、信号处理等算法基础，在模式识别/深度学习/AI大模型/3D可视化/光学成像系统/CMOS图像处理/图像效果优化/三维重建/动态视频处理/",
+              "quote_start": 49,
+              "quote_end": 138,
+              "ellipsis_start": false,
+              "ellipsis_end": true,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "machine_learning",
+          "name": "机器学习与深度学习",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "机器学习",
+            "深度学习",
+            "神经网络",
+            "模型训练"
+          ],
+          "evidence": [
+            {
+              "record_id": "ml-cv-ai-standard",
+              "role_id": "guide_ml_cv",
+              "category": "occupation",
+              "field": "skills",
+              "needle": "机器学习知识",
+              "quote": "数据处理知识 （ 4 ） 软件工程知识 （ 5 ） 计算平台知识 （ 6 ） 机器学习知识 2.2.2 工程效能相关知识 （ 1 ） 文档规范、代码规范、质量",
+              "quote_start": 45,
+              "quote_end": 124,
+              "ellipsis_start": true,
+              "ellipsis_end": true,
+              "source_id": "cn-ai-engineer-standard",
+              "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/d9a82994c8bc4db2beb4a31b9d16e687.pdf",
+              "organization": "人力资源社会保障部、工业和信息化部 / 中国政府网",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            },
+            {
+              "record_id": "ml-cv-mindray-recruitment",
+              "role_id": "guide_ml_cv",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "深度学习",
+              "quote": "2、有扎实的图像处理或模式识别、数据挖掘、信号处理等算法基础，在模式识别/深度学习/AI大模型/3D可视化/光学成像系统/CMOS图像处理/图像效果优化/三维",
+              "quote_start": 49,
+              "quote_end": 128,
+              "ellipsis_start": false,
+              "ellipsis_end": true,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "data_engineering",
+          "name": "数据采集、清洗与标注",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": [
+            "数据采集",
+            "数据清洗",
+            "数据标注",
+            "数据处理",
+            "数据集"
+          ],
+          "evidence": [
+            {
+              "record_id": "ml-cv-ai-standard",
+              "role_id": "guide_ml_cv",
+              "category": "occupation",
+              "field": "skills",
+              "needle": "数据采集、标注、清洗",
+              "quote": "效能相关知识 （ 1 ） 文档规范、代码规范、质量保障规范相关知识 （ 2 ） 数据采集、标注、清洗、质量控制等数据工程相关知识 （ 3 ） 工程开发与架构，工程性能提升指标等相关",
+              "quote_start": 99,
+              "quote_end": 189,
+              "ellipsis_start": true,
+              "ellipsis_end": true,
+              "source_id": "cn-ai-engineer-standard",
+              "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/d9a82994c8bc4db2beb4a31b9d16e687.pdf",
+              "organization": "人力资源社会保障部、工业和信息化部 / 中国政府网",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "math_foundation",
+          "name": "数学基础",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": [
+            "数学",
+            "线性代数",
+            "概率论",
+            "高等数学",
+            "数理统计"
+          ],
+          "evidence": [
+            {
+              "record_id": "ml-cv-ai-standard",
+              "role_id": "guide_ml_cv",
+              "category": "occupation",
+              "field": "skills",
+              "needle": "数学基础知识",
+              "quote": "2.2.1 专业基础知识 （ 1 ） 数学基础知识 （ 2 ） 编程基础知识 （ 3 ） 数据处理知识 （ 4 ） 软件工程知识 （ 5 ） 计算平台知识 （",
+              "quote_start": 0,
+              "quote_end": 79,
+              "ellipsis_start": false,
+              "ellipsis_end": true,
+              "source_id": "cn-ai-engineer-standard",
+              "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/d9a82994c8bc4db2beb4a31b9d16e687.pdf",
+              "organization": "人力资源社会保障部、工业和信息化部 / 中国政府网",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "coding_standards",
+          "name": "代码与文档规范",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": [
+            "代码规范",
+            "文档规范",
+            "工程规范",
+            "代码质量"
+          ],
+          "evidence": [
+            {
+              "record_id": "ml-cv-ai-standard",
+              "role_id": "guide_ml_cv",
+              "category": "occupation",
+              "field": "skills",
+              "needle": "文档规范、代码规范",
+              "quote": "算平台知识 （ 6 ） 机器学习知识 2.2.2 工程效能相关知识 （ 1 ） 文档规范、代码规范、质量保障规范相关知识 （ 2 ） 数据采集、标注、清洗、质量控制等数据工程相关知",
+              "quote_start": 72,
+              "quote_end": 162,
+              "ellipsis_start": true,
+              "ellipsis_end": true,
+              "source_id": "cn-ai-engineer-standard",
+              "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/d9a82994c8bc4db2beb4a31b9d16e687.pdf",
+              "organization": "人力资源社会保障部、工业和信息化部 / 中国政府网",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "english_literature",
+          "name": "英文文献阅读",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": [
+            "英语",
+            "英文",
+            "六级",
+            "四级",
+            "cet",
+            "sci",
+            "文献",
+            "english"
+          ],
+          "evidence": [
+            {
+              "record_id": "ml-cv-mindray-recruitment",
+              "role_id": "guide_ml_cv",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "英文读写能力",
+              "quote": "4、有较好的英文读写能力，能熟练阅读图像处理算法文献",
+              "quote_start": 218,
+              "quote_end": 244,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "direction_id": "software",
+      "direction_name": "软件工程与系统开发",
+      "role_id": "guide_software",
+      "occupation_label": "软件开发工程师（企业招聘原文）",
+      "coverage_note": "来自迈瑞软件岗位招聘原文与国家人工智能工程技术人员职业标准；GPU 与图形学在原文中列为优选条件。",
+      "skills": [
+        {
+          "id": "programming",
+          "name": "主流编程语言",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": [
+            "编程",
+            "c++",
+            "c#",
+            "java",
+            "python",
+            "object-c"
+          ],
+          "evidence": [
+            {
+              "record_id": "software-mindray-recruitment",
+              "role_id": "guide_software",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "C/C++/C#/Java/Object-C/Python",
+              "quote": "2、热爱编程，基础扎实，熟悉掌握但不限于C/C++/C#/Java/Object-C/Python等编程语言中的一种或数种，有良好的编程习惯",
+              "quote_start": 19,
+              "quote_end": 89,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "coding_practice",
+          "name": "编程基础与代码习惯",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": [
+            "编程习惯",
+            "代码规范",
+            "代码质量",
+            "工程规范"
+          ],
+          "evidence": [
+            {
+              "record_id": "software-mindray-recruitment",
+              "role_id": "guide_software",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "良好的编程习惯",
+              "quote": "2、热爱编程，基础扎实，熟悉掌握但不限于C/C++/C#/Java/Object-C/Python等编程语言中的一种或数种，有良好的编程习惯",
+              "quote_start": 19,
+              "quote_end": 89,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "communication",
+          "name": "沟通与团队协作",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": [
+            "沟通",
+            "合作",
+            "协作",
+            "团队",
+            "分享"
+          ],
+          "evidence": [
+            {
+              "record_id": "software-mindray-recruitment",
+              "role_id": "guide_software",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "善于沟通，乐于合作",
+              "quote": "3、善于沟通，乐于合作，善于总结分享",
+              "quote_start": 91,
+              "quote_end": 109,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "gpu_nn",
+          "name": "GPU 与神经网络实践",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": [
+            "gpu",
+            "cuda",
+            "神经网络",
+            "深度学习"
+          ],
+          "evidence": [
+            {
+              "record_id": "software-mindray-recruitment",
+              "role_id": "guide_software",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "GPU开发经验",
+              "quote": "4、优选条件： 4.1、有GPU开发经验，熟悉神经网络架构，有训练、推理的经验",
+              "quote_start": 111,
+              "quote_end": 150,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "computer_graphics",
+          "name": "计算机图形学",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": [
+            "图形学",
+            "计算机图形",
+            "图形"
+          ],
+          "evidence": [
+            {
+              "record_id": "software-mindray-recruitment",
+              "role_id": "guide_software",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "计算机图形学",
+              "quote": "4.2、有计算机图形学开发经验",
+              "quote_start": 152,
+              "quote_end": 167,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "software_engineering",
+          "name": "软件工程与数据结构",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": [
+            "软件工程",
+            "数据结构",
+            "算法",
+            "操作系统",
+            "计算机网络"
+          ],
+          "evidence": [
+            {
+              "record_id": "software-ai-standard",
+              "role_id": "guide_software",
+              "category": "occupation",
+              "field": "skills",
+              "needle": "软件工程知识",
+              "quote": "数学基础知识 （ 2 ） 编程基础知识 （ 3 ） 数据处理知识 （ 4 ） 软件工程知识 （ 5 ） 计算平台知识 （ 6 ） 机器学习知识 2.2.2 工",
+              "quote_start": 19,
+              "quote_end": 98,
+              "ellipsis_start": true,
+              "ellipsis_end": true,
+              "source_id": "cn-ai-engineer-standard",
+              "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/d9a82994c8bc4db2beb4a31b9d16e687.pdf",
+              "organization": "人力资源社会保障部、工业和信息化部 / 中国政府网",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "competition",
+          "name": "编程竞赛经历",
+          "kind": "engineering",
+          "requirement": "plus",
+          "aliases": [
+            "竞赛",
+            "比赛",
+            "编程大赛",
+            "acm"
+          ],
+          "evidence": [
+            {
+              "record_id": "software-mindray-recruitment",
+              "role_id": "guide_software",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "积极参加校内外软件编程大赛",
+              "quote": "4.3、在校期间积极参加校内外软件编程大赛",
+              "quote_start": 169,
+              "quote_end": 190,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "direction_id": "llm_agent",
+      "direction_name": "大语言模型与AI Agent",
+      "role_id": "guide_llm_agent",
+      "occupation_label": "前沿部署 / LLM 应用工程师（企业招聘原文）",
+      "coverage_note": "主要来自医药企业前沿部署工程师招聘原文与国家人工智能工程技术人员职业标准；方向本身较新，岗位样本少。",
+      "skills": [
+        {
+          "id": "python",
+          "name": "Python 工程能力",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": [
+            "python"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-clinical-agent-recruitment",
+              "role_id": "guide_llm_agent",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "Python 熟练",
+              "quote": "1. 3 年以上软件工程经验，Python 熟练，能独立完成数据处理、API 集成与工具开发",
+              "quote_start": 0,
+              "quote_end": 46,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-clinical-agent",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=4ae0e87e-e5ca-47f7-b9b0-0b4fd4c0504c",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-10",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "llm_app",
+          "name": "LLM / Agent 应用构建",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "llm",
+            "大模型",
+            "大语言模型",
+            "智能体",
+            "agent"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-clinical-agent-recruitment",
+              "role_id": "guide_llm_agent",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "LLM 应用的实际构建经验",
+              "quote": "2. 具备 LLM 应用的实际构建经验：完整参与过至少一个进入真实使用的 LLM 应用/Agent 项目（而非仅调用 API 或搭建 demo），理解 prompt 工程、工具调用、RAG、上下文管理的工程实践与常见失",
+              "quote_start": 48,
+              "quote_end": 157,
+              "ellipsis_start": false,
+              "ellipsis_end": true,
+              "source_id": "tigermed-clinical-agent",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=4ae0e87e-e5ca-47f7-b9b0-0b4fd4c0504c",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-10",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "prompt_rag",
+          "name": "Prompt 工程与 RAG",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "prompt",
+            "提示词",
+            "rag",
+            "检索增强"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-clinical-agent-recruitment",
+              "role_id": "guide_llm_agent",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "prompt 工程",
+              "quote": "LLM 应用/Agent 项目（而非仅调用 API 或搭建 demo），理解 prompt 工程、工具调用、RAG、上下文管理的工程实践与常见失败模式",
+              "quote_start": 85,
+              "quote_end": 160,
+              "ellipsis_start": true,
+              "ellipsis_end": false,
+              "source_id": "tigermed-clinical-agent",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=4ae0e87e-e5ca-47f7-b9b0-0b4fd4c0504c",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-10",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "linux_container",
+          "name": "Linux 与容器化部署",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": [
+            "linux",
+            "docker",
+            "容器",
+            "k8s",
+            "kubernetes"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-clinical-agent-recruitment",
+              "role_id": "guide_llm_agent",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "Linux 与容器化部署",
+              "quote": "3. 熟悉 Linux 与容器化部署，具备 K8s 基本操作能力，能在网络受限的客户内网环境独立排障",
+              "quote_start": 162,
+              "quote_end": 212,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-clinical-agent",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=4ae0e87e-e5ca-47f7-b9b0-0b4fd4c0504c",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-10",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "api_tooling",
+          "name": "API 集成与工具开发",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": [
+            "api",
+            "接口",
+            "后端",
+            "工具开发"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-clinical-agent-recruitment",
+              "role_id": "guide_llm_agent",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "API 集成与工具开发",
+              "quote": "1. 3 年以上软件工程经验，Python 熟练，能独立完成数据处理、API 集成与工具开发",
+              "quote_start": 0,
+              "quote_end": 46,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-clinical-agent",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=4ae0e87e-e5ca-47f7-b9b0-0b4fd4c0504c",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-10",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "ml_foundation",
+          "name": "机器学习基础",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": [
+            "机器学习",
+            "深度学习",
+            "神经网络"
+          ],
+          "evidence": [
+            {
+              "record_id": "llm-agent-ai-standard",
+              "role_id": "guide_llm_agent",
+              "category": "occupation",
+              "field": "skills",
+              "needle": "机器学习知识",
+              "quote": "数据处理知识 （ 4 ） 软件工程知识 （ 5 ） 计算平台知识 （ 6 ） 机器学习知识 2.2.2 工程效能相关知识 （ 1 ） 文档规范、代码规范、质量",
+              "quote_start": 45,
+              "quote_end": 124,
+              "ellipsis_start": true,
+              "ellipsis_end": true,
+              "source_id": "cn-ai-engineer-standard",
+              "source_url": "https://www.gov.cn/zhengce/zhengceku/2021-10/09/5641623/files/d9a82994c8bc4db2beb4a31b9d16e687.pdf",
+              "organization": "人力资源社会保障部、工业和信息化部 / 中国政府网",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "direction_id": "devices",
+      "direction_name": "智能医疗器械",
+      "role_id": "guide_devices",
+      "occupation_label": "医疗器械研发 / 医学工程岗（招聘与职业标准原文）",
+      "coverage_note": "来自迈瑞医疗器械岗位招聘原文与医院医学工程岗招聘原文；「医疗设备全生命周期管理」来自医院岗位职责，不是研发岗统一要求。",
+      "skills": [
+        {
+          "id": "signal_data_analysis",
+          "name": "信号处理与数据分析",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "信号处理",
+            "数据分析",
+            "信号",
+            "数据处理"
+          ],
+          "evidence": [
+            {
+              "record_id": "devices-mindray-recruitment",
+              "role_id": "guide_devices",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "信号处理方法和数据分析方法",
+              "quote": "2、熟练掌握信号处理方法和数据分析方法，有医学相关信号处理项目经验或者有医学数据统计分析经验者优先",
+              "quote_start": 66,
+              "quote_end": 115,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "programming",
+          "name": "Matlab / Python / C++",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": [
+            "matlab",
+            "python",
+            "c++",
+            "编程",
+            "c语言"
+          ],
+          "evidence": [
+            {
+              "record_id": "devices-mindray-recruitment",
+              "role_id": "guide_devices",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "Matlab/Python/C/C++",
+              "quote": "3、有较好的编程基础，熟练掌握Matlab/Python/C/C++等编程语言的一种或者多种",
+              "quote_start": 117,
+              "quote_end": 163,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "english_literature",
+          "name": "英文文献阅读",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": [
+            "英语",
+            "英文",
+            "六级",
+            "四级",
+            "cet",
+            "sci",
+            "文献"
+          ],
+          "evidence": [
+            {
+              "record_id": "devices-mindray-recruitment",
+              "role_id": "guide_devices",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "英文读写能力",
+              "quote": "4、有较好的英文读写能力，能熟练阅读信号处理算法或临床研究文献",
+              "quote_start": 165,
+              "quote_end": 196,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "device_lifecycle",
+          "name": "医疗设备全生命周期管理",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": [
+            "医疗设备",
+            "设备管理",
+            "设备维护",
+            "维保",
+            "设备验收",
+            "设备科"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-huaxi-medeng-82007-guide-devices",
+              "role_id": "guide_devices",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "医疗设备的全生命周期",
+              "quote": "岗位职责 参与医疗设备的全生命周期的管理（准入论证、安装验收、维护维修、使用培训、计量质控、报废鉴定等）、医疗设备物联网系统开发与管理、医疗设备开发与创新等工作",
+              "quote_start": 0,
+              "quote_end": 80,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "huaxi-medeng-82007",
+              "source_url": "https://www.cd120.com/public/notice/recruit/82007.html",
+              "organization": "四川大学华西医院（设备物资部医学工程科）",
+              "jurisdiction": "CN",
+              "published_at": "2024-09-02",
+              "collected_file": "recruitment.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "iot",
+          "name": "医疗设备物联网",
+          "kind": "engineering",
+          "requirement": "plus",
+          "aliases": [
+            "物联网",
+            "传感器",
+            "嵌入式",
+            "单片机",
+            "数据采集"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-huaxi-medeng-82007-guide-devices",
+              "role_id": "guide_devices",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "医疗设备物联网",
+              "quote": "岗位职责 参与医疗设备的全生命周期的管理（准入论证、安装验收、维护维修、使用培训、计量质控、报废鉴定等）、医疗设备物联网系统开发与管理、医疗设备开发与创新等工作",
+              "quote_start": 0,
+              "quote_end": 80,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "huaxi-medeng-82007",
+              "source_url": "https://www.cd120.com/public/notice/recruit/82007.html",
+              "organization": "四川大学华西医院（设备物资部医学工程科）",
+              "jurisdiction": "CN",
+              "published_at": "2024-09-02",
+              "collected_file": "recruitment.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "metrology_quality",
+          "name": "计量与质控",
+          "kind": "engineering",
+          "requirement": "plus",
+          "aliases": [
+            "计量",
+            "质控",
+            "质量控制",
+            "检测"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-huaxi-medeng-82007-guide-devices",
+              "role_id": "guide_devices",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "计量质控",
+              "quote": "岗位职责 参与医疗设备的全生命周期的管理（准入论证、安装验收、维护维修、使用培训、计量质控、报废鉴定等）、医疗设备物联网系统开发与管理、医疗设备开发与创新等工作",
+              "quote_start": 0,
+              "quote_end": 80,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "huaxi-medeng-82007",
+              "source_url": "https://www.cd120.com/public/notice/recruit/82007.html",
+              "organization": "四川大学华西医院（设备物资部医学工程科）",
+              "jurisdiction": "CN",
+              "published_at": "2024-09-02",
+              "collected_file": "recruitment.collected.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "direction_id": "signals",
+      "direction_name": "医学信号处理",
+      "role_id": "guide_signals",
+      "occupation_label": "医学信号处理算法岗（企业招聘原文）",
+      "coverage_note": "知识库里该方向只有迈瑞医学信号岗位招聘原文这一组技能证据，覆盖最窄；没有额外编造条目。",
+      "skills": [
+        {
+          "id": "signal_processing",
+          "name": "信号处理方法",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "信号处理",
+            "信号分析",
+            "数字信号",
+            "dsp"
+          ],
+          "evidence": [
+            {
+              "record_id": "signals-mindray-recruitment",
+              "role_id": "guide_signals",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "信号处理方法和数据分析方法",
+              "quote": "2、熟练掌握信号处理方法和数据分析方法，有医学相关信号处理项目经验或者有医学数据统计分析经验者优先",
+              "quote_start": 66,
+              "quote_end": 115,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "programming",
+          "name": "Matlab / Python / C++",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": [
+            "matlab",
+            "python",
+            "c++",
+            "编程"
+          ],
+          "evidence": [
+            {
+              "record_id": "signals-mindray-recruitment",
+              "role_id": "guide_signals",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "Matlab/Python/C/C++",
+              "quote": "3、有较好的编程基础，熟练掌握Matlab/Python/C/C++等编程语言的一种或者多种",
+              "quote_start": 117,
+              "quote_end": 163,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "medical_signal",
+          "name": "医学信号项目经验",
+          "kind": "domain",
+          "requirement": "plus",
+          "aliases": [
+            "心电",
+            "ecg",
+            "脑电",
+            "eeg",
+            "生理信号",
+            "医学信号",
+            "肌电"
+          ],
+          "evidence": [
+            {
+              "record_id": "signals-mindray-recruitment",
+              "role_id": "guide_signals",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "医学相关信号处理项目经验",
+              "quote": "2、熟练掌握信号处理方法和数据分析方法，有医学相关信号处理项目经验或者有医学数据统计分析经验者优先",
+              "quote_start": 66,
+              "quote_end": 115,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "english_literature",
+          "name": "英文文献阅读",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": [
+            "英语",
+            "英文",
+            "六级",
+            "四级",
+            "cet",
+            "sci",
+            "文献"
+          ],
+          "evidence": [
+            {
+              "record_id": "signals-mindray-recruitment",
+              "role_id": "guide_signals",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "英文读写能力",
+              "quote": "4、有较好的英文读写能力，能熟练阅读信号处理算法或临床研究文献",
+              "quote_start": 165,
+              "quote_end": 196,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "clinical_literature",
+          "name": "临床研究文献阅读",
+          "kind": "communication",
+          "requirement": "plus",
+          "aliases": [
+            "文献",
+            "临床研究",
+            "医学文献",
+            "阅读"
+          ],
+          "evidence": [
+            {
+              "record_id": "signals-mindray-recruitment",
+              "role_id": "guide_signals",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "临床研究文献",
+              "quote": "4、有较好的英文读写能力，能熟练阅读信号处理算法或临床研究文献",
+              "quote_start": 165,
+              "quote_end": 196,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "direction_id": "imaging_eng",
+      "direction_name": "医学影像工程",
+      "role_id": "guide_imaging_eng",
+      "occupation_label": "医学影像算法 / 临床应用工程岗（企业招聘原文）",
+      "coverage_note": "来自迈瑞医学影像算法岗位与联影超声图像算法岗的招聘原文；成像物理条目来自迈瑞岗位对光学成像系统等经验的要求，不是所有影像岗位统一要求。",
+      "skills": [
+        {
+          "id": "image_algorithms",
+          "name": "图像处理算法研发",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "图像处理",
+            "图像分割",
+            "图像增强",
+            "计算机视觉",
+            "模式识别",
+            "图像算法"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-ui-clinicalapp-guide-imaging-eng",
+              "role_id": "guide_imaging_eng",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "图像处理算法研发",
+              "quote": "工作职责 1、负责医学超声图像增强、图像分割、自动匹配与测量等图像处理算法研发工作",
+              "quote_start": 0,
+              "quote_end": 41,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "ui-clinicalapp",
+              "source_url": "https://united-imaging.zhiye.com/social/jobs",
+              "organization": "联影医疗（上海联影医疗科技股份有限公司）",
+              "jurisdiction": "CN",
+              "published_at": "2025-09-22",
+              "collected_file": "industry-jd.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "deep_learning",
+          "name": "深度学习基础",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": [
+            "深度学习",
+            "神经网络",
+            "pytorch",
+            "tensorflow"
+          ],
+          "evidence": [
+            {
+              "record_id": "imaging-eng-mindray-recruitment",
+              "role_id": "guide_imaging_eng",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "深度学习",
+              "quote": "2、有扎实的图像处理或模式识别、数据挖掘、信号处理等算法基础，在模式识别/深度学习/AI大模型/3D可视化/光学成像系统/CMOS图像处理/图像效果优化/三维重建/动态视频处理/",
+              "quote_start": 49,
+              "quote_end": 138,
+              "ellipsis_start": false,
+              "ellipsis_end": true,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "python",
+          "name": "Python",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": [
+            "python"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-ui-clinicalapp-guide-imaging-eng",
+              "role_id": "guide_imaging_eng",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "熟练掌握Python",
+              "quote": "3、熟练掌握Python，具备C++/CUDA优化能力者优先",
+              "quote_start": 0,
+              "quote_end": 30,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "ui-clinicalapp",
+              "source_url": "https://united-imaging.zhiye.com/social/jobs",
+              "organization": "联影医疗（上海联影医疗科技股份有限公司）",
+              "jurisdiction": "CN",
+              "published_at": "2025-09-22",
+              "collected_file": "industry-jd.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "cpp_cuda",
+          "name": "C++ / CUDA 加速",
+          "kind": "tool",
+          "requirement": "plus",
+          "aliases": [
+            "c++",
+            "cuda",
+            "gpu"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-ui-clinicalapp-guide-imaging-eng",
+              "role_id": "guide_imaging_eng",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "C++/CUDA优化",
+              "quote": "3、熟练掌握Python，具备C++/CUDA优化能力者优先",
+              "quote_start": 0,
+              "quote_end": 30,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "ui-clinicalapp",
+              "source_url": "https://united-imaging.zhiye.com/social/jobs",
+              "organization": "联影医疗（上海联影医疗科技股份有限公司）",
+              "jurisdiction": "CN",
+              "published_at": "2025-09-22",
+              "collected_file": "industry-jd.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "english_literature",
+          "name": "英文文献阅读",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": [
+            "英语",
+            "英文",
+            "六级",
+            "四级",
+            "cet",
+            "sci",
+            "文献"
+          ],
+          "evidence": [
+            {
+              "record_id": "imaging-eng-mindray-recruitment",
+              "role_id": "guide_imaging_eng",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "英文读写能力",
+              "quote": "4、有较好的英文读写能力，能熟练阅读图像处理算法文献",
+              "quote_start": 218,
+              "quote_end": 244,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "imaging_physics",
+          "name": "成像与影像物理背景",
+          "kind": "domain",
+          "requirement": "plus",
+          "aliases": [
+            "成像",
+            "影像",
+            "光学",
+            "物理",
+            "ct",
+            "mri",
+            "超声"
+          ],
+          "evidence": [
+            {
+              "record_id": "imaging-eng-mindray-recruitment",
+              "role_id": "guide_imaging_eng",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "光学成像系统",
+              "quote": "别、数据挖掘、信号处理等算法基础，在模式识别/深度学习/AI大模型/3D可视化/光学成像系统/CMOS图像处理/图像效果优化/三维重建/动态视频处理/手术导航的",
+              "quote_start": 63,
+              "quote_end": 143,
+              "ellipsis_start": true,
+              "ellipsis_end": true,
+              "source_id": "mindray-campus-three-jobs",
+              "source_url": "https://career.mindray.com/campus/jobs",
+              "organization": "深圳迈瑞生物医疗电子股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": null,
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "direction_id": "clinical_data",
+      "direction_name": "临床数据科学",
+      "role_id": "guide_clinical_data",
+      "occupation_label": "临床数据分析 / 统计岗（CRO 与医院招聘原文）",
+      "coverage_note": "来自泰格统计岗、瑞金医院与浙大一院数据治理岗的招聘原文；数据治理与 ETL 条目来自医院数据工程师岗位，不是所有统计岗都要求。",
+      "skills": [
+        {
+          "id": "statistics",
+          "name": "统计学基础",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "统计",
+            "统计学",
+            "概率论",
+            "数理统计",
+            "生物统计"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-clinical-statistics-recruitment",
+              "role_id": "guide_clinical_data",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "统计学基本知识",
+              "quote": "2、SAS编程基础知识，了解统计学基本知识，SAS编程相关工作经验，临床试验相关工作经验者优先",
+              "quote_start": 29,
+              "quote_end": 76,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-clinical-statistics",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=8d50824d-24e6-45cd-8698-7b58a505a041",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-02",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "sas",
+          "name": "SAS 编程",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": [
+            "sas"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-clinical-statistics-recruitment",
+              "role_id": "guide_clinical_data",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "SAS编程",
+              "quote": "2、SAS编程基础知识，了解统计学基本知识，SAS编程相关工作经验，临床试验相关工作经验者优先",
+              "quote_start": 29,
+              "quote_end": 76,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-clinical-statistics",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=8d50824d-24e6-45cd-8698-7b58a505a041",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-02",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "python_r",
+          "name": "R / Python 数据分析",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": [
+            "r语言",
+            "python",
+            "rstudio",
+            "数据分析"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-ruijin-2026-shuju-zhili-guide-clinical-data",
+              "role_id": "guide_clinical_data",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "熟练使用R、Python",
+              "quote": "3.熟练使用R、Python软件，掌握常用数据分析软件包，熟悉Jupyter-lab和R-studio开发环境",
+              "quote_start": 34,
+              "quote_end": 89,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "ruijin-2026-shuju-zhili",
+              "source_url": "https://www.rjh.com.cn/2018RJPortal/doc/2026/07/10/74091.shtml",
+              "organization": "上海交通大学医学院附属瑞金医院（人力资源处）",
+              "jurisdiction": "CN",
+              "published_at": "2026-07-10",
+              "collected_file": "hosp-2.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "sql",
+          "name": "SQL 与数据库",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": [
+            "sql",
+            "数据库",
+            "etl"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-ruijin-2026-shuju-zhili-guide-clinical-data",
+              "role_id": "guide_clinical_data",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "掌握SQL",
+              "quote": "掌握SQL，能在指导下完成数据对接与ETL开发",
+              "quote_start": 120,
+              "quote_end": 143,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "ruijin-2026-shuju-zhili",
+              "source_url": "https://www.rjh.com.cn/2018RJPortal/doc/2026/07/10/74091.shtml",
+              "organization": "上海交通大学医学院附属瑞金医院（人力资源处）",
+              "jurisdiction": "CN",
+              "published_at": "2026-07-10",
+              "collected_file": "hosp-2.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "data_governance",
+          "name": "医疗数据治理",
+          "kind": "engineering",
+          "requirement": "plus",
+          "aliases": [
+            "数据治理",
+            "数据标准",
+            "数据字典",
+            "元数据",
+            "数据质量"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-zdyy-ai-shuju-gongchengshi-guide-clinical-data",
+              "role_id": "guide_clinical_data",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "医疗数据治理与标准化",
+              "quote": "2.1 医疗数据治理与标准化：熟悉数据字典、元数据、主数据、数据标准和数据质量管理",
+              "quote_start": 0,
+              "quote_end": 41,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "zdyy-ai-shuju-gongchengshi",
+              "source_url": "https://rlzyb.zy91.com/app/noticeInfo.action?keycode=7bf56069-97fb-4d3b-a3de-33828b1e91d1",
+              "organization": "浙江大学医学院附属第一医院（医学人工智能研究与转化平台）",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-03",
+              "collected_file": "hosp-3.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "english",
+          "name": "英文沟通",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": [
+            "英语",
+            "英文",
+            "六级",
+            "四级",
+            "cet",
+            "英文口头"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-clinical-statistics-recruitment",
+              "role_id": "guide_clinical_data",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "英文口头和书面沟通能力",
+              "quote": "3、良好的沟通技巧，包括英文口头和书面沟通能力 4、掌握office办公软件以及SAS统计软件的基础知识",
+              "quote_start": 78,
+              "quote_end": 130,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-clinical-statistics",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=8d50824d-24e6-45cd-8698-7b58a505a041",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-02",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "clinical_trial",
+          "name": "临床试验背景",
+          "kind": "domain",
+          "requirement": "plus",
+          "aliases": [
+            "临床试验",
+            "临床研究",
+            "gcp",
+            "循证"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-clinical-statistics-recruitment",
+              "role_id": "guide_clinical_data",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "临床试验相关工作经验",
+              "quote": "2、SAS编程基础知识，了解统计学基本知识，SAS编程相关工作经验，临床试验相关工作经验者优先",
+              "quote_start": 29,
+              "quote_end": 76,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-clinical-statistics",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=8d50824d-24e6-45cd-8698-7b58a505a041",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-02",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "direction_id": "health_systems",
+      "direction_name": "医疗信息系统",
+      "role_id": "guide_health_systems",
+      "occupation_label": "医疗信息化 / 数据平台工程岗（医院招聘原文）",
+      "coverage_note": "来自浙大一院数据工程师、华西信息中心与信息运维招聘原文；医疗信息标准与系统集成条目来自数据工程师岗位职责。",
+      "skills": [
+        {
+          "id": "python_sql",
+          "name": "Python 与 SQL",
+          "kind": "tool",
+          "requirement": "must",
+          "aliases": [
+            "python",
+            "sql"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-zy91-data-eng-guide-health-systems",
+              "role_id": "guide_health_systems",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "熟练掌握Python和SQL",
+              "quote": "熟练掌握Python和SQL",
+              "quote_start": 0,
+              "quote_end": 14,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "zy91-data-eng",
+              "source_url": "https://rlzyb.zy91.com/apply/getNotice.action?keycode=7bf56069-97fb-4d3b-a3de-33828b1e91d1",
+              "organization": "浙江大学医学院附属第一医院（医学人工智能研究与转化平台）",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-03",
+              "collected_file": "jd-4.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "medical_standards",
+          "name": "医疗信息标准（ICD / LOINC / SNOMED）",
+          "kind": "domain",
+          "requirement": "plus",
+          "aliases": [
+            "icd",
+            "loinc",
+            "snomed",
+            "hl7",
+            "fhir",
+            "医学信息标准",
+            "编码"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-zy91-data-eng-guide-health-systems",
+              "role_id": "guide_health_systems",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "ICD、LOINC、SNOMED CT",
+              "quote": "熟悉ICD、LOINC、SNOMED CT等标准者优先",
+              "quote_start": 0,
+              "quote_end": 27,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "zy91-data-eng",
+              "source_url": "https://rlzyb.zy91.com/apply/getNotice.action?keycode=7bf56069-97fb-4d3b-a3de-33828b1e91d1",
+              "organization": "浙江大学医学院附属第一医院（医学人工智能研究与转化平台）",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-03",
+              "collected_file": "jd-4.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "system_integration",
+          "name": "医院系统集成（HIS / PACS / LIS）",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": [
+            "his",
+            "pacs",
+            "lis",
+            "ris",
+            "系统集成",
+            "接口"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-zy91-data-eng-guide-health-systems",
+              "role_id": "guide_health_systems",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "HIS、RIS、PACS、LIS",
+              "quote": "1）负责医院系统集成与数据平台，负责HIS、RIS、PACS、LIS等系统对接、数据管道、接口服务、结果回写和数据流转等工程实现",
+              "quote_start": 0,
+              "quote_end": 64,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "zy91-data-eng",
+              "source_url": "https://rlzyb.zy91.com/apply/getNotice.action?keycode=7bf56069-97fb-4d3b-a3de-33828b1e91d1",
+              "organization": "浙江大学医学院附属第一医院（医学人工智能研究与转化平台）",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-03",
+              "collected_file": "jd-4.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "data_governance",
+          "name": "医疗数据治理",
+          "kind": "engineering",
+          "requirement": "must",
+          "aliases": [
+            "数据治理",
+            "数据标准",
+            "元数据",
+            "数据质量"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-zy91-data-eng-guide-health-systems",
+              "role_id": "guide_health_systems",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "医疗数据治理与标准化",
+              "quote": "2）负责医疗数据治理与标准化，制定和维护医疗数据标准、字段定义、指标口径和数据使用规范",
+              "quote_start": 60,
+              "quote_end": 103,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "zy91-data-eng",
+              "source_url": "https://rlzyb.zy91.com/apply/getNotice.action?keycode=7bf56069-97fb-4d3b-a3de-33828b1e91d1",
+              "organization": "浙江大学医学院附属第一医院（医学人工智能研究与转化平台）",
+              "jurisdiction": "CN",
+              "published_at": "2026-09-03",
+              "collected_file": "jd-4.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "virtualization_ops",
+          "name": "虚拟化与运维",
+          "kind": "engineering",
+          "requirement": "plus",
+          "aliases": [
+            "vmware",
+            "kvm",
+            "openstack",
+            "linux",
+            "运维"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-huaxi-info-yunwei-guide-health-systems",
+              "role_id": "guide_health_systems",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "主流虚拟化平台",
+              "quote": "精通主流虚拟化平台（如 VMware 、 KVM、Openstack等 ）的规划、部署、运维、性能优化及高可用配置",
+              "quote_start": 0,
+              "quote_end": 57,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "huaxi-info-yunwei",
+              "source_url": "https://www.cd120.com/public/notice/recruit/87197.html",
+              "organization": "四川大学华西医院（信息中心）",
+              "jurisdiction": "CN",
+              "published_at": "2025-07-09",
+              "collected_file": "hosp-3.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "web_backend",
+          "name": "后端与前端开发",
+          "kind": "tool",
+          "requirement": "plus",
+          "aliases": [
+            "java",
+            "golang",
+            "nodejs",
+            "react",
+            "vue",
+            "后端"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-huaxi-info-center-84106-guide-health-systems",
+              "role_id": "guide_health_systems",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "python、java、golang",
+              "quote": "1. 具备python、java、golang、nodejs等后端技术开发经验",
+              "quote_start": 0,
+              "quote_end": 39,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "huaxi-info-center-84106",
+              "source_url": "https://www.cd120.com/public/notice/recruit/84106.html",
+              "organization": "四川大学华西医院（信息中心）",
+              "jurisdiction": "CN",
+              "published_at": "2024-12-26",
+              "collected_file": "recruitment.collected.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "direction_id": "med_nlp_kg",
+      "direction_name": "医疗NLP与知识图谱",
+      "role_id": "guide_med_nlp_kg",
+      "occupation_label": "医疗 AI 产品 / 药物警戒 AI 岗（企业招聘原文）",
+      "coverage_note": "知识库只有药物警戒 AI 产品岗位一组岗位证据，方向覆盖最窄之一；NLP/知识图谱技术本身缺少直接岗位原文，未强行补条目。",
+      "skills": [
+        {
+          "id": "pv_business",
+          "name": "药物警戒业务与法规",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": [
+            "药物警戒",
+            "pv",
+            "icsr",
+            "psur",
+            "不良反应",
+            "信号检测"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-ai-pharmacovigilance-recruitment",
+              "role_id": "guide_med_nlp_kg",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "ICSR处理、信号检测",
+              "quote": "（1）懂PV业务：熟悉ICSR处理、信号检测、PSUR/RMP等核心药物警戒流程，了解ICH E2A/B/C/E及《药物警戒质量管理规范》等法规要求",
+              "quote_start": 0,
+              "quote_end": 74,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-ai-pharmacovigilance",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=7ee6ba34-f2ed-4bfb-bfee-811eefc6b82d",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-05-28",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "llm_tech",
+          "name": "大语言模型理解",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "大模型",
+            "大语言模型",
+            "llm"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-ai-pharmacovigilance-recruitment",
+              "role_id": "guide_med_nlp_kg",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "大语言模型的原理",
+              "quote": "（2）懂AI技术：对大语言模型的原理、能力边界与应用场景有深刻理解，具备Prompt Engineering、RAG等实践经验者优先",
+              "quote_start": 76,
+              "quote_end": 142,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-ai-pharmacovigilance",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=7ee6ba34-f2ed-4bfb-bfee-811eefc6b82d",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-05-28",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "prompt_rag",
+          "name": "Prompt Engineering 与 RAG",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": [
+            "prompt",
+            "提示词",
+            "rag",
+            "检索增强"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-ai-pharmacovigilance-recruitment",
+              "role_id": "guide_med_nlp_kg",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "Prompt Engineering、RAG",
+              "quote": "（2）懂AI技术：对大语言模型的原理、能力边界与应用场景有深刻理解，具备Prompt Engineering、RAG等实践经验者优先",
+              "quote_start": 76,
+              "quote_end": 142,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-ai-pharmacovigilance",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=7ee6ba34-f2ed-4bfb-bfee-811eefc6b82d",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-05-28",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "model_evaluation",
+          "name": "模型评估与迭代",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "模型评估",
+            "评测",
+            "错误分析",
+            "评估"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-ai-pharmacovigilance-recruitment",
+              "role_id": "guide_med_nlp_kg",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "主导模型评估与迭代",
+              "quote": "（3）懂技术协作：能够与算法团队、开发团队进行有效的技术需求对话，具备主导模型评估与迭代的实际经验",
+              "quote_start": 144,
+              "quote_end": 193,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-ai-pharmacovigilance",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=7ee6ba34-f2ed-4bfb-bfee-811eefc6b82d",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-05-28",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "tech_collaboration",
+          "name": "技术协作与需求沟通",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": [
+            "沟通",
+            "协作",
+            "需求",
+            "团队"
+          ],
+          "evidence": [
+            {
+              "record_id": "tigermed-ai-pharmacovigilance-recruitment",
+              "role_id": "guide_med_nlp_kg",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "与算法团队、开发团队",
+              "quote": "（3）懂技术协作：能够与算法团队、开发团队进行有效的技术需求对话，具备主导模型评估与迭代的实际经验",
+              "quote_start": 144,
+              "quote_end": 193,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "tigermed-ai-pharmacovigilance",
+              "source_url": "https://tigermed.zhiye.com/social/detail?jobAdId=7ee6ba34-f2ed-4bfb-bfee-811eefc6b82d",
+              "organization": "杭州泰格医药科技股份有限公司",
+              "jurisdiction": "CN",
+              "published_at": "2026-05-28",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "direction_id": "medicine",
+      "direction_name": "临床科室探索",
+      "role_id": "medicine_guide",
+      "occupation_label": "临床医师（培养目标与住院医师规范化培训原文）",
+      "coverage_note": "知识库里没有临床医师的招聘技能清单：技能条目来自石河子大学临床医学培养目标、住院医师规范化培训原文，以及北京协和医院 2026 年科研博士后招收简章（论文要求只对博士后等科研路径成立，不是所有临床岗位的统一门槛）。覆盖偏弱。",
+      "skills": [
+        {
+          "id": "clinical_basics",
+          "name": "医学基础与临床基本知识",
+          "kind": "domain",
+          "requirement": "must",
+          "aliases": [
+            "临床医学",
+            "诊断学",
+            "内科学",
+            "外科学",
+            "妇产科学",
+            "儿科学",
+            "病理学",
+            "生理学",
+            "解剖学"
+          ],
+          "evidence": [
+            {
+              "record_id": "shzu-clinical-program-occupation",
+              "role_id": "medicine_guide",
+              "category": "occupation",
+              "field": "program_definition",
+              "needle": "医学基础与临床基本理论、知识和基本技能",
+              "quote": "场坚定，适应我国社会主义现代化建设，德智体美劳全面发展，具有良好职业素养，扎实的医学基础与临床基本理论、知识和基本技能",
+              "quote_start": 62,
+              "quote_end": 121,
+              "ellipsis_start": true,
+              "ellipsis_end": false,
+              "source_id": "shzu-clinical-program",
+              "source_url": "https://yixy.shzu.edu.cn/2025/0630/c11880a221500/page.htm",
+              "organization": "石河子大学医学院",
+              "jurisdiction": "CN",
+              "published_at": "2025-06-30",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "clinical_competence",
+          "name": "临床能力与规培训练",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "临床技能",
+            "见习",
+            "实习",
+            "规培",
+            "住院医师",
+            "查体",
+            "问诊",
+            "轮转"
+          ],
+          "evidence": [
+            {
+              "record_id": "learning-sichuan-wsjkw-zhupei-duration-2025-medicine-guide",
+              "role_id": "medicine_guide",
+              "category": "learning",
+              "field": "training",
+              "needle": "临床能力考核",
+              "quote": "临床能力考核严格按照住院医师规范化培训过程考核和结业考核进行",
+              "quote_start": 61,
+              "quote_end": 91,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "sichuan-wsjkw-zhupei-duration-2025",
+              "source_url": "https://wsjkw.sc.gov.cn/scwsjkw/c111967/2025/12/23/345bccdf90e84be486f720c6b469e952.shtml",
+              "organization": "四川省卫生健康委员会",
+              "jurisdiction": "CN",
+              "published_at": "2025-12-23",
+              "collected_file": "medical.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "clinical_communication",
+          "name": "医患沟通",
+          "kind": "communication",
+          "requirement": "must",
+          "aliases": [
+            "医患沟通",
+            "沟通",
+            "交流",
+            "人文"
+          ],
+          "evidence": [
+            {
+              "record_id": "shzu-clinical-program-learning",
+              "role_id": "medicine_guide",
+              "category": "learning",
+              "field": "topics",
+              "needle": "医患沟通学",
+              "quote": "物化学、局部解剖学、组织胚胎学、医学免疫学、病理学、药理学、病理学、病理生理学、医患沟通学、流行病学、诊断学、内科学、外科学、妇产科学、儿科学",
+              "quote_start": 17,
+              "quote_end": 88,
+              "ellipsis_start": true,
+              "ellipsis_end": false,
+              "source_id": "shzu-clinical-program",
+              "source_url": "https://yixy.shzu.edu.cn/2025/0630/c11880a221500/page.htm",
+              "organization": "石河子大学医学院",
+              "jurisdiction": "CN",
+              "published_at": "2025-06-30",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "lifelong_learning",
+          "name": "终身学习能力",
+          "kind": "method",
+          "requirement": "must",
+          "aliases": [
+            "自学",
+            "持续学习",
+            "学习能力",
+            "终身学习"
+          ],
+          "evidence": [
+            {
+              "record_id": "shzu-clinical-program-occupation",
+              "role_id": "medicine_guide",
+              "category": "occupation",
+              "field": "program_definition",
+              "needle": "终身学习能力",
+              "quote": "具备良好的临床能力、终身学习能力、研究能力、创新精神，能够在医疗卫生等相关领域从事临床医疗和卫生服务的高素质应用型临床医学专门人才",
+              "quote_start": 122,
+              "quote_end": 187,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "shzu-clinical-program",
+              "source_url": "https://yixy.shzu.edu.cn/2025/0630/c11880a221500/page.htm",
+              "organization": "石河子大学医学院",
+              "jurisdiction": "CN",
+              "published_at": "2025-06-30",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "research_capacity",
+          "name": "研究能力",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": [
+            "科研",
+            "研究",
+            "论文",
+            "文献",
+            "实验"
+          ],
+          "evidence": [
+            {
+              "record_id": "shzu-clinical-program-occupation",
+              "role_id": "medicine_guide",
+              "category": "occupation",
+              "field": "program_definition",
+              "needle": "研究能力",
+              "quote": "具备良好的临床能力、终身学习能力、研究能力、创新精神，能够在医疗卫生等相关领域从事临床医疗和卫生服务的高素质应用型临床医",
+              "quote_start": 122,
+              "quote_end": 182,
+              "ellipsis_start": false,
+              "ellipsis_end": true,
+              "source_id": "shzu-clinical-program",
+              "source_url": "https://yixy.shzu.edu.cn/2025/0630/c11880a221500/page.htm",
+              "organization": "石河子大学医学院",
+              "jurisdiction": "CN",
+              "published_at": "2025-06-30",
+              "collected_file": "expansion.collected.json"
+            }
+          ]
+        },
+        {
+          "id": "research_output",
+          "name": "论文与科研成果（博士后等科研路径）",
+          "kind": "method",
+          "requirement": "plus",
+          "aliases": [
+            "sci",
+            "论文",
+            "文献",
+            "循证"
+          ],
+          "evidence": [
+            {
+              "record_id": "recruitment-pumch-postdoc-2026-medicine-guide",
+              "role_id": "medicine_guide",
+              "category": "recruitment",
+              "field": "technical_requirements",
+              "needle": "SCI论著",
+              "quote": "（七）在入站之前三年内，以独立一作或共同一作排名第一身份发表中科院分区二区及以上SCI论著≥1篇（2026年发表文章，沿用2025年版中科院分区）",
+              "quote_start": 0,
+              "quote_end": 73,
+              "ellipsis_start": false,
+              "ellipsis_end": false,
+              "source_id": "pumch-postdoc-2026",
+              "source_url": "https://www.pumch.cn/detail/45419.html",
+              "organization": "中国医学科学院北京协和医院（人事处）",
+              "jurisdiction": "CN",
+              "published_at": "2026-05-07",
+              "collected_file": "medical.collected.json"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "技能清单是知识库原文的编辑性归并，不等于该职业的官方统一要求，也不覆盖全部岗位。",
+    "部分方向只有少数招聘原文（如医学信号处理、医疗NLP），覆盖有限，已在各方向 coverage_note 标注。",
+    "与画像的对照只做名称/别名文本匹配，不代表已掌握或未掌握；信息不足不等于不具备。"
+  ]
+}

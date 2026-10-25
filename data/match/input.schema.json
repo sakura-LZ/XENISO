@@ -7,7 +7,7 @@
       "properties": {
         "schema_version": {
           "type": "string",
-          "const": "match-1"
+          "const": "match-2"
         },
         "simulation": {
           "type": "boolean"
@@ -110,6 +110,11 @@
                 ],
                 "additionalProperties": false
               }
+            },
+            "reliability": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
             }
           },
           "required": [
@@ -284,6 +289,156 @@
                           "type": "null"
                         }
                       ]
+                    },
+                    "ratings": {
+                      "type": "object",
+                      "properties": {
+                        "realistic": {
+                          "type": "object",
+                          "properties": {
+                            "n": {
+                              "type": "integer",
+                              "exclusiveMinimum": 0,
+                              "maximum": 9007199254740991
+                            },
+                            "se": {
+                              "type": "number",
+                              "minimum": 0
+                            },
+                            "lower": {
+                              "type": "number"
+                            },
+                            "upper": {
+                              "type": "number"
+                            },
+                            "suppressed": {
+                              "type": "boolean"
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "investigative": {
+                          "type": "object",
+                          "properties": {
+                            "n": {
+                              "type": "integer",
+                              "exclusiveMinimum": 0,
+                              "maximum": 9007199254740991
+                            },
+                            "se": {
+                              "type": "number",
+                              "minimum": 0
+                            },
+                            "lower": {
+                              "type": "number"
+                            },
+                            "upper": {
+                              "type": "number"
+                            },
+                            "suppressed": {
+                              "type": "boolean"
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "artistic": {
+                          "type": "object",
+                          "properties": {
+                            "n": {
+                              "type": "integer",
+                              "exclusiveMinimum": 0,
+                              "maximum": 9007199254740991
+                            },
+                            "se": {
+                              "type": "number",
+                              "minimum": 0
+                            },
+                            "lower": {
+                              "type": "number"
+                            },
+                            "upper": {
+                              "type": "number"
+                            },
+                            "suppressed": {
+                              "type": "boolean"
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "social": {
+                          "type": "object",
+                          "properties": {
+                            "n": {
+                              "type": "integer",
+                              "exclusiveMinimum": 0,
+                              "maximum": 9007199254740991
+                            },
+                            "se": {
+                              "type": "number",
+                              "minimum": 0
+                            },
+                            "lower": {
+                              "type": "number"
+                            },
+                            "upper": {
+                              "type": "number"
+                            },
+                            "suppressed": {
+                              "type": "boolean"
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "enterprising": {
+                          "type": "object",
+                          "properties": {
+                            "n": {
+                              "type": "integer",
+                              "exclusiveMinimum": 0,
+                              "maximum": 9007199254740991
+                            },
+                            "se": {
+                              "type": "number",
+                              "minimum": 0
+                            },
+                            "lower": {
+                              "type": "number"
+                            },
+                            "upper": {
+                              "type": "number"
+                            },
+                            "suppressed": {
+                              "type": "boolean"
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "conventional": {
+                          "type": "object",
+                          "properties": {
+                            "n": {
+                              "type": "integer",
+                              "exclusiveMinimum": 0,
+                              "maximum": 9007199254740991
+                            },
+                            "se": {
+                              "type": "number",
+                              "minimum": 0
+                            },
+                            "lower": {
+                              "type": "number"
+                            },
+                            "upper": {
+                              "type": "number"
+                            },
+                            "suppressed": {
+                              "type": "boolean"
+                            }
+                          },
+                          "additionalProperties": false
+                        }
+                      },
+                      "additionalProperties": false
                     }
                   },
                   "required": [
@@ -382,6 +537,11 @@
                 ],
                 "additionalProperties": false
               }
+            },
+            "reliability": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
             }
           },
           "required": [
@@ -509,6 +669,11 @@
                       ],
                       "additionalProperties": false
                     }
+                  },
+                  "reliability": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
                   }
                 },
                 "required": [
@@ -627,6 +792,11 @@
                     ],
                     "additionalProperties": false
                   }
+                },
+                "reliability": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
                 }
               },
               "required": [
@@ -734,6 +904,11 @@
                     ],
                     "additionalProperties": false
                   }
+                },
+                "reliability": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
                 }
               },
               "required": [
@@ -841,6 +1016,11 @@
                     ],
                     "additionalProperties": false
                   }
+                },
+                "reliability": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
                 }
               },
               "required": [
@@ -948,6 +1128,11 @@
                     ],
                     "additionalProperties": false
                   }
+                },
+                "reliability": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
                 }
               },
               "required": [
@@ -1055,6 +1240,11 @@
                     ],
                     "additionalProperties": false
                   }
+                },
+                "reliability": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
                 }
               },
               "required": [
@@ -1175,6 +1365,11 @@
                 ],
                 "additionalProperties": false
               }
+            },
+            "reliability": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
             }
           },
           "required": [
@@ -1298,6 +1493,11 @@
                 ],
                 "additionalProperties": false
               }
+            },
+            "reliability": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
             }
           },
           "required": [
@@ -1405,6 +1605,11 @@
                 ],
                 "additionalProperties": false
               }
+            },
+            "reliability": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
             }
           },
           "required": [
@@ -1558,6 +1763,11 @@
                       ],
                       "additionalProperties": false
                     }
+                  },
+                  "reliability": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1
                   }
                 },
                 "required": [
@@ -1685,6 +1895,11 @@
                             ],
                             "additionalProperties": false
                           }
+                        },
+                        "reliability": {
+                          "type": "number",
+                          "minimum": 0,
+                          "maximum": 1
                         }
                       },
                       "required": [
@@ -1767,7 +1982,7 @@
         "properties": {
           "schema_version": {
             "type": "string",
-            "const": "match-1"
+            "const": "match-2"
           },
           "id": {
             "type": "string",
@@ -1904,6 +2119,11 @@
                   ],
                   "additionalProperties": false
                 }
+              },
+              "reliability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
               }
             },
             "required": [
@@ -1985,6 +2205,156 @@
                             "type": "null"
                           }
                         ]
+                      },
+                      "ratings": {
+                        "type": "object",
+                        "properties": {
+                          "realistic": {
+                            "type": "object",
+                            "properties": {
+                              "n": {
+                                "type": "integer",
+                                "exclusiveMinimum": 0,
+                                "maximum": 9007199254740991
+                              },
+                              "se": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "lower": {
+                                "type": "number"
+                              },
+                              "upper": {
+                                "type": "number"
+                              },
+                              "suppressed": {
+                                "type": "boolean"
+                              }
+                            },
+                            "additionalProperties": false
+                          },
+                          "investigative": {
+                            "type": "object",
+                            "properties": {
+                              "n": {
+                                "type": "integer",
+                                "exclusiveMinimum": 0,
+                                "maximum": 9007199254740991
+                              },
+                              "se": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "lower": {
+                                "type": "number"
+                              },
+                              "upper": {
+                                "type": "number"
+                              },
+                              "suppressed": {
+                                "type": "boolean"
+                              }
+                            },
+                            "additionalProperties": false
+                          },
+                          "artistic": {
+                            "type": "object",
+                            "properties": {
+                              "n": {
+                                "type": "integer",
+                                "exclusiveMinimum": 0,
+                                "maximum": 9007199254740991
+                              },
+                              "se": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "lower": {
+                                "type": "number"
+                              },
+                              "upper": {
+                                "type": "number"
+                              },
+                              "suppressed": {
+                                "type": "boolean"
+                              }
+                            },
+                            "additionalProperties": false
+                          },
+                          "social": {
+                            "type": "object",
+                            "properties": {
+                              "n": {
+                                "type": "integer",
+                                "exclusiveMinimum": 0,
+                                "maximum": 9007199254740991
+                              },
+                              "se": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "lower": {
+                                "type": "number"
+                              },
+                              "upper": {
+                                "type": "number"
+                              },
+                              "suppressed": {
+                                "type": "boolean"
+                              }
+                            },
+                            "additionalProperties": false
+                          },
+                          "enterprising": {
+                            "type": "object",
+                            "properties": {
+                              "n": {
+                                "type": "integer",
+                                "exclusiveMinimum": 0,
+                                "maximum": 9007199254740991
+                              },
+                              "se": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "lower": {
+                                "type": "number"
+                              },
+                              "upper": {
+                                "type": "number"
+                              },
+                              "suppressed": {
+                                "type": "boolean"
+                              }
+                            },
+                            "additionalProperties": false
+                          },
+                          "conventional": {
+                            "type": "object",
+                            "properties": {
+                              "n": {
+                                "type": "integer",
+                                "exclusiveMinimum": 0,
+                                "maximum": 9007199254740991
+                              },
+                              "se": {
+                                "type": "number",
+                                "minimum": 0
+                              },
+                              "lower": {
+                                "type": "number"
+                              },
+                              "upper": {
+                                "type": "number"
+                              },
+                              "suppressed": {
+                                "type": "boolean"
+                              }
+                            },
+                            "additionalProperties": false
+                          }
+                        },
+                        "additionalProperties": false
                       }
                     },
                     "required": [
@@ -2083,6 +2453,11 @@
                   ],
                   "additionalProperties": false
                 }
+              },
+              "reliability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
               }
             },
             "required": [
@@ -2210,6 +2585,11 @@
                         ],
                         "additionalProperties": false
                       }
+                    },
+                    "reliability": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
                     }
                   },
                   "required": [
@@ -2317,6 +2697,11 @@
                         ],
                         "additionalProperties": false
                       }
+                    },
+                    "reliability": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
                     }
                   },
                   "required": [
@@ -2324,6 +2709,33 @@
                     "status",
                     "evidence"
                   ],
+                  "additionalProperties": false
+                },
+                "must_have": {
+                  "type": "boolean"
+                },
+                "rating": {
+                  "type": "object",
+                  "properties": {
+                    "n": {
+                      "type": "integer",
+                      "exclusiveMinimum": 0,
+                      "maximum": 9007199254740991
+                    },
+                    "se": {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "lower": {
+                      "type": "number"
+                    },
+                    "upper": {
+                      "type": "number"
+                    },
+                    "suppressed": {
+                      "type": "boolean"
+                    }
+                  },
                   "additionalProperties": false
                 }
               },
@@ -2433,6 +2845,11 @@
                   ],
                   "additionalProperties": false
                 }
+              },
+              "reliability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
               }
             },
             "required": [
@@ -2648,6 +3065,11 @@
                   ],
                   "additionalProperties": false
                 }
+              },
+              "reliability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
               }
             },
             "required": [
@@ -2758,6 +3180,11 @@
                   ],
                   "additionalProperties": false
                 }
+              },
+              "reliability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
               }
             },
             "required": [
@@ -2766,6 +3193,11 @@
               "evidence"
             ],
             "additionalProperties": false
+          },
+          "standard_version": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2000
           }
         },
         "required": [
@@ -2794,7 +3226,7 @@
         "properties": {
           "schema_version": {
             "type": "string",
-            "const": "match-1"
+            "const": "match-2"
           },
           "id": {
             "type": "string",
@@ -3022,6 +3454,11 @@
                   ],
                   "additionalProperties": false
                 }
+              },
+              "reliability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
               }
             },
             "required": [
@@ -3132,6 +3569,11 @@
                   ],
                   "additionalProperties": false
                 }
+              },
+              "reliability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
               }
             },
             "required": [
@@ -3239,6 +3681,11 @@
                   ],
                   "additionalProperties": false
                 }
+              },
+              "reliability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
               }
             },
             "required": [
@@ -3454,6 +3901,11 @@
                   ],
                   "additionalProperties": false
                 }
+              },
+              "reliability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
               }
             },
             "required": [

@@ -4,7 +4,7 @@
   "properties": {
     "schema_version": {
       "type": "string",
-      "const": "match-1"
+      "const": "match-2"
     },
     "id": {
       "type": "string",
@@ -232,6 +232,11 @@
             ],
             "additionalProperties": false
           }
+        },
+        "reliability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
         }
       },
       "required": [
@@ -342,6 +347,11 @@
             ],
             "additionalProperties": false
           }
+        },
+        "reliability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
         }
       },
       "required": [
@@ -449,6 +459,11 @@
             ],
             "additionalProperties": false
           }
+        },
+        "reliability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
         }
       },
       "required": [
@@ -664,6 +679,11 @@
             ],
             "additionalProperties": false
           }
+        },
+        "reliability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
         }
       },
       "required": [

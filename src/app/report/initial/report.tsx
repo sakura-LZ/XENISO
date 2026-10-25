@@ -5,19 +5,23 @@ import { type AssessmentResult } from "@/lib/assessment";
 import { emptyProfile, profileSchema, type Profile } from "@/lib/profile";
 import { competencyGaps, initialReport } from "@/lib/reports";
 import { occupationUrl } from "@/lib/directions";
+import { skillKindLabels } from "@/lib/skill-requirements";
 import { InterestRadar } from "../report-visuals";
-import { AiReport } from "@/components/ai-report";
 import { DirectionArt, StorysetAttribution } from "@/components/direction-art";
 import { readProfileOverview } from "@/lib/profile-overview";
-import { IconBook, IconCompass, IconFolder, IconPulse, IconStamp, IconWarning } from "@/components/icons";
+import { IconBook, IconCompass, IconFolder, IconPulse, IconWarning } from "@/components/icons";
 
 const relationLabels: Record<string, string> = { direct: "直接关联", related: "相关关联", adjacent: "邻近关联" };
+// 必备项中还没有课程/项目记录的技能：只做“信息缺口”提示，不推断能力，也不评分。
+function mustGapNames(skillMatch: { skills: { name: string; requirement: string; status: string }[] }) {
+  return skillMatch.skills.filter((skill) => skill.requirement === "must" && skill.status !== "recorded").map((skill) => skill.name);
+}
 export function InitialReport() {
   const [profile, setProfile] = useState<Profile>(emptyProfile);
   const [assessment, setAssessment] = useState<AssessmentResult | null>(null);
   const [mode, setMode] = useState<"empty" | "simulation" | "personal">("empty");
   const [message, setMessage] = useState("正在读取画像与测评…");
-  const [busy, setBusy] = useState(false);
+  const [, setBusy] = useState(false);
   const report = initialReport(profile, assessment);
   const load = useCallback(async (personal: boolean) => {
     setBusy(true); setAssessment(null); setProfile(emptyProfile); setMode("empty");
@@ -83,7 +87,7 @@ export function InitialReport() {
               <ul className="xr-src-list">{assessment.careers.map(c => <li key={c.code}><a href={`https://www.onetonline.org/link/summary/${c.code}`} target="_blank" rel="noreferrer">{c.title} · {c.code}</a></li>)}</ul>
               <p className="xr-source">展示 {assessment.careers.length} 条，共返回 {assessment.career_total} 条。职业信息来自 O*NET Web Services（USDOL/ETA）。</p>
             </details>
-          </> : <p className="rp-col-empty">没查到：还没做 O*NET 兴趣问卷。</p>}
+          </> : <dl className="xr-check"><div><dt>问卷结果</dt><dd>尚无记录</dd></div></dl>}
           <div className="rp-col-foot">
             <Link className="atlas-btn atlas-btn-primary" href="/assessment">{assessment ? "重做问卷" : "开始问卷"}</Link>
           </div>
@@ -112,7 +116,6 @@ export function InitialReport() {
             </li>}
           </ol> : <dl className="xr-check"><div><dt>已经记录</dt><dd>暂无</dd></div></dl>}
 
-          <h3 className="rp-col-sub">能带进哪些方向</h3>
           {report.candidates.length ? <ol className="xr-directions">
             {report.candidates.map(({ direction, occupations }) => <li className="xr-direction" key={direction.id}>
               <DirectionArt direction={direction.id} compact />
@@ -149,7 +152,7 @@ export function InitialReport() {
                 {courses.map(course => <li key={`course-${course}`}><span className="atlas-chip" data-tone="gap">要补基础</span><span className="xr-gap-name">{course}</span><span className="xr-gap-src">入门基础</span></li>)}
               </ul> : <p className="xr-source">这个方向的要求里没有你还没记录的条目。</p>}
             </div>)}</div> : <p className="rp-col-empty">没查到：手册要求都有对应记录。</p>}
-          </> : null}
+          </> : <dl className="xr-check"><div><dt>待补条目</dt><dd>尚无记录</dd></div></dl>}
           <div className="rp-col-foot">
             <Link className="atlas-btn" href="/explore">翻方向手册</Link>
           </div>
@@ -174,13 +177,50 @@ export function InitialReport() {
 
       </div>
 
+      <section id="initial-skill-match" className="atlas-sheet xr-sec rp-skillmatch" data-atlas-reveal>
+        <header className="xr-sec-head">
+          <span className="rp-col-num">05</span>
+          <h2><IconCompass aria-hidden="true" />职业技能匹配</h2>
+          <span className="atlas-chip" data-tone="gap">知识库原文 · 未核验</span>
+        </header>
+        {report.occupation_skills.length ? <>
+          <p className="rp-skillmatch-lede">按兴趣问卷命中的候选职业，列出知识库里这些职业原文要求的技能，再逐项对照你的画像记录。只标证据状态，不评分、不排序。</p>
+          {report.occupation_skills.map(match => <div className="rp-skillmatch-group" key={match.direction_id}>
+            <div className="rp-skillmatch-grouphead">
+              <h3><Link href={`/explore?direction=${match.direction_id}`}>{match.direction_name}</Link></h3>
+              <p className="rp-skillmatch-occupation">{match.occupation_label}</p>
+            </div>
+            <ul className="rp-skillmatch-list">
+              {match.skills.map(skill => <li className="rp-skillmatch-row" key={skill.id} data-status={skill.status}>
+                <span className="atlas-chip" data-tone={skill.status === "recorded" ? "ok" : skill.status === "unknown" ? "gap" : undefined}>{skill.status_label}</span>
+                <span className="rp-skillmatch-name">{skill.name}</span>
+                <span className="rp-skillmatch-meta">{skill.requirement === "must" ? "必备" : "加分"} · {skillKindLabels[skill.kind]}</span>
+                <details className="rp-skillmatch-kb">
+                  <summary>原文与记录</summary>
+                  {skill.kb.map(evidence => <p className="xr-source" key={`${evidence.record_id}-${evidence.quote_start}`}>
+                    {evidence.ellipsis_start ? "…" : ""}{evidence.quote}{evidence.ellipsis_end ? "…" : ""}
+                    {evidence.source_url ? <>（<a href={evidence.source_url} target="_blank" rel="noreferrer">{evidence.organization ?? "来源"}</a>）</> : null}
+                    <br /><code>{evidence.record_id}</code>
+                  </p>)}
+                  {skill.evidence.length
+                    ? <p className="xr-source">画像记录：{skill.evidence.map(row => <code key={row.ref}>{row.ref}</code>)}</p>
+                    : <p className="xr-source">画像记录：没有找到对应条目。</p>}
+                </details>
+              </li>)}
+            </ul>
+            <p className="rp-skillmatch-sum">{match.summary.total} 项要求：{match.summary.recorded} 项有记录 / {match.summary.self_reported} 项仅自述 / {match.summary.unknown} 项信息不足</p>
+            {mustGapNames(match).length
+              ? <p className="rp-skillmatch-sum">必备项尚无课程/项目记录：{mustGapNames(match).join("、")}（未记录 ≠ 不具备）</p>
+              : <p className="rp-skillmatch-sum">必备项都已有课程/项目记录（未独立核验）。</p>}
+            <p className="xr-source">{match.coverage_note}</p>
+          </div>)}
+          <p className="xr-source">「有记录」只代表画像里有课程、项目、论文或竞赛条目，未独立核验；名称匹配不代表已掌握，「信息不足」也不等于不具备。技能名称与分类是 LIMEN 编辑信息，原文引用可回查。</p>
+        </> : <dl className="xr-check"><div><dt>候选职业技能</dt><dd>暂无：先完成职业兴趣问卷，才会出现候选职业。</dd></div></dl>}
+      </section>
+
       <section id="initial-explanation" className="atlas-sheet xr-sec xr-closing" data-atlas-reveal>
-        <div className="xr-sec-head"><h2><IconStamp aria-hidden="true" />解释与下一步</h2></div>
-        <div className="xr-ai"><AiReport key={JSON.stringify([profile, assessment, mode, busy])} kind="R1" enabled={!busy && mode === "personal" && !!assessment} /></div>
-        <div className="xr-actions">
-          <Link className="atlas-btn atlas-btn-primary" href="/experience">挑一个方向去体验</Link>
-          <Link className="xr-textlink" href="/report/plan">直接排一周的计划</Link>
-        </div>
+        <p className="xr-closing-note">五个板块各自独立：没有记录的地方先记作未知，不合成一个总分。</p>
+        <Link className="xr-closing-action" href="#initial-interest">查看报告<span aria-hidden="true">↑</span></Link>
       </section>
     </div>
   </main>;

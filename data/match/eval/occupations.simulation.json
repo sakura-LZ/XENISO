@@ -1,0 +1,106 @@
+{
+  "schema_version": "limen-eval-occupations-1",
+  "data_source": "simulation",
+  "notice": "评测用合成岗位夹具（synthetic fixture），不是岗位标准，也不能用于产品展示。兴趣向量与技能要求均由 LIMEN 编辑为「让离线评测有可比对象」而合成，不代表任何真实岗位、招聘要求或 O*NET 官方数据；等 data/match/occupations.official.json 落地后应改用官方标准重跑。",
+  "scale": { "min": 0, "max": 10 },
+  "skill_order": ["python", "statistics", "machine_learning", "clinical_reasoning", "research_design", "product_requirements", "communication", "data_management", "model_evaluation"],
+  "areas_order": ["realistic", "investigative", "artistic", "social", "enterprising", "conventional"],
+  "occupations": [
+    {
+      "id": "sim_s1_ai_product",
+      "title": "simulation 岗位 S1 · 医学 AI 产品方向",
+      "archetype": "把临床问题翻译成产品需求，需要沟通与协作",
+      "interests": [3, 6, 2, 7, 8, 4],
+      "skills": [
+        { "skill_id": "clinical_reasoning", "importance": 5, "required_level": 3, "must_have": true },
+        { "skill_id": "product_requirements", "importance": 5, "required_level": 3, "must_have": true },
+        { "skill_id": "communication", "importance": 4, "required_level": 3, "must_have": false }
+      ],
+      "hard_requirements": [{ "id": "med_major", "field": "major", "allowed": ["临床医学", "中西医临床医学", "中医学"] }]
+    },
+    {
+      "id": "sim_s2_clinical_data",
+      "title": "simulation 岗位 S2 · 临床数据分析方向",
+      "archetype": "以统计与研究设计为主的数据分析岗",
+      "interests": [4, 9, 1, 3, 2, 8],
+      "skills": [
+        { "skill_id": "statistics", "importance": 5, "required_level": 3, "must_have": true },
+        { "skill_id": "research_design", "importance": 4, "required_level": 3, "must_have": false },
+        { "skill_id": "data_management", "importance": 4, "required_level": 3, "must_have": false }
+      ],
+      "hard_requirements": [{ "id": "med_major", "field": "major", "allowed": ["临床医学", "中西医临床医学", "中医学"] }]
+    },
+    {
+      "id": "sim_s3_ml_engineer",
+      "title": "simulation 岗位 S3 · 医学机器学习工程方向",
+      "archetype": "以建模与模型评价为主的工程岗",
+      "interests": [8, 9, 2, 1, 2, 6],
+      "skills": [
+        { "skill_id": "python", "importance": 5, "required_level": 4, "must_have": true },
+        { "skill_id": "machine_learning", "importance": 5, "required_level": 3, "must_have": true },
+        { "skill_id": "model_evaluation", "importance": 4, "required_level": 3, "must_have": false }
+      ],
+      "hard_requirements": [{ "id": "med_major", "field": "major", "allowed": ["临床医学", "中西医临床医学", "中医学"] }]
+    },
+    {
+      "id": "sim_s4_biostat",
+      "title": "simulation 岗位 S4 · 医学统计方向",
+      "archetype": "要求更高统计等级、偏方法学的岗位",
+      "interests": [2, 9, 2, 5, 3, 8],
+      "skills": [
+        { "skill_id": "statistics", "importance": 5, "required_level": 4, "must_have": true },
+        { "skill_id": "research_design", "importance": 4, "required_level": 4, "must_have": false },
+        { "skill_id": "communication", "importance": 3, "required_level": 3, "must_have": false }
+      ],
+      "hard_requirements": []
+    },
+    {
+      "id": "sim_s5_crc",
+      "title": "simulation 岗位 S5 · 临床研究协调方向",
+      "archetype": "以沟通协调为主、偏社会型的岗位",
+      "interests": [2, 5, 1, 9, 6, 7],
+      "skills": [
+        { "skill_id": "clinical_reasoning", "importance": 4, "required_level": 3, "must_have": false },
+        { "skill_id": "communication", "importance": 5, "required_level": 4, "must_have": true },
+        { "skill_id": "data_management", "importance": 3, "required_level": 2, "must_have": false }
+      ],
+      "hard_requirements": [{ "id": "med_major", "field": "major", "allowed": ["临床医学", "中西医临床医学", "中医学", "护理学"] }]
+    },
+    {
+      "id": "sim_s6_health_informatics",
+      "title": "simulation 岗位 S6 · 医学信息学方向",
+      "archetype": "偏常规型的数据与系统管理岗位",
+      "interests": [6, 7, 2, 3, 3, 9],
+      "skills": [
+        { "skill_id": "data_management", "importance": 5, "required_level": 4, "must_have": true },
+        { "skill_id": "statistics", "importance": 4, "required_level": 3, "must_have": false },
+        { "skill_id": "python", "importance": 3, "required_level": 2, "must_have": false }
+      ],
+      "hard_requirements": []
+    },
+    {
+      "id": "sim_s7_science_writing",
+      "title": "simulation 岗位 S7 · 医学科普内容方向",
+      "archetype": "偏艺术与社会型的表达类岗位",
+      "interests": [1, 4, 9, 7, 6, 3],
+      "skills": [
+        { "skill_id": "communication", "importance": 5, "required_level": 4, "must_have": true },
+        { "skill_id": "clinical_reasoning", "importance": 3, "required_level": 2, "must_have": false },
+        { "skill_id": "product_requirements", "importance": 3, "required_level": 2, "must_have": false }
+      ],
+      "hard_requirements": []
+    },
+    {
+      "id": "sim_s8_tech_ops",
+      "title": "simulation 岗位 S8 · 医学技术产品运营方向",
+      "archetype": "偏企业型的推广与运营岗位",
+      "interests": [3, 3, 4, 7, 9, 6],
+      "skills": [
+        { "skill_id": "product_requirements", "importance": 4, "required_level": 3, "must_have": true },
+        { "skill_id": "communication", "importance": 4, "required_level": 3, "must_have": false },
+        { "skill_id": "data_management", "importance": 4, "required_level": 3, "must_have": false }
+      ],
+      "hard_requirements": []
+    }
+  ]
+}

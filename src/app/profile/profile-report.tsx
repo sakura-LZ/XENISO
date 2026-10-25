@@ -7,7 +7,7 @@ import { IconDownload, IconFolder } from "@/components/icons";
 import "./profile.css";
 
 type Saved = ReturnType<typeof readSavedExplanation>;
-const kindLabels = { interest: "职业兴趣", transfer: "能力迁移", gap: "知识准备", experience: "职业体验", direction: "探索方向", planning: "行动规划" };
+const kindLabels = { interest: "职业兴趣", transfer: "能力迁移", gap: "知识准备", experience: "职业体验", direction: "探索方向", planning: "行动规划", skill: "职业技能要求" };
 
 export function ProfileReport({ ready, checking }: { ready: boolean; checking: boolean }) {
   const [report, setReport] = useState<Saved | null>(null);

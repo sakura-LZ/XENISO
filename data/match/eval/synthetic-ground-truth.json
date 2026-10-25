@@ -1,0 +1,142 @@
+{
+  "schema_version": "limen-eval-ground-truth-1",
+  "data_source": "simulation",
+  "notice": "合成真值实验配置：occupation_truth 为『已知真值』的六维 RIASEC 轮廓，仅用于检验引擎在已知真值下的排序恢复能力。它不是岗位标准，不能用于任何产品展示，也不能当成效度证据。",
+  "areas_order": [
+    "realistic",
+    "investigative",
+    "artistic",
+    "social",
+    "enterprising",
+    "conventional"
+  ],
+  "rng": {
+    "algorithm": "mulberry32",
+    "seed": 20261023,
+    "note": "用户侧真值与噪声由 scripts/match-eval.ts 用同一实现与 seed 生成，保证同输入同输出。"
+  },
+  "truth_model": {
+    "definition": "真值排序 = 用『真值用户向量』与每个岗真值向量算 Pearson 相关并降序；引擎排序 = 用『含噪声的观测向量』算引擎兴趣分后降序。二者 Spearman 相关即真值恢复程度。",
+    "user_true_vector": "挑选目标岗 k（0..7 轮换）→ true = clip(truth[k] + N(0, sigma_true), 0, 10)",
+    "measured_vector": "measured = clip(true + N(0, sigma_measured), 0, 10)",
+    "note": "观测噪声只加在用户侧；岗位真值不加噪声。sigma_measured=0 时恢复应为 1.0，用于验证管线本身没有丢失信号。"
+  },
+  "users": {
+    "sigma_true": 1,
+    "sigma_measured_levels": [
+      0,
+      0.5,
+      1,
+      1.5,
+      2
+    ],
+    "users_per_level": 60,
+    "clip": [
+      0,
+      10
+    ]
+  },
+  "thresholds": {
+    "spearman_mean_min": 0.8,
+    "spearman_p10_min": 0.4
+  },
+  "occupation_truth": [
+    {
+      "id": "gt01",
+      "title": "合成真值岗 T1（偏 S/E）",
+      "truth": [
+        1.96,
+        7.49,
+        8.58,
+        1.31,
+        5.11,
+        5.97
+      ]
+    },
+    {
+      "id": "gt02",
+      "title": "合成真值岗 T2（偏 I/C）",
+      "truth": [
+        2.79,
+        4.09,
+        5.03,
+        7.57,
+        3.06,
+        5.04
+      ]
+    },
+    {
+      "id": "gt03",
+      "title": "合成真值岗 T3（偏 R/I）",
+      "truth": [
+        2.09,
+        3.6,
+        4.83,
+        4.63,
+        8.2,
+        6.89
+      ]
+    },
+    {
+      "id": "gt04",
+      "title": "合成真值岗 T4（偏 I/S）",
+      "truth": [
+        6.47,
+        2.6,
+        6.39,
+        6.55,
+        5.34,
+        3.37
+      ]
+    },
+    {
+      "id": "gt05",
+      "title": "合成真值岗 T5（偏 C/S）",
+      "truth": [
+        8.6,
+        8.24,
+        1.49,
+        8.16,
+        7.88,
+        5.9
+      ]
+    },
+    {
+      "id": "gt06",
+      "title": "合成真值岗 T6（偏 A/S）",
+      "truth": [
+        1.72,
+        4.14,
+        7.97,
+        4.85,
+        5.86,
+        5.16
+      ]
+    },
+    {
+      "id": "gt07",
+      "title": "合成真值岗 T7（偏 E/C）",
+      "truth": [
+        7.75,
+        1.66,
+        1.12,
+        8.82,
+        5.14,
+        1.2
+      ]
+    },
+    {
+      "id": "gt08",
+      "title": "合成真值岗 T8（偏 I/E）",
+      "truth": [
+        8.77,
+        8.27,
+        1.44,
+        2.57,
+        3.46,
+        5.89
+      ]
+    }
+  ],
+  "generated_by": "work/gen-eval-ground-truth.mjs（一次性生成器，seed 见 rng.seed）"
+}

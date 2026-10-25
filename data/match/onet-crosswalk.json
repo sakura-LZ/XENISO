@@ -1,0 +1,1888 @@
+{
+  "version": "limen-onet-crosswalk-1+2026-10-23",
+  "generated_at": "2026-10-23T00:00:00Z",
+  "source": {
+    "database": "O*NET 31.0 (text)",
+    "url": "https://www.onetcenter.org/database.html",
+    "zip_url": "https://www.onetcenter.org/dl_files/database/db_31_0_text.zip",
+    "tables": [
+      "Essential Skills.txt",
+      "Transferable Skills.txt",
+      "Career Interest Types.txt",
+      "Level Scale Anchors.txt"
+    ],
+    "license": "CC BY 4.0 (O*NET OnLine, U.S. Department of Labor / ETA)",
+    "notice": "O*NET® is a trademark of the U.S. Department of Labor, Employment and Training Administration."
+  },
+  "note": "LIMEN 9 个技能到 O*NET 技能元素的编辑性映射。direct=语义基本一致；proxy=只作代理，语义更宽或更窄；unmapped=O*NET 31.0 无对应元素，宁缺不凑，相关技能不进入岗位标准与准备度分母。",
+  "skills": {
+    "python": {
+      "label": "Python 编程",
+      "mapping_strength": "direct",
+      "onet_element": {
+        "id": "2.B.3.e",
+        "name": "Programming",
+        "table": "Transferable Skills"
+      },
+      "rationale": "Writing computer programs for various purposes，与该技能同一含义。",
+      "used_by": [
+        "ml_cv",
+        "software",
+        "llm_agent",
+        "devices",
+        "signals",
+        "imaging_eng",
+        "clinical_data",
+        "health_systems",
+        "medicine"
+      ]
+    },
+    "statistics": {
+      "label": "统计分析",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.A.1.e",
+        "name": "Mathematics",
+        "table": "Essential Skills"
+      },
+      "rationale": "O*NET 31.0 没有独立的「统计」技能元素；数学是统计推断的基础技能，故用 Mathematics 作代理，会同时覆盖不涉及统计的数学任务。",
+      "used_by": [
+        "ml_cv",
+        "software",
+        "llm_agent",
+        "devices",
+        "signals",
+        "imaging_eng",
+        "clinical_data",
+        "health_systems",
+        "med_nlp_kg",
+        "medicine"
+      ]
+    },
+    "machine_learning": {
+      "label": "机器学习",
+      "mapping_strength": "unmapped",
+      "onet_element": null,
+      "rationale": "O*NET 31.0 的 35 个技能元素里没有机器学习项（最接近的 Programming 已用于 python，复用会让两项互相污染），因此不映射；该技能不进入岗位标准，也不进准备度分母。",
+      "used_by": []
+    },
+    "clinical_reasoning": {
+      "label": "临床问题理解",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.B.4.e",
+        "name": "Judgment and Decision Making",
+        "table": "Transferable Skills"
+      },
+      "rationale": "Considering the relative costs and benefits of potential actions，覆盖临床决策；不包含医学知识本身（那属于 Knowledge 域，不在本次技能标准内）。",
+      "used_by": [
+        "ml_cv",
+        "software",
+        "llm_agent",
+        "devices",
+        "signals",
+        "imaging_eng",
+        "clinical_data",
+        "health_systems",
+        "med_nlp_kg",
+        "medicine"
+      ]
+    },
+    "research_design": {
+      "label": "研究设计",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.A.1.f",
+        "name": "Science",
+        "table": "Essential Skills"
+      },
+      "rationale": "Using scientific rules and methods to solve problems，覆盖研究设计与科学方法；不区分临床研究与基础研究。",
+      "used_by": [
+        "ml_cv",
+        "software",
+        "llm_agent",
+        "devices",
+        "signals",
+        "imaging_eng",
+        "clinical_data",
+        "health_systems",
+        "med_nlp_kg",
+        "medicine"
+      ]
+    },
+    "product_requirements": {
+      "label": "产品需求分析",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.B.4.g",
+        "name": "Systems Analysis",
+        "table": "Transferable Skills"
+      },
+      "rationale": "Determining how a system should work and how changes in conditions will affect outcomes，覆盖需求分析与方案取舍；不等于产品管理全部职能。",
+      "used_by": [
+        "ml_cv",
+        "software",
+        "llm_agent",
+        "devices",
+        "signals",
+        "imaging_eng",
+        "clinical_data",
+        "health_systems",
+        "med_nlp_kg",
+        "medicine"
+      ]
+    },
+    "communication": {
+      "label": "沟通表达",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.A.1.d",
+        "name": "Speaking",
+        "table": "Essential Skills"
+      },
+      "rationale": "只取口语表达这一个元素；写作(Writing)、倾听(Active Listening)是同族元素，若一并计入会让「沟通」在分母里重复占权。",
+      "used_by": [
+        "ml_cv",
+        "software",
+        "llm_agent",
+        "devices",
+        "signals",
+        "imaging_eng",
+        "clinical_data",
+        "health_systems",
+        "med_nlp_kg",
+        "medicine"
+      ]
+    },
+    "data_management": {
+      "label": "数据管理",
+      "mapping_strength": "unmapped",
+      "onet_element": null,
+      "rationale": "O*NET 技能元素没有数据管理/数据治理项（Quality Control Analysis 指产品与服务检验，语义不符），故不映射。",
+      "used_by": []
+    },
+    "model_evaluation": {
+      "label": "模型评价",
+      "mapping_strength": "proxy",
+      "onet_element": {
+        "id": "2.B.4.h",
+        "name": "Systems Evaluation",
+        "table": "Transferable Skills"
+      },
+      "rationale": "Identifying measures or indicators of system performance and the actions needed to improve or correct performance，覆盖模型评价与指标设计；不专门衡量机器学习模型。",
+      "used_by": [
+        "ml_cv",
+        "software",
+        "llm_agent",
+        "devices",
+        "signals",
+        "imaging_eng",
+        "clinical_data",
+        "health_systems",
+        "med_nlp_kg",
+        "medicine"
+      ]
+    }
+  },
+  "composite_rule": "岗位粒度 = 单个特化方向（9 个跨学科特化 + 医学）。兴趣：取该特化候选 SOC（direct 优先、related 兜底）的 OI 六维等权平均——这是编辑性聚合，O*NET 官方只发布单职业 OI，locator 逐项写出每个 SOC 的原始值。技能：取该特化候选 SOC 中第一个未被 O*NET Recommend Suppress 标记、且 IM/LV 齐全的分量；只有一个分量时标为 single-soc，不做跨 SOC 平均。IM/LV 投影、SE、CI 规则同下；每个分量的原始 IM/LV/N/SE/CI 逐字写进证据 locator，读者可复核或推翻。",
+  "projection_rules": {
+    "importance": "LIMEN 重要性 = round(O*NET IM)，截断到 1–5。这是编辑性投影：O*NET IM 是 1.00–5.00 的连续量表，LIMEN 用 5 档离散权重。",
+    "required_level": "LIMEN 要求等级 = round(O*NET LV / 7 × 4)，截断到 0–4。这是编辑性线性投影，O*NET 官方量尺是 0–7；报告中不得把 0–4 说成 O*NET 官方等级。",
+    "interest": "兴趣六维直接用 Career Interest Types 的 OI 原值（1.00–7.00），不做换算。该表不提供 N/SE/CI，因此不携带 ratings。",
+    "must_have": "关键项（must_have）= 该岗位已映射技能中 LIMEN 重要性最高者；若最高重要性 < 4（即 O*NET IM < 3.5），则该岗位不设关键项。这是编辑性规则，不是 O*NET 结论。"
+  },
+  "audits": {
+    "ml_cv": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 4.5,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 4.5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-2051.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4.38,
+              "lv": 5,
+              "n": 8,
+              "se": 0.4226,
+              "suppressed": false
+            }
+          ],
+          "im": 4.38,
+          "lv": 5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-2051.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.38,
+              "lv": 4,
+              "n": 8,
+              "se": 0.2673,
+              "suppressed": false
+            }
+          ],
+          "im": 3.38,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.75,
+              "lv": 4.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.75,
+          "lv": 4.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-2051.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.75,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.75,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "ml_cv",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 4.88,
+              "n": 8,
+              "se": 0.2266,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 4.88,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-2051.00",
+        "15-1221.00"
+      ],
+      "interest_soc": "15-2051.00/15-1221.00",
+      "weighted_socs": [
+        "15-1221.00",
+        "15-2051.00"
+      ],
+      "interest_rationale": "AI / 计算机方向取 Data Scientists 为代表：该方向三个特化里 ml_cv 直接对应此 SOC，llm_agent 与其研究属性一致；software（15-1252.00）作为 related 保留，因为本方向在 LIMEN 语境下以 AI 能力为主而非通用软件开发。"
+    },
+    "software": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1299.08",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1252.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.75,
+              "lv": 3.25,
+              "n": 8,
+              "se": 0.3134,
+              "suppressed": false
+            }
+          ],
+          "im": 2.75,
+          "lv": 3.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1252.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.75,
+              "n": 8,
+              "se": 0.3134,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.75,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1299.08",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3,
+              "lv": 3.12,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 3,
+          "lv": 3.12,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1252.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 3.88,
+              "n": 8,
+              "se": 0.3504,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 3.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1252.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "software",
+              "soc": "15-1252.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.38,
+              "lv": 4.12,
+              "n": 8,
+              "se": 0.4407,
+              "suppressed": false
+            }
+          ],
+          "im": 3.38,
+          "lv": 4.12,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-1252.00",
+        "15-1299.08"
+      ],
+      "interest_soc": "15-1252.00/15-1299.08",
+      "weighted_socs": [
+        "15-1299.08",
+        "15-1252.00"
+      ],
+      "interest_rationale": "AI / 计算机方向取 Data Scientists 为代表：该方向三个特化里 ml_cv 直接对应此 SOC，llm_agent 与其研究属性一致；software（15-1252.00）作为 related 保留，因为本方向在 LIMEN 语境下以 AI 能力为主而非通用软件开发。"
+    },
+    "llm_agent": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 4.5,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 4.5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.38,
+              "lv": 4.38,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 3.38,
+          "lv": 4.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.75,
+              "lv": 4.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.75,
+          "lv": 4.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 4.12,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 4.12,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "llm_agent",
+              "soc": "15-1221.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 4.88,
+              "n": 8,
+              "se": 0.2266,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 4.88,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-1221.00",
+        "15-1252.00"
+      ],
+      "interest_soc": "15-1221.00/15-1252.00",
+      "weighted_socs": [
+        "15-1221.00"
+      ],
+      "interest_rationale": "AI / 计算机方向取 Data Scientists 为代表：该方向三个特化里 ml_cv 直接对应此 SOC，llm_agent 与其研究属性一致；software（15-1252.00）作为 related 保留，因为本方向在 LIMEN 语境下以 AI 能力为主而非通用软件开发。"
+    },
+    "devices": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.5,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "devices",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "17-2031.00",
+        "17-2072.00"
+      ],
+      "interest_soc": "17-2031.00/17-2072.00",
+      "weighted_socs": [
+        "17-2031.00"
+      ],
+      "interest_rationale": "生物医学工程 / 医工交叉方向的三个特化（智能医疗器械、医学信号处理、医学影像工程）的 direct SOC 全部是 17-2031.00，无需在特化间取舍。"
+    },
+    "signals": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.5,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "signals",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "17-2031.00",
+        "17-2071.00"
+      ],
+      "interest_soc": "17-2031.00/17-2071.00",
+      "weighted_socs": [
+        "17-2031.00"
+      ],
+      "interest_rationale": "生物医学工程 / 医工交叉方向的三个特化（智能医疗器械、医学信号处理、医学影像工程）的 direct SOC 全部是 17-2031.00，无需在特化间取舍。"
+    },
+    "imaging_eng": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.5,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "imaging_eng",
+              "soc": "17-2031.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "17-2031.00",
+        "15-2051.00"
+      ],
+      "interest_soc": "17-2031.00/15-2051.00",
+      "weighted_socs": [
+        "17-2031.00"
+      ],
+      "interest_rationale": "生物医学工程 / 医工交叉方向的三个特化（智能医疗器械、医学信号处理、医学影像工程）的 direct SOC 全部是 17-2031.00，无需在特化间取舍。"
+    },
+    "clinical_data": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.25,
+              "lv": 3.62,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 3.25,
+          "lv": 3.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.5,
+              "lv": 3.88,
+              "n": 8,
+              "se": 0.2266,
+              "suppressed": false
+            }
+          ],
+          "im": 3.5,
+          "lv": 3.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.25,
+              "lv": 3.62,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.25,
+          "lv": 3.62,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.38,
+              "lv": 2.25,
+              "n": 8,
+              "se": 0.25,
+              "suppressed": false
+            }
+          ],
+          "im": 2.38,
+          "lv": 2.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.25,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.25,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "clinical_data",
+              "soc": "15-2051.02",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.12,
+              "lv": 3.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 3.12,
+          "lv": 3.38,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-2051.02",
+        "15-2041.01"
+      ],
+      "interest_soc": "15-2051.02/15-2041.01",
+      "weighted_socs": [
+        "15-2051.02"
+      ],
+      "interest_rationale": "医学信息学方向取 Health Informatics Specialists 为代表：其 O*NET 职业名称即健康信息学，与该方向名称对应最直接；clinical_data（15-2051.02）与 med_nlp_kg（15-2051.00）作为 related，因为它们的兴趣画像更偏数据科学而非信息系统。"
+    },
+    "health_systems": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.88,
+              "lv": 3.12,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 2.88,
+          "lv": 3.12,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3,
+              "lv": 3,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3,
+          "lv": 3,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.12,
+              "lv": 2,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 2.12,
+          "lv": 2,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.75,
+              "lv": 4,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.75,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4,
+              "lv": 4,
+              "n": 8,
+              "se": 0,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "health_systems",
+              "soc": "15-1211.01",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.75,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.75,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-1211.01",
+        "15-1211.00"
+      ],
+      "interest_soc": "15-1211.01/15-1211.00",
+      "weighted_socs": [
+        "15-1211.01"
+      ],
+      "interest_rationale": "医学信息学方向取 Health Informatics Specialists 为代表：其 O*NET 职业名称即健康信息学，与该方向名称对应最直接；clinical_data（15-2051.02）与 med_nlp_kg（15-2051.00）作为 related，因为它们的兴趣画像更偏数据科学而非信息系统。"
+    },
+    "med_nlp_kg": {
+      "skills": [
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "15-2051.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 4.38,
+              "lv": 5,
+              "n": 8,
+              "se": 0.4226,
+              "suppressed": false
+            }
+          ],
+          "im": 4.38,
+          "lv": 5,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "15-2051.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.38,
+              "lv": 4,
+              "n": 8,
+              "se": 0.2673,
+              "suppressed": false
+            }
+          ],
+          "im": 3.38,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "19-1029.01",
+              "relationship": "adjacent",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.25,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.25,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "19-1029.01",
+              "relationship": "adjacent",
+              "weight": 1,
+              "im": 3.38,
+              "lv": 3.75,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.38,
+          "lv": 3.75,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "15-2051.00",
+              "relationship": "related",
+              "weight": 1,
+              "im": 3.62,
+              "lv": 3.75,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.62,
+          "lv": 3.75,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "med_nlp_kg",
+              "soc": "19-1029.01",
+              "relationship": "adjacent",
+              "weight": 1,
+              "im": 3.25,
+              "lv": 3.75,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 3.25,
+          "lv": 3.75,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "python",
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "15-2051.00",
+        "19-1029.01"
+      ],
+      "interest_soc": "15-2051.00/19-1029.01",
+      "weighted_socs": [
+        "15-2051.00",
+        "19-1029.01"
+      ],
+      "interest_rationale": "医学信息学方向取 Health Informatics Specialists 为代表：其 O*NET 职业名称即健康信息学，与该方向名称对应最直接；clinical_data（15-2051.02）与 med_nlp_kg（15-2051.00）作为 related，因为它们的兴趣画像更偏数据科学而非信息系统。"
+    },
+    "medicine": {
+      "skills": [
+        {
+          "skill_id": "python",
+          "element": "2.B.3.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 1.25,
+              "lv": 0.38,
+              "n": 8,
+              "se": 0.2631,
+              "suppressed": false
+            }
+          ],
+          "im": 1.25,
+          "lv": 0.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "statistics",
+          "element": "2.A.1.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.75,
+              "lv": 2.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 2.75,
+          "lv": 2.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "clinical_reasoning",
+          "element": "2.B.4.e",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4,
+              "lv": 4.75,
+              "n": 8,
+              "se": 0.1637,
+              "suppressed": false
+            }
+          ],
+          "im": 4,
+          "lv": 4.75,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "research_design",
+          "element": "2.A.1.f",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 3.88,
+              "lv": 4,
+              "n": 8,
+              "se": 0.189,
+              "suppressed": false
+            }
+          ],
+          "im": 3.88,
+          "lv": 4,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "product_requirements",
+          "element": "2.B.4.g",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.88,
+              "lv": 2.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 2.88,
+          "lv": 2.88,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "communication",
+          "element": "2.A.1.d",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 4.12,
+              "lv": 4.38,
+              "n": 8,
+              "se": 0.183,
+              "suppressed": false
+            }
+          ],
+          "im": 4.12,
+          "lv": 4.38,
+          "suppressed": false,
+          "dropped": []
+        },
+        {
+          "skill_id": "model_evaluation",
+          "element": "2.B.4.h",
+          "aggregation": "single-soc",
+          "components": [
+            {
+              "spec_id": "medicine",
+              "soc": "29-1215.00",
+              "relationship": "direct",
+              "weight": 1,
+              "im": 2.88,
+              "lv": 2.88,
+              "n": 8,
+              "se": 0.125,
+              "suppressed": false
+            }
+          ],
+          "im": 2.88,
+          "lv": 2.88,
+          "suppressed": false,
+          "dropped": []
+        }
+      ],
+      "unmapped": [
+        "machine_learning",
+        "data_management"
+      ],
+      "soc_order": [
+        "29-1215.00",
+        "29-1216.00"
+      ],
+      "interest_soc": "29-1215.00/29-1216.00",
+      "weighted_socs": [
+        "29-1215.00"
+      ],
+      "interest_rationale": "继续医学（临床）方向在 O*NET 中没有单一对应职业，这里取 Family Medicine Physicians（29-1215.00）作 direct 代表：临床医学本科毕业后的主流去向是全科/内科方向的临床医师，其兴趣画像（social 高、realistic 低）与工程/数据类方向区分最明显。General Internal Medicine Physicians（29-1216.00）作 related，用于敏感性对照。这是 LIMEN 编辑性选点，不是 O*NET 官方结论，也不核定执业资格或科室准入。"
+    }
+  }
+}

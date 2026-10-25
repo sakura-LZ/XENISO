@@ -7,7 +7,8 @@
       "user_research_evidence",
       "limen_direction_map",
       "experience_feedback",
-      "verified_admission_items"
+      "verified_admission_items",
+      "knowledge_base_occupation_skills"
     ],
     "evidence_types": [
       "original_response",
@@ -16,7 +17,8 @@
       "project_evidence",
       "official_occupation_data",
       "curated_direction_requirement",
-      "verified_admissions"
+      "verified_admissions",
+      "occupation_skill_requirement"
     ],
     "unverified_label": "未核实",
     "unknown_label": "信息不足",
@@ -38,6 +40,8 @@
       "transferable_skills_with_evidence",
       "exploration_candidates_max_3",
       "why_candidates_linked_to_onet_occupations",
+      "occupation_skills_with_knowledge_source",
+      "skill_evidence_status_against_occupation_requirements",
       "unknowns_and_questions",
       "recommended_next_experiences"
     ],

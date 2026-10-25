@@ -1,5 +1,5 @@
 {
-  "version": "limen-skills-1",
+  "version": "limen-skills-2",
   "levels": [
     "未接触",
     "在指导下完成",
@@ -8,6 +8,7 @@
     "指导与评审"
   ],
   "importance": "1 辅助 / 2 常用 / 3 核心 / 4 关键 / 5 必备；LIMEN 编辑性权重，必须单独审核，不由招聘措辞或模型推断",
+  "rubric": "data/match/skill-rubric.json（limen-skills-2）：0–4 级的可观察锚点，LV2/LV4/LV6 例句为 O*NET Level Scale Anchors 官方原文，其余级别为 LIMEN 编辑性描述",
   "skills": {
     "python": "Python 编程",
     "statistics": "统计分析",

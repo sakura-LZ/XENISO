@@ -3,10 +3,10 @@ import { AppError } from "./errors";
 import { r2PlanningSchema, type R2PlanningInput } from "./planning";
 import { findDirection } from "./directions";
 
-export type Evidence = { ref: string; kind: "interest" | "transfer" | "gap" | "experience" | "direction" | "planning"; value: unknown };
+export type Evidence = { ref: string; kind: "interest" | "transfer" | "gap" | "experience" | "direction" | "planning" | "skill"; value: unknown };
 export const aiExplanationSchema = z.object({
   explanations: z.array(z.object({
-    kind: z.enum(["interest", "transfer", "gap", "experience", "direction", "planning"]),
+    kind: z.enum(["interest", "transfer", "gap", "experience", "direction", "planning", "skill"]),
     evidence_refs: z.array(z.string().min(1).max(180)).min(1).max(6),
     text: z.string().trim().min(1).max(400),
   }).strict()).min(1).max(8),
@@ -18,7 +18,7 @@ export function readSavedExplanation(input: unknown, kind: "R1" | "R2", directio
     kind: z.enum(["R1", "R2"]), source: z.literal("llm_live"),
     rules: z.object({ direction: z.object({ id: z.string() }).passthrough().optional() }).passthrough(),
     ai: z.object({ explanation: z.unknown(), generated_at: z.iso.datetime(), source: z.literal("llm_live") }).passthrough(),
-    evidence: z.array(z.object({ ref: z.string(), kind: z.enum(["interest", "transfer", "gap", "experience", "direction", "planning"]), value: z.unknown() })),
+    evidence: z.array(z.object({ ref: z.string(), kind: z.enum(["interest", "transfer", "gap", "experience", "direction", "planning", "skill"]), value: z.unknown() })),
   }).passthrough().safeParse(input);
   if (!saved.success || saved.data.kind !== kind) throw new AppError("REPORT_CONTRACT", 502, "已保存的报告类型或结构无效，请重新生成。");
   if (kind === "R2" && (!direction || !findDirection(direction) || saved.data.rules.direction?.id !== direction)) throw new AppError("REPORT_DIRECTION", 409, "已保存的 R2 属于其他目标方向。请为当前方向生成报告，未展示旧方向的解释。");

@@ -7,7 +7,7 @@ import { adaptProfile, resolveSkill } from "../src/lib/match/adapters";
 import { extractionHandoff } from "../src/lib/match/knowledge-adapter";
 import { emptyProfile } from "../src/lib/profile";
 import { simulationInput } from "../src/lib/match/simulation";
-import { matchOccupations } from "../src/lib/match/catalog";
+import { matchOccupations } from "../src/lib/match/catalog.official";
 
 const now = new Date("2026-10-21T12:00:00Z");
 const ev: Evidence = { ref: "independent-test-fixture", source_kind: "simulation", verification: "simulation", url: null, published_at: null, retrieved_at: now.toISOString(), locator: "simulation: independent arithmetic expectations" };
@@ -197,9 +197,24 @@ test("Match: ordering is geometric, ranks are complete-only, dominance and rank 
   assert.equal(report.sensitivity.stability, "stable");
   assert.equal(report.sensitivity.ordering_flips, 0);
   assert.deepEqual(report.sensitivity.interest_weight_grid, [0.4, 0.45, 0.5, 0.55, 0.6]);
-  assert.equal(report.algorithm_version, "limen-match-v2.0");
+  assert.equal(report.algorithm_version, "limen-match-v2.1");
   assert.equal(report.schema_version, "match-2");
   for (const r of report.results) assert.equal(typeof r.ordering_utility, "number");
+  // 证据档位与置信度只描述依据完整性/不确定性来源，不是适合度；必须在报告里可追溯。
+  assert.deepEqual(report.results.map(r => r.evidence_tier), ["A", "A", "A"]);
+  for (const r of report.results) {
+    assert.ok(r.confidence);
+    assert.ok(["high", "medium", "low"].includes(r.confidence.level));
+    // 置信度覆盖率 = 四维覆盖率均值，必须可复算，不是另起一套口径。
+    const mean = (r.interest.coverage + r.readiness.coverage + r.transition.coverage + r.admissions.coverage) / 4;
+    assert.equal(r.confidence.coverage, Math.round(mean * 100) / 100);
+    assert.ok(r.confidence.notes.length > 0);
+  }
+  assert.equal(report.sensitivity.top_k_jaccard, 1);
+  assert.deepEqual(report.sensitivity.flipped_occupation_ids, []);
+  assert.ok(report.data_manifest.versions.some(v => v.id === "algorithm" && v.version === "limen-match-v2.1"));
+  assert.ok(report.data_manifest.versions.some(v => v.id === "skill_standard"));
+  assert.ok(Array.isArray(report.data_manifest.sources));
 });
 test("Match: weight perturbation exposes unstable ordering instead of pretending one order is final", () => {
   const input = fixture();
@@ -270,15 +285,16 @@ test("Match: orphan source is rejected; expired excerpts become unverified", () 
   const result = extractionHandoff(raw, new Date("2100-01-01T00:00:00Z"));
   assert.ok(result.candidates.every(c => c.historical && c.facts.every(f => f.evidence.verification === "unverified")));
 });
-test("Match: shipped demo completes all three roles with explicit simulation export", () => {
+test("Match: shipped demo completes all 10 directions with explicit simulation export", () => {
   const report = match(simulationInput(), now);
-  assert.equal(report.simulation, true); assert.equal(report.results.length, 3);
+  assert.equal(report.simulation, true); assert.equal(report.results.length, 10);
   assert.ok(report.results.every(r => r.rank && r.gaps.length && r.actions.length && r.admissions.score === null));
-  assert.equal(JSON.parse(JSON.stringify(report)).skill_standard_version, "limen-skills-1");
-  // 轮廓相关替代归一化距离后，三岗位兴趣分仍然有区分度且顺序不变
-  assert.deepEqual(report.results.map(r => r.occupation_id), ["medical_ai_pm", "clinical_data_analyst", "medical_ml_engineer"]);
-  assert.ok(report.results[0].interest.score! > report.results[1].interest.score!);
-  assert.ok(report.results[1].interest.score! > report.results[2].interest.score!);
+  assert.equal(JSON.parse(JSON.stringify(report)).skill_standard_version, "limen-skills-2");
+  // 演示覆盖 9 个跨学科特化 + 医学：岗位粒度是特化，不是组级方向
+  assert.deepEqual([...report.results.map(r => r.occupation_id)].sort(), ["clinical_data", "devices", "health_systems", "imaging_eng", "llm_agent", "med_nlp_kg", "medicine", "ml_cv", "signals", "software"]);
+  // 兴趣分必须彼此不同：否则演示会给人「多个方向兴趣完全一样」的错误印象
+  const scores = report.results.map(r => r.interest.score!);
+  assert.equal(new Set(scores).size, scores.length, `演示兴趣分不应重复，实际 ${scores.join("/")}`);
 });
 test("Match: personal empty profile never receives demonstration scores or admission decisions", () => {
   const user = adaptProfile(emptyProfile, null, null, now.toISOString());
@@ -290,4 +306,50 @@ test("Match: personal empty profile never receives demonstration scores or admis
     assert.equal(r.eligibility.status, "unknown"); assert.equal(r.rank, null); assert.equal(r.rank_range, null);
   }
   assert.equal(report.sensitivity.stability, "n/a");
+});
+// 兴趣区分度诊断：候选岗位兴趣轮廓高度相似时，兴趣维度对顺序几乎没有信息量，必须显式说出来。
+test("Match: interest diagnostics reports candidate-set discrimination instead of hiding it", () => {
+  const report = match(fixture(), now);
+  const d = report.interest_diagnostics;
+  assert.equal(d.candidate_pairs.length, 3, "三个岗位应有 3 对相关");
+  assert.ok(d.max_correlation !== null && d.mean_correlation !== null);
+  assert.ok(d.candidate_pairs.every(pair => pair.correlation >= -1 && pair.correlation <= 1));
+  // 结论必须与阈值一致，不允许自相矛盾地既说“区分度够”又不达标
+  const expected = !(d.max_correlation >= d.thresholds.near_duplicate || d.mean_correlation >= d.thresholds.low_discrimination_mean);
+  assert.equal(d.discriminative, expected);
+  if (d.discriminative === false) assert.ok(report.limitations.some(line => line.includes("兴趣维度区分度有限")));
+  else assert.ok(!report.limitations.some(line => line.includes("兴趣维度区分度有限")));
+});
+
+test("Match: near-duplicate occupational interest profiles are called out, not ranked as if distinct", () => {
+  const input = fixture();
+  // 让三个岗位共用同一张兴趣轮廓：此时兴趣无法区分它们，顺序只能来自准备度与资格。
+  const shared = known(vec(ROLE_VECTORS[0]), ev);
+  for (const occupation of input.occupations) occupation.interests = shared;
+  const report = match(input, now);
+  const d = report.interest_diagnostics;
+  assert.equal(d.max_correlation, 1);
+  assert.equal(d.discriminative, false);
+  assert.equal(d.near_duplicate_pairs.length, 3);
+  assert.match(d.note, /接近重复/);
+  assert.ok(report.limitations.some(line => line.includes("兴趣维度区分度有限")));
+});
+
+test("Match: diagnostics stay unknown when fewer than two occupations have usable interest profiles", () => {
+  const input = fixture();
+  input.occupations[1].interests = unknown();
+  input.occupations[2].interests = unknown();
+  const report = match(input, now);
+  assert.equal(report.interest_diagnostics.max_correlation, null);
+  assert.equal(report.interest_diagnostics.discriminative, null);
+  assert.match(report.interest_diagnostics.note, /不足以比较/);
+  assert.ok(!report.limitations.some(line => line.includes("兴趣维度区分度有限")));
+});
+
+test("Match: a flat user profile is flagged so a shape score is not over-read", () => {
+  const input = fixture();
+  input.user.interests = known(vec([5, 5, 5, 5, 5, 5]), ev);
+  const report = match(input, now);
+  assert.equal(report.interest_diagnostics.flat_user_profile, true);
+  assert.equal(match(fixture(), now).interest_diagnostics.flat_user_profile, false);
 });

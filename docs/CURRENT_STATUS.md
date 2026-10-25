@@ -1,4 +1,90 @@
-﻿## 2026-10-24 · 首页/画像/初评按用户清单继续删字，已发布
+## 2026-10-24 · 交流社区新增固定话题库（#话题）与站内搜索增强，已本地验证、迁移未执行、未发布
+
+社区从「求助/经验两类 + 标题正文搜索」扩展为「再加固定话题库」：
+
+- 固定话题 12 个（`maths 数学基础` … `mindset 选择与心态`），**一条帖子选 1–3 个**；话题 id 只给数据库和代码用，界面一律显示 `#中文标签`。清单与新增话题的两处同步要求见 [社区话题](COMMUNITY_TOPICS.md)。
+- 发帖表单新增话题选择器（`aria-pressed`，选满 3 个后未选中的禁用，未选 ≥1 不允许发布，错误文案「至少选 1 个话题 / 最多选 3 个话题」）；帖子卡片显示可点击的话题 chip，点击即按该话题筛选；工具栏新增「话题」行（全部话题 + 12 个带计数的 chip）。
+- 搜索框：即时过滤标题、正文与话题 label；支持 `#数学基础` / `#maths` / 全角 `＃` 话题语法，关键词之间是 AND；命中词在标题/正文里用 `<mark>` 高亮（只渲染文本片段，不用 innerHTML）；显示「找到 N 条 / 共 N 条」计数与「清除筛选」；Esc 清空、Enter 不提交；空态区分「没搜到」「这个话题还没有帖子」「这一类还没有帖子」「还没有帖子」。
+- 读和搜仍然要求邮箱已验证（本轮明确不改这个门槛）；未登录页的两条示例帖也带话题 chip，仍标注「示例 · simulation」。
+- 服务端：GET 先调 `community_list_v2`，POST 有话题时先调 `community_publish_v2`；仅在 PostgREST `PGRST202` / 「函数不存在」时回落到旧 RPC，并返回 `topics_supported:false` / `topics_stored:false`，其它错误仍按 503 报。前端在降级时隐藏话题选择器，只留一行「话题暂不可用，帖子仍可正常发布。」。
+- 新增 additive 迁移 `supabase/migrations/202610240001_community_topics.sql`（topics 列 + 0–3 与白名单 check + 两个 v2 函数 + 与旧迁移一致的 revoke/grant）。**本机没有数据库写权限，迁移未执行**；需在 Supabase SQL Editor 粘贴执行后才进入 v2 路径。
+- 同步更新 `/guide` 社区四步说明（新增话题与搜索两条、读帖子需验证邮箱）。
+
+实际执行与结果：
+- `npx tsc --noEmit` 0；定向 `npx eslint`（lib/route/tsx/tests）0；`npx tsx --test tests/community.test.ts` **9/9**；`npm test` **211 项 / 210 通过 / 1 失败**，唯一失败为既有 `tests/knowledge.test.ts` 源规范化断言（本轮未改该文件）。
+- 隔离发布树 `work/forum-build-20261024`（junction node_modules，不含 `.next`）`npm run build` **退出 0**，`/community` 在构建清单内。
+- 浏览器：未登录态 1440/390 截图（`limen_project_files/work/forum-impl/`）；登录态界面用**预览副本 + 接口替身**（`work/community-preview`，端口 3012，演示帖子明确标注）截取，见 `work/forum-member/`：默认墙、`跨考` 搜索（找到 3 条）、`#编程入门` 筛选（找到 1 条）、发帖选话题 2/3。工具报告均无控制台错误、无横向溢出。
+
+边界与未验证：真实登录态未端到端验证（没有已验证邮箱账号，未伪造）；迁移后的 `*_v2` 成功路径未在真实 Postgres 跑过，当前生效的是旧 RPC 降级路径；未部署。
+
+## 2026-10-24 · 数字人文字链路端到端复测通过（本机 dev，隔离浏览器），音视频/ASR 仍未验收
+
+- `POST /api/session` 201；`GET /api/avatar/session` 对 medicine / biomed_eng / cs_ai / med_informatics 四组均 `configured:true`；本机与正式域名一致。
+- 真实建会话：`POST /api/avatar/session?presenter=cs_ai` 200、`error_code:0`，返回 `resource_pack`（SCM20_001 / 1080×1920）、room、`socket_io_url=ttsa-gateway-lite.xingyun3d.com`、`e2e ws_url=wss://e2emp.xingyun3d.com`；HMAC 签名被 nebula-agent 接受，凭据与额度正常。
+- 浏览器（ego lite，隔离 TaskSpace，1440×900）：从 `/experience` 选任务 → 点「接通导师」→ 约 57 秒进入「已接通」，`canvas=1`；自动同步任务后收到真实导师回复；文字提问「这个取舍在真实项目里常见吗？」→ 收到第 2 条真实回复；点「断开」→ `data-link=closed`、「已断开。再接通会重新同步当前任务。」；`page_errors=0`。
+- 限制：本机 ego lite 无顶层窗口、CDP `Page.captureScreenshot` 在渲染页面超时，**未取到数字人画面截图**（不是产品报错）；麦克风/ASR、音频播放与口型质量本轮未验。证据文件 `work/avatar-check/`（api-result.json、ui-result-01/02.json，已脱敏）。
+
+## 2026-10-24 · Match 扩到「9 特化 + 医学」、兴趣补三度量；R1 职业技能匹配一并提交，已推送 main（Vercel Git 集成构建）
+
+Match 候选集从 4 个组级方向扩到 10 个方向：`ml_cv` / `software` / `llm_agent` / `devices` / `signals` / `imaging_eng` / `clinical_data` / `health_systems` / `med_nlp_kg` / `medicine`。岗位粒度改为单个特化：
+
+- `scripts/match-standards-onet.ts` 改为按特化生成（不再按组等权）：兴趣 = 该特化候选 SOC 的 OI 六维等权平均（编辑性聚合，locator 逐项列出每个 SOC 原始 OI）；技能 = 该特化候选 SOC 中第一个未被 O*NET Recommend Suppress、IM/LV 齐全的分量。生成 `data/match/occupations.official.json`：10 条、每方向 7 项技能、1 个 `must_have`；`onet-crosswalk.json` / `skill-rubric.json` 同步重生成。
+- 招生映射 `scripts/match-admissions.ts` 升级 `limen-admission-occupation-map@3.0`：组级招生出口展开到组内特化（cs_ai→ml_cv/software/llm_agent 等），7 条招生记录同步重生成；`catalog.official.ts` 改为官方标准优先，空文件才退回旧 seeds。
+- **兴趣三度量（新增）**：`src/lib/match/interest-metrics.ts` 实现 RIASEC 高码、六边形距离、环形 EMD（6×6 精确最小费用流）、个体内 z 标准化（ipsatization，不需要任何人群常模/训练数据）、Kendall τ。`engine.interest()` 的 detail 增加 `hex_code_similarity` / `emd_similarity` / 高码，报告新增 `interest_metric_agreement`（三指标两两 τ）；**展示分与排序仍只用轮廓相关**，补充度量只作诊断，避免在未验证的度量上换挡。`/match` 页面同步展示。
+- 合成演示 `simulation.ts` 改为 10 个方向各一条不同的合成兴趣轮廓；测试同步更新。
+
+关键诚实结论（已写入报告 limitation 与 `MATCH_V2_PLAN.md`）：10 个官方方向的 O*NET 兴趣轮廓两两相关 **均值 0.80 / 最大 1.00**（`ml_cv~med_nlp_kg`、`devices~signals` 为 1.00），`interest_diagnostics.discriminative = false`。这说明扩到细粒度后**兴趣维度对排序信息量很低，顺序主要由能力准备度与资格决定**——不是算法错误，而是候选集共享 SOC 的结构性限制；也正好说明为什么 R1 要同时呈现职业技能差距。
+
+实际执行：
+- `npx tsx scripts/match-standards-onet.ts` → 10 方向 / 每方向 7 项 / 未映射仅 `machine_learning`、`data_management`（`med_nlp_kg` 另因 O*NET Suppress 缺 `python`），退出 0。
+- `npx tsx scripts/match-admissions.ts` → 7 条，`occupation_ids` 已按特化展开。
+- `npx tsc --noEmit` → 0；`npm test` → **217 项 / 216 通过 / 1 失败**（唯一失败仍是既有 `tests/knowledge.test.ts` 的 `normalizeSourceUrl`，本轮未改 `src/lib/knowledge.ts`）。
+- 隔离构建副本 `work/match10-build-20261024`：`npm run build` 退出 0，`/match`、`/report/initial` 均在构建清单内。
+- 浏览器/演示口径：合成演示 10 方向全量出分；兴趣区分度提示、六边形码/EMD、三指标 τ、准备度 `must_have` 封顶与名次区间都可现场展示。**未做**：真实访客端到端（真实 O*NET 测评 + Supabase 画像）、真人标注评测（α=0.24 的旧结论仍然成立），因此不声明“预测准确率”。
+
+## 2026-10-24 · 初步评价新增「职业技能匹配」维度（知识库职业要求 × 画像记录），已本地验证、未发布
+
+
+R1 从「画像 + 职业兴趣」扩展到「职业要求的技能」：新增第 05 块「职业技能匹配」。岗位侧要求不再取自方向手册的 5 条 `skills`，而是从知识库 `kb_records` 的职业标准/真实招聘原文里整理：
+
+- 新增 `data/knowledge/skill-requirements.spec.json`（编辑归并：只写 `record` / `field` / `needle`）和生成脚本 `scripts/knowledge/build-skill-requirements.ts`（`npm run knowledge:skill-requirements`）。脚本回到 `data/knowledge/*.collected.json`，断言 needle 是原文连续子串后逐字截取 `quote`，并记录 `record_id` / `quote_start` / `quote_end` / 来源 URL；任一 needle 对不上即整次构建失败。
+- 生成 `data/knowledge/skill-requirements.json`：10 个方向 / 61 项技能 / 62 条原文引用，全部由脚本从原文回查得到，没有手写 quote。
+- 新增 `src/lib/skill-requirements.ts`（zod 结构校验 + 方向索引）与 `src/lib/skill-match.ts`（画像课程/项目/论文/竞赛/技能自评/英语字段 → 三态「有记录 / 仅自述 / 信息不足」）。只做名称/别名文本匹配，**不评分、不排序、不合成适合度**；短英文缩写（sql/his/ct…）按整词匹配，避免 `ct` 命中 `project`。
+- `initialReport()` 输出新增 `occupation_skills`（仅兴趣问卷命中的候选方向，最多 3 个），R1 页面在四栏之后新增第 05 块：方向名 + 职业标签 + 逐项状态 + 「原文与记录」折叠（原文 quote、机构链接、record id、命中的画像字段）+ 覆盖率说明 + 「五个板块各自独立」结语。空态为「暂无：先完成职业兴趣问卷，才会出现候选职业。」
+- 报告契约 `data/report_contract.json` 补 `occupation_skills_with_knowledge_source` / `skill_evidence_status_against_occupation_requirements`；AI 解释证据新增 `kind: "skill"`，只引用知识库已有 `record_id` 与 `quote`（`/api/reports` R1 证据），禁止模型自行补岗位要求。
+
+实际执行与结果：
+- `npx tsx scripts/knowledge/build-skill-requirements.ts` → 10 方向 / 61 项 / 62 条引用，所有 needle 命中，退出 0。
+- `npx tsc --noEmit` → 0；targeted `eslint`（本次全部改动文件）→ 0；`npm test` → **206 项 / 205 通过 / 1 失败**，唯一失败仍是既有 `tests/knowledge.test.ts` 的 `normalizeSourceUrl` http 断言（本轮未改 `src/lib/knowledge.ts`）。
+- 隔离构建副本 `work/skill-match-build-20261024`（junction node_modules，不动主 `.next`）：`npm run build` 退出 0，`/report/initial` 在构建清单内；复核修复数据后重跑仍退出 0。
+- 浏览器实测（演示数据版 3011 / 真实空态 3000）：1440 与 390 下 05 块无横向溢出、无控制台错误、无加载失败图片；空态文案与「信息不足≠不具备」说明在位。
+- 独立复核（复核员自写脚本，未复用实现逻辑）：62/62 条 quote 能按 `record_id + quote_start/quote_end` 在 96 个采集文件里逐字回查；无 score/rank/percentage/fit 字段；未发现编造岗位要求。复核提出 3 条 coverage_note 措辞不准确 + 省略号误标，已修复并复验：`ellipsis_start` 41→9、`ellipsis_end` 13→12（只保留真正句中截断），quote/needle/offset/record 未变，独立回查仍 62/62。
+
+边界与未验证：职业技能要求是知识库原文的**编辑性归并**，不是官方统一招聘标准；`signals`、`med_nlp_kg` 只有单组招聘原文，`medicine` 只有培养目标/规培/博士后原文，覆盖薄弱点已在各方向 `coverage_note` 写明。本轮**未**走真实访客（真实 O*NET 测评 + Supabase 画像）的端到端流程，也**未**发布到 Vercel；`npm test` 的既有 1 项失败保持原样。独立复核证据见 `docs/testing/skill-match-20261024.md`（由独立复核员执行，非实现者；已含「修复后复验」小节）。
+
+## 2026-10-24 · 画像台账行、初评空态、体验两模块、规划页收口，已发布
+
+个人画像：能力底册的行尾动作列由固定 46px 改为自适应并加 `box-sizing`，行内「开始/填/改」不再被窄列挤压，职业兴趣那一行保持横向排列。
+
+初评页：兴趣栏与知识缺口栏的空态统一为居中的「尚无记录」（兴趣栏保留开始问卷按钮）。
+
+职业体验页：任务卡去掉概述长句；「模拟项目」「模拟面试」两个模块下各加一句说明——模拟项目「看材料、做三次判断并写下理由，最后得到一份可导出的成果。」，模拟面试「依次回答三个问题，说明你的取舍和依据，最后留下面试记录。」
+
+行动规划页：封面操作行（刷新、恢复、回看 R1、重做职业体验）替换为一个「查看当前行动规划」链接；删除「正在同步你的画像与体验…」提示；未解锁区标题由「这一步还排不了」改为「尚未解锁」，并删掉「先看初步评价」「翻方向手册」两个入口。
+
+发布：`npm run lint` 退出 0（另修掉并行会话在 community 里新引入的一条 `set-state-in-effect` 报错），隔离发布树 `npm run build` 退出 0，云端 build 通过。部署 `dpl_Gi1Fd9sVcEcjph5U1D9Xv5b37Wq3` 为 Production/Ready，别名 `xeniso-platform.vercel.app`、`limen-azure.vercel.app`、`xeniso-sakura-lzs-projects.vercel.app`。线上复核：初评页两处「尚无记录」；规划页有「查看当前行动规划」、无回看 R1/重做职业体验/正在同步提示/两个入口；体验页无概述长句、两句模块说明在位；画像页新网格规则已进线上 CSS；`/`、`/profile`、`/report/initial`、`/report/plan`、`/experience`、`/community` 均 200。
+
+## 2026-10-24 · 初评四栏排版、体验页收口、首页流程文案，已发布
+
+初评页：四个栏卡的字体统一为两种——小标题（h2/h3/dt/栏内小标题）用衬线体，正文用无衬线体并统一 15.5px；栏内的等宽第三体（序号、dt、雷达轴标签）全部改掉。底部「解释与下一步」整块（含 AI 报告、生成/查看按钮、数据说明与两个行动入口）替换为一个「查看报告」链接，指向四栏内容。
+
+职业体验页：删除导师面板两句说明（能问什么、接通后知道什么）、「做完会留下什么」整块（记录/复盘/成果与「材料口径与边界」）、页头「第 3 步 · 职业体验」小字与「simulation · 合成材料」标签；任务里的做法选择收成两个模块「模拟项目 / 模拟面试」，删掉预览与说明文字；左栏标题「先从哪一类看」改为「分类」，分类名（AI / 计算机等）从 13px 等宽提升为 17px 无衬线加粗，大于下方方向按钮。
+
+首页：删除「点击步骤展开详情」，四步说明按 oil-tone 规则重写（拆句、补动作顺序、保留 30 题与四栏等事实）。
+
+验证与发布：每轮 `npm run lint` 退出 0，隔离发布树 `npm run build` 退出 0，云端 build 通过。上线部署依次为 `dpl_63tD…`（上一轮）、`dpl_3UubFa2gzEwDwxDVAQWx7DbbDN4v`（本轮最终），Production/Ready，别名 `xeniso-platform.vercel.app`、`limen-azure.vercel.app`、`xeniso-sakura-lzs-projects.vercel.app`。线上复核：首页无「点击步骤展开详情」且四步新文案在位；体验页无第 3 步小字、无 simulation 标签、无导师两句说明与「做完会留下什么」，出现「分类」「模拟项目」「模拟面试」；初评页无「解释与下一步」与两个行动入口，出现「查看报告」；`/`、`/experience`、`/report/initial`、`/report/plan`、`/community`、`/explore` 均 200。四栏字体规则与左栏字号规则已在线上 CSS 包中确认。
+
+## 2026-10-24 · 首页/画像/初评按用户清单继续删字，已发布
 
 按用户逐条清单删除首页首屏提示语与下跳链接、书册提示/翻页按钮/图版出处、首页整块文库介绍（标题、导语、入口与方向目录）、页脚来源与插画署名；画像页删除「还差 N 项」进度提示；初评页删除状态小字「尚无官方兴趣结果」、封面三个操作按钮、「本页怎么用」帮助块、「完成画像后查看…」提示，能力迁移空态改为「已经记录 暂无 / 迁移方向 暂无」，知识缺口空态句删除，报考条件四行值统一写「无」。
 

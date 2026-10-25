@@ -841,6 +841,41 @@
 .xr-closing { margin-top: 24px; }
 .xr-closing > .xr-sec-head { margin-bottom: 12px; }
 
+/* 收尾动作不再做成第五个实心绿按钮（上面四栏里已经有三个绿按钮了）：
+   改成印章式双线框，红色不参与，只表示「把这份报告从头看一遍」。 */
+.xr-closing {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px 32px;
+}
+.xr-closing-note { margin: 0; max-width: 34em; font-size: var(--fs-small); line-height: var(--lh-small); color: var(--ink-3); }
+.xr-closing-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 0 24px;
+  border: 2px solid var(--green-deep);
+  outline: 1px solid var(--green-deep);
+  outline-offset: 3px;
+  background: transparent;
+  color: var(--green-deep);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-decoration: none;
+  white-space: nowrap;
+  transform: rotate(-1.4deg);
+  transition: background-color 220ms var(--ease), color 220ms var(--ease), transform 220ms var(--ease);
+}
+.xr-closing-action span { font-size: 1.1em; }
+.xr-closing-action:hover { background: var(--green-deep); color: var(--surface); transform: rotate(-1.4deg) translateY(-1px); }
+.xr-closing-action:focus-visible { background: var(--green-deep); color: var(--surface); outline: 2px solid var(--green-deep); outline-offset: 6px; }
+@media (max-width: 760px) { .xr-closing { grid-template-columns: minmax(0, 1fr); } .xr-closing-action { justify-self: start; } }
+
 /* ---------- 未解锁：先完成前几步 ---------- */
 .xr-setup { margin-top: 24px; }
 .xr-setup-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
@@ -952,6 +987,7 @@
 .rp-col-head .atlas-chip { margin-left: auto; }
 .rp-col-sub { margin: 16px 0 0; font-size: var(--fs-body); line-height: 1.5; font-weight: 600; }
 .rp-col-empty { margin: 0; font-size: var(--fs-body); line-height: 1.7; color: var(--ink-3); }
+.rp-col .rp-col-empty.is-center { padding: 34px 0; text-align: center; text-indent: 0; }
 .rp-col-foot { margin-top: auto; padding-top: 14px; }
 .rp-col-foot .atlas-btn { width: 100%; min-height: 44px; padding: 0 12px; font-size: var(--fs-body); justify-content: center; }
 
@@ -1001,6 +1037,44 @@
   .rp-col { padding: 16px 14px; }
 }
 
+/* ---------- R1 第 05 块：职业技能匹配（知识库职业原文 × 画像记录） ---------- */
+.rp-skillmatch { margin-top: 14px; }
+.rp-skillmatch-lede {
+  margin: 0 0 16px;
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--ink-2);
+  max-width: 44em;
+}
+.rp-skillmatch-group { padding: 16px 0; border-top: 1px dashed var(--line); }
+.rp-skillmatch-group:first-of-type { border-top: 0; padding-top: 2px; }
+.rp-skillmatch-grouphead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.rp-skillmatch-grouphead h3 { margin: 0; font-size: var(--fs-h3); line-height: var(--lh-h3); }
+.rp-skillmatch-grouphead h3 a { color: var(--ink); text-decoration: none; text-underline-offset: 4px; }
+.rp-skillmatch-grouphead h3 a:hover { text-decoration: underline; text-decoration-color: var(--line-strong); }
+.rp-skillmatch-occupation { margin: 0; font-size: var(--fs-small); color: var(--ink-3); }
+.rp-skillmatch-list { list-style: none; margin: 12px 0 0; padding: 0; display: grid; }
+.rp-skillmatch-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 4px 10px;
+  padding: 9px 0;
+  border-bottom: 1px dotted var(--line);
+}
+.rp-skillmatch-row:last-child { border-bottom: 0; }
+.rp-skillmatch-name { font-size: var(--fs-body); line-height: 1.5; color: var(--ink); }
+.rp-skillmatch-meta { font-size: var(--fs-meta); color: var(--ink-3); white-space: nowrap; }
+.rp-skillmatch-kb { grid-column: 1 / -1; margin-top: 2px; }
+.rp-skillmatch-kb > summary { font-size: var(--fs-meta); color: var(--ink-3); cursor: pointer; }
+.rp-skillmatch-kb .xr-source { margin: 6px 0 0; font-size: var(--fs-meta); line-height: 1.65; }
+.rp-skillmatch-kb code { font-size: var(--fs-meta); overflow-wrap: anywhere; }
+.rp-skillmatch-sum { margin: 10px 0 0; font-size: var(--fs-small); color: var(--ink-2); max-width: 44em; }
+@media (max-width: 640px) {
+  .rp-skillmatch-row { grid-template-columns: auto minmax(0, 1fr); }
+  .rp-skillmatch-meta { grid-column: 2; }
+}
+
 /* ---------- R2 未就绪：准备清单（三行状态点） ---------- */
 .rp-ready { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .rp-ready li {
@@ -1026,3 +1100,12 @@
   .rp-ready li { grid-template-columns: 12px minmax(0, 1fr) auto; row-gap: 8px; }
   .rp-ready li .atlas-chip { grid-column: 2; }
 }
+
+/* Four-column cards: serif small headings, sans body, no third (mono) font. */
+.rp-col.rp-col,
+.rp-col.rp-col :is(p, dd, li, summary, span, div, button, .rp-col-num, .atlas-chip) { font-family: var(--font-sans); }
+.rp-col.rp-col :is(h2, h3, dt, .rp-col-sub) { font-family: var(--font-serif); font-weight: 600; letter-spacing: 0; }
+.rp-col.rp-col :is(text, tspan, .xr-axis, .xr-ledger-letter, .xr-gap-src) { font-family: var(--font-sans); letter-spacing: 0; }
+.rp-col.rp-col .rp-col-sub,
+.rp-col.rp-col dt { font-size: var(--fs-body); line-height: 1.6; color: var(--ink); }
+.rp-col.rp-col :is(p, dd):not(.xr-source):not(.xr-meta) { font-size: var(--fs-small); line-height: 1.75; color: var(--ink-2); }

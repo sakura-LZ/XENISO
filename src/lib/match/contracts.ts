@@ -7,9 +7,10 @@ export const skillLabels = {
   communication: "沟通表达", data_management: "数据管理", model_evaluation: "模型评价",
 } as const;
 export const skillStandard = {
-  version: "limen-skills-1",
+  version: "limen-skills-2",
   levels: ["未接触", "在指导下完成", "独立完成基础任务", "独立完成复杂任务", "指导与评审"],
   importance: "1 辅助 / 2 常用 / 3 核心 / 4 关键 / 5 必备；LIMEN 编辑性权重，必须单独审核，不由招聘措辞或模型推断",
+  rubric: "data/match/skill-rubric.json（limen-skills-2）：0–4 级的可观察锚点，LV2/LV4/LV6 例句为 O*NET Level Scale Anchors 官方原文，其余级别为 LIMEN 编辑性描述",
 } as const;
 export const skillIdSchema = z.enum(Object.keys(skillLabels) as [keyof typeof skillLabels, ...(keyof typeof skillLabels)[]]);
 const id = z.string().min(1).max(120);
@@ -38,11 +39,28 @@ export const known = <T>(value: T, evidence: Evidence): Fact<T> => ({ value, sta
 const text = z.string().min(1).max(2000);
 const level = z.number().int().min(0).max(4);
 const vectorSchema = z.object(Object.fromEntries(areas.map(a => [a, z.number().finite()])) as Record<typeof areas[number], z.ZodNumber>).strict();
+// 官方评分的分析性不确定度：O*NET 的 N / Standard Error / CI 边界 / 是否被官方抑制。
+// 只做携带与展示，不改变点估计的计算口径；缺失即未知，不允许推断或补零。
+const ratingSchema = z.object({
+  n: z.number().int().positive().optional(), se: z.number().nonnegative().optional(),
+  lower: z.number().finite().optional(), upper: z.number().finite().optional(),
+  suppressed: z.boolean().optional(),
+}).strict();
+const ratingsSchema = z.object(Object.fromEntries(areas.map(a => [a, ratingSchema.optional()])) as Record<typeof areas[number], z.ZodOptional<typeof ratingSchema>>).strict();
 const interestSchema = z.object({
   instrument: text, version: text, scores: vectorSchema,
   scale: z.object({ min: z.number().finite(), max: z.number().finite() }).strict().nullable(),
+  ratings: ratingsSchema.optional(),
 }).strict().superRefine((v, c) => {
   if (v.scale && (v.scale.min >= v.scale.max || Object.values(v.scores).some(n => n < v.scale!.min || n > v.scale!.max))) c.addIssue({ code: "custom", message: "Invalid interest scale or score" });
+  if (v.ratings) for (const area of areas) {
+    const rating = v.ratings[area];
+    if (!rating) continue;
+    if (rating.lower !== undefined && rating.upper !== undefined && rating.lower > rating.upper) c.addIssue({ code: "custom", message: "Rating CI bound inverted" });
+    const score = v.scores[area];
+    if (rating.lower !== undefined && rating.lower > score + 1e-9) c.addIssue({ code: "custom", message: "Rating lower bound above point estimate" });
+    if (rating.upper !== undefined && rating.upper < score - 1e-9) c.addIssue({ code: "custom", message: "Rating upper bound below point estimate" });
+  }
 });
 export const requirementSchema = z.object({
   id, field: z.enum(["major", "degree", "graduation_year", "pathway", "recommendation_eligible"]),
@@ -54,9 +72,15 @@ export const occupationSchema = z.object({
   mapping_basis: text, tasks: factSchema(z.array(text).min(1)),
   interests: factSchema(interestSchema),
   // must_have：非补偿项。任一已知不足即封顶准备度，不允许被其余加权项平均掉。
-  skills: z.array(z.object({ skill_id: skillIdSchema, importance: factSchema(z.number().int().min(1).max(5)), required_level: factSchema(level), must_have: z.boolean().optional() }).strict()).max(50),
+  // rating 携带该技能官方评分的 N/SE/CI，用于展示不确定度，不参与打分。
+  skills: z.array(z.object({
+    skill_id: skillIdSchema, importance: factSchema(z.number().int().min(1).max(5)), required_level: factSchema(level),
+    must_have: z.boolean().optional(), rating: ratingSchema.optional(),
+  }).strict()).max(50),
   professional_background: factSchema(text), hard_requirements: factSchema(z.array(requirementSchema)),
   preferences: factSchema(z.array(text)),
+  // 标准版本用于报告数据清单与可复现：同一份数据改了必须升版本。
+  standard_version: text.optional(),
 }).strict();
 export const admissionSchema = z.object({
   schema_version: z.literal("match-2"), id, simulation: z.boolean(), university: text, major_code: text, major_name: text,

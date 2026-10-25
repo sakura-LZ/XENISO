@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { directions } from "../src/lib/directions";
 import { actionPlan, initialReport, skillEvidence } from "../src/lib/reports";
+import { findSkillRequirement } from "../src/lib/skill-requirements";
 import { emptyProfile, simulationProfile } from "../src/lib/profile";
 import { areas } from "../src/lib/onet/contracts";
 import { documentSnapshot, translatedQuestion, translation } from "../src/lib/onet/translation";
@@ -45,6 +46,44 @@ test("official document snapshot: 30 linked indices and independent translation 
 test("simulation: evidence refs address original arrays even with blank draft entries", () => {
   const p = { ...emptyProfile, tech_skills: [{ skill: "", self_reported_level: "", evidence: "" }, { skill: "Python", self_reported_level: "入门", evidence: "simulation" }] };
   assert.equal(skillEvidence(p)[0].ref, "user_profile.tech_skills[1]");
+});
+
+test("simulation R1: occupation skills come from the knowledge base and stay unranked territory", () => {
+  const r1 = initialReport(simulationProfile, mockAssessment);
+  assert.equal(r1.version, "limen-r1-rules-v2");
+  assert.ok(r1.occupation_skills.length >= 1 && r1.occupation_skills.length <= 3);
+  const match = r1.occupation_skills.find((item) => item.direction_id === "ml_cv")!;
+  assert.ok(match, "mock 测评命中的 ml_cv 应出现在职业技能匹配里");
+  assert.equal(match.skills.length, findSkillRequirement("ml_cv")?.skills.length);
+  assert.equal(match.summary.total, match.skills.length);
+  // simulation 画像只有 Python 自评：只能算「仅自述」，不能算已具备。
+  assert.equal(match.skills.find((skill) => skill.id === "python")?.status, "self_reported");
+  assert.equal(match.skills.find((skill) => skill.id === "image_algorithms")?.status, "unknown");
+  for (const skill of match.skills) {
+    assert.ok(skill.kb.length >= 1 && skill.kb.every((evidence) => evidence.quote.length >= 8 && evidence.record_id.length >= 3));
+    assert.ok(["recorded", "self_reported", "unknown"].includes(skill.status));
+    assert.ok(!Object.keys(skill).some((key) => ["score", "rating", "percentage", "rank"].includes(key)));
+  }
+});
+
+test("simulation R1: a course/project record upgrades a skill to recorded, but only as unverified evidence", () => {
+  const profile = {
+    ...emptyProfile,
+    courses: [{ course_name: "机器学习与深度学习", credit: null, score: null, score_scale: null, semester: "" }],
+    tech_skills: [{ skill: "Python", self_reported_level: "入门", evidence: "" }],
+  };
+  const match = initialReport(profile, mockAssessment).occupation_skills.find((item) => item.direction_id === "ml_cv")!;
+  const machine = match.skills.find((skill) => skill.id === "machine_learning");
+  assert.equal(machine?.status, "recorded");
+  assert.match(machine?.evidence[0].ref ?? "", /^user_profile\.courses\[0\]$/);
+  assert.equal(match.skills.find((skill) => skill.id === "python")?.status, "self_reported");
+  assert.equal(match.summary.recorded, 1);
+});
+
+test("simulation R1: without an assessment there are no candidates and therefore no occupation skill list", () => {
+  const r1 = initialReport(simulationProfile, null);
+  assert.deepEqual(r1.occupation_skills, []);
+  assert.ok(r1.unknowns.some((text) => text.includes("无法列出对应职业的技能要求")));
 });
 
 test("simulation P4: the chosen admission pathway changes exported verification tasks", () => {

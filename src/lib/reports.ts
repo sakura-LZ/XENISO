@@ -4,6 +4,7 @@ import { assessmentSchema, type AssessmentResult } from "./assessment";
 import { experiencePresentation, type Experience } from "./experience";
 import { parseR2Planning } from "./planning";
 import { buildPathwayPlan } from "./planning-stages";
+import { occupationSkillMatches } from "./skill-match";
 
 export function skillEvidence(profile: Profile) {
   return [
@@ -15,11 +16,14 @@ export function skillEvidence(profile: Profile) {
 }
 export function initialReport(profile: Profile, assessment: AssessmentResult | null) {
   const matches = assessment ? directions.map((direction) => ({ direction, occupations: direction.onet.filter((o) => assessment.careers.some((c) => c.code === o.code)) })).filter((m) => m.occupations.length > 0).sort((a, b) => Math.min(...a.occupations.map((o) => assessment.careers.findIndex((c) => c.code === o.code))) - Math.min(...b.occupations.map((o) => assessment.careers.findIndex((c) => c.code === o.code)))) : [];
+  const candidates = matches.slice(0, 3);
   return {
-    version: "limen-r1-rules-v1", status: assessment ? "official_interest_with_rule_based_explanation" : "draft_missing_official_interest", ai_status: "not_generated",
-    scores: assessment?.scores ?? [], evidence: skillEvidence(profile), candidates: matches.slice(0, 3),
+    version: "limen-r1-rules-v2", status: assessment ? "official_interest_with_rule_based_explanation" : "draft_missing_official_interest", ai_status: "not_generated",
+    scores: assessment?.scores ?? [], evidence: skillEvidence(profile), candidates,
+    // 职业技能匹配：岗位侧要求来自知识库原文（见 lib/skill-requirements），只对照画像记录，不评分。
+    occupation_skills: occupationSkillMatches(profile, candidates.map((candidate) => candidate.direction.id)),
     outside_directory: assessment?.careers.filter((career) => !directions.some((d) => d.onet.some((o) => o.code === career.code))) ?? [],
-    unknowns: ["编程、数学与研究技能尚未经独立任务验证", "未填写不等于没有能力；无技术课程也不代表不适合探索", ...(!assessment ? ["缺少 O*NET 官方计分与职业匹配，不能推荐兴趣方向"] : []), "招生资格与具体考试要求未核实"],
+    unknowns: ["编程、数学与研究技能尚未经独立任务验证", "未填写不等于没有能力；无技术课程也不代表不适合探索", ...(!assessment ? ["缺少 O*NET 官方计分与职业匹配，不能推荐兴趣方向，也无法列出对应职业的技能要求"] : []), "职业技能要求按知识库原文整理，不是统一招聘标准；没有记录不等于不具备", "招生资格与具体考试要求未核实"],
   };
 }
 export function competencyGaps(profile: Profile, direction: Direction) {

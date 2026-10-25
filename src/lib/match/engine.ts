@@ -1,5 +1,6 @@
 import { areas } from "../onet/contracts";
 import { matchInputSchema, skillLabels, skillStandard, type Evidence, type Fact, type MatchInput, type MatchUser, type Occupation } from "./contracts";
+import { interestMetrics, kendallTau } from "./interest-metrics";
 
 const round = (n: number) => Math.round(n * 100) / 100;
 
@@ -9,8 +10,14 @@ export const SELF_REPORT_RELIABILITY = 0.8;
 // 关键（must_have）技能已知不足时的准备度封顶：非补偿项不能被其余低权重项平均掉。
 export const MUST_HAVE_CAP = 59;
 const LEVEL_MIDPOINT = 2;
+// 兴趣量表的可靠性：Mini-IP 每维 5 题，按 Spearman–Brown 推算内部一致性约 .73–.80。
+// 用区间下沿做保守的衰减校正；没有更精确的实测信度时不假装精确。
+export const INTEREST_RELIABILITY = { point: 0.8, lower: 0.73, upper: 0.8 } as const;
 // 排序敏感性网格：兴趣权重相对缺省 0.5 做 ±20% 扰动，准备度权重取补数。
 const WEIGHT_GRID = [0.4, 0.45, 0.5, 0.55, 0.6] as const;
+// 对外只给“证据完整度档位”，不给综合适合度：A 证据完整、B 资格待核实、C 仅部分依据、D 信息不足。
+export type EvidenceTier = "A" | "B" | "C" | "D";
+export type Confidence = { level: "high" | "medium" | "low"; coverage: number; notes: string[] };
 
 export function usable<T>(fact: Fact<T>, simulation: boolean): fact is Fact<T> & { value: T } {
   return fact.status === "known" && fact.value !== null && fact.evidence.length > 0 && fact.evidence.every(e =>
@@ -53,7 +60,24 @@ function interest(user: MatchUser, role: Occupation): Dimension {
   }
   const correlation = Math.max(-1, Math.min(1, pearson(uv, rv)));
   const result = dimension(100 * (correlation + 1) / 2, 1, basis, evidence, []);
-  result.detail = { correlation: round(correlation), differentiation: round(differentiation) };
+  // 衰减校正：观测相关 = 真相关 × √信度，因此真相关的估计是 r/√ρ。
+  // 只用保守下沿 ρ=.73 做上界估计，不替换展示分（避免用校正值冒充更准）。
+  const userReliability = typeof u.reliability === "number" ? u.reliability : INTEREST_RELIABILITY.point;
+  const corrected = Math.max(-1, Math.min(1, correlation / Math.sqrt(Math.max(userReliability, INTEREST_RELIABILITY.lower))));
+  const metrics = interestMetrics(u.value.scores, r.value.scores);
+  result.detail = {
+    correlation: round(correlation), differentiation: round(differentiation),
+    user_reliability: round(userReliability), attenuation_corrected_correlation: round(corrected),
+    reliability_basis: `Mini-IP 每维 5 题，内部一致性约 ${INTEREST_RELIABILITY.lower}–${INTEREST_RELIABILITY.upper}；校正值只作上界参考`,
+    // 以下三项是补充诊断，不替换展示分、不参与排序：单看相关对“峰在哪、隔几步”不敏感。
+    high_point_user: metrics.hex.user_top3.join(""),
+    high_point_occupation: metrics.hex.occupation_top3.join(""),
+    hex_code_similarity: round(metrics.hex.similarity),
+    hex_code_mean_distance: round(metrics.hex.mean_hex_distance),
+    emd_similarity: round(metrics.emd.similarity),
+    emd_distance: round(metrics.emd.distance),
+    interest_metric_note: metrics.note,
+  };
   return result;
 }
 
@@ -135,17 +159,97 @@ const scaled = (score: number) => 0.05 + 0.95 * score / 100;
 const utility = (r: { interest: Dimension; readiness: Dimension }, interestWeight: number) =>
   Math.pow(scaled(r.interest.score!), interestWeight) * Math.pow(scaled(r.readiness.score!), 1 - interestWeight);
 
+// 证据完整度档位：只描述“依据够不够”，不描述“适不适合”。
+// A 兴趣与准备度完整且硬资格已判定；B 同上但硬资格仍待核实；C 两维都只有部分依据；D 任一维未知。
+export function evidenceTierOf(r: { interest: Dimension; readiness: Dimension; eligibility: { status: string } }): EvidenceTier {
+  if (r.interest.status === "unknown" || r.readiness.status === "unknown") return "D";
+  if (r.interest.status === "complete" && r.readiness.status === "complete") return r.eligibility.status === "unknown" ? "B" : "A";
+  return "C";
+}
+
+// 置信度：把“覆盖率、资格未知、招生未判定、排序不稳健”四类不确定性显式说出来，
+// 而不是给一个看起来精确的总分。level 由结构规则决定，不由分数大小决定。
+function confidenceOf(
+  r: { interest: Dimension; readiness: Dimension; transition: Dimension; admissions: Dimension; eligibility: { status: string }; programs: unknown[] },
+  stability: "stable" | "variable" | "unstable" | "n/a",
+): Confidence {
+  const coverage = round((r.interest.coverage + r.readiness.coverage + r.transition.coverage + r.admissions.coverage) / 4);
+  const notes: string[] = [];
+  if (r.interest.status !== "complete") notes.push("兴趣轮廓依据不完整：六维兴趣或岗位 OI 缺失");
+  if (r.readiness.status !== "complete") notes.push(`能力准备度覆盖 ${Math.round(r.readiness.coverage * 100)}%：部分技能等级或岗位要求待确认`);
+  if (r.eligibility.status === "unknown") notes.push("岗位硬性资格待核实");
+  if (r.programs.length === 0) notes.push("尚无已审核的关联招生项目");
+  else if (r.admissions.status !== "complete") notes.push("招生项目中仍有待判定条款");
+  if (stability === "unstable") notes.push("权重扰动下名次跨度大，顺序不稳健");
+  if (stability === "variable") notes.push("权重扰动下个别名次可能互换");
+  const complete = r.interest.status === "complete" && r.readiness.status === "complete";
+  const level = complete && r.eligibility.status === "met" && (stability === "stable" || stability === "n/a")
+    ? "high" as const
+    : complete || coverage >= 0.5 ? "medium" as const : "low" as const;
+  return { level, coverage, notes: notes.length ? notes : ["四维依据完整、资格已判定且顺序稳定"] };
+}
+
+// 数据清单：报告里必须能追溯到“用的是哪一版标准、哪些来源”，否则分数不可复核。
+function dataManifest(occupations: Occupation[], admissions: MatchInput["admissions"]) {
+  const versions = [
+    { id: "algorithm", version: "limen-match-v2.1" },
+    { id: "contract", version: "match-2" },
+    { id: "skill_standard", version: skillStandard.version },
+    ...[...new Set(occupations.map(o => o.standard_version ?? "unreviewed"))].map(version => ({ id: "occupation_standard", version })),
+  ];
+  const sources = new Map<string, { ref: string; url: string; published_at: string | null; retrieved_at: string }>();
+  const all = [...occupations.flatMap(o => [...o.interests.evidence, ...o.skills.flatMap(s => [...s.importance.evidence, ...s.required_level.evidence])]), ...admissions.flatMap(a => a.mapping_evidence)]
+    .filter(e => e.source_kind === "official" && e.url);
+  for (const e of all) if (e.url && !sources.has(e.url)) sources.set(e.url, { ref: e.ref, url: e.url, published_at: e.published_at, retrieved_at: e.retrieved_at });
+  return { versions, sources: [...sources.values()].slice(0, 20) };
+}
+
+// 候选岗位之间的兴趣轮廓区分度诊断。
+// 三个岗位若兴趣轮廓高度相似，兴趣维度对"谁更靠前"几乎没有信息量：用户六维相同，
+// 只是比较谁更像同一张图。这不是分数错，而是候选集本身的可用信息不足，必须显式说出来。
+const NEAR_DUPLICATE_R = 0.9;
+const LOW_DISCRIMINATION_MEAN_R = 0.7;
+function interestDiagnostics(occupations: Occupation[], simulation: boolean, user: MatchUser) {
+  const known = occupations.filter(role => usable(role.interests, simulation));
+  const pairs: { a: string; b: string; correlation: number }[] = [];
+  for (let i = 0; i < known.length; i++) for (let j = i + 1; j < known.length; j++) {
+    const av = areas.map(area => known[i].interests.value!.scores[area]);
+    const bv = areas.map(area => known[j].interests.value!.scores[area]);
+    if (sd(av) < 1e-9 || sd(bv) < 1e-9) continue;
+    pairs.push({ a: known[i].id, b: known[j].id, correlation: round(Math.max(-1, Math.min(1, pearson(av, bv)))) });
+  }
+  const values = pairs.map(pair => pair.correlation);
+  const maxCorrelation = values.length ? Math.max(...values) : null;
+  const meanCorrelation = values.length ? round(mean(values)) : null;
+  const nearDuplicate = pairs.filter(pair => pair.correlation >= NEAR_DUPLICATE_R);
+  const discriminative = maxCorrelation === null ? null : !(maxCorrelation >= NEAR_DUPLICATE_R || (meanCorrelation ?? 0) >= LOW_DISCRIMINATION_MEAN_R);
+  const note = maxCorrelation === null
+    ? "候选岗位不足以比较兴趣轮廓区分度。"
+    : nearDuplicate.length
+      ? `有 ${nearDuplicate.length} 对岗位的兴趣轮廓接近重复（r ≥ ${NEAR_DUPLICATE_R}），这些岗位之间兴趣几乎不区分，顺序主要由能力准备度与资格决定。`
+      : discriminative
+        ? "候选岗位兴趣轮廓差异足够，兴趣维度对顺序有实际信息量。"
+        : `候选岗位兴趣轮廓整体相似（两两相关均值 ${meanCorrelation}，最高 ${maxCorrelation}），兴趣维度对本组顺序的信息量偏低：顺序主要由能力准备度与资格决定，不要读成“兴趣更匹配所以更靠前”。`;
+  // 用户自己的六维是否平坦，决定兴趣分能否解释为形状相似；这里一并返回，界面不必重复判断。
+  const flatUser = usable(user.interests, simulation) ? sd(areas.map(area => user.interests.value!.scores[area])) < 1e-9 : null;
+  return { candidate_pairs: pairs, max_correlation: maxCorrelation, mean_correlation: meanCorrelation, near_duplicate_pairs: nearDuplicate.map(pair => `${pair.a}~${pair.b}`), discriminative, flat_user_profile: flatUser, thresholds: { near_duplicate: NEAR_DUPLICATE_R, low_discrimination_mean: LOW_DISCRIMINATION_MEAN_R }, note };
+}
+
 export function match(input: MatchInput, now = new Date()) {
   const { user, occupations, admissions } = matchInputSchema.parse(input);
   const results = occupations.map(role => {
     const ability = readiness(user, role), hard = eligibility(role.hard_requirements, user);
     const programs = admissions.filter(a => a.occupation_ids.includes(role.id)).map(a => {
-      const samePlan = user.target_year === a.year && usable(user.study_intent, user.simulation) && user.study_intent.value === a.pathway;
+      const yearMatch = user.target_year === a.year;
+      const pathwayMatch = usable(user.study_intent, user.simulation) && user.study_intent.value === a.pathway;
+      const samePlan = yearMatch && pathwayMatch;
       const current = now.toISOString().slice(0, 10) <= a.valid_through;
       const decision = eligibility(a.hard_requirements, user);
       const mappingTrusted = usable({ value: true, status: "known", evidence: a.mapping_evidence }, user.simulation);
       const complete = samePlan && current && mappingTrusted && usable(a.exam_subjects, user.simulation) && usable(a.cross_major, user.simulation) && decision.status !== "unknown";
       return { id: a.id, university: a.university, major: a.major_name, year: a.year, pathway: a.pathway, status: !samePlan ? "plan_mismatch" : !current ? "expired" : !mappingTrusted ? "unknown" : decision.status === "not_met" ? "not_met" : complete ? decision.status : "unknown", decision,
+        // 把「计划不符」拆成可解释的两项：年份不符与路径不符的处置完全不同，界面不该合并成一句话。
+        plan_mismatch_reason: samePlan ? null : !yearMatch && !pathwayMatch ? "year_and_pathway" : !yearMatch ? "year" : "pathway",
         evidence: [...a.mapping_evidence, ...a.exam_subjects.evidence, ...a.cross_major.evidence], missing: complete ? [] : ["核对目标年份/路径、有效期、考试科目和跨考资格"] };
     });
     const applicable = programs.filter(p => p.status === "met" || p.status === "not_met");
@@ -155,6 +259,7 @@ export function match(input: MatchInput, now = new Date()) {
       programs.flatMap(p => p.evidence), programs.length ? programs.flatMap(p => p.missing) : ["尚无结构化关联招生项目"]);
     return { occupation_id: role.id, title: role.title, simulation: role.simulation, rank: null as number | null, rank_range: null as [number, number] | null,
       ordering_utility: null as number | null, dominated: null as boolean | null,
+      evidence_tier: null as EvidenceTier | null, confidence: null as Confidence | null,
       interest: interest(user, role), readiness: ability.dimension, transition: transition(user, role, now), admissions: admission,
       eligibility: hard, gaps: ability.gaps, programs,
       actions: [...ability.gaps.map(g => ({ action: `${g.label}：${g.action}`, evidence: g.evidence })), ...(hard.status !== "met" ? [{ action: "先核实岗位硬性资格，分数不能抵消资格限制。", evidence: hard.evidence }] : []),
@@ -177,13 +282,20 @@ export function match(input: MatchInput, now = new Date()) {
     && o.interest.score! >= r.interest.score! && o.readiness.score! >= r.readiness.score!
     && (o.interest.score! > r.interest.score! || o.readiness.score! > r.readiness.score!));
   // 权重扰动下的名次区间：区间跨度过大说明顺序不稳健，应降级为“并列探索项”。
-  const baseline = rankable.map(r => r.occupation_id).join("|");
+  const baseline = rankable.map(r => r.occupation_id);
   const ranks = new Map<string, number[]>();
   let flips = 0;
+  const jaccards: number[] = [];
+  const top = Math.min(3, rankable.length);
+  const overlaps = (a: string[], b: string[]) => {
+    const setB = new Set(b); const inter = a.filter(id => setB.has(id)).length;
+    return a.length + b.length - inter === 0 ? 1 : inter / (a.length + b.length - inter);
+  };
   for (const w of WEIGHT_GRID) {
     const order = [...rankable].sort((a, b) => utility(b, w) - utility(a, w) || a.occupation_id.localeCompare(b.occupation_id));
     order.forEach((r, i) => ranks.set(r.occupation_id, [...(ranks.get(r.occupation_id) ?? []), i + 1]));
-    if (w !== 0.5 && order.map(r => r.occupation_id).join("|") !== baseline) flips++;
+    if (w !== 0.5 && order.map(r => r.occupation_id).join("|") !== baseline.join("|")) flips++;
+    if (top > 0) jaccards.push(overlaps(baseline.slice(0, top), order.slice(0, top).map(r => r.occupation_id)));
   }
   for (const r of rankable) {
     const values = ranks.get(r.occupation_id) ?? [];
@@ -191,10 +303,40 @@ export function match(input: MatchInput, now = new Date()) {
   }
   const width = (r: typeof results[number]) => r.rank_range ? r.rank_range[1] - r.rank_range[0] : 0;
   const stability = rankable.length < 2 ? "n/a" as const : flips === 0 ? "stable" as const : rankable.some(r => width(r) >= 2) ? "unstable" as const : "variable" as const;
-  return { algorithm_version: "limen-match-v2.0", skill_standard_version: skillStandard.version, schema_version: "match-2", generated_at: now.toISOString(), simulation: user.simulation,
-    ranking_basis: "仅完整兴趣与能力数据、且资格未被否决的岗位参与排序：先按资格与完整性分层，再用几何加权（缺省兴趣 0.5 / 准备度 0.5）生成顺序，并给出权重 ±20% 扰动下的名次区间。四维分别呈现，不提供综合适合度百分比；硬资格不满足者不推荐；资格未知仍须核实。",
-    sensitivity: { interest_weight_grid: [...WEIGHT_GRID], ordering_flips: flips, stability },
-    limitations: ["LIMEN 编辑性探索规则，尚未做预测效度验证", "未知不等于零；局部分数不能与完整分数直接比较", "兴趣分是轮廓形状相似度，不衡量水平高低，也不是成功率", "自评技能等级已按可靠性衰减，仍不等于能力认证", "招生事实和数值评分标准仍需人工核实", "候选数很少时名次区间可能重叠，档位不等于预测", "P4 的大模型/关键词评价不直接进入能力分数"],
+  // 名次真正发生变化的岗位：用于对外解释“哪几个岗位的顺序只是权重的产物”。
+  const flipped = rankable
+    .filter(r => (ranks.get(r.occupation_id) ?? []).some((value, i) => value !== baseline.indexOf(r.occupation_id) + 1 && WEIGHT_GRID[i] !== 0.5))
+    .map(r => r.occupation_id);
+  for (const r of results) {
+    r.evidence_tier = evidenceTierOf(r);
+    r.confidence = confidenceOf(r, stability);
+  }
+  const interest_diagnostics = interestDiagnostics(occupations, user.simulation, user);
+  // 三种兴趣度量对同一组岗位的顺序是否一致：没有人工标签时也能做的收敛效度检查。
+  // 顺序一致 → 形状结论更稳；分歧 → 说明候选轮廓接近或量尺假设敏感，名次更不能当结论。
+  const rankableResults = ordered.filter(canRank);
+  const orderBy = (value: (r: typeof results[number]) => number) => [...rankableResults]
+    .sort((a, b) => value(b) - value(a) || a.occupation_id.localeCompare(b.occupation_id))
+    .map((r) => r.occupation_id);
+  const interest_metric_agreement = {
+    metrics: { shape: "轮廓相关", hex: "六边形码", emd: "环形 EMD" },
+    shape_vs_hex: kendallTau(orderBy((r) => r.interest.score ?? Number.NEGATIVE_INFINITY), orderBy((r) => Number(r.interest.detail?.hex_code_similarity ?? -1))),
+    shape_vs_emd: kendallTau(orderBy((r) => r.interest.score ?? Number.NEGATIVE_INFINITY), orderBy((r) => Number(r.interest.detail?.emd_similarity ?? -1))),
+    hex_vs_emd: kendallTau(orderBy((r) => Number(r.interest.detail?.hex_code_similarity ?? -1)), orderBy((r) => Number(r.interest.detail?.emd_similarity ?? -1))),
+    note: "只作收敛效度诊断，不进入打分与排序：三种兴趣度量顺序一致时“轮廓形状”结论更稳；τ 偏低说明候选轮廓接近或量尺假设敏感，兴趣分应读作探索提示，不应读成匹配度。",
+  };
+  const agreementValues = [interest_metric_agreement.shape_vs_hex, interest_metric_agreement.shape_vs_emd, interest_metric_agreement.hex_vs_emd]
+    .filter((value): value is number => value !== null);
+  if (agreementValues.length && Math.min(...agreementValues) < 0.34) {
+    interest_diagnostics.note += ` 另外，兴趣度量之间的顺序一致性偏低（Kendall τ 最小 ${Math.min(...agreementValues).toFixed(2)}），说明不同兴趣指标给出的顺序本身就分歧，名次更不应被当作结论。`;
+  }
+  return { algorithm_version: "limen-match-v2.1", skill_standard_version: skillStandard.version, schema_version: "match-2", generated_at: now.toISOString(), simulation: user.simulation,
+    ranking_basis: "仅完整兴趣与能力数据、且资格未被否决的岗位参与排序：先按资格与完整性分层，再用几何加权（缺省兴趣 0.5 / 准备度 0.5）生成顺序，并给出权重 ±20% 扰动下的名次区间。四维分别呈现，不提供综合适合度百分比；`evidence_tier` 只描述证据完整度（A 完整且资格已判定 / B 完整但资格待核实 / C 仅部分依据 / D 信息不足），`confidence` 只描述不确定性来源，两者都不是适合度；硬资格不满足者不推荐；资格未知仍须核实。",
+    sensitivity: { interest_weight_grid: [...WEIGHT_GRID], ordering_flips: flips, top_k_jaccard: round(jaccards.length ? mean(jaccards) : 1), flipped_occupation_ids: flipped, stability },
+    interest_diagnostics,
+    interest_metric_agreement,
+    data_manifest: dataManifest(occupations, admissions),
+    limitations: ["LIMEN 编辑性探索规则，尚未做预测效度验证", "排序口径未经独立专家共识验证（离线两轮编辑标注 α≈0.24 未达标），名次只能当探索顺序", "未知不等于零；局部分数不能与完整分数直接比较", "兴趣分是轮廓形状相似度，不衡量水平高低，也不是成功率", "自评技能等级已按可靠性衰减，仍不等于能力认证", "招生事实和数值评分标准仍需人工核实", "候选数很少时名次区间可能重叠，档位不等于预测", "证据档位与置信度只描述依据完整性，不是录取或成功的可能性", "P4 的大模型/关键词评价不直接进入能力分数", ...(agreementValues.length && Math.min(...agreementValues) < 0.34 ? ["三种兴趣度量（轮廓相关/六边形码/EMD）顺序分歧，兴趣分只作探索提示"] : []), ...(interest_diagnostics.discriminative === false ? ["本组候选岗位兴趣轮廓相似，兴趣维度区分度有限，顺序主要由能力准备度与资格决定"] : [])],
     results: ordered };
 }
 export type MatchReport = ReturnType<typeof match>;

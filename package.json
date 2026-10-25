@@ -17,6 +17,7 @@
     "check:client-secrets": "tsx scripts/check-client-secrets.ts",
     "knowledge:collect": "tsx scripts/knowledge/collect.ts",
     "knowledge:prepare-import": "tsx scripts/knowledge/prepare-import.ts",
+    "knowledge:skill-requirements": "tsx scripts/knowledge/build-skill-requirements.ts",
     "verify:knowledge": "tsx scripts/verify-knowledge.ts",
     "verify:knowledge:http": "tsx scripts/verify-knowledge-http.ts",
     "verify:knowledge:ai": "tsx scripts/verify-knowledge-ai.ts"

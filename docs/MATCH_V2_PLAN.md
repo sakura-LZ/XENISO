@@ -1,6 +1,7 @@
 # LIMEN-Match V2 设计与实施计划
 
-> 状态：设计稿（未实现）｜算法版本目标：`limen-match-v2.0`｜契约目标：`match-2`
+> 状态：**P0 已实现并验收**（`limen-match-v2.1` / 契约 `match-2`，见 `docs/testing/match-v2-p0.latest.md`）；**P1 官方标准与技能量尺已完成**（O*NET 31.0，`onet-31.0+limen-2026-10-23` / `limen-skills-2`）；**候选集已扩为「9 个特化 + 医学」共 10 个方向**（`ml_cv` / `software` / `llm_agent` / `devices` / `signals` / `imaging_eng` / `clinical_data` / `health_systems` / `med_nlp_kg` / `medicine`；每方向 7 项技能，兴趣按该特化候选 SOC 的 OI 等权平均，技能取该特化自己的第一个可用 SOC 分量）；**兴趣补充度量已落地**（六边形码 / 环形 EMD / 个体内标准化，只作诊断，不参与排序）；**招生结构化部分完成**（7 条，按组展开到特化）；**离线评测集已完成但结论为"未达标/样本不足"**。验收见 `docs/testing/match-v2-p1.latest.md`。P2-1（中文 JD 派生重要性）仍未做。
+> 已知风险：10 方向的 O*NET 兴趣轮廓两两相关均值约 0.8、最大 1.0，`interest_diagnostics` 会判 `discriminative=false`；这不是算法错误，而是候选集共享 SOC 导致「兴趣维度排序信息有限」，顺序主要由准备度与资格决定，界面上必须保留该提示。
 > 依据：2026-10 文献调研、海外与国内竞品调研、现有 `src/lib/match` 代码审计。
 > 原则：仍然**纯确定性、不调用大模型评分、不写远端数据库**；只把"算得对、算得出、说得清"三件事做实。
 
@@ -199,6 +200,13 @@ data_manifest: { occupation_standards_version; skill_standard_version; rule_set_
 
 ### P1-1 O*NET 官方标准导入（最高性价比，1–2 天）
 
+> **实施状态（2026-10-23）**：已完成，见 `docs/testing/match-v2-p1.latest.md`。
+> 实际做法与本节计划的差异（均为实测后的修正，不是缩水）：
+> 1. 数据源改为**官方数据库文本表**而非 Web Services：`db_31_0_text.zip`（13,183,034 字节）在本机网络整包下载会超时，改用 ZIP 中央目录 + HTTP Range 只取 `Essential Skills.txt`、`Transferable Skills.txt`、`Career Interest Types.txt`、`Level Scale Anchors.txt`。理由：API 的 `/details/skills` 只给 importance，没有 LV；而 LV 与 N/SE/CI/suppress 只在数据库表里。
+> 2. O*NET 31.0 **没有**旧版 `Skills.txt`/`Interests.txt`，RIASEC OI 在 `Career Interest Types.txt`（`1.B.1.a–f`）。
+> 3. `required_level` 用**点估计** `round(LV/7×4)`，不是 Lower CI Bound；CI 放 `rating` 里随报告展示。理由：用下限会把每个岗位的要求系统性压低，等于把"不确定"伪装成"要求低"。
+> 4. crosswalk 只覆盖 7/9（`machine_learning`、`data_management` 显式 unmapped），因此两岗位各只有 2 项已评分技能。
+
 - 脚本 `scripts/match-standards-onet.ts`（复用 `OnetClient` / `ONET_API_KEY`，服务端运行，不落客户端）。
 - 抓取内容：
   - `interests`：OI（1.00–7.00）+ IH 高分码，按 `data/occupation_direction_map.json` 映射的 SOC 代码；
@@ -210,9 +218,7 @@ data_manifest: { occupation_standards_version; skill_standard_version; rule_set_
 
 ### P1-2 技能等级锚点（BARS，2–3 天）
 
-- `data/match/skill-rubric.json`：每个技能 × 0–4 级给出**可观察行为锚点**（临床问题理解、研究设计、产品需求…）。
-- 目的：降低自评噪声（当前等级轴是抽象描述，可靠性未知）。UI 用锚点做下拉说明。
-- 版本：`rubric_version` 写入报告，改锚点必须升版本并重算。
+> **实施状态（2026-10-23）**：已完成 `data/match/skill-rubric.json`（版本 `limen-skills-2`，9 技能 × 5 级）。0–4 级中，标注 `official-anchor` 的例句是 O*NET `Level Scale Anchors` 的 LV2/LV4/LV6 英文原文（保留原文以便核对，未逐字翻译）；第 0 级与第 4 级 O*NET 无锚点，明确标为编辑性描述。
 
 ### P2-1 中文 JD 派生重要性（3–5 天）
 
